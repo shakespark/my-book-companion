@@ -10,7 +10,7 @@ window.PM_PARTS = [
 ];
 window.PM_CHAPTERS = [
   { n: 1, part: 1, journal: false, words: 5604, secs: 4, en: "Paris to the Moon", t: "从巴黎到月球", zh: "", ny: "", d: "" },
-  { n: 2, part: 1, journal: false, words: 2992, secs: 1, en: "Private Domain", t: "私人领地", zh: "", ny: "", d: "" },
+  { n: 2, part: 1, journal: false, words: 2992, secs: 5, en: "Private Domain", t: "私人领地", zh: "", ny: "", d: "" },
   { n: 3, part: 1, journal: false, words: 2347, secs: 3, en: "The Strike", t: "罢工", zh: "", ny: "", d: "" },
   { n: 4, part: 1, journal: true, words: 7588, secs: 13, en: "The Winter Circus, Christmas Journal 1", t: "冬季马戏团", zh: "", ny: "", d: "" },
   { n: 5, part: 2, journal: false, words: 2628, secs: 4, en: "The Rules of the Sport", t: "运动的规矩", zh: "", ny: "", d: "" },
@@ -23,13 +23,13 @@ window.PM_CHAPTERS = [
   { n: 12, part: 3, journal: false, words: 7465, secs: 8, en: "The Crisis in French Cooking", t: "法国菜的危机", zh: "", ny: "", d: "" },
   { n: 13, part: 3, journal: false, words: 2605, secs: 5, en: "Barney in Paris", t: "Barney 在巴黎", zh: "", ny: "", d: "" },
   { n: 14, part: 3, journal: true, words: 7745, secs: 9, en: "Lessons from Things, Christmas Journal 3", t: "从物件学到的", zh: "", ny: "", d: "" },
-  { n: 15, part: 3, journal: false, words: 5689, secs: 1, en: "The Rookie", t: "新秀", zh: "", ny: "", d: "" },
+  { n: 15, part: 3, journal: false, words: 5689, secs: 6, en: "The Rookie", t: "新秀", zh: "", ny: "", d: "" },
   { n: 16, part: 4, journal: false, words: 4433, secs: 3, en: "The World Cup, and After", t: "世界杯，以及之后", zh: "", ny: "", d: "" },
-  { n: 17, part: 4, journal: false, words: 3963, secs: 1, en: "The Balzar Wars", t: "Balzar 之战", zh: "", ny: "", d: "" },
+  { n: 17, part: 4, journal: false, words: 3963, secs: 5, en: "The Balzar Wars", t: "Balzar 之战", zh: "", ny: "", d: "" },
   { n: 18, part: 4, journal: false, words: 4801, secs: 3, en: "Alice in Paris", t: "Alice 在巴黎", zh: "", ny: "", d: "" },
   { n: 19, part: 4, journal: true, words: 6124, secs: 17, en: "A Machine to Draw the World, Christmas Journal 4", t: "描绘世界的机器", zh: "", ny: "", d: "" },
   { n: 20, part: 4, journal: false, words: 9003, secs: 9, en: "A Handful of Cherries", t: "一把樱桃", zh: "", ny: "", d: "" },
-  { n: 21, part: 4, journal: false, words: 5611, secs: 1, en: "Like a king", t: "像个国王", zh: "", ny: "", d: "" },
+  { n: 21, part: 4, journal: false, words: 5611, secs: 7, en: "Like a king", t: "像个国王", zh: "", ny: "", d: "" },
   { n: 22, part: 4, journal: false, words: 6581, secs: 3, en: "Angels Dining at the Ritz", t: "在丽兹吃饭的天使", zh: "", ny: "", d: "" },
   { n: 23, part: 4, journal: false, words: 2776, secs: 2, en: "One Last Ride", t: "最后一程", zh: "", ny: "", d: "" },
 ];

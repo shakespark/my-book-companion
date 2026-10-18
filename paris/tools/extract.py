@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """从 Calibre 书库里的 epub（source/calibre/*.epub，只读）提取文本到 source/text/NN.txt（NN = 篇号 01–23，按原书顺序）。
 每个文件：`# NN 篇名`，下一行 `> 第 k 部分 部分名`；`## §k p.页码` 是原书的分隔（epub 里的小花饰；没有分隔的篇只有 §1），
-页码是这一节开头在原书纸本（Quercus 版 page-map）的页码。每行一段，行首 [段号]（每个文件内连续编号）。
+页码是这一节开头在原书纸本（Quercus 版 page-map）的页码。
+没有分隔的长篇由本站分节（见 SPLIT），标成 `## §k p.页码（本站分）`。每行一段，行首 [段号]（每个文件内连续编号）。
 段落标记：{Q} 缩进的引文或列表。*词* 是原书的斜体（多为法文）。全书的篇目和词数另存 source/text/index.tsv。"""
 import glob, html, os, re, sys, zipfile
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
@@ -13,6 +14,8 @@ Z = zipfile.ZipFile(epubs[0])
 PARTS = [("The Winter Circus", range(9, 13)), ("Distant Errors", range(14, 20)),
          ("Lessons from Things", range(21, 26)), ("A Machine to Draw the World", range(27, 35))]
 QUOTE = {"class_indentnumber", "class_indentnumber1"}
+# 原书没有分隔的长篇，本站按意思转折分节：篇号 → 第 2、3… 节从哪一段开始。这些节在文本里标「（本站分）」。
+SPLIT = {2: [3, 8, 10, 15], 15: [10, 21, 27, 34, 38], 17: [6, 13, 17, 28], 21: [5, 14, 26, 30, 38, 44]}
 BREAK = {"class_image4"}
 TITLE = {"class_h1", "class_h4"}
 
@@ -49,6 +52,8 @@ for pi, (pname, files) in enumerate(PARTS, 1):
             # 段落开头就跨页的，用段落里第一个页码之前的那页
             txt = clean(inner)
             if not txt: continue
+            if k + 1 in SPLIT.get(n, ()):
+                sec += 1; lines.append(f"## §{sec} p.{page}（本站分）")
             k += 1; words += len(txt.split())
             lines.append(f"[{k}] {'{Q} ' if cls in QUOTE else ''}{txt}")
             last = re.findall(r'id="page_(\d+)"', inner)

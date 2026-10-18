@@ -17,8 +17,9 @@
 
 - [x] A 找书　[x] B 问用户　[x] C 开目录
 - [x] D 提取（`tools/extract.py` → `source/text/NN.txt`，篇号 01–23；`index.tsv` 是篇目和词数）
-- [x] E 骨架（照 CMC：`assets/pm.js`、`chapters.js`、`style.css`、`index.html`、`recap.html`、`tools/lint.py`）；`AUTHORING.md` 等样板页认可后写
-- [ ] F 样板页 `chapters/03.html`（The Strike）已写好、三项检查通过，**等用户认可**　[ ] G 铺开　[ ] H 核查　[ ] I 上线　[ ] J 收尾
+- [x] E 骨架（照 CMC：`assets/pm.js`、`chapters.js`、`style.css`、`index.html`、`recap.html`、`tools/lint.py`）；`AUTHORING.md` 已写（2026-10-18）
+- [x] F 样板页 `chapters/03.html`（The Strike），用户 2026-10-18 认可（「照这个样板铺开」）
+- [ ] G 铺开：作者任务说明 `source/BRIEF.md`，22 位作者（Opus）各写一篇；验收记录 `source/ACCEPTANCE.md`　[ ] H 核查　[ ] I 上线　[ ] J 收尾
 
 ## 版式要点（样板页定下的）
 
