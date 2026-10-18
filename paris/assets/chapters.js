@@ -13,9 +13,9 @@ window.PM_CHAPTERS = [
   { n: 2, part: 1, journal: false, words: 2992, secs: 5, en: "Private Domain", t: "私人领地", zh: "", ny: "", d: "" },
   { n: 3, part: 1, journal: false, words: 2347, secs: 3, en: "The Strike", t: "罢工", zh: "", ny: "", d: "" },
   { n: 4, part: 1, journal: true, words: 7588, secs: 13, en: "The Winter Circus, Christmas Journal 1", t: "冬季马戏团", zh: "", ny: "", d: "" },
-  { n: 5, part: 2, journal: false, words: 2628, secs: 4, en: "The Rules of the Sport", t: "运动的规矩", zh: "", ny: "", d: "" },
+  { n: 5, part: 2, journal: false, words: 2628, secs: 4, en: "The Rules of the Sport", t: "运动的规矩", zh: "", ny: "1996-05-27", d: "" },
   { n: 6, part: 2, journal: false, words: 2827, secs: 5, en: "The Chill", t: "寒意", zh: "", ny: "", d: "" },
-  { n: 7, part: 2, journal: false, words: 2655, secs: 2, en: "A Tale of Two Cafés", t: "两家咖啡馆的故事", zh: "", ny: "", d: "" },
+  { n: 7, part: 2, journal: false, words: 2655, secs: 2, en: "A Tale of Two Cafés", t: "两家咖啡馆的故事", zh: "", ny: "1996-12-02", d: "" },
   { n: 8, part: 2, journal: true, words: 6667, secs: 15, en: "Distant Errors, Christmas Journal 2", t: "远方的错误", zh: "", ny: "", d: "" },
   { n: 9, part: 2, journal: false, words: 5734, secs: 5, en: "Papon’s Paper Trail", t: "Papon 的文书痕迹", zh: "", ny: "", d: "" },
   { n: 10, part: 2, journal: false, words: 796, secs: 1, en: "Trouble at the Tower", t: "铁塔上的麻烦", zh: "", ny: "", d: "" },
@@ -34,4 +34,4 @@ window.PM_CHAPTERS = [
   { n: 23, part: 4, journal: false, words: 2776, secs: 2, en: "One Last Ride", t: "最后一程", zh: "", ny: "", d: "" },
 ];
 // 页 00 是「开读之前」（主编写）。已经写好的页（主编统一维护）
-window.PM_READY = [0, 3];
+window.PM_READY = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23];
