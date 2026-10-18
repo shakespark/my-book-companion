@@ -19,6 +19,7 @@ my_book_companion/
 
 | 书 | 目录 / 网址 | 键前缀 | Calibre id | 状态 |
 |---|---|---|---|---|
+| Paris to the Moon（Adam Gopnik） | `paris/` · https://t.miaowuao.cn/paris/ | `pm-` | 6412 | 2026-10-19 上线：24 页，核查和词条审读都做过 |
 
 ## 新增一本书
 

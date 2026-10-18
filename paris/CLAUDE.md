@@ -20,8 +20,9 @@
 - [x] E 骨架（照 CMC：`assets/pm.js`、`chapters.js`、`style.css`、`index.html`、`recap.html`、`tools/lint.py`）；`AUTHORING.md` 已写（2026-10-18）
 - [x] F 样板页 `chapters/03.html`（The Strike），用户 2026-10-18 认可（「照这个样板铺开」）
 - [x] G 铺开：22 位作者（Opus）各写一篇，任务说明 `source/BRIEF.md`；主编逐页验收，记录在 `source/ACCEPTANCE.md`
-- [ ] H 核查：7 位核查员（`source/FACTCHECK.md`，收件箱 `source/factcheck-inbox.md`），另加一轮词条审读（`source/ENTRYREVIEW.md`）：验收时多数页只读了上半页，词条只有作者看过
-- [ ] I 上线（首页卡片、同步白名单、词本；`tutorials-home`、`tutorials-deploy` 的代码改动已做好未推）　[ ] J 收尾
+- [x] H 核查：7 位核查员（`source/FACTCHECK.md`）+ 7 位词条审读员（`source/ENTRYREVIEW.md`，约 1290 条改约 230 处）
+- [x] I 上线（2026-10-19）：同步服务 KEY_RE 加 pm-、首页卡片、词本 pm（按「篇」显示）
+- [x] J 收尾：总仓库 README 书单、tutorials-deploy README（教程表、前缀、踩坑）、PLAYBOOK、AUTHORING-COMMON
 
 ## 版式要点（样板页定下的）
 
@@ -32,3 +33,9 @@
 - 没有原书分隔的长篇（02 Private Domain、15 The Rookie、17 The Balzar Wars、21 Like a king）由主编在 `tools/extract.py` 里按段号分节，标「本站分」，页面上 `<li class="ours">`。10 Trouble at the Tower 只有 800 词，不分。
 - 《纽约客》刊期查不到可靠出处就不写（`chapters.js` 的 `ny` 留空）。
 - 检查：`python3 -I tools/lint.py chapters/NN.html`、`python3 -I tools/overlap.py chapters/NN.html`、`node tools/check.mjs chapters/NN.html --shots source/shots`。
+
+## 以后改这本书
+
+- 改哪一页就只动那一页；改完跑 lint、overlap、check 三项，`git add paris/` 提交推送即部署。
+- `assets/chapters.js` 的 `zh`（译本篇名）还空着：读者给了台湾译本目录后填进去，页面头和目录会自动显示。
+- 《纽约客》刊期（`ny`）：10、20、22、23 没查到，01 是导言、04/08/14/19 是私人日记，都留空。

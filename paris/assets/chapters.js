@@ -18,7 +18,7 @@ window.PM_CHAPTERS = [
   { n: 7, part: 2, journal: false, words: 2655, secs: 2, en: "A Tale of Two Cafés", t: "两家咖啡馆的故事", zh: "", ny: "1996-12-02", d: "两家老咖啡馆，三位朋友，三种巴黎式解释" },
   { n: 8, part: 2, journal: true, words: 6667, secs: 15, en: "Distant Errors, Christmas Journal 2", t: "远方的错误", zh: "", ny: "", d: "错永远在远方？语言、小店和一把椅子" },
   { n: 9, part: 2, journal: false, words: 5734, secs: 5, en: "Papon’s Paper Trail", t: "Papon 的文书痕迹", zh: "", ny: "1998-04-27", d: "签字的高官受审，审的是法国人对国家和文件的信仰" },
-  { n: 10, part: 2, journal: false, words: 796, secs: 1, en: "Trouble at the Tower", t: "铁塔上的麻烦", zh: "", ny: "", d: "铁塔电梯里一场口角，照出买与做的两种人" },
+  { n: 10, part: 2, journal: false, words: 796, secs: 1, en: "Trouble at the Tower", t: "铁塔上的麻烦", zh: "", ny: "1997-08-04", d: "铁塔电梯里一场口角，照出买与做的两种人" },
   { n: 11, part: 3, journal: false, words: 4784, secs: 7, en: "Couture Shock", t: "时装冲击", zh: "", ny: "1996-07-29", d: "看一周高级定制，在一场秀上找到它的用处" },
   { n: 12, part: 3, journal: false, words: 7465, secs: 8, en: "The Crisis in French Cooking", t: "法国菜的危机", zh: "", ny: "1997-04-28", d: "法国菜为何停在原地：一串诊断和一顿重访的晚饭" },
   { n: 13, part: 3, journal: false, words: 2605, secs: 5, en: "Barney in Paris", t: "Barney 在巴黎", zh: "", ny: "1997-04-21", d: "逃到巴黎躲紫色恐龙，孩子还是成了美国人" },
