@@ -1,0 +1,5 @@
+- `03-thibault.jpg` — File:Bernard Thibault 2006-03-07 n1.jpg — Marie-Lan Nguyen ( User:Jastrow ) — Public domain — https://commons.wikimedia.org/wiki/File%3ABernard_Thibault_2006-03-07_n1.jpg
+- `03-bateau-mouche.jpg` — File:Bateaux Mouches Paris 2011.jpg — Daniel Stockman — CC BY-SA 2.0 — https://commons.wikimedia.org/wiki/File%3ABateaux_Mouches_Paris_2011.jpg
+- `03-juppe.jpg` — File:Alain Juppé in 1995 (cropped).jpg — Archives nationales — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File%3AAlain_Jupp%C3%A9_in_1995_%28cropped%29.jpg
+- `03-fo-2023.jpg` — File:Manifestation Réforme des retraites 2023 Chambéry 28-mars (Libération-FO).JPG — Florian Pépellin — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File%3AManifestation_R%C3%A9forme_des_retraites_2023_Chamb%C3%A9ry_28-mars_%28Lib%C3%A9ration-FO%29.JPG
+- `03-tgv-sud-est.jpg` — File:La rame TGV Sud-Est 16 à Paris-Gare-de-Lyon.jpg — S23725 — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File%3ALa_rame_TGV_Sud-Est_16_%C3%A0_Paris-Gare-de-Lyon.jpg
