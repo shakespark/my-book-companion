@@ -1,0 +1,15 @@
+# 原书材料绝不入库：每本书的 source/（里面是指向 Calibre 的软链接和提取的文本）。
+# 不带斜杠，目录和同名软链接都挡住。
+source
+
+node_modules/
+__pycache__/
+*.pyc
+.DS_Store
+*.swp
+
+# 私钥绝不入库（部署私钥只放 GitHub Secret）
+*.pem
+*.key
+id_*
+!id_*.pub
