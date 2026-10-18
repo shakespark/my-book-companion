@@ -9,7 +9,8 @@ root=$(cd "$(dirname "$0")/.." && pwd)
 tpl=$HOME/tutorials-deploy/templates
 case $slug in _*|*[!a-z0-9_-]*|'') echo "目录名只能用小写字母、数字、- 和 _，且不以 _ 开头"; exit 2;; esac
 [ ! -e "$root/$slug" ] || { echo "$slug/ 已存在"; exit 1; }
-code=$(curl -s -o /dev/null -w '%{http_code}' "https://t.miaowuao.cn/$slug/")
+code=$(curl -s -o /dev/null -w '%{http_code}' "https://t.miaowuao.cn/$slug/" || true)
+[ "$code" != 000 ] || { echo "连不上 t.miaowuao.cn，查不了 /$slug/ 有没有被占用"; exit 1; }
 [ "$code" = 404 ] || { echo "线上 /$slug/ 返回 $code，已被别的站占用，换个名字"; exit 1; }
 
 mkdir -p "$root/$slug/tools"
