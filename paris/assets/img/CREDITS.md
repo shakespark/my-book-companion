@@ -3,3 +3,9 @@
 - `03-juppe.jpg` — File:Alain Juppé in 1995 (cropped).jpg — Archives nationales — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File%3AAlain_Jupp%C3%A9_in_1995_%28cropped%29.jpg
 - `03-fo-2023.jpg` — File:Manifestation Réforme des retraites 2023 Chambéry 28-mars (Libération-FO).JPG — Florian Pépellin — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File%3AManifestation_R%C3%A9forme_des_retraites_2023_Chamb%C3%A9ry_28-mars_%28Lib%C3%A9ration-FO%29.JPG
 - `03-tgv-sud-est.jpg` — File:La rame TGV Sud-Est 16 à Paris-Gare-de-Lyon.jpg — S23725 — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File%3ALa_rame_TGV_Sud-Est_16_%C3%A0_Paris-Gare-de-Lyon.jpg
+- `00-gopnik.jpg` — File:Adam Gopnik in 2014.png — PEN American Center — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File%3AAdam_Gopnik_in_2014.png
+- `00-luxembourg.jpg` — File:Palais du Luxembourg 2011 04.jpg — Photograph by Mike Peel ( www.mikepeel.net ). — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File%3APalais_du_Luxembourg_2011_04.jpg
+- `10-operator.jpg` — File:Ascenseur tour Eiffel - 20150801 16h59 (10633).jpg — Another one of my pictures: This photograph was taken by Medium69 (William Croch — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File%3AAscenseur_tour_Eiffel_-_20150801_16h59_%2810633%29.jpg
+- `04-carousel.jpg` — File:CH-KBAR - Karussel im Jardin du Luxembourg - KB-020511.tif — Maeder, Herbert, 1930–2017 — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File%3ACH-KBAR_-_Karussel_im_Jardin_du_Luxembourg_-_KB-020511.tif
+- `10-queue.jpg` — File:Tourists visiting the Eiffel Tower.jpg — Eutouring — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File%3ATourists_visiting_the_Eiffel_Tower.jpg
+- `02-rue-jacob.jpg` — File:P1090355 Paris VI rue Jacob rwk.JPG — Mbzt — CC BY 3.0 — https://commons.wikimedia.org/wiki/File%3AP1090355_Paris_VI_rue_Jacob_rwk.JPG

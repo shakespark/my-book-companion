@@ -34,4 +34,4 @@ window.PM_CHAPTERS = [
   { n: 23, part: 4, journal: false, words: 2776, secs: 2, en: "One Last Ride", t: "最后一程", zh: "", ny: "", d: "" },
 ];
 // 页 00 是「开读之前」（主编写）。已经写好的页（主编统一维护）
-window.PM_READY = [3];
+window.PM_READY = [0, 3];
