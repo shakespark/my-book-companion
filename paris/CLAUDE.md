@@ -19,7 +19,9 @@
 - [x] D 提取（`tools/extract.py` → `source/text/NN.txt`，篇号 01–23；`index.tsv` 是篇目和词数）
 - [x] E 骨架（照 CMC：`assets/pm.js`、`chapters.js`、`style.css`、`index.html`、`recap.html`、`tools/lint.py`）；`AUTHORING.md` 已写（2026-10-18）
 - [x] F 样板页 `chapters/03.html`（The Strike），用户 2026-10-18 认可（「照这个样板铺开」）
-- [ ] G 铺开：作者任务说明 `source/BRIEF.md`，22 位作者（Opus）各写一篇；验收记录 `source/ACCEPTANCE.md`　[ ] H 核查　[ ] I 上线　[ ] J 收尾
+- [x] G 铺开：22 位作者（Opus）各写一篇，任务说明 `source/BRIEF.md`；主编逐页验收，记录在 `source/ACCEPTANCE.md`
+- [ ] H 核查：7 位核查员（`source/FACTCHECK.md`，收件箱 `source/factcheck-inbox.md`），另加一轮词条审读（`source/ENTRYREVIEW.md`）：验收时多数页只读了上半页，词条只有作者看过
+- [ ] I 上线（首页卡片、同步白名单、词本；`tutorials-home`、`tutorials-deploy` 的代码改动已做好未推）　[ ] J 收尾
 
 ## 版式要点（样板页定下的）
 
