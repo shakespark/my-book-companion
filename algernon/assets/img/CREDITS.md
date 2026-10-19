@@ -59,4 +59,3 @@
 - `m5-huck.jpg` — File:Huckleberry-finn-with-rabbit.jpg — E. W. Kemble — Public domain — https://commons.wikimedia.org/wiki/File%3AHuckleberry-finn-with-rabbit.jpg
 - `m5-seagate.jpg` — File:Sea Gate aerial view.jpg — U.S. Army Corps of Engineers, photographer not specified or unknown — Public domain — https://commons.wikimedia.org/wiki/File%3ASea_Gate_aerial_view.jpg
 - `m3-brooklyn-college.jpg` — File:2016 Brooklyn College Boylan Hall.jpg — Beyond My Ken — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File%3A2016_Brooklyn_College_Boylan_Hall.jpg
-- `m3-t2-tanker.jpg` — File:Richfield Oil Corporation type T2-SE-A1 tanker David E. Day in port, circa in the early 1950s (7573488).jpg — U.S. Navy Bureau of Ships photo 19-NN-AO-36 Kennebec-146766 — Public domain — https://commons.wikimedia.org/wiki/File%3ARichfield_Oil_Corporation_type_T2-SE-A1_tanker_David_E._Day_in_port%2C_circa_in_the_early_1950s_%287573488%29.jpg
