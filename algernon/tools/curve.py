@@ -26,7 +26,10 @@ for pid in PAGES:
 dic = SpellChecker()
 # 词表里没有、但书里是正常写法的词（报告 10–16 里查出来的）：不算查理拼错
 dic.word_frequency.load_words(["eclair", "eclairs", "retardate", "retardates", "cliche", "naivete", "lamplit", "gateleg", "uptilted",
-    "psychophysical", "zagging", "photoeffect", "duncecap", "this'll", "what'd", "man'll"])
+    "psychophysical", "zagging", "photoeffect", "duncecap", "this'll", "what'd", "man'll",
+    # 报告 14–17：书里正常的词、别人嘴里的话（Fay 的 cigareet、造词，喝醉时的 din't）、猴子叫声、连字符拆开的半个词（cul-de-sac、hi-fi、Mazel tov）、电子书断词（exten sion）
+    "sneerer", "fairyish", "untidies", "upcurrent", "multipetaled", "undividing", "unclosing", "windowshade", "encl",
+    "junkmobiles", "tincannia", "cigareet", "din't", "chee", "cheee", "cheeee", "cheeeee", "cul", "fi", "tov", "un", "exten"])
 def known(w):
     w = unicodedata.normalize("NFKD", w.replace("’", "'")).encode("ascii", "ignore").decode()   # éclair → eclair
     return w in dic.word_frequency or (w.endswith("'s") and w[:-2] in dic.word_frequency)   # 所有格 men's、Donner's 不算错
