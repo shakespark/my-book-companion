@@ -140,7 +140,7 @@
     if (!toc) return;
     toc.append(item(INTRO));
     PARTS.forEach((p, i) => {
-      toc.append(h("li", { class: "blk" }, `第 ${i + 1} 部分　${p.t}`, h("span", { class: "te" }, `　${p.en}`), p.d ? h("span", { class: "d" }, p.d) : null));
+      toc.append(h("li", { class: "blk" }, `第 ${i + 1} 部分　${p.t}`, h("span", { class: "te" }, `　${p.en}` + (p.zh ? `　译本：${p.zh}` : "")), p.d ? h("span", { class: "d" }, p.d) : null));
       for (const c of CH.filter((x) => x.part === i + 1)) toc.append(item(c));
     });
     function item(c) {
