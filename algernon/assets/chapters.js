@@ -1,0 +1,44 @@
+// 全站目录。页 id 和 tools/extract.py 的 PAGES / MEMOIR、tools/lint.py 用同一套。主编维护，作者不改。
+// kind：novel 小说页 / memoir 回忆录页 / extra 主编写的专页。
+// 小说页：r 这一页包含的报告号；when 原书里这一页的日期范围（照书里的写法转成中文）；zh 中译本（陈澄和译）这几篇的标题。
+// 回忆录页：ch 章号（24 是后记）。
+// words 英文词数、secs 分节地图的节数（tools/extract.py 的输出，source/text/index.tsv）；t 本站给这一页起的标题（作者交稿后主编填，不剧透）；
+// d 一句话（不超过 24 个字，不剧透，给目录用）。t、d 空着时目录只显示报告号。
+window.AL_PAGES = [
+  { id: "01", kind: "novel", r: [1, 2, 3, 4, 5, 6], when: "3 月 3 日–3 月 8 日", zh: "近步抱告—1 至 6", words: 3800, secs: 6, t: "", d: "" },
+  { id: "07", kind: "novel", r: [7, 8], when: "3 月 11 日–3 月 31 日", zh: "进步报告—7、8", words: 6385, secs: 16, t: "", d: "" },
+  { id: "09", kind: "novel", r: [9], when: "4 月 1 日–4 月 18 日", zh: "进步报告—9", words: 6929, secs: 13, t: "", d: "" },
+  { id: "10", kind: "novel", r: [10], when: "4 月 21 日–4 月 28 日", zh: "进步报告—10", words: 4546, secs: 6, t: "", d: "" },
+  { id: "11a", kind: "novel", r: [11], when: "5 月 1 日–5 月 10 日", zh: "进步报告—11（前半）", words: 4901, secs: 5, t: "", d: "" },
+  { id: "11b", kind: "novel", r: [11], when: "5 月 11 日–5 月 25 日", zh: "进步报告—11（后半）", words: 4932, secs: 5, t: "", d: "" },
+  { id: "12", kind: "novel", r: [12], when: "6 月 5 日–6 月 8 日", zh: "进步报告—12", words: 5108, secs: 3, t: "", d: "" },
+  { id: "13a", kind: "novel", r: [13], when: "6 月 10 日", zh: "进步报告—13（前半）", words: 3386, secs: 5, t: "", d: "" },
+  { id: "13b", kind: "novel", r: [13], when: "6 月 11 日–6 月 13 日", zh: "进步报告—13（后半）", words: 5200, secs: 3, t: "", d: "" },
+  { id: "14a", kind: "novel", r: [14], when: "6 月 15 日–6 月 19 日", zh: "进步报告—14（一）", words: 3964, secs: 3, t: "", d: "" },
+  { id: "14b", kind: "novel", r: [14], when: "6 月 20 日–6 月 23 日", zh: "进步报告—14（二）", words: 4134, secs: 5, t: "", d: "" },
+  { id: "14c", kind: "novel", r: [14], when: "6 月 24 日–7 月 9 日", zh: "进步报告—14（三）", words: 5118, secs: 7, t: "", d: "" },
+  { id: "15", kind: "novel", r: [15], when: "7 月 12 日", zh: "进步报告—15", words: 1673, secs: 1, t: "", d: "" },
+  { id: "16a", kind: "novel", r: [16], when: "7 月 14 日–7 月 31 日", zh: "进步报告—16（一）", words: 5261, secs: 6, t: "", d: "" },
+  { id: "16b", kind: "novel", r: [16], when: "8 月 11 日–9 月 21 日", zh: "进步报告—16（二）", words: 4602, secs: 8, t: "", d: "" },
+  { id: "16c", kind: "novel", r: [16], when: "9 月 27 日", zh: "进步报告—16（三）", words: 5282, secs: 5, t: "", d: "" },
+  { id: "17a", kind: "novel", r: [17], when: "10 月 3 日–10 月 14 日", zh: "进步报告—17（前半）", words: 4569, secs: 9, t: "", d: "" },
+  { id: "17b", kind: "novel", r: [17], when: "10 月 17 日–11 月 21 日", zh: "进步报告—17（后半）", words: 4629, secs: 15, t: "", d: "" },
+  { id: "m1", kind: "memoir", ch: [1, 2, 3], words: 4589, secs: 10, t: "", d: "" },
+  { id: "m2", kind: "memoir", ch: [4, 5], words: 7159, secs: 11, t: "", d: "" },
+  { id: "m3", kind: "memoir", ch: [6, 7, 8], words: 5907, secs: 13, t: "", d: "" },
+  { id: "m4", kind: "memoir", ch: [9, 10], words: 4128, secs: 8, t: "", d: "" },
+  { id: "m5", kind: "memoir", ch: [11, 12, 13, 14], words: 6126, secs: 9, t: "", d: "" },
+  { id: "m6", kind: "memoir", ch: [15, 16, 17, 18], words: 7663, secs: 16, t: "", d: "" },
+  { id: "m7", kind: "memoir", ch: [19, 20, 21, 22, 23, 24], words: 9476, secs: 18, t: "", d: "" },
+  { id: "nv", kind: "extra", t: "中篇和长篇", words: 12018, secs: 12, d: "1959 年的中篇和 1966 年的长篇差在哪里" },
+];
+// 回忆录的五个部分（章号范围）
+window.AL_MEMOIR_PARTS = [
+  { en: "The Maze of Time", t: "时间的迷宫", ch: [1, 5] },
+  { en: "From Ship to Shrink", t: "从船上到诊室", ch: [6, 10] },
+  { en: "Mind over Matter", t: "心胜于物", ch: [11, 14] },
+  { en: "The Alchemy of Writing", t: "写作的炼金术", ch: [15, 18] },
+  { en: "Post-Publication Blues", t: "出版之后", ch: [19, 24] },
+];
+// 已经写好、验收过的页（主编维护）。"00" 是「开读之前」
+window.AL_READY = [];

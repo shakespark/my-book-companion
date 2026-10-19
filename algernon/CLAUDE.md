@@ -1,0 +1,56 @@
+# Flowers for Algernon · 导读（含回忆录 Algernon, Charlie, and I）
+
+- 小说：Daniel Keyes, *Flowers for Algernon*（1966 年长篇，Mariner 版 epub，约 8.5 万词，17 篇进步报告）。Calibre id **2262**，`source/calibre`。
+- 回忆录：Daniel Keyes, *Algernon, Charlie, and I: A Writer's Journey*（2004，Harcourt），5 部分 23 章加后记，约 4.6 万词；书末附 1959 年的原版中篇（约 1.2 万词）。Calibre id **5575**，`source/calibre-memoir`（EPUB 是用户 2026-10-19 在 Calibre 里转的）。
+- 中译本：《献给阿尔吉侬的花束》，陈澄和译，河南文艺出版社 2022 年 8 月，理想国。Calibre id **6838**，`source/calibre-zh`。17 篇和原书一一对应。
+  不用的：2263（另一个英文 epub，正文相同、按固定长度切文件）、1718（网上搜集的中译，没写译者）。
+- 网址 https://t.miaowuao.cn/algernon/ ，目录 `algernon/`，localStorage 键前缀 `al-`，共享脚本 `assets/al.js`。骨架照 Paris（`paris/`），读前 / 读后分界照盛夏之门。
+
+## 用户的回答（2026-10-19）
+
+- 卡在哪：**语言、结构、情感和讨论都要**。语言：前后几篇拼错的字、后半的心理学和学术腔、1960 年代纽约。结构：童年记忆乱序冒出来。情感和讨论：读后有话可说（智力与人性、实验伦理、对照今天）。
+- 提前知道内容：用户**读过 1959 年的中篇，知道结局**，不设硬分界，页面中间一道「先去读原书」。
+  但长篇新加的情节（家庭往事、重逢、感情线）用户不知道（旁路提醒，用户转来，2026-10-19 采纳）：分界线之前不提后面报告里的事；跨页汇总的东西（记忆拼图、文字曲线、人物卡、全书回顾）只揭开到读者标记读完的那一页。
+- 怎么读：**英文 Kindle**。`.loc` 必须一字不差（读者拿它搜索）；单个生词不收（长按能查），拼错的字例外（词典查不到）。
+- 译本：**难句附译本译法**。只能放在专用元素里，每处很短、每页限条数，lint 核对它确实出自译本；元素之外不得和译本连续 12 个汉字相同。
+- 回忆录：**同一个目录的第二部分**，默认读完小说再看；另有一页「中篇和长篇对照」。
+- 原书：商业出版，全套版权红线（小说、回忆录、中篇、译本都算）。
+- 部署：**到时候直接做，做完告诉用户**（首页卡片、同步白名单、推送上线；只限这本书）。
+- 推送：第 5 段（小说上线）之前**只在本地提交，不推送**（一推就会部署半成品）。
+
+## 分段计划（用户 2026-10-19 同意，额度不够一次做完）
+
+| 段 | 内容 | 状态 |
+|---|---|---|
+| 1 | A–E：开目录、提取三本书、拆页方案、`AUTHORING.md`、骨架、lint、文字曲线脚本 | 2026-10-19 完成 |
+| 2 | F：主编写样板页 `chapters/09.html`（报告 9，标点那一课在 4 月 7 日），三项检查 + 事实核查，**等用户认可** | 下一步 |
+| 3 | G 第一批：`BRIEF.md`，小说前半 | |
+| 4 | G 第二批：小说后半 | |
+| 5 | H：小说核查轮、词条审读、`recap.html`；**小说部分上线**（I） | |
+| 6 | 回忆录各页 + 中篇和长篇对照页，验收、核查，上线 | |
+| 7 | J：收尾记录 | |
+
+## 进度
+
+- [x] A 找书　[x] B 问用户　[x] C 开目录（`_tools/calibre.py link` 加了第三个参数「链接名」，用来挂第二、三本书）
+- [x] D 提取（2026-10-19）：`tools/extract.py` → `source/text/`，页 id 定死在它的 `PAGES` / `MEMOIR` 里（chapters.js、lint.py 用同一套）。
+  小说 18 页（报告 1–6 合一页、7–8 合一页，11、13 拆两页，14、16 拆三页，17 拆两页），`## §k` 是一条带日期的报告，日期从段首拿掉；
+  16c（9 月 27 日一整条，约 5300 词）由本站按场面分 5 节（`SPLIT`）。回忆录 7 页（m1–m7，m7 含后记）、原版中篇 `nv.txt`、献词题记 `00.txt`、
+  译本 `zh/r01–r17.txt`（一篇报告一个文件，`## 日期`，`{注}` 是编者注）。回忆录的小型大写拆成 span（`S<span>TADIUM</span>`），已原地拼回。
+- [x] E 规范和骨架（2026-10-19）：`AUTHORING.md`（只管小说页；回忆录页和 nv 页第 6 段再补）、`assets/al.js`（照 Paris 的 pm.js 改，加读前 / 读后分界、文字曲线、记忆拼图、只揭开到已读页）、
+  `assets/style.css`（照 Paris，末尾加本站组件）、`assets/chapters.js`（`AL_PAGES`，标题 t 和一句话 d 待填）、`index.html`、`recap.html`、`curve.html`、`memory.html`、`tools/lint.py`。
+  首页和三个汇总页 check.mjs 全部通过；lint 还没有页面可跑（第 2 段在样板页上跑通）。
+
+## 小说页的版式（第 1 段定的，样板页可能再调）
+
+- 读前四节：读之前（.gist + 查理此刻 .where + 带着读的问题）/ 分节地图 / 背景：书里默认你知道的事 / 词与短语。
+- `<section class="after">` 里七节：查理的文字（曲线）/ 记忆拼图（可省）/ 值得停下来的句子 / 读完想一想 / 对照今天（可省，带图例）/ 检查一下理解 / 精彩回顾。
+- 词条三类：`entry spell`（查理拼错的，`.en` 照书里拼法）、`entry trap`、普通。译本译法只能写在 `<span class="zhv">译本：「≤20 字」…</span>` 里，每页 ≤6 处，lint 去译本里核对。
+- 分节地图的 `<b>` 由脚本定（「4 月 1 日」「报告 3 · 3 月 5 日」「6 月 10 日（续）」），`python3 -I tools/lint.py --map <页>` 打出骨架。
+
+## 怎么改、怎么验
+
+- 改了提取规则：`python3 -I tools/extract.py`，再 `source/.venv/bin/python -I tools/curve.py`（重新生成 `assets/curve.js`，**不要手改**）。
+- 检查：`python3 -I tools/lint.py chapters/<页>.html`、`python3 -I tools/overlap.py chapters/<页>.html`（每页引用 ≤2）、`node tools/check.mjs chapters/<页>.html --shots source/shots`。
+- `source/.venv` 装了 Pillow（取图）和 pyspellchecker（曲线的词表）。
+- 第 5 段之前只本地提交：`git add algernon/ && git commit`，不推送。
