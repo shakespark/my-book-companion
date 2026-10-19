@@ -24,7 +24,7 @@ window.AL_PAGES = [
   { id: "17a", kind: "novel", r: [17], when: "10 月 3 日–10 月 14 日", zh: "进步报告—17（前半）", words: 4569, secs: 9, t: "开始往下走", d: "10 月 3–14 日，他记录衰退的头两个星期" },
   { id: "17b", kind: "novel", r: [17], when: "10 月 17 日–11 月 21 日", zh: "进步报告—17（后半）", words: 4629, secs: 15, t: "最后一份报告", d: "文字一样样退回去，最后剩下的是什么" },
   { id: "m1", kind: "memoir", ch: [1, 2, 3], words: 4589, secs: 10, t: "", d: "" },
-  { id: "m2", kind: "memoir", ch: [4, 5], words: 7159, secs: 11, t: "", d: "" },
+  { id: "m2", kind: "memoir", ch: [4, 5], words: 7159, secs: 11, t: "贝果、冷饮店和油轮", d: "少年打工的街坊，和一趟油轮上的差事" },
   { id: "m3", kind: "memoir", ch: [6, 7, 8], words: 5907, secs: 13, t: "", d: "" },
   { id: "m4", kind: "memoir", ch: [9, 10], words: 4128, secs: 8, t: "", d: "" },
   { id: "m5", kind: "memoir", ch: [11, 12, 13, 14], words: 6126, secs: 9, t: "", d: "" },
