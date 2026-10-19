@@ -17,7 +17,6 @@
 - `01-hampton-maze.jpg` — File:Hampton Court hedge maze.jpg — Kris Arnold — CC BY-SA 2.0 — https://commons.wikimedia.org/wiki/File%3AHampton_Court_hedge_maze.jpg
 - `07-freud-couch.jpg` — File:Study with the couch, Freud Museum London, 18M0138.jpg — Zde — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File%3AStudy_with_the_couch%2C_Freud_Museum_London%2C_18M0138.jpg
 - `10-first-folio.jpg` — File:Title page William Shakespeare's First Folio 1623.jpg — Martin Droeshout — Public domain — https://commons.wikimedia.org/wiki/File%3ATitle_page_William_Shakespeare%27s_First_Folio_1623.jpg
-- `11a-register.jpg` — File:Cash register made by the National Cash Register company, 1913.jpg — 作者不详 — Public domain — https://commons.wikimedia.org/wiki/File%3ACash_register_made_by_the_National_Cash_Register_company%2C_1913.jpg
 - `01-rabbits-foot.jpg` — File:Rabbitsfoot.jpg — Sobebunny — CC BY-SA 3.0 — https://commons.wikimedia.org/wiki/File%3ARabbitsfoot.jpg
 - `10-baker-1943.jpg` — File:Michael Spinella, Italian baker in a Lithuanian bakery 8d19622v.jpg — Marjory Collins — Public domain — https://commons.wikimedia.org/wiki/File%3AMichael_Spinella%2C_Italian_baker_in_a_Lithuanian_bakery_8d19622v.jpg
 - `01-rorschach-card1.jpg` — File:Rorschach blot 01.jpg — Hermann Rorschach (died 1922) — Public domain — https://commons.wikimedia.org/wiki/File%3ARorschach_blot_01.jpg
@@ -25,19 +24,15 @@
 - `16b-brain-gray.jpg` — File:Gray726.png — Henry Vandyke Carter — Public domain — https://commons.wikimedia.org/wiki/File%3AGray726.png
 - `16c-bond-street.jpg` — File:ROW HOUSES ON BOND STREET IN BROOKLYN, NEW YORK CITY BROOKLYN REMAINS ONE OF AMERICA'S BEST SURVIVING EXAMPLES OF A... - NARA - 555942.jpg — Danny Lyon — Public domain — https://commons.wikimedia.org/wiki/File%3AROW_HOUSES_ON_BOND_STREET_IN_BROOKLYN%2C_NEW_YORK_CITY_BROOKLYN_REMAINS_ONE_OF_AMERICA%27S_BEST_SURVIVING_EXAMPLES_OF_A..._-_NARA_-_555942.jpg
 - `16b-martini.jpg` — File:Dry Martini-2.jpg — Hayford Peirce (derivative of Dry_Martini.jpg) — Public domain — https://commons.wikimedia.org/wiki/File%3ADry_Martini-2.jpg
-- `17b-testpattern.jpg` — File:RCA Indian Head test pattern.JPG — RCA — Public domain — https://commons.wikimedia.org/wiki/File%3ARCA_Indian_Head_test_pattern.JPG
 - `17b-windmill.jpg` — File:Don Quixote 6.jpg — Gustave Doré — Public domain — https://commons.wikimedia.org/wiki/File%3ADon_Quixote_6.jpg
 - `17a-paradise-lost.jpg` — File:Houghton EC65.M6427P.1667aa - Paradise Lost, 1667.jpg — John Milton — Public domain — https://commons.wikimedia.org/wiki/File%3AHoughton_EC65.M6427P.1667aa_-_Paradise_Lost%2C_1667.jpg
 - `17a-knossos-coin.jpg` — File:Knosos - 330-300 BC - silver stater - head of Ariadne - labyrinth - Berlin MK AM.jpg — ArchaiOptix — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File%3AKnosos_-_330-300_BC_-_silver_stater_-_head_of_Ariadne_-_labyrinth_-_Berlin_MK_AM.jpg
-- `17b-quizkids.jpg` — File:Quiz kids 1940s card.JPG — Blue Network (NBC)/Alka-Seltzer Uploaded by We hope at en.wikipedia — Public domain — https://commons.wikimedia.org/wiki/File%3AQuiz_kids_1940s_card.JPG
 - `14b-barbershop.jpg` — File:Washington, D.C. Negro barbershop on U Street 8c28488v.jpg — Marjory Collins — Public domain — https://commons.wikimedia.org/wiki/File%3AWashington%2C_D.C._Negro_barbershop_on_U_Street_8c28488v.jpg
-- `17a-stravinsky.jpg` — File:Igor Stravinsky LCCN2016872669.jpg — Harris & Ewing Collection — Public domain — https://commons.wikimedia.org/wiki/File%3AIgor_Stravinsky_LCCN2016872669.jpg
 - `16a-lautrec.jpg` — File:Moulin Rouge- La Goulue MET DT11780.jpg — Henri de Toulouse-Lautrec — CC0 — https://commons.wikimedia.org/wiki/File%3AMoulin_Rouge-_La_Goulue_MET_DT11780.jpg
 - `14b-david.jpg` — File:Michelangelo David crop.jpg — George M. Groutas — CC BY 2.0 — https://commons.wikimedia.org/wiki/File%3AMichelangelo_David_crop.jpg
 - `15-ibm7090.jpg` — File:NASAComputerRoom7090.NARA.jpg — NASA — Public domain — https://commons.wikimedia.org/wiki/File%3ANASAComputerRoom7090.NARA.jpg
 - `16a-letchworth.jpg` — File:Letchworth Village building Dec 11.jpg — Doug Kerr from Albany, NY, United States — CC BY-SA 2.0 — https://commons.wikimedia.org/wiki/File%3ALetchworth_Village_building_Dec_11.jpg
-- `14b-salesman.jpg` — File:Death of a Salesman Lee J. Cobb 1966.jpg — CBSTelevision — Public domain — https://commons.wikimedia.org/wiki/File%3ADeath_of_a_Salesman_Lee_J._Cobb_1966.jpg
-- `15-puzzle-box.jpg` — File:Original "Puzzle Box" Apparatus Design.png — E.J. Thorndike — Public domain — https://commons.wikimedia.org/wiki/File%3AOriginal_%22Puzzle_Box%22_Apparatus_Design.png
+- `15-puzzle-box.jpg` — File:Original "Puzzle Box" Apparatus Design.png — Edward L. Thorndike — Public domain — https://commons.wikimedia.org/wiki/File%3AOriginal_%22Puzzle_Box%22_Apparatus_Design.png
 - `14c-fire-escape.jpg` — File:341 EAST FORTY-EIGHTH STREET (TENEMENT HOUSE ) DETAIL SHOWING FIRE ESCAPE - United Nations Vicinity Area Study, Second Avenue, East Forty-first, East Forty-third, East Forty HABS NY,31-NEYO,152-28.tif — 作者不详 — Public domain — https://commons.wikimedia.org/wiki/File%3A341_EAST_FORTY-EIGHTH_STREET_%28TENEMENT_HOUSE_%29_DETAIL_SHOWING_FIRE_ESCAPE_-_United_Nations_Vicinity_Area_Study%2C_Second_Avenue%2C_East_Forty-first%2C_East_Forty-third%2C_East_Forty_HABS_NY%2C31-NEYO%2C152-28.tif
 - `14c-times-square-1963.jpg` — File:US042 Times Square 1963.jpg — wilford peloquin — CC BY 2.0 — https://commons.wikimedia.org/wiki/File%3AUS042_Times_Square_1963.jpg
 - `14c-delhi-sign.jpg` — File:Red cross road, street signboard, New delhi.jpg — Sidheeq — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File%3ARed_cross_road%2C_street_signboard%2C_New_delhi.jpg
