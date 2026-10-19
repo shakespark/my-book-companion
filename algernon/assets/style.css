@@ -327,6 +327,15 @@ section.after > h2:first-child { margin-top: 28px; }
 .where { border: 1px solid var(--border); border-left: 4px solid var(--c3); background: var(--surface); border-radius: var(--radius); padding: 12px 16px; margin: 12px 0 14px; }
 .where::before { content: "查理此刻"; display: block; font-size: 12px; font-weight: 700; letter-spacing: .06em; color: var(--c3); margin-bottom: 4px; }
 .where > :last-child { margin-bottom: 0; }
+body[data-page^="m"] .where::before { content: "作者此刻"; }
+
+/* 回忆录页「对照小说」：<div class="xref"><b>标题</b><p>…</p><a class="go" href="09.html#s12">报告 9 · 4 月 17 日</a><span class="sec">§5</span></div> */
+.xref { position: relative; background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--c2); border-radius: var(--radius); padding: 10px 14px; margin: 10px 0; font-size: 15px; }
+.xref b { display: block; padding-right: 48px; }
+.xref p { margin: 4px 0 6px; }
+.xref .go { font-size: 13.5px; }
+.xref .go::before { content: "→ 小说 · "; }
+.xref .sec { position: absolute; top: 10px; right: 12px; font-family: var(--serif); font-size: 13px; font-weight: 700; color: var(--accent); background: var(--accent-soft); border-radius: 4px; padding: 1px 7px; }
 
 /* 查理拼错的词：<div class="entry spell"> */
 .entry.spell { border-left: 4px solid var(--c4); }

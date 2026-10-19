@@ -28,7 +28,7 @@ window.AL_PAGES = [
   { id: "m3", kind: "memoir", ch: [6, 7, 8], words: 5907, secs: 13, t: "", d: "" },
   { id: "m4", kind: "memoir", ch: [9, 10], words: 4128, secs: 8, t: "", d: "" },
   { id: "m5", kind: "memoir", ch: [11, 12, 13, 14], words: 6126, secs: 9, t: "", d: "" },
-  { id: "m6", kind: "memoir", ch: [15, 16, 17, 18], words: 7663, secs: 16, t: "", d: "" },
+  { id: "m6", kind: "memoir", ch: [15, 16, 17, 18], words: 7663, secs: 16, t: "把中篇写成长篇", d: "从电视版播出到长篇写成的那几年" },
   { id: "m7", kind: "memoir", ch: [19, 20, 21, 22, 23, 24], words: 9476, secs: 18, t: "", d: "" },
   { id: "nv", kind: "extra", t: "中篇和长篇", words: 12018, secs: 12, d: "1959 年的中篇和 1966 年的长篇差在哪里" },
 ];
@@ -41,4 +41,4 @@ window.AL_MEMOIR_PARTS = [
   { en: "Post-Publication Blues", t: "出版之后", ch: [19, 24] },
 ];
 // 已经写好、验收过的页（主编维护）。"00" 是「开读之前」，写好后也要加进来
-window.AL_READY = ["00", "01", "07", "09", "10", "11a", "11b", "12", "13a", "13b", "14a", "14b", "14c", "15", "16a", "16b", "16c", "17a", "17b"];
+window.AL_READY = ["00", "01", "07", "09", "10", "11a", "11b", "12", "13a", "13b", "14a", "14b", "14c", "15", "16a", "16b", "16c", "17a", "17b", "m6"];

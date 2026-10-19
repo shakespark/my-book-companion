@@ -92,7 +92,7 @@
     if (!LS.get(key) && !isDone(id)) document.body.classList.add("after-locked");
     after.before(h("div", { class: "gate" },
       h("b", {}, "读前部分到这里。先去读原书的这一段"),
-      h("span", {}, "下面会讲到这一页的情节：查理的文字怎么变了、他想起了什么、讨论和回顾。"),
+      h("span", {}, byId(id)?.kind === "memoir" ? "下面会讲到这几章的内容：作者的经历落在小说哪一页、讨论和回顾。" : "下面会讲到这一页的情节：查理的文字怎么变了、他想起了什么、讨论和回顾。"),
       h("button", { class: "btn primary", onclick: open }, "这一段我读完了，展开")));
   }
 

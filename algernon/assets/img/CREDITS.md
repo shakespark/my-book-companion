@@ -40,3 +40,5 @@
 - `14a-fire-escape.jpg` — File:Keep your fire escapes clear LCCN98516613.jpg — Work Projects Administration Poster Collection — Public domain — https://commons.wikimedia.org/wiki/File%3AKeep_your_fire_escapes_clear_LCCN98516613.jpg
 - `14a-washington-square.jpg` — File:Washington Square looking north, Manhattan (NYPL b13668355-482858).jpg — Berenice Abbott — Public domain — https://commons.wikimedia.org/wiki/File%3AWashington_Square_looking_north%2C_Manhattan_%28NYPL_b13668355-482858%29.jpg
 - `14a-salmagundi.jpg` — File:Salmagundi-title.jpg — William Irving, Washington Irving, James Kirke Paulding (artwork is signed, but  — Public domain — https://commons.wikimedia.org/wiki/File%3ASalmagundi-title.jpg
+- `m6-wayne-state.jpg` — File:Detroit December 2021 02 (Wayne State University Old Main).jpg — Michael Barera — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File%3ADetroit_December_2021_02_%28Wayne_State_University_Old_Main%29.jpg
+- `m6-fitzgerald.jpg` — File:F Scott Fitzgerald 1921.jpg — Photographer unknown（出版社发的宣传照，刊于 The World's Work 1921 年 6 月号） — Public domain — https://commons.wikimedia.org/wiki/File%3AF_Scott_Fitzgerald_1921.jpg

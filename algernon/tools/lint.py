@@ -6,7 +6,8 @@
 查理的文字（曲线、字数）、记忆拼图（年纪、长度）、引用块（数量、长度、不能引 {Q} 段落）、读完想一想、对照今天（图例、核对日期）、
 精彩回顾、图片、理解检查的题数、译本（「译本：」只能在 .zhv 里，引的句子要真在译本里、够短；别处不能和译本连续 12 个汉字相同）、
 页面里的 <style>/<script>/写死的颜色、直引号、原书材料的路径。
-回忆录页（m1–m7）的规则第 6 段再定，现在只查通用的几项。通用的检查在 ~/tutorials-deploy/scripts/lint_common.py。"""
+回忆录页（m1–m7）读后没有「查理的文字」「记忆拼图」，换成「对照小说」（卡片链到小说页，查链接和锚点在不在）；没有拼错词条和 .zhv；
+引用块不能引 {Q} 段落，也不能引正文里斜体嵌进来的小说原句。nv 等专页只查通用的几项。通用的检查在 ~/tutorials-deploy/scripts/lint_common.py。"""
 import os, re, sys
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 sys.path.insert(0, os.path.expanduser("~/tutorials-deploy/scripts"))
@@ -14,6 +15,8 @@ from lint_common import norm, check_entries, check_quotes, check_images, check_m
 
 BEFORE = ["读之前", "分节地图", "背景：书里默认你知道的事", "词与短语"]
 AFTER = ["查理的文字", "记忆拼图", "值得停下来的句子", "读完想一想", "对照今天", "检查一下理解", "精彩回顾"]
+AFTER_M = ["对照小说", "值得停下来的句子", "读完想一想", "对照今天", "检查一下理解", "精彩回顾"]
+MEMOIR = {f"m{i}" for i in range(1, 8)}
 OPTIONAL = {"记忆拼图", "对照今天"}
 # 页 id → 报告号（和 tools/extract.py 的 PAGES 一致）
 REPORTS = {"01": [1, 2, 3, 4, 5, 6], "07": [7, 8], "09": [9], "10": [10], "11a": [11], "11b": [11], "12": [12], "13a": [13], "13b": [13],
@@ -25,22 +28,27 @@ MON = {m: i for i, ms in enumerate([["january"], ["february"], ["march", "mar", 
 han = lambda s: len(re.findall(r"[一-鿿]", re.sub(r"<[^>]+>", "", s)))
 
 def load(src):
-    """读 source/text/<页>.txt。返回 paras {段号: 文字}、quoted {是 {Q} 的段号}、secs [(节号, 报告, 日期, 是否本站分, 第一段, 最后一段, 词数)]。"""
-    paras, quoted, secs = {}, set(), []
+    """读 source/text/<页>.txt。返回 paras {段号: 文字}、quoted {是 {Q} 的段号}、secs [(节号, 报告, 日期, 是否本站分, 第一段, 最后一段, 词数)]、
+    plain {段号: 去掉斜体部分的文字}（回忆录正文里用斜体嵌进来的小说原句不能当引用块）。
+    回忆录页的节：报告号一格放章号（后记是 24），日期一格放「第 15 章 英文章名」「第 15 章（续）」「后记 …」。"""
+    paras, quoted, secs, plain = {}, set(), [], {}
     for line in open(src, encoding="utf-8").read().splitlines():
         m = re.match(r"## §(\d+) 报告 (\d+) · (.*)$", line)
         if m: secs.append([int(m.group(1)), int(m.group(2)), m.group(3), "本站分" in m.group(3), None, None, 0]); continue
+        m = re.match(r"## §(\d+) ((?:第 (\d+) 章|后记).*)$", line)
+        if m: secs.append([int(m.group(1)), int(m.group(3) or 24), m.group(2).strip(), False, None, None, 0]); continue
         m = re.match(r"\[(\d+)\] (\{Q\} )?(.*)$", line)
         if m:
-            p = int(m.group(1)); paras[p] = norm(m.group(3))
+            p = int(m.group(1)); paras[p] = norm(m.group(3)); plain[p] = norm(re.sub(r"\*[^*]*\*", " … ", m.group(3)))
             if m.group(2): quoted.add(p)
             s = secs[-1]; s[4] = s[4] or p; s[5] = p; s[6] += len(m.group(3).split())
-    return paras, quoted, [tuple(s) for s in secs]
+    return paras, quoted, [tuple(s) for s in secs], plain
 
 def want_label(secs, i):
     """分节地图 <b> 的标签：日期转成「4 月 1 日」，*** 之后和本站分的节加「（续）」，报告开头没有日期的写「报告 N」；
     一页包含几篇报告时，每篇报告的第一节前面加「报告 N · 」。"""
     k, r, d, ours = secs[i][:4]
+    if d.startswith(("第 ", "后记")): return d.split("（续）")[0] + "（续）" if "（续）" in d else d.replace("*", "")   # 回忆录：章号加英文章名
     cont = "（续）" if "（" in d else ""
     base = d.split("（")[0].strip()
     m = re.match(r"([A-Za-z]+)\.? (\d+)$", base)
@@ -66,24 +74,27 @@ def zh_text(rs):
 if sys.argv[1:2] == ["--map"]:
     # 打印分节地图的骨架（标签、词数、开头几个词），作者照着填 .what：python3 -I tools/lint.py --map 09
     for pid in sys.argv[2:]:
-        paras, quoted, secs = load(os.path.join(ROOT, f"source/text/{pid}.txt"))
+        paras, quoted, secs, _ = load(os.path.join(ROOT, f"source/text/{pid}.txt"))
         for i, (k, r, d, ours, p0, p1, words) in enumerate(secs):
             first = next((paras[p] for p in range(p0, p1 + 1) if p not in quoted), "")
             first = re.sub(r'"(?=\w)', "“", first).replace('"', "”").replace("'", "’")   # 页面里用弯引号，lint 比对时会统一
             cls = ' class="ours"' if ours else ""
-            print(f'  <li data-sec="{k}"{cls}><b>{want_label(secs, i)}<span class="w">约 {round(words, -2) or words} 词</span></b><span class="en">{" ".join(first.split()[:6])} …</span><span class="what"></span></li>   <!-- 第 {p0}–{p1} 段 -->')
+            lab = re.sub(r'"(?=\w)', "“", want_label(secs, i)).replace('"', "”").replace("'", "’")
+            print(f'  <li data-sec="{k}"{cls}><b>{lab}<span class="w">约 {round(words, -2) or words} 词</span></b><span class="en">{" ".join(first.split()[:6])} …</span><span class="what"></span></li>   <!-- 第 {p0}–{p1} 段 -->')
     sys.exit(0)
 
 bad = 0
 for path in sys.argv[1:]:
     t = open(path, encoding="utf-8").read(); errs = []
     pid = re.search(r"([0-9a-z]+)\.html$", path).group(1)
-    if pid not in REPORTS:
+    memoir = pid in MEMOIR
+    if pid not in REPORTS and not memoir:
         errs += check_markup(t)
         print(("✗" if errs else "✓"), path, "（回忆录页和专页的规则还没定，只查了通用的几项）")
         for e in errs: print("    " + e)
         bad += bool(errs); continue
-    paras, quoted, secs = load(os.path.join(ROOT, f"source/text/{pid}.txt"))
+    paras, quoted, secs, plain = load(os.path.join(ROOT, f"source/text/{pid}.txt"))
+    AFT = AFTER_M if memoir else AFTER
     if f'<body data-page="{pid}">' not in t: errs.append(f'<body> 应写成 <body data-page="{pid}">')
     def part(a):
         i = t.find(f"<h2>{a}</h2>")
@@ -92,7 +103,7 @@ for path in sys.argv[1:]:
         return t[i:j if j > 0 else len(t)]
 
     # 小节标题、顺序、读前 / 读后
-    SECS = BEFORE + AFTER
+    SECS = BEFORE + AFT
     present = [s for s in SECS if f"<h2>{s}</h2>" in t]
     for s in SECS:
         if s not in present and s not in OPTIONAL: errs.append(f"缺少小节：{s}")
@@ -106,7 +117,7 @@ for path in sys.argv[1:]:
         for s in present:
             i = t.find(f"<h2>{s}</h2>")
             if s in BEFORE and i > a0: errs.append(f"「{s}」是读前的一节，要放在 <section class=\"after\"> 前面")
-            if s in AFTER and i < a0: errs.append(f"「{s}」是读后的一节，要放在 <section class=\"after\"> 里面")
+            if s in AFT and i < a0: errs.append(f"「{s}」是读后的一节，要放在 <section class=\"after\"> 里面")
 
     # 读之前
     pre = part("读之前")
@@ -114,8 +125,10 @@ for path in sys.argv[1:]:
     if not g: errs.append("「读之前」要有 <div class=\"gist\">")
     elif han(g.group(1)) > 180: errs.append(f"「读之前」的 .gist {han(g.group(1))} 个汉字，超过 180")
     w = re.search(r'<div class="where">(.*?)</div>', pre, flags=re.S)
-    if not w: errs.append("「读之前」要有 <div class=\"where\">（查理此刻）")
-    elif han(w.group(1)) > 150: errs.append(f"「查理此刻」{han(w.group(1))} 个汉字，超过 150")
+    who = "作者此刻" if memoir else "查理此刻"
+    if not w: errs.append(f"「读之前」要有 <div class=\"where\">（{who}）")
+    elif han(w.group(1)) > 150: errs.append(f"「{who}」{han(w.group(1))} 个汉字，超过 150")
+    elif re.search(r"<p>\s*(查理|作者)此刻", w.group(1)): errs.append(f"「{who}」这几个字由样式表加，.where 里不要再写")
     nq = len(re.findall(r"<li>", re.search(r'<ol class="qs">(.*?)</ol>', pre, flags=re.S).group(1))) if '<ol class="qs">' in pre else 0
     if not 2 <= nq <= 4: errs.append(f"「读之前」带着读的问题（<ol class=\"qs\">）应有 2–4 个，现在 {nq} 个")
 
@@ -128,7 +141,7 @@ for path in sys.argv[1:]:
         _, _, _, is_ours, p0, p1, words = sec
         if bool(ours) != is_ours: errs.append(f"分节地图 §{k}：" + ("这一节是本站分的，<li> 要加 class=\"ours\"" if is_ours else "这一节是原书的分隔，不要加 class=\"ours\""))
         lab = re.sub(r"<[^>]+>", "", b).strip()
-        if lab != want_label(secs, i): errs.append(f"分节地图 §{k}：<b> 应写「{want_label(secs, i)}」，现在是「{lab}」")
+        if norm(lab) != norm(want_label(secs, i)): errs.append(f"分节地图 §{k}：<b> 应写「{want_label(secs, i)}」，现在是「{lab}」")
         e = norm(re.sub(r"<[^>]+>", "", en)).strip("… ").strip()
         first = next((paras[p] for p in range(p0, p1 + 1) if p in paras and p not in quoted), "")
         if not (first.startswith(e) and 4 <= len(e.split()) <= 7): errs.append(f"分节地图 §{k}：.en 照抄这一节第一段（不算引文）开头 4–7 个词，后面加 …：{e!r}")
@@ -166,12 +179,25 @@ for path in sys.argv[1:]:
     n_spell = len(re.findall(r'class="entry spell"', t)); n_trap = len(re.findall(r'class="entry trap"', t))
     n_all = len(re.findall(r'<div class="en">', t))
     if n_all - n_spell and n_trap < (n_all - n_spell) / 3: errs.append(f"trap 只有 {n_trap} 条，不到拼写以外词条（{n_all - n_spell} 条）的三分之一")
+    if memoir and n_spell: errs.append("回忆录页没有「查理拼的」词条（entry spell），改成普通词条或 trap")
     if n_spell < SPELL_MIN.get(pid, 0): errs.append(f"「查理拼的」词条（entry spell）只有 {n_spell} 条，这一页至少 {SPELL_MIN[pid]} 条")
     if re.search(r'class="entry (?:trap spell|spell trap)"', t): errs.append("一条词条不能既是 trap 又是 spell")
 
+    # 回忆录：对照小说，2–6 张卡片，链到小说页（锚点 #sK 要在那一页里）
+    if memoir:
+        xr = part("对照小说")
+        cards = re.findall(r'<div class="xref"><b>(.*?)</b><p>(.*?)</p><a class="go" href="([^"]+)">(.*?)</a><span class="sec">§\d+</span></div>', xr, flags=re.S)
+        if not 2 <= len(cards) <= 6 or len(cards) != xr.count('<div class="xref"'): errs.append(f"「对照小说」应有 2–6 张卡片，写法 <div class=\"xref\"><b>标题</b><p>…</p><a class=\"go\" href=\"09.html#s12\">报告 9 · 4 月 17 日</a><span class=\"sec\">§k</span></div>，现在认出 {len(cards)} 张")
+        for b_, p_, href, _ in cards:
+            if han(p_) > 120: errs.append(f"「对照小说」{b_}：{han(p_)} 个汉字，超过 120")
+            f, _, anchor = href.partition("#")
+            fp = os.path.join(os.path.dirname(os.path.abspath(path)), f)
+            if not re.fullmatch(r"\d\d[a-c]?\.html", f) or not os.path.exists(fp): errs.append(f"「对照小说」{b_}：链接要指向小说页（如 09.html#s12），{href} 不对")
+            elif anchor and f'id="{anchor}"' not in open(fp, encoding="utf-8").read(): errs.append(f"「对照小说」{b_}：{f} 里没有 id=\"{anchor}\"（那一节没有词条小标题），只链到页，节号写进链接文字")
+
     # 查理的文字：曲线 + 不长的说明
     cw = part("查理的文字")
-    if '<div class="curve"></div>' not in cw: errs.append("「查理的文字」要有 <div class=\"curve\"></div>（曲线由 al.js 画）")
+    if not memoir and '<div class="curve"></div>' not in cw: errs.append("「查理的文字」要有 <div class=\"curve\"></div>（曲线由 al.js 画）")
     if han(re.sub(r'<span class="zhv">.*?</span>', "", cw, flags=re.S)) > 320: errs.append(f"「查理的文字」正文超过 320 个汉字（不算 .zhv）")
 
     # 记忆拼图（可省）
@@ -183,13 +209,14 @@ for path in sys.argv[1:]:
             if not re.fullmatch(r"\d+(\.\d)?|\?", age): errs.append(f"记忆拼图「{b_}」：data-age 写数字（约几岁），推不出来写 ?")
             if han(p_) > 120: errs.append(f"记忆拼图「{b_}」：{han(p_)} 个汉字，超过 120")
 
-    # 引用块：不超过 2 处，只引查理写的（不引 {Q} 段落）
+    # 引用块：不超过 2 处，只引查理写的（不引 {Q} 段落）；回忆录只引作者的叙述（也不引正文里斜体嵌进来的小说原句）
     errs += check_quotes(t, 2)
     for q in re.findall(r'<blockquote class="quote">(.*?)<cite>', t, flags=re.S):
         s = norm(re.sub(r"<[^>]+>", "", q)).strip("… ").strip()
         where = [p for p, v in paras.items() if s.replace("…", "") and all(x.strip() in v for x in s.split("…") if x.strip())]
         if not where: errs.append(f"引用块在原文里找不到（要一字不差，省略处用 …）：{s[:50]!r}")
         elif all(p in quoted for p in where): errs.append(f"引用块引的是 {{Q}} 段落（剪报、信），只引查理写的：{s[:50]!r}")
+        elif memoir and not any(p not in quoted and all(x.strip() in plain[p] for x in s.split("…") if x.strip()) for p in where): errs.append(f"引用块引的是正文里斜体的部分（小说原句或别人的话），只引作者自己的叙述：{s[:50]!r}")
         if len(s.replace("…", " ").split()) > 25: errs.append(f"引用块超过 25 个词：{s[:50]!r}")
 
     # 读完想一想：2–3 题，每题一个笔记框和「本站的看法」
@@ -220,8 +247,9 @@ for path in sys.argv[1:]:
         if han(p_) > 100: errs.append(f"「精彩回顾」{b_}：{han(p_)} 个汉字，超过 100")
 
     # 译本：「译本：『…』」只能出现在 .zhv 里；引的句子要真在译本这几篇里，每处不超过 20 个汉字，一页不超过 6 处
-    zh = zh_text(REPORTS[pid])
+    zh = zh_text(range(1, 18) if memoir else REPORTS[pid])
     zhvs = re.findall(r'<span class="zhv">(.*?)</span>', t, flags=re.S)
+    if memoir and zhvs: errs.append("回忆录页不写 .zhv（回忆录没有中译本）")
     if len(zhvs) > 6: errs.append(f"译本译法（.zhv）{len(zhvs)} 处，超过 6 处")
     for z in zhvs:
         if not z.startswith("译本："): errs.append(f".zhv 以「译本：」开头：{z[:20]}")
