@@ -47,7 +47,11 @@ def want_label(secs, i):
     t = re.match(r"(\d+:\d+) ([AP])\.M\.$", base)
     if m and m.group(1).lower() in MON: lab = f"{MON[m.group(1).lower()]} 月 {m.group(2)} 日"
     elif t: lab = ("上午 " if t.group(2) == "A" else "下午 ") + t.group(1)
-    else: return f"报告 {r}" + cont
+    else:
+        # 报告 1–7 开头那一节没有日期行，日期写在标题里（Progris riport 1 martch 3、PROGRESS REPORT 7 MARCH 11）
+        m = re.search(r"([A-Za-z]+)\.? (\d+)$", base)
+        if not (m and m.group(1).lower() in MON): return f"报告 {r}" + cont
+        lab = f"{MON[m.group(1).lower()]} 月 {m.group(2)} 日"
     first_of_report = i == 0 or secs[i - 1][1] != r
     multi = len({s[1] for s in secs}) > 1
     return (f"报告 {r} · " if multi and first_of_report else "") + lab + cont

@@ -186,7 +186,7 @@
       const btns = METRICS.map((x) => h("button", { class: "btn", "aria-pressed": String(x === m), onclick() { m = x; LS.set("al-curve-metric", x.k); btns.forEach((b, i) => b.setAttribute("aria-pressed", String(METRICS[i] === m))); draw(); } }, x.t));
       box.append(h("div", { class: "toolbar" }, ...btns), svgBox, tip);
       const draw = () => {
-        const W = 640, H = 220, L = 40, R = 12, T = 14, B = 34, n = data.length;
+        const W = 640, H = 226, L = 40, R = 12, T = 20, B = 34, n = data.length;
         const x = (i) => L + (i / Math.max(1, n - 1)) * (W - L - R), y = (v) => T + (1 - Math.min(v, m.max) / m.max) * (H - T - B);
         const svg = s("svg", { class: "diagram curve-chart", viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": `查理的文字曲线：${m.t}` });
         for (let g = 0; g <= 4; g++) {
@@ -206,7 +206,7 @@
           c.append(s("title", {}, `报告 ${p.r} · ${p.d}：${p[m.k]}${m.u}（${p.w} 词）`));
           svg.append(c);
         }
-        if (pts.length < n) svg.append(s("text", { class: "t-m", x: W - R, y: T + 10, "text-anchor": "end" }, "后面的还没读到"));
+        if (pts.length < n) svg.append(s("text", { class: "t-m", x: W - R, y: T - 3, "text-anchor": "end" }, "后面的还没读到"));
         svgBox.replaceChildren(svg);
         tip.textContent = `${m.t}（${m.u}）：${m.tip}。超过 ${m.max} 的点画在顶上。`;
       };

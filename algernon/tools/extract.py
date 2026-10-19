@@ -51,7 +51,7 @@ class Blocks(HTMLParser):
         s = re.sub(r"\s+", " ", "".join(self.buf)).strip()
         s = re.sub(r"\*(\s*)\*", r"\1", s)                     # 相邻的两段斜体接起来
         s = re.sub(r"\*\s+([^*]*?)\*", r" *\1*", s); s = re.sub(r"\*([^*]*?)\s+\*", r"*\1* ", s)
-        s = re.sub(r"\s+", " ", s).strip()
+        s = re.sub(r"\s+", " ", s).strip().replace("\x02", "*")
         if s or self.date or (tag or self.tag) == "p": self.blocks.append((tag or self.tag, cls if cls is not None else self.cls, s, self.bq > 0, self.date))
         self.buf, self.date = [], None
     def handle_starttag(self, tag, attrs):
@@ -82,7 +82,7 @@ class Blocks(HTMLParser):
         elif tag == "blockquote":
             if "".join(self.buf).strip(): self.emit("p")
             self.bq -= 1
-    def handle_data(self, d): self.buf.append(d)
+    def handle_data(self, d): self.buf.append(d.replace("*", "\x02"))   # 原书里印着的星号（报告 5 的 intelek**）先换成占位符，别和斜体标记混
 
 def blocks(z, name, italic):
     p = Blocks(italic); t = z.read(name).decode("utf-8"); p.feed(t[t.find("<body"):]); p.close()
