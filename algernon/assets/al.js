@@ -71,7 +71,7 @@
       c.kind === "novel" ? h("div", { class: "by" }, `译本：${c.zh}`) : null,
       c.words ? h("div", { class: "badges" }, ...badges(c)) : null));
     const i = order(id);
-    const prev = ALL.slice(0, i).reverse().find((x) => x.id === "00" || READY.has(x.id));
+    const prev = ALL.slice(0, i).reverse().find((x) => READY.has(x.id));
     const next = ALL.slice(i + 1).find((x) => READY.has(x.id));
     const done = h("button", { class: "btn" });
     const paint = () => { done.textContent = isDone(id) ? "✓ 已读完这一页" : "标记：这一页的原文读完了"; done.setAttribute("aria-pressed", isDone(id)); };
@@ -219,7 +219,7 @@
     const toc = document.getElementById("toc");
     if (!toc) return;
     const item = (c) => {
-      const ready = c.id === "00" || READY.has(c.id);
+      const ready = READY.has(c.id);
       return h("li", {}, h("a", Object.assign({ class: (isDone(c.id) ? "done " : "") + (ready ? "" : "todo") }, ready ? { href: href(c.id) } : {}),
         h("span", { class: "n" }, isDone(c.id) ? "✓" : c.kind === "novel" ? c.id : c.kind === "memoir" ? c.id.slice(1) : "·"),
         h("span", { class: "t" }, c.kind === "intro" || c.kind === "extra" ? c.t : c.t || label(c), h("span", { class: "te" }, c.kind === "novel" ? `${label(c)} · ${c.when}` : c.kind === "memoir" ? label(c) : "")),

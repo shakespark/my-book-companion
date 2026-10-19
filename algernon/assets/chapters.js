@@ -40,5 +40,5 @@ window.AL_MEMOIR_PARTS = [
   { en: "The Alchemy of Writing", t: "写作的炼金术", ch: [15, 18] },
   { en: "Post-Publication Blues", t: "出版之后", ch: [19, 24] },
 ];
-// 已经写好、验收过的页（主编维护）。"00" 是「开读之前」
+// 已经写好、验收过的页（主编维护）。"00" 是「开读之前」，写好后也要加进来
 window.AL_READY = [];
