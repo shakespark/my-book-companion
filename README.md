@@ -21,6 +21,7 @@ my_book_companion/
 |---|---|---|---|---|
 | Paris to the Moon（Adam Gopnik） | `paris/` · https://t.miaowuao.cn/paris/ | `pm-` | 6412 | 2026-10-19 上线：24 页，核查和词条审读都做过 |
 | Flowers for Algernon（Daniel Keyes），附回忆录 Algernon, Charlie, and I | `algernon/` · https://t.miaowuao.cn/algernon/ | `al-` | 2262（回忆录 5575，中译本 6838） | 2026-10-19 上线：小说 18 页＋回忆录 7 页＋开读之前＋中篇和长篇对照，核查和词条审读都做过 |
+| On Borrowed Time（Harald Weinrich，Rendall 英译） | `borrowed/` · https://t.miaowuao.cn/borrowed/ | `bt-` | 6053 | 2026-10-19 上线：19 页＋开读之前，审读轮（核查和词条审读合一）做过 |
 
 ## 新增一本书
 

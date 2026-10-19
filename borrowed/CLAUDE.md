@@ -52,3 +52,11 @@ python3 -I tools/overlap.py chapters/<页>.html --max-quotes 2
 node tools/check.mjs chapters/<页>.html --shots source/shots
 ```
 `source/text/`、`index.tsv` 是 `tools/extract.py` 生成的，不手改；`BT_SECS` 的节名、词数也是从 index.tsv 生成的（line 是主编写的）。
+
+## 以后改这本书
+
+- 改哪一页就只动那一页；改完跑上面三项检查，`git add borrowed/` 提交推送即部署（GitHub Actions 有时排队十几分钟）。
+- 加了新的概念块，`terms.html` 自动汇总；精彩回顾改了，`recap.html` 自动跟着变。
+- `assets/chapters.js` 的 `BT_PAGES` 里 t、d 是主编从作者报告收的；`BT_SECS` 的 line 和 `BT_STAGES` 是主编写的「全书的线」（第 8 章第 4 节、第 10 章的 line 照审读改过）。`BT_SECS` 的节名和词数从 index.tsv 生成。
+- 作者报告摘要在 `source/reports/<页>.md`，验收和审读记录在 `source/ACCEPTANCE.md`。
+- 页名表改了的话，`~/tutorials-home/words.html` 里 bt 的 `pages` 也要跟着改。
