@@ -27,7 +27,7 @@ window.PM_CHAPTERS = [
   { n: 16, part: 4, journal: false, words: 4433, secs: 3, en: "The World Cup, and After", t: "世界杯，以及之后", zh: "世界盃足球賽", ny: "1998-07-13 和 07-27", d: "美国人看世界杯：零比零是人生，夺冠夜巴黎乱成一团" },
   { n: 17, part: 4, journal: false, words: 3963, secs: 5, en: "The Balzar Wars", t: "Balzar 之战", zh: "餐廳之戰", ny: "1998-08-03", d: "老饭馆被连锁收购，常客起来保卫，作者审问自己" },
   { n: 18, part: 4, journal: false, words: 4801, secs: 3, en: "Alice in Paris", t: "Alice 在巴黎", zh: "愛麗絲漫遊巴黎", ny: "1998-10-26", d: "Alice Waters 来巴黎，作者为她炖砸了一只羊腿" },
-  { n: 19, part: 4, journal: true, words: 6124, secs: 17, en: "A Machine to Draw the World, Christmas Journal 4", t: "描绘世界的机器", zh: "聖誕札記四", ny: "", d: "差点离开巴黎的一年，作者改用描图的眼光看这座城" },
+  { n: 19, part: 4, journal: true, words: 6124, secs: 17, en: "A Machine to Draw the World, Christmas Journal 4", t: "描绘世界的机器", zh: "聖誕札記四：直觀教學", ny: "", d: "差点离开巴黎的一年，作者改用描图的眼光看这座城" },
   { n: 20, part: 4, journal: false, words: 9003, secs: 9, en: "A Handful of Cherries", t: "一把樱桃", zh: "區區小數", ny: "", d: "为一家老啤酒馆打一场注定要输的仗" },
   { n: 21, part: 4, journal: false, words: 5611, secs: 7, en: "Like a king", t: "像个国王", zh: "國王的選擇", ny: "2000-01-31", d: "在巴黎生女儿，追问「国王的选择」到底何意" },
   { n: 22, part: 4, journal: false, words: 6581, secs: 3, en: "Angels Dining at the Ritz", t: "在丽兹吃饭的天使", zh: "小小羅曼史", ny: "", d: "五岁儿子在丽兹泳池的初恋，照出父母的婚姻" },
