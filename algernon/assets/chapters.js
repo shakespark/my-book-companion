@@ -7,7 +7,7 @@
 window.AL_PAGES = [
   { id: "01", kind: "novel", r: [1, 2, 3, 4, 5, 6], when: "3 月 3 日–3 月 8 日", zh: "近步抱告—1 至 6", words: 3800, secs: 6, t: "", d: "" },
   { id: "07", kind: "novel", r: [7, 8], when: "3 月 11 日–3 月 31 日", zh: "进步报告—7、8", words: 6385, secs: 16, t: "", d: "" },
-  { id: "09", kind: "novel", r: [9], when: "4 月 1 日–4 月 18 日", zh: "进步报告—9", words: 6929, secs: 13, t: "", d: "" },
+  { id: "09", kind: "novel", r: [9], when: "4 月 1 日–4 月 18 日", zh: "进步报告—9", words: 6929, secs: 13, t: "揉面机和逗号", d: "揉面机、逗号、墨迹卡：手术后的第一个四月" },
   { id: "10", kind: "novel", r: [10], when: "4 月 21 日–4 月 28 日", zh: "进步报告—10", words: 4546, secs: 6, t: "", d: "" },
   { id: "11a", kind: "novel", r: [11], when: "5 月 1 日–5 月 10 日", zh: "进步报告—11（前半）", words: 4901, secs: 5, t: "", d: "" },
   { id: "11b", kind: "novel", r: [11], when: "5 月 11 日–5 月 25 日", zh: "进步报告—11（后半）", words: 4932, secs: 5, t: "", d: "" },
@@ -41,4 +41,4 @@ window.AL_MEMOIR_PARTS = [
   { en: "Post-Publication Blues", t: "出版之后", ch: [19, 24] },
 ];
 // 已经写好、验收过的页（主编维护）。"00" 是「开读之前」，写好后也要加进来
-window.AL_READY = [];
+window.AL_READY = ["09"];
