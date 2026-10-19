@@ -93,7 +93,7 @@
 ### 2. `<h2>分节地图</h2>`
 
 ```html
-<p class="lede">这一页有 N 条带日期的报告。读完一条打个勾；每条后面的英文是那一条开头的几个词，在 Kindle 里搜它就能跳过去。</p>
+<p class="lede">这一页有 N 条带日期的报告。读完一条打个勾；每条后面的英文是那一条开头的几个词，在 Kindle 里搜它就能跳过去。没读的那几行先模糊着，免得提前看到情节，点一下就能看清。</p>
 <ol class="secmap">
   <li class="sit">第一次坐下<span>§1–§5 · 约 3200 词 · 一句话说这一段的范围</span></li>
   <li data-sec="1"><b>4 月 1 日<span class="w">约 800 词</span></b><span class="en">Everbody in the bakery came to …</span><span class="what">留意什么</span></li>

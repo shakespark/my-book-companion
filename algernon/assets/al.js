@@ -103,7 +103,13 @@
       const k = li.dataset.sec, key = `al-sec-${id}-${k}`;
       const box = h("input", { type: "checkbox", "aria-label": `第 ${k} 节读过了` });
       box.checked = secDone(id, k); li.classList.toggle("done", box.checked);
-      box.onchange = () => { LS.set(key, box.checked ? "1" : null); li.classList.toggle("done", box.checked); };
+      // 英文开头几个词可能露出这一节的情节（如 Alice is gone.）：没读过的节先模糊，点一下才看清
+      const en = li.querySelector(".en"), reveal = () => { if (!en) return; en.classList.remove("veil"); en.removeAttribute("role"); en.removeAttribute("tabindex"); en.removeAttribute("title"); };
+      if (en && !box.checked && !isDone(id)) {
+        en.classList.add("veil"); en.setAttribute("role", "button"); en.tabIndex = 0; en.title = "点一下显示这一节开头的英文";
+        en.onclick = reveal; en.onkeydown = (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); reveal(); } };
+      }
+      box.onchange = () => { LS.set(key, box.checked ? "1" : null); li.classList.toggle("done", box.checked); if (box.checked) reveal(); };
       li.prepend(box, h("span", { class: "k" }, `§${k}`));
       if (document.getElementById(`s${k}`)) li.append(h("a", { class: "jump", href: `#s${k}` }, "词条 ↓"));
     }

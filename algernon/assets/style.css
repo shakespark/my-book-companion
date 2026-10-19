@@ -295,6 +295,8 @@ table.findit p.q { margin: 0 0 6px; font-size: 14.5px; }
 .badge.k-journal { background: var(--warn-soft); color: var(--warn); }
 /* 分节地图：<b> 是中文地标（读译本时找得到的东西），.en 是英文那一节开头的几个词（翻电子书时用） */
 .secmap .en { grid-column: 3 / -1; font-family: var(--serif); font-style: italic; color: var(--muted); font-size: 13.5px; }
+.secmap .en.veil { filter: blur(4.5px); cursor: pointer; user-select: none; transition: filter .2s; }
+.secmap .en.veil:hover, .secmap .en.veil:focus-visible { filter: blur(3px); }
 .secmap li.ours .k::after { content: "*"; color: var(--warn); }
 /* 「这一篇的路线」最后一句：作者落在哪 */
 p.landing { background: var(--accent-soft); border-left: 3px solid var(--accent); border-radius: 0 var(--radius) var(--radius) 0; padding: 10px 14px; margin: 12px 0 16px; }
