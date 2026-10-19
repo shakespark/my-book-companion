@@ -90,7 +90,10 @@ for path in sys.argv[1:]:
     memoir = pid in MEMOIR
     if pid not in REPORTS and not memoir:
         errs += check_markup(t)
-        print(("✗" if errs else "✓"), path, "（回忆录页和专页的规则还没定，只查了通用的几项）")
+        # 专页（00、nv）也转述小说情节：不能和译本连续 12 个汉字相同
+        zh, rest = zh_text(range(1, 18)), re.sub(r"\s+", "", page_text(t))
+        for x in sorted({rest[i:i + 12] for i in range(len(rest) - 11) if han(rest[i:i + 12]) == 12 and rest[i:i + 12] in zh})[:5]: errs.append(f"和译本有 12 个汉字以上相同的片段：{x}")
+        print(("✗" if errs else "✓"), path, "（专页：只查通用的几项和译本重合）")
         for e in errs: print("    " + e)
         bad += bool(errs); continue
     paras, quoted, secs, plain = load(os.path.join(ROOT, f"source/text/{pid}.txt"))
