@@ -229,7 +229,7 @@ for path in sys.argv[1:]:
     if zh:
         hits = {rest[i:i + 12] for i in range(len(rest) - 11) if han(rest[i:i + 12]) == 12 and rest[i:i + 12] in zh}
         for x in sorted(hits)[:5]: errs.append(f"和译本有 12 个汉字以上相同的片段（只能放在 .zhv 里）：{x}")
-    for m in re.finditer(r"译本(?:里|中|译作|译为|写作|作「|叫|的译法)", re.sub(r'<span class="zhv">.*?</span>', "", page_text(t), flags=re.S)):
+    for m in re.finditer(r"译本(?:里|中|译作|译为|译成|写作|作「|叫|的译法)", page_text(re.sub(r'<span class="zhv">.*?</span>', "", t, flags=re.S))):
         errs.append(f"写译本怎么译，要放在 <span class=\"zhv\">译本：「…」</span> 里：…{m.group(0)}…")
     for k in re.findall(r'class="note" data-key="([^"]+)"', t):
         if not k.startswith(f"{pid}-"): errs.append(f"笔记的 data-key 要以 {pid}- 开头：{k}")

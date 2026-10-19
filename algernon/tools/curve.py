@@ -7,13 +7,13 @@
   punct  每百词有几个逗号、分号、冒号、破折号
   long   九个字母以上的长词占百分之几
 {Q} 段落（剪报、信、书里的书）不是查理写的，不算。assets/curve.js 是这个脚本生成的，不要手改。"""
-import os, re, sys
+import os, re, sys, unicodedata
 from spellchecker import SpellChecker
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 PAGES = ["01", "07", "09", "10", "11a", "11b", "12", "13a", "13b", "14a", "14b", "14c", "15", "16a", "16b", "16c", "17a", "17b"]
-WORD = re.compile(r"[A-Za-z]+(?:['’][A-Za-z]+)*")
+WORD = re.compile(r"[^\W\d_]+(?:['’][^\W\d_]+)*")   # 带重音的字母（éclairs）也算在词里
 
 entries = []   # (页, 节号, 报告, 日期, [段落文字…])
 for pid in PAGES:
@@ -24,7 +24,12 @@ for pid in PAGES:
         if m and not m.group(1): entries[-1][4].append(m.group(2).replace("*", ""))
 
 dic = SpellChecker()
-known = lambda w: w in dic.word_frequency or w.replace("’", "'") in dic.word_frequency
+# 词表里没有、但书里是正常写法的词（报告 10–16 里查出来的）：不算查理拼错
+dic.word_frequency.load_words(["eclair", "eclairs", "retardate", "retardates", "cliche", "naivete", "lamplit", "gateleg", "uptilted",
+    "psychophysical", "zagging", "photoeffect", "duncecap", "this'll", "what'd", "man'll"])
+def known(w):
+    w = unicodedata.normalize("NFKD", w.replace("’", "'")).encode("ascii", "ignore").decode()   # éclair → eclair
+    return w in dic.word_frequency or (w.endswith("'s") and w[:-2] in dic.word_frequency)   # 所有格 men's、Donner's 不算错
 # 全书里以大写开头、又不是词典词的（Kinnian、Nemur、Donner…），小写出现时也当专名，不算拼错
 names = set()
 for e in entries:

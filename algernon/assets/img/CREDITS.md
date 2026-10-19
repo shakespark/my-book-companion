@@ -1,2 +1,23 @@
 - `09-rorschach-card2.jpg` — File:Rorschach blot 02.jpg — "Hermann Rorschach" (died 1922) — Public domain — https://commons.wikimedia.org/wiki/File%3ARorschach_blot_02.jpg
 - `09-crusoe-1719.jpg` — File:Robinson Crusoe 1719 1st edition.jpg — 作者不详 — Public domain — https://commons.wikimedia.org/wiki/File%3ARobinson_Crusoe_1719_1st_edition.jpg
+- `13b-pku-screening.jpg` — File:Phenylketonuria testing.jpg — U.S. Air Force photo/Staff Sgt Eric T. Sheler — Public domain — https://commons.wikimedia.org/wiki/File%3APhenylketonuria_testing.jpg
+- `13b-clark-1909.jpg` — File:Hall Freud Jung in front of Clark 1909.jpg — 作者不详 — Public domain — https://commons.wikimedia.org/wiki/File%3AHall_Freud_Jung_in_front_of_Clark_1909.jpg
+- `13b-palmer-lobby.jpg` — File:Chicago's Palmer House - Grand Lobby.jpg — Tony Brooks — CC BY 2.0 — https://commons.wikimedia.org/wiki/File%3AChicago%27s_Palmer_House_-_Grand_Lobby.jpg
+- `12-typewriter.jpg` — File:Smith Corona Silent Super typewriter.png — P. Musgrave — CC BY-SA 3.0 — https://commons.wikimedia.org/wiki/File%3ASmith_Corona_Silent_Super_typewriter.png
+- `12-central-park.jpg` — File:Central Park looking south from Gapstow Bridge.jpeg — Dough4872 — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File%3ACentral_Park_looking_south_from_Gapstow_Bridge.jpeg
+- `11b-lamer.jpg` — File:Debussy - La Mer - The great wave of Kanaga from Hokusai.jpg — From The Great Wave off Kanagawa by Hokusai Katsushika — Public domain — https://commons.wikimedia.org/wiki/File%3ADebussy_-_La_Mer_-_The_great_wave_of_Kanaga_from_Hokusai.jpg
+- `11b-bandshell.jpg` — File:Central Park Jul 2019 35.jpg — Epicgenius — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File%3ACentral_Park_Jul_2019_35.jpg
+- `11b-expulsion.jpg` — File:Masaccio-TheExpulsionOfAdamAndEveFromEden-Restoration.jpg — Masaccio — Public domain — https://commons.wikimedia.org/wiki/File%3AMasaccio-TheExpulsionOfAdamAndEveFromEden-Restoration.jpg
+- `07-teaching-machine.jpg` — File:Skinner teaching machine 01.jpg — Silly rabbit — CC BY 3.0 — https://commons.wikimedia.org/wiki/File%3ASkinner_teaching_machine_01.jpg
+- `07-crusoe-footprint.jpg` — File:Crusoe 2 (by Paget).jpg — Walter Paget — Public domain — https://commons.wikimedia.org/wiki/File%3ACrusoe_2_%28by_Paget%29.jpg
+- `13a-oscilloclast.jpg` — File:Oscilloclast (FDA 143) (8225257144).jpg — The U.S. Food and Drug Administration — Public domain — https://commons.wikimedia.org/wiki/File%3AOscilloclast_%28FDA_143%29_%288225257144%29.jpg
+- `07-ether-dome.jpg` — File:MGH Ether Dome Theater 29Jan2008.jpg — Adam Lenhardt — CC BY-SA 3.0 — https://commons.wikimedia.org/wiki/File%3AMGH_Ether_Dome_Theater_29Jan2008.jpg
+- `11a-timessquare.jpg` — File:Fotothek df fb-pos 0000234 Broadway bei Nacht (Times Squa.jpg — Fritz Block — Public domain — https://commons.wikimedia.org/wiki/File%3AFotothek_df_fb-pos_0000234_Broadway_bei_Nacht_%28Times_Squa.jpg
+- `13a-tape-recorder.jpg` — File:Vintage Electra Portable 4 Transistor Reel-To-Reel Tape Recorder, Model TP-500, Made In Japan, Circa 1960s (15706532371).jpg — Joe Haupt from USA — CC BY-SA 2.0 — https://commons.wikimedia.org/wiki/File%3AVintage_Electra_Portable_4_Transistor_Reel-To-Reel_Tape_Recorder%2C_Model_TP-500%2C_Made_In_Japan%2C_Circa_1960s_%2815706532371%29.jpg
+- `01-hampton-maze.jpg` — File:Hampton Court hedge maze.jpg — Kris Arnold — CC BY-SA 2.0 — https://commons.wikimedia.org/wiki/File%3AHampton_Court_hedge_maze.jpg
+- `07-freud-couch.jpg` — File:Study with the couch, Freud Museum London, 18M0138.jpg — Zde — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File%3AStudy_with_the_couch%2C_Freud_Museum_London%2C_18M0138.jpg
+- `10-first-folio.jpg` — File:Title page William Shakespeare's First Folio 1623.jpg — Martin Droeshout — Public domain — https://commons.wikimedia.org/wiki/File%3ATitle_page_William_Shakespeare%27s_First_Folio_1623.jpg
+- `11a-register.jpg` — File:Cash register made by the National Cash Register company, 1913.jpg — 作者不详 — Public domain — https://commons.wikimedia.org/wiki/File%3ACash_register_made_by_the_National_Cash_Register_company%2C_1913.jpg
+- `01-rabbits-foot.jpg` — File:Rabbitsfoot.jpg — Sobebunny — CC BY-SA 3.0 — https://commons.wikimedia.org/wiki/File%3ARabbitsfoot.jpg
+- `10-baker-1943.jpg` — File:Michael Spinella, Italian baker in a Lithuanian bakery 8d19622v.jpg — Marjory Collins — Public domain — https://commons.wikimedia.org/wiki/File%3AMichael_Spinella%2C_Italian_baker_in_a_Lithuanian_bakery_8d19622v.jpg
+- `01-rorschach-card1.jpg` — File:Rorschach blot 01.jpg — Hermann Rorschach (died 1922) — Public domain — https://commons.wikimedia.org/wiki/File%3ARorschach_blot_01.jpg
