@@ -31,6 +31,7 @@ my_book_companion/
 2. 开目录：`_tools/new-book.sh ftc2 1288`（目录名不能和线上已有的站重名，脚本会查）。
    得到 `ftc2/tools/`（三个共用检查脚本的小壳）和 `ftc2/source/calibre`（指向书库里这本书的目录）。
    提取的文本照老站的做法放在 `ftc2/source/text/`，同样不入库。
+   一本导读要用到第二、三本书（译本、姊妹篇）时，给链接名再挂一次：`python3 _tools/calibre.py link ftc2 <id> calibre-zh`（`algernon/` 就是这样挂了回忆录和译本）。
 3. 后面照 `~/tutorials-deploy/README.md`「新增一个教程」的第 0、1、7、8、9 步：定策略、写规范、备案号页脚、localStorage 前缀、
    线上检查、首页卡片、同步白名单。**第 2–5 步（workflow、建仓库、部署密钥、推送设置）不用做了**，提交推送本仓库即可：
    ```sh
