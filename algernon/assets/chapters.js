@@ -27,7 +27,7 @@ window.AL_PAGES = [
   { id: "m2", kind: "memoir", ch: [4, 5], words: 7159, secs: 11, t: "贝果、冷饮店和油轮", d: "少年打工的街坊，和一趟油轮上的差事" },
   { id: "m3", kind: "memoir", ch: [6, 7, 8], words: 5907, secs: 13, t: "", d: "" },
   { id: "m4", kind: "memoir", ch: [9, 10], words: 4128, secs: 8, t: "", d: "" },
-  { id: "m5", kind: "memoir", ch: [11, 12, 13, 14], words: 6126, secs: 9, t: "", d: "" },
+  { id: "m5", kind: "memoir", ch: [11, 12, 13, 14], words: 6126, secs: 9, t: "一个学生找上门", d: "查理从哪里来，进步报告的写法又是怎么定下的" },
   { id: "m6", kind: "memoir", ch: [15, 16, 17, 18], words: 7663, secs: 16, t: "把中篇写成长篇", d: "从电视版播出到长篇写成的那几年" },
   { id: "m7", kind: "memoir", ch: [19, 20, 21, 22, 23, 24], words: 9476, secs: 18, t: "", d: "" },
   { id: "nv", kind: "extra", t: "中篇和长篇", words: 12018, secs: 12, d: "1959 年的中篇和 1966 年的长篇差在哪里" },
