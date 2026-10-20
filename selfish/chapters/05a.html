@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 5 章（上）· The Selfish Gene 导读</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/chapters.js"></script>
+<script src="../assets/sg.js"></script>
+<style>
+#sim-05a .stage svg { width: 100%; min-width: 520px; height: auto; display: block; }
+#sim-05a table.payoff { border-collapse: collapse; margin: 12px 0 0; font-size: 13.5px; }
+#sim-05a .stage p.cap { color: var(--muted); font-size: 12.5px; margin: 10px 0 4px; }
+#sim-05a table.payoff th, #sim-05a table.payoff td { border: 1px solid var(--border); padding: 3px 10px; text-align: right; font-variant-numeric: tabular-nums; }
+#sim-05a table.payoff th { background: var(--surface-2); font-weight: 600; }
+#sim-05a .controls input[type="range"] { width: 110px; }
+</style>
+</head>
+<body data-page="05a">
+<main>
+
+<h2>这一页在做什么</h2>
+<div class="gist"><p>第 5 章的前半。前四章立起了「基因造身体、身体替基因活」的框架，这一章第一次拿它解释一种具体的行为：同类之间打架。问题是：既然每台生存机器都只为自己的基因，动物为什么不趁机把对手打死？Dawkins 借来 Maynard Smith 的博弈论，用一个「鹰和鸽」的简化模型来回答，再一步步加角色、换规则。读的时候抓两条线：「稳定」是什么意思，以及它为什么不等于「对大家最好」。</p></div>
+<figure class="fig"><img src="../assets/img/05a-elephant-seals.jpg" alt="两头雄性象海豹在浪花里扭打，一头张着大嘴咬向另一头的脖子" loading="lazy">
+<figcaption>两头雄性北象海豹在加州海边打斗，争的是地盘和配偶。书里第 9、26 段都拿象海豹作例子：赢家几乎独占一大群雌性，所以它们打得格外凶。<span class="src">Mike Baird，CC BY 2.0，维基共享资源</span></figcaption></figure>
+
+<h2>读之前：这一页在全书的哪里</h2>
+<div class="linehere"></div>
+<p>第 4 章停在「基因只能预先给大脑编程，具体怎么做由身体自己决定」。这一章接着问：同一种动物的两台生存机器碰到一起，预先编好的打法该是什么样？第 1 段作者说明，这一章暂时把整个个体当作「自私的机器」来讲，这是图方便的说法，章末（下一页）才回到单个基因。第 57 段又预告：亲属之间这套说法不灵，那是第 6 章的事。</p>
+<div class="crux"><p>打斗时「手下留情」看起来像利他。自私的基因怎么解释它？</p></div>
+<p class="lede">读的时候带着这几个问题。不用先找答案，读完回来对照「检查一下理解」。</p>
+<ol class="qs">
+  <li>作者说杀掉一个对手不一定划算。他举了哪两种情况，理由一样吗？<span class="sec">§2</span></li>
+  <li>「鹰」和「鸽」比起来，鹰每场都赢鸽。为什么种群里的鹰却不会越来越多、直到全是鹰？<span class="sec">§4</span></li>
+  <li>全体都当鸽子，每个人的平均得分更高。这样一个「鸽子联盟」为什么维持不住？<span class="sec">§4</span></li>
+  <li>在消耗战里，为什么「不露声色」比「说谎」更稳定？<span class="sec">§6</span></li>
+</ol>
+
+<h2>这一页的路线</h2>
+<p>这一页是一条典型的「提出谜题，搭个简化模型，再一点点放宽」的路。§1、§2 从真实动物出发：Lorenz 说动物打架像戴着拳套的比赛，作者先说这话有夸大，再说哪怕只有几分真，也得解释。§3 换了频道，从动物跳进博弈论，给出 ESS 的定义，立起只有鹰和鸽两种角色的模型。§4 是全页最硬的一段：算账，算出一个稳定比例，然后突然转到加油站老板的价格同盟，读到这里会觉得跳，那是作者在说人类也逃不开同样的逻辑。§5 往模型里加「看对手出招」的角色，最后回到象海豹和大山雀，提醒数字一变结论就变。§6 换一种不流血的比赛，消耗战，落在「扑克脸」上。</p>
+<figure class="fig"><svg class="diagram" viewBox="0 0 640 250" role="img" aria-label="路线示意图：上面一行是模型，下面一行是真实的动物和人，一条折线按阅读顺序在两行之间来回">
+<text x="8" y="66" class="t-m">模型</text>
+<text x="8" y="186" class="t-m">动物和人</text>
+<polyline points="60,170 130,170 200,80 270,80 340,170 410,80 480,170 550,80 610,170" class="ln-a"/>
+<circle cx="60" cy="170" r="7" class="f2"/><text x="60" y="196" text-anchor="middle">戴拳套</text><text x="60" y="214" text-anchor="middle" class="t-m">§1</text>
+<circle cx="130" cy="170" r="7" class="f2"/><text x="130" y="196" text-anchor="middle">杀敌的代价</text><text x="130" y="214" text-anchor="middle" class="t-m">§2</text>
+<circle cx="200" cy="80" r="7" class="f1"/><text x="200" y="58" text-anchor="middle">ESS</text><text x="200" y="38" text-anchor="middle" class="t-m">§3</text>
+<circle cx="270" cy="80" r="7" class="f1"/><text x="270" y="58" text-anchor="middle">鹰和鸽</text><text x="270" y="38" text-anchor="middle" class="t-m">§3–§4</text>
+<circle cx="340" cy="170" r="7" class="f2"/><text x="340" y="196" text-anchor="middle">价格同盟</text><text x="340" y="214" text-anchor="middle" class="t-m">§4</text>
+<circle cx="410" cy="80" r="7" class="f1"/><text x="410" y="58" text-anchor="middle">看对手出招</text><text x="410" y="38" text-anchor="middle" class="t-m">§5</text>
+<circle cx="480" cy="170" r="7" class="f2"/><text x="480" y="196" text-anchor="middle">象海豹、山雀</text><text x="480" y="214" text-anchor="middle" class="t-m">§5</text>
+<circle cx="550" cy="80" r="7" class="f1"/><text x="550" y="58" text-anchor="middle">消耗战</text><text x="550" y="38" text-anchor="middle" class="t-m">§6</text>
+<circle cx="610" cy="170" r="7" class="f2"/><text x="610" y="196" text-anchor="middle" class="t-b">扑克脸</text><text x="610" y="214" text-anchor="middle" class="t-m">§6</text>
+</svg>
+<figcaption>本站示意图。蓝点是作者讲的模型，橙点是真实的动物和人；折线是阅读顺序。</figcaption></figure>
+<p class="landing"><b>作者落在哪：</b>动物打斗的克制，不必用「为了物种」来解释：在一群各为自己的个体里，能长久留下来的打法，是多数个体都这样打时谁也占不到便宜的打法。这种稳定防得住背叛，却不一定对大家最好。</p>
+
+<h2>分节地图</h2>
+<p class="lede">这一页是原书第 5 章的第 1–6 节。原书各章没有小标题，粗体的节名是本站起的，下面是这一节第一段开头的几个词，在电子书里搜它就能跳过去。读完打个勾。</p>
+<ol class="secmap">
+  <li data-sec="1"><b>同类相争为何手下留情<span class="w">约 800 词</span></b><span class="en">This chapter is mostly about the …</span><span class="what">立题。第 2–5 段先说同类是最直接的对手，第 6–7 段引 Lorenz 并打折扣，最后一句提出全章的问题。</span></li>
+  <li data-sec="2"><b>杀掉对手未必划算<span class="w">约 600 词</span></b><span class="en">The general answer to this is …</span><span class="what">两个反例：杀了 B 可能便宜了 C；挑战象海豹霸主风险太大。第 10 段引出 Maynard Smith 和博弈论。</span></li>
+  <li data-sec="3"><b>ESS 的定义与鹰鸽设定<span class="w">约 800 词</span></b><span class="en">The essential concept Maynard Smith introduces …</span><span class="what">第 12 段是 ESS 的定义，全章的钥匙，读两遍。第 13–14 段定下鹰、鸽和计分规则。</span></li>
+  <li data-sec="4"><b>鹰鸽算账：7/12 的稳定比例<span class="w">约 1500 词</span></b><span class="en">Suppose we have a population consisting …</span><span class="what">一步步算账。第 19 段说 ESS 不是类群选择，第 20 段转到人类的价格同盟。第 21 段的「16 2/3」是电子书用错了图，应是 7/12。</span></li>
+  <li data-sec="5"><b>还击者、恃强凌弱者和试探者<span class="w">约 800 词</span></b><span class="en">The hawk and dove story is …</span><span class="what">加入看对手出招的角色。第 25 段的结论作者后来撤回了（星号，注 22）。第 26 段讲数字变了结论跟着变。</span></li>
+  <li data-sec="6"><b>消耗战与扑克脸<span class="w">约 900 词</span></b><span class="en">Another kind of war game that …</span><span class="what">不流血的比赛，比谁耗得久。读第 28 段时留意它和拍卖哪里不一样；第 30–31 段讲为什么不露声色。</span></li>
+</ol>
+
+<h2>先用中文过一遍：这一页的概念</h2>
+<p class="lede">先把这一页用到、作者默认你懂的几个概念讲一遍。讲的是概念本身，作者拿它推出什么，读原书时自己看。前几章讲过的<a class="term" href="02.html#c-survival-machine">生存机器</a>、<a class="term" href="03a.html#c-gene-pool">基因库</a>、<a class="term" href="01.html#c-group-selection">类群选择</a>，点进去看。</p>
+<div class="concept" id="c-ess">
+<h3><span class="sec">§3</span>进化稳定策略 <span class="en">evolutionarily stable strategy, ESS</span></h3>
+<p>Maynard Smith 和 Price 1973 年在《自然》杂志上提出的概念。「策略」不是动物想出来的计谋，是预先编好的一套行为规则，比如「先吓唬，对方动手就跑」。一个策略叫 ESS，是说：种群里大多数个体都用它的时候，少数改用别的策略的个体，得分不会更高，于是改不过来。严格的定义还多一条：要是改用的个体得分正好一样，ESS 对付它们时的得分，还得高过它们彼此相遇时的得分；第 25 段的还击策略者就栽在这一条上（见「对照今天」）。它和博弈论里的纳什均衡是近亲，区别在于没有谁在算计，是自然选择替它们「算」。打个比方：一个开源社区里大家都按某种代码风格写，你一个人换风格，只会处处碰壁，所以风格稳住了；这种风格未必是最好的。</p>
+<p class="use"><b>在这一页：</b>第 12 段给出定义，后面每一个模型都在问同一个问题：这个策略是不是 ESS。作者 1989 年在注 21 里补了一个更直观的说法。</p>
+</div>
+<div class="concept" id="c-hawk-dove">
+<h3><span class="sec">§3</span>鹰鸽博弈 <span class="en">hawk–dove game</span></h3>
+<p>两个个体争一样东西，只有两种打法：鹰一上来就全力打，直到自己重伤才退；鸽只摆架势，对方一动真格就跑。鹰对鸽稳赢，鹰对鹰两败俱伤，鸽对鸽耗时间。关键在于一种打法好不好，要看种群里别人怎么打：鹰少的时候，当鹰到处占便宜；鹰多了，当鹰天天挨打，当鸽反而划算。所以两条「平均得分」的线会交叉，交点就是稳定比例。鹰、鸽只是名字，和这两种鸟的脾气无关。</p>
+<figure class="fig"><svg class="diagram" viewBox="0 0 640 260" role="img" aria-label="折线图：横轴是种群里鹰的比例，从 0 到 1；鹰的平均得分从 50 一路降到负 25，鸽的平均得分从 15 降到 0，两线在鹰占十二分之七处相交">
+<line x1="70" y1="20" x2="70" y2="210" class="ln"/>
+<line x1="70" y1="143" x2="600" y2="143" class="ln-d"/>
+<line x1="70" y1="210" x2="600" y2="210" class="ln"/>
+<text x="62" y="35" text-anchor="end" class="t-m">+50</text>
+<text x="62" y="113" text-anchor="end" class="t-m">+15</text>
+<text x="62" y="147" text-anchor="end" class="t-m">0</text>
+<text x="62" y="203" text-anchor="end" class="t-m">−25</text>
+<text x="70" y="230" text-anchor="middle" class="t-m">没有鹰</text>
+<text x="600" y="230" text-anchor="middle" class="t-m">全是鹰</text>
+<text x="335" y="250" text-anchor="middle" class="t-m">种群里鹰的比例 →</text>
+<line x1="70" y1="31" x2="600" y2="199" class="s2"/>
+<line x1="70" y1="109" x2="600" y2="143" class="s1"/>
+<text x="120" y="30" class="t-b f2">鹰的平均得分</text>
+<text x="120" y="98" class="t-b f1">鸽的平均得分</text>
+<line x1="379" y1="129" x2="379" y2="210" class="ln-d"/>
+<circle cx="379" cy="129" r="6" class="f-a"/>
+<text x="379" y="168" text-anchor="middle" class="t-b">7/12</text>
+<text x="388" y="120" class="t-m">两边都是 6.25</text>
+<text x="225" y="190" text-anchor="middle" class="t-m">这边当鹰更划算，鹰变多 →</text>
+<text x="510" y="100" text-anchor="middle" class="t-m">← 这边当鸽更划算，鹰变少</text>
+</svg>
+<figcaption>本站示意图，用的是书里第 14 段的计分（赢 +50、重伤 −100、对峙浪费时间 −10）。交点左边当鹰划算，右边当鸽划算，种群被推向交点。</figcaption></figure>
+<p class="use"><b>在这一页：</b>第 13–21 段的主角。第 22–25 段在它上面加了三种看对手出招的角色，译名是<span class="zhv">译本：「还击策略者」</span>、恃强凌弱者、试探性还击策略者。</p>
+</div>
+<div class="concept" id="c-mixed-strategy">
+<h3><span class="sec">§4</span>稳定的多态性和混合策略 <span class="en">stable polymorphism; mixed strategy</span></h3>
+<p>同一个稳定比例可以有两种实现：一种是种群里有一部分个体天生总当鹰、其余总当鸽，两种基因按比例并存，遗传学叫「稳定的多态性」；另一种是每个个体都一样，每一场按同一个概率掷骰子决定这一场当鹰还是当鸽。数学上两者等价。第二种有个要求：骰子必须是真随机，对手猜不出你这一场出什么。这和石头剪刀布一样，有规律的出法会被人利用。</p>
+<p class="use"><b>在这一页：</b>第 21 段。注意这一段电子书用错了图：「namely 16 2/3」的地方应是 7/12，下一句的「7:5」才是对的。</p>
+</div>
+<div class="concept" id="c-war-of-attrition">
+<h3><span class="sec">§6</span>消耗战 <span class="en">war of attrition</span></h3>
+<p>Maynard Smith 1974 年分析的另一种比赛：没有人受伤，双方只是对峙，谁先撑不住谁走，赢家拿走资源，但双方都付出了等待的时间。它像一场两个人的拍卖，出价用的是时间，不同之处是输家也要付钱。结论有点反直觉：任何固定的「撑到几分钟就走」都会被人利用，稳定的做法是每次撑一个随机的时间，平均下来正好等于资源值多少时间。</p>
+<p class="use"><b>在这一页：</b>第 27–31 段。作者拿它推出「扑克脸」：不能让对手看出你什么时候要放弃。</p>
+</div>
+
+<h2>动手：模拟器</h2>
+<p>先猜：种群里几乎全是鸽子，混进 1% 的鹰。用书里的计分跑下去，鹰会把鸽子赶尽杀绝吗？种群的平均得分会比「全是鸽子」时高还是低？再点「跑 50 代」验证。</p>
+<div class="sim" id="sim-05a">
+  <div class="sim-head"><span class="tag">模拟器</span><h3>鹰和鸽：种群会停在哪</h3><p class="desc">每一代，得分比种群平均高的策略份额上涨，低的下降（这叫复制动态）；另有极少量的突变，让没出现的策略也能混进来。上面三个滑杆是计分规则，默认就是书里第 14 段的数。先直接点「跑 50 代」。</p></div>
+  <div class="sim-body"><p>需要浏览器打开脚本才能运行。</p></div>
+</div>
+<ol class="qs">
+  <li>试试看：用默认计分跑到不动为止，鹰的份额停在多少？对一对书里第 18 段的 7/12（约 58.3%），再看「种群平均每场得分」和「全体都当鸽子」那一格差多少（第 19 段）。</li>
+  <li>试试看：把「受重伤扣」拖到比「赢一场得」还小（比如赢 50、伤 40），重置再跑。现在鹰会怎样？这就是第 14 段那句「在很宽的范围内数字不要紧」的边界。</li>
+  <li>试试看：读完下一页 §7 的「先来者赢」再回来，勾上「留驻者」（先到的当鹰，后到的当鸽），从「几乎全是鸽子」跑起，这次点「跑 500 代」，它要两三百代才见分晓。谁会占满种群？受伤代价比奖赏小的时候呢？</li>
+</ol>
+<p>这个模拟器没有放第 22–25 段的还击策略者、恃强凌弱者和试探者：书里没有给它们的计分，作者在 1989 年的尾注里还说，原论文对它们的结论算错了（见下面的尾注一节）。换一套计分，结局就不同，这正是第 26 段的告诫。</p>
+
+<h2>书里的人和研究</h2>
+<p class="lede">按在书里出现的顺序排，标题前是节号。只讲到读懂这一页需要的程度。</p>
+
+<h3><span class="sec">§1</span>Lorenz 和《论攻击》</h3>
+<figure class="fig small"><img src="../assets/img/05a-lorenz.jpg" alt="一位白发白须的老人的黑白肖像，打着领带" loading="lazy">
+<figcaption>Konrad Lorenz，诺贝尔基金会档案照。<span class="src">NobelPrize.org，CC BY-SA 4.0，维基共享资源</span></figcaption></figure>
+<p>第 6 段引的 <i>On Aggression</i> 是 Lorenz 1963 年的德文书，1966 年出了英译本，在当时很畅销。书里说，同种动物的打斗大多是有规则的仪式，有「投降」的姿势，胜者见了就收手，这样物种才不至于自相残杀。作者在第 7 段一面承认这种说法「至少有几分真」，一面点出 Lorenz 是「为了物种的利益」派：他的解释正是这本书第 1 章反对的那种。</p>
+<div class="who">
+  <div><b>Konrad Lorenz</b><span class="en">1903–1989</span>奥地利动物行为学家，研究小鹅「印随」最出名。1973 年和 Tinbergen、von Frisch 一起获诺贝尔生理学或医学奖。在这一页里是「打斗很文明」这一派的代表。</div>
+</div>
+
+<h3><span class="sec">§2</span>Maynard Smith、Price 和 Parker</h3>
+<figure class="fig small"><img src="../assets/img/05a-maynard-smith.jpg" alt="一位戴眼镜的白发老人坐在书架前的扶手椅上说话，双手交握" loading="lazy">
+<figcaption>John Maynard Smith，取自 Web of Stories 的访谈录像。<span class="src">Web of Stories，CC BY-SA 3.0，维基共享资源</span></figcaption></figure>
+<p>第 10 段说，把打斗当成成本收益来算，是 Maynard Smith 和合作者用博弈论讲清楚的；作者特意补了一句，他「通常不被看作动物行为学家」，他原本学的是工程，后来转行做遗传和演化理论。鹰鸽是他设的最简单的情形（第 13 段），还击策略者、恃强凌弱者、试探者出自他和 Price 1973 年的论文，消耗战出自他 1974 年的论文；下一页的不对称竞赛是他和 Parker 合作的。</p>
+<div class="who">
+  <div><b>John Maynard Smith</b><span class="en">1920–2004</span>英国演化生物学家，演化博弈论的奠基人。Maynard Smith 是复姓，不能只叫 Smith。</div>
+  <div><b>George R. Price</b><span class="en">1922–1975</span>美国人，化学出身，后来在伦敦自学成了理论生物学家，留下了以他命名的 Price 方程。</div>
+  <div><b>Geoffrey A. Parker</b><span class="en">1944–</span>英国行为生态学家，研究动物的竞争和性选择。</div>
+</div>
+
+<h3><span class="sec">§2</span>象海豹</h3>
+<p>海豹里体型最大的一类，南象海豹的雄性可达三四吨，鼻子像短象鼻。繁殖季节，雄性在海滩上争夺一群雌性，打赢的那头能和几十头雌性交配，大多数雄性一辈子也没有这个机会。第 9 段用它说明挑战霸主的代价：守着妻妾群的那头多半是身经百战的好手。第 26 段又用它说明奖赏极高时打得凶是合算的。</p>
+
+<h3><span class="sec">§5</span>大山雀：时间比伤更贵</h3>
+<figure class="fig"><img src="../assets/img/05a-great-tit.jpg" alt="一只黑头白脸黄胸的小鸟张着翅膀落在树洞口，嘴里叼着一条绿色的虫子，洞里露出雏鸟的嘴" loading="lazy">
+<figcaption>一只大山雀叼着青虫回到树洞喂雏鸟。<span class="src">Rosember，CC BY-SA 4.0，维基共享资源</span></figcaption></figure>
+<p>欧洲最常见的小型鸣禽之一。第 26 段说它喂雏的时候平均每三十秒就要抓到一只虫，白天的每一秒都宝贵。作者拿它和象海豹对照：在鹰鸽模型里，奖赏、受伤、耗时三个数的相对大小一变，稳定的打法就变了。他接着承认：对真实动物的这些得失，当时知道得太少，还定不出数字。</p>
+
+<h3><span class="sec">§5</span>掘土蜂：在野外量出混合策略（注 23）</h3>
+<figure class="fig"><img src="../assets/img/05a-digger-wasp.jpg" alt="一只橙色腿、黑色尾部、翅膀褐色的细长黄蜂停在白色小花上" loading="lazy">
+<figcaption>大金掘土蜂（Sphex ichneumoneus），摄于纽约布鲁克林植物园。<span class="src">Rhododendrites，CC BY-SA 4.0，维基共享资源</span></figcaption></figure>
+<p>第 26 段那句「我们知道得太少」后面有个星号。1989 年的尾注补了作者自己参与的研究：Jane Brockmann 观察北美的大金掘土蜂，每只雌蜂要么自己挖洞，要么钻进别人挖好的洞。她和 Alan Grafen、Dawkins 1979 年在《理论生物学杂志》上发表的分析认为，新罕布什尔的那个种群符合混合 ESS：两种做法得分相当，每只蜂按一定概率选择；密歇根的种群没找到这样的证据。</p>
+
+<h2>词与短语</h2>
+<p class="lede">按节排，每节前面是分节地图里的节名。标着「每个字都认识」的，是熟词生义、习语和反话，最容易读错。灰色的那几个字是原句里的位置，在电子书里搜它就能找到。</p>
+
+<h3 class="sec-head" id="s1">§1 <span class="first">同类相争为何手下留情</span></h3>
+<div class="entry"><div class="en">the language of convenience</div><div class="loc" data-p="1">… This is the language of convenience.</div><div class="zh">图方便的说法</div><div class="note">作者先打招呼：把个体当成一心为自己基因的机器，只是讲起来方便，章末再换回「单个基因」的说法。全书他常这样提醒，读到「动物想要」时记得这层。</div></div>
+<div class="entry trap"><div class="en">hold in trust</div><div class="loc" data-p="2">… holds its immortal genes in trust …</div><div class="zh">替……保管着</div><div class="note">法律用语，受托保管别人的财产。生存机器不是基因的主人，只是替将来保管它们的托管人。</div></div>
+<div class="entry trap"><div class="en">stop at nothing</div><div class="loc" data-p="2">… will stop at nothing to preserve them.</div><div class="zh">不惜一切</div><div class="note">字面「在任何东西面前都不停」，就是为了达到目的什么都干得出来。</div></div>
+<div class="entry trap"><div class="en">hazard a guess</div><div class="loc" data-p="3">… I could not hazard a guess as …</div><div class="zh">斗胆猜一猜</div><div class="note">hazard 作动词是「冒险提出」。这句是说：鼹鼠灭绝了，黑鸟受的影响可能很大，但具体是什么、经过什么拐弯抹角的途径，作者连猜都不敢猜。</div></div>
+<div class="entry"><div class="en">a tug of war over a worm</div><div class="loc" data-p="3">… engaged in a tug of war over …</div><div class="zh">为一条蚯蚓拔河</div><div class="note">作者的玩笑：鼹鼠和黑鸟在争蚯蚓，可你永远不会看到它们各叼一头拔河。竞争可以完全不照面。</div></div>
+<div class="entry"><div class="en">gloved fists and blunted foils</div><div class="loc" data-p="6">… fight with gloved fists and blunted foils.</div><div class="zh">戴拳套的拳头，磨钝了的花剑</div><div class="note">拳击和击剑的比方，转述 Lorenz：动物打架像体育比赛，有护具、有规则。第 7 段的 gloved fist view 就是指这种看法。</div></div>
+<div class="entry trap"><div class="en">deadly earnest</div><div class="loc" data-p="6">… take the place of deadly earnest.</div><div class="zh">真刀真枪、你死我活</div><div class="note">in deadly earnest 是「极其认真」。这里说威胁和虚张声势代替了真打。</div></div>
+<div class="entry trap"><div class="en">poor old</div><div class="loc" data-p="7">… to condemn poor old Homo sapiens as …</div><div class="zh">可怜的（带点调侃）</div><div class="note">poor old 加人名，是半同情半打趣的口气，不是「又穷又老」。作者说，把人类说成唯一残杀同类的物种是冤枉了人。</div></div>
+<div class="entry"><div class="en">the mark of Cain</div><div class="loc" data-p="7">… the only inheritor of the mark of Cain …</div><div class="zh">该隐的记号</div><div class="note">《圣经·创世记》：该隐杀了弟弟亚伯，上帝在他身上做了记号。这里借指「杀害同类的罪名」。</div></div>
+<div class="entry trap"><div class="en">go all out</div><div class="loc" data-p="7">… animals do not go all out to …</div><div class="zh">全力以赴</div><div class="note">全章的问题就在这一句：动物为什么不一有机会就全力去杀同类的对手。</div></div>
+
+<h3 class="sec-head" id="s2">§2 <span class="first">杀掉对手未必划算</span></h3>
+<div class="entry trap"><div class="en">do someone a good turn</div><div class="loc" data-p="8">… potentially doing a good turn to C …</div><div class="zh">帮了某人一个忙</div><div class="note">turn 在这里是「一次行为」，不是「转弯」。杀了 B，等于替 C 除掉一个对手。</div></div>
+<div class="entry trap"><div class="en">be well advised to</div><div class="loc" data-p="9">… I might be well advised to attempt …</div><div class="zh">明智的做法是</div><div class="note">不是「被人好好劝告」，是「这样做是明智的」。</div></div>
+<div class="entry"><div class="en">subjective soliloquy</div><div class="loc" data-p="10">… This subjective soliloquy is just a …</div><div class="zh">（上面那段）第一人称的内心独白</div><div class="note">soliloquy 是戏剧里的独白。作者自嘲：上一段用「我」替象海豹盘算，只是讲解手法，动物并不真这样想；他紧接着说这种计算是 unconscious 的。</div></div>
+<div class="entry"><div class="en">at some cost in rigour</div><div class="loc" data-p="10">… albeit at some cost in rigour.</div><div class="zh">牺牲一点严谨</div><div class="note">作者交代：他用文字而不是数学符号讲博弈论，好懂，但不那么严格。</div></div>
+
+<h3 class="sec-head" id="s3">§3 <span class="first">ESS 的定义与鹰鸽设定</span></h3>
+<div class="entry trap"><div class="en">behavioural policy</div><div class="loc" data-p="11">… a pre-programmed behavioural policy.</div><div class="zh">行为规则</div><div class="note">policy 在这里不是「政策」，是「一贯的做法、方针」，和保险单、公司规章里的用法相近。</div></div>
+<div class="entry"><div class="en">behaves as if</div><div class="loc" data-p="11">… the animal behaves as if he were …</div><div class="zh">表现得好像……</div><div class="note">这一段的关键限定：动物并不是在照着一套英文指令做事，是表现出来像这样。全章的「策略」「盘算」都要这样读。</div></div>
+<div class="entry trap"><div class="en">cannot be bettered</div><div class="loc" data-p="12">… adopt it, cannot be bettered by …</div><div class="zh">没有更好的（替代策略）能胜过它</div><div class="note">better 作动词是「胜过、改进」。ESS 的定义就在这半句里。</div></div>
+<div class="entry"><div class="en">conventional human usage</div><div class="loc" data-p="13">… names refer to conventional human usage …</div><div class="zh">人们习惯的说法</div><div class="note">括号里那句是说：鹰派、鸽派是人类政治里的说法，和真鸟无关，鸽子其实相当好斗。译本把这一句译成了一个物种的名字，见下面的译本勘误。</div></div>
+<div class="entry trap"><div class="en">follow suit</div><div class="loc" data-p="15">… individual was to follow suit.</div><div class="zh">跟着别人做</div><div class="note">桥牌用语：跟出同一花色的牌。这里说如果「随大流」总是最好，就会有两个 ESS。</div></div>
+
+<h3 class="sec-head" id="s4">§4 <span class="first">鹰鸽算账：7/12 的稳定比例</span></h3>
+<div class="entry trap"><div class="en">doing quite nicely</div><div class="loc" data-p="16">… to be doing quite nicely.</div><div class="zh">过得挺好</div><div class="note">do nicely 是「境况不错」，不是「做得很漂亮」。英式的轻描淡写：全是鸽子时人人每场得 15 分，日子不坏。</div></div>
+<div class="entry trap"><div class="en">If only</div><div class="loc" data-p="19">… If only everybody would agree to …</div><div class="zh">要是……就好了</div><div class="note">表示可惜的愿望，不是「只要」。原书这两个词是斜体，强调这只是一厢情愿。</div></div>
+<div class="entry trap"><div class="en">open to abuse</div><div class="loc" data-p="19">… is that they are open to abuse.</div><div class="zh">容易被钻空子</div><div class="note">open to 是「容易受到」。人人守约的同盟，正好给一个不守约的人可乘之机。</div></div>
+<div class="entry"><div class="en">treachery from within</div><div class="loc" data-p="19">… bound to be broken by treachery from …</div><div class="zh">内部的背叛</div><div class="note">这一节的关键词，这一段末尾又说了一次，第 20 段末尾再说一次。ESS 稳定，就是因为它不怕内部有人背叛。</div></div>
+<div class="entry trap"><div class="en">price rings</div><div class="loc" data-p="20">… Price rings, based on conscious estimation …</div><div class="zh">价格同盟</div><div class="note">ring 在这里是「圈子、团伙」，不是「环」。指几家商户私下约好不降价，今天叫价格卡特尔。</div></div>
+<div class="entry trap"><div class="en">make a quick killing</div><div class="loc" data-p="20">… to make a quick killing by cutting …</div><div class="zh">捞一笔快钱</div><div class="note">killing 在口语里是「大赚一笔」，不是杀人。加油站老板偷偷降价，一下子抢走邻居的生意。</div></div>
+
+<h3 class="sec-head" id="s5">§5 <span class="first">还击者、恃强凌弱者和试探者</span></h3>
+<div class="entry"><div class="en">a model</div><div class="loc" data-p="22">… something that does not really happen in …</div><div class="zh">模型</div><div class="note">作者在这里停下来讲「模型」是什么：自然界里并不发生，但能帮人理解自然界里发生的事；简单的模型可以一步步加复杂。读这一页的数字时记住这句。</div></div>
+<div class="entry trap"><div class="en">turned loose upon one another</div><div class="loc" data-p="25">… are turned loose upon one another in …</div><div class="zh">放出来互相较量</div><div class="note">turn loose 是把关着的动物放出来。这里是计算机模拟里让五种策略混战。</div></div>
+<div class="entry"><div class="en">other things being equal</div><div class="loc" data-p="25">… This means that, other things being equal, …</div><div class="zh">在其他条件不变时</div><div class="note">经济学和科学写作里的常用限定，拉丁文 ceteris paribus。这里说鸽子在还击者中间得分一样，于是可能慢慢变多。</div></div>
+<div class="entry"><div class="en">drift upwards</div><div class="loc" data-p="25">… doves could slowly drift upwards.</div><div class="zh">慢慢漂上去</div><div class="note">drift 是遗传学的「漂变」：没有选择上的优劣，只靠偶然升降。作者 1989 年的尾注说，问题就出在漂上去以后。</div></div>
+<div class="entry trap"><div class="en">Small wonder that</div><div class="loc" data-p="26">… Small wonder that fights are vicious …</div><div class="zh">难怪……</div><div class="note">字面「小小的惊奇」，意思是「一点也不奇怪」，和 no wonder 一样。</div></div>
+
+<h3 class="sec-head" id="s6">§6 <span class="first">消耗战与扑克脸</span></h3>
+<div class="entry trap"><div class="en">turns tail</div><div class="loc" data-p="27">… until he finally turns tail.</div><div class="zh">掉头逃跑</div><div class="note">字面「转过尾巴」，动物转身逃走时把尾巴对着你。</div></div>
+<div class="entry trap"><div class="en">talked ourselves into</div><div class="loc" data-p="29">… we have talked ourselves into picturing …</div><div class="zh">（用文字推着推着）把自己说服了</div><div class="note">talk oneself into 是「说着说着自己信了」。作者坦白：光用文字推理，容易以为种群会来回振荡，数学说不对。第 18 段也有同样的提醒。</div></div>
+<div class="entry trap"><div class="en">throwing in the sponge</div><div class="loc" data-p="30">… think of throwing in the sponge, …</div><div class="zh">认输</div><div class="note">拳击里助手把海绵（今天多说毛巾，throw in the towel）扔进场内，表示认输。</div></div>
+<div class="entry"><div class="en">The poker face</div><div class="loc" data-p="30">… The poker face would evolve.</div><div class="zh">扑克脸，不动声色的脸</div><div class="note">打扑克的人不让别人从脸上看出牌好牌坏。这一句是这一节的落点。</div></div>
+<div class="entry"><div class="en">raised their hackles</div><div class="loc" data-p="31">… individuals raised their hackles only when …</div><div class="zh">竖起颈毛</div><div class="note">hackles 是狗、鸡脖子上的毛，竖起来是要打架的样子；raise someone's hackles 平时是「惹人发火」。这里是字面意思，指一种威胁信号。</div></div>
+<div class="entry trap"><div class="en">called their bluff</div><div class="loc" data-p="31">… favour individuals who called their bluff.</div><div class="zh">识破虚张声势，偏要摊牌</div><div class="note">扑克用语：对方虚张声势加注，你跟注逼他亮牌。</div></div>
+
+<h2>译本勘误</h2>
+<p class="lede">对着中译本（40 周年增订版）读的时候看这一节。下面是译本这几节和这一页尾注里会让人读错的地方：灰字是英文原文那一处的几个词，在英文电子书里搜它；方框里是译本的原句，在译本电子书里搜它。措辞别扭但意思没错的不收。全书的勘误汇总在<a href="../zh.html">译本勘误</a>。</p>
+<div class="zherr" data-p="9"><h4><span class="sec">§2</span>「象形海豹」就是象海豹<span class="mark">术语</span></h4>
+<p class="loc">… If B is an elephant seal …</p>
+<p class="zhq"><span class="zhv">译本：「如果B是一只象形海豹」</span></p>
+<p>elephant seal 通称象海豹，是海豹的一类，鼻子像短象鼻。本章第 26 段还会出现，指的是同一种动物。</p></div>
+<div class="zherr" data-p="10"><h4><span class="sec">§2</span>Maynard Smith 是复姓<span class="mark">术语</span></h4>
+<p class="loc">… it has taken J. Maynard Smith …</p>
+<p class="zhq"><span class="zhv">译本：「但只有史密斯才能有力和明确地表述这种观点」</span></p>
+<p>Maynard Smith 是一个复姓，不是「史密斯」。译本正文一律叫他「史密斯」，尾注里又叫「梅纳德·史密斯」，读者容易以为是两个人。全书都是同一位 John Maynard Smith。</p></div>
+<div class="zherr" data-p="10"><h4><span class="sec">§2</span>他不是「生态学家」，是不被看作动物行为学家<span class="mark">术语</span></h4>
+<p class="loc">… not normally regarded as an ethologist …</p>
+<p class="zhq"><span class="zhv">译本：「人们通常并不认为他是一位生态学家」</span></p>
+<p>ethologist 是动物行为学家（研究动物行为的学科，Lorenz、Tinbergen 那一派），不是生态学家。这句是说：这件事动物行为学家早就隐约知道，却要一位「圈外人」Maynard Smith 来讲清楚。同一段前面的「个体生态学家」也是 ethologists。</p></div>
+<div class="zherr" data-p="13"><h4><span class="sec">§3</span>鹰和鸽不是一个物种的名字<span class="mark">误译</span></h4>
+<p class="loc">… only two sorts of fighting strategy …</p>
+<p class="zhq"><span class="zhv">译本：「假定有一个特定的物种叫“鹰和鸽子”」</span></p>
+<p>原文说：假定某个物种的种群里只有两种打法，分别叫「鹰」和「鸽」。鹰和鸽是两种策略的名字，同一个物种里的个体非鹰即鸽。</p></div>
+<div class="zherr" data-p="14"><h4><span class="sec">§3</span>数字「在很宽的范围内」不要紧<span class="mark">误译</span></h4>
+<p class="loc">… Within broad limits the actual numerical values …</p>
+<p class="zhq"><span class="zhv">译本：「在现实中，实际的数值对分析并无多大意义」</span></p>
+<p>原文是「在很宽的范围内，具体数值对分析没有影响」，并没有「在现实中」。这个限定要紧：受伤的代价一旦小于赢的好处，结论就变了（全是鹰也稳定），可以在上面的模拟器里试。</p></div>
+<div class="zherr" data-p="18"><h4><span class="sec">§4</span>稳定比例的分数丢了<span class="mark">数字</span></h4>
+<p class="loc">… the stable ratio, if you work …</p>
+<p class="zhq"><span class="zhv">译本：「鸽子同鹰的稳定比例为」</span></p>
+<p>原书这里的分数是图片，译本电子书里没有显示，只剩空白。原文是：鸽子占 5/12，鹰占 7/12。下一句「不再是」后面空着的也是 7/12。</p></div>
+<div class="zherr" data-p="19"><h4><span class="sec">§4</span>这一段的六个分数都丢了<span class="mark">数字</span></h4>
+<p class="loc">… The average pay-off to an individual …</p>
+<p class="zhq"><span class="zhv">译本：「个体的平均盈利被证明为」</span></p>
+<p>空白处依次是：7/12 的鹰和 5/12 的鸽，平均每场 6 1/4 分；6 1/4 分比 15 分少很多；1/6 的鹰和 5/6 的鸽，平均每场 16 2/3 分；鹰占 7/12 的群体。</p></div>
+<div class="zherr" data-p="21"><h4><span class="sec">§4</span>当鹰的概率丢了<span class="mark">数字</span></h4>
+<p class="loc">… have the same probability of behaving …</p>
+<p class="zhq"><span class="zhv">译本：「在我们的具体例子中这个概率就是」</span></p>
+<p>空白处应是 7/12。英文电子书这里显示的是 16 2/3，那是用错了图（见分节地图），两边都别信，按上下文是 7/12，下一句的「7 比 5」可以对上。</p></div>
+<div class="zherr" data-n="22"><h4><span class="sec">§5</span>尾注 22：看上去像 ESS 的是还击策略者<span class="mark">误译</span></h4>
+<p class="loc">… Retaliator looks superficially like an ESS …</p>
+<p class="zhq"><span class="zhv">译本：「试探性还击策略之所以看上去和一个ESS如此相似」</span></p>
+<p>原文主语是还击策略者，不是试探性还击策略。整条注讲的是：还击策略者看似 ESS，因为在它们中间别的策略都不比它强；可鸽子一样不差，会漂进来。主语一错，这条注就读不通了。</p></div>
+<div class="zherr" data-n="23"><h4><span class="sec">§5</span>尾注 23：掘土蜂在地里挖洞<span class="mark">误译</span></h4>
+<p class="loc">… digging a long bore-hole into the earth …</p>
+<p class="zhq"><span class="zhv">译本：「一开始会在树干中打出一个较长的圆孔」</span></p>
+<p>原文是在泥土里挖一条长长的地洞，洞底是一个空室。掘土蜂（digger wasp）的名字就由此而来。</p></div>
+<div class="zherr" data-n="23"><h4><span class="sec">§5</span>尾注 23：钻进有主的洞并不划算<span class="mark">误译</span></h4>
+<p class="loc">… does not pay to enter a nest …</p>
+<p class="zhq"><span class="zhv">译本：「尽管侵占一个巢穴不需要付出太多努力」</span></p>
+<p>原文说：钻进一个还有主人的洞是不划算的，可钻进去的蜂分辨不出哪些洞被遗弃、哪些还有主。这正是挖洞和钻洞两种做法会平衡在某个比例上的原因。</p></div>
+
+<h2>值得停下来的句子</h2>
+<blockquote class="quote">An ESS is stable, not because it is particularly good for the individuals participating in it, but … immune to treachery from within.<cite>— §4 第 19 段。本站译：ESS 之所以稳定，不是因为它对参与其中的个体特别有好处，而是……它不怕来自内部的背叛。</cite></blockquote>
+<p>这是全章最该记住的一句，也最容易读漏。它把两件事拆开：「稳定」和「好」。人们常以为自然界留下来的总是最好的安排，作者说不对：留下来的是改不动的安排。全是鸽子对每个人都更好，可一只鹰就能把它拆掉。下一页他还会把这个想法推到基因库，第 12 章的「好人终有好报」也从这里出发。</p>
+<blockquote class="quote">We must be careful not to draw conclusions that result simply from our own arbitrary choice of numbers.<cite>— §5 第 26 段。本站译：我们得小心，别把仅仅来自我们自己随意选定的数字的东西，当成结论。</cite></blockquote>
+<p>作者给自己的模型泼的冷水。7/12 这个比例完全取决于第 14 段那几个随手定的分数；不随数字变的，是后面那几句：会出现 ESS，ESS 不等于群体最优，常识会骗人。上面的模拟器就是让你自己检验这句话：动一动滑杆，哪些结论变了，哪些没变。</p>
+
+<h2>作者 1989 年的尾注</h2>
+<p class="lede">正文里的星号是 1989 年第二版加的，点了跳到书后的尾注。下面是这一页的每个星号：注里说了什么，值不值得现在就点开。英文是星号前紧挨着的几个词，在电子书里搜它就能找到那个星号。</p>
+<div class="enotes">
+<div class="enote" data-n="21"><h4><span class="sec">§3</span>一句话的 ESS<span class="mark">补充</span></h4>
+<p class="en">… cannot be bettered by an alternative strategy.*</p>
+<p>作者给 ESS 换了一个更省事的说法：ESS 就是一个对自己的拷贝表现良好的策略。理由是：一个成功的策略会占满种群，于是它碰到的对手大多是它自己，对付不了自己就成功不了。他承认这个说法不如 Maynard Smith 的定义严谨，而且不完整，代替不了原定义，好处只是抓住了直觉。值得点开，第一段就说完了。</p></div>
+<div class="enote" data-n="22"><h4><span class="sec">§5</span>还击策略者其实不是 ESS<span class="mark turn">改口</span></h4>
+<p class="en">… retaliator, emerges as evolutionarily stable.*</p>
+<p>作者直说：这句是错的。原论文就有这个错，他照搬了，还加上一句更不该说的「试探者几乎是 ESS」（几乎是 ESS 就是不是）。问题在于：还击者中间，鸽子得分一样，会悄悄漂进来；鸽子一多，别的策略就有机可乘。他说 Gale 和 Eaves 的动态模拟算出，真正的 ESS 是鹰和恃强凌弱者的稳定混合。一定要点开。译本这条注把第一处主语译错了，见下面的译本勘误。</p></div>
+<div class="enote" data-n="23"><h4><span class="sec">§5</span>掘土蜂的时间账<span class="mark">新证据</span></h4>
+<p class="en">… benefits of various outcomes in nature.*</p>
+<p>正文说当时对真实动物的得失知道得太少，注里补上作者自己参与的掘土蜂研究（见上面「书里的人和研究」）：靠对每只蜂一生时间的详细记录，算出新罕布什尔那个种群里「自己挖洞」和「钻别人的洞」两种做法得分相当，证据表明这是一个真正的混合 ESS（密歇根的种群没找到这样的证据）。注很长，前半段讲掘土蜂怎样麻醉猎物，还顺带引了达尔文对姬蜂的感慨。想看 ESS 怎样落到田野数据上，值得读。</p></div>
+</div>
+
+<h2>读完：作者到底说了什么</h2>
+<p class="lede">读完这一页的几节再看。下面是作者在这几节里的论点，由本站按论点重新组织，不按原书的顺序；每条下面是依据所在的段落，拿不准就回书里那几段再读一遍。</p>
+<div class="claims">
+  <div class="claim"><h4>动物打斗的克制要解释，但不必用「为了物种」</h4><p>作者认为 Lorenz「打斗像比赛」的说法有夸大，但至少有几分真，所以自私基因的理论必须解释它。第一步是看到全力厮杀有代价：杀了一个对手可能便宜了别的对手，挑战强者可能自己送命。</p><span class="sec">§1 第 6–7 段，§2 第 8–10 段</span></div>
+  <div class="claim"><h4>一种打法好不好，取决于别人怎么打</h4><p>借 Maynard Smith 的 ESS：能长期留下来的，是多数个体采用后谁也改不过来的策略。鹰鸽模型里，鹰少时当鹰占便宜，鹰多时当鸽划算，于是种群停在一个稳定比例，而不是来回振荡；这个比例来自作者自称随意的计分。</p><span class="sec">§3 第 11–14 段，§4 第 18 段</span></div>
+  <div class="claim"><h4>稳定不等于对大家最好，ESS 不是类群选择</h4><p>稳定点上每个个体的得分，远低于人人当鸽子时；类群选择会预言「鸽子联盟」，可一只鹰在联盟里大赚特赚，联盟必然从内部瓦解。人类靠有意识的远见能结成对大家有利的同盟，但像价格同盟一样，也总在破裂的边缘。</p><span class="sec">§4 第 19–20 段</span></div>
+  <div class="claim"><h4>加上看对手出招的策略，似乎就解释了「戴拳套」，依据后来撤回了</h4><p>1976 年的正文说，五种策略混战，只有还击策略者稳定，种群会以还击者和试探者为主：先摆架势，挨打才还手，偶尔试探一下；作者说这和多数野生动物的实际相去不远。1989 年的尾注改了口：还击者不是 ESS，这个错原论文就有，真正稳定的是鹰和恃强凌弱者的混合；尾注没有再说「戴拳套」该怎么解释。正文第 26 段他自己也提醒过：结论不能来自随手定的数字。</p><span class="sec">§5 第 22–26 段，注 22</span></div>
+  <div class="claim"><h4>不流血的比赛里，稳定的是让人猜不透</h4><p>消耗战里任何固定的坚持时间都会被人利用，稳定的是每次坚持一个不可预测的时间；所以透露何时要放弃的信号会被淘汰，说谎也稳定不了，留下来的是扑克脸。</p><span class="sec">§6 第 28–31 段</span></div>
+</div>
+<p class="sowhat"><b>合起来：</b>这一页把「自私的个体」和「克制的行为」接上了：克制不是牺牲，是在别人也这样做时，对自己最划算的打法。作者真正要读者带走的，是 ESS 这种想问题的方式：先问「大家都这样做时，谁改得过来」，而不是「怎样对群体最好」。</p>
+
+<h2>对照今天</h2>
+<p class="lede">这本书 1976 年出版。下面挑出这一页里能被后来的研究检验的说法，分「书里 / 当时 / 今天」三栏，并给一个结论。结论判的是标题里「书里的说法：」后面那一句。全书的这一节汇总在<a href="../today.html">对照今天</a>。</p>
+<ul class="verdicts"><li><span class="v ok">成立</span>后来的研究支持这句话。</li><li><span class="v mid">部分成立</span>大方向对，细节或适用范围要改。</li><li><span class="v bad">被改写</span>后来的研究推翻了它，或者换了一种说法。</li><li><span class="v dis">有争议</span>学界至今没有定论，两边各有代表性的研究。</li></ul>
+<div class="today" data-verdict="被改写"><h4>书里的说法：五种策略混战，只有还击策略者是 ESS</h4><dl>
+  <dt>书里</dt><dd>五种策略在计算机模拟里互相较量，只有还击策略者稳定，试探者「几乎」稳定（§5 第 25 段）。</dd>
+  <dt>当时</dt><dd>这是 Maynard Smith 和 Price 1973 年《自然》论文的结论，ESS 这个概念通常就引这篇论文。</dd>
+  <dt>今天</dt><dd>作者自己在 1989 年的尾注里撤回：鸽子在还击者中间不吃亏，会漂进来，之后局面就变了；他引 Gale 和 Eaves 1975 年的动态模拟，说真正的 ESS 是鹰和恃强凌弱者的混合。按 Maynard Smith 的完整定义，入侵者在它中间得分一样时，还要再比一层：它对付入侵者的得分，必须高过入侵者对付入侵者的得分。鸽子在还击者中间正是得分一样，而还击者碰上鸽子，打法和鸽子碰上鸽子完全相同，得分并不更高，所以还击策略者够不上 ESS（这一段是本站按定义补的推理）。<span class="asof">核对于 2026-10。依据：本书注 22；Maynard Smith &amp; Price, Nature 246 (1973)；Gale &amp; Eaves, Nature 254 (1975)。</span></dd>
+</dl></div>
+<div class="today" data-verdict="部分成立"><h4>书里的说法：动物打斗多半有克制，这个理论结论和多数野生动物的实际相去不远</h4><dl>
+  <dt>书里</dt><dd>加入条件策略后，模型解释了打斗的「戴拳套」一面，作者说这和多数野生动物的实际相去不远（§5 第 26 段）；同时承认当时对真实的得失知道得太少，定不出数字。</dd>
+  <dt>当时</dt><dd>动物行为学刚开始放弃 Lorenz 式「为了物种」的解释，田野里的成本收益数据几乎没有。</dd>
+  <dt>今天</dt><dd>用个体得失来解释打斗已是行为生态学的常识。不过今天对克制的主流解释更多来自「评估对手」：Parker 1974 年提出比较双方的打斗实力，Enquist 和 Leimar 1983 年的「序贯评估」模型预测实力悬殊时靠炫耀就分出胜负、势均力敌时才升级。他们 1990 年也说明，当资源极其珍贵、往后机会很少时，拼死的打斗同样可以是进化的结果。同类相杀在哺乳动物里并不罕见：2016 年一项覆盖一千多种哺乳动物的统计在许多类群里都找到了记录。<span class="asof">核对于 2026-10。依据：Enquist &amp; Leimar, Journal of Theoretical Biology (1983)、Animal Behaviour 39 (1990)；Gómez 等, Nature 538 (2016)。</span></dd>
+  <dt>另一边</dt><dd>鹰鸽模型至今仍是讲解冲突的标准入门模型，教科书用它说明「稳定不等于最优」，这一点没有过时。</dd>
+</dl></div>
+
+<h2>本站怎么看</h2>
+<p class="lede">读完作者的论点，再看它站不站得住。每一块摆出三样：主流怎么看，作者怎么看，本站的评论。最后一句是本站对这一页的总体判断。</p>
+<div class="views"><h4>「稳定」和「对大家好」真的是两回事吗</h4>
+<p><b>主流看法：</b>是。博弈论里早就区分了均衡和「对所有人最优」：囚徒困境、公地悲剧都是人人理性却人人吃亏的例子。演化博弈论把同样的区分带进了生物学。</p>
+<p><b>作者的看法：</b>ESS 稳定只因为它不怕内部的背叛；人人当鸽子更好，却挡不住一只鹰。人类靠有意识的远见能结成同盟，但同盟总在破裂边缘（第 19–20 段）。</p>
+<p class="ours"><b>本站的评论：</b>这是全章最有力、最经得起时间的一点，值得带进日常：很多「为什么大家都知道不好却改不了」的事，问一句「谁先改谁吃亏吗」就清楚了。要补的是：人类维持合作的手段比作者这里说的多，制度、声誉和惩罚都能把对大家好的约定稳住，Ostrom 研究公共资源的自治管理就是一例（她因此获 2009 年诺贝尔经济学奖）。作者在第 12 章也会回到这个问题。</p></div>
+<div class="views"><h4>动物打斗的克制，是「为了物种」吗</h4>
+<p><b>主流看法：</b>不是。Lorenz「避免物种自相残杀」的解释，在 1970 年代以后的行为生态学里基本被放弃，克制被解释成对个体自己划算：打斗有伤、有时间成本，实力悬殊时打下去不值。</p>
+<p><b>作者的看法：</b>Lorenz 是「物种利益」派，他强调的克制有夸大，至少有几分真；克制可以用个体层面的 ESS 来解释，不需要群体利益（第 6–7、19、26 段）。</p>
+<p class="ours"><b>本站的评论：</b>在论证的方向上，作者赢了，后来的研究也站在他这一边。但这一页拿来支持他的，主要是一个计分随意的模型，不是野外数据；他自己也说当时定不出真实的数字。所以这一页证明的是「个体层面的解释说得通」，至于真实动物为什么克制，后来更多要靠评估对手的模型和野外测量来回答。</p></div>
+<div class="views"><h4>一个随手定分数的模型，能说明多少</h4>
+<p><b>主流看法：</b>鹰鸽这类简单模型的价值在定性结论（会出现稳定混合，稳定不等于最优，常识会骗人），具体比例只是示例；拿模型解释某种动物，要先在野外测出得失。</p>
+<p><b>作者的看法：</b>模型是自然里不发生、却帮人理解自然的东西；别把随手定的数字推出的东西当结论（第 22、26 段）。可他在第 25 段还是把还击策略者稳定当成了结论，1989 年才在注 22 里撤回。</p>
+<p class="ours"><b>本站的评论：</b>这正是这一页最好的一课，而且作者自己当了反面例子：同一个模型，只靠静态的推理，得出「还击者稳定」；让它一代代真的跑起来（Gale 和 Eaves 的动态模拟），答案变成「鹰和恃强凌弱者混合」。这和他在第 18、29 段提醒的「光用文字推理会骗人」是同一课。他公开认错，是科学写作的好榜样。读这本书后面的模型时，都可以用这把尺子：哪些结论不随数字变，哪些随。</p></div>
+<p class="verdict"><b>本站的总体看法：</b>这一页最值得带走的是 ESS 的思路和「稳定不等于对大家好」，这两点经得住后来的检验。至于具体的数字、哪种策略稳定、动物实际有多克制，要打折扣：模型是示意，作者自己改过口，野外的答案比书里复杂。</p>
+
+<h2>检查一下理解</h2>
+<p class="lede">先在心里答，再点开。答错的那题，回书里把对应那一节再读一遍。</p>
+<details class="check"><summary>1.（§2）作者说杀掉对手未必划算，举了哪两种情况？</summary><p>一是对手不止一个：杀了 B，可能等于替 C 除掉了对手，自己反而吃亏。二是挑战一个守着资源的强者：对方多半是久经考验的好手，打起来自己可能伤得更重，不如先养壮了再说。</p></details>
+<details class="check"><summary>2.（§3）ESS 的定义里，关键的一句是什么？「策略」是动物想出来的吗？</summary><p>多数个体采用它之后，任何别的策略都胜不过它。策略不是动物有意识想出来的，是预先编好的行为规则，动物只是表现得好像在照着做。</p></details>
+<details class="check"><summary>3.（§4）用书里的计分，全是鸽子时每只鸽每场平均几分？混进一只鹰呢？</summary><p>鸽对鸽，赢家得 50 减去 10 的时间成本，输家扣 10，平均 15 分。那只鹰每场都对上鸽子，每场稳拿 50 分，远高于鸽子，所以鹰会扩散开来。</p></details>
+<details class="check"><summary>4.（§4）稳定比例下每个个体的平均得分，比全是鸽子时高还是低？为什么「鸽子联盟」仍然维持不住？</summary><p>低得多（6 1/4 对 15）。因为联盟里一只鹰的得分高得多，鹰的基因会扩散，联盟从内部被背叛瓦解。稳定靠的是不怕背叛，不是对大家好。</p></details>
+<details class="check"><summary>5.（§5）作者说五种策略里只有还击策略者稳定。1989 年他怎么改的？</summary><p>他承认这是错的：在还击者中间，鸽子得分一样，会慢慢漂进来，之后别的策略就有机可乘。他引的动态模拟说，真正的 ESS 是鹰和恃强凌弱者的稳定混合。</p></details>
+<details class="check"><summary>6.（§6）消耗战里，为什么说谎不稳定，扑克脸才稳定？</summary><p>如果大家只在真要坚持时才竖起颈毛，对手一见就会退，于是说谎的（不打算坚持也竖毛）占便宜、变多；说谎的多了，揭穿虚张声势的又占便宜。说真话、说谎都会被利用，什么都不透露才稳定。</p></details>
+<p class="lede">用一句话说这一页，写给一个没读过的人。</p>
+<textarea class="note" data-key="05a-oneline" rows="2" placeholder="写一句话…"></textarea>
+<div class="ponder"><p>想一想：你的工作或生活里，有没有一种「人人都知道换个做法对大家更好、却谁也不先换」的局面？它是因为谁先换谁吃亏吗？有什么办法能让大家一起换？</p>
+<textarea class="note" data-key="05a-ponder" rows="3" placeholder="写下你的想法…"></textarea></div>
+
+<h2>精彩回顾</h2>
+<p class="lede">读过又忘了，从这里想起来。挑的是这一页最值得记住的模型、动物和说法，不按原书顺序；每条后面是节号，想细看就回书里那一节。全书各页的这一节都收在<a href="../recap.html">全书回顾</a>。</p>
+<p class="recall-line"><b>一句话：</b>动物打斗手下留情，不是为了物种，是因为在大家都这样打的种群里，谁也改不过来；这样的稳定防得住背叛，却不一定对大家最好。</p>
+<div class="recall">
+  <div class="item"><b>鹰和鸽</b><p>鹰拼命，鸽只摆架势。鹰少时当鹰划算，鹰多时当鸽划算，种群停在一个比例上：用书里的计分是 7/12 的鹰。</p><span class="sec">§4</span></div>
+  <div class="item"><b>鸽子联盟必然瓦解</b><p>全是鸽子时人人每场 15 分，稳定比例下只有 6 1/4 分。可一只鹰在鸽群里每场 50 分，联盟从内部被背叛。</p><span class="sec">§4</span></div>
+  <div class="item"><b>加油站的价格同盟</b><p>人类能靠远见结盟抬价，但总有人忍不住偷偷降价捞一笔；降价潮一过，老板们的远见又占上风，结成新的同盟。作者说：这对我们其余的人可是不幸。</p><span class="sec">§4</span></div>
+  <div class="item"><b>作者认错</b><p>正文说只有还击策略者是 ESS；1989 年的尾注说这句错了，鸽子会漂进来，真正稳定的是鹰和恃强凌弱者的混合。</p><span class="sec">§5</span></div>
+  <div class="item"><b>扑克脸</b><p>消耗战里，谁露出要放弃的迹象谁吃亏，说谎也稳定不了。进化留下来的是不动声色，放弃来得突然而无法预料。</p><span class="sec">§6</span></div>
+</div>
+
+</main>
+<script>
+(() => {
+  // 鹰和鸽：复制动态。每一代，每种策略的份额按「它的平均收益比种群平均高多少」涨落；另有极少量「突变」，让没出现的策略也有机会混进来。
+  const root = document.getElementById("sim-05a");
+  if (!root) return;
+  const { h } = window.SG;
+  const NS = "http://www.w3.org/2000/svg";
+  const S = [
+    { id: "H", name: "鹰", c: "var(--c2)", tip: "一上来就拼命打，只有受了重伤才退" },
+    { id: "D", name: "鸽", c: "var(--c1)", tip: "只摆架势，对方一动真格就跑" },
+    { id: "O", name: "留驻者", c: "var(--c3)", tip: "先到的一方：当鹰；后到的一方：当鸽（下半页 §7 讲）" },
+  ];
+  const BASE = 150, MU = 0.0005;
+  const $ = (sel) => root.querySelector(sel);
+  const st = { V: 50, C: 100, T: 10, on: [true, true, false], start: "mutant", x: null, gen: 0, hist: [] };
+
+  // 一场对局里「行」策略的平均收益（对「列」策略）。V 赢的得分，C 受重伤扣的分，T 两边长时间对峙各扣的分。
+  // 留驻者：每场有一半机会是先到的（当鹰），一半是后到的（当鸽）。
+  function matrix() {
+    const { V, C, T } = st;
+    const HH = (V - C) / 2, DD = V / 2 - T;
+    return [
+      [HH, V, (HH + V) / 2],            // 鹰：对鹰两败俱伤；对鸽全赢；对留驻者，碰上它先到就打成重伤局，它后到就赢
+      [0, DD, DD / 2],                  // 鸽：对鹰马上跑；对鸽长时间对峙；对留驻者，它先到就跑，它后到就对峙
+      [HH / 2, (V + DD) / 2, V / 2],    // 留驻者：对鹰，先到就硬拼、后到就跑；对鸽，先到就赢、后到就对峙；两个留驻者，先到的那个不打就赢
+    ];
+  }
+  function startMix() {
+    const on = st.on.map((b, i) => (b ? i : -1)).filter((i) => i >= 0);
+    const x = [0, 0, 0];
+    if (st.start === "mutant") {
+      const base = st.on[1] ? 1 : on[0];               // 大多数是鸽子（鸽没选，就用选中的第一种）
+      for (const i of on) x[i] = i === base ? 0.99 : 0.01 / Math.max(1, on.length - 1);
+      if (on.length === 1) x[on[0]] = 1;
+    } else if (st.start === "hawks" && st.on[0]) {
+      for (const i of on) x[i] = i === 0 ? 0.99 : 0.01 / Math.max(1, on.length - 1);
+    } else for (const i of on) x[i] = 1 / on.length;
+    return x;
+  }
+  function payoffs(x) {
+    const A = matrix();
+    const f = A.map((row) => row.reduce((s, a, j) => s + a * x[j], 0));
+    const avg = f.reduce((s, fi, i) => s + fi * x[i], 0);
+    return { f, avg };
+  }
+  function step() {
+    const { f, avg } = payoffs(st.x);
+    const k = st.on.filter(Boolean).length;
+    let y = st.x.map((xi, i) => (st.on[i] ? (xi * (f[i] + BASE)) / (avg + BASE) : 0));
+    y = y.map((yi, i) => (st.on[i] ? yi * (1 - MU) + MU / k : 0));
+    const s = y.reduce((a, b) => a + b, 0);
+    st.x = y.map((v) => v / s);
+    st.gen++;
+    st.hist.push(st.x.slice());
+  }
+  function reset() { st.x = startMix(); st.gen = 0; st.hist = [st.x.slice()]; draw("已重置。点「跑 50 代」看种群怎么变。"); }
+  function run(n) { for (let i = 0; i < n; i++) step(); draw(); }
+
+  // 画面：上面是份额随代数变化的折线，下面是收益表
+  const svg = document.createElementNS(NS, "svg");
+  svg.setAttribute("viewBox", "0 0 640 220"); svg.setAttribute("class", "diagram"); svg.setAttribute("role", "img");
+  svg.setAttribute("aria-label", "各策略在种群里的份额随代数的变化");
+  const table = h("table", { class: "payoff" });
+  function line(x1, y1, x2, y2, cls) { const l = document.createElementNS(NS, "line"); Object.entries({ x1, y1, x2, y2 }).forEach(([k, v]) => l.setAttribute(k, v)); l.setAttribute("class", cls); return l; }
+  function text(x, y, s, cls, anchor) { const t = document.createElementNS(NS, "text"); t.setAttribute("x", x); t.setAttribute("y", y); t.setAttribute("class", cls); if (anchor) t.setAttribute("text-anchor", anchor); t.textContent = s; return t; }
+  function drawChart() {
+    svg.replaceChildren();
+    const L = 46, R = 560, T = 14, B = 190, n = Math.max(50, st.hist.length - 1);
+    svg.append(line(L, B, R, B, "ln"), line(L, T, L, B, "ln"));
+    for (const v of [0, 0.5, 1]) { const y = B - v * (B - T); svg.append(line(L - 4, y, L, y, "ln"), text(L - 8, y + 4, `${v * 100}%`, "t-m", "end")); }
+    svg.append(text(R, B + 22, `第 ${st.gen} 代`, "t-m", "end"), text(L, B + 22, "第 0 代", "t-m"));
+    S.forEach((s, i) => {
+      if (!st.on[i]) return;
+      const pts = st.hist.map((x, g) => `${(L + ((R - L) * g) / n).toFixed(1)},${(B - x[i] * (B - T)).toFixed(1)}`).join(" ");
+      const pl = document.createElementNS(NS, "polyline");
+      pl.setAttribute("points", pts); pl.setAttribute("fill", "none"); pl.style.stroke = s.c; pl.style.strokeWidth = "2.5";
+      svg.append(pl);
+      const last = st.hist[st.hist.length - 1][i];
+      const lab = text(R + 4, Math.max(T + 10, Math.min(B - 4, B - last * (B - T) + 4)) + (i === 2 ? 14 : 0), s.name, "t-b");
+      lab.style.fill = s.c;
+      svg.append(lab);
+    });
+  }
+  function drawTable() {
+    const A = matrix(), on = S.map((s, i) => i).filter((i) => st.on[i]);
+    table.replaceChildren(
+      
+      h("tr", {}, h("th", {}, "我 \\ 对手"), ...on.map((j) => h("th", {}, S[j].name))),
+      ...on.map((i) => h("tr", {}, h("th", {}, S[i].name), ...on.map((j) => h("td", {}, fmt(A[i][j]))))));
+  }
+  const fmt = (v) => (Math.round(v * 100) / 100).toString().replace(/^-/, "−");
+  const pct = (v) => `${(v * 100).toFixed(1)}%`;
+
+  const narrate = h("div", { class: "narrate" });
+  const stats = h("div", { class: "stats" });
+  function draw(msg) {
+    drawChart(); drawTable();
+    const { f, avg } = payoffs(st.x);
+    const DD = (st.V - 2 * st.T) / 2;
+    stats.replaceChildren(...[
+      ...S.map((s, i) => (st.on[i] ? h("div", { class: "stat" }, h("div", { class: "v" }, pct(st.x[i])), h("div", { class: "l" }, `${s.name}的份额`)) : null)),
+      h("div", { class: "stat" }, h("div", { class: "v" }, fmt(avg)), h("div", { class: "l" }, "种群平均每场得分")),
+      h("div", { class: "stat" }, h("div", { class: "v" }, fmt(DD)), h("div", { class: "l" }, "要是全体都当鸽子，每场得分"))].filter(Boolean));
+    if (msg) { narrate.textContent = msg; return; }
+    const on = S.map((s, i) => i).filter((i) => st.on[i]);
+    const top = on.slice().sort((a, b) => st.x[b] - st.x[a]);
+    const best = on.slice().sort((a, b) => f[b] - f[a])[0];
+    const moving = st.hist.length > 20 ? Math.max(...on.map((i) => Math.abs(st.x[i] - st.hist[st.hist.length - 21][i]))) : 1;
+    narrate.textContent = moving < 0.002
+      ? `第 ${st.gen} 代：份额几乎不动了。${top.filter((i) => st.x[i] > 0.02).map((i) => `${S[i].name} ${pct(st.x[i])}`).join("，")}。这时各策略的平均得分：${on.map((i) => `${S[i].name} ${fmt(f[i])}`).join("，")}，种群平均 ${fmt(avg)}，比「全体当鸽子」的 ${fmt(DD)} ${avg < DD ? "低" : "不低"}。`
+      : `第 ${st.gen} 代：眼下得分最高的是${S[best].name}（${fmt(f[best])} 分），它的份额在涨。还没停下来，再跑一阵。`;
+  }
+
+  // 控件
+  const slider = (label, key, min, max, sign) => {
+    const out = h("b", {}, "");
+    const inp = h("input", { type: "range", min, max, step: 5, value: st[key], "aria-label": label });
+    const paint = () => { out.textContent = `${sign}${st[key]}`; };
+    inp.oninput = () => { st[key] = +inp.value; paint(); reset(); };
+    paint();
+    return h("label", {}, label, inp, out);
+  };
+  const boxes = S.map((s, i) => {
+    const b = h("input", { type: "checkbox", "aria-label": s.name });
+    b.checked = st.on[i];
+    b.onchange = () => {
+      st.on[i] = b.checked;
+      if (!st.on.some(Boolean)) { st.on[i] = true; b.checked = true; }
+      reset();
+    };
+    return h("label", { title: s.tip }, b, s.name);
+  });
+  const sel = h("select", { "aria-label": "起始种群" },
+    h("option", { value: "mutant" }, "几乎全是鸽子，混进 1% 别的"),
+    h("option", { value: "even" }, "选中的几种各占一样多"),
+    h("option", { value: "hawks" }, "几乎全是鹰，混进 1% 别的"));
+  sel.onchange = () => { st.start = sel.value; reset(); };
+
+  root.querySelector(".sim-body").replaceChildren(
+    h("div", { class: "controls" }, h("span", {}, "参赛的策略："), ...boxes),
+    h("div", { class: "controls" }, slider("赢一场得", "V", 10, 100, "+"), slider("受重伤扣", "C", 10, 200, "−"), slider("长时间对峙扣", "T", 0, 50, "−")),
+    h("div", { class: "controls" }, h("label", {}, "起始种群", sel),
+      h("button", { onclick: () => run(50) }, "跑 50 代"), h("button", { onclick: () => run(500) }, "跑 500 代"), h("button", { onclick: reset }, "重置")),
+    h("div", { class: "stage" }, svg, h("p", { class: "cap" }, "收益表：行是「我」，列是「对手」，格子里是「我」平均每场得几分。"), h("div", { class: "table-wrap" }, table)),
+    narrate, stats);
+  reset();
+})();
+</script>
+</body>
+</html>

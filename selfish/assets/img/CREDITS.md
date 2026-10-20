@@ -1,0 +1,5 @@
+- `05a-elephant-seals.jpg` — File:Elephant seals fighting.jpg — Mike Baird , bairdphotos.com — CC BY 2.0 — https://commons.wikimedia.org/wiki/File%3AElephant_seals_fighting.jpg
+- `05a-lorenz.jpg` — File:Konrad Lorenz, photo from the Nobel Foundation archive.jpg — NobelPrize.org — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File%3AKonrad_Lorenz%2C_photo_from_the_Nobel_Foundation_archive.jpg
+- `05a-great-tit.jpg` — File:Great tit feeding a chick in a natural hole in an elder bush.jpg — Rosember — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File%3AGreat_tit_feeding_a_chick_in_a_natural_hole_in_an_elder_bush.jpg
+- `05a-digger-wasp.jpg` — File:Great golden digger wasp (31760).jpg — Rhododendrites — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File%3AGreat_golden_digger_wasp_%2831760%29.jpg
+- `05a-maynard-smith.jpg` — File:John Maynard Smith.jpg — Web of Stories — CC BY-SA 3.0 — https://commons.wikimedia.org/wiki/File%3AJohn_Maynard_Smith.jpg
