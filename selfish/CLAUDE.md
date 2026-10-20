@@ -4,7 +4,7 @@
   Calibre id **2218**（AZW3、EPUB、MOBI；EPUB 是 2026-10-20 用户转出的），`source/calibre`。
 - 中译本：《自私的基因：40周年增订版》，卢允中等译，中信出版社 2018，Calibre id **6839**（EPUB），`source/calibre-zh`。
   第 1–13 章和尾注与英文版一一对应；译本另有第 14、15 章（取自 *The Extended Phenotype*）和 40 周年版的说明、序言，英文版没有这些。
-- 正文 13 章约 13.2 万词（每章 4600 到 14000 词，第 12、13 章最长），书后尾注约 3 万词。
+- 正文 13 章约 11.5 万词（每章 3500 到 14300 词，第 12、13 章最长），书后尾注约 3 万词（index.tsv 的数）。
 - 网址 https://t.miaowuao.cn/selfish/ ，目录 `selfish/`，localStorage 键前缀 `sg-`，共享脚本 `assets/sg.js`。骨架照 Darwin's Worms（`worms/`），模拟器的写法照 DDIA（`~/ddia`），译本检查照 Flowers for Algernon（`algernon/`），对照今天照 Up from the Projects（`projects/`）。
 
 ## 用户的回答（2026-10-20）
@@ -28,8 +28,10 @@
   原书各章**没有小标题**，第 12、13 章（1989 年新加）没有尾注。
 - [x] E 规范和骨架（2026-10-20）：四位代理通读全书写底稿 `source/line/00–13.md`（任务说明 `source/LINE-TASK.md`），主编据此定节和页，写 `source/LINE.md`（全书的线、概念分工、术语表、拍板的事）。
   `AUTHORING.md`、`assets/sg.js`、`assets/style.css`（末尾加尾注块、模拟器、`.zhv`、「有争议」标签）、`assets/chapters.js`（13 章 104 节、22 页）、`index.html`、`recap.html`、`terms.html`、`today.html`（对照今天汇总）、`tools/lint.py`、`tools/overlap.py`（引用上限 2）、`source/REVIEW.md`。
-- [ ] F 样板页 `chapters/05a.html`（第 5 章上半，鹰和鸽，带模拟器，主编写）：三项检查通过；审读员改 19 处（`source/ACCEPTANCE.md`），九类易犯的错写进 `source/BRIEF.md`；用户要求后加了「译本勘误」（11 条）。**待用户认可**
-- [ ] G 铺开　[ ] H 审读轮　[ ] I 上线　[ ] J 收尾
+- [x] F 样板页 `chapters/05a.html`（第 5 章上半，鹰和鸽，带模拟器，主编写）：三项检查通过；审读员改 19 处（`source/ACCEPTANCE.md`），九类易犯的错写进 `source/BRIEF.md`；用户要求后加了「译本勘误」（11 条）。**用户 2026-10-20 认可**（「可以」）。派人前两位核对员把 13 章底稿对原文核了一遍，改 65 处（`source/ACCEPTANCE.md`）
+- [x] G 铺开（2026-10-20，交回一位补派一位；21 页全部交齐并由主编读过收下）：第一批 01 02 03a 03b 04a 04b 05b 06a 06b 07 08a，第二批 08b 09a 09b 10a 10b 11 12a 12b 13a 13b；作者报告 `source/reports/`　
+- [x] H 审读轮（2026-10-20，核查和词条审读合一，说明 `source/REVIEW.md`）：11 位审读员审完 23 页，记录和小结在 `source/ACCEPTANCE.md`。最大的问题是主编的译本提取把分数小图删掉，造出一批错勘误，已全部改正
+- [ ] I 上线　[ ] J 收尾
 
 ## 页和节
 

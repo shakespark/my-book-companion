@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 9 章（上）· The Selfish Gene 导读</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/chapters.js"></script>
+<script src="../assets/sg.js"></script>
+<style>
+#sim-09a .stage svg { display: block; height: auto; }
+#sim-09a .stage svg.plane { width: 100%; max-width: 460px; margin: 0 auto; cursor: crosshair; }
+#sim-09a .stage svg.series { width: 100%; min-width: 480px; margin-top: 10px; }
+#sim-09a .stage svg.plane text { font-size: 16px; }
+#sim-09a .stage p.cap { color: var(--muted); font-size: 12.5px; margin: 10px 0 4px; }
+#sim-09a table.payoff { border-collapse: collapse; margin: 6px 0 0; font-size: 13.5px; }
+#sim-09a table.payoff th, #sim-09a table.payoff td { border: 1px solid var(--border); padding: 3px 10px; text-align: center; font-variant-numeric: tabular-nums; }
+#sim-09a table.payoff th { background: var(--surface-2); font-weight: 600; }
+#sim-09a .controls input[type="range"] { width: 100px; }
+</style>
+</head>
+<body data-page="09a">
+<main>
+
+<h2>这一页在做什么</h2>
+<div class="gist"><p>第 9 章的前半。上一章讲亲子之间的冲突，这一章换成一对配偶：两个毫无亲缘的个体共同养孩子，各自的基因都「希望」对方多出力。Dawkins 先找两性最根本的区别，再借 Fisher 解释为什么雌雄差不多各半，借 Trivers 讲「谁先抛弃谁」，最后照第 5 章鹰鸽的办法，搭一个羞怯、放荡、忠诚、薄情四种策略的模型。读的时候抓两条线：「剥削」「想要」都是比喻；模型的结论作者 1989 年改过口。</p></div>
+<figure class="fig"><img src="../assets/img/09a-kittiwakes.jpg" alt="两只白色的海鸥在巢边嘴对着嘴，下面那只仰头张嘴，伸进上面那只的嘴里" loading="lazy">
+<figcaption>一对三趾鸥在巢上，雌鸟向雄鸟讨食（摄于阿拉斯加 Middleton 岛）。第 15 段说三趾鸥是一雌一雄、彼此忠诚的楷模；求偶时雄鸟喂雌鸟，下一页会讲。<span class="src">TRinaud，CC BY 4.0，维基共享资源</span></figcaption></figure>
+
+<h2>读之前：这一页在全书的哪里</h2>
+<div class="linehere"></div>
+<p>第 8 章停在亲子之争，并在末尾预告：那一章和下一章讲配偶冲突，读起来可能冷酷得吓人，但说的都不是有意识的动机。这一章第 1 段就从那里接过来：亲子还共享一半基因，配偶连这一半都没有。第 2 段回指第 3 章讲性时没提的「不对称」，第 25 段回指第 5 章的「鸽子集团」，第 7、11 段用到第 7、8 章的生育和亲代投资。</p>
+<div class="crux"><p>配偶各为自己的基因打算，雌性不能和别的雌性「串通」。在这种情况下，「先考验、后交配」的羞怯还能留得下来吗？</p></div>
+<p class="lede">读的时候带着这几个问题。不用先找答案，读完回来对照「检查一下理解」。</p>
+<ol class="qs">
+  <li>作者说「剥削从这里开始」，说的是谁占谁的便宜？他 1989 年对这个说法满意吗？<span class="sec">§1</span></li>
+  <li>一头雄性能配一百头雌性，为什么生儿子和生女儿还是一样划算？<span class="sec">§2</span></li>
+  <li>已经投入了很多，就不会走了吗？作者在哪里纠正了 Trivers？<span class="sec">§4</span></li>
+  <li>第 28–32 段讲了一个「转圈」的故事，第 33 段又说其实不会转圈。哪一个对？<span class="sec">§5</span></li>
+</ol>
+
+<h2>这一页的路线</h2>
+<p>这一页先从定义下手：雄和雌到底指什么，答案是配子的大小，后面一切都从这里推。§2 是一段插曲，用性比率说明「物种利益」解释不了多余的雄性，读着像离题，其实是在练 ESS 的思路。§3 回到一对配偶，跟着 Trivers 列出被抛弃的雌性有几条路，中间夹着小鼠和狮子。§4 话锋一转：与其事后补救，不如交配前讨价还价，并顺手纠正 Trivers 的一个错。§5 把讨价还价写成四种策略的模型，先讲一个转圈的故事，再说「其实会停下」。这最后一步，作者 1989 年自己推翻了。</p>
+<figure class="fig"><svg class="diagram" viewBox="0 0 640 250" role="img" aria-label="路线示意图：上面一行是推理和模型，下面一行是动物和人的例子，一条折线按阅读顺序在两行之间来回，最后一个点是 1989 年的尾注">
+<text x="6" y="104" class="t-m">推理和模型</text>
+<text x="6" y="152" class="t-m">例子</text>
+<polyline points="50,80 120,80 190,170 260,80 330,170 400,80 470,170 540,80" class="ln-a"/>
+<line x1="540" y1="80" x2="606" y2="80" class="ln-d"/>
+<circle cx="50" cy="80" r="7" class="f1"/><text x="50" y="58" text-anchor="middle">配偶冲突</text><text x="50" y="38" text-anchor="middle" class="t-m">§1</text>
+<circle cx="120" cy="80" r="7" class="f1"/><text x="120" y="58" text-anchor="middle">卵大精小</text><text x="120" y="38" text-anchor="middle" class="t-m">§1</text>
+<circle cx="190" cy="170" r="7" class="f2"/><text x="190" y="196" text-anchor="middle">象海豹</text><text x="190" y="214" text-anchor="middle" class="t-m">§2</text>
+<circle cx="260" cy="80" r="7" class="f1"/><text x="260" y="58" text-anchor="middle">雌雄各半</text><text x="260" y="38" text-anchor="middle" class="t-m">§2</text>
+<circle cx="330" cy="170" r="7" class="f2"/><text x="330" y="196" text-anchor="middle">小鼠、狮子</text><text x="330" y="214" text-anchor="middle" class="t-m">§3</text>
+<circle cx="400" cy="80" r="7" class="f1"/><text x="400" y="58" text-anchor="middle">谁先抛弃</text><text x="400" y="38" text-anchor="middle" class="t-m">§3</text>
+<circle cx="470" cy="170" r="7" class="f2"/><text x="470" y="196" text-anchor="middle">协和客机</text><text x="470" y="214" text-anchor="middle" class="t-m">§4</text>
+<circle cx="540" cy="80" r="7" class="f1"/><text x="540" y="58" text-anchor="middle">四种策略</text><text x="540" y="38" text-anchor="middle" class="t-m">§5</text>
+<circle cx="606" cy="80" r="7" class="f5"/><text x="606" y="108" text-anchor="middle" class="t-b">绕圈</text><text x="606" y="126" text-anchor="middle" class="t-m">注 47</text>
+</svg>
+<figcaption>本站示意图。蓝点是推理和模型，橙点是动物和人的例子，折线是阅读顺序；虚线连到的黄点是 1989 年的尾注，它推翻了模型的最后一步。</figcaption></figure>
+<p class="landing"><b>作者落在哪：</b>不必假设雌性串通：在各为自己基因的个体里，「先考验、后交配」的羞怯雌性和肯等的忠诚雄性完全可能演化出来、占多数。但 1976 年说种群会停在一个稳定比例，1989 年他承认错了。</p>
+
+<h2>分节地图</h2>
+<p class="lede">这一页是原书第 9 章的第 1–5 节。原书各章没有小标题，粗体的节名是本站起的，下面是这一节第一段开头的几个词，在电子书里搜它就能跳过去。读完打个勾。</p>
+<ol class="secmap">
+  <li data-sec="1"><b>卵子大、精子小<span class="w">约 1300 词</span></b><span class="en">If there is conflict of interest …</span><span class="what">第 1 段立题，第 2 段给出两性的定义，第 5 段讲 Parker 等人的配子分化模型。第 1、4 段的星号都是改口，值得点。</span></li>
+  <li data-sec="2"><b>费希尔：为什么雌雄各半<span class="w">约 1300 词</span></b><span class="en">Males, then, seem to be pretty worthless …</span><span class="what">从「物种利益」的难题讲到 Fisher 的答案。第 11 段把「数目各半」改成「投资各半」，第 13 段又提醒一遍拟人是比喻。</span></li>
+  <li data-sec="3"><b>谁先抛弃谁<span class="w">约 1500 词</span></b><span class="en">Consider again the mated pair with which …</span><span class="what">为什么多是父亲先走；被抛弃的雌性有几条路。第 20 段的内心独白是全节的要点，作者说明那只是演示。</span></li>
+  <li data-sec="4"><b>家庭幸福策略和协和式谬误<span class="w">约 700 词</span></b><span class="en">We have looked at some of …</span><span class="what">从事后补救转到交配前的筹码，提出两种策略。第 24 段作者纠正 Trivers，并指出一切取决于多数雌性怎么做。</span></li>
+  <li data-sec="5"><b>羞怯、放荡、忠诚、薄情<span class="w">约 1300 词</span></b><span class="en">Much therefore depends on how the majority …</span><span class="what">四种策略和计分。第 28–32 段讲一圈循环，第 33 段说会收敛：这句作者 1989 年在注 47 里认错。</span></li>
+</ol>
+
+<h2>先用中文过一遍：这一页的概念</h2>
+<p class="lede">先把这一页用到、作者默认你懂的几个概念讲一遍。讲的是概念本身，作者拿它推出什么，读原书时自己看。前几章讲过的<a class="term" href="05a.html#c-ess">进化稳定策略</a>、<a class="term" href="08a.html#c-parental-investment">亲代投资</a>、<a class="term" href="01.html#c-group-selection">类群选择</a>，点进去看。</p>
+<div class="concept" id="c-isogamy">
+<h3><span class="sec">§1</span>同配生殖和异配生殖 <span class="en">isogamy; anisogamy</span></h3>
+<p>有性生殖是两个配子（性细胞）融合成一个新个体。有些藻类和真菌的配子大小一样、谁都能和谁融合，叫同配生殖。绝大多数动植物的配子一大一小：大的少、不动、带着养料，叫卵；小的多、会游、几乎只带基因，叫精子。这叫异配生殖（anisogamy，书里没用这个词）。生物学上「雌」「雄」最一般的定义就是：产大配子的是雌，产小配子的是雄。有没有阴茎、谁生孩子、性染色体是什么，都因物种而异，靠不住。</p>
+<figure class="fig"><svg class="diagram" viewBox="0 0 640 150" role="img" aria-label="示意图：上面一行两个一样大的圆合成一个，标同配；下面一行一个大圆和一个带尾巴的小点合成一个，标异配">
+<text x="10" y="45" class="t-b">同配</text>
+<circle cx="150" cy="40" r="18" class="f-soft ln"/><text x="190" y="45" text-anchor="middle">＋</text><circle cx="230" cy="40" r="18" class="f-soft ln"/>
+<line x1="270" y1="40" x2="330" y2="40" class="ln-a"/><circle cx="370" cy="40" r="24" class="f-soft ln"/>
+<text x="420" y="45" class="t-m">两个配子一样大，各出一半养料</text>
+<text x="10" y="115" class="t-b">异配</text>
+<circle cx="150" cy="110" r="30" class="f2"/><text x="190" y="115" text-anchor="middle">＋</text><circle cx="222" cy="110" r="4" class="f1"/><line x1="226" y1="110" x2="246" y2="104" class="s1"/>
+<line x1="270" y1="110" x2="330" y2="110" class="ln-a"/><circle cx="370" cy="110" r="30" class="f2"/>
+<text x="420" y="104" class="t-m">卵（雌）出几乎全部养料</text>
+<text x="420" y="124" class="t-m">精子（雄）只带基因</text>
+</svg>
+<figcaption>本站示意图，大小不按比例：鸟卵和精子差得何止千万倍。</figcaption></figure>
+<p class="use"><b>在这一页：</b>第 2–5 段。作者用配子大小给两性下定义，再转述 Parker 等人的模型说明一大一小可能怎样分化出来。</p>
+</div>
+<div class="concept" id="c-sex-ratio">
+<h3><span class="sec">§2</span>性比率 <span class="en">sex ratio</span></h3>
+<p>一个种群里雄与雌的数目之比。今天通行叫「性比」。Fisher 1930 年给过一个著名的论证：每个孩子都恰好有一个父亲、一个母亲，所以全体雄性留下的后代总数，等于全体雌性留下的后代总数。哪一性少，那一性的每个个体平均就分到更多后代，于是多生少的那一性的父母占便宜，比例被推回来。稳定点是父母花在儿子和女儿上的总投资各一半；生一个儿子和生一个女儿花费一样时，就是数目各半。注意它说的是「偏离 1:1 的基因会吃亏」，不是「1:1 对种群最好」。</p>
+<figure class="fig"><svg class="diagram" viewBox="0 0 640 210" role="img" aria-label="示意图：左边一个雄性和三个雌性，生下十二个孩子；右边算账，每个孩子一个父亲一个母亲，所以雄性平均十二个后代，雌性平均四个">
+<text x="10" y="30" class="t-b">假如一头雄性配三头雌性</text>
+<rect x="20" y="52" width="26" height="26" class="f1"/>
+<circle cx="90" cy="65" r="13" class="f2"/><circle cx="125" cy="65" r="13" class="f2"/><circle cx="160" cy="65" r="13" class="f2"/>
+<text x="33" y="100" text-anchor="middle" class="t-m">雄 1</text><text x="125" y="100" text-anchor="middle" class="t-m">雌 3</text>
+<line x1="200" y1="65" x2="270" y2="65" class="ln-a"/>
+<text x="290" y="60" class="t-b">下一代 12 个孩子</text>
+<text x="290" y="82" class="t-m">每个孩子：一个父亲，一个母亲</text>
+<text x="20" y="140">这头雄性：12 个孩子的父亲</text>
+<text x="20" y="164">每头雌性：平均 4 个孩子的母亲</text>
+<text x="330" y="140" class="t-b">生儿子比生女儿划算三倍</text>
+<text x="330" y="164" class="t-m">偏爱生儿子的基因变多</text>
+<text x="330" y="188" class="t-m">比例被推回雌雄各半</text>
+</svg>
+<figcaption>本站示意图，用的是虚构的数。只要两性不是各半，少的那一性每个个体平均分到的后代就多。</figcaption></figure>
+<p class="use"><b>在这一页：</b>第 6–11 段。作者拿它说明「物种利益」讲不通、自私基因讲得通；第 11 段补上按投资而不是按数目算。</p>
+</div>
+<div class="concept" id="c-cruel-bind">
+<h3><span class="sec">§3</span>无情的约束 <span class="en">cruel bind</span></h3>
+<p>Trivers 1972 年论亲代投资的论文里的说法。两个人一起养一个孩子，到了任何一方都能独自养成的时候，谁先走，谁就把难题留给了对方：留下的一方要么独自扛到底，要么看着自己的投入白费。这像程序员说的「谁先撒手谁赢」：两个人合维护一个项目，先跑路的那位知道留下的人舍不得让项目死掉。可怕的是这是对称的：双方都可能这样「想」，于是都有理由抢先。这里的「想」是比喻，说的是倾向于先走的基因会被选择留下。</p>
+<p class="use"><b>在这一页：</b>第 20 段。作者用一段内心独白演示它，紧接着说明独白只是为了讲清楚。</p>
+</div>
+<div class="concept" id="c-domestic-bliss-he-man">
+<h3><span class="sec">§4</span>家庭幸福策略和大丈夫策略 <span class="en">domestic-bliss strategy; he-man strategy</span></h3>
+<p>Dawkins 给雌性择偶的两条路起的名字。家庭幸福：挑看来会留下帮忙养孩子的雄性，比如要求长时间求偶、先筑巢、先喂食，耐不住的就被筛掉。大丈夫：不指望雄性帮忙，只挑看来基因最好的雄性，生下的儿子也会受欢迎。今天的择偶研究大致对应「直接好处」（食物、照料、领地）和「间接好处」（好基因）两类解释，名字没有沿用。两条路不互斥，许多物种两样都要。</p>
+<p class="use"><b>在这一页：</b>第 21 段提出两种策略，第 22–35 段讲家庭幸福策略；大丈夫策略留到下一页。</p>
+</div>
+<div class="concept" id="c-concorde">
+<h3><span class="sec">§4</span>协和式谬误 <span class="en">Concorde fallacy</span></h3>
+<p>以过去投入了多少来决定要不要继续投入。英法合造的协和超音速客机，开发费用一再超支、前景越来越差，两国政府仍继续投钱，常被当作这种做法的例子；Dawkins 和学生 Carlisle 1976 年借它起了这个名字。经济学叫沉没成本谬误：已经花掉的收不回来，该不该继续，只看往后的得失。程序员熟悉的版本是「这个项目重写了一半，不能停」。Arkes 和 Ayton 1999 年的综述认为，动物里还找不到确凿的协和式谬误，人反而常犯。</p>
+<p class="use"><b>在这一页：</b>第 24 段，作者用它纠正 Trivers：雄性先投入了多少，不能单独让它留下；要看别的雌性好不好追。</p>
+</div>
+
+<h2>动手：模拟器</h2>
+<p>先猜：从几乎全是羞怯雌性和忠诚雄性的种群出发（第 28 段的「理想的一夫一妻社会」），用书里第 27 段的计分跑下去，种群会像第 33 段说的那样，停在羞怯占 5/6、忠诚占 5/8 吗？再点「跑 500 代」验证。</p>
+<div class="sim" id="sim-09a">
+  <div class="sim-head"><span class="tag">模拟器</span><h3>两性之战：停下来，还是绕圈</h3><p class="desc">雌性有两种：羞怯（要求长时间求偶）和放荡（马上交配）；雄性有两种：忠诚（肯等，交配后留下帮忙）和薄情（不等，交配后就走）。每一代，得分高的那种份额涨一点。上面三个滑杆是计分，默认就是书里第 27 段的数。方框图里一个点代表整个种群：往右是羞怯的雌性多，往上是忠诚的雄性多。在方框里点一下，就从那里出发。</p></div>
+  <div class="sim-body"><p>需要浏览器打开脚本才能运行。</p></div>
+</div>
+<ol class="qs">
+  <li>试试看：用默认的计分和起点点「跑 500 代」。点会绕着十字（均衡点）转，跑多久都不停；第 30–32 段那个「假想的循环」是真的。转完一圈后看「最近一整圈的平均」：在 83.3% 和 62.5% 上下，正是书里的 5/6 和 5/8。书里的数没算错，算错的是「会停在那里」。</li>
+  <li>试试看：起始种群选「正好在均衡点上」，跑 100 代，点一动不动。再点「推一下」（雄性里忠诚的比例减 5 个百分点），跑 500 代：点不会回到十字上，而是一直绕着它转。这就是注 47 说的「刀刃」：均衡点算对了，却不稳。对照 <a href="05a.html#sim-05a">05a 的鹰鸽模拟器</a>：那里推开了会自己回来。</li>
+  <li>试试看：把「养一个孩子的总代价」拖到 12（比「养大一个孩子」的 15 还小），跑 500 代：放荡的雌性先占满，接着薄情的雄性占满，没人求偶也没人帮忙。再还原，把「求偶耗时」拖到 6：薄情占满，羞怯也占满，一个孩子都生不出来。这是模型的边界，书里第 33 段说换一组数要重算，就是这个意思。</li>
+</ol>
+<p>为什么这里会绕圈，鹰鸽却会停？在鹰鸽里，鹰一多，鹰自己就常碰上鹰，得分立刻下降，偏离被马上纠正。这里不一样：按书里的计分，忠诚和薄情两种雄性谁占便宜，只看雌性里羞怯的有多少，和雄性自己的比例无关；雌性那边也一样，只看雄性。所以雄性那边偏了一点，不会马上吃亏，要等雌性那边被带着变了，才反过来推雄性，而推回来时已经冲过了头。两边你追我赶，就成了一圈圈的循环。画面是把连续变化切成很小的步子一步步算的近似；要是一代只算一大步，轨迹会一圈比一圈大，那是粗算带进来的误差，不是模型本身。「一整圈的平均正好落在均衡点上」是这类模型的一个数学性质，是本站的补充，书里没有说。</p>
+
+<h2>书里的人和研究</h2>
+<p class="lede">按在书里出现的顺序排，标题前是节号。只讲到读懂这一页需要的程度。</p>
+
+<h3><span class="sec">§1</span>Trivers：配偶也互相算计</h3>
+<p>第 1 段说，把配偶关系看成互不信任、互相剥削，是 Trivers 特别强调的，在当时的动物行为学家看来还是新观点。出处是他 1972 年的论文《亲代投资与性选择》，收在纪念达尔文《人类的由来》一百年的文集里。这篇论文提出：在后代身上投资多的一性会更挑剔，投资少的一性会为配偶互相竞争，这是解释<a class="term" href="09b.html#c-sexual-selection">性选择</a>的一个基本思路。这一页里被抛弃的雌性有几条路、「无情的约束」，都转述自它。</p>
+<div class="who">
+  <div><b>Robert Trivers</b><span class="en">1943–2026</span>美国演化生物学家，1970 年代初接连提出相互利他、亲代投资、亲子冲突等理论，这本书第 8–10 章处处是他。他为本书第一版写了序言。</div>
+</div>
+
+<h3><span class="sec">§1</span>Parker 等人的配子分化模型</h3>
+<p>第 5 段转述的是 Geoffrey Parker、Robin Baker 和 V. G. F. Smith 1972 年在《理论生物学杂志》上的模型：从配子一样大的祖先出发，大配子给胚胎更多养料，小配子能造得更多，中间大小的两头不讨好，于是分成一大一小两极。作者转述时用的是「可能」这样演化出来，并把小配子叫「剥削者」、大配子叫「诚实者」，这两个词是他的比喻。今天这个模型仍被看作解释异配生殖的经典起点。</p>
+
+<h3><span class="sec">§2</span>Fisher 和性比率</h3>
+<figure class="fig small"><img src="../assets/img/09a-fisher.jpg" alt="一位戴圆眼镜、留白胡子的老人，白衬衫打领带，一手叉腰，一手拿着一卷纸，站在灌木前" loading="lazy">
+<figcaption>R. A. Fisher，1952 年在美国北卡罗来纳州的一次统计学会议上。<span class="src">Barry Eagel，CC BY-SA 4.0，维基共享资源</span></figcaption></figure>
+<p>第 6 段说这个解释「最早」是 Fisher 给的，指他 1930 年的《自然选择的遗传理论》。科学史家后来查到，同样的道理达尔文 1871 年《人类的由来》第一版里就提过（第二版删了），德国人 Carl Düsing 1884 年也论证过；Fisher 的贡献是把它讲成了今天人人引用的形式。</p>
+<div class="who">
+  <div><b>Ronald A. Fisher</b><span class="en">1890–1962</span>英国统计学家、遗传学家，现代统计学和群体遗传学的奠基人之一。这一章下一页的「失控」选择也出自他。</div>
+</div>
+
+<h3><span class="sec">§2</span>象海豹：少数雄性包办交配</h3>
+<p>第 6 段说，一项对象海豹的研究里，4% 的雄性占了观察到的 88% 的交配。书里没说是谁的研究。这类数据最出名的来自 Burney Le Boeuf 1970 年代在加州 Año Nuevo 对北象海豹的长期观察：每个繁殖季只有少数优势雄性能交配，大批雄性一辈子没有机会。作者拿它说明，从「物种利益」看，这些光棍纯属浪费。</p>
+
+<h3><span class="sec">§3</span>布鲁斯效应和新来的雄狮</h3>
+<figure class="fig"><img src="../assets/img/09a-male-lion.jpg" alt="一头鬃毛浓密的雄狮压低身子在枯黄的草丛里潜行，盯着前方" loading="lazy">
+<figcaption>坦桑尼亚塞伦盖蒂的一头雄狮。<span class="src">Giles Laurent，CC BY-SA 4.0，维基共享资源</span></figcaption></figure>
+<p>布鲁斯效应得名于英国动物学家 Hilda Bruce 1959 年在《自然》上的报告：怀孕的小鼠闻到陌生雄鼠的气味会流产，闻原配的气味就不会。第 16 段说这「很可能」是雄性除掉别人的孩子的办法，第 18 段又从雌性一方说，及早流产对她也可能划算。同一段的雄狮：新雄狮接管狮群后，有时会杀死原有的幼崽，作者说「大概」因为不是自己的。后来的野外研究支持这个解释：Packer 和 Pusey 1983 年报告，狮群换了雄狮后幼崽大量死亡；Roberts 等 2012 年在埃塞俄比亚发现，野生狮尾狒的优势雄性被取代后，约八成怀孕的雌性终止了妊娠。</p>
+
+<h3><span class="sec">§4</span>Dawkins 和 Carlisle 的那篇论文</h3>
+<figure class="fig"><img src="../assets/img/09a-concorde.jpg" alt="一架白色、机头尖长的英国航空协和式客机正在跑道上抬头起飞，前轮已离地" loading="lazy">
+<figcaption>英国航空的协和式客机 G-BOAC，2003 年 10 月最后一次飞行时摄于曼彻斯特机场。<span class="src">Ken Fielding，CC BY-SA 3.0，维基共享资源</span></figcaption></figure>
+<p>第 24 段的「我在一篇论文中」，指 Dawkins 和 Tamsin Carlisle 1976 年发在《自然》上的短文《亲代投资、抛弃配偶和一个谬误》。Carlisle 是他当时的学生，下一页讲鱼爸爸时还会出现。文章指出 Trivers 把「已经投入的多」当成「会继续投入」的理由，这在经济学上讲不通。协和式客机 1969 年首飞，1976 年投入航线，2003 年退役。</p>
+
+<h3><span class="sec">§5</span>Schuster、Sigmund 和 Maynard Smith 的后续模型（注 46、47）</h3>
+<p>注 47 说，指出「会收敛」这个错的，是奥地利的数学生物学家 Peter Schuster 和 Karl Sigmund；他们 1981 年在《动物行为》上的论文就叫「羞怯、薄情和稳定策略」。注 46 讲的是 Maynard Smith 1977 年的「坚守 / 离弃」模型（Grafen 和 Sibly 也独立做过）：雌雄各自可以守着孩子（Guard）或走掉（Desert），结局只落在四种之一，作者照代表动物叫它们鸭型（雄走雌守）、棘鱼型（雌走雄守）、果蝇型（都走）、长臂猿型（都守），而且只有特定的两种能在同一组条件下并存。</p>
+
+<h2>词与短语</h2>
+<p class="lede">按节排，每节前面是分节地图里的节名。标着「每个字都认识」的，是熟词生义、习语和反话，最容易读错。灰色的那几个字是原句里的位置，在电子书里搜它就能找到。</p>
+
+<h3 class="sec-head" id="s1">§1 <span class="first">卵子大、精子小</span></h3>
+<div class="entry trap"><div class="en">get away with</div><div class="loc" data-p="1">… one parent can get away with investing …</div><div class="zh">（少出力）而不吃亏</div><div class="note">get away with 是「做了不该做的事却没受惩罚」。这里说哪一方能少投入还不受罚，哪一方就占便宜。</div></div>
+<div class="entry"><div class="en">physically enjoy</div><div class="loc" data-p="1">… I don’t mean physically enjoy, although …</div><div class="zh">（不是指）身体上的享受</div><div class="note">作者给引号里的 like 加注：说个体「喜欢」多交配，是指基因上划算，不是快感；后半句 although he might 是玩笑。</div></div>
+<div class="entry"><div class="en">for the good of the species</div><div class="loc" data-p="1">… or even for the good of the species!</div><div class="zh">为了物种的利益</div><div class="note">全书的靶子。句末的感叹号是讽刺：当年的动物行为学家连交配都看成为物种着想的合作。</div></div>
+<div class="entry"><div class="en">go right back to first principles</div><div class="loc" data-p="2">… go right back to first principles, …</div><div class="zh">回到最基本的道理上去</div><div class="note">first principles 是推理的出发点、不再往下拆的基本前提。</div></div>
+<div class="entry trap"><div class="en">all very well for … but</div><div class="loc" data-p="2">… are all very well for mammals but, …</div><div class="zh">对……倒是可以，但是</div><div class="note">先让一步再转折：这些标准拿来判断哺乳动物没问题，放到一般动植物就不行了。不是「非常好」。</div></div>
+<div class="entry"><div class="en">wear trousers</div><div class="loc" data-p="2">… the tendency to wear trousers as …</div><div class="zh">穿裤子</div><div class="note">作者的玩笑：拿有没有阴茎判断青蛙的性别，就像拿穿不穿裤子判断人的性别，都是表面特征。</div></div>
+<div class="entry trap"><div class="en">at liberty to</div><div class="loc" data-p="2">… we are quite at liberty to abandon them.</div><div class="zh">尽可以，大可</div><div class="note">at liberty 是「有自由、不受限制」。雄、雌只是词，不好用就扔掉。</div></div>
+<div class="entry"><div class="en">Female exploitation begins here</div><div class="loc" data-p="4">… is virtually unlimited. Female exploitation begins here.</div><div class="zh">对雌性的剥削从这里开始</div><div class="note">「剥削」是比喻：雄性每个后代投入少，等于占了雌性投入的便宜。说的是基因上的得失，不是道德判断。这句后面的星号是注 45，作者 1989 年说这种强调有误导。</div></div>
+<div class="entry trap"><div class="en">there was a catch</div><div class="loc" data-p="5">… But there was a catch. The …</div><div class="zh">但这里有个隐患</div><div class="note">catch 作名词是「暗藏的问题、陷阱」，不是「接住」。大配子越来越大，正好给了小配子钻空子的机会。</div></div>
+<div class="entry trap"><div class="en">cash in</div><div class="loc" data-p="5">… than average gametes could cash in, …</div><div class="zh">趁机捞好处</div><div class="note">本义是把筹码兑成现金，引申为利用机会获利。</div></div>
+<div class="entry"><div class="en">in runaway fashion</div><div class="loc" data-p="5">… have continued in runaway fashion.</div><div class="zh">一发不可收地</div><div class="note">runaway 是「失控的、自己越跑越快的」。下一页的「失控过程」用的是同一个词。</div></div>
+<div class="entry trap"><div class="en">duck under the barrier</div><div class="loc" data-p="5">… exploiters to duck under the barrier: …</div><div class="zh">从栏杆底下钻过去</div><div class="note">duck 作动词是「猛一低头、躲闪」。大配子想把小配子挡在外面，小配子拼命钻进来，后者更急，所以赢了。</div></div>
+
+<h3 class="sec-head" id="s2">§2 <span class="first">费希尔：为什么雌雄各半</span></h3>
+<div class="entry trap"><div class="en">pretty worthless fellows</div><div class="loc" data-p="6">… seem to be pretty worthless fellows, …</div><div class="zh">相当没用的家伙</div><div class="note">pretty 在这里是「相当」，不是「漂亮」。英式的调侃，作者马上说明这只是「物种利益」眼光下的看法。</div></div>
+<div class="entry trap"><div class="en">service a harem</div><div class="loc" data-p="6">… enough sperms to service a harem …</div><div class="zh">给一群妻妾配种</div><div class="note">service 用于牲畜时是「（公畜）给母畜配种」，不是「服务」。</div></div>
+<div class="entry"><div class="en">no less hungrily than</div><div class="loc" data-p="6">… food resources no less hungrily than …</div><div class="zh">吃得一点不比……少</div><div class="note">no less … than 是「和……一样」。光棍雄性不繁殖，饭量却照旧。</div></div>
+<div class="entry"><div class="en">a figure of speech</div><div class="loc" data-p="8">… strategy is just a figure of speech.</div><div class="zh">一种比喻的说法</div><div class="note">作者又一次声明：「策略」不是个体在选择，个体也不能真的决定生男生女，说的是倾向于某种结果的基因。第 13 段又说了一次。</div></div>
+<div class="entry trap"><div class="en">working flat out</div><div class="loc" data-p="9">… remaining males, working flat out, could …</div><div class="zh">拼尽全力</div><div class="note">flat out 是「全速、竭尽全力」，不是「平躺」。</div></div>
+<div class="entry"><div class="en">the pendulum will swing back</div><div class="loc" data-p="9">… and the pendulum will swing back.</div><div class="zh">钟摆会摆回来</div><div class="note">作者第 10 段马上修正这个比喻：实际上比例一偏，回推的力量就开始了，不会真的摆得那么远。</div></div>
+<div class="entry"><div class="en">supermale</div><div class="loc" data-p="11">… of making each son a supermale …</div><div class="zh">超级雄性</div><div class="note">作者举的假想例子，不是对象海豹的观察：少生儿子，每个儿子多投入三倍，也可以是稳定的。</div></div>
+<div class="entry"><div class="en">As a convenient approximation</div><div class="loc" data-p="13">… As a convenient approximation, we can …</div><div class="zh">作为一种方便的近似</div><div class="note">作者交代：把个体当作为全部基因打算的自私机器，是近似，不是严格的说法。</div></div>
+<div class="entry"><div class="en">hold in the back of our mind</div><div class="loc" data-p="13">… hold in the back of our mind that …</div><div class="zh">心里一直记着</div><div class="note">at the back of one’s mind 是「心里隐隐记着」。要记着的是：说个体「有目的」只是比喻，身体是基因盲目编程的机器。</div></div>
+
+<h3 class="sec-head" id="s3">§3 <span class="first">谁先抛弃谁</span></h3>
+<div class="entry"><div class="en">bear the brunt of</div><div class="loc" data-p="14">… going to bear the brunt of …</div><div class="zh">承担最主要的部分</div><div class="note">brunt 是冲击最猛的那一下。分歧在于养孩子的代价主要由谁扛。</div></div>
+<div class="entry trap"><div class="en">More to the point</div><div class="loc" data-p="14">… More to the point, she would have …</div><div class="zh">更要紧的是</div><div class="note">不是「更切题」那么弱，是提出更关键的理由：她已投入多还在其次，再养一个替代的孩子她要付出更多，这才是要害。</div></div>
+<div class="entry trap"><div class="en">leaving the father holding the baby</div><div class="loc" data-p="14">… leaving the father holding the baby, …</div><div class="zh">把孩子（烂摊子）丢给父亲</div><div class="note">习语 left holding the baby 是「被撇下收拾残局」，这里字面意思也成立，一语双关。</div></div>
+<div class="entry trap"><div class="en">only pay a father to</div><div class="loc" data-p="15">… in any case only pay a father …</div><div class="zh">只有在……时，对父亲才划算</div><div class="note">pay 作不及物动词是「划算、有利」。全书最常见的熟词生义之一。</div></div>
+<div class="entry"><div class="en">incidentally</div><div class="loc" data-p="16">… Ardrey, incidentally, sees the Bruce effect …</div><div class="zh">顺便提一句</div><div class="note">要反着读：配上句末的感叹号，是在挖苦 Ardrey 把布鲁斯效应说成控制种群数量的机制。</div></div>
+<div class="entry"><div class="en">the unwitting benefactor</div><div class="loc" data-p="17">… avoid being the unwitting benefactor of …</div><div class="zh">蒙在鼓里的恩人</div><div class="note">说白了就是替别人养孩子的冤大头。</div></div>
+<div class="entry trap"><div class="en">stick it out</div><div class="loc" data-p="19">… is to stick it out, …</div><div class="zh">硬撑到底</div><div class="note">stick it out 是「坚持熬过去」。被抛弃的雌性的第二条路：自己把孩子养大。</div></div>
+<div class="entry trap"><div class="en">take out of her</div><div class="loc" data-p="19">… the less it will take out of her …</div><div class="zh">耗费她的（精力）</div><div class="note">take it out of someone 是「把人累垮、消耗人」。孩子越大，剩下的活越少。</div></div>
+<div class="entry"><div class="en">for its own sake</div><div class="loc" data-p="19">… no point in spite for its own sake.</div><div class="zh">为了……本身</div><div class="note">为了报复而报复没有意义：孩子身上有她一半的基因，扔掉孩子气不到雄性，只伤自己。</div></div>
+<div class="entry trap"><div class="en">walk out on</div><div class="loc" data-p="20">… to walk out on the male before …</div><div class="zh">撇下（某人）走掉</div><div class="note">walk out on 是「抛弃、甩掉」，不只是「走出去」。</div></div>
+<div class="entry"><div class="en">for illustration only</div><div class="loc" data-p="20">… is intended for illustration only.</div><div class="zh">只是为了演示</div><div class="note">紧跟在那段「我先走对我有利」的内心独白后面。独白不是说动物会这样想，是把基因层面的计算讲成人话。</div></div>
+
+<h3 class="sec-head" id="s4">§4 <span class="first">家庭幸福策略和协和式谬误</span></h3>
+<div class="entry trap"><div class="en">making the best of a bad job</div><div class="loc" data-p="21">… making the best of a bad job.</div><div class="zh">在坏局面里尽量挽回</div><div class="note">习语：事情已经糟了，只能将就着做到最好。前面几条路都是被抛弃之后的将就。</div></div>
+<div class="entry trap"><div class="en">in the first place</div><div class="loc" data-p="21">… exploits her in the first place?</div><div class="zh">从一开始（就少受剥削）</div><div class="note">in the first place 是「当初、从源头上」，不是「第一位」。这一问把话题从事后补救转到事前防范。</div></div>
+<div class="entry"><div class="en">in a seller’s market</div><div class="loc" data-p="21">… She is in demand, in a seller’s market.</div><div class="zh">处在卖方市场</div><div class="note">经济学比喻：货少人抢，卖家说了算。雌性带着大而有营养的卵，是被追的一方。</div></div>
+<div class="entry trap"><div class="en">drive a hard bargain</div><div class="loc" data-p="21">… to drive a hard bargain before she …</div><div class="zh">狠狠地讨价还价</div><div class="note">作者随即自己泼冷水：我们都知道实际不是这么回事，要问的是自然选择怎样演化出相当于讨价还价的东西。</div></div>
+<div class="entry"><div class="en">played her ace</div><div class="loc" data-p="21">… she has played her ace—her egg …</div><div class="zh">打出了王牌</div><div class="note">牌桌比喻：一旦交配，卵就交出去了，手里再没有筹码。</div></div>
+<div class="entry trap"><div class="en">play hard to get</div><div class="loc" data-p="22">… to play hard to get for …</div><div class="zh">故作矜持，欲擒故纵</div><div class="note">常用于人的恋爱。作者用来描述「羞怯」策略：拖长求偶，筛掉没耐心的雄性。</div></div>
+<div class="entry trap"><div class="en">a good bet</div><div class="loc" data-p="22">… to be a good bet as …</div><div class="zh">靠得住的选择</div><div class="note">bet 在这里是「被押宝的对象」。没耐心等的雄性，不像会是忠诚的丈夫。</div></div>
+<div class="entry trap"><div class="en">weeds out</div><div class="loc" data-p="22">… a female weeds out casual suitors, …</div><div class="zh">筛掉，淘汰</div><div class="note">weed 是杂草，weed out 是「像除草一样剔除」。</div></div>
+<div class="entry trap"><div class="en">get down to business</div><div class="loc" data-p="23">… she will get down to business.</div><div class="zh">开始办正事（委婉指交配）</div><div class="note">get down to business 是「言归正传、动手干正事」，这里是英式的含蓄说法。</div></div>
+<div class="entry"><div class="en">fallacious economics</div><div class="loc" data-p="24">… This is fallacious economics.</div><div class="zh">错误的经济学推理</div><div class="note">作者纠正 Trivers 的话，下面的协和客机例子就是在讲为什么错。</div></div>
+<div class="entry trap"><div class="en">cut his losses</div><div class="loc" data-p="24">… to cut his losses, and abandon …</div><div class="zh">及时止损</div><div class="note">cut one’s losses 是「趁早放弃，免得赔得更多」。</div></div>
+<div class="entry trap"><div class="en">loose females</div><div class="loc" data-p="24">… If there are loose females in the …</div><div class="zh">随便的雌性</div><div class="note">loose 形容人时是「放荡、随便」，不是「松散」。下一节的「放荡」策略就从这里来。</div></div>
+
+<h3 class="sec-head" id="s5">§5 <span class="first">羞怯、放荡、忠诚、薄情</span></h3>
+<div class="entry"><div class="en">a conspiracy of females</div><div class="loc" data-p="25">… in terms of a conspiracy of females …</div><div class="zh">雌性的串通</div><div class="note">呼应第 5 章的「鸽子集团」：大家约好都当鸽子，对每个人更好，却挡不住叛徒。雌性约好都羞怯，也一样维持不住，所以要找 ESS。</div></div>
+<div class="entry"><div class="en">philanderer</div><div class="loc" data-p="26">… faithful and philanderer. The behavioural rules …</div><div class="zh">薄情者，到处留情的男人</div><div class="note">本站照术语表叫「薄情」。和 coy（羞怯）、fast（放荡）、faithful（忠诚）一样，是作者给策略起的人类名字。</div></div>
+<div class="entry"><div class="en">it is illuminating to</div><div class="loc" data-p="26">… it is illuminating to study their fates …</div><div class="zh">（这样研究）很有启发</div><div class="note">作者承认这四种不是全部可能的策略，研究它们只是为了看清道理。</div></div>
+<div class="entry"><div class="en">arbitrary hypothetical values</div><div class="loc" data-p="27">… some arbitrary hypothetical values for the …</div><div class="zh">随意假设的数值</div><div class="note">+15、−20、−3 都是作者随手定的。哪些结论跟这组数有关、哪些无关，可以在上面的模拟器里试。</div></div>
+<div class="entry trap"><div class="en">reckon on</div><div class="loc" data-p="29">… she can reckon on finding a good …</div><div class="zh">指望，有把握</div><div class="note">reckon on 是「料定、指望」，不是「计算」。</div></div>
+<div class="entry trap"><div class="en">the pickings</div><div class="loc" data-p="30">… the pickings for a philanderer male are …</div><div class="zh">可捞的好处</div><div class="note">pickings 是「顺手捞到的油水」，常带贬义。</div></div>
+<div class="entry"><div class="en">spread like wildfire</div><div class="loc" data-p="30">… genes will spread like wildfire.</div><div class="zh">像野火一样蔓延</div><div class="note">迅速扩散。</div></div>
+<div class="entry"><div class="en">in dire straits</div><div class="loc" data-p="31">… females will be in dire straits.</div><div class="zh">陷入困境</div><div class="note">straits 是海峡，引申为困境。</div></div>
+<div class="entry trap"><div class="en">no business results</div><div class="loc" data-p="31">… philanderer male, no business results.</div><div class="zh">成不了事</div><div class="note">business 接着第 23 段的玩笑，指交配这桩「正事」：羞怯的要等，薄情的不等，谈不拢。</div></div>
+<div class="entry trap"><div class="en">feel the pinch</div><div class="loc" data-p="32">… start to feel the pinch.</div><div class="zh">日子开始不好过</div><div class="note">feel the pinch 本指手头拮据。羞怯的雌性多了，薄情者处处碰壁。</div></div>
+<div class="entry"><div class="en">come full circle</div><div class="loc" data-p="32">… and we come full circle.</div><div class="zh">绕了一圈回到原处</div><div class="note">循环故事的终点。作者下一段说这只是讲解，实际不会转圈；1989 年又说其实真会转圈。</div></div>
+<div class="entry trap"><div class="en">do the sums</div><div class="loc" data-p="33">… If you do the sums, it …</div><div class="zh">算一算</div><div class="note">sums 在英式口语里是「算术题、账」。</div></div>
+
+<h2>译本勘误</h2>
+<p class="lede">对着中译本（40 周年增订版）读的时候看这一节。下面是译本这几节和这一页尾注里会让人读错的地方：灰字是英文原文那一处的几个词，在英文电子书里搜它；方框里是译本的原句，在译本电子书里搜它。措辞别扭但意思没错的不收。全书的勘误汇总在<a href="../zh.html">译本勘误</a>。</p>
+<div class="zherr" data-p="1"><h4><span class="sec">§1</span>是动物行为学家，不是「个体生态学家」<span class="mark">术语</span></h4>
+<p class="loc">… comparatively new one to ethologists.</p>
+<p class="zhq"><span class="zhv">译本：「对个体生态学家来说是一种比较新的观点」</span></p>
+<p>ethologist 是动物行为学家，Lorenz、Tinbergen 那一派，作者自己也是。这句说：把配偶看成互相剥削，对当时研究动物行为的人是新观点。第 5 章同一个词也有这个问题。</p></div>
+<div class="zherr" data-p="4"><h4><span class="sec">§1</span>「对雌性的剥削从这里开始」<span class="mark turn">译反</span></h4>
+<p class="loc">… Female exploitation begins here.</p>
+<p class="zhq"><span class="zhv">译本：「这就为雌性个体带来了利用这种条件的机会」</span></p>
+<p>原文说雌性被剥削（雄性占了雌性投入的便宜）就从配子大小的差别开始。读译本会以为是雌性得到了利用别人的机会，正好反了。尾注 45 的标题照抄了这一句，读注时也按原文理解。</p></div>
+<div class="zherr" data-p="6"><h4><span class="sec">§2</span>是象海豹，不是海象<span class="mark">术语</span></h4>
+<p class="loc">… in one study of elephant seals, …</p>
+<p class="zhq"><span class="zhv">译本：「在一项有关海象的研究中」</span></p>
+<p>elephant seal 是象海豹，海豹的一类，雄性有短象鼻、占着一大群雌性；海象是 walrus，另一种动物。本章第 9、11 段（还有下一页）都是同一个错。</p></div>
+<div class="zherr" data-p="7"><h4><span class="sec">§2</span>Fisher 证明的是「稳定的」比例，不是「最适宜的」<span class="mark">误译</span></h4>
+<p class="loc">… What Fisher showed is that …</p>
+<p class="zhq"><span class="zhv">译本：「最适宜的性比率是50∶50」</span></p>
+<p>原文是 stable sex ratio，稳定的性比率。稳定和最优正是本章要分开的两件事：从「物种利益」看，多余的雄性是浪费（第 6 段），1:1 并不对种群最好，它只是偏离的基因会吃亏。</p></div>
+<div class="zherr" data-p="18"><h4><span class="sec">§3</span>她是「骗不了」他，不是「不愿」骗他<span class="mark">误译</span></h4>
+<p class="loc">… she has no hope of fooling him …</p>
+<p class="zhq"><span class="zhv">译本：「因为我们已经假定她不愿意使他受骗」</span></p>
+<p>第 18 段开头的假设是：被抛弃的雌性没法骗新的雄性替她养孩子。这里说的是能力，不是意愿。按「不愿」读，流产对双方都有利的推理就接不上了。</p></div>
+<div class="zherr" data-p="21"><h4><span class="sec">§4</span>问的是能否「从一开始」少受剥削<span class="mark">误译</span></h4>
+<p class="loc">… exploits her in the first place?</p>
+<p class="zhq"><span class="zhv">译本：「减轻由于其配偶首先对她进行剥削而造成损失」</span></p>
+<p>原文问：雌性有没有办法从源头上减少配偶对她的剥削。这是全章的转折：前面讲被抛弃后怎么补救，从这里起讲交配之前的筹码。前一句的成语也说过了头，原文只说那些办法都是坏局面里的将就。</p></div>
+<div class="zherr" data-p="24"><h4><span class="sec">§4</span>商人「不应该」这样说<span class="mark">误译</span></h4>
+<p class="loc">A business man should never say</p>
+<p class="zhq"><span class="zhv">译本：「商人永远不会说」</span></p>
+<p>原文是「不应该说」。现实中的人恰恰常这样说（「已经投了这么多，不能停」），所以它才是一个谬误。读成「不会说」，协和客机这个例子就失去了意思。</p></div>
+<div class="zherr" data-p="25"><h4><span class="sec">§5</span>「史密斯」就是 Maynard Smith<span class="mark">术语</span></h4>
+<p class="loc">… take Maynard Smith’s method of analysing …</p>
+<p class="zhq"><span class="zhv">译本：「采用史密斯用以分析进犯性对抗赛的方法」</span></p>
+<p>Maynard Smith 是复姓。正文叫他「史密斯」，这一页的尾注 46、47 又叫「梅纳德·史密斯」，是同一个人。「进犯性对抗赛」指第 5 章分析的打斗。</p></div>
+<div class="zherr" data-p="33"><h4><span class="sec">§5</span>是「进化上稳定」，即 ESS<span class="mark">术语</span></h4>
+<p class="loc">… males are faithful, is evolutionarily stable.</p>
+<p class="zhq"><span class="zhv">译本：「的种群在遗传上是稳定的」</span></p>
+<p>原文是 evolutionarily stable，就是第 5 章的进化稳定策略（ESS），不是「遗传上稳定」。这正是作者 1989 年在注 47 里撤回的说法。</p></div>
+
+<h2>值得停下来的句子</h2>
+<blockquote class="quote">The female sex is exploited, and the fundamental evolutionary basis for the exploitation is the fact that eggs are larger than sperms.<cite>— §3 第 14 段。本站译：雌性被剥削，这种剥削在进化上的根本原因，是卵子比精子大。</cite></blockquote>
+<p>这是这一章最常被断章取义的句子，常被读成「生物学证明女性天生吃亏」。它的口气是认真下判断，但「剥削」是第 13 段刚声明过的比喻用法：说的是投资的不对称，没有说谁该如何。作者 1989 年两处往回收：注 45 说把配子大小当作性别角色的根「有误导」，注 44 说这一章开头太冷峻、章末谈人类的话措辞幼稚。读这句时把三处连起来看。</p>
+<blockquote class="quote">… it can be shown that really there would be no oscillation. The system would converge to a stable state.<cite>— §5 第 33 段。本站译：……可以证明，其实不会振荡。这个系统会收敛到一个稳定状态。</cite></blockquote>
+<p>全书最有名的一处错。口气很笃定（it can be shown），依据是类比第 5 章的鹰鸽。1989 年作者在注 47 开头就说「这句话是错的」，并特意把它留在正文里，因为「错得有意思」。关键词是 converge：均衡点他算对了，收敛不收敛他没有查。</p>
+
+<h2>作者 1989 年的尾注</h2>
+<p class="lede">正文里的星号是 1989 年第二版加的，点了跳到书后的尾注。下面是这一页的每个星号：注里说了什么，值不值得现在就点开。英文是星号前紧挨着的几个词，在电子书里搜它就能找到那个星号。</p>
+<div class="enotes">
+<div class="enote" data-n="44"><h4><span class="sec">§1</span>开头太冷峻了<span class="mark turn">改口</span></h4>
+<p class="en">… who are not related to each other?*</p>
+<p>作者说开篇这句暗含「其他条件不变」：配偶显然能从合作中得到很多，多半在玩一场非零和的游戏（第 12 章讲）。他承认这里语气太偏向冷酷自私，当年是为了对抗「配偶总会无私合作」的主流看法，今天会写得温和些；还说章末关于人类性别角色的话措辞幼稚。值得点开，很短。</p></div>
+<div class="enote" data-n="45"><h4><span class="sec">§1</span>配子大小不是根本原因<span class="mark turn">改口</span></h4>
+<p class="en">… is virtually unlimited. Female exploitation begins here.*</p>
+<p>作者说，把精卵大小的差别当作性别角色的根「有误导」：一个精子便宜，造几百万个还要在竞争中送进去就不便宜了。他改用一个更一般的论证：两性 A、B 只要在「打斗」和「养育」之间的取舍起点略有不同，差别就会自我放大，最后一方成了雄、一方成了雌；精卵分化是这种分化的结果，不是原因。一定要点开。</p></div>
+<div class="enote" data-n="46"><h4><span class="sec">§5</span>坚守还是离弃：四种结局<span class="mark">补充</span></h4>
+<p class="en">… and apply it to sex.*</p>
+<p>作者介绍 Maynard Smith 后来的「坚守 / 离弃」模型：经济条件怎么变，结局都只落在鸭型、棘鱼型、果蝇型、长臂猿型四种之一，而且只有特定的两种能在同一组条件下都稳定，哪一种出现看历史的偶然。他说这能帮人推测配偶制度在演化中怎样转变。想多看一个模型的可以点开。</p></div>
+<div class="enote" data-n="47"><h4><span class="sec">§5</span>不会收敛，会一直绕圈<span class="mark turn">改口</span></h4>
+<p class="en">… would converge to a stable state.*</p>
+<p>作者开门见山：这句是错的。他算对了两边打平的比例，却没检查这个平衡稳不稳，它是刀刃，不是山谷。Schuster 和 Sigmund 指出了这一点，他自己在计算机上模拟，得到的是没完没了的循环，正是第 30–32 段当作讲解用的那个循环。他说这和第 5 章还击策略者的错是同一类。一定要点开。</p></div>
+</div>
+
+<h2>读完：作者到底说了什么</h2>
+<p class="lede">读完这一页的几节再看。下面是作者在这几节里的论点，由本站按论点重新组织，不按原书的顺序；每条下面是依据所在的段落，拿不准就回书里那几段再读一遍。</p>
+<div class="claims">
+  <div class="claim"><h4>配偶只共享孩子，所以各自都「想」让对方多出力</h4><p>亲子之间还有一半基因相同，配偶毫无亲缘，冲突应该更大。作者认为把两性关系看成互相剥削比「为了物种的合作」更说得通。（1989 年的尾注加了限定：配偶多半能从合作中获益，开头语气太冷峻。）</p><span class="sec">§1 第 1 段，§3 第 14 段，注 44</span></div>
+  <div class="claim"><h4>两性的根本区别是配子大小，其他差别可以从这里推出</h4><p>有阴茎、哺乳都不普遍，只有「雌配子大而少、雄配子小而多」处处成立。雄性每个后代投入少，就能多配；雌性投入多，从受孕起就被套得更深，所以通常是雄性先走、雌性多养。（1989 年的尾注改成：这样强调有误导，配子分化是两性分化的结果而不是原因。）</p><span class="sec">§1 第 2、4–5 段，§3 第 14 段，注 45</span></div>
+  <div class="claim"><h4>雌雄各半是 ESS，不是为了物种</h4><p>从物种看，多余的雄性是浪费；但比例一偏，生少的那一性就更划算，偏离的基因吃亏。严格说是儿子和女儿的总投资各半，数目各半只是通常的情形。</p><span class="sec">§2 第 6–11 段</span></div>
+  <div class="claim"><h4>已经投入多，不等于会继续投入</h4><p>在一定条件下，先抛弃的一方占便宜（Trivers 的「无情的约束」）。但 Trivers 以为先期投入本身就让雄性不愿走，作者说这是协和式谬误：雄性走不走，要看别的雌性是否也同样难追，也就是多数雌性怎么做。</p><span class="sec">§3 第 14、20 段，§4 第 23–24 段，§5 第 25 段</span></div>
+  <div class="claim"><h4>羞怯可以靠 ESS 留存，不需要雌性串通；会稳定在 5/6 和 5/8 的说法后来撤回了</h4><p>按他定的计分，四种策略你追我赶，1976 年他说种群会收敛到羞怯 5/6、忠诚 5/8，偏离会被另一性的变化纠正，所以羞怯对雌性的基因有利。1989 年的尾注改成：那只是一个不稳定的平衡点，系统会无止境地循环。</p><span class="sec">§5 第 25–35 段，注 47</span></div>
+</div>
+<p class="sowhat"><b>合起来：</b>作者把第 5 章「找 ESS，别找物种利益」的办法搬到两性之间：性比率、谁先走、羞怯与否，都从「这种倾向的基因吃不吃亏」去推。最值得带走的是方法；具体的落点，作者自己在尾注里改了两处。</p>
+
+<h2>对照今天</h2>
+<p class="lede">这本书 1976 年出版。下面挑出这一页里能被后来的研究检验的说法，分「书里 / 当时 / 今天」三栏，并给一个结论。结论判的是标题里「书里的说法：」后面那一句。全书的这一节汇总在<a href="../today.html">对照今天</a>。</p>
+<ul class="verdicts"><li><span class="v ok">成立</span>后来的研究支持这句话。</li><li><span class="v mid">部分成立</span>大方向对，细节或适用范围要改。</li><li><span class="v bad">被改写</span>后来的研究推翻了它，或者换了一种说法。</li><li><span class="v dis">有争议</span>学界至今没有定论，两边各有代表性的研究。</li></ul>
+<div class="today" data-verdict="被改写"><h4>书里的说法：羞怯 / 放荡、忠诚 / 薄情的种群会收敛到 5/6 和 5/8 的稳定状态</h4><dl>
+  <dt>书里</dt><dd>第 33 段：不会振荡，会收敛；第 34 段：哪一性偏离，都会被另一性的变化纠正。</dd>
+  <dt>当时</dt><dd>演化博弈论刚起步，通行做法是找「各策略得分相等」的点，再类比鹰鸽认定它稳定。</dd>
+  <dt>今天</dt><dd>作者 1989 年在注 47 里撤回，指出错误的是 Schuster 和 Sigmund（1981）。Selten 1980 年证明：对局双方总处在不同角色（如雌和雄）的博弈里，混合策略不可能是 ESS。在标准的两种群复制动态里，这个均衡点四周是一圈圈闭合的轨道，种群绕着它转，一圈的平均值正好是这个点。这一页的模拟器复现了这一点。<span class="asof">核对于 2026-10。依据：Schuster &amp; Sigmund, Animal Behaviour 29 (1981)；Selten, Journal of Theoretical Biology 84 (1980)；Hofbauer &amp; Sigmund《Evolutionary Games and Population Dynamics》(1998)。</span></dd>
+</dl></div>
+<div class="today" data-verdict="部分成立"><h4>书里的说法：两性的其他差别，都可以从「卵大精小」这一个差别推出来</h4><dl>
+  <dt>书里</dt><dd>第 2 段说可以这样解释所有其他差别；第 14 段说雌性被剥削的根本原因是卵比精子大。</dd>
+  <dt>当时</dt><dd>Trivers 1972 年的亲代投资理论和 Parker 等人 1972 年的配子模型刚发表，「投资多的一性挑剔、投资少的一性竞争」是新说法。</dd>
+  <dt>今天</dt><dd>异配生殖是性别角色分化的起点，仍是主流：Lehtonen、Parker 和 Schärer 2016 年给出了模型，Janicke 等 2016 年汇总了许多物种的研究，发现雄性受到的<a class="term" href="09b.html#c-sexual-selection">性选择</a>普遍更强。但「一切差别」说过了头：Kokko 和 Jennions 2008 年指出，种群性比、交配机会、往后的收益都会改变谁照料、谁竞争，单看先期投资的推理有漏洞；海龙、水雉等物种的角色是反过来的。作者自己 1989 年在注 45 里也退了一步。<span class="asof">核对于 2026-10。依据：Lehtonen et al., Evolution 70 (2016)；Janicke et al., Science Advances (2016)；Kokko &amp; Jennions, Journal of Evolutionary Biology 21 (2008)。</span></dd>
+  <dt>另一边</dt><dd>Tang-Martínez 2016 年在《性研究杂志》上认为，「雌性羞怯、雄性滥交」的经典图景在很多物种里得不到数据支持。</dd>
+</dl></div>
+<div class="today" data-verdict="成立"><h4>书里的说法：在通常情况下，儿子和女儿投资各半是进化稳定的</h4><dl>
+  <dt>书里</dt><dd>第 7、10 段：偏离 1:1 的基因会吃亏；第 11 段：按投资而不是数目算。</dd>
+  <dt>当时</dt><dd>Fisher 1930 年的论证已是经典；Hamilton 1967 年的《非常规性比》刚说明它在哪些条件下不成立。</dd>
+  <dt>今天</dt><dd>多数物种的性比接近 1:1，Fisher 的论证仍是教科书内容。偏离的情形也被同一逻辑解释了：Hamilton 指出，兄弟在小圈子里争同一批雌性时（如榕小蜂），多生女儿更划算，预测的偏雌性比在野外多次得到验证。这说明「按投资各半」的前提是随机交配，作者说的「通常情况下」是必要的限定。<span class="asof">核对于 2026-10。依据：Fisher (1930)；Hamilton, Science 156 (1967)。</span></dd>
+</dl></div>
+
+<h2>本站怎么看</h2>
+<p class="lede">读完作者的论点，再看它站不站得住。每一块摆出三样：主流怎么看，作者怎么看，本站的评论。最后一句是本站对这一页的总体判断。</p>
+<div class="views"><h4>「雌性被剥削」：生物学比喻，还是对女性的判断</h4>
+<p><b>主流看法：</b>两性之间基因利益不一致，今天是一个成熟的研究领域，叫性冲突（Arnqvist 和 Rowe 2005 年的专著是代表）。这里的「冲突」「剥削」是适合度上的术语，不是道德评价；性别角色由配子、性比、生态条件共同决定，不由配子大小一锤定音。</p>
+<p><b>作者的看法：</b>剥削从配子大小开始（第 4、14 段），但他第 13 段声明拟人是比喻；1989 年说强调配子大小有误导（注 45）、开头太冷峻（注 44）。</p>
+<p class="ours"><b>本站的评论：</b>论证的核心站得住：投入不对称会让两性的「最优做法」不同，这是可检验的生物学。问题在用词：「剥削」「受害」这类词让一句关于配子的话，读起来像关于男女的结论。作者自己在尾注里往回收了两次，读者也该把这一章的「雌性」「雄性」严格当作配子大小的代称，不要直接搬到人身上；作者在这一页里也没有这样搬。</p></div>
+<div class="views"><h4>均衡点算对了，稳定性没查</h4>
+<p><b>主流看法：</b>找到「各方得分相等」的点只是第一步，还要看推一下会不会回来。Selten 1980 年的结果说明，雌雄这类角色分明的博弈里，混合的平衡点本来就不可能是 ESS。</p>
+<p><b>作者的看法：</b>1976 年他类比鹰鸽，断定会收敛，还给出「偏离会被另一性纠正」的理由（第 33–34 段）；1989 年在注 47 认错，说真实的动态是无尽的循环。</p>
+<p class="ours"><b>本站的评论：</b>错在类比：鹰鸽里鹰多了鹰自己吃亏，这里雄性的得分只看雌性，偏离要绕一圈才被推回，必然冲过头。注 47 有一句说薄情者略多时「反而更占便宜」，按书里的收益表算并不准确：薄情者多了，两种雄性的得分仍然相等，变化是经过雌性绕回来的（本站按收益表验算）。不过第 35 段的落点没有倒：转一圈平均下来，羞怯和忠诚仍占多数，羞怯照样对雌性的基因有利。</p></div>
+<div class="views"><h4>「已经投入」到底算不算数</h4>
+<p><b>主流看法：</b>决策只该看往后的得失，这在经济学和行为生态学里都是共识；Arkes 和 Ayton 1999 年甚至认为人比动物更常犯协和式谬误。但过去的投入常常改变往后的得失，比如孩子越大，养成所需越少。</p>
+<p><b>作者的看法：</b>Trivers 的推理是「错误的经济学」，雄性留不留只看将来是否划算，这取决于多数雌性怎么做（第 24–25 段）。</p>
+<p class="ours"><b>本站的评论：</b>作者对，而且他自己在第 19 段已经给出了正确的版本：孩子越大，雌性越值得撑下去，不是因为「已经投了」，而是因为剩下的活少了。两种说法常被混为一谈。这一点对读者有实际用处：判断一个做了一半的项目该不该继续，问「从现在起值不值」，别问「已经花了多少」。</p></div>
+<p class="verdict"><b>本站的总体看法：</b>这一页最该带走的是方法：把两性之间的种种行为当作各自基因的得失来算，用 ESS 而不是「物种利益」去推；Fisher 的性比率和协和式谬误两处经得起时间。要打折扣的是两处落点：配子大小解释一切、模型会稳定下来，作者自己都在尾注里改了口。</p>
+
+<h2>检查一下理解</h2>
+<p class="lede">先在心里答，再点开。答错的那题，回书里把对应那一节再读一遍。</p>
+<details class="check"><summary>1.（§1）作者用什么给「雄」「雌」下定义？为什么不用有没有阴茎？</summary><p>用配子的大小：产大配子的叫雌，产小配子的叫雄，这在动植物里普遍成立。阴茎、生育、哺乳、性染色体只对部分动物有用，青蛙两性都没有阴茎。</p></details>
+<details class="check"><summary>2.（§2）一头雄性能配一百头雌性。为什么雌雄还是差不多各半？</summary><p>每个孩子都有一个父亲一个母亲。雌性多了，每个儿子平均能有更多后代，生儿子的基因就会增加，比例被推回来。稳定的是两种投资各半，偏离的基因吃亏，与对物种好不好无关。</p></details>
+<details class="check"><summary>3.（§3）为什么通常是父亲先抛弃，而不是母亲？</summary><p>雌性从卵开始就投入更多，孩子死了她损失更大，再养一个替代的也要她付出更多。她要是先走，父亲也可以付出较小的代价跟着扔下孩子。所以先走对雄性更划算。</p></details>
+<details class="check"><summary>4.（§4）Trivers 犯了什么错？作者说雄性留不留取决于什么？</summary><p>Trivers 以为雄性先期投入多，本身就会让他不愿离开，这是协和式谬误。作者说要看将来：如果种群里有随便的雌性，抛弃配偶另找新欢就可能划算，所以关键是多数雌性怎么做。</p></details>
+<details class="check"><summary>5.（§5）用书里的计分算：全是羞怯和忠诚时每方得几分？混进一个放荡的雌性呢？</summary><p>每方 +15 − 10 − 3 = +2。放荡的雌性不付求偶的 −3，而雄性都忠诚，她照样有帮手，得 +15 − 10 = +5，比羞怯的多 3 分，所以放荡的会扩散。</p></details>
+<details class="check"><summary>6.（§5）作者 1989 年说第 33 段错在哪？书里的 5/6 和 5/8 还有意义吗？</summary><p>他算对了两边得分相等的比例，但没检查它稳不稳；实际上种群不会停在那里，而是无止境地循环。5/6 和 5/8 仍有意义：它是循环绕着的中心，按本站的模拟，转一圈的平均值正好落在那里。</p></details>
+<p class="lede">用一句话说这一页，写给一个没读过的人。</p>
+<textarea class="note" data-key="09a-oneline" rows="2" placeholder="写一句话…"></textarea>
+<div class="ponder"><p>想一想：你参与过的合作里（共同维护的项目、合租、一起带孩子），有没有「谁先撒手，另一个就只能接着扛」的时刻？是什么让大家没有抢着先走？</p>
+<textarea class="note" data-key="09a-ponder" rows="3" placeholder="写下你的想法…"></textarea></div>
+
+<h2>精彩回顾</h2>
+<p class="lede">读过又忘了，从这里想起来。挑的是这一页最值得记住的模型、动物和说法，不按原书顺序；每条后面是节号，想细看就回书里那一节。全书各页的这一节都收在<a href="../recap.html">全书回顾</a>。</p>
+<p class="recall-line"><b>一句话：</b>配偶各为自己的基因打算；羞怯的雌性和忠诚的雄性不必靠串通也能占多数，但种群不会停在一个比例上，而是一圈圈地循环，这是作者 1989 年认的错。</p>
+<div class="recall">
+  <div class="item"><b>穿裤子的青蛙</b><p>拿有没有阴茎判断青蛙的性别，就像拿穿不穿裤子判断人的性别。唯一处处成立的标准是配子：大的叫雌，小的叫雄。</p><span class="sec">§1</span></div>
+  <div class="item"><b>象海豹的光棍</b><p>一项研究里 4% 的雄性包办了 88% 的交配。按「物种利益」雄性应该少得多，可只要比例一偏，生儿子就更划算，所以雌雄还是各半。</p><span class="sec">§2</span></div>
+  <div class="item"><b>谁先走谁占便宜</b><p>孩子长到任何一方都能独自养成时，先走的一方把难题留给对方：留下的要么硬撑，要么看着孩子死。作者说这段内心独白只是演示。</p><span class="sec">§3</span></div>
+  <div class="item"><b>协和式谬误</b><p>「已经投了这么多，不能停」是错误的经济学。作者用协和客机纠正 Trivers：雄性走不走，看的是别的雌性好不好追。</p><span class="sec">§4</span></div>
+  <div class="item"><b>5/6 和 5/8，以及一圈循环</b><p>羞怯、放荡、忠诚、薄情你追我赶。1976 年作者说会停在羞怯 5/6、忠诚 5/8；1989 年他说这句错了，种群会一直绕圈。</p><span class="sec">§5</span></div>
+</div>
+
+</main>
+<script>
+(() => {
+  // 两性之战：两个种群的复制动态。x = 雌性里羞怯的比例，y = 雄性里忠诚的比例。
+  // 每一代，得分高的那种策略份额上涨，涨多少正比于得分差；用四阶龙格-库塔法把一代切成 10 小步算，近似连续变化。
+  const root = document.getElementById("sim-09a");
+  if (!root) return;
+  const { h } = window.SG;
+  const NS = "http://www.w3.org/2000/svg";
+  const SEL = 0.02, SUB = 10, MAXH = 4000;
+  const st = { B: 15, C: 20, D: 3, start: "book", p: [0.97, 0.97], p0: null, gen: 0, hist: [], cyc: null, avg: null };
+
+  // 得分差：羞怯减放荡只看 y；忠诚减薄情只看 x（书里第 27–32 段的计分）
+  const fd = (y) => (1 - y) * (st.C - st.B) - y * st.D;
+  const md = (x) => x * (st.B - st.D) - st.C / 2;
+  const pay = (x, y) => ({
+    coy: y * (st.B - st.C / 2 - st.D), fast: y * (st.B - st.C / 2) + (1 - y) * (st.B - st.C),
+    faith: x * (st.B - st.C / 2 - st.D) + (1 - x) * (st.B - st.C / 2), phil: (1 - x) * st.B,
+  });
+  const hasEq = () => st.C > st.B && st.D > 0 && 2 * (st.B - st.D) > st.C;
+  const eq = () => [st.C / (2 * (st.B - st.D)), (st.C - st.B) / (st.C - st.B + st.D)];
+  const clamp = (v) => Math.min(1 - 1e-9, Math.max(1e-9, v));
+  const F = ([x, y]) => [SEL * x * (1 - x) * fd(y), SEL * y * (1 - y) * md(x)];
+  function rk4(p, k) {
+    const a = F(p), b = F([p[0] + k / 2 * a[0], p[1] + k / 2 * a[1]]), c = F([p[0] + k / 2 * b[0], p[1] + k / 2 * b[1]]), d = F([p[0] + k * c[0], p[1] + k * c[1]]);
+    return [clamp(p[0] + k / 6 * (a[0] + 2 * b[0] + 2 * c[0] + d[0])), clamp(p[1] + k / 6 * (a[1] + 2 * b[1] + 2 * c[1] + d[1]))];
+  }
+  // 绕均衡点转过的角度，转满一整圈就记下这一圈的平均
+  function track() {
+    if (!hasEq()) return;
+    const [ex, ey] = eq(), [x, y] = st.p;
+    if (Math.hypot(x - ex, y - ey) < 1e-6) return;
+    const a = Math.atan2(y - ey, x - ex);
+    if (!st.cyc) { st.cyc = { last: a, turn: 0, sx: 0, sy: 0, n: 0 }; return; }
+    const c = st.cyc;
+    let da = a - c.last; if (da > Math.PI) da -= 2 * Math.PI; if (da < -Math.PI) da += 2 * Math.PI;
+    c.turn += da; c.last = a; c.sx += x; c.sy += y; c.n++;
+    if (Math.abs(c.turn) >= 2 * Math.PI) { st.avg = [c.sx / c.n, c.sy / c.n]; c.turn -= Math.sign(c.turn) * 2 * Math.PI; c.sx = c.sy = c.n = 0; }
+  }
+  function step() {
+    for (let i = 0; i < SUB; i++) st.p = rk4(st.p, 1 / SUB);
+    st.gen++; st.hist.push(st.p.slice()); if (st.hist.length > MAXH) st.hist.shift();
+    track();
+  }
+  function startPoint() {
+    if (st.start === "custom" && st.p0) return st.p0.slice();
+    if (st.start === "eq") return hasEq() ? eq() : [0.5, 0.5];
+    if (st.start === "near") { if (!hasEq()) return [0.5, 0.45]; const [ex, ey] = eq(); return [ex, clamp(ey - 0.05)]; }
+    return [0.97, 0.97];
+  }
+  function reset(msg) {
+    st.p = startPoint(); st.gen = 0; st.hist = [st.p.slice()]; st.cyc = null; st.avg = null;
+    draw(msg || "已重置。点「跑 500 代」看种群怎么变。");
+  }
+  function run(n) { for (let i = 0; i < n; i++) step(); draw(); }
+  function push() {
+    st.p = [st.p[0], clamp(st.p[1] - 0.05)]; st.hist.push(st.p.slice()); st.cyc = null; st.avg = null;
+    draw("推了一下：雄性里忠诚的比例减了 5 个百分点。接着跑，看它回不回到原处。");
+  }
+
+  // 画面：方框图（相平面）、随代数变化的两条线、计分表
+  const el = (tag, attrs) => { const e = document.createElementNS(NS, tag); for (const [k, v] of Object.entries(attrs || {})) e.setAttribute(k, v); return e; };
+  const txt = (x, y, s, cls, anchor) => { const t = el("text", { x, y, class: cls || "" }); if (anchor) t.setAttribute("text-anchor", anchor); t.textContent = s; return t; };
+  const plane = el("svg", { viewBox: "0 0 432 400", class: "diagram plane", role: "img", "aria-label": "方框图：横轴是雌性里羞怯的比例，纵轴是雄性里忠诚的比例，折线是种群走过的路" });
+  const series = el("svg", { viewBox: "0 0 640 196", class: "diagram series", role: "img", "aria-label": "折线图：羞怯雌性和忠诚雄性的比例随代数的变化" });
+  const PL = 70, PR = 404, PT = 16, PB = 340;
+  const px = (x) => PL + x * (PR - PL), py = (y) => PB - y * (PB - PT);
+  function drawPlane() {
+    plane.replaceChildren();
+    plane.append(el("rect", { x: PL, y: PT, width: PR - PL, height: PB - PT, class: "ln", fill: "none" }));
+    for (const v of [0, 0.5, 1]) {
+      plane.append(txt(px(v), PB + 20, `${v * 100}%`, "t-m", "middle"), txt(PL - 6, py(v) + 4, `${v * 100}%`, "t-m", "end"));
+    }
+    plane.append(txt((PL + PR) / 2, PB + 46, "雌性里羞怯的比例 →", "t-m", "middle"));
+    const yl = txt(18, (PT + PB) / 2, "雄性里忠诚的比例 →", "t-m", "middle"); yl.setAttribute("transform", `rotate(-90 18 ${(PT + PB) / 2})`); plane.append(yl);
+    plane.append(txt(PL + 6, PT + 20, "放荡＋忠诚", "t-m"), txt(PR - 6, PT + 20, "羞怯＋忠诚", "t-m", "end"),
+      txt(PL + 6, PB - 8, "放荡＋薄情", "t-m"), txt(PR - 6, PB - 8, "羞怯＋薄情", "t-m", "end"));
+    if (hasEq()) {
+      const [ex, ey] = eq();
+      plane.append(el("line", { x1: px(ex), y1: PT, x2: px(ex), y2: PB, class: "ln-d" }), el("line", { x1: PL, y1: py(ey), x2: PR, y2: py(ey), class: "ln-d" }));
+      plane.append(txt(px(ex) - 6, py(ey) + 18, "均衡点", "t-b", "end"));
+    }
+    const pts = st.hist.map(([x, y]) => `${px(x).toFixed(1)},${py(y).toFixed(1)}`).join(" ");
+    const pl = el("polyline", { points: pts, fill: "none" }); pl.style.stroke = "var(--c4)"; pl.style.strokeWidth = "2"; plane.append(pl);
+    if (hasEq()) { const [ex, ey] = eq(); const c = el("circle", { cx: px(ex), cy: py(ey), r: 5 }); c.style.fill = "var(--fg)"; plane.append(c); }
+    const cur = el("circle", { cx: px(st.p[0]), cy: py(st.p[1]), r: 7 }); cur.style.fill = "var(--c2)"; plane.append(cur);
+  }
+  const SL = 46, SR = 600, ST = 12, SB = 150;
+  function drawSeries() {
+    series.replaceChildren();
+    const n = Math.max(100, st.hist.length - 1), first = st.gen - (st.hist.length - 1);
+    series.append(el("line", { x1: SL, y1: SB, x2: SR, y2: SB, class: "ln" }), el("line", { x1: SL, y1: ST, x2: SL, y2: SB, class: "ln" }));
+    for (const v of [0, 0.5, 1]) series.append(txt(SL - 6, SB - v * (SB - ST) + 4, `${v * 100}%`, "t-m", "end"));
+    series.append(txt(SL, SB + 20, `第 ${first} 代`, "t-m"), txt(SR, SB + 20, `第 ${st.gen} 代`, "t-m", "end"));
+    const lines = [[0, "var(--c2)", "羞怯雌性"], [1, "var(--c1)", "忠诚雄性"]];
+    if (hasEq()) eq().forEach((v) => series.append(el("line", { x1: SL, y1: SB - v * (SB - ST), x2: SR, y2: SB - v * (SB - ST), class: "ln-d" })));
+    lines.forEach(([i, c, name], k) => {
+      const pts = st.hist.map((p, g) => `${(SL + ((SR - SL) * g) / n).toFixed(1)},${(SB - p[i] * (SB - ST)).toFixed(1)}`).join(" ");
+      const pl = el("polyline", { points: pts, fill: "none" }); pl.style.stroke = c; pl.style.strokeWidth = "2.2"; series.append(pl);
+      const lab = txt(SL + 10 + k * 110, SB + 36, `— ${name}`, "t-b"); lab.style.fill = c; series.append(lab);
+    });
+  }
+  const table = h("table", { class: "payoff" });
+  const sg = (v) => (Math.round(v * 100) / 100 === 0 ? "0" : (v > 0 ? "+" : "−") + Math.abs(Math.round(v * 100) / 100));
+  function drawTable() {
+    const { B, C, D } = st;
+    const cell = (f, m) => h("td", {}, `雌 ${sg(f)} ／ 雄 ${sg(m)}`);
+    table.replaceChildren(
+      h("tr", {}, h("th", {}, "雌 \\ 雄"), h("th", {}, "忠诚"), h("th", {}, "薄情")),
+      h("tr", {}, h("th", {}, "羞怯"), cell(B - C / 2 - D, B - C / 2 - D), cell(0, 0)),
+      h("tr", {}, h("th", {}, "放荡"), cell(B - C / 2, B - C / 2), cell(B - C, B)));
+  }
+  const gcd = (a, b) => (b ? gcd(b, a % b) : a);
+  const frac = (a, b) => { const g = gcd(Math.abs(a), Math.abs(b)) || 1; return `${a / g}/${b / g}`; };
+  const pct = (v) => `${(v * 100).toFixed(1)}%`;
+  const narrate = h("div", { class: "narrate" });
+  const stats = h("div", { class: "stats" });
+  const stat = (v, l) => h("div", { class: "stat" }, h("div", { class: "v" }, v), h("div", { class: "l" }, l));
+  function draw(msg) {
+    drawPlane(); drawSeries(); drawTable();
+    const [x, y] = st.p, ok = hasEq();
+    stats.replaceChildren(
+      stat(pct(x), "雌性里羞怯的比例"), stat(pct(y), "雄性里忠诚的比例"),
+      stat(ok ? `${frac(st.C, 2 * (st.B - st.D))}，${frac(st.C - st.B, st.C - st.B + st.D)}` : "没有", "均衡点：羞怯，忠诚（两边各自打平的比例）"),
+      stat(st.avg ? `${pct(st.avg[0])}，${pct(st.avg[1])}` : "还没转完", "最近一整圈的平均：羞怯，忠诚"),
+      stat(`${st.gen}`, "已经跑了几代"));
+    if (msg) { narrate.textContent = msg; return; }
+    const f = fd(y), m = md(x), q = pay(x, y), tiny = 0.005;
+    const fem = Math.abs(f) < tiny ? "两种雌性得分一样" : f > 0 ? `羞怯的雌性每次多得 ${sg(f).replace("+", "")} 分，羞怯在变多` : `放荡的雌性每次多得 ${sg(-f).replace("+", "")} 分，放荡在变多`;
+    const mal = Math.abs(m) < tiny ? "两种雄性得分一样" : m > 0 ? `忠诚的雄性每次多得 ${sg(m).replace("+", "")} 分，忠诚在变多` : `薄情的雄性每次多得 ${sg(-m).replace("+", "")} 分，薄情在变多`;
+    let tail = "";
+    if (!ok) {
+      tail = st.C <= st.B ? "这组数下养孩子的总代价不比收益大，放荡总不吃亏，没有让两边都打平的比例。"
+        : st.D <= 0 ? "求偶不花代价，羞怯总不吃亏，没有让两边都打平的比例。"
+        : "这组数下求偶太贵，雄性怎样都是薄情划算，没有让两边都打平的比例。";
+      if (x > 0.98 && y < 0.02) tail += "现在几乎全是羞怯和薄情：谁也不肯将就，一个孩子都生不出来，这是模型的边界。";
+      else if (x < 0.02 && y < 0.02) tail += "现在几乎全是放荡和薄情：没人求偶，也没人帮忙养孩子。";
+    } else if (Math.abs(f) < tiny && Math.abs(m) < tiny) tail = "点正好在均衡点上，谁也不动。点「推一下」试试。";
+    else tail = st.avg ? "已经绕均衡点转了至少一整圈，还会一直转下去。" : "还没转完一圈，再跑一阵。";
+    narrate.textContent = `第 ${st.gen} 代：${fem}；${mal}。各策略此刻的平均得分：羞怯 ${sg(q.coy)}，放荡 ${sg(q.fast)}，忠诚 ${sg(q.faith)}，薄情 ${sg(q.phil)}。${tail}`;
+  }
+
+  // 在方框里点一下：从那里出发
+  plane.addEventListener("click", (ev) => {
+    const m = plane.getScreenCTM(); if (!m) return;
+    const pt = plane.createSVGPoint(); pt.x = ev.clientX; pt.y = ev.clientY;
+    const p = pt.matrixTransform(m.inverse());
+    const x = (p.x - PL) / (PR - PL), y = (PB - p.y) / (PB - PT);
+    if (x < 0 || x > 1 || y < 0 || y > 1) return;
+    st.p0 = [clamp(x), clamp(y)]; st.start = "custom"; sel.value = "custom";
+    reset(`从你点的地方出发：羞怯 ${pct(x)}，忠诚 ${pct(y)}。点「跑 500 代」。`);
+  });
+
+  // 控件
+  const slider = (label, key, min, max) => {
+    const out = h("b", {}, "");
+    const inp = h("input", { type: "range", min, max, step: 1, value: st[key], "aria-label": label });
+    const paint = () => { out.textContent = st[key] ? `${key === "B" ? "+" : "−"}${st[key]}` : "0"; };
+    inp.oninput = () => { st[key] = +inp.value; paint(); reset(); };
+    paint();
+    return h("label", {}, label, inp, out);
+  };
+  const sel = h("select", { "aria-label": "起始种群" },
+    h("option", { value: "book" }, "第 28 段：羞怯、忠诚各占 97%"),
+    h("option", { value: "eq" }, "正好在均衡点上"),
+    h("option", { value: "near" }, "离均衡点差一点（薄情多 5%）"),
+    h("option", { value: "custom" }, "在方框里点的地方"));
+  sel.onchange = () => { st.start = sel.value; if (st.start === "custom" && !st.p0) st.p0 = [0.6, 0.4]; reset(); };
+
+  root.querySelector(".sim-body").replaceChildren(
+    h("div", { class: "controls" }, slider("养大一个孩子，每个亲本得", "B", 1, 40), slider("养一个孩子的总代价", "C", 1, 60), slider("求偶耗时", "D", 0, 15)),
+    h("div", { class: "controls" }, h("label", {}, "起始种群", sel),
+      h("button", { onclick: () => run(100) }, "跑 100 代"), h("button", { onclick: () => run(500) }, "跑 500 代"),
+      h("button", { onclick: push }, "推一下"), h("button", { onclick: () => reset() }, "重置")),
+    h("div", { class: "stage" }, plane,
+      h("p", { class: "cap" }, "方框图：橙点是种群现在的位置，紫线是它走过的路，虚线十字是两边各自打平的均衡点。下面是两个比例随代数的变化，虚线是均衡点的值。"),
+      series,
+      h("p", { class: "cap" }, "计分表：行是雌性的策略，列是雄性的策略，格子里是这一对相遇时双方各得几分（随滑杆变）。"),
+      h("div", { class: "table-wrap" }, table)),
+    narrate, stats);
+  reset();
+})();
+</script>
+</body>
+</html>

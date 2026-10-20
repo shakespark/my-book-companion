@@ -70,7 +70,7 @@ def zh_text(ch):
     if os.path.exists(n):
         m = re.search(rf"^## 第{ch}章.*?(?=^## 第|\Z)", open(n, encoding="utf-8").read(), flags=re.M | re.S)
         if m: t += "\n" + m.group(0)
-    return re.sub(r"\s+", "", re.sub(r"^#.*$|\{译注\} ", "", t, flags=re.M))
+    return re.sub(r"\s+", "", re.sub(r"^#+ |\{译注\} ", "", t, flags=re.M))  # 标题行只去掉 # 号，章名也能当勘误的定位
 
 
 def concept_ids(path):
@@ -241,7 +241,9 @@ for path in sys.argv[1:]:
     for q in re.findall(r'<blockquote class="quote">(.*?)<cite>', t, flags=re.S):
         s = norm(plain(q)).strip("… ").strip()
         where = [p for p, v in paras.items() if s.replace("…", "") and all(x.strip() in v for x in s.split("…") if x.strip())]
-        if not where: errs.append(f"引用块在这一页的原文里找不到（要一字不差，省略处用 …）：{s[:50]!r}")
+        in_note = [n for n in notes if s.replace("…", "") and all(x.strip() in NOTE_TEXT.get(n, "") for x in s.split("…") if x.strip())]  # 这一页星号指向的尾注也是作者的话，可以引
+        if in_note: continue
+        if not where: errs.append(f"引用块在这一页的原文（含这一页的尾注）里找不到（要一字不差，省略处用 …）：{s[:50]!r}")
         elif all(p in quoted for p in where): errs.append(f"引用块引的是 {{Q}} 段落（别人的话），只引作者自己写的：{s[:50]!r}")
         if len(s.replace("…", " ").split()) > 25: errs.append(f"引用块超过 25 个词：{s[:50]!r}")
     if t.count('<blockquote class="quote">') and t.find('<blockquote class="quote">') < t.find("<h2>值得停下来的句子</h2>"):
@@ -261,7 +263,9 @@ for path in sys.argv[1:]:
         if n in notes:
             p, pre_ = notes[n]
             b_ = norm(plain(before)).strip()
-            if not (pre_.rstrip().endswith(b_) and 4 <= len(b_.split()) <= 7): errs.append(f"尾注 {n}：.en 要照抄第 {p} 段星号前紧挨着的 4–7 个词（读者在 Kindle 里搜它找到这个星号）：{b_!r}")
+            # 星号前常紧挨着引号和标点（…bear a son . . .’*、…‘parental expenditure’).*）：.en 只要是星号前 12 个词以内、不含引号的连续 4–7 个词
+            tail = " ".join(pre_.split()[-12:])
+            if not (b_.rstrip("'\" ") in tail and 4 <= len(b_.split()) <= 7): errs.append(f"尾注 {n}：.en 要照抄第 {p} 段星号前 12 个词以内、不含引号的连续 4–7 个词（读者在 Kindle 里搜它找到这个星号）：{b_!r}")
             if QUOTE_IN.search(plain(before)): errs.append(f"尾注 {n}：.en 不能含引号：{plain(before)!r}")
             sk = next((s[0] for s in secs if s[1] <= p <= s[2]), None)
             if sk != int(k): errs.append(f"尾注 {n}：星号在第 {p} 段，是 §{sk}，不是 §{k}")
@@ -300,7 +304,7 @@ for path in sys.argv[1:]:
         dts = re.findall(r"<dt>(.*?)</dt>", dl)
         if dts[:3] != ["书里", "当时", "今天"] or not set(dts[3:]) <= {"另一边"}: errs.append(f"对照今天「{name}」：<dt> 依次是 书里 / 当时 / 今天（可再加 另一边），现在是 {dts}")
         if not re.search(r'<span class="asof">核对于 20\d\d-\d\d', dl): errs.append(f"对照今天「{name}」：「今天」最后要有 <span class=\"asof\">核对于 2026-10。依据：…</span>")
-        if not re.search(r"第 \d+ 段", dl): errs.append(f"对照今天「{name}」：「书里」要标段号（第 n 段）")
+        if not re.search(r"第 \d+(?:[–-]\d+)? 段", dl): errs.append(f"对照今天「{name}」：「书里」要标段号（第 n 段）")
         if han(dl) > 360: errs.append(f"对照今天「{name}」：{han(dl)} 个汉字，超过 360")
 
     # 本站怎么看：2–3 块看法，最后一句总体看法

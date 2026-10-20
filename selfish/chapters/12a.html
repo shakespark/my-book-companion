@@ -1,0 +1,780 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 12 章（上）· The Selfish Gene 导读</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/chapters.js"></script>
+<script src="../assets/sg.js"></script>
+<style>
+#sim-12a .stage svg { width: 100%; min-width: 520px; height: auto; display: block; }
+#sim-12a .stage p.cap { color: var(--muted); font-size: 12.5px; margin: 10px 0 4px; }
+#sim-12a table.rank { border-collapse: collapse; margin: 10px 0 0; font-size: 13.5px; width: 100%; min-width: 360px; }
+#sim-12a table.rank th, #sim-12a table.rank td { border: 1px solid var(--border); padding: 3px 8px; text-align: left; font-variant-numeric: tabular-nums; white-space: nowrap; }
+#sim-12a table.rank td.barcell { width: 30%; min-width: 80px; }
+#sim-12a .legend { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 12.5px; color: var(--muted); margin: 0 0 6px; }
+#sim-12a .legend i { display: inline-block; width: 14px; height: 4px; border-radius: 2px; vertical-align: middle; margin-right: 4px; }
+#sim-12a table.rank th { background: var(--surface-2); font-weight: 600; }
+#sim-12a table.rank td.num { text-align: right; }
+#sim-12a .bar { height: 8px; border-radius: 4px; background: var(--accent); min-width: 2px; }
+#sim-12a .controls input[type="number"] { width: 3.6em; }
+#sim-12a .controls input[type="range"] { width: 120px; }
+#sim-12a .modes button[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); font-weight: 600; }
+#sim-12a .warn { color: var(--bad); font-size: 13.5px; }
+#sim-12a .ok { color: var(--muted); font-size: 13.5px; }
+</style>
+</head>
+<body data-page="12a">
+<main>
+
+<h2>这一页在做什么</h2>
+<div class="gist"><p>第 12 章的前半，1989 年第二版新写的。第 10 章的斤斤计较者在这里换上了博弈论的外衣：两个只顾自己的玩家，只玩一局时必然互相背叛；同样两人反复玩下去，会怎样？Dawkins 介绍政治学家 Axelrod 用电脑锦标赛找最好的策略，再用 ESS 的标准把比赛结果重评一遍。读的时候抓两条线：nice 是一个技术定义，不是道德评语；在人办的比赛里拿第一，和在自然选择里站得住，不是一回事。</p></div>
+<figure class="fig"><img src="../assets/img/12a-babblers.jpg" alt="两只灰褐色带白色斑纹的鸟并排站在树枝上，一只仰起头，另一只把嘴埋在它的颈部羽毛里" loading="lazy">
+<figcaption>两只箭纹鸫鹛在南非的国家公园里互相理羽。第 19 段回到第 10 章那群互相除蜱的鸟：自己够不着头顶，要靠同伴，帮了别人又盼对方回报，这就是一局重复的囚徒困境。书里的鸟是作者设想的，没说是哪一种。<span class="src">Derek Keats，CC BY 2.0，维基共享资源</span></figcaption></figure>
+
+<h2>读之前：这一页在全书的哪里</h2>
+<div class="linehere"></div>
+<p>上一章讲文化里的复制因子觅母。这一章是 1989 年加的，第 2 段直接接回第 10 章的斤斤计较者，说那个故事的原理就是 Trivers 的<a class="term" href="10b.html#c-reciprocal-altruism">相互利他行为</a>，而 Axelrod 把它推向了新方向。第 41 段说读过前几章的人会想到用 <a class="term" href="05a.html#c-ess">ESS</a> 来评判，第 53 段说决胜点在第 10 章已经见过。这一页到第 60 段讲完理论；下一页转向零和与非零和，以及人和动物的实例。</p>
+<div class="crux"><p>一群各为自己、没有警察也没有合同的个体，靠什么让合作稳住？</p></div>
+<p class="lede">读的时候带着这几个问题。不用先找答案，读完回来对照「检查一下理解」。</p>
+<ol class="qs">
+  <li>只玩一局时，作者说两个理性的人只能互相背叛。这个推理哪一步没毛病？哪个前提一变，结论就变了？<span class="sec">§1</span></li>
+  <li>针锋相对从没在任何一场对局里得分超过对手，它凭什么拿第一？<span class="sec">§3</span></li>
+  <li>作者为什么说比赛名次像人的心血来潮一样随意？换成 ESS 的标准，好在哪里？<span class="sec">§4</span></li>
+  <li>稀少的针锋相对靠什么翻过决胜点？永远背叛为什么不能用同样的办法翻回去？<span class="sec">§5</span></li>
+</ol>
+
+<h2>这一页的路线</h2>
+<p>这一页的走法是「先把路堵死，再找出路，最后给出路打折扣」。§1 用一个纸牌游戏证明：只玩一局，理性的两个人只能互相背叛。§2 把游戏重复，希望出现了，可策略多得数不清，于是转去讲 Axelrod 的锦标赛，中间插了第 19 段的除蜱鸟，提醒这不只是人的游戏。§3 报比赛结果，再按「善良」「宽容」分类，第 41 段作者自己泼冷水：名次取决于碰巧有谁参赛。§4 先插一段作者牵线 Axelrod 和 Hamilton 的往事，再换成 ESS 的尺子，读到第 49 段会觉得刚立起来的冠军又被拆了一半。§5 从「运气」说到亲属扎堆，那座爱尔兰小岛只是个比方，作者在第 58 段自己说它有误导。</p>
+<figure class="fig"><svg class="diagram" viewBox="0 0 640 250" role="img" aria-label="路线示意图：三条横线分别是游戏规则、人办的比赛、进化的眼光，一条折线按阅读顺序从上往下走">
+<text x="8" y="28" class="t-m">游戏规则</text>
+<text x="8" y="103" class="t-m">人办的比赛</text>
+<text x="8" y="178" class="t-m">进化的眼光</text>
+<line x1="8" y1="42" x2="632" y2="42" class="ln-d"/>
+<line x1="8" y1="117" x2="632" y2="117" class="ln-d"/>
+<line x1="8" y1="192" x2="632" y2="192" class="ln-d"/>
+<polyline points="50,42 125,42 200,42 275,117 350,117 425,192 500,192 575,192" class="ln-a"/>
+<circle cx="50" cy="42" r="7" class="f1"/><text x="50" y="64" text-anchor="middle">好人垫后</text><text x="50" y="80" text-anchor="middle" class="t-m">§1</text>
+<circle cx="125" cy="42" r="7" class="f1"/><text x="125" y="64" text-anchor="middle">单局必背叛</text><text x="125" y="80" text-anchor="middle" class="t-m">§1</text>
+<circle cx="200" cy="42" r="7" class="f1"/><text x="200" y="64" text-anchor="middle">重复博弈</text><text x="200" y="80" text-anchor="middle" class="t-m">§2</text>
+<circle cx="275" cy="117" r="7" class="f2"/><text x="275" y="139" text-anchor="middle">两次锦标赛</text><text x="275" y="155" text-anchor="middle" class="t-m">§2–§3</text>
+<circle cx="350" cy="117" r="7" class="f2"/><text x="350" y="139" text-anchor="middle">名次看对手</text><text x="350" y="155" text-anchor="middle" class="t-m">§3</text>
+<circle cx="425" cy="192" r="7" class="f3"/><text x="425" y="214" text-anchor="middle">第三轮</text><text x="425" y="230" text-anchor="middle" class="t-m">§4</text>
+<circle cx="500" cy="192" r="7" class="f3"/><text x="500" y="214" text-anchor="middle">双稳</text><text x="500" y="230" text-anchor="middle" class="t-m">§4</text>
+<circle cx="575" cy="192" r="7" class="f3"/><text x="575" y="214" text-anchor="middle" class="t-b">扎堆翻越</text><text x="575" y="230" text-anchor="middle" class="t-m">§5</text>
+</svg>
+<figcaption>本站示意图。三条虚线是这一页的三个层面：游戏本身、Axelrod 办的比赛、自然选择的眼光；折线是阅读顺序，一路往下走。</figcaption></figure>
+<p class="landing"><b>作者落在哪：</b>在重复、且谁也不知道何时结束的囚徒困境里，不先背叛、挨打就还手、过后不记仇的针锋相对一类策略表现最好；但严格说它不是 ESS，只是和永远背叛并立的两个稳定状态之一，靠亲属扎堆才能从稀少翻过决胜点，而且只能单向翻。</p>
+
+<h2>分节地图</h2>
+<p class="lede">这一页是原书第 12 章的第 1–5 节。原书各章没有小标题，粗体的节名是本站起的，下面是这一节第一段开头的几个词，在电子书里搜它就能跳过去。读完打个勾。</p>
+<ol class="secmap">
+  <li data-sec="1"><b>好人垫后与囚徒困境<span class="w">约 1600 词</span></b><span class="en">Nice guys finish last. The phrase …</span><span class="what">第 1 段立题，第 4–10 段讲规则，第 12–13 段推出单局必背叛。第 10 段的 outcomes I and 11 是识别错，11 应为 II。</span></li>
+  <li data-sec="2"><b>重复博弈与电脑锦标赛<span class="w">约 1400 词</span></b><span class="en">In the simple game of …</span><span class="what">重复带来希望；第 19 段接回第 10 章的除蜱鸟。第 23–27 段是比赛规则，第 25 段的 I point、o points 是 1 分、0 分。</span></li>
+  <li data-sec="3"><b>针锋相对胜出<span class="w">约 1600 词</span></b><span class="en">Some ingenious strategies were submitted, though …</span><span class="what">第 30–32 段用三场对局演示，第 34–35 段是善良、宽容的定义和成绩，第 41 段转折：名次看对手。</span></li>
+  <li data-sec="4"><b>换成进化稳定策略来评<span class="w">约 1800 词</span></b><span class="en">I was one of those to whom …</span><span class="what">第 42 段是作者的往事。第 44 段是全章的尺子：在满是自己拷贝时还表现好。第 49 段起拆解「冠军」。</span></li>
+  <li data-sec="5"><b>亲属扎堆翻过决胜点<span class="w">约 900 词</span></b><span class="en">It obviously matters, therefore, on which …</span><span class="what">第 55 段说「运气」只是无知的代名词，第 56–59 段是作者自己的推理，第 60 段收束成「更高的稳定性」。</span></li>
+</ol>
+
+<h2>先用中文过一遍：这一页的概念</h2>
+<p class="lede">先把这一页用到、作者默认你懂的几个概念讲一遍。讲的是概念本身，作者拿它推出什么，读原书时自己看。前几章讲过的<a class="term" href="05a.html#c-ess">进化稳定策略</a>、<a class="term" href="10b.html#c-reciprocal-altruism">相互利他行为</a>、<a class="term" href="06a.html#c-kin-selection">亲属选择</a>，点进去看。</p>
+<div class="concept" id="c-prisoners-dilemma">
+<h3><span class="sec">§1</span>囚徒困境 <span class="en">Prisoner’s Dilemma</span></h3>
+<p>1950 年美国兰德公司的 Merrill Flood 和 Melvin Dresher 设计的两人游戏，数学家 Albert Tucker 给它配上两个囚徒的故事，名字由此而来。两人同时出牌，只有「合作」「背叛」两种。四种结果的好坏排序是：背叛的诱惑（T）高于相互合作的奖赏（R），高于相互背叛的惩罚（P），高于被背叛那一方得到的失败的代价（S，今天通行叫「傻瓜收益」）。困境在于：不管对方出什么，自己背叛都多拿一点；两人都这样想，就一起落到 P，不如两人都合作的 R。具体数目不要紧，要紧的是排序。另有一条附加条件：T 和 S 的平均要小于 R，否则两人轮流占便宜比一直合作还划算。程序员可以把它想成两个服务共用一份配额：各自多占一点总对自己有利，大家都多占，就一起被限流。</p>
+<figure class="fig"><svg class="diagram" viewBox="0 0 640 230" role="img" aria-label="示意图：对方出合作时，我合作得 3、背叛得 4；对方出背叛时，我合作得 0、背叛得 1；两种情况都是背叛多 1；可两人都背叛各得 1，不如都合作各得 3">
+<rect x="20" y="20" width="290" height="130" rx="8" class="box"/>
+<rect x="330" y="20" width="290" height="130" rx="8" class="box"/>
+<text x="165" y="44" text-anchor="middle" class="t-b">假如对方出「合作」</text>
+<text x="475" y="44" text-anchor="middle" class="t-b">假如对方出「背叛」</text>
+<text x="40" y="78">我合作：得 3</text>
+<text x="40" y="108">我背叛：得 4</text>
+<rect x="150" y="66" width="90" height="16" class="f3"/>
+<rect x="150" y="96" width="120" height="16" class="f2"/>
+<text x="350" y="78">我合作：得 0</text>
+<text x="350" y="108">我背叛：得 1</text>
+<rect x="460" y="96" width="30" height="16" class="f2"/>
+<text x="165" y="138" text-anchor="middle" class="t-m">背叛多 1</text>
+<text x="475" y="138" text-anchor="middle" class="t-m">背叛还是多 1</text>
+<text x="320" y="182" text-anchor="middle">所以「我」一定背叛；对方也这样想</text>
+<text x="320" y="210" text-anchor="middle" class="t-b">结果：两人各得 1，不如两人都合作时的各得 3</text>
+</svg>
+<figcaption>本站示意图，用本站随手取的一组数（4、3、1、0），两条条件都满足。Axelrod 比赛用的是 5、3、1、0（第 25 段），下面的模拟器默认用它。</figcaption></figure>
+<p class="use"><b>在这一页：</b>第 4–10 段用美元讲规则，第 12–13 段推出单局里只能背叛，第 14 段讲囚徒的故事，第 25 段给出比赛计分。</p>
+</div>
+<div class="concept" id="c-iterated-pd">
+<h3><span class="sec">§2</span>重复囚徒困境 <span class="en">Iterated (Repeated) Prisoner’s Dilemma</span></h3>
+<p>同样两个玩家把囚徒困境一局接一局地玩下去。关键不在玩多少局，而在谁都不知道哪一局是最后一局：要是知道，最后一局就等于单独一局，必然背叛；倒数第二局跟着守不住，一路倒推回第一局（这一推理在下一页第 74 段）。不知道终点，今天怎么出牌就会影响明天对方怎么对你，于是「看对方过去怎么做」的策略有了用处，两人可以一起从「银行家」那里多拿，而不是从对方那里拿。可以类比长期互相调用的两个服务：一次性的调用方可以随便占资源，长期打交道的就得讲规矩。对局还会持续多久的预期，Axelrod 叫它<a class="term" href="12b.html#c-shadow-of-future">未来的阴影</a>。</p>
+<p class="use"><b>在这一页：</b>第 16–18 段引入，第 19 段说第 10 章的除蜱鸟就在玩它，第 21 段说动植物里到处都是。</p>
+</div>
+<div class="concept" id="c-tit-for-tat">
+<h3><span class="sec">§3</span>针锋相对 <span class="en">Tit for Tat</span></h3>
+<p>多伦多的 Anatol Rapoport 提交的策略，规则只有两条：第一回合合作；以后每回合照抄对方上一回合。tit for tat 本是英语习语，指你来我往地回敬。同类的还有两报还一报（对方连续背叛两次才还手一次）、针锋相对多疑版（第一回合先背叛，以后照抄）。一个容易读漏的特点：它从不在单场对局里得分超过对手，最多打平，因为它只在对方背叛之后背叛；它总分高，靠的是和许多对手都打成「高分平局」。和斤斤计较者比，它也会还手，但只还一次，对方回头它就回头。今天通行译作「一报还一报」。</p>
+<p class="use"><b>在这一页：</b>第 29 段登场，第 30–32 段演示它碰上同类、老实人探测器、愧疚探测器会怎样，第 34 段起是比赛成绩。</p>
+</div>
+<div class="concept" id="c-nice-forgiving">
+<h3><span class="sec">§3</span>善良、宽容和不嫉妒 <span class="en">nice, forgiving, non-envious</span></h3>
+<p>Axelrod 给策略分类时用的技术词，都按行为定义，不问动机。善良（nice）：从不率先背叛，被背叛了可以还手；反面是恶意（nasty），哪怕极少无故背叛一次，也算恶意。宽容（forgiving）：报复过就翻篇，记性短；斤斤计较者是善良的，却完全不宽容。可激怒的（provocable）：对方一背叛就立刻还手，第 47 段用到。不嫉妒在下一页第 61 段：不追求比对手多，只追求从银行家那里拿得多。别把 nice 读成道德上的好人：作者在下一页说，一个心肠很坏的人也能写出一个善良的策略。</p>
+<p class="use"><b>在这一页：</b>第 34 段定义善良，第 35 段定义宽容，第 37 段把两条合成赢家的特点，第 47 段出现可激怒的。</p>
+</div>
+<div class="concept" id="c-collectively-stable">
+<h3><span class="sec">§4</span>集体稳定策略、双稳态和决胜点 <span class="en">collectively stable strategy; bistable; knife-edge</span></h3>
+<p>ESS 要求：多数个体采用它时，任何稀少的突变策略都入侵不了。针锋相对差一点：恶意策略进不来，但别的善良策略（比如永远合作）和它相遇时表现完全一样，可以悄悄漂进来。Axelrod 为这种情形造了「集体稳定」一词。永远背叛也挡得住别人，于是种群有两个稳定状态（双稳态），中间隔着一个临界比例：针锋相对的份额高于它就越来越多，低于它就越来越少。作者叫它 knife-edge（刀刃），书里没有给数。本站按 Axelrod 的计分算了：只有这两种策略、每对下 200 回合时，针锋相对只要占约 0.25% 就能翻身；每对只下 10 回合时要约 6%。今天通行叫「临界频率」。</p>
+<figure class="fig"><svg class="diagram" viewBox="0 0 640 250" role="img" aria-label="折线图：横轴是种群里针锋相对的比例，从 0 到 20%；永远背叛的得分线开始较高，针锋相对的得分线更陡，两线在约 6% 处相交">
+<line x1="70" y1="20" x2="70" y2="200" class="ln"/>
+<line x1="70" y1="200" x2="590" y2="200" class="ln"/>
+<text x="62" y="147" text-anchor="end" class="t-m">1.0</text>
+<text x="62" y="90" text-anchor="end" class="t-m">1.2</text>
+<text x="62" y="34" text-anchor="end" class="t-m">1.4</text>
+<text x="70" y="218" text-anchor="middle" class="t-m">0</text>
+<text x="330" y="218" text-anchor="middle" class="t-m">10%</text>
+<text x="590" y="218" text-anchor="middle" class="t-m">20%</text>
+<text x="330" y="242" text-anchor="middle" class="t-m">种群里针锋相对的比例 →</text>
+<line x1="70" y1="172" x2="590" y2="53" class="s1"/>
+<line x1="70" y1="143" x2="590" y2="121" class="s2"/>
+<text x="585" y="44" text-anchor="end" class="t-b f1">针锋相对每回合得分</text>
+<text x="585" y="140" text-anchor="end" class="t-b f2">永远背叛每回合得分</text>
+<line x1="223" y1="137" x2="223" y2="200" class="ln-d"/>
+<circle cx="223" cy="137" r="6" class="f-a"/>
+<text x="232" y="186" class="t-b">决胜点约 6%</text>
+<text x="80" y="104" class="t-m">← 这边永远背叛占优</text>
+<text x="400" y="186" class="t-m">这边针锋相对占优 →</text>
+</svg>
+<figcaption>本站示意图，数是本站算的：Axelrod 的计分（5、3、1、0），种群里只有针锋相对和永远背叛，每对只下 10 回合。交点左边永远背叛得分高，右边针锋相对得分高。回合数越多，交点越靠近 0。</figcaption></figure>
+<p class="use"><b>在这一页：</b>第 49–50 段说它不是严格的 ESS，第 52 段引出集体稳定和双稳，第 53 段是决胜点，第 54–60 段讲怎样翻过去。</p>
+</div>
+
+<h2>动手：模拟器</h2>
+<p>先猜：种群里只有针锋相对和永远背叛两种，针锋相对只占千分之一，彼此几乎碰不上。它会被淘汰吗？要是亲属住得近，碰上同类的机会只多那么一点点呢？先在「两个策略单挑」里看几场对局，再到「决胜点」里验证。</p>
+<div class="sim" id="sim-12a">
+  <div class="sim-head"><span class="tag">模拟器</span><h3>重复囚徒困境：单挑、循环赛、一代代淘汰</h3><p class="desc">四种看法：两个策略单挑一场；循环赛（每个策略和每个策略各下一场，包括和自己的拷贝）；一代代淘汰（按得分多少繁殖，作者叫它第三轮）；只剩针锋相对和永远背叛时的决胜点。计分默认用 Axelrod 比赛的 5、3、1、0（第 25 段），可以改。九个策略都是书里出现的。先点「两个策略单挑」。</p></div>
+  <div class="sim-body"><p>需要浏览器打开脚本才能运行。</p></div>
+</div>
+<ol class="qs">
+  <li>试试看：默认是针锋相对对老实人探测器。看上下两排：老实人探测器无故背叛一次之后，两边进入「你背叛、我合作」的轮换，这一段每回合平均几分？对一对第 31 段的 2.5 分。后来又发生了什么？再把乙换成愧疚探测器（第 32 段），然后换成针锋相对多疑版（第 51 段），各是什么样子？</li>
+  <li>试试看：点「循环赛」。默认 8 个策略，4 个善良、4 个恶意，看前四名是不是全是善良的、第一名是谁（对一对第 34、36 段）。再勾上愧疚探测器，斤斤计较者的名次怎么变（第 35 段）？接着点「一代代淘汰」，保持愧疚探测器勾着，起始选「软柿子多」（两报还一报和永远合作各占 4 份，其余各 1 份），点「跑 1000 代」：哪个恶意策略先涨后落，像第 47 段的 Harrington？最后剩下的是谁？再去掉愧疚探测器、起始改回「各占一样多」重跑：恶意的都灭绝以后，几个善良策略的份额为什么停住不动了（第 48 段）？</li>
+  <li>试试看：点「决胜点」，起始针锋相对 0.1%、扎堆 0，跑 1000 代；再把扎堆改成 1%，重置再跑。然后把「每对下几回合」拖到 10，看决胜点变成多少。最后把回合数拖回 200，勾上「误操作」，回到「一代代淘汰」，起始「各占一样多」跑 1000 代：针锋相对还站得住吗？（误操作是书外的，见「对照今天」。）</li>
+</ol>
+<p>说明两处本站的取舍。一、老实人探测器和针锋相对的交替报复，书里只讲到「轮流」那一段；模拟器里探测器还会继续随机试探，有时正好撞上自己该合作的那一步，两边就落进一直互相背叛，这是同一套规则跑下去的结果，书里「两边都比两个针锋相对差」的结论不变。二、默认的 8 个策略里没放愧疚探测器，它是恶意策略，却能排到几个善良策略前面，放进来就看不清第 34 段「善良的全在前面」；作为可选项，它正好演示名次怎样随对手变。模拟器复现不了第二次比赛的 63 个真实程序，所以不在这里比谁是第二次的冠军。</p>
+
+<h2>书里的人和研究</h2>
+<p class="lede">按在书里出现的顺序排，标题前是节号。只讲到读懂这一页需要的程度。</p>
+
+<h3><span class="sec">§1</span>「好人垫后」：一句棒球场上的话</h3>
+<p>第 1 段说这句话似乎出自棒球界。通行的说法是：1946 年，布鲁克林道奇队的经理 Leo Durocher 指着对手纽约巨人队说，那帮好人都在第七名；报纸转述时改成了「最后一名」，后来缩成 Nice guys finish last，成了美国俗语。作者说，美国生物学家 Garrett Hardin 拿它概括社会生物学的意思：在达尔文的世界里，肯帮别人的好人注定吃亏。这一章就是要说明，换一个定义，好人可以领先。</p>
+<div class="who">
+  <div><b>Garrett Hardin</b><span class="en">1915–2003</span>美国生态学家，1968 年在《科学》杂志上发表《公地的悲剧》。在这一页里是用「好人垫后」概括社会生物学的人。</div>
+</div>
+
+<h3><span class="sec">§2</span>Axelrod 的电脑锦标赛</h3>
+<figure class="fig"><img src="../assets/img/12a-bach-group.jpg" alt="八个男人在写满算式的黑板前合影，四人坐在桌后，四人站着" loading="lazy">
+<figcaption>密歇根大学一个跨学科研究小组的合影。照片说明里的位置：前排左二是 W. D. Hamilton，后排左一戴眼镜的是 Robert Axelrod。拍摄年份不详。<span class="src">University of Michigan News and Information Services，CC BY 4.0，维基共享资源</span></figcaption></figure>
+<p>Axelrod 是密歇根大学的政治学家。他请博弈论专家用程序提交策略，办了两次重复囚徒困境的电脑锦标赛，1980 年在《冲突解决杂志》上发表结果，1984 年写成《合作的进化》一书。第一次 14 个策略加一个随机，每对下 200 回合；第二次 62 个加随机，回合数不事先固定。第 23–27 段的规则、第 34、40 段的成绩都出自这里。比赛的「选手」是程序，作者在第 28 段说，程序的作者就像给身体编程的基因。</p>
+<div class="who">
+  <div><b>Robert Axelrod</b><span class="en">1943–</span>美国政治学家，1974 年起在密歇根大学任教，以重复囚徒困境的锦标赛和《合作的进化》一书出名。这一章的主角。</div>
+</div>
+
+<h3><span class="sec">§3</span>Rapoport 和两报还一报</h3>
+<p>两次比赛都是 Rapoport 交的针锋相对夺冠，据他的讣告，那个程序只有四行。第 39 段说，第二次比赛 Maynard Smith 交了更宽容的两报还一报；Axelrod 的书里记的是它第一次若参赛会夺冠，第二次只排第 24 名，就是第 41 段说的「排得很靠后」。Maynard Smith 是 <a class="term" href="05a.html#c-ess">ESS</a> 概念的提出者之一，第 5 章的主角。</p>
+<div class="who">
+  <div><b>Anatol Rapoport</b><span class="en">1911–2007</span>数学心理学家，长期研究博弈与冲突，在多伦多大学任数学和心理学教授。在这一页里是针锋相对的提交者。</div>
+</div>
+
+<h3><span class="sec">§4</span>Axelrod 和 Hamilton 的《科学》论文</h3>
+<p>第 42 段作者讲了一段往事：他写信建议 Axelrod 去找 W. D. Hamilton，两人当时在同一所大学的不同系，Axelrod 并不知道。合作的成果是 1981 年 3 月发表在《科学》上的论文《合作的进化》，获美国科学促进会的纽科姆·克利夫兰奖。论文用 ESS 的眼光重看比赛结果，并论证了：单个针锋相对打不进永远背叛的种群，一小群聚在一起的就能。下一页的细菌、无花果例子也出自这篇。</p>
+<div class="who">
+  <div><b>W. D. Hamilton</b><span class="en">1936–2000</span>英国演化生物学家，亲属选择理论的奠基人（第 6 章的汉密尔顿法则），1978–1984 年在密歇根大学任教。</div>
+</div>
+
+<h3><span class="sec">§4</span>「第三轮」和「六次中五次」</h3>
+<p>Axelrod 自己没把它叫第三轮，这是作者的叫法（第 45 段）。做法是：把第二次比赛的 63 个策略放在一起，每一代按上一代的得分决定各策略的份额，和本页模拟器的「一代代淘汰」一样。第 48 段说针锋相对在第三轮的六次里五次居首。本站对了一下 Axelrod 1984 年的书：「六次中五次第一」说的是另一项分析，他把第二次比赛的策略分成六类，每次把一类的份量放大五倍重算，针锋相对五次第一、一次第二；生态模拟里它到第 1000 代仍是份额最高、增长最快的。第 48 段这个数，作者可能记混了。</p>
+
+<h3><span class="sec">§4</span>Boyd 和 Lorberbaum：没有哪个纯策略是 ESS</h3>
+<p>第 51 段提到的研究：人类学家 Robert Boyd 和 Jeffrey Lorberbaum 1987 年在《自然》上发表的短文，题目就是「在重复囚徒困境里，没有一个纯策略是进化稳定的」。作者举的是其中的例子：两报还一报和针锋相对多疑版混在一起，可以入侵全是针锋相对的种群。多疑版第一步先背叛，碰上针锋相对就陷入没完的互相报复；碰上宽容的两报还一报，第一下就被原谅了。</p>
+
+<h3><span class="sec">§5</span>爱尔兰西海岸的小岛</h3>
+<figure class="fig"><img src="../assets/img/12a-aran-walls.jpg" alt="草地上纵横交错的灰色石墙，远处是蓝色海湾和对岸的山" loading="lazy">
+<figcaption>爱尔兰西海岸外阿伦群岛最大的岛 Inis Mór 上的干砌石墙，远处是康尼马拉的海岸。书里没说作者去的是哪个岛，这张图只是示意。<span class="src">JoachimKohler-HB，CC BY-SA 4.0，维基共享资源</span></figcaption></figure>
+<p>第 56 段作者回忆去过爱尔兰西海岸外的一个偏远小岛，岛上几乎人人长着大大的招风耳。他说这不会是因为大耳朵适应海风，而是岛民大多是近亲。他拿这件事说明种群的「黏性」：人一辈子不走远，亲属就聚在一处。第 58 段他又提醒，小岛被海隔开，是个有误导的比方，他要的是一大片人口里「邻居比远处的人更像自己」。</p>
+
+<h2>词与短语</h2>
+<p class="lede">按节排，每节前面是分节地图里的节名。标着「每个字都认识」的，是熟词生义、习语和反话，最容易读错。灰色的那几个字是原句里的位置，在电子书里搜它就能找到。</p>
+
+<h3 class="sec-head" id="s1">§1 <span class="first">好人垫后与囚徒困境</span></h3>
+<div class="entry trap"><div class="en">Nice guys finish last</div><div class="loc" data-p="1">… Nice guys finish last. The phrase …</div><div class="zh">好人垫底；老实人吃亏</div><div class="note">美国俗语，finish last 是比赛跑最后一名。来历见「书里的人和研究」。</div></div>
+<div class="entry trap"><div class="en">claim priority for</div><div class="loc" data-p="1">… authorities claim priority for an alternative …</div><div class="zh">认为另有更早的出处</div><div class="note">priority 在学术和专利里是「谁先提出」。作者只是说这句话的来历有别的说法，不展开。</div></div>
+<div class="entry"><div class="en">selfish genery</div><div class="loc" data-p="1">… the message of what may be called …</div><div class="zh">自私基因那一套（戏称）</div><div class="note">紧接着的引号里是 sociobiology 和 selfish genery。genery 仿 -ery 词尾（像 trickery）构词，是戏谑的叫法，带点自嘲；作者用 what may be called（不妨叫作）引出，说明这不是正式名称。</div></div>
+<div class="entry"><div class="en">dies a Darwinian death</div><div class="loc" data-p="1">… niceness dies a Darwinian death.</div><div class="zh">在自然选择里死掉</div><div class="note">化用 die a natural death（寿终正寝）一类说法：好心在达尔文式的竞争里被淘汰。这是作者转述的通俗读法，他接着就要反驳。</div></div>
+<div class="entry trap"><div class="en">finish first</div><div class="loc" data-p="1">… nice guys can finish first.</div><div class="zh">（好人）可以跑第一</div><div class="note">反用俗语，也是章名。注意 can：作者说的是「可以」，而且 nice 是下面要讲的技术定义。页头的译本章名<span class="zhv">译本：「好人终有好报」</span>把「领先」换成了「有好报」，读起来像一句道德承诺。</div></div>
+<div class="entry"><div class="en">crop up</div><div class="loc" data-p="2">… whose name has cropped up on …</div><div class="zh">（名字）出现</div><div class="note">crop up 是「冒出来」，不是「收割」。作者说 Hamilton 的名字在这本书里出现过很多次。</div></div>
+<div class="entry trap"><div class="en">there must be more to it</div><div class="loc" data-p="3">… thinking that there must be more …</div><div class="zh">以为一定另有玄机</div><div class="note">more to it 是「不止这么简单」。作者说这个游戏简单到聪明人都会误解它。</div></div>
+<div class="entry"><div class="en">As a biologist, I agree</div><div class="loc" data-p="3">… As a biologist, I agree with Axelrod …</div><div class="zh">作为生物学家，我同意</div><div class="note">作者表明立场：动植物也在玩囚徒困境，这是他同意 Axelrod 和 Hamilton 的判断，后面第 21 段再说一次。读的时候分清这是作者的主张。</div></div>
+<div class="entry trap"><div class="en">in deference to</div><div class="loc" data-p="5">… in deference to the North American …</div><div class="zh">出于对……的尊重</div><div class="note">deference 是「敬重、顺从」。作者打趣：游戏来自北美，所以用美元计价。</div></div>
+<div class="entry"><div class="en">the Sucker</div><div class="loc" data-p="8">… and fines you (the Sucker) …</div><div class="zh">傻瓜（被背叛的那一方）</div><div class="note">sucker 口语是「容易上当的人」。这里成了四种结果之一的名字，和第 10 章的「傻瓜」策略同名，别混：这里是一种结果，那里是一种策略。</div></div>
+<div class="entry trap"><div class="en">there ought to be a law against it</div><div class="loc" data-p="13">… ought to be a law against …</div><div class="zh">该立法禁止才对（半开玩笑）</div><div class="note">英语里抱怨某件事气人时的俗语。作者用它调侃这个游戏的悖论让人恼火，不必当真去找哪条法案。</div></div>
+<div class="entry"><div class="en">turn King’s Evidence</div><div class="loc" data-p="14">… by turning King’s Evidence against him.</div><div class="zh">转做控方证人，指证同伙</div><div class="note">英国法律用语：同案犯出来作证指控同伙，换取从轻处理。女王在位时叫 Queen’s Evidence。这里就是「背叛」那张牌。</div></div>
+<div class="entry trap"><div class="en">get off scot-free</div><div class="loc" data-p="14">… while Peterson gets off scot-free, …</div><div class="zh">一点罚都不受</div><div class="note">scot 原是古时的一种税，和苏格兰无关。背叛成功的一方逍遥法外。</div></div>
+<div class="entry"><div class="en">the selfish jackpot</div><div class="loc" data-p="15">… not to go for the selfish jackpot, …</div><div class="zh">那份自私的头奖</div><div class="note">jackpot 是老虎机、彩票的头奖，指「背叛的诱惑」那一格。</div></div>
+<div class="entry trap"><div class="en">police the agreement</div><div class="loc" data-p="15">… some way of policing the agreement.</div><div class="zh">监督约定的执行</div><div class="note">police 作动词是「监管」。单局里没有任何办法做到，所以叫困境。第 18 段说重复下去，双方就能互相监督。</div></div>
+
+<h3 class="sec-head" id="s2">§2 <span class="first">重复博弈与电脑锦标赛</span></h3>
+<div class="entry trap"><div class="en">too good for this world</div><div class="loc" data-p="16">… saintly sucker, too good for this world, …</div><div class="zh">好得不像这世上的人</div><div class="note">惋惜某人太善良的说法，暗含「这种人活不长」。单局里，除非有一方傻到这个地步，否则只能互相背叛。</div></div>
+<div class="entry"><div class="en">shell out</div><div class="loc" data-p="17">… the banker shells out, or levies …</div><div class="zh">掏钱付给</div><div class="note">口语，掏腰包，常带点不情愿。银行家按规则发钱或罚款。</div></div>
+<div class="entry trap"><div class="en">get away with</div><div class="loc" data-p="19">… If a bird can get away with …</div><div class="zh">（做了坏事）却不受惩罚</div><div class="note">get away with cheating：骗了还没被追究。不是「带着……逃走」。</div></div>
+<div class="entry"><div class="en">return the favour</div><div class="loc" data-p="19">… should return the favour later.</div><div class="zh">回报这份人情</div><div class="note">favour 是「帮忙、恩惠」。互惠利他的核心就在这句。</div></div>
+<div class="entry trap"><div class="en">riddled with</div><div class="loc" data-p="21">… life is riddled with Iterated Prisoner’s …</div><div class="zh">充斥着</div><div class="note">riddle 作动词是「打满窟窿」，be riddled with 是「到处都是（多指不好的东西）」，不是「谜语」。</div></div>
+<div class="entry trap"><div class="en">throw in</div><div class="loc" data-p="22">… of rounds throw in a defect …</div><div class="zh">时不时插进（一次背叛）</div><div class="note">throw in 是「额外加进去」。注意这里 defect 作名词用，指一次背叛。</div></div>
+<div class="entry"><div class="en">a good memory for faces</div><div class="loc" data-p="22">… it has a good memory for faces, …</div><div class="zh">认得出谁是谁</div><div class="note">作者把斤斤计较者拟人化：它得能认出对手、记住对方背叛过没有。这是重复博弈的前提，下一页的吸血蝙蝠会回到这一点。</div></div>
+<div class="entry trap"><div class="en">For good measure</div><div class="loc" data-p="23">… For good measure Axelrod added a fifteenth, …</div><div class="zh">另外再加上（以求周全）</div><div class="note">不是「为了好的衡量」。Axelrod 额外加了一个随机策略当参照线。</div></div>
+<div class="entry"><div class="en">benchmark</div><div class="loc" data-p="27">… as a kind of benchmark for …</div><div class="zh">基准（参照线）</div><div class="note">基准分是双方一直合作的得分（200 回合×3 分＝600），不是满分；理论上限是基准分的 166%。第 40、51 段又出现，译本在那里译成了满分，见译本勘误。</div></div>
+<div class="entry trap"><div class="en">pack the competition</div><div class="loc" data-p="28">… the competition with strategies, one of which …</div><div class="zh">往比赛里塞自己人</div><div class="note">紧挨着的前面是引号里的 pack。pack 在这里是「安插亲信、做手脚」，像 pack a jury。一人交几份本身不算作弊，作弊的是让几份程序专门牺牲自己成全其中一个。</div></div>
+
+<h3 class="sec-head" id="s3">§3 <span class="first">针锋相对胜出</span></h3>
+<div class="entry"><div class="en">Tit for Tat</div><div class="loc" data-p="29">… It was called Tit for Tat, …</div><div class="zh">针锋相对（策略名）</div><div class="note">本是英语习语，指你来我往、以同样的方式回敬。这里成了一个策略的名字。</div></div>
+<div class="entry trap"><div class="en">gratuitous</div><div class="loc" data-p="31">… throws in a gratuitous defection …</div><div class="zh">无缘无故的</div><div class="note">gratuitous 也有「免费的」意思，这里是「没来由、没被挑衅」。这就是恶意策略的定义。</div></div>
+<div class="entry trap"><div class="en">be landed with</div><div class="loc" data-p="31">… and so is landed with the …</div><div class="zh">被迫吃下</div><div class="note">land someone with something 是「把麻烦甩给某人」。针锋相对这一步合作，结果吃了 0 分。</div></div>
+<div class="entry"><div class="en">rather unjustly one might think</div><div class="loc" data-p="31">… rather unjustly one might think …</div><div class="zh">说起来有点冤枉（反话）</div><div class="note">作者的冷幽默：老实人探测器只是照抄对方上一步，看上去却像在「报复」对方的报复。真正挑事的是它自己。</div></div>
+<div class="entry trap"><div class="en">one free hit</div><div class="loc" data-p="32">… without retaliating. This means that runs …</div><div class="zh">让对方白打一下</div><div class="note">紧挨着的前面是引号里的 one free hit。free hit 是不还手地挨一下，愧疚探测器用它来止住冤冤相报。</div></div>
+<div class="entry trap"><div class="en">nipped in the bud</div><div class="loc" data-p="32">… recrimination are nipped in the bud.</div><div class="zh">扼杀在萌芽里</div><div class="note">nip 是掐，bud 是花苞。第 51 段又用了一次。</div></div>
+<div class="entry trap"><div class="en">scotched</div><div class="loc" data-p="32">… would-be mutual retaliation are promptly scotched.</div><div class="zh">（苗头）立刻被掐灭</div><div class="note">scotch 作动词是「制止、粉碎（谣言、计划）」，和苏格兰、威士忌都无关。</div></div>
+<div class="entry"><div class="en">eminence grise</div><div class="loc" data-p="33">… Some eminence grise in the Pentagon?</div><div class="zh">幕后掌权的人（法语）</div><div class="note">原指红衣主教黎塞留身边穿灰袍的谋士约瑟夫神父。作者猜那个匿名的复杂程序是哪位大人物交的，是开玩笑。</div></div>
+<div class="entry trap"><div class="en">rap over the knuckles</div><div class="loc" data-p="35">… It raps a defector over the knuckles …</div><div class="zh">敲一下手背（小惩一下）</div><div class="note">老派学校里老师用尺子打学生的指关节。意思是惩罚轻、来得快。</div></div>
+<div class="entry trap"><div class="en">let bygones be bygones</div><div class="loc" data-p="35">… lets bygones be bygones.</div><div class="zh">过去的就让它过去</div><div class="note">既往不咎。这就是「宽容」。</div></div>
+<div class="entry trap"><div class="en">next to worst</div><div class="loc" data-p="35">… Grudger/Friedman did next to worst.</div><div class="zh">倒数第二</div><div class="note">next to 是「仅次于」，next to worst 就是差得仅次于最差的。说的是在善良策略里。</div></div>
+<div class="entry"><div class="en">go so far as to</div><div class="loc" data-p="39">… went so far as to submit …</div><div class="zh">甚至（做到这一步）</div><div class="note">表示做得比别人更进一步：Maynard Smith 干脆交了比针锋相对还宽容的两报还一报。</div></div>
+<div class="entry"><div class="en">softies</div><div class="loc" data-p="39">… trying to exploit these anticipated softies!</div><div class="zh">软柿子，心软好欺负的人</div><div class="note">口语。有人预料别人会交善良宽容的策略，于是交恶意策略专门去占他们便宜。</div></div>
+<div class="entry trap"><div class="en">out-and-out</div><div class="loc" data-p="40">… upon such an out-and-out softy.</div><div class="zh">不折不扣的</div><div class="note">形容词，「彻头彻尾的」。说的是两报还一报。</div></div>
+<div class="entry trap"><div class="en">well down the list</div><div class="loc" data-p="41">… was ranked well down the list, …</div><div class="zh">排得很靠后</div><div class="note">well 在这里是「远远地」。不是垫底：Axelrod 的书里两报还一报是第 24 名。</div></div>
+
+<h3 class="sec-head" id="s4">§4 <span class="first">换成进化稳定策略来评</span></h3>
+<div class="entry trap"><div class="en">way-out</div><div class="loc" data-p="42">… some delightfully way-out biological examples …</div><div class="zh">稀奇古怪的</div><div class="note">口语形容词，「离谱的、出格的」，这里带着欣赏。指下一页的细菌、无花果那些例子。</div></div>
+<div class="entry"><div class="en">round-robin</div><div class="loc" data-p="43">… A round-robin is like a football league.</div><div class="zh">循环赛</div><div class="note">每个参赛者和其他每个都比一次。作者拿英国足球联赛打比方。</div></div>
+<div class="entry"><div class="en">human whim</div><div class="loc" data-p="43">… something as arbitrary as human whim.</div><div class="zh">人的一时兴起</div><div class="note">作者的论点在这里：比赛名次取决于碰巧有谁交了什么，这和心血来潮一样随意，所以要换一把更客观的尺子。</div></div>
+<div class="entry"><div class="en">thinking ESS</div><div class="loc" data-p="43">… How can we reduce this arbitrariness?</div><div class="zh">用 ESS 的方式想问题</div><div class="note">紧接着的引号里是 thinking ESS，作者的说法，把 ESS 当动词的宾语，意思是「换成进化稳定的思路」。</div></div>
+<div class="entry"><div class="en">we are tempted to</div><div class="loc" data-p="44">… As evolutionists we are tempted to …</div><div class="zh">我们这些进化论者忍不住会</div><div class="note">学术腔的限定：作者承认「只有这种强劲才要紧」是本行人的倾向，接着才给理由。不是「我们被诱惑」。</div></div>
+<div class="entry trap"><div class="en">The field was free for</div><div class="loc" data-p="47">… The field was free for …</div><div class="zh">场子空出来，留给</div><div class="note">field 是赛场、战场。软柿子灭绝、吃软柿子的也跟着灭绝以后，剩下的地盘归针锋相对一类。</div></div>
+<div class="entry"><div class="en">provocable</div><div class="loc" data-p="47">… strategies like Tit for Tat.</div><div class="zh">可激怒的（挨打就还手）</div><div class="note">紧挨着的前面是引号里的 provocable，Axelrod 的术语。和 nice 连用：不先动手，但一碰就还。</div></div>
+<div class="entry"><div class="en">drift into</div><div class="loc" data-p="49">… can nevertheless drift into the population …</div><div class="zh">悄悄漂进（种群）</div><div class="note">drift 是遗传学的「漂变」：没有选择上的好坏，只靠偶然升降。永远合作就是这样混进针锋相对的种群的。</div></div>
+<div class="entry"><div class="en">it is probably fair to</div><div class="loc" data-p="51">… it is probably fair to treat …</div><div class="zh">大概可以算作</div><div class="note">作者的把握程度：probably fair，是「近似地这样看说得过去」，不是断言。页面上别写成「针锋相对实际上就是 ESS」。</div></div>
+<div class="entry"><div class="en">a mirror for</div><div class="loc" data-p="51">… a mirror for familiar aspects of human …</div><div class="zh">照见（人类生活里熟悉的一面）</div><div class="note">作者的冷幽默：「有点坏的人和极宽容的人互相成全」，在人群里也常见。他只点一句，不展开。</div></div>
+<div class="entry"><div class="en">knife-edge</div><div class="loc" data-p="53">… a critical frequency, a knife-edge.</div><div class="zh">决胜点（刀刃）</div><div class="note">刀刃两边各是一道坡：过了这一边就滑向针锋相对，那一边就滑向永远背叛。下一节的「顺坡滑下」「刀刃下的暗道」都接着这个比喻。</div></div>
+
+<h3 class="sec-head" id="s5">§5 <span class="first">亲属扎堆翻过决胜点</span></h3>
+<div class="entry trap"><div class="en">coast down the slope</div><div class="loc" data-p="54">… it could coast down the slope …</div><div class="zh">顺着坡滑下去</div><div class="note">coast 作动词是「不用力地滑行」，像自行车下坡不蹬。只要翻过刀刃，剩下的不用费劲。</div></div>
+<div class="entry"><div class="en">a word expressing ignorance</div><div class="loc" data-p="55">… is just a word expressing ignorance.</div><div class="zh">只是表示「不知道」的一个词</div><div class="note">作者的态度：说「靠运气」等于没解释，他要找具体的途径。</div></div>
+<div class="entry"><div class="en">critical mass</div><div class="loc" data-p="55">… increase to the critical mass.</div><div class="zh">临界质量（够多才起作用的数量）</div><div class="note">物理学的说法借来用：数量到了某个门槛，局面就自己维持下去。</div></div>
+<div class="entry"><div class="en">seems to be promising</div><div class="loc" data-p="56">… line of thought seems to be promising, …</div><div class="zh">看来有希望</div><div class="note">后半句 but it is rather vague 是作者的自我保留：这条思路相当模糊。译本这里意思反了，见译本勘误。</div></div>
+<div class="entry"><div class="en">viscosity</div><div class="loc" data-p="56">… It follows automatically from …</div><div class="zh">（种群的）黏性</div><div class="note">紧接着的引号里是 viscosity。作者借流体的「黏稠」打比方：个体出生后不走远，亲属就自然聚在一起。下一句他给了定义。</div></div>
+<div class="entry"><div class="en">jug-handle ears</div><div class="loc" data-p="56">… the most enormous jug-handle ears.</div><div class="zh">招风耳</div><div class="note">jug 是带把手的大水罐，耳朵像两边的把手。</div></div>
+<div class="entry"><div class="en">cosy little local enclaves</div><div class="loc" data-p="58">… in cosy little local enclaves, …</div><div class="zh">舒舒服服的小飞地</div><div class="note">enclave 是被别人包围的一小块地盘。针锋相对在永远背叛的汪洋里守着一个个小圈子。</div></div>
+<div class="entry"><div class="en">a secret passage</div><div class="loc" data-p="59">… a secret passage underneath the knife-edge.</div><div class="zh">一条暗道</div><div class="note">接着刀刃的比喻：扎堆让针锋相对不用正面翻过刀刃，从下面钻过去。</div></div>
+<div class="entry"><div class="en">one-way valve</div><div class="loc" data-p="59">… contains a one-way valve: …</div><div class="zh">单向阀</div><div class="note">暗道只能从永远背叛那边通往针锋相对这边，反过来不行。这是这一节的落点。</div></div>
+<div class="entry trap"><div class="en">do one another down</div><div class="loc" data-p="59">… they do one another down.</div><div class="zh">互相坑害</div><div class="note">do someone down 是英式口语「整人、占人便宜」，不是「放下」。永远背叛扎堆只会互相拖累。</div></div>
+<div class="entry trap"><div class="en">tip over</div><div class="loc" data-p="60">… required to tip it over the …</div><div class="zh">（把它）推过去</div><div class="note">tip 是「使倾倒」。针锋相对攒够了数量，就把种群推过刀刃，整个翻过来。</div></div>
+
+<h2>译本勘误</h2>
+<p class="lede">对着中译本（40 周年增订版）读的时候看这一节。下面是译本这几节里会让人读错的地方：灰字是英文原文那一处的几个词，在英文电子书里搜它；方框里是译本的原句，在译本电子书里搜它。措辞别扭但意思没错的不收。全书的勘误汇总在<a href="../zh.html">译本勘误</a>。</p>
+<div class="zherr" data-p="2"><h4><span class="sec">§1</span>是第 10 章写成以后<span class="mark">误译</span></h4>
+<p class="loc">… Since Chapter 10 was written, the …</p>
+<p class="zhq"><span class="zhv">译本：「当第10章写就时」</span></p>
+<p>原文是「第 10 章写成以后」：第 10 章是 1976 年的，Axelrod 和 Hamilton 的工作在那之后。译本读着像两件事同时发生。</p></div>
+<div class="zherr" data-p="14"><h4><span class="sec">§1</span>背叛是出来指证同伙，不是栽赃<span class="mark">误译</span></h4>
+<p class="loc">… by turning King’s Evidence against him.</p>
+<p class="zhq"><span class="zhv">译本：「将所有犯罪证据栽赃对方」</span></p>
+<p>turn King’s Evidence 是同案犯出来作证指控同伙、换取从轻处理。「背叛」就是揭发对方，不是捏造证据。</p></div>
+<div class="zherr" data-p="14"><h4><span class="sec">§1</span>互相背叛是减了刑但仍然很重<span class="mark">误译</span></h4>
+<p class="loc">… a somewhat reduced, though still stiff, sentence, …</p>
+<p class="zhq"><span class="zhv">译本：「但可以因为供认不讳而得到轻判」</span></p>
+<p>原文说两人互相揭发，因为作证可以减一点刑，但判得仍然很重。译本写成「轻判」，和同一段两人都不开口时的「轻判」分不开了，四种结果的排序也就读不出来。</p></div>
+<div class="zherr" data-p="17"><h4><span class="sec">§2</span>是「不定次」，不是「无限次」<span class="mark">术语</span></h4>
+<p class="loc">… repeated an indefinite number of times …</p>
+<p class="zhq"><span class="zhv">译本：「与同一个对手无限次重复」</span></p>
+<p>indefinite 是「次数不定、事先不知道」，不是无限。这一章的要点正在这里：局数可以有限，只要谁都不知道哪一局是最后一局（下一页第 74 段）。同一段末尾的「无限长的博弈」也应读作「不知道多长」。</p></div>
+<div class="zherr" data-p="19"><h4><span class="sec">§2</span>除蜱花的工夫不多<span class="mark turn">译反</span></h4>
+<p class="loc">… time and energy, albeit not much.</p>
+<p class="zhq"><span class="zhv">译本：「这项工作耗费了许多时间精力」</span></p>
+<p>albeit not much 是「虽然不多」。帮别人除蜱有代价，但代价小，这正是合作划算的前提。译本说成「许多」，意思反了。</p></div>
+<div class="zherr" data-p="21"><h4><span class="sec">§2</span>Maynard Smith 意义上的策略<span class="mark">误译</span></h4>
+<p class="loc">… of the kind that genes might preprogram.</p>
+<p class="zhq"><span class="zhv">译本：「这便是一种预定基因的策略」</span></p>
+<p>原文说：这里的策略是 Maynard Smith 意义上的策略，也就是基因可以预先编好的那一类行为规则，不是有意识的计谋。译本前半句写成「意识」，后半句写成「预定基因」，意思都走了。</p></div>
+<div class="zherr" data-p="27"><h4><span class="sec">§2</span>和「一般一个」对手能拿多少<span class="mark">误译</span></h4>
+<p class="loc">… in an average one of its …</p>
+<p class="zhq"><span class="zhv">译本：「一个策略如果能超过15个对手中的平均水平」</span></p>
+<p>原文说：一个策略和 15 个对手里一般的一个对局，实际能指望的不会比 600 分多多少。没有「超过平均水平」的意思。</p></div>
+<div class="zherr" data-p="28"><h4><span class="sec">§2</span>程序作者像基因，不是基因在作者里<span class="mark">误译</span></h4>
+<p class="loc">… same role as genes programming bodies …</p>
+<p class="zhq"><span class="zhv">译本：「而基因在这些程序的作者里事先设定了」</span></p>
+<p>原文是比喻：程序的作者扮演的角色，就像给身体编程的基因；策略是作者的小代理人。译本把比喻的两头搅在了一起。</p></div>
+<div class="zherr" data-p="28"><h4><span class="sec">§2</span>交几份不算作弊，塞自己人才算<span class="mark">误译</span></h4>
+<p class="loc">… one author could have submitted more than …</p>
+<p class="zhq"><span class="zhv">译本：「但这其实是作弊」</span></p>
+<p>原文说一个作者本可以交不止一个策略；作弊的是往比赛里塞一批策略，让它们牺牲自己去成全其中一个。译本把「交几份」本身说成了作弊。</p></div>
+<div class="zherr" data-p="32"><h4><span class="sec">§3</span>愧疚探测器什么时候让对方白打<span class="mark">误译</span></h4>
+<p class="loc">… whether the result was prompt retaliation.</p>
+<p class="zhq"><span class="zhv">译本：「或者只是为了报复。如果是后者」</span></p>
+<p>原文的条件是两件事都成立：它刚刚无故背叛过，而且对方立刻还了手；这时它才不还手，让对方白打一下。译本写成「或者」「如果是后者」，条件就错了。</p></div>
+<div class="zherr" data-p="36"><h4><span class="sec">§3</span>是「要是有人交了它，就会赢」<span class="mark">误译</span></h4>
+<p class="loc">… if only somebody had submitted Tit …</p>
+<p class="zhq"><span class="zhv">译本：「它便一定会获得冠军」</span></p>
+<p>原文是对第一次比赛的假设：要是当时有人交了两报还一报，它就会夺冠。译本读着像普遍规律，可第 40 段说它在第二次比赛里没赢。</p></div>
+<div class="zherr" data-p="37"><h4><span class="sec">§3</span>没人敢交像两报还一报那样宽容的<span class="mark">术语</span></h4>
+<p class="loc">… anything so forgiving as Tit for …</p>
+<p class="zhq"><span class="zhv">译本：「未曾敢如“针锋相对”一般宽容」</span></p>
+<p>原文的比较对象是两报还一报：交善良策略的人，也没有谁敢宽容到那个程度。针锋相对本来就有人交了，还赢了。</p></div>
+<div class="zherr" data-p="39"><h4><span class="sec">§3</span>Maynard Smith 交的是两报还一报<span class="mark">术语</span></h4>
+<p class="loc">… went so far as to submit …</p>
+<p class="zhq"><span class="zhv">译本：「提交了一个最为宽容的“三报还一报”」</span></p>
+<p>原文是 Tit for Two Tats，就是前面讲过的两报还一报，不是三报。</p></div>
+<div class="zherr" data-p="40"><h4><span class="sec">§3</span>96% 是基准分的，不是满分的<span class="mark">误译</span></h4>
+<p class="loc">… of the benchmark score.</p>
+<p class="zhq"><span class="zhv">译本：「获得了满分的96%」</span></p>
+<p>基准分是双方一直合作能拿的分（第 27 段），满分要高得多（第一次比赛是 166%）。针锋相对拿的是基准分的 96%，意思是几乎一直在和对手合作。</p></div>
+<div class="zherr" data-p="40"><h4><span class="sec">§3</span>是「专吃软柿子」，不是「抛弃好人」<span class="mark">误译</span></h4>
+<p class="loc">… capable of preying ruthlessly upon such …</p>
+<p class="zhq"><span class="zhv">译本：「无情地抛弃那些善良的人」</span></p>
+<p>prey upon 是「捕食、掠夺」：第二次比赛里有些更狡猾的恶意策略，专门剥削两报还一报这样的软柿子。原文也没有「善于伪装」。</p></div>
+<div class="zherr" data-p="43"><h4><span class="sec">§4</span>第一次比赛约一半是善良策略<span class="mark">误译</span></h4>
+<p class="loc">… about half the entries were nice.</p>
+<p class="zhq"><span class="zhv">译本：「刚好参赛的策略基本都是善意策略」</span></p>
+<p>原文是「大约一半」：15 个里 8 个善良（第 34 段），交上来的 14 个里 6 个恶意。作者正是拿「一半」和「几乎全是恶意」对比。</p></div>
+<div class="zherr" data-p="44"><h4><span class="sec">§4</span>进化论者把它看作唯一要紧的强劲<span class="mark">误译</span></h4>
+<p class="loc">… the only kind of robustness that matters.</p>
+<p class="zhq"><span class="zhv">译本：「我们一直很想找到一种唯一的」</span></p>
+<p>原文说：在同类占多数时还表现好，是一种特别的强劲，进化论者忍不住把它看作唯一要紧的那种强劲。不是「想找到」什么。</p></div>
+<div class="zherr" data-p="47"><h4><span class="sec">§4</span>多数策略在第 200 代之前就灭绝了<span class="mark turn">译反</span></h4>
+<p class="loc">… most were extinct by generation 200.</p>
+<p class="zhq"><span class="zhv">译本：「大多数则在200代之后彻底灭绝」</span></p>
+<p>by generation 200 是「到第 200 代时（已经）」，译本写成「之后」，时间正好反了。</p></div>
+<div class="zherr" data-p="47"><h4><span class="sec">§4</span>活过 200 代的唯一恶意策略<span class="mark">漏译</span></h4>
+<p class="loc">… The only nasty strategy to survive beyond …</p>
+<p class="zhq"><span class="zhv">译本：「唯一活过200代的一个策略叫作」</span></p>
+<p>原文是「唯一活过 200 代的恶意策略」，译本漏了「恶意」，读着像只有 Harrington 一个策略活过 200 代，可针锋相对等善良策略都活着。</p></div>
+<div class="zherr" data-p="49"><h4><span class="sec">§4</span>永远合作不比针锋相对差<span class="mark">误译</span></h4>
+<p class="loc">… not enjoy a positive selective advantage …</p>
+<p class="zhq"><span class="zhv">译本：「这种选择优势不如“针锋相对”的策略」</span></p>
+<p>原文说永远合作对针锋相对没有选择上的优势，也就是一样好，所以能靠漂变混进来。译本写成「不如」，那它就混不进来了，这一段的论证就断了。</p></div>
+<div class="zherr" data-p="51"><h4><span class="sec">§4</span>两边至少拿到基准分<span class="mark">误译</span></h4>
+<p class="loc">… Both players end the game with …</p>
+<p class="zhq"><span class="zhv">译本：「双方都能至少得到满分」</span></p>
+<p>原文是至少拿到「基准分」，即一直合作的分；满分要高得多。和第 40 段是同一个问题。</p></div>
+<div class="zherr" data-p="51"><h4><span class="sec">§4</span>「几乎肯定不是唯一能入侵的组合」<span class="mark">误译</span></h4>
+<p class="loc">… almost certainly not the only combination …</p>
+<p class="zhq"><span class="zhv">译本：「这种组合不仅不会消亡」</span></p>
+<p>原文说：这个组合几乎肯定不是唯一能这样入侵的，可能有很多「稍坏加极宽容」的组合都行。译本改成了这个组合「不会消亡」。</p></div>
+<div class="zherr" data-p="52"><h4><span class="sec">§4</span>三件并列的事，不是因果<span class="mark">误译</span></h4>
+<p class="loc">… it is a matter of luck …</p>
+<p class="zhq"><span class="zhv">译本：「由于在真正的进化稳定策略中」</span></p>
+<p>原文并列说三件事：和 ESS 一样，可以同时有几个集体稳定策略；谁先占上风靠运气；永远背叛也是稳定的。译本连成「由于……因此」，好像永远背叛稳定是运气造成的。</p></div>
+<div class="zherr" data-p="56"><h4><span class="sec">§5</span>「有希望，但相当模糊」<span class="mark turn">译反</span></h4>
+<p class="loc">… but it is rather vague.</p>
+<p class="zhq"><span class="zhv">译本：「但实际上机会渺茫」</span></p>
+<p>原文是作者对自己思路的评价：看来有希望，但说得还很模糊，下面要说具体。译本写成「机会渺茫」，正好反了，读着像作者在否定下面的论证。</p></div>
+<div class="zherr" data-p="56"><h4><span class="sec">§5</span>住在亲属附近不是出于喜欢<span class="mark">误译</span></h4>
+<p class="loc">… This is not necessarily through choice.</p>
+<p class="zhq"><span class="zhv">译本：「大多数动物喜欢同自己的兄弟姐妹与表亲们」</span></p>
+<p>原文说多数物种的动物往往住得离亲属近，这不一定是选择的结果，而是黏性自然造成的。译本的「喜欢」和下一句「不一定出于选择」自相矛盾。</p></div>
+<div class="zherr" data-p="57"><h4><span class="sec">§5</span>亲属相似是遗传上的，不是互相模仿<span class="mark">误译</span></h4>
+<p class="loc">… genetic tendencies to play …</p>
+<p class="zhq"><span class="zhv">译本：「互相模仿着采用」</span></p>
+<p>原文说亲属在「玩不玩针锋相对的遗传倾向」上彼此相似。这里没有模仿：靠的是亲缘，不是学习。</p></div>
+<div class="zherr" data-p="58"><h4><span class="sec">§5</span>邻居更像邻居，不是复制邻居<span class="mark">误译</span></h4>
+<p class="loc">… resemble their immediate neighbours more than …</p>
+<p class="zhq"><span class="zhv">译本：「所有人也只复制近邻（而不是远邻）的行为」</span></p>
+<p>原文说在流动少的大种群里，个体和近邻比和远处的人更相像（因为是亲属），哪怕整片地区一直在通婚。和上一条一样，不是模仿行为。</p></div>
+
+<h2>值得停下来的句子</h2>
+<blockquote class="quote">If we adopt this definition, which is not too far from the colloquial meaning, nice guys can finish first.<cite>— §1 第 1 段。本站译：如果采用这个定义（它和日常的意思相去不远），好人就可以跑在前面。</cite></blockquote>
+<p>这是全章的题眼，也是最容易被读歪的一句。两个词要盯住：this definition 指 Axelrod 的技术定义，「从不先背叛」，不是心地好；can 是「可以」，不是「总会」。第 73 段（下一页）作者又写成 may。把它读成「善有善报」的道德承诺，就把一个有条件的数学结论读成了人生格言。</p>
+<blockquote class="quote">So technically Tit for Tat is not an ESS.<cite>— §4 第 49 段。本站译：所以严格说，针锋相对不是 ESS。</cite></blockquote>
+<p>作者自己给明星策略泼的冷水，口气平淡，却是这一页的转折。上半页讲了三十多段针锋相对怎么赢，读者很容易带走「以牙还牙是最优策略」；这一句提醒：赢比赛和进化上稳定是两回事。下面几段他又说「近似当作 ESS 大概公平」，读的时候两句一起记。</p>
+
+<h2>读完：作者到底说了什么</h2>
+<p class="lede">读完这一页的几节再看。下面是作者在这几节里的论点，由本站按论点重新组织，不按原书的顺序；每条下面是依据所在的段落，拿不准就回书里那几段再读一遍。</p>
+<div class="claims">
+  <div class="claim"><h4>只玩一局，理性的双方只能互相背叛</h4><p>不管对方出什么，自己背叛都更划算，两个理性的人于是一起拿到较差的结果；关在两间牢房里的囚徒也一样。作者强调具体数目不要紧，要紧的是四种结果的排序，外加一条附加条件。</p><span class="sec">§1 第 10–15 段</span></div>
+  <div class="claim"><h4>重复下去、谁也不知道何时结束，合作就有了出路</h4><p>同样两人一局局下去，可以凭对方过去的出牌建立信任或报复，一起赢银行家的钱。作者说，作为生物学家，他同意 Axelrod 和 Hamilton：许多动植物都在演化的时间里玩这个游戏，这里的策略是基因可以预先编好的那种，不是有意识的。</p><span class="sec">§1 第 3 段，§2 第 16–21 段</span></div>
+  <div class="claim"><h4>比赛里赢的是善良、宽容的策略，但名次要看对手是谁</h4><p>两次锦标赛都由最简单的针锋相对夺冠；第一次的 8 个善良策略包揽前 8 名，从不宽容的斤斤计较者在善良策略里倒数第二。作者随即提醒：两报还一报第一次若参赛会赢，第二次却排得很靠后，成功取决于碰巧有哪些对手。</p><span class="sec">§3 第 34–36、40–41 段，§4 第 43 段</span></div>
+  <div class="claim"><h4>换成 ESS 的尺子，针锋相对严格说不是 ESS</h4><p>进化上的成功，是在满是自己拷贝时还表现好。按这把尺子跑的第三轮里针锋相对仍然领先，可善良策略彼此分不出，永远合作能漂进来、再招来永远背叛，所以严格说它不是 ESS。作者认为把一类像针锋相对的策略近似看作 ESS 大概是公平的；永远背叛也稳定，两者之间隔着决胜点。</p><span class="sec">§4 第 44–53 段</span></div>
+  <div class="claim"><h4>亲属扎堆给针锋相对开了一条单向的暗道</h4><p>作者用自己的口吻推了一步：亲属住得近，在玩不玩针锋相对的遗传倾向上也相似，稀少的针锋相对于是能在局部互相碰上、得益、扩散，翻过决胜点；永远背叛扎堆只会互相坑害。他把这叫更高的稳定性，说也许要等几千年，并自评这条思路有希望但相当模糊。</p><span class="sec">§5 第 56–60 段</span></div>
+</div>
+<p class="sowhat"><b>合起来：</b>这一页把第 10 章的斤斤计较者放进了博弈论和 ESS 的框架：在重复的交往里，不先害人、被害就还手、过后不记仇的行为规则，能在一群各为自己的个体中稳住。作者给「好人」加了三道限定：技术定义、要看环境、只能单向翻越。</p>
+
+<h2>对照今天</h2>
+<p class="lede">这本书 1976 年出版，这一章是 1989 年加的。下面挑出这一页里能被后来的研究检验的说法，分「书里 / 当时 / 今天」三栏，并给一个结论。结论判的是标题里「书里的说法：」后面那一句。全书的这一节汇总在<a href="../today.html">对照今天</a>。</p>
+<ul class="verdicts"><li><span class="v ok">成立</span>后来的研究支持这句话。</li><li><span class="v mid">部分成立</span>大方向对，细节或适用范围要改。</li><li><span class="v bad">被改写</span>后来的研究推翻了它，或者换了一种说法。</li><li><span class="v dis">有争议</span>学界至今没有定论，两边各有代表性的研究。</li></ul>
+<div class="today" data-verdict="部分成立"><h4>书里的说法：善良、宽容、挨打就还手的针锋相对，是重复囚徒困境里最成功的策略之一</h4><dl>
+  <dt>书里</dt><dd>两次锦标赛和第三轮里针锋相对都领先，赢家的共同点是善良和宽容（§3 第 34、37 段，§4 第 47–48 段）；作者也说它严格说不是 ESS（第 49 段）。</dd>
+  <dt>当时</dt><dd>依据是 Axelrod 1980 年的两篇比赛报告和 1984 年的书。比赛里的程序都不会出错：想合作就一定合作。</dd>
+  <dt>今天</dt><dd>加上偶尔的误操作，局面就变了：Molander 1985 年指出，针锋相对一次失手就会陷进长串的互相报复。Nowak 和 Sigmund 1992 年发现针锋相对更像「催化剂」，为更慷慨的变体铺路，1993 年又发现「赢了不变、输了就换」在有误操作时胜过它；2013 年 Stewart 和 Plotkin 的研究也是慷慨的策略占上风。善良、可激怒、宽容这几条品质仍被看重，宽容还更要紧了；「针锋相对本身最好」只在没有误操作的环境里成立。本页模拟器打开「误操作」可以看到。<span class="asof">核对于 2026-10。依据：Molander, J. Conflict Resolution (1985)；Nowak &amp; Sigmund, Nature 355 (1992)、Nature 364 (1993)；Stewart &amp; Plotkin, PNAS 110 (2013)。</span></dd>
+</dl></div>
+<div class="today" data-verdict="部分成立"><h4>书里的说法：亲属扎堆能让稀少的针锋相对翻过决胜点，永远背叛扎堆则无济于事</h4><dl>
+  <dt>书里</dt><dd>种群有黏性，亲属住得近，稀少的针锋相对能在局部互相碰上而得益；永远背叛扎堆只会更差（§5 第 56–59 段）。</dd>
+  <dt>当时</dt><dd>Axelrod 和 Hamilton 1981 年的论文已经论证：单个针锋相对打不进永远背叛的种群，一小群聚在一起的就能。</dd>
+  <dt>今天</dt><dd>「合作者彼此相遇的机会更多，合作就能起步」成了标准结论之一：Nowak 和 May 1992 年在格子上的模拟里，空间结构让合作者能成片存活；Fletcher 和 Doebeli 2009 年认为根本条件就是这种「同类相遇」，亲缘只是造成它的一种途径。但 Taylor 和 Wilson 等人 1992 年指出，单靠「出生后不走远」的黏性，亲属之间争同一片资源的竞争会把好处抵消，要看种群结构的细节。<span class="asof">核对于 2026-10。依据：Axelrod &amp; Hamilton, Science 211 (1981)；Nowak &amp; May, Nature 359 (1992)；Taylor, Evolutionary Ecology 6 (1992)；Fletcher &amp; Doebeli, Proc. R. Soc. B 276 (2009)。</span></dd>
+</dl></div>
+
+<h2>本站怎么看</h2>
+<p class="lede">读完作者的论点，再看它站不站得住。每一块摆出三样：主流怎么看，作者怎么看，本站的评论。最后一句是本站对这一页的总体判断。</p>
+<div class="views"><h4>「针锋相对是最好的策略」能推多远</h4>
+<p><b>主流看法：</b>没有一个在所有环境下都最好的策略。Boyd 和 Lorberbaum 1987 年证明，重复囚徒困境里没有哪个纯策略是 ESS；有误操作时，比针锋相对更宽容的策略表现更好。</p>
+<p><b>作者的看法：</b>名次取决于碰巧有谁参赛（第 41、43 段）；针锋相对严格说不是 ESS，永远背叛也稳定（第 49、52 段）；但把一类像它的策略近似看作 ESS 大概公平（第 51 段）。</p>
+<p class="ours"><b>本站的评论：</b>作者自己打的折扣比通俗转述谨慎得多，可读者最容易带走的仍是一句「以牙还牙最优」。值得带走的是三条品质，不先动手、被欺就还、过后不记仇，加上一句「看环境」。本页模拟器里，循环赛的第一名本来就不是针锋相对，勾上愧疚探测器名次又会变；打开误操作，针锋相对在一代代淘汰里会消失。这比任何口号都更接近作者的本意。</p></div>
+<div class="views"><h4>拿程序比赛来想动物，靠得住吗</h4>
+<p><b>主流看法：</b>把策略当成可遗传的行为规则、按得分繁殖来模拟选择，是演化博弈论的标准做法（Maynard Smith 1982 年的《进化与博弈论》系统化了这套方法）。但把模型落到动物身上，要求个体能认出对方、记得过去，野外证据并不多：Clutton-Brock 2009 年的综述认为，非亲属间确凿的互惠例子很少。</p>
+<p><b>作者的看法：</b>程序的作者就像给身体编程的基因（第 28 段）；这里的策略是基因可以预先编好的那种，不是有意识的（第 21 段）；第三轮就是按自然选择的方式跑的比赛（第 45–46 段）。</p>
+<p class="ours"><b>本站的评论：</b>这个类比用在「选择只看结果、不看动机」上很贴切，也是这一页最有教益的地方。弱处在于参赛的是人设计出来的一小撮程序，真实动物的策略要靠突变一点点来；而且模型假定双方能认人、能记账。下一页的吸血蝙蝠、海鲈才是检验，读的时候留意作者在那里用了多少 perhaps。</p></div>
+<div class="views"><h4>亲属扎堆：这是互惠，还是亲属选择</h4>
+<p><b>主流看法：</b>后来的理论倾向于把两者放到同一个条件下看：合作者彼此相遇的机会要比随机多（Fletcher 和 Doebeli 2009）。亲缘是造成这种相遇的常见途径，但不是唯一的。</p>
+<p><b>作者的看法：</b>翻过决胜点最自然的途径是亲缘和种群的黏性（第 56–57 段）；这条暗道只对针锋相对开放（第 59 段）；他也承认这条思路相当模糊（第 56 段）。</p>
+<p class="ours"><b>本站的评论：</b>这一步把第 6 章的亲属和第 10 章的互惠接在了一起：互惠一旦站稳就不再需要亲缘，起步却可能要借亲缘的力。作者的自评是公道的。要补的是，扎堆有两面：亲属住得近，也要争同一片资源，好处可能被抵消。模拟器里的「扎堆」只算了相遇，没有算竞争，所以它显示的翻越比真实种群容易。</p></div>
+<p class="verdict"><b>本站的总体看法：</b>这一页值得带走的是两层：重复和不知终点让合作成为可能；赢比赛和进化上稳定是两把不同的尺子。针锋相对本身要打折扣：它不是严格的 ESS，有误操作时不是最好；扎堆翻越的论证方向对，细节比书里复杂。</p>
+
+<h2>检查一下理解</h2>
+<p class="lede">先在心里答，再点开。答错的那题，回书里把对应那一节再读一遍。</p>
+<details class="check"><summary>1.（§1）用 5、3、1、0 的计分算一遍：为什么只玩一局时，不管对方出什么，背叛都更划算？</summary><p>对方合作时，我合作得 3、背叛得 5；对方背叛时，我合作得 0、背叛得 1。两种情况背叛都多拿。两人都这样想，各得 1，不如都合作时的各得 3，这就是困境。</p></details>
+<details class="check"><summary>2.（§1、§3）为什么还要附加一条「T 和 S 的平均小于 R」？</summary><p>不然两人轮流一个背叛一个合作，平均每回合拿 (T+S)/2，会比一直合作还多，合作就不是最好的出路了。第 31 段里老实人探测器和针锋相对轮流报复，每回合平均 2.5 分，正好比一直合作的 3 分少。</p></details>
+<details class="check"><summary>3.（§3）针锋相对从没在一场对局里得分超过对手，凭什么总分第一？</summary><p>它只在对方背叛之后背叛，所以每场最多打平。但它和善良的对手一直合作拿高分，碰上恶意的对手也只吃一次亏，场场都是不差的平局，加起来最高。</p></details>
+<details class="check"><summary>4.（§3）斤斤计较者是善良的还是恶意的？它为什么成绩不好？</summary><p>善良，它从不先背叛。但它完全不宽容：对方只要背叛过一次，哪怕对方会「愧疚」地回头，它也永远背叛下去，困在互相报复里。</p></details>
+<details class="check"><summary>5.（§4）作者为什么说针锋相对「严格说不是 ESS」？</summary><p>在满是针锋相对的种群里，永远合作这类善良策略和它表现一模一样，没有劣势，能靠漂变混进来；永远合作多了，永远背叛就能靠剥削它们进来。挡不住善良策略的漂入，就不满足 ESS 的定义。</p></details>
+<details class="check"><summary>6.（§5）亲属扎堆为什么只帮针锋相对，不帮永远背叛？</summary><p>针锋相对碰上同类就互相合作，一起多拿；永远背叛碰上同类只能互相背叛，比碰上好欺负的对手还差。所以扎堆让稀少的针锋相对翻过决胜点，却不能让永远背叛翻回去。</p></details>
+<p class="lede">用一句话说这一页，写给一个没读过的人。</p>
+<textarea class="note" data-key="12a-oneline" rows="2" placeholder="写一句话…"></textarea>
+<div class="ponder"><p>想一想：你参与过的协作里（开源项目、团队、邻里），有没有一种「先付出，对方不回报就停手，对方回头就既往不咎」的默契？它靠什么撑住：大家知道以后还要长期打交道，还是有人在旁边记账？</p>
+<textarea class="note" data-key="12a-ponder" rows="3" placeholder="写下你的想法…"></textarea></div>
+
+<h2>精彩回顾</h2>
+<p class="lede">读过又忘了，从这里想起来。挑的是这一页最值得记住的模型、人物和说法，不按原书顺序；每条后面是节号，想细看就回书里那一节。全书各页的这一节都收在<a href="../recap.html">全书回顾</a>。</p>
+<p class="recall-line"><b>一句话：</b>在重复且不知终点的囚徒困境里，不先背叛、被欺就还手、过后不记仇的策略能赢比赛，也能在进化里站住；但它只是两个稳定状态之一，要靠亲属扎堆才能从稀少翻身。</p>
+<div class="recall">
+  <div class="item"><b>四行程序夺冠</b><p>Rapoport 的针锋相对：第一回合合作，以后照抄对方上一步。它在单场里从没赢过对手，却两次锦标赛都拿了第一。</p><span class="sec">§3</span></div>
+  <div class="item"><b>善良和宽容</b><p>Axelrod 的技术词：善良是从不先背叛，宽容是报复完就翻篇。第一次比赛的前 8 名，正好是 8 个善良策略。</p><span class="sec">§3</span></div>
+  <div class="item"><b>两报还一报的起落</b><p>它第一次若参赛会夺冠；第二次 Maynard Smith 真交了，场上多了专吃软柿子的策略，它就排到了后面。名次要看对手。</p><span class="sec">§3</span></div>
+  <div class="item"><b>严格说不是 ESS</b><p>善良策略彼此分不出，永远合作能悄悄漂进来，再给永远背叛开门；永远背叛自己也是稳定的，两者之间隔着一道刀刃。</p><span class="sec">§4</span></div>
+  <div class="item"><b>刀刃下的暗道</b><p>亲属住得近，稀少的针锋相对能在局部互相碰上，翻过决胜点；永远背叛扎堆只会互相坑害。这扇门是单向的。</p><span class="sec">§5</span></div>
+</div>
+
+</main>
+<script>
+(() => {
+  // 重复囚徒困境。一场对局：两个策略按各自的规则出牌 N 回合，按计分表记分。
+  // 循环赛：每个策略和每个策略（包括自己的拷贝）各下一场，比平均每回合得分。
+  // 一代代淘汰：各策略在种群里的份额按「它在当前种群里的平均得分」涨落（复制动态），没有突变。
+  // 决胜点：种群里只有针锋相对和永远背叛；「扎堆」是每场有多大机会碰上的是同类。
+  const root = document.getElementById("sim-12a");
+  if (!root) return;
+  const { h } = window.SG;
+  const NS = "http://www.w3.org/2000/svg";
+  const C = 1, D = 0, NOISE = 0.02, SEED = 20261027;
+  const copy = (op) => (op.length ? op[op.length - 1] : C);
+  function probe(op, r, st) { if (r() < 0.1) { st.sp.push(true); return D; } st.sp.push(false); return copy(op); }
+  // move(我的出牌, 对方的出牌, 随机数, 我的小本子)：返回这一回合我打算出什么
+  const S = [
+    { name: "针锋相对", nice: true, c: "var(--c1)", tip: "第一回合合作，以后照抄对方上一回合", move: (me, op) => copy(op) },
+    { name: "两报还一报", nice: true, c: "var(--c6)", tip: "对方连着背叛两次，才还手一次", move: (me, op) => (op.length >= 2 && op[op.length - 1] === D && op[op.length - 2] === D ? D : C) },
+    { name: "斤斤计较者", nice: true, c: "var(--c3)", tip: "一直合作；对方只要背叛过一次，就永远背叛", move: (me, op) => (op.includes(D) ? D : C) },
+    { name: "永远合作", nice: true, c: "var(--c5)", tip: "不管对方怎样都合作", move: () => C },
+    { name: "永远背叛", nice: false, c: "var(--c2)", tip: "不管对方怎样都背叛", move: () => D },
+    { name: "老实人探测器", nice: false, c: "var(--c7)", tip: "像针锋相对，但每回合有十分之一的机会无故背叛", move: (me, op, r, st) => probe(op, r, st) },
+    { name: "愧疚探测器", nice: false, c: "var(--c4)", tip: "像老实人探测器；无故背叛之后对方立刻还手，就不还手，让对方白打一下", move: (me, op, r, st) => {
+        const n = me.length;
+        if (n >= 2 && st.sp[n - 2] && op[n - 1] === D) { st.sp.push(false); return C; }
+        return probe(op, r, st);
+      } },
+    { name: "针锋相对多疑版", nice: false, c: "var(--c8)", tip: "第一回合背叛，以后照抄对方上一回合", move: (me, op) => (op.length ? op[op.length - 1] : D) },
+    { name: "随机", nice: false, c: "var(--fg)", tip: "每回合掷硬币决定", move: (me, op, r) => (r() < 0.5 ? C : D) },
+  ];
+  const st = {
+    mode: "duel", T: 5, R: 3, P: 1, S: 0, N: 200, noise: false,
+    a: 0, b: 5,
+    on: [true, true, true, true, true, true, false, true, true], start: "even",
+    x: null, gen: 0, hist: [],
+    e0: 0.001, clu: 0, ex: 0.001, egen: 0, ehist: [],
+  };
+  const $ = (sel) => root.querySelector(sel);
+  const fmt = (v) => (Math.round(v * 100) / 100).toString().replace(/^-/, "−");
+  const pct = (v, d = 1) => `${(v * 100).toFixed(d)}%`;
+
+  function rng(seed) {
+    let s = seed >>> 0;
+    return () => { s = (s + 0x6d2b79f5) >>> 0; let t = s; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
+  }
+  const pay = (m, o) => (m === C ? (o === C ? st.R : st.S) : (o === C ? st.T : st.P));
+  // 一场对局（i 对 j，第 rep 次）：双方的出牌、哪几步是误操作、各自平均每回合得分
+  function match(i, j, rep) {
+    const r = rng(SEED + i * 101 + j * 37 + rep * 7919);
+    const a = [], b = [], fa = [], fb = [], sa = { sp: [] }, sb = { sp: [] };
+    let x = 0, y = 0;
+    for (let t = 0; t < st.N; t++) {
+      let m1 = S[i].move(a, b, r, sa), m2 = S[j].move(b, a, r, sb), e1 = false, e2 = false;
+      if (st.noise) { if (r() < NOISE) { m1 = 1 - m1; e1 = true; } if (r() < NOISE) { m2 = 1 - m2; e2 = true; } }
+      a.push(m1); b.push(m2); fa.push(e1); fb.push(e2);
+      x += pay(m1, m2); y += pay(m2, m1);
+    }
+    return { a, b, fa, fb, x: x / st.N, y: y / st.N };
+  }
+  // A[i][j]：i 碰上 j 时平均每回合得几分。有误操作时每对下 5 场取平均
+  const cache = { key: "", A: null };
+  function matrix() {
+    const key = [st.T, st.R, st.P, st.S, st.N, st.noise].join(",");
+    if (cache.key === key) return cache.A;
+    const A = S.map(() => S.map(() => 0)), reps = st.noise ? 5 : 1;
+    for (let i = 0; i < S.length; i++) for (let j = i; j < S.length; j++) {
+      let u = 0, v = 0;
+      for (let k = 0; k < reps; k++) { const m = match(i, j, k); u += m.x; v += m.y; }
+      u /= reps; v /= reps;
+      if (i === j) A[i][i] = (u + v) / 2; else { A[i][j] = u; A[j][i] = v; }
+    }
+    cache.key = key; cache.A = A;
+    return A;
+  }
+  const onList = () => S.map((s, i) => i).filter((i) => st.on[i]);
+  const lift = () => Math.max(0, -Math.min(st.T, st.R, st.P, st.S));   // 计分有负数时整体抬高，份额才不会算出负的
+
+  function rules() {
+    const { T, R, P } = st, s = st.S;
+    if (!(T > R && R > P && P > s)) return ["warn", "四个数要满足 T > R > P > S（第 10 段），现在不满足：这已经不是囚徒困境了。"];
+    if (T + s >= 2 * R) return ["warn", "T 和 S 的平均不小于 R：两人轮流背叛不比一直合作差，第 10 段的附加条件不满足。"];
+    return ["ok", "四个数满足囚徒困境的两条条件。"];
+  }
+
+  // ---------- 一代代淘汰 ----------
+  function evoStart() {
+    const w = S.map((s, i) => (!st.on[i] ? 0 : st.start === "soft" && (i === 1 || i === 3) ? 4 : st.start === "nasty" && !s.nice ? 4 : 1));
+    const sum = w.reduce((p, q) => p + q, 0);
+    st.x = w.map((v) => v / sum); st.gen = 0; st.hist = [st.x.slice()];
+  }
+  function fitness(x) {
+    const A = matrix(), on = onList();
+    return S.map((_, i) => on.reduce((s, j) => s + A[i][j] * x[j], 0));
+  }
+  function evoStep() {
+    const f = fitness(st.x), B = lift();
+    const avg = st.x.reduce((s, xi, i) => s + xi * f[i], 0);
+    if (avg + B <= 1e-12) { st.gen++; st.hist.push(st.x.slice()); return; }
+    let y = st.x.map((xi, i) => (st.on[i] ? (xi * (f[i] + B)) / (avg + B) : 0));
+    const s = y.reduce((p, q) => p + q, 0);
+    st.x = y.map((v) => v / s); st.gen++; st.hist.push(st.x.slice());
+  }
+
+  // ---------- 决胜点 ----------
+  // 针锋相对的份额是 x，扎堆程度 c：每场有 c 的机会对手是同类，其余按种群比例随机碰
+  function edgeFit(x) {
+    const A = matrix(), c = st.clu;
+    const TT = A[0][0], TD = A[0][4], DT = A[4][0], DD = A[4][4];
+    const pT = c + (1 - c) * x, pD = c + (1 - c) * (1 - x);
+    return { fT: pT * TT + (1 - pT) * TD, fD: (1 - pD) * DT + pD * DD };
+  }
+  // 两条得分线都随 x 直线变化，交点就是决胜点。返回 [种类, x]
+  function knife() {
+    const g = (x) => { const f = edgeFit(x); return f.fT - f.fD; };
+    const g0 = g(0), g1 = g(1);
+    if (g0 >= 0 && g1 >= 0) return ["tft", 0];
+    if (g0 <= 0 && g1 <= 0) return ["alld", 1];
+    if (g0 > 0 && g1 < 0) return ["mix", g0 / (g0 - g1)];
+    return ["edge", -g0 / (g1 - g0)];
+  }
+  function edgeReset() { st.ex = st.e0; st.egen = 0; st.ehist = [st.ex]; }
+  function edgeStep() {
+    const { fT, fD } = edgeFit(st.ex), B = lift();
+    const avg = st.ex * fT + (1 - st.ex) * fD;
+    if (avg + B > 1e-12) st.ex = (st.ex * (fT + B)) / (avg + B);
+    st.egen++; st.ehist.push(st.ex);
+  }
+
+  // ---------- 画面 ----------
+  const svgEl = (tag, attrs) => { const e = document.createElementNS(NS, tag); for (const [k, v] of Object.entries(attrs)) e.setAttribute(k, v); return e; };
+  const text = (x, y, s, cls, anchor) => { const t = svgEl("text", { x, y }); if (cls) t.setAttribute("class", cls); if (anchor) t.setAttribute("text-anchor", anchor); t.textContent = s; return t; };
+  function newSvg(hgt, label) { const s = svgEl("svg", { viewBox: `0 0 640 ${hgt}`, class: "diagram", role: "img", "aria-label": label }); return s; }
+
+  // 两排小方块：上排是甲，下排是乙；绿是合作，橙是背叛，黑框是误操作
+  function drawDuel(m) {
+    const svg = newSvg(130, "两个策略前 50 回合的出牌");
+    const n = Math.min(50, st.N), L = 34, W = 11.6;
+    svg.append(text(4, 40, "甲", "t-b"), text(4, 74, "乙", "t-b"));
+    for (let t = 0; t < n; t++) {
+      [[m.a, m.fa, 28], [m.b, m.fb, 62]].forEach(([mv, fl, y]) => {
+        const r = svgEl("rect", { x: L + t * W, y, width: W - 2, height: 14, rx: 2 });
+        r.style.fill = mv[t] === C ? "var(--c3)" : "var(--c2)";
+        if (fl[t]) { r.style.stroke = "var(--fg)"; r.style.strokeWidth = "2"; }
+        svg.append(r);
+      });
+    }
+    for (const t of [1, 10, 20, 30, 40, 50]) if (t <= n) svg.append(text(L + (t - 1) * W + (W - 2) / 2, 96, String(t), "t-m", "middle"));
+    svg.append(text(L, 122, `第几回合（只画前 ${n} 回合）　绿＝合作　橙＝背叛${st.noise ? "　黑框＝误操作" : ""}`, "t-m"));
+    return svg;
+  }
+  function runs(m) {
+    // 找最长的一段「你背叛、我合作」轮换，找最后一段互相背叛、互相合作
+    let best = [0, -1], cur = -1;
+    for (let t = 0; t < m.a.length; t++) {
+      const alt = m.a[t] !== m.b[t] && (t === 0 || cur < 0 || (m.a[t] !== m.a[t - 1] && m.b[t] !== m.b[t - 1]));
+      if (alt) { if (cur < 0) cur = t; if (t - cur > best[1] - best[0]) best = [cur, t]; }
+      else cur = m.a[t] !== m.b[t] ? t : -1;
+    }
+    const firstD = m.a.findIndex((v, t) => v === D || m.b[t] === D);
+    let tailDD = 0; for (let t = m.a.length - 1; t >= 0 && m.a[t] === D && m.b[t] === D; t--) tailDD++;
+    let tailCC = 0; for (let t = m.a.length - 1; t >= 0 && m.a[t] === C && m.b[t] === C; t--) tailCC++;
+    return { alt: best[1] - best[0] + 1 >= 4 ? best : null, firstD, tailDD, tailCC };
+  }
+  function viewDuel() {
+    const i = st.a, j = st.b, swap = i > j;
+    const raw = swap ? match(j, i, 0) : match(i, j, 0);
+    const m = swap ? { a: raw.b, b: raw.a, fa: raw.fb, fb: raw.fa, x: raw.y, y: raw.x } : raw;
+    const R = runs(m);
+    const stage = h("div", { class: "stage" }, drawDuel(m));
+    let msg;
+    if (R.firstD < 0) msg = `${S[i].name}和${S[j].name}从头到尾都合作，每回合各得 ${fmt(st.R)} 分，就是第 27 段说的「基准分」。`;
+    else {
+      const who = m.a[R.firstD] === D && m.b[R.firstD] === D ? "两边同时" : m.a[R.firstD] === D ? `甲（${S[i].name}）` : `乙（${S[j].name}）`;
+      msg = `第 ${R.firstD + 1} 回合${who}第一次背叛。`;
+      if (R.alt) msg += `第 ${R.alt[0] + 1}–${R.alt[1] + 1} 回合两边轮流「你背叛、我合作」，这一段双方平均每回合 ${fmt((st.T + st.S) / 2)} 分，一直合作是 ${fmt(st.R)} 分。`;
+      if (R.tailDD >= 5) msg += `从第 ${st.N - R.tailDD + 1} 回合起两边一直互相背叛到底，每回合只有 ${fmt(st.P)} 分。`;
+      else if (R.tailCC >= 5) msg += `最后又回到了互相合作（最后 ${R.tailCC} 回合）。`;
+    }
+    msg += `整场 ${st.N} 回合：甲平均每回合 ${fmt(m.x)} 分，乙 ${fmt(m.y)} 分。`;
+    return { stage, msg, stats: [[fmt(m.x), `甲（${S[i].name}）平均每回合`], [fmt(m.y), `乙（${S[j].name}）平均每回合`], [fmt(st.R), "两边一直合作时每回合"]] };
+  }
+  function rankTable(rows, head) {
+    const max = Math.max(...rows.map((r) => r.bar), 1e-9);
+    return h("div", { class: "table-wrap" }, h("table", { class: "rank" },
+      h("tr", {}, ...head.map((x) => h("th", {}, x))),
+      ...rows.map((r, k) => { const bar = h("div", { class: "bar" }); bar.style.width = `${Math.max(0, (r.bar / max) * 100)}%`; bar.style.background = S[r.i].c;
+        return h("tr", {}, h("td", { class: "num" }, String(k + 1)), h("td", {}, S[r.i].name), h("td", {}, S[r.i].nice ? "善良" : "恶意"), ...r.cells.map((c) => h("td", { class: "num" }, c)), h("td", { class: "barcell" }, bar)); })));
+  }
+  function viewRR() {
+    const A = matrix(), on = onList();
+    const rows = on.map((i) => { const v = on.reduce((s, j) => s + A[i][j], 0) / on.length; return { i, v }; }).sort((p, q) => q.v - p.v);
+    const useP = st.R > 0;
+    const table = rankTable(rows.map((r) => ({ i: r.i, bar: r.v + lift(), cells: [fmt(r.v), useP ? pct(r.v / st.R) : "—"] })), ["名次", "策略", "类别", "平均每回合", "占基准分", ""]);
+    let k = 0; while (k < rows.length && S[rows[k].i].nice) k++;
+    const nNice = on.filter((i) => S[i].nice).length;
+    let msg = `${on.length} 个策略两两各下一场（包括和自己的拷贝），每场 ${st.N} 回合。第一名是${S[rows[0].i].name}（${S[rows[0].i].nice ? "善良" : "恶意"}）。`;
+    msg += nNice && k === nNice ? `善良的 ${nNice} 个策略全排在恶意策略前面。` : nNice ? `善良和恶意的策略在名次上交错了：前 ${k} 名是善良的，第 ${k + 1} 名是${S[rows[k].i].name}。` : "";
+    if (rows.length > 1 && Math.abs(rows[0].v - rows[rows.length - 1].v) < 1e-9) msg = `${on.length} 个策略得分完全一样：它们碰在一起都只出合作，彼此分不出来（第 48 段）。`;
+    const cap = h("p", { class: "cap" }, "「占基准分」：平均每回合得分除以一直合作时的每回合得分（第 27 段）。超过 100% 说明它从别人那里占到了便宜。");
+    return { stage: h("div", { class: "stage" }, cap, table), msg, stats: [[S[rows[0].i].name, "第一名"], [String(on.length), "参赛的策略"], [String(st.N), "每场回合数"]] };
+  }
+  function lineChart(series, n, label, extra) {
+    const svg = newSvg(220, label);
+    const L = 46, R = 540, T = 14, B = 190, span = Math.max(50, n);
+    svg.append(svgEl("line", { x1: L, y1: B, x2: R, y2: B, class: "ln" }), svgEl("line", { x1: L, y1: T, x2: L, y2: B, class: "ln" }));
+    for (const v of [0, 0.5, 1]) { const y = B - v * (B - T); svg.append(svgEl("line", { x1: L - 4, y1: y, x2: L, y2: y, class: "ln" }), text(L - 8, y + 4, `${v * 100}%`, "t-m", "end")); }
+    svg.append(text(L, B + 22, "第 0 代", "t-m"), text(R, B + 22, `第 ${n} 代`, "t-m", "end"));
+    if (extra) extra(svg, (v) => B - v * (B - T), L, R);
+    const used = [];
+    for (const s of series) {
+      const pts = s.ys.map((v, g) => `${(L + ((R - L) * g) / span).toFixed(1)},${(B - v * (B - T)).toFixed(1)}`).join(" ");
+      const pl = svgEl("polyline", { points: pts, fill: "none" }); pl.style.stroke = s.c; pl.style.strokeWidth = "2.5"; svg.append(pl);
+      const last = s.ys[s.ys.length - 1];
+      if (last > 0.03) {
+        let y = Math.max(T + 10, Math.min(B - 4, B - last * (B - T) + 4));
+        while (used.some((u) => Math.abs(u - y) < 14)) y += 14;
+        used.push(y);
+        const lab = text(R + 6, y, s.name, "t-b"); lab.style.fill = s.c; svg.append(lab);
+      }
+    }
+    return svg;
+  }
+  function viewEvo() {
+    const on = onList(), f = fitness(st.x);
+    const svg = lineChart(on.map((i) => ({ name: S[i].name, c: S[i].c, ys: st.hist.map((x) => x[i]) })), st.gen, "各策略在种群里的份额随代数的变化");
+    const rows = on.map((i) => ({ i, bar: st.x[i], cells: [pct(st.x[i]), fmt(f[i])] })).sort((p, q) => q.bar - p.bar);
+    const table = rankTable(rows, ["名次", "策略", "类别", "这一代的份额", "这一代平均每回合", ""]);
+    const cap = h("p", { class: "cap" }, "表里是当前这一代：份额，以及在当前种群里平均每回合得几分。得分高于种群平均的，下一代份额就涨。");
+    const top = rows[0], alive = rows.filter((r) => r.bar > 0.01);
+    const moving = st.hist.length > 21 ? Math.max(...on.map((i) => Math.abs(st.x[i] - st.hist[st.hist.length - 21][i]))) : 1;
+    let msg = st.gen === 0 ? "第 0 代：各策略按起始比例混在一起。点「跑 50 代」或「跑 1000 代」。"
+      : `第 ${st.gen} 代：份额最大的是${S[top.i].name}（${pct(top.bar)}）。份额超过 1% 的有 ${alive.length} 个：${alive.map((r) => S[r.i].name).join("、")}。`;
+    if (st.gen > 0 && moving < 0.0005) {
+      msg += alive.every((r) => S[r.i].nice) && alive.length > 1 ? "份额几乎不动了：剩下的都是善良策略，它们碰在一起只出合作，得分一样，谁也挤不掉谁（第 48 段）。" : "份额几乎不动了。";
+    }
+    const avg = st.x.reduce((s, xi, i) => s + xi * f[i], 0);
+    const legend = h("div", { class: "legend" }, ...on.map((i) => { const k = h("i", {}); k.style.background = S[i].c; return h("span", {}, k, S[i].name); }));
+    return { stage: h("div", { class: "stage" }, legend, svg, cap, table), msg, stats: [[String(st.gen), "代数"], [S[top.i].name, "份额最大"], [fmt(avg), "种群平均每回合"]] };
+  }
+  function viewEdge() {
+    const [kind, xs] = knife();
+    const svg = lineChart([{ name: "针锋相对", c: S[0].c, ys: st.ehist }], st.egen, "针锋相对的份额随代数的变化", (s, Y, L, R) => {
+      if (kind === "edge") { const y = Y(xs); s.append(svgEl("line", { x1: L, y1: y, x2: R, y2: y, class: "ln-d" }), text(R, y - 5, `决胜点 ${pct(xs, 2)}`, "t-m", "end")); }
+    });
+    const f = edgeFit(st.ex);
+    const edgeTxt = kind === "edge" ? pct(xs, 2) : "没有";
+    let msg = st.egen === 0 ? `起始时针锋相对占 ${pct(st.ex, 1)}，其余是永远背叛。` : `第 ${st.egen} 代：针锋相对占 ${pct(st.ex, 1)}。`;
+    msg += kind === "edge" ? `按现在的计分、回合数${st.clu ? "和扎堆程度" : ""}，本站算出的决胜点是 ${pct(xs, 2)}：针锋相对高于它就越来越多，低于它就越来越少。`
+      : kind === "tft" ? "按现在的设置，针锋相对不管多稀少，得分都比永远背叛高，没有决胜点。" : kind === "alld" ? "按现在的设置，针锋相对不管占多少都比永远背叛差。" : "按现在的设置，两种策略会以某个比例并存。";
+    if (st.egen > 0) msg += st.ex > 0.99 ? "种群翻到了针锋相对这一边。" : st.ex < 0.0001 ? "针锋相对几乎消失了。" : "";
+    return { stage: h("div", { class: "stage" }, svg), msg, stats: [[pct(st.ex, 1), "针锋相对的份额"], [edgeTxt, "决胜点（本站算的）"], [fmt(f.fT), "针锋相对平均每回合"], [fmt(f.fD), "永远背叛平均每回合"]] };
+  }
+
+  const narrate = h("div", { class: "narrate" }), stats = h("div", { class: "stats" }), stageBox = h("div", {});
+  const rule = h("span", {});
+  function draw() {
+    const [cls, txt] = rules(); rule.className = cls; rule.textContent = txt;
+    const v = st.mode === "duel" ? viewDuel() : st.mode === "rr" ? viewRR() : st.mode === "evo" ? viewEvo() : viewEdge();
+    stageBox.replaceChildren(v.stage);
+    narrate.textContent = v.msg;
+    stats.replaceChildren(...v.stats.map(([a, b]) => h("div", { class: "stat" }, h("div", { class: "v" }, a), h("div", { class: "l" }, b))));
+  }
+  function resetAll() { evoStart(); edgeReset(); draw(); }
+
+  // ---------- 控件 ----------
+  const modes = [["duel", "两个策略单挑"], ["rr", "循环赛"], ["evo", "一代代淘汰"], ["edge", "决胜点"]];
+  const modeBtns = modes.map(([k, t]) => h("button", { "aria-pressed": String(st.mode === k), onclick: () => { st.mode = k; modeBtns.forEach((b, n) => b.setAttribute("aria-pressed", String(modes[n][0] === k))); panel(); draw(); } }, t));
+  const num = (label, key) => {
+    const inp = h("input", { type: "number", min: -5, max: 10, step: 1, value: st[key], "aria-label": label });
+    inp.onchange = () => { const v = Number(inp.value); if (Number.isFinite(v)) st[key] = Math.max(-5, Math.min(10, Math.round(v))); inp.value = st[key]; resetAll(); };
+    return h("label", {}, label, inp);
+  };
+  const nOut = h("b", {}, String(st.N));
+  const nIn = h("input", { type: "range", min: 2, max: 300, step: 1, value: st.N, "aria-label": "每对下几回合" });
+  nIn.oninput = () => { st.N = +nIn.value; nOut.textContent = String(st.N); resetAll(); };
+  const noiseBox = h("input", { type: "checkbox", "aria-label": "误操作" });
+  noiseBox.onchange = () => { st.noise = noiseBox.checked; resetAll(); };
+  const pick = (label, key) => {
+    const sel = h("select", { "aria-label": label }, ...S.map((s, i) => h("option", { value: String(i) }, s.name)));
+    sel.value = String(st[key]);
+    sel.onchange = () => { st[key] = +sel.value; draw(); };
+    return h("label", { title: "" }, label, sel);
+  };
+  const boxes = S.map((s, i) => {
+    const b = h("input", { type: "checkbox", "aria-label": s.name });
+    b.checked = st.on[i];
+    b.onchange = () => { st.on[i] = b.checked; if (onList().length < 2) { st.on[i] = true; b.checked = true; } resetAll(); };
+    return h("label", { title: s.tip }, b, s.name);
+  });
+  const startSel = h("select", { "aria-label": "起始比例" },
+    h("option", { value: "even" }, "各占一样多"),
+    h("option", { value: "soft", title: "两报还一报、永远合作各占 4 份，其余各 1 份" }, "软柿子多"),
+    h("option", { value: "nasty", title: "每个恶意策略各占 4 份，善良的各 1 份" }, "恶意的多"));
+  startSel.onchange = () => { st.start = startSel.value; resetAll(); };
+  const e0Sel = h("select", { "aria-label": "起始时针锋相对占多少" }, ...[0.001, 0.002, 0.005, 0.01, 0.02, 0.05, 0.1, 0.5].map((v) => h("option", { value: String(v) }, pct(v, 1))));
+  e0Sel.value = String(st.e0);
+  e0Sel.onchange = () => { st.e0 = +e0Sel.value; edgeReset(); draw(); };
+  const cluSel = h("select", { "aria-label": "扎堆程度" }, ...[0, 0.001, 0.002, 0.005, 0.01, 0.02, 0.05, 0.1].map((v) => h("option", { value: String(v) }, v ? pct(v, 1) : "不扎堆")));
+  cluSel.value = String(st.clu);
+  cluSel.onchange = () => { st.clu = +cluSel.value; edgeReset(); draw(); };
+  const runEvo = (n) => { for (let k = 0; k < n; k++) evoStep(); draw(); };
+  const runEdge = (n) => { for (let k = 0; k < n; k++) edgeStep(); draw(); };
+  const panelBox = h("div", {});
+  function panel() {
+    const m = st.mode;
+    if (m === "duel") panelBox.replaceChildren(h("div", { class: "controls" }, pick("甲：", "a"), pick("乙：", "b")));
+    else if (m === "rr") panelBox.replaceChildren(h("div", { class: "controls" }, h("span", {}, "参赛的策略（鼠标停在名字上看规则）："), ...boxes));
+    else if (m === "evo") panelBox.replaceChildren(h("div", { class: "controls" }, h("span", {}, "参赛的策略："), ...boxes),
+      h("div", { class: "controls" }, h("label", {}, "起始比例", startSel), h("button", { onclick: () => runEvo(50) }, "跑 50 代"), h("button", { onclick: () => runEvo(1000) }, "跑 1000 代"), h("button", { onclick: () => { evoStart(); draw(); } }, "重置")));
+    else panelBox.replaceChildren(h("div", { class: "controls" }, h("span", {}, "只有针锋相对和永远背叛。"), h("label", {}, "起始时针锋相对占", e0Sel), h("label", { title: "每场有多大机会，碰上的对手是和自己同一种的（比如住在附近的亲属）" }, "扎堆：每场碰上同类的额外机会", cluSel)),
+      h("div", { class: "controls" }, h("button", { onclick: () => runEdge(100) }, "跑 100 代"), h("button", { onclick: () => runEdge(1000) }, "跑 1000 代"), h("button", { onclick: () => { edgeReset(); draw(); } }, "重置")));
+  }
+
+  root.querySelector(".sim-body").replaceChildren(
+    h("div", { class: "controls modes" }, h("span", {}, "看哪一种："), ...modeBtns),
+    h("div", { class: "controls" }, h("span", {}, "计分（我得几分）："), num("背叛的诱惑 T", "T"), num("相互合作 R", "R"), num("相互背叛 P", "P"), num("失败的代价 S", "S")),
+    h("div", { class: "controls" }, rule),
+    h("div", { class: "controls" }, h("label", {}, "每对下几回合", nIn, nOut), h("label", { title: "每一步有 2% 的机会出错：本来要合作却出了背叛，或者反过来" }, noiseBox, "误操作：每步 2% 的机会出错（书里没有）")),
+    panelBox, stageBox, narrate, stats);
+  panel();
+  resetAll();
+})();
+</script>
+</body>
+</html>

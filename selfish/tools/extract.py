@@ -39,13 +39,15 @@ FRAC = {"00002": "{图：Necker 立方体}", "00003": "5/12", "00004": "7/12", "
         "00035": "עלמה", "00036": "בתולה", "00037": "1/8", "00038": "3/8"}
 IMG_ERRATA = """# epub 里用错的分数图
 
-原书的分数在 epub 里是小图片，`tools/extract.py` 按看到的图换成文字。下面三处 epub 用错了图（读者的 Kindle 上也是这样），
+原书的分数在 epub 里是小图片，`tools/extract.py` 按看到的图换成文字。下面几处 epub 用错了图或印错了数（读者的 Kindle 上也是这样），
 提取文本照原样保留；作者写页面时按原书的逻辑讲，不照抄这几个数，可以在页面上提醒读者一句。主编对着 source/text 核过（2026-10-20）。
 
 - 05.txt 第 21 段：「behaving like a hawk, namely 16 2/3 in our particular example」——概率不可能是 16 2/3，
   按上下文（第 18 段的稳定比例 7/12 hawks）应是 7/12；16 2/3 是第 19 段「1/6 鹰 5/6 鸽」的平均收益，epub 把那张图用到了这里。
 - 06.txt 第 27 段（净收益的加权算式）：「(1/8) Benefit to other brother」应是 1/2，「1/2 Risk to first cousin」应是 1/8：epub 把两张图对调了（译本这里是对的）。
 - 06.txt 第 33 段：「Their relatedness is either (1/2) or 1/2」——半同胞和全同胞，应是 1/4 或 1/2（同段的平均数 3/8 也证明了这一点）。
+
+- 06.txt 注 32 第一段（n32.1）引第一版原话「second cousins should tend to receive A as much altruism」：A 应是 1/16（epub 里这里就是字母 A，不是图片）。
 
 另有两处是扫描识别把数字 1 认成了字母 I（读者屏幕上也是 I）：06.txt 第 27 段「relatedness with himself is I」、第 33 段「only I in 10」。
 
@@ -188,7 +190,18 @@ Z = epub("calibre-zh")
 zread = lambda n: Z.read(n).decode("utf-8")
 
 
+# 译本的分数和算式也是小图片（class="calibre16"），主编逐张看过（2026-10-20），换成文字；其余图片是各章的装饰插画，丢掉。
+# 2026-10-20 之前这里把图片一律删掉，各页曾误以为「译本的分数只剩空白」，审读轮发现后改正。
+ZFRAC = {"Image00009": "5/12 : 7/12", "Image00010": "7/12", "Image00011": "5/12", "Image00012": "6 1/4", "Image00013": "1/6",
+         "Image00014": "5/6", "Image00015": "16 2/3", "Image00017": "2 × (1/2)^4 = 1/8", "Image00018": "1 × (1/2)^3 = 1/8",
+         "Image00019": "2 × (1/2)^3 = 1/4", "Image00020": "1 × (1/2)^2 = 1/4", "Image00021": "2 × (1/2)^8 = 1/128",
+         "Image00022": "1/32", "Image00023": "1/8", "Image00024": "1/16", "Image00025": "1/10",
+         "Image00026": "1/10 × 1/2 + 9/10 × 1/4 = 0.275", "Image00029": "1/5", "Image00031": "5/8", "Image00039": "1/500",
+         "Image00046": "3/8", "Image00043": "עלמה", "Image00044": "בתולה", "Image00045": "παρθένος"}
+
+
 def ztext(inner):
+    inner = re.sub(r'<img[^>]*src="(Image\d+)\.jpg"[^>]*>', lambda m: f" {ZFRAC[m.group(1)]} " if m.group(1) in ZFRAC else "", inner)
     s = re.sub(r"<sup[^>]*>.*?</sup>", "", inner, flags=re.S)
     s = re.sub(r"<br[^>]*>", "", s)
     return re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", "", s))).strip()

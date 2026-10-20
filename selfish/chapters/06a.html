@@ -1,0 +1,647 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 6 章（上）· The Selfish Gene 导读</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/chapters.js"></script>
+<script src="../assets/sg.js"></script>
+<style>
+#sim-06a .stage svg { width: 100%; min-width: 520px; height: auto; display: block; }
+#sim-06a p.cap { color: var(--muted); font-size: 13.5px; margin: 4px 0 10px; }
+#sim-06a .bar { display: grid; grid-template-columns: 9.5em 1fr; gap: 8px; align-items: center; margin: 6px 0; font-size: 13.5px; }
+#sim-06a .bar .fill { height: 20px; border-radius: 3px; min-width: 2px; }
+#sim-06a .bar .track { display: flex; align-items: center; gap: 6px; font-variant-numeric: tabular-nums; color: var(--muted); }
+#sim-06a .part { margin: 4px 0 10px; font-size: 15px; }
+#sim-06a .part + .controls { margin-top: 6px; }
+#sim-06a hr { border: none; border-top: 1px dashed var(--border); margin: 22px 0 16px; }
+#sim-06a g.node { cursor: pointer; }
+#sim-06a g.node:focus { outline: none; }
+#sim-06a g.node:focus rect { stroke: var(--accent); stroke-width: 3; }
+#sim-06a table.calc { border-collapse: collapse; margin: 6px 0 0; font-size: 13.5px; }
+#sim-06a table.calc th, #sim-06a table.calc td { border: 1px solid var(--border); padding: 3px 10px; text-align: right; font-variant-numeric: tabular-nums; }
+#sim-06a table.calc th { background: var(--surface-2); font-weight: 600; }
+#sim-06a table.calc td:first-child { text-align: left; }
+#sim-06a .controls input[type="range"] { width: 110px; }
+</style>
+</head>
+<body data-page="06a">
+<main>
+
+<h2>这一页在做什么</h2>
+<div class="gist"><p>第 6 章的前半。第 5 章为了讲打斗，把整个个体当作各为自己的机器；这一章换个角度：一个基因的拷贝散在许多身体里，帮别人有没有可能就是基因在帮自己？Dawkins 先用白化基因和「绿胡须」做思想实验，再借 Hamilton 的理论，把「亲属之间共有某个基因的机会」变成一个能算的数，最后让一只发现蘑菇的动物替我们算一笔账。读的时候抓两条线：亲缘系数算的究竟是什么，以及「动物像会算一样」是什么意思。</p></div>
+<figure class="fig"><img src="../assets/img/06a-armadillo.jpg" alt="一只九带犰狳在落叶堆里低头觅食，背上是一圈圈带状的鳞甲，耳朵竖着" loading="lazy">
+<figcaption>九带犰狳，摄于哥斯达黎加。它一胎通常生四只，四只来自同一个受精卵。第 18 段拿它当例子：这四只的基因完全相同。<span class="src">Charles J. Sharp，CC BY-SA 4.0，维基共享资源</span></figcaption></figure>
+
+<h2>读之前：这一页在全书的哪里</h2>
+<div class="linehere"></div>
+<p>第 5 章最后一段说：讲打斗时把个体当作独立的自私机器很方便，可对象换成兄弟姐妹、堂表兄弟、父母子女，这套说法就不灵了，因为亲属身上有大量相同的基因，下一章再讲。这一页就从这里接上。第 1 段把「自私的基因」重新说成一段 DNA 散在各处的全部拷贝，回指第 2 章的原始汤；第 4 段的「基因有多种效果」回指第 3 章。第 11 段说某些昆虫不适用这套算法，那是第 10 章的事；第 19 段说亲代照顾为什么比手足照顾常见，下一页才讲。</p>
+<div class="crux"><p>动物为亲属冒险、甚至送命，自私的基因怎么从中得到好处？好处有多大，能不能算出来？</p></div>
+<p class="lede">读的时候带着这几个问题。不用先找答案，读完回来对照「检查一下理解」。</p>
+<ol class="qs">
+  <li>白化基因要是能让白化的人彼此特别好，它就会变多。作者为什么认为现实里不太会这样？<span class="sec">§1</span></li>
+  <li>说「兄弟有一半的基因相同」，是一半的什么？作者为什么要先假设基因是稀有的？<span class="sec">§2</span></li>
+  <li>父母照顾孩子和姐姐照顾弟弟，在遗传上有没有区别？作者和 E. O. Wilson 在这一点上争的是什么？<span class="sec">§4</span></li>
+  <li>动物不会算分数，这一套计算还有没有意义？<span class="sec">§5</span></li>
+</ol>
+
+<h2>这一页的路线</h2>
+<p>这一页先问一个大问题，再一步步把它变成算术。§1 是思想实验：基因怎样认出别的身体里的自己，作者先用「基因想要」的拟人说法，到第 3 段又主动暂时放下，换成正规的说法。§2、§3 是全页最硬的地方：先假设基因稀有，算出兄弟共有的机会，再给出一条按代数算亲缘的简便法则，读的时候手边放张纸画家谱。§4 先拿双胞胎和犰狳把法则推到极端，接着突然插进一段对 E. O. Wilson 的批评，读到这里会觉得跳，第 22 段作者自己也为这段「小小的抨击」道歉。§5 把「必死、救活」换成统计风险和预期寿命，再回应「动物怎么会算」。§6 用一个蘑菇的算例走一遍，最后退回基因的语言。</p>
+<figure class="fig"><svg class="diagram" viewBox="0 0 640 230" role="img" aria-label="路线示意图：上面一行是模型和算法，下面一行是例子和争论，一条折线按阅读顺序在两行之间来回">
+<text x="8" y="84" class="t-m">算法</text>
+<text x="8" y="174" class="t-m">例子和争论</text>
+<polyline points="120,80 181,80 243,80 304,170 365,170 426,80 488,170 549,80 610,170" class="ln-a"/>
+<circle cx="120" cy="80" r="7" class="f1"/><text x="120" y="58" text-anchor="middle">绿胡须</text><text x="120" y="38" text-anchor="middle" class="t-m">§1</text>
+<circle cx="181" cy="80" r="7" class="f1"/><text x="181" y="58" text-anchor="middle">稀有基因</text><text x="181" y="38" text-anchor="middle" class="t-m">§2</text>
+<circle cx="243" cy="80" r="7" class="f1"/><text x="243" y="58" text-anchor="middle">代距法则</text><text x="243" y="38" text-anchor="middle" class="t-m">§3</text>
+<circle cx="304" cy="170" r="7" class="f2"/><text x="304" y="196" text-anchor="middle">犰狳</text><text x="304" y="214" text-anchor="middle" class="t-m">§4</text>
+<circle cx="365" cy="170" r="7" class="f2"/><text x="365" y="196" text-anchor="middle">驳 Wilson</text><text x="365" y="214" text-anchor="middle" class="t-m">§4</text>
+<circle cx="426" cy="80" r="7" class="f1"/><text x="426" y="58" text-anchor="middle">精算</text><text x="426" y="38" text-anchor="middle" class="t-m">§5</text>
+<circle cx="488" cy="170" r="7" class="f2"/><text x="488" y="196" text-anchor="middle">接球、计算尺</text><text x="488" y="214" text-anchor="middle" class="t-m">§5</text>
+<circle cx="549" cy="80" r="7" class="f1"/><text x="549" y="58" text-anchor="middle">蘑菇算例</text><text x="549" y="38" text-anchor="middle" class="t-m">§6</text>
+<circle cx="610" cy="170" r="7" class="f2"/><text x="610" y="196" text-anchor="middle" class="t-b">回到基因</text><text x="610" y="214" text-anchor="middle" class="t-m">§6</text>
+</svg>
+<figcaption>本站示意图。蓝点是作者给的模型和算法，橙点是动物的例子、对别人的批评和类比；折线是阅读顺序。</figcaption></figure>
+<p class="landing"><b>作者落在哪：</b>亲属身上有同一个基因的机会可以算出来，所以为亲属付出，在基因的账上可以是划算的；亲代照顾只是其中一例，这和类群选择是两回事。动物不必真的会算，只要被预先编好、表现得像算过。</p>
+
+<h2>分节地图</h2>
+<p class="lede">这一页是原书第 6 章的第 1–6 节。原书各章没有小标题，粗体的节名是本站起的，下面是这一节第一段开头的几个词，在电子书里搜它就能跳过去。读完打个勾。</p>
+<ol class="secmap">
+  <li data-sec="1"><b>白化基因与绿胡须<span class="w">约 800 词</span></b><span class="en">What is the selfish gene …</span><span class="what">重新定义「自私的基因」。第 3 段作者暂时放下「基因想要」的比喻，第 4 段起名「绿胡须」，第 5 段再找别的标记。</span></li>
+  <li data-sec="2"><b>稀有基因：兄弟有一半<span class="w">约 900 词</span></b><span class="en">The answer is yes. It is easy …</span><span class="what">亲属是认拷贝的可靠线索。第 8 段「假设基因稀有」是简化，带星号，1989 年作者自称取巧。</span></li>
+  <li data-sec="3"><b>亲缘系数的算法<span class="w">约 800 词</span></b><span class="en">It is rather tedious going through …</span><span class="what">代距法则，算式密集，边读边画家谱。第 17 段给出救几个亲属才划算的门槛。</span></li>
+  <li data-sec="4"><b>双胞胎、兄弟与亲代照顾<span class="w">约 700 词</span></b><span class="en">If an individual could be sure …</span><span class="what">第 18 段双胞胎和犰狳，第 19 段亲代照顾，第 20–21 段批评 Wilson 对亲属选择的定义。</span></li>
+  <li data-sec="5"><b>像精算师一样算利他账<span class="w">约 1100 词</span></b><span class="en">I ask the general …</span><span class="what">第 24 段是利他条件的文字版。第 25 段起回应「动物怎么会算」；第 27 段的算式电子书用错了两张分数图，同段的 is I 是 1。</span></li>
+  <li data-sec="6"><b>八个蘑菇的食物呼叫<span class="w">约 700 词</span></b><span class="en">Here is a very over-simplified example …</span><span class="what">一道算例，作者自称过分简化。第 30、32 段把「我在盘算」翻译回基因的语言。</span></li>
+</ol>
+
+<h2>先用中文过一遍：这一页的概念</h2>
+<p class="lede">先把这一页用到、作者默认你懂的几个概念讲一遍。讲的是概念本身，作者拿它推出什么，读原书时自己看。前几章讲过的<a class="term" href="03a.html#c-gene-pool">基因库</a>、<a class="term" href="01.html#c-group-selection">类群选择</a>、<a class="term" href="02.html#c-survival-machine">生存机器</a>、<a class="term" href="04b.html#c-gene-for">「某种行为的基因」</a>，点进去看。</p>
+<div class="concept" id="c-green-beard">
+<h3><span class="sec">§1</span>绿胡须效应 <span class="en">green-beard effect</span></h3>
+<p>设想一个基因同时做两件事：让带着它的身体长出一个显眼的记号（比如一把绿胡子），又让身体特别善待带着这个记号的个体。这样它就能认出并帮助别的身体里的自己的拷贝，不管对方是不是亲戚。这个想法在 Hamilton 1964 年的论文里已有雏形，「绿胡须」这个名字出自这本书。难点在于：记号和偏爱是两件互不相干的事，要由同一个基因同时管住。打个比方：一段代码既给自己发出的请求打上标记，又只给带这个标记的请求放行，它照顾的就只是自己的副本。<span class="zhv">译本：「绿胡须利他行为效果」</span></p>
+<p class="use"><b>在这一页：</b>第 4 段起名，第 5 段又设想「正在救人」本身也能当记号。它是作者讨论「基因怎样认出自己」时的第一个候选。</p>
+</div>
+<div class="concept" id="c-relatedness">
+<h3><span class="sec">§2</span>亲缘关系指数 <span class="en">index of relatedness, r</span></h3>
+<p>两个亲属之间，一方带着的某个基因，另一方因为同一个祖先也带着它的机会。今天通行叫亲缘系数，记作 r。亲子之间是 1/2，兄弟姐妹平均 1/2，祖孙、叔侄、半同胞 1/4，堂表兄弟姐妹 1/8，每远一层就减半。最容易误解的一点：它<b>不是</b>「两人有百分之几的基因相同」。同一物种任意两人本来就有绝大部分基因相同，r 量的是在这条人人都有的基线之上、因为共同祖先而多出来的那一份。作者 1989 年在注 30 里专门补了这一点。</p>
+<figure class="fig"><svg class="diagram" viewBox="0 0 640 250" role="img" aria-label="条形图：六种亲属关系的亲缘系数，从同卵双胞胎的 1 一路减半到三代堂表兄弟姐妹的 1/128">
+<line x1="200" y1="14" x2="200" y2="214" class="ln"/>
+<text x="8" y="33" class="t-b">自己、同卵双胞胎</text><rect x="200" y="20" width="400" height="18" class="f1"/><text x="608" y="34" class="t-m">1</text>
+<text x="8" y="67" class="t-b">亲子、兄弟姐妹</text><rect x="200" y="54" width="200" height="18" class="f1"/><text x="408" y="68" class="t-m">1/2</text>
+<text x="8" y="101" class="t-b">半同胞、叔侄、祖孙</text><rect x="200" y="88" width="100" height="18" class="f1"/><text x="308" y="102" class="t-m">1/4</text>
+<text x="8" y="135" class="t-b">堂表兄弟、曾孙</text><rect x="200" y="122" width="50" height="18" class="f1"/><text x="258" y="136" class="t-m">1/8</text>
+<text x="8" y="169" class="t-b">二代堂表兄弟</text><rect x="200" y="156" width="12.5" height="18" class="f1"/><text x="220" y="170" class="t-m">1/32</text>
+<text x="8" y="203" class="t-b">三代堂表兄弟</text><rect x="200" y="190" width="3.1" height="18" class="f1"/><text x="211" y="204" class="t-m">1/128，和陌生人差不多</text>
+<text x="200" y="238" class="t-m">条的长短：在全物种共有的基线之上，多出来的那一份</text>
+</svg>
+<figcaption>本站示意图，数字是书里第 15–16 段给的。二代、三代堂表兄弟指共同祖先是曾祖辈、高祖辈的同辈亲戚。</figcaption></figure>
+<p class="use"><b>在这一页：</b>第 10 段起名，第 11–16 段给出按代数计算的法则。第 8 段先假设基因稀有，是为了好讲。</p>
+</div>
+<div class="concept" id="c-kin-selection">
+<h3><span class="sec">§4</span>亲属选择 <span class="en">kin selection</span></h3>
+<p>亲属之间的利他行为所受的那种自然选择：关系越近，选择越强。名字是 Maynard Smith 1964 年起的，理论来自 Hamilton 同年的论文。今天通行叫亲缘选择。它容易和两样东西混：一是类群选择，后者说的是整群整群的存亡差别；二是「只对自家人好」的直觉。亲属选择没有家里家外的硬界线，只有亲缘远近的连续变化：越近的亲属越可能得到帮助，远到一定程度就和陌生人一样。这不是说要按亲疏把好处切成大小不等的份，1989 年的注 32 专门纠正过这种读法。父母养育子女，在遗传上也属于它。</p>
+<p class="use"><b>在这一页：</b>第 20 段介绍这个词，紧接着批评 E. O. Wilson 书里的定义；第 21 段说那个定义把子女排除在亲属之外。</p>
+</div>
+<div class="concept" id="c-hamilton-rule">
+<h3><span class="sec">§5</span>汉密尔顿法则 <span class="en">Hamilton’s rule, rB &gt; C</span></h3>
+<p>一个让个体去帮别人的基因，能在种群里扩散的条件：受益者得到的好处 B 乘上两人的亲缘系数 r，大于帮忙者自己付出的代价 C。好处和代价都按将来能留下多少后代来算，不是按快乐或钱。这条不等式出自 Hamilton 1964 年的论文，「汉密尔顿法则」是后来通行的叫法。和它配套的概念叫广义适合度（inclusive fitness）：一个个体的成绩，除了自己的后代，还要加上它帮亲属多出来的后代乘以 r。打个比方：掏自己的钱去帮另一家公司，值不值，要看你在那家公司占多少股。</p>
+<p class="use"><b>在这一页：</b>书里没给它起名。第 24 段用保险精算的话把这条不等式说了一遍，第 27 段写成一长串加权求和，第 29 段是一道算例。</p>
+</div>
+
+<h2>动手：模拟器</h2>
+<p>先猜：你和堂表兄弟的亲缘系数，比你和曾孙的大，还是小，还是一样？为救堂表兄弟而送命，至少要救下几个才不亏？再在下面的家谱上点人验证。</p>
+<div class="sim" id="sim-06a">
+  <div class="sim-head"><span class="tag">模拟器</span><h3>家谱上的亲缘账</h3><p class="desc">三块。上面是一张家谱：依次点两个人，看他们最近的共同祖先是谁、代距是几、亲缘系数怎么算出来。中间按汉密尔顿法则判断：为救亲属冒险，这种基因会不会扩散。下面是第 29 段那种「发现了食物，叫不叫」的加权算账。先直接点家谱上的人。</p></div>
+  <div class="sim-body"><p>需要浏览器打开脚本才能运行。</p></div>
+</div>
+<ol class="qs">
+  <li>试试看：甲选「我」，乙依次选兄弟姐妹、叔叔、祖父、同母异父、曾孙辈，对一对第 15、16 段的数。再选「堂兄弟」和「侄甥」这一对：书里没给，按法则算出来是多少？</li>
+  <li>试试看：中间那块，亲属选「兄弟姐妹」，风险 100%，把「救下几个」从 1 拖到 3，看 2 个时为什么是「正好打平」；再换成半同胞、堂表兄弟，找出第 17 段的 4 个、8 个门槛。然后把风险改成 0.5%，亲属选三代堂表兄弟、救下 1 个：第 22 段说的「三代堂表兄弟也可能值得救」成立吗？</li>
+  <li>试试看：下面那块点「换成书里第 29 段的数」，对一对 18 和 19 1/2；再把「我还吃得下几个」改成 1（第 31 段：刚饱餐一顿），「叫比不叫多出的分」变大还是变小？</li>
+</ol>
+<p>这个模拟器只算这一页讲的：亲缘确定、所有人寿命一样。亲缘只能估计、拿不准时怎么办（第 33 段起），是下一页的事。家谱里没有近亲结婚，因为作者在第 11 段说过，那种情况这条法则不适用。</p>
+
+<h2>书里的人和研究</h2>
+<p class="lede">按在书里出现的顺序排，标题前是节号。只讲到读懂这一页需要的程度。</p>
+
+<h3><span class="sec">§2</span>Fisher、Haldane 和 Hamilton</h3>
+<figure class="fig"><img src="../assets/img/06a-hamilton-umich.jpg" alt="一张黑白合影：八位男士在写满算式的黑板前，四人坐在桌后，四人站在后面" loading="lazy">
+<figcaption>密歇根大学的一张合影，年份不详。前排左二是 W. D. Hamilton，后排左一是 Robert Axelrod，第 12 章的主角。<span class="src">University of Michigan News and Information Services，CC BY 4.0，维基共享资源</span></figcaption></figure>
+<p>第 6 段说，亲属之间也该有利他，是 Fisher、Haldane，尤其是 Hamilton 想到的。第 7 段说 Hamilton 1964 年在《理论生物学杂志》上的两篇论文（《社会行为的遗传演化》上下篇）是社会动物行为学最重要的文献之一，可 1970 年出版的两本动物行为学教科书，索引里连他的名字都没有。作者承认论文用了不少数学，他用文字讲，代价是简化。Hamilton 后来和 Axelrod 合作研究合作的演化，那是第 12 章的事。</p>
+<div class="who">
+  <div><b>R. A. Fisher</b><span class="en">1890–1962</span>英国统计学家、遗传学家，现代统计学和群体遗传学的奠基人之一。</div>
+  <div><b>J. B. S. Haldane</b><span class="en">1892–1964</span>英国遗传学家，群体遗传学的另一位奠基人，以文笔犀利著称。第 25 段还会出场。</div>
+  <div><b>W. D. Hamilton</b><span class="en">1936–2000</span>英国演化生物学家，用亲缘系数给出利他行为能演化的条件，提出广义适合度。这一页的数学都来自他。</div>
+</div>
+
+<h3><span class="sec">§4</span>九带犰狳</h3>
+<p>美洲的一种犰狳，就是页首照片里那种。它一胎通常生四只，四只由同一个受精卵分裂而成，是同卵四胞胎。第 18 段作者说，他没听说小犰狳有什么英勇献身的事，但有人指出它们之间应当有强烈的利他，值得有人去南美看一看。1989 年的注 31 说，犰狳这边没有消息。后来的野外研究见「对照今天」。</p>
+
+<h3><span class="sec">§4</span>青木的兵蚜（注 31）</h3>
+<figure class="fig"><img src="../assets/img/06a-aphids.jpg" alt="特写：十来只橙黄色、黑腿的蚜虫挤在一根绿色的茎上吸食，右上方有几粒橙色的小卵" loading="lazy">
+<figcaption>一群蚜虫挤在植物茎上，右上方是卵。这不是兵蚜，种类和青木研究的无关，只为让读者看看蚜虫群什么样。<span class="src">Sanjay ach，CC BY-SA 3.0，维基共享资源</span></figcaption></figure>
+<p>蚜虫能无性生殖，一株植物上的一群蚜虫往往是同一只雌虫的克隆。注 31 说，日本昆虫学家青木（Shigeyuki Aoki）1977 年在一种日本蚜虫里发现了不育的「兵蚜」：它们停在幼虫阶段，前腿粗大、头上有向前的角，专门攻击捕食者，常常送命。兵蚜和被它保护的姐妹基因完全相同，作者说在某些方面，这是 Hamilton 理论在现实中最干净的例子。</p>
+
+<h3><span class="sec">§4</span>E. O. Wilson 和《社会生物学》</h3>
+<figure class="fig small"><img src="../assets/img/06a-eo-wilson.jpg" alt="一位穿粗花呢西装、打领带的白发老人坐在实验室桌前，一手托着脸微笑" loading="lazy">
+<figcaption>E. O. Wilson，2003 年。<span class="src">Jim Harrison，CC BY 2.5，维基共享资源</span></figcaption></figure>
+<p>第 20 段批评的是 Wilson 1975 年的《社会生物学：新的综合》。作者先夸这本书「在别的方面令人钦佩」，再说它把亲属选择定义成类群选择的一个特例，书里的图把它画在个体选择和类群选择之间；第 21 段说它还把子女排除在亲属之外。1989 年的注 33 报告，Wilson 1978 年的《论人性》删掉了「子女除外」。</p>
+<div class="who">
+  <div><b>Edward O. Wilson</b><span class="en">1929–2021</span>美国生物学家，研究蚂蚁的权威。《社会生物学》把动物社会行为的研究整合成一门学科，最后一章谈人类，引起了激烈争论。在这一页里是被批评的一方。</div>
+</div>
+
+<h3><span class="sec">§5</span>Haldane 的两次救人和计算尺</h3>
+<figure class="fig"><img src="../assets/img/06a-slide-rule.jpg" alt="一把计算尺的特写，几行刻度上印着黑色和红色的数字，中间压着一个透明的游标" loading="lazy">
+<figcaption>计算尺：刻度按对数排列，拉动滑尺就能做乘除。第 25 段的比方：用它的人不必知道自己在用对数。<span class="src">Slashme，CC0（公有领域），维基共享资源</span></figcaption></figure>
+<p>第 25 段说，Haldane 1955 年的一篇文章比 Hamilton 早一步，设想过救溺水近亲的基因会扩散；作者转引他的话：自己两次把可能淹死的人拉出水，根本没时间算。流传很广的「我愿为两个兄弟或八个堂表兄弟献身」不在这本书里，据考证多半是别人转述时改成的直接引语，别安到作者头上。作者接着用计算尺和接球打比方。</p>
+
+<h3><span class="sec">§5</span>Sahlins 的「分数」质疑（注 34）</h3>
+<p>注 34 驳的是美国人类学家 Sahlins 1976 年的《生物学的利用与滥用》。Sahlins 说，世界上很多语言没有分数，狩猎采集者往往只数到三，动物更不可能算出堂表兄弟的 r。作者引自己 1979 年的文章《关于亲属选择的十二个误解》回答：蜗牛壳是一条精确的对数螺线，蜗牛并不查对数表；大树底部板根的大小接近力学上的最优，树也不会算。</p>
+<div class="who">
+  <div><b>Marshall Sahlins</b><span class="en">1930–2021</span>美国人类学家，长期在芝加哥大学任教，研究太平洋岛屿社会和经济人类学。在这一页的注里是被反驳的一方。</div>
+</div>
+
+<h2>词与短语</h2>
+<p class="lede">按节排，每节前面是分节地图里的节名。标着「每个字都认识」的，是熟词生义、习语和反话，最容易读错。灰色的那几个字是原句里的位置，在电子书里搜它就能找到。</p>
+
+<h3 class="sec-head" id="s1">§1 <span class="first">白化基因与绿胡须</span></h3>
+<div class="entry trap"><div class="en">allow ourselves the licence of</div><div class="loc" data-p="1">… If we allow ourselves the licence of …</div><div class="zh">容许自己放开说</div><div class="note">licence 在这里不是执照，是「破格的自由」，像 poetic licence（诗人可以不守语法）。作者先打招呼：下面说基因「想」，是图方便的拟人。</div></div>
+<div class="entry"><div class="en">sloppy language</div><div class="loc" data-p="1">… our sloppy language back into respectable terms …</div><div class="zh">随便的说法（对「正规的说法」）</div><div class="note">作者的保证：拟人的说法随时可以翻译回严格的说法。全书读到「基因想要」都要记得这层。</div></div>
+<div class="entry"><div class="en">a distributed agency</div><div class="loc" data-p="1">… is a distributed agency, existing in many …</div><div class="zh">分散在各处的行动者</div><div class="note">作者的说法：一个基因不是一小段实物，而是散在许多身体里的全部拷贝，像一个在很多地方同时运行的程序。</div></div>
+<div class="entry trap"><div class="en">positively misleading</div><div class="loc" data-p="3">… in this context it becomes positively misleading.</div><div class="zh">简直是误导</div><div class="note">positively 在这里是加强语气的「完全、简直」，不是「积极地、正面地」。作者承认自己的比喻在这里会出错。</div></div>
+<div class="entry trap"><div class="en">if more longwinded</div><div class="loc" data-p="3">… into respectable, if more longwinded terms.</div><div class="zh">尽管啰嗦一些</div><div class="note">形容词前的 if 是「虽然」，不是「如果」：正规，虽然更啰嗦。</div></div>
+<div class="entry"><div class="en">willy-nilly</div><div class="loc" data-p="3">… then automatically, willy-nilly, it would tend …</div><div class="zh">不管愿不愿意，自然而然地</div><div class="note">来自古英语 will I, nill I（我愿意也好，不愿意也好）。这里强调没有意图：碰巧有这种效果的基因就会变多。</div></div>
+<div class="entry"><div class="en">possible, but not particularly likely</div><div class="loc" data-p="4">… It is possible, but not particularly likely.</div><div class="zh">可能，但不太可能真有</div><div class="note">作者的把握程度：不否认，也不看好。后来真找到了例子，见「对照今天」。</div></div>
+
+<h3 class="sec-head" id="s2">§2 <span class="first">稀有基因：兄弟有一半</span></h3>
+<div class="entry"><div class="en">at the cost of some over-simplification</div><div class="loc" data-p="7">… though at the cost of some over-simplification.</div><div class="zh">代价是简化了一些</div><div class="note">作者交代：Hamilton 的论文是数学的，他凭直觉讲，不那么严格。</div></div>
+<div class="entry"><div class="en">the odds are</div><div class="loc" data-p="8">… The odds are in this case exactly …</div><div class="zh">机会是</div><div class="note">odds 常译「赔率」，这里就是「概率、机会」，和前面的 chances 是一个意思。</div></div>
+<div class="entry"><div class="en">dole out</div><div class="loc" data-p="9">… he doles out half his genes to …</div><div class="zh">一份份地分出去</div><div class="note">dole 是施舍、配给。精子只拿到父亲一半的基因。</div></div>
+<div class="entry"><div class="en">beget</div><div class="loc" data-p="9">… the sperm that begot your sister …</div><div class="zh">生出（古雅的说法）</div><div class="note">begot 是 beget 的过去式，《圣经》家谱里常用（A begat B）。</div></div>
+<div class="entry trap"><div class="en">the luck of the draw</div><div class="loc" data-p="10">… by the luck of the meiotic draw, …</div><div class="zh">抽签的运气</div><div class="note">原习语是 the luck of the draw（全凭运气），作者塞进 meiotic（减数分裂的）：哪一半基因进入精子卵子，像抽签。所以兄弟之间的 1/2 只是平均数。</div></div>
+
+<h3 class="sec-head" id="s3">§3 <span class="first">亲缘系数的算法</span></h3>
+<div class="entry trap"><div class="en">rough and ready</div><div class="loc" data-p="11">… so here is a rough and ready rule …</div><div class="zh">粗略但好用的</div><div class="note">不是「又粗又准备好」，是「不精致、但能凑合用」。作者马上说它在近亲结婚和某些昆虫那里不灵。</div></div>
+<div class="entry"><div class="en">making your will</div><div class="loc" data-p="11">… useful in making your will, or in …</div><div class="zh">立遗嘱</div><div class="note">will 在这里是遗嘱。作者的玩笑：这条法则可以帮你决定遗产分给谁。</div></div>
+<div class="entry trap"><div class="en">take after</div><div class="loc" data-p="15">… Similarly, you are just as likely to …</div><div class="zh">长得像、性格像（长辈）</div><div class="note">这句后面带引号的 take after 是「随某位长辈」，不是「跟在后面」。作者说你随叔叔和随祖父的机会一样大。</div></div>
+<div class="entry trap"><div class="en">any old Tom, Dick, or Harry</div><div class="loc" data-p="16">… to any old Tom, Dick, or Harry as …</div><div class="zh">随便哪个张三李四</div><div class="note">英语里「随便什么人」的说法，any old 是「随便哪个」，不是「老」。三代堂表兄弟和陌生人差不多。</div></div>
+
+<h3 class="sec-head" id="s4">§4 <span class="first">双胞胎、兄弟与亲代照顾</span></h3>
+<div class="entry"><div class="en">well worth somebody’s while</div><div class="loc" data-p="18">… it would be well worth somebody’s while …</div><div class="zh">很值得有人花工夫</div><div class="note">worth one’s while 是「值得花时间」。作者号召别人去南美看犰狳，自己没去。</div></div>
+<div class="entry trap"><div class="en">nothing like so common</div><div class="loc" data-p="19">… is nothing like so common in nature …</div><div class="zh">远没有那么常见</div><div class="note">nothing like 是「远不如」，不是「不像」。手足照顾远不如亲代照顾常见，原因下一页讲。</div></div>
+<div class="entry trap"><div class="en">gross misuses</div><div class="loc" data-p="20">… because of recent gross misuses of it, …</div><div class="zh">严重的误用</div><div class="note">gross 在这里是「严重的、明显的」，不是「恶心的」。话说得很重，第 22 段作者自己也道了歉。</div></div>
+<div class="entry trap"><div class="en">otherwise admirable</div><div class="loc" data-p="20">… Wilson, in his otherwise admirable …</div><div class="zh">在别的方面都很出色的</div><div class="note">先夸后批的套路：otherwise 是「除了这一点以外」。英式写法里批评前常这样垫一句。</div></div>
+<div class="entry trap"><div class="en">to be sure</div><div class="loc" data-p="20">… There is, to be sure, a sense …</div><div class="zh">诚然</div><div class="note">先让一步再反驳：家庭在某种意义上确实是一种群体，但……。不是「为了确定」。</div></div>
+<div class="entry trap"><div class="en">hard and fast</div><div class="loc" data-p="20">… non-family is not hard and fast, …</div><div class="zh">界线分明、一成不变的</div><div class="note">原指船搁浅后动弹不得，引申为规则死板、界线清楚。这句是作者反驳 Wilson 的关键。</div></div>
+
+<h3 class="sec-head" id="s5">§5 <span class="first">像精算师一样算利他账</span></h3>
+<div class="entry trap"><div class="en">ask the reader’s indulgence</div><div class="loc" data-p="22">… I ask the general reader’s indulgence for …</div><div class="zh">请读者包涵</div><div class="note">indulgence 在这里是「宽容、包涵」，不是「放纵」。他为上面那段对 Wilson 的「小小的抨击」（little diatribe）道歉，口气半自嘲。</div></div>
+<div class="entry"><div class="en">messy actuarial weightings</div><div class="loc" data-p="23">… modified by messy actuarial weightings.</div><div class="zh">一堆乱糟糟的精算加权</div><div class="note">actuarial 是保险精算的。整齐对称的亲缘系数，还要按各人的预期寿命打折。</div></div>
+<div class="entry"><div class="en">life-insurance underwriters</div><div class="loc" data-p="24">… thought of as life-insurance underwriters.</div><div class="zh">寿险的承保人</div><div class="note">作者的比喻：个体像保险公司，拿自己的一部分「资产」押在别人的性命上，押之前要看亲缘和对方的寿命。</div></div>
+<div class="entry trap"><div class="en">a good risk</div><div class="loc" data-p="24">… also whether the individual is a …</div><div class="zh">值得承保的对象</div><div class="note">后面带引号的 good risk 是保险行话：出事概率低、值得接的客户。不是「好的风险」。</div></div>
+<div class="entry"><div class="en">anticipated</div><div class="loc" data-p="25">… in which he anticipated Hamilton by …</div><div class="zh">比……先想到</div><div class="note">anticipate 在这里是「抢先提出」，不是「预期」。Haldane 1955 年就设想过这种基因。</div></div>
+
+<h3 class="sec-head" id="s6">§6 <span class="first">八个蘑菇的食物呼叫</span></h3>
+<div class="entry"><div class="en">needs a bit of figuring</div><div class="loc" data-p="29">… food call needs a bit of figuring.</div><div class="zh">得算一算</div><div class="note">figure 作动词是「计算、琢磨」，口语里的 figure out。</div></div>
+<div class="entry trap"><div class="en">a close-run thing</div><div class="loc" data-p="29">… it is a close-run thing, but …</div><div class="zh">险胜，差一点就反过来</div><div class="note">原是赛马、战役的说法，威灵顿说滑铁卢一役是 a close-run thing。19 1/2 对 18，差得不多。</div></div>
+<div class="entry"><div class="en">find room for</div><div class="loc" data-p="31">… so that I can only find room for …</div><div class="zh">还吃得下</div><div class="note">字面「腾出地方」，说吃东西就是「肚子还装得下」。</div></div>
+<div class="entry"><div class="en">the best of all possible worlds</div><div class="loc" data-p="31">… achieved in the best of all possible worlds.</div><div class="zh">一切可能的世界中最好的那个</div><div class="note">典故：哲学家 Leibniz 说我们的世界是一切可能世界中最好的，Voltaire 在《老实人》里反复拿这句挖苦。这里是说「在理想世界里」，下一句马上说现实不是那样。</div></div>
+<div class="entry trap"><div class="en">carried away</div><div class="loc" data-p="32">… we have not become too carried away …</div><div class="zh">说得忘乎所以</div><div class="note">be carried away 是「被带跑了、一时兴起说过头」。作者提醒自己：上面「我在盘算」只是讲法。</div></div>
+<div class="entry trap"><div class="en">Just so</div><div class="loc" data-p="32">… Just so; human decisions based on outdated …</div><div class="zh">正是如此（人也一样）</div><div class="note">英式的「对，就是这样」，引出类比：人凭过时的信息做决定，也常出错。不是「仅仅如此」。</div></div>
+
+<h2>译本勘误</h2>
+<p class="lede">对着中译本（40 周年增订版）读的时候看这一节。下面是译本这几节和这一页尾注里会让人读错的地方：灰字是英文原文那一处的几个词，在英文电子书里搜它；方框里是译本的原句，在译本电子书里搜它。措辞别扭但意思没错的不收。全书的勘误汇总在<a href="../zh.html">译本勘误</a>。</p>
+<div class="zherr" data-p="1"><h4><span class="sec">§1</span>章名 Genesmanship 不是「基因种族」<span class="mark">误译</span></h4>
+<p class="loc">… What is the selfish gene …</p>
+<p class="zhq"><span class="zhv">译本：「基因种族」</span></p>
+<p>章名是仿 gamesmanship（比赛中耍小花招取胜的本事）造的词，大意是「基因的取胜之术」，讲基因怎样借亲属的身体占便宜。和人种、种族毫无关系。</p></div>
+<div class="zherr" data-p="5"><h4><span class="sec">§1</span>绿胡须是「随意的」记号，不是「荒诞的」<span class="mark">误译</span></h4>
+<p class="loc">… less arbitrary than a green beard …</p>
+<p class="zhq"><span class="zhv">译本：「尽管这个标志不像绿胡须那样荒诞不经」</span></p>
+<p>arbitrary 是「随意挑的、和要表达的东西没有内在联系」。原文说：「正在救人」这个记号比绿胡须更贴近它要标示的利他基因，但仍不太可信。</p></div>
+<div class="zherr" data-p="6"><h4><span class="sec">§2</span>近亲只是「比平均高的机会」共有基因<span class="mark">误译</span></h4>
+<p class="loc">… have a greater than average chance …</p>
+<p class="zhq"><span class="zhv">译本：「我们很容易证明，近亲多半共有同样的基因」</span></p>
+<p>原文只说近亲共有某个基因的机会高于平均，没说「多半」。这正是注 30 要澄清的地方：亲缘算的是基线之上多出来的那一份。</p></div>
+<div class="zherr" data-p="7"><h4><span class="sec">§2</span>是动物行为学，不是「个体生态学」<span class="mark">术语</span></h4>
+<p class="loc">… most important contributions to social ethology …</p>
+<p class="zhq"><span class="zhv">译本：「有关社会个体生态学的论文」</span></p>
+<p>ethology 是动物行为学，同一段的「个体生态学家」也是 ethologists（动物行为学家），和第 5 章同一个错。注 29 里的「生态学家们」原文没有。</p></div>
+<div class="zherr" data-p="12"><h4><span class="sec">§3</span>「第一代、第二代堂兄弟」是 first、second cousin<span class="mark">术语</span></h4>
+<p class="loc">… ancestors of a pair of first cousins …</p>
+<p class="zhq"><span class="zhv">译本：「第一代堂兄弟的共同祖先」</span></p>
+<p>first cousin 是祖父母相同的同辈，堂亲、表亲都算；second cousin 共有曾祖辈，third cousin 共有高祖辈。「第二代」不是指下一代。全章和尾注都这样译。</p></div>
+<div class="zherr" data-p="14"><h4><span class="sec">§3</span>（½）3 是二分之一的三次方<span class="mark">数字</span></h4>
+<p class="loc">… If the generation distance is 3 …</p>
+<p class="zhq"><span class="zhv">译本：「如果代距是3，那么指数是」</span></p>
+<p>译本的「（½）3」「（½）g」丢了上标，是 1/2 的 3 次方（1/8）、1/2 的 g 次方，不是「二分之一乘三」。</p></div>
+<div class="zherr" data-p="18"><h4><span class="sec">§4</span>犰狳是「同卵」四胞胎<span class="mark">漏译</span></h4>
+<p class="loc">… born in a litter of identical quadruplets …</p>
+<p class="zhq"><span class="zhv">译本：「是一胎4只的」</span></p>
+<p>原文是一窝同卵四胞胎。漏了「同卵」，这个例子就没意义了：作者正是要说四只的基因完全相同。</p></div>
+<div class="zherr" data-p="18"><h4><span class="sec">§4</span>是「应当预期」有利他，不是「肯定有」<span class="mark">误译</span></h4>
+<p class="loc">… strong altruism is definitely to be expected …</p>
+<p class="zhq"><span class="zhv">译本：「有人指出它们肯定有某种强烈的利他行为」</span></p>
+<p>原文是有人指出，按理论应当预期它们有强烈的利他；作者紧接着说没听说过这类事，号召人去看。译本把预期写成了事实。</p></div>
+<div class="zherr" data-p="20"><h4><span class="sec">§4</span>是 Hamilton 的论点，不是威尔逊的<span class="mark">误译</span></h4>
+<p class="loc">… But the whole point of Hamilton’s argument …</p>
+<p class="zhq"><span class="zhv">译本：「但威尔逊论点的全部含义是」</span></p>
+<p>原文：Hamilton 论证的要害在于家里家外没有硬界线，只是概率问题。这句是作者拿来反驳 Wilson 的，安到 Wilson 头上，整段就读反了。</p></div>
+<div class="zherr" data-p="32"><h4><span class="sec">§6</span>凭过时信息做决定的是人，不是人的基因<span class="mark">误译</span></h4>
+<p class="loc">… human decisions based on outdated information …</p>
+<p class="zhq"><span class="zhv">译本：「他们的基因根据过时的资料」</span></p>
+<p>原文是类比：人凭过时的信息做的决定往往也是错的。译本多出「他们的基因」，把类比变成了关于人类基因的论断。</p></div>
+<div class="zherr" data-n="30"><h4><span class="sec">§2</span>尾注 30：1978 年的是那篇攻击文章<span class="mark">误译</span></h4>
+<p class="loc">… published in 1978, tried to argue …</p>
+<p class="zhq"><span class="zhv">译本：「对1978年出版的《社会生物学》一书」</span></p>
+<p>原文：一位人类学家在 1978 年发表的一篇猛烈攻击「社会生物学」的文章里如何如何。1978 年的是那篇文章；Wilson 的《社会生物学》是 1975 年出的。</p></div>
+<div class="zherr" data-n="30"><h4><span class="sec">§2</span>尾注 30：利他「指向」基线之上的亲属<span class="mark">误译</span></h4>
+<p class="loc">… Altruism is expected towards individuals whose relatedness …</p>
+<p class="zhq"><span class="zhv">译本：「利他主义基因更容易在那些相关性比」</span></p>
+<p>原文：可以预期，利他行为指向亲缘高于基线的个体，不管基线是多少。译本说成利他基因「更容易在其中找到」。前一句的「程度较小」原文是说别的物种也共享一部分基线。</p></div>
+<div class="zherr" data-n="30"><h4><span class="sec">§2</span>尾注 30：是「明明白白的错误」<span class="mark">误译</span></h4>
+<p class="loc">… which is a definite and positive error …</p>
+<p class="zhq"><span class="zhv">译本：「而这是一个确定的正向误差」</span></p>
+<p>positive 在这里是「确确实实的」。原文说：用「共有百分之几的基因」来讲亲缘，是彻头彻尾的错误，和统计上的正向误差无关。</p></div>
+<div class="zherr" data-n="31"><h4><span class="sec">§4</span>尾注 31：greenfly 就是蚜虫<span class="mark">误译</span></h4>
+<p class="loc">… It has long been known that aphids …</p>
+<p class="zhq"><span class="zhv">译本：「蚜虫（也就是青梅子）」</span></p>
+<p>greenfly 是英国人对绿色蚜虫的俗称，括号里只是举例，和「青梅子」没有关系。</p></div>
+<div class="zherr" data-n="32"><h4><span class="sec">§4</span>尾注 32：是「另一个」谬误，不是「很小的」<span class="mark">误译</span></h4>
+<p class="loc">… a quite separate fallacy of my own …</p>
+<p class="zhq"><span class="zhv">译本：「留下了一个非常小的谬误」</span></p>
+<p>quite separate 是「完全是另一回事」：作者说措辞不当，引进了一个和他当时要论证的事无关的谬误。</p></div>
+<div class="zherr" data-n="33"><h4><span class="sec">§4</span>尾注 33：缺的是「打心底的理解」，不是「勇气」<span class="mark">误译</span></h4>
+<p class="loc">… still lack a gut understanding of …</p>
+<p class="zhq"><span class="zhv">译本：「缺少去理解亲属选择究竟是什么的勇气」</span></p>
+<p>gut understanding 是凭直觉、打心底的领会。原文说很多生物学家还没真正吃透亲属选择，和勇气无关。</p></div>
+<div class="zherr" data-n="33"><h4><span class="sec">§4</span>尾注 33：是「亲属选择」，不是「亲属关系」<span class="mark">术语</span></h4>
+<p class="loc">… Kin selection follows from the fundamental assumptions …</p>
+<p class="zhq"><span class="zhv">译本：「亲属关系严格遵从新达尔文主义的基本假设」</span></p>
+<p>这一句和前一句的主语都是 kin selection（亲属选择），译本两处译成「亲属关系」，读起来像在说亲戚关系。</p></div>
+
+<h2>值得停下来的句子</h2>
+<blockquote class="quote">… we must temporarily abandon our metaphor of the gene as a conscious agent, because in this context it becomes positively misleading.<cite>— §1 第 3 段。本站译：我们得暂时放下「基因是有意识的行动者」这个比喻，因为在这里它简直是误导。</cite></blockquote>
+<p>全书常被误读成「基因有意图」，这句是最好的反证：作者自己说比喻在哪里失效。白化基因不会「想」帮其他白化的人；只是碰巧有这种效果的基因会变多，而要有这种效果，一个基因得同时管肤色和偏爱两件事，这才是它不太可能的原因。读这一章后面所有「基因想要」「动物盘算」，都按这句翻译回去。</p>
+<blockquote class="quote">Kin selection is emphatically not a special case of group selection.<cite>— §4 第 20 段。本站译：亲属选择绝对不是类群选择的一个特例。</cite></blockquote>
+<p>口气很重，是在下判断。关键词是 emphatically 和原书斜体的 not。作者的理由在前几句：家庭和非家庭之间没有界线，只有亲缘远近的连续变化。紧跟的下一句说它是基因选择的特殊后果。这句常被引来代表「基因视角」反对群体选择的立场，但它说的只是亲属选择的归属；群体选择本身后来怎样，见「本站怎么看」。</p>
+
+<h2>作者 1989 年的尾注</h2>
+<p class="lede">正文里的星号是 1989 年第二版加的，点了跳到书后的尾注。下面是这一页的每个星号：注里说了什么，值不值得现在就点开。英文是星号前紧挨着的几个词，在电子书里搜它就能找到那个星号。</p>
+<div class="enotes">
+<div class="enote" data-n="29"><h4><span class="sec">§2</span>Hamilton 不再被冷落<span class="mark">补充</span></h4>
+<p class="en">… text-books of ethology, both published in 1970).*</p>
+<p>只有几句：Hamilton 1964 年的论文早已不被忽视。它先被冷落、后被承认的过程可以定量地研究，作者把它当作一个<a class="term" href="11.html#c-meme">觅母</a>在觅母库里传开的案例，放到第 11 章的尾注里讲。现在可以跳过。</p></div>
+<div class="enote" data-n="30"><h4><span class="sec">§2</span>「假设基因稀有」是取巧<span class="mark turn">改口</span></h4>
+<p class="en">… in the gene pool as a whole.*</p>
+<p>作者承认，假设基因稀有是为了好讲的取巧，Hamilton 的结论不管基因稀有常见都成立。更要紧的是第二段：同种的任意两个个体本来就共有九成以上的基因，说兄弟的亲缘是 1/2，指的是基线之上多出来的一半。他批评一位人类学家 1978 年的说法：人人共有 99% 的基因，就该对所有人利他。一定要点开。</p></div>
+<div class="enote" data-n="31"><h4><span class="sec">§4</span>犰狳没消息，蚜虫有兵<span class="mark">新证据</span></h4>
+<p class="en">… South America to have a look.*</p>
+<p>犰狳那边没有进展，倒是蚜虫有了惊人的发现：青木 1977 年找到不育的兵蚜（见「书里的人和研究」）。兵蚜和被保护的姐妹是克隆，利他基因帮到自己拷贝是确定的，不只是有一定概率。注的后半讨论蚜虫算不算社会性昆虫，作者说这只是用词之争。值得读。</p></div>
+<div class="enote" data-n="32"><h4><span class="sec">§4</span>「1/16 那么多利他」写错了<span class="mark turn">改口</span></h4>
+<p class="en">… a special case of group selection.*</p>
+<p>第一版说二代堂表兄弟应得到子女的 1/16「那么多」利他。S. Altmann 指出这错了：一块蛋糕不该按亲疏切给每个亲戚，近亲在场时整块都该给最近的那个。第二版改成受到利他的「可能性」是 1/16。作者说两种选择的混淆到 1989 年可能更糟了。电子书里注中引的第一版原话，1/16 显示成了字母 A。</p></div>
+<div class="enote" data-n="33"><h4><span class="sec">§4</span>Wilson 删掉了「子女除外」<span class="mark">补充</span></h4>
+<p class="en">… offspring: they don’t count as kin!*</p>
+<p>Wilson 在《论人性》里删去了「子女除外」，作者特意声明不是他的功劳。但 Wilson 补充说，通常只在涉及子女以外的亲属时才叫亲属选择。作者说这确实是生物学家的习惯用法，恰好说明很多人仍把亲属选择当成个体选择之外的额外东西，而它是新达尔文主义的直接推论。可以跳过。</p></div>
+<div class="enote" data-n="34"><h4><span class="sec">§5</span>蜗牛不查对数表<span class="mark">回应批评</span></h4>
+<p class="en">… machine to do, especially in a hurry!*</p>
+<p>驳人类学家 Sahlins：后者说很多民族的语言里没有分数，动物更不可能算出 r（见「书里的人和研究」）。作者引自己 1979 年的答复，又补了大树板根的例子，最后反问：为什么只对亲属选择提这种反对？例子好记，值得读。</p></div>
+</div>
+
+<h2>读完：作者到底说了什么</h2>
+<p class="lede">读完这一页的几节再看。下面是作者在这几节里的论点，由本站按论点重新组织，不按原书的顺序；每条下面是依据所在的段落，拿不准就回书里那几段再读一遍。</p>
+<div class="claims">
+  <div class="claim"><h4>帮别的身体里的自己的拷贝，表现出来就是个体利他</h4><p>自私的基因指一段 DNA 散在各处的全部拷贝。能帮到别的身体里的拷贝的基因可以变多，这时个体利他就是基因自私。作者说「基因想要」只是比喻，在这里会误导：基因不想，只是碰巧有这种效果的会变多。靠绿胡须这类记号认拷贝理论上可能，但他认为不太可能。</p><span class="sec">§1 第 1–5 段</span></div>
+  <div class="claim"><h4>亲属是认出拷贝最可靠的线索，而且能算</h4><p>亲属共有某个基因的机会高于平均。先假设基因稀有，兄弟共有的机会是 1/2；一般的亲缘按代距算，每一步乘 1/2，几位最近的共同祖先就加几份。由此，为救亲属送命，要救下多于 2 个兄弟、4 个半同胞或 8 个堂表兄弟才划算。（1989 年的注 30 说，稀有的假设是取巧，亲缘指的是基线之上的那一份。）</p><span class="sec">§2 第 6–10 段，§3 第 11–17 段</span></div>
+  <div class="claim"><h4>亲代照顾是亲属选择的一个特例，亲属选择不是类群选择</h4><p>照顾孤弟和照顾子女，亲缘都是 1/2，遗传上没有区别。家里家外也没有硬界线，只有亲缘远近；所以亲属选择是基因选择的推论，不是类群选择的特例。他据此批评 Wilson 把亲属选择算作类群选择、又把子女排除在亲属之外。（第 20 段的「1/16 的可能性」是 1989 年改的措辞，第一版写的是「1/16 那么多利他」，注 32 认了错。）</p><span class="sec">§4 第 19–21 段，注 32、注 33</span></div>
+  <div class="claim"><h4>真实的利他账要用统计风险和预期繁殖来算</h4><p>现实里没有必死和必救，只有死亡的概率；被救的人寿命也长短不一。所以利他行为要演化，利他者的净风险必须小于受益者的净收益乘以亲缘，风险和收益都按将来繁殖的前景加权。只要自己的风险够小，连三代堂表兄弟也可能值得救。</p><span class="sec">§5 第 22–24 段</span></div>
+  <div class="claim"><h4>动物不必会算，只要表现得像算过</h4><p>接球的人不必会解微分方程，用计算尺的人不必懂对数；基因库里留下的，是让身体表现得像做过这番加权计算的基因。蘑菇的例子只是演示。这些「估计」基于过去的条件，条件剧变时会出错；真实的动物离理想的计算有多远，要靠野外观察和实验去查。</p><span class="sec">§5 第 25–28 段，§6 第 29–32 段，注 34</span></div>
+</div>
+<p class="sowhat"><b>合起来：</b>这一页把「自私的基因」和「利他的个体」接上了：帮亲属，在基因的账上可以就是帮自己，而且这笔账有一套能算的规则。作者要读者带走的是 Hamilton 的思路：问一种行为划不划算，要把亲属身上的那份拷贝也算进来。</p>
+
+<h2>对照今天</h2>
+<p class="lede">这本书 1976 年出版。下面挑出这一页里能被后来的研究检验的说法，分「书里 / 当时 / 今天」三栏，并给一个结论。结论判的是标题里「书里的说法：」后面那一句。全书的这一节汇总在<a href="../today.html">对照今天</a>。</p>
+<ul class="verdicts"><li><span class="v ok">成立</span>后来的研究支持这句话。</li><li><span class="v mid">部分成立</span>大方向对，细节或适用范围要改。</li><li><span class="v bad">被改写</span>后来的研究推翻了它，或者换了一种说法。</li><li><span class="v dis">有争议</span>学界至今没有定论，两边各有代表性的研究。</li></ul>
+<div class="today" data-verdict="部分成立"><h4>书里的说法：绿胡须效应理论上可能，但不太可能真有</h4><dl>
+  <dt>书里</dt><dd>一个基因同时造出显眼的记号和偏爱这个记号的倾向，作者说「可能，但不特别可能」（§1 第 4 段）。</dd>
+  <dt>当时</dt><dd>Hamilton 1964 年的论文里已有这个想法的雏形，没有已知的实例。</dd>
+  <dt>今天</dt><dd>1998 年 Keller 和 Ross 在红火蚁里找到第一个实例：与 Gp-9 位点某个等位基因连锁的基因，让带着它的工蚁杀死不带它的蚁后。2003 年 Queller 等报告盘基网柄菌（一种社会性变形虫）的 csA 基因：它编码的蛋白让带着它的细胞彼此粘连，利他和受益都落在带这个基因的细胞上。Gardner 和 West 2010 年的综述说，几种类型的绿胡须都至少找到了一个实例。「理论上可能」说对了，「不太可能」的判断被后来的实例修正了一部分。<span class="asof">核对于 2026-10。依据：Keller &amp; Ross, Nature 394 (1998)；Queller 等, Science 299 (2003)；Gardner &amp; West, Evolution (2010)。</span></dd>
+</dl></div>
+<div class="today" data-verdict="被改写"><h4>书里的说法：同卵四胞胎的犰狳之间，应当预期有强烈的利他</h4><dl>
+  <dt>书里</dt><dd>作者没听说幼犰狳有英勇献身的事，但转述「有人指出」应当预期有强烈的利他，值得去南美看看（§4 第 18 段）。1989 年的注 31 说犰狳方面没有进展。</dd>
+  <dt>当时</dt><dd>纯属理论推测，没有野外资料。</dd>
+  <dt>今天</dt><dd>分子标记证实，野外九带犰狳的同窝个体确实是克隆；但成年以后同窝个体分散得比幼年时远，彼此打交道的机会有限。到 2009 年，长期的野外研究仍没有报告亲属利他的正面证据。看来光有高亲缘不够，还要有让亲属互相帮得上忙的生活方式。<span class="asof">核对于 2026-10。依据：Prodöhl 等, Proceedings of the Royal Society B (1996)；Loughry 等, Southeastern Naturalist 8 (2009)。</span></dd>
+</dl></div>
+<div class="today" data-verdict="成立"><h4>书里的说法：利他行为要演化，利他者的净风险必须小于受益者的净收益乘以亲缘</h4><dl>
+  <dt>书里</dt><dd>§5 第 24 段，用保险精算的话说出的汉密尔顿法则。</dd>
+  <dt>当时</dt><dd>Hamilton 1964 年的理论刚开始受重视，野外实测 r、B、C 的研究几乎没有。</dd>
+  <dt>今天</dt><dd>Bourke 2014 年的综述汇总了在野外实测这三个量的研究，涉及合作繁殖的鸟和哺乳动物、社会性昆虫：多数情况下，帮忙带来的间接收益超过直接代价，符合法则的预测；比较研究也显示高亲缘和一夫一妻有利于合作繁殖和真社会性的出现。<span class="asof">核对于 2026-10。依据：Bourke, Philosophical Transactions of the Royal Society B 369 (2014)。</span></dd>
+  <dt>另一边</dt><dd>Nowak、Tarnita 和 E. O. Wilson 2010 年在《自然》上质疑广义适合度理论的用处；第二年 Abbot 等一百多位学者联名反驳。争论的一部分在于法则有几种不同的数学版本（Birch 2014）。</dd>
+</dl></div>
+
+<h2>本站怎么看</h2>
+<p class="lede">读完作者的论点，再看它站不站得住。每一块摆出三样：主流怎么看，作者怎么看，本站的评论。最后一句是本站对这一页的总体判断。</p>
+<div class="views"><h4>说基因「想要」「帮自己」，是比喻还是误导</h4>
+<p><b>主流看法：</b>进化生物学界大多把这类说法当作可以翻译回去的简写。批评主要来自哲学家，例如 Mary Midgley 1979 年在《哲学》期刊上说，这种语言把心理上的自私和演化混为一谈；Dawkins 1981 年在同一刊物上撰文反驳。</p>
+<p><b>作者的看法：</b>第 1 段先申明这是破格的说法，随时可以翻译回正规的话；第 3 段承认在白化基因这里比喻会误导，主动换回「碰巧有这种效果的基因会变多」（第 1、3、30 段）。</p>
+<p class="ours"><b>本站的评论：</b>作者在这一页做得很规矩：每次拟人之后都给出了翻译。问题在于读者记住的往往是生动的那一半。比喻省篇幅，代价是让人以为基因有意图、动物在算计。读这一章的办法是把每一句「基因想要 X」改写成「造成 X 的基因会变多」，改写不通的地方，就是比喻在骗你。</p></div>
+<div class="views"><h4>亲属选择到底是不是类群选择</h4>
+<p><b>主流看法：</b>Hamilton 的广义适合度是研究社会行为的主流工具。多数理论家认为，在不少模型里亲属选择和多层选择的算法可以互相翻译，争的是哪种描述更清楚、更好用：D. S. Wilson 和 E. O. Wilson 2007 年主张以多层选择为基础，West、Griffin 和 Gardner 2007、2008 年撰文认为群体选择的说法常引起混乱。E. O. Wilson 2010 年进一步质疑广义适合度本身。</p>
+<p><b>作者的看法：</b>绝对不是。家里家外没有硬界线，亲属选择是基因选择的推论；亲代照顾也是它（第 19–21 段，注 32、33）。</p>
+<p class="ours"><b>本站的评论：</b>作者抓住的要害站得住：亲缘是连续的概率，不是一个有边界的群体，这一点今天没有人反对。但「绝对不是」更像在争地盘：今天的共识是同一现象常有两种记账方式。耐人寻味的是，被他批评的 Wilson 后来走到了另一头，这说明这场争论争的多半是框架，不全是事实。</p></div>
+<div class="views"><h4>动物不会算 r，这套理论还成立吗</h4>
+<p><b>主流看法：</b>行为生态学普遍采用「表现得像在优化」的研究方法，Grafen 1984 年把它叫作表型博弈（phenotypic gambit），也承认遗传细节要紧时它会失灵。Sahlins 1976 年「动物不会分数」的质疑，后来很少有生物学家当真。</p>
+<p><b>作者的看法：</b>计算尺、接球的人、蜗牛壳、大树板根，都表现得像做过复杂的计算；动物被预先编好，按经验行事（第 25–26、30 段，注 34）。</p>
+<p class="ours"><b>本站的评论：</b>这条反驳很有力：理论描述的是选择的结果，不是动物脑子里的过程。但「像算过」也有代价，作者在第 31–32 段自己说了：动物用的是在过去的环境里平均灵验的经验法则，环境变了就会算错。下一页讲的认亲规则失灵、被布谷鸟利用，就是这笔账的另一面。</p></div>
+<p class="verdict"><b>本站的总体看法：</b>这一页最值得带走的是两样：亲缘系数是「基线之上多出来的那份」，以及汉密尔顿法则这种把亲属的拷贝也算进账的思路，两者都经住了后来的检验。要打折扣的是具体的预言（犰狳会利他、绿胡须不太可能）和对 Wilson 那句「绝对不是」的口气。</p>
+
+<h2>检查一下理解</h2>
+<p class="lede">先在心里答，再点开。答错的那题，回书里把对应那一节再读一遍。</p>
+<details class="check"><summary>1.（§1）白化基因要是让白化的人彼此特别好，它就会变多。作者为什么认为现实里不太会这样？</summary><p>因为一个基因得同时有两种互不相干的效果：让肤色苍白，又让人偏爱肤色苍白的人。同一个基因恰好同时有这两种效果的可能性很小。基因并不「想」帮自己的拷贝，只有碰巧有这种双重效果的基因才会变多。</p></details>
+<details class="check"><summary>2.（§2）作者为什么要先假设基因是稀有的？1989 年他怎么说？</summary><p>常见的基因人人都有，谈不上「亲属共有」，假设稀有就能直接算出兄弟共有的机会是 1/2。1989 年他承认这是取巧，亲缘指的是全物种共有的基线之上多出来的那一份，Hamilton 的结论不依赖基因是否稀有。</p></details>
+<details class="check"><summary>3.（§3）小算题：你和父亲的兄弟（叔叔）的亲缘系数怎么算？</summary><p>最近的共同祖先是你的祖父和祖母，两位。从你往上两步到祖父，再往下一步到叔叔，代距 3。每位祖先贡献（1/2）的 3 次方 = 1/8，两位加起来是 1/4。</p></details>
+<details class="check"><summary>4.（§3）为什么牺牲自己救 5 个堂表兄弟不划算，救 5 个兄弟就划算？</summary><p>每个堂表兄弟带着这个基因的机会是 1/8，5 个加起来平均只保住 5/8 份拷贝，少于自己死掉失去的 1 份；5 个兄弟平均保住 5/2 份，多于 1 份。门槛是多于 2 个兄弟、8 个堂表兄弟。</p></details>
+<details class="check"><summary>5.（§4）作者为什么说亲属选择不是类群选择？</summary><p>类群选择说的是整个群体之间的存亡差别。亲属选择里没有一个有边界的家庭群体，受到利他的可能随亲缘远近连续变化；它是从「基因帮自己的拷贝」直接推出来的。所以它是基因选择的后果，不是类群选择的特例。</p></details>
+<details class="check"><summary>6.（§5）为什么救一个年轻的远亲，可能比救一个年老的近亲更划算？</summary><p>算账要按将来的繁殖前景加权。年老的近亲本来就没多少年可活、可生，救他对未来基因库的影响小；年轻的远亲来日方长，乘上较低的亲缘，仍可能更多。</p></details>
+<details class="check"><summary>7.（§6）蘑菇的例子里，叫和不叫各得多少分？这是不是说动物真会算？</summary><p>不叫，自己吃 3 个，得 18；叫来兄弟、堂兄弟和外人平分，自己吃 2 个得 12，再加兄弟那份的一半、堂兄弟那份的 1/8，共 19 1/2，所以该叫。动物不会真算，作者说留下来的是让它们表现得像算过的基因。</p></details>
+<p class="lede">用一句话说这一页，写给一个没读过的人。</p>
+<textarea class="note" data-key="06a-oneline" rows="2" placeholder="写一句话…"></textarea>
+<div class="ponder"><p>想一想：你为家人、为同事、为开源项目里素不相识的人付出时，心里的「账」各是怎么算的？哪些付出用亲缘解释得通，哪些解释不通？解释不通的那部分，你会用什么来解释？</p>
+<textarea class="note" data-key="06a-ponder" rows="3" placeholder="写下你的想法…"></textarea></div>
+
+<h2>精彩回顾</h2>
+<p class="lede">读过又忘了，从这里想起来。挑的是这一页最值得记住的模型、动物和说法，不按原书顺序；每条后面是节号，想细看就回书里那一节。全书各页的这一节都收在<a href="../recap.html">全书回顾</a>。</p>
+<p class="recall-line"><b>一句话：</b>帮亲属，在基因的账上可以就是帮自己：亲缘系数告诉你帮谁、帮多少才划算，而动物不必会算，只要表现得像算过。</p>
+<div class="recall">
+  <div class="item"><b>两个兄弟，八个堂表兄弟</b><p>为救亲属送命，要救下多于 2 个兄弟姐妹、4 个半同胞或 8 个堂表兄弟，这种基因才会扩散。</p><span class="sec">§3</span></div>
+  <div class="item"><b>代距法则</b><p>找最近的共同祖先，往上数到祖先、再往下数到对方，每一步乘 1/2，几位祖先就加几份。堂表兄弟是 2 ×（1/2）的 4 次方 = 1/8。</p><span class="sec">§3</span></div>
+  <div class="item"><b>绿胡须</b><p>一个基因要是同时造出记号和偏爱记号的倾向，就能认出别人身上的自己。作者说可能但不太可能；1998 年起真找到了几例。</p><span class="sec">§1</span></div>
+  <div class="item"><b>八个蘑菇</b><p>不叫，自己吃 3 个得 18 分；叫来兄弟、堂兄弟和外人平分，按亲缘加权得 19 1/2 分。险胜，该叫。</p><span class="sec">§6</span></div>
+  <div class="item"><b>亲属选择不是类群选择</b><p>家里家外没有硬界线，只有亲缘远近；父母养孩子也是亲属选择。作者为此批评了 E. O. Wilson，Wilson 后来删了「子女除外」。</p><span class="sec">§4</span></div>
+  <div class="item"><b>计算尺和接球</b><p>用计算尺不必懂对数，接球不必会解微分方程。动物也一样：留下来的是让它表现得像算过的基因。</p><span class="sec">§5</span></div>
+</div>
+
+</main>
+<script>
+(() => {
+  // 亲缘系数和汉密尔顿法则。三块：家谱上算 r；救几个亲属才划算（rB > C）；食物呼叫的加权求和。没有随机数，结果确定。
+  const root = document.getElementById("sim-06a");
+  if (!root) return;
+  const { h } = window.SG;
+  const NS = "http://www.w3.org/2000/svg";
+
+  // 家谱。par 只列画在图上的父母，另一位父母是「外人」，不画。双胞胎和「我」是同一个受精卵来的。
+  const P = [
+    { id: "GF", name: "祖父", x: 250, y: 40, par: [] },
+    { id: "GM", name: "祖母", x: 380, y: 40, par: [] },
+    { id: "U", name: "叔叔", x: 110, y: 125, par: ["GF", "GM"] },
+    { id: "F", name: "父亲", x: 315, y: 125, par: ["GF", "GM"] },
+    { id: "M", name: "母亲", x: 470, y: 125, par: [] },
+    { id: "C", name: "堂兄弟", x: 110, y: 210, par: ["U"] },
+    { id: "TW", name: "同卵双胞胎", x: 212, y: 210, par: ["F", "M"] },
+    { id: "ME", name: "我", x: 315, y: 210, par: ["F", "M"] },
+    { id: "SB", name: "兄弟姐妹", x: 420, y: 210, par: ["F", "M"] },
+    { id: "HS", name: "同母异父", x: 540, y: 210, par: ["M"] },
+    { id: "K", name: "子女", x: 315, y: 295, par: ["ME"] },
+    { id: "N", name: "侄甥", x: 420, y: 295, par: ["SB"] },
+    { id: "GC", name: "孙辈", x: 315, y: 380, par: ["K"] },
+    { id: "GGC", name: "曾孙辈", x: 315, y: 465, par: ["GC"] },
+  ];
+  const byId = Object.fromEntries(P.map((p) => [p.id, p]));
+  const gene = (id) => (id === "TW" ? "ME" : id);   // 同卵双胞胎在遗传上就是「我」
+
+  // 祖先表：id → 往上走几步（自己是 0 步）
+  function anc(id) {
+    const d = new Map([[id, 0]]), q = [id];
+    while (q.length) { const x = q.shift(); for (const p of byId[x].par) if (!d.has(p)) { d.set(p, d.get(x) + 1); q.push(p); } }
+    return d;
+  }
+  // 从 a 往上走到祖先 x 的路径（父母链），返回经过的人
+  function up(a, x) {
+    if (a === x) return [a];
+    for (const p of byId[a].par) { const r = up(p, x); if (r) return [a, ...r]; }
+    return null;
+  }
+  // 第 12–15 段的法则：最近的共同祖先，每位贡献 (1/2)^代距，加起来
+  function relate(a, b) {
+    if (a === b) return { r: 1, kind: "self", terms: [] };
+    if (new Set([a, b]).size === 2 && [a, b].includes("ME") && [a, b].includes("TW")) return { r: 1, kind: "twin", terms: [] };
+    const A = gene(a), B = gene(b), da = anc(A), db = anc(B);
+    const common = [...da.keys()].filter((k) => db.has(k));
+    const mrca = common.filter((x) => !common.some((y) => y !== x && anc(y).has(x)));
+    const terms = mrca.map((x) => ({ x, g: da.get(x) + db.get(x), pa: up(A, x), pb: up(B, x) }));
+    const r = terms.reduce((s, t) => s + Math.pow(0.5, t.g), 0);
+    return { r, kind: terms.length ? "rule" : "none", terms, twin: a === "TW" || b === "TW" };
+  }
+  function frac(r) {
+    if (r === 0) return "0";
+    for (let k = 0; k <= 12; k++) {
+      const v = r * Math.pow(2, k);
+      if (Math.abs(v - Math.round(v)) < 1e-9) return k === 0 ? String(Math.round(v)) : `${Math.round(v)}/${Math.pow(2, k)}`;
+    }
+    return r.toFixed(4);
+  }
+  const num = (v) => (Math.round(v * 1000) / 1000).toString();
+  const pct = (v) => `${(Math.round(v * 1000) / 10).toString()}%`;
+
+  // ---------- 第一块：家谱 ----------
+  const st = { a: "ME", b: "C", next: "a" };
+  const svg = document.createElementNS(NS, "svg");
+  svg.setAttribute("viewBox", "0 0 640 500"); svg.setAttribute("class", "diagram"); svg.setAttribute("role", "group");
+  svg.setAttribute("aria-label", "家谱：点两个人，算他们的亲缘系数");
+  const el = (tag, attrs) => { const e = document.createElementNS(NS, tag); for (const [k, v] of Object.entries(attrs)) e.setAttribute(k, v); return e; };
+  const edges = [], nodes = {};
+  for (const p of P) for (const q of p.par) {
+    const l = el("line", { x1: byId[q].x, y1: byId[q].y + 15, x2: p.x, y2: p.y - 15, class: "ln" });
+    l.dataset.k = `${q}>${p.id}`; edges.push(l); svg.append(l);
+  }
+  // 子女、孙辈的另一位父母（外人）用一小段虚线示意
+  for (const id of ["K", "N", "C", "HS"]) {
+    const p = byId[id];
+    svg.append(el("line", { x1: p.x + 30, y1: p.y - 42, x2: p.x + 6, y2: p.y - 15, class: "ln-d" }));
+  }
+  for (const p of P) {
+    const g = el("g", { class: "node", tabindex: "0", role: "button", "aria-label": p.name });
+    const w = p.name.length * 15 + 22;
+    const rect = el("rect", { x: p.x - w / 2, y: p.y - 15, width: w, height: 30, rx: 8 });
+    const t = el("text", { x: p.x, y: p.y + 5, "text-anchor": "middle", class: "t-b" });
+    t.textContent = p.name;
+    g.append(rect, t);
+    g.onclick = () => pick(p.id);
+    g.onkeydown = (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); pick(p.id); } };
+    nodes[p.id] = rect; svg.append(g);
+  }
+  const legend = el("text", { x: 630, y: 490, "text-anchor": "end", class: "t-m" });
+  legend.textContent = "虚线：家谱外的另一位父母";
+  svg.append(legend);
+
+  const selA = h("select", { "aria-label": "甲" }, ...P.map((p) => h("option", { value: p.id }, p.name)));
+  const selB = h("select", { "aria-label": "乙" }, ...P.map((p) => h("option", { value: p.id }, p.name)));
+  selA.onchange = () => { st.a = selA.value; st.next = "b"; drawTree(); };
+  selB.onchange = () => { st.b = selB.value; st.next = "a"; drawTree(); };
+  function pick(id) { st[st.next] = id; st.next = st.next === "a" ? "b" : "a"; drawTree(); }
+
+  const narrate1 = h("div", { class: "narrate" }), stats1 = h("div", { class: "stats" }), formula = h("div", { class: "readout" });
+  const stat = (v, l) => h("div", { class: "stat" }, h("div", { class: "v" }, v), h("div", { class: "l" }, l));
+  let cur = relate(st.a, st.b);
+  function drawTree() {
+    selA.value = st.a; selB.value = st.b;
+    cur = relate(st.a, st.b);
+    const on = new Set(), mr = new Set(cur.terms.map((t) => t.x));
+    for (const t of cur.terms) for (const path of [t.pa, t.pb]) for (let i = 0; i + 1 < path.length; i++) on.add(`${path[i + 1]}>${path[i]}`);
+    for (const l of edges) { const hit = on.has(l.dataset.k); l.style.stroke = hit ? "var(--c3)" : ""; l.style.strokeWidth = hit ? "4" : ""; }
+    for (const p of P) {
+      const r = nodes[p.id], c = p.id === st.a ? "var(--c2)" : p.id === st.b ? "var(--c1)" : mr.has(p.id) ? "var(--c3)" : null;
+      r.style.fill = c || "var(--surface)"; r.style.fillOpacity = c ? "0.28" : "1";
+      r.style.stroke = c || "var(--border)"; r.style.strokeWidth = c ? "3" : "1.5";
+    }
+    const A = byId[st.a].name, B = byId[st.b].name;
+    const g = cur.terms.length ? cur.terms[0].g : null, same = cur.terms.every((t) => t.g === g);
+    stats1.replaceChildren(stat(A, "甲（橙框）"), stat(B, "乙（蓝框）"),
+      stat(cur.kind === "rule" ? (same ? String(g) : cur.terms.map((t) => t.g).join("、")) : "—", "代距"),
+      stat(cur.kind === "rule" ? String(cur.terms.length) : "—", "最近的共同祖先（绿框）"),
+      stat(frac(cur.r), `亲缘系数 r（约 ${pct(cur.r)}）`));
+    if (cur.kind === "self") { formula.textContent = "r = 1"; narrate1.textContent = `甲和乙是同一个人。自己和自己的亲缘是 1（第 27 段）。再点家谱上的人，会填进${st.next === "a" ? "甲" : "乙"}。`; }
+    else if (cur.kind === "twin") { formula.textContent = "r = 1（同卵双胞胎，不用代距法则）"; narrate1.textContent = "同卵双胞胎来自同一个受精卵，基因和「我」完全一样，r = 1（第 16、18 段）。代距法则算出的 1/2 是普通兄弟姐妹的平均数，这里不适用。"; }
+    else if (cur.kind === "none") { formula.textContent = "r = 0（这张家谱里没有共同祖先）"; narrate1.textContent = `在这张家谱里，${A}和${B}没有共同祖先。按书里的算法当作 0；严格说是全物种都有的那条基线，注 30 讲的就是它。`; }
+    else {
+      const groups = {};
+      for (const t of cur.terms) groups[t.g] = (groups[t.g] || 0) + 1;
+      formula.textContent = "r = " + Object.entries(groups).map(([gg, n]) => `${n} × (1/2)^${gg}`).join(" + ") + ` = ${frac(cur.r)}`;
+      const names = cur.terms.map((t) => byId[t.x].name).join("、");
+      const t0 = cur.terms[0], self = t0.x === gene(st.a) || t0.x === gene(st.b);
+      narrate1.textContent = (self
+        ? `${byId[t0.x].name}本人就是共同的「祖先」（第 12 段的说法）。从一方数到另一方共 ${t0.g} 步，r = (1/2)^${t0.g} = ${frac(cur.r)}。`
+        : `最近的共同祖先：${names}（${cur.terms.length} 位）。从甲往上 ${t0.pa.length - 1} 步到${byId[t0.x].name}，再往下 ${t0.pb.length - 1} 步到乙，代距 ${t0.g}；每位祖先贡献 (1/2)^${t0.g}，加起来 r = ${frac(cur.r)}。`)
+        + (cur.twin ? "同卵双胞胎和「我」基因相同，这里按「我」来算。" : "")
+        + `再点家谱上的人，会填进${st.next === "a" ? "甲" : "乙"}。`;
+    }
+    refreshKin();
+  }
+
+  // ---------- 第二块：汉密尔顿法则 ----------
+  const KIN = [
+    { v: "tree", label: () => `家谱上选的这一对（r = ${frac(cur.r)}）` },
+    { v: "1", r: 1, label: () => "同卵双胞胎（r = 1）" },
+    { v: "1/2", r: 0.5, label: () => "兄弟姐妹、子女、父母（1/2）" },
+    { v: "1/4", r: 0.25, label: () => "半同胞、叔侄、祖孙（1/4）" },
+    { v: "1/8", r: 0.125, label: () => "堂表兄弟、曾孙（1/8）" },
+    { v: "1/32", r: 1 / 32, label: () => "二代堂表兄弟（1/32）" },
+    { v: "1/128", r: 1 / 128, label: () => "三代堂表兄弟（1/128）" },
+    { v: "0", r: 0, label: () => "不相干的人（0）" },
+  ];
+  const RISK = [1, 0.5, 0.2, 0.1, 0.05, 0.01, 0.005, 0.001];
+  const hs = { kin: "tree", n: 3, c: 1 };
+  const selKin = h("select", { "aria-label": "救的是谁" }, ...KIN.map((k) => h("option", { value: k.v }, k.label())));
+  selKin.onchange = () => { hs.kin = selKin.value; drawRule(); };
+  const nOut = h("b", {}, "");
+  const nIn = h("input", { type: "range", min: 1, max: 12, step: 1, value: hs.n, "aria-label": "救下几个" });
+  nIn.oninput = () => { hs.n = +nIn.value; drawRule(); };
+  const selRisk = h("select", { "aria-label": "我冒的死亡风险" }, ...RISK.map((c) => h("option", { value: String(c) }, c === 1 ? "100%（必死）" : pct(c))));
+  selRisk.onchange = () => { hs.c = +selRisk.value; drawRule(); };
+  const bars = h("div", { role: "img" });
+  const narrate2 = h("div", { class: "narrate" }), stats2 = h("div", { class: "stats" });
+  const kinR = () => (hs.kin === "tree" ? cur.r : KIN.find((k) => k.v === hs.kin).r);
+  function refreshKin() { selKin.options[0].textContent = KIN[0].label(); drawRule(); }
+  function drawRule() {
+    nOut.textContent = String(hs.n);
+    const r = kinR(), gain = r * hs.n, cost = hs.c, eps = 1e-9;
+    const max = Math.max(gain, cost, 1e-6);
+    const row = (label, v, color) => {
+      const fill = h("div", { class: "fill" }); fill.style.width = `${Math.max(0.5, (85 * v) / max)}%`; fill.style.background = color;
+      return h("div", { class: "bar" }, h("span", {}, label), h("div", { class: "track" }, fill, num(v)));
+    };
+    bars.replaceChildren(row("期望救下的拷贝", gain, "var(--c3)"), row("可能失去的拷贝", cost, "var(--c2)"));
+    bars.setAttribute("aria-label", `期望救下的拷贝 ${num(gain)}，可能失去的拷贝 ${num(cost)}`);
+    const verdict = gain > cost + eps ? "会扩散" : Math.abs(gain - cost) <= eps ? "正好打平" : "不会扩散";
+    stats2.replaceChildren(stat(num(gain), "期望救下的拷贝（r × 人数）"), stat(num(cost), "期望失去的拷贝（我的风险）"),
+      stat(verdict, "这种基因"), stat(r > 0 ? `多于 ${num(cost / r)}` : "救多少都不够", "要救下几个才划算"));
+    narrate2.textContent = gain > cost + eps
+      ? `每个被救的人带着这个利他基因的机会是 ${frac(r)}，救 ${hs.n} 个平均保住 ${num(gain)} 份拷贝，多于我冒险失去的 ${num(cost)} 份：这种基因会变多。`
+      : Math.abs(gain - cost) <= eps
+        ? `平均保住 ${num(gain)} 份，正好等于失去的 ${num(cost)} 份：不增不减。所以第 17 段说的都是「多于」：多于两个兄弟、四个半同胞、八个堂表兄弟。`
+        : r === 0
+          ? "对方和我没有高出基线的亲缘，救多少个，这个利他基因都得不到好处。"
+          : `平均只保住 ${num(gain)} 份拷贝，少于我冒险失去的 ${num(cost)} 份：这种基因会越来越少。要划算，得救下多于 ${num(cost / r)} 个。`;
+  }
+
+  // ---------- 第三块：食物呼叫 ----------
+  // 每个蘑菇 6 分（和书里一样；这个数只改变分数的大小，不改变该不该叫）。别的动物每个最多也吃 3 个。
+  const V = 6, OTHER_CAP = 3;
+  const WHO = [{ id: "B", name: "兄弟 B", r: 0.5 }, { id: "C", name: "堂兄弟 C", r: 0.125 }, { id: "D", name: "外人 D", r: 0 }];
+  const OWN = { total: 6, cap: 3, here: { B: false, C: true, D: true } };
+  const BOOK = { total: 8, cap: 3, here: { B: true, C: true, D: true } };
+  const fs = JSON.parse(JSON.stringify(OWN));
+  // 平分，但每个人吃不下超过自己的上限，多出来的再分给别人
+  function share(total, caps) {
+    const eat = caps.map(() => 0); let left = total, open = caps.map((_, i) => i);
+    while (left > 1e-9 && open.length) {
+      const each = left / open.length, full = open.filter((i) => caps[i] - eat[i] <= each + 1e-9);
+      if (!full.length) { for (const i of open) eat[i] += each; left = 0; break; }
+      for (const i of full) { left -= caps[i] - eat[i]; eat[i] = caps[i]; }
+      open = open.filter((i) => !full.includes(i));
+    }
+    return eat;
+  }
+  function food() {
+    const quiet = Math.min(fs.cap, fs.total) * V;
+    const who = [{ name: "我", r: 1 }, ...WHO.filter((w) => fs.here[w.id])];
+    const eat = share(fs.total, who.map((w, i) => (i === 0 ? fs.cap : OTHER_CAP)));
+    const rows = who.map((w, i) => ({ ...w, eat: eat[i], score: w.r * eat[i] * V }));
+    return { quiet, rows, call: rows.reduce((s, x) => s + x.score, 0) };
+  }
+  const totIn = h("input", { type: "range", min: 2, max: 16, step: 1, value: fs.total, "aria-label": "蘑菇总数" });
+  const capIn = h("input", { type: "range", min: 1, max: 5, step: 1, value: fs.cap, "aria-label": "我还吃得下几个" });
+  const totOut = h("b", {}, ""), capOut = h("b", {}, "");
+  totIn.oninput = () => { fs.total = +totIn.value; drawFood(); };
+  capIn.oninput = () => { fs.cap = +capIn.value; drawFood(); };
+  const boxes = WHO.map((w) => {
+    const b = h("input", { type: "checkbox", "aria-label": w.name });
+    b.onchange = () => { fs.here[w.id] = b.checked; drawFood(); };
+    return { w, b, lab: h("label", {}, b, w.name) };
+  });
+  const setFood = (s) => { fs.total = s.total; fs.cap = s.cap; fs.here = { ...s.here }; drawFood(); };
+  const table = h("table", { class: "calc" });
+  const narrate3 = h("div", { class: "narrate" }), stats3 = h("div", { class: "stats" });
+  function drawFood() {
+    totIn.value = fs.total; capIn.value = fs.cap; totOut.textContent = String(fs.total); capOut.textContent = String(fs.cap);
+    for (const { w, b } of boxes) b.checked = fs.here[w.id];
+    const { quiet, rows, call } = food();
+    table.replaceChildren(h("tr", {}, h("th", {}, "谁"), h("th", {}, "亲缘 r"), h("th", {}, "吃几个"), h("th", {}, `算到我头上（r × 个数 × ${V}）`)),
+      ...rows.map((x) => h("tr", {}, h("td", {}, x.name), h("td", {}, frac(x.r)), h("td", {}, num(x.eat)), h("td", {}, num(x.score)))));
+    const diff = call - quiet, eps = 1e-9;
+    stats3.replaceChildren(stat(num(quiet), "不叫：自己吃"), stat(num(call), "叫：按亲缘加权的总分"),
+      stat((diff > 1e-9 ? "+" : diff < -1e-9 ? "−" : "") + num(Math.abs(diff)), "叫比不叫多出的分"), stat(diff > eps ? "叫" : Math.abs(diff) <= eps ? "都行" : "不叫", "该怎么做"));
+    narrate3.textContent = diff > eps
+      ? `叫了，自己少吃一些，可亲属吃下的那份按亲缘折算回来，总分 ${num(call)} 高过不叫的 ${num(quiet)}：叫，「利他」对自己的基因划算。`
+      : Math.abs(diff) <= eps
+        ? `叫和不叫都是 ${num(quiet)} 分，打平。`
+        : `叫了，总分只有 ${num(call)}，不如自己闷头吃的 ${num(quiet)}：不叫。分出去的蘑菇大多落到亲缘低的人肚子里。`;
+  }
+
+  root.querySelector(".sim-body").replaceChildren(
+    h("p", { class: "part" }, h("b", {}, "① 家谱：算两个人的亲缘系数")),
+    h("div", { class: "controls" }, h("label", {}, "甲", selA), h("label", {}, "乙", selB), h("span", {}, "也可以直接点家谱上的人，轮流填进甲、乙。"),
+      h("button", { onclick: () => { st.a = "ME"; st.b = "C"; st.next = "a"; drawTree(); } }, "回到「我」和堂兄弟")),
+    h("div", { class: "stage" }, svg), formula, narrate1, stats1,
+    h("hr"),
+    h("p", { class: "part" }, h("b", {}, "② 为救亲属冒险，这种基因会扩散吗")),
+    h("p", { class: "cap" }, "把每条命都当作一样值钱（同样的寿命和生育前景）。被救的每个人带着这个利他基因的机会是 r；我冒险，可能失去自己身上的那一份。"),
+    h("div", { class: "controls" }, h("label", {}, "救的是谁", selKin)),
+    h("div", { class: "controls" }, h("label", {}, "救下几个", nIn, nOut), h("label", {}, "我冒的死亡风险", selRisk)),
+    h("div", { class: "stage" }, bars), narrate2, stats2,
+    h("hr"),
+    h("p", { class: "part" }, h("b", {}, "③ 发现了蘑菇，叫不叫别人来吃")),
+    h("p", { class: "cap" }, "每个蘑菇算 6 分。不叫，我自己吃；叫了，在场的人平分，每人最多吃 3 个（我自己的上限可以调）。亲属吃下的分，按亲缘打折算到我头上。"),
+    h("div", { class: "controls" }, h("label", {}, "蘑菇总数", totIn, totOut), h("label", {}, "我还吃得下几个", capIn, capOut)),
+    h("div", { class: "controls" }, h("span", {}, "在场的："), ...boxes.map((x) => x.lab)),
+    h("div", { class: "controls" }, h("button", { onclick: () => setFood(BOOK) }, "换成书里第 29 段的数"), h("button", { onclick: () => setFood(OWN) }, "回到本站的例子")),
+    h("div", { class: "stage" }, h("div", { class: "table-wrap" }, table)), narrate3, stats3);
+  drawTree();
+  drawFood();
+})();
+</script>
+</body>
+</html>
