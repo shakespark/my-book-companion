@@ -32,10 +32,13 @@
 ## 进度
 
 - [x] A 找书　[x] B 问用户　[x] C 开目录（2026-10-20）
-- [x] D 提取：`tools/extract.py` → `source/text/`、`index.tsv`、`images.tsv`；图片转写 `source/imgtext/`
-- [x] E 规范和骨架：`AUTHORING.md`、`assets/up.js`、`style.css`、`chapters.js`、`index.html`、`recap.html`、`terms.html`、`tools/lint.py`、`source/REVIEW.md`
-- [ ] F 样板页 `chapters/01a.html`：三项检查通过，审读中
-- [ ] G 铺开　[ ] H 审读　[ ] I 上线　[ ] J 收尾
+- [x] D 提取：`tools/extract.py` → `source/text/`、`index.tsv`、`images.tsv`；图片转写 `source/imgtext/`（一位代理看图写的，第一行【照片】/【剪报】/【文件】/【信】）
+- [x] E 规范和骨架：`AUTHORING.md`、`assets/up.js`、`style.css`、`chapters.js`、`index.html`、`recap.html`、`terms.html`、`tools/lint.py`；底稿 `source/PLAN.md`、`source/SOWELL.md`
+- [x] F 样板页 `chapters/01a.html`（主编写），审读员改 14 处，十类易犯的错写进 `source/BRIEF.md`。用户不看样板（见上）
+- [x] G 铺开：11 位作者（Opus）一页一人，两批派出；中途用户新定看法块（`div.views`：主流看法 / 作者的看法 / 本站的评论，不指向他别的书），SendMessage 通知了所有作者。主编另写 `chapters/00.html`。验收记录 `source/ACCEPTANCE.md`，作者报告 `source/reports/<页>.md`
+- [x] H 审读轮（核查和词条审读合一，`source/REVIEW.md`）：7 位审读员审完 12 页 + 00，改约 90 处
+- [x] I 上线（2026-10-20）：https://t.miaowuao.cn/projects/ ；首页卡片 `up-done-:12`；sync.js PREFIXES 和 sync_server.py KEY_RE 加 up-（已 sync-apply）；words.html 的 `up`（按页显示）
+- [x] J 收尾：本仓库 README 书单、tutorials-deploy README（教程表、踩坑）、PLAYBOOK 各站答案
 
 ## 怎么验
 
@@ -45,3 +48,10 @@ python3 -I tools/overlap.py chapters/<页>.html --max-quotes 2
 node tools/check.mjs chapters/<页>.html --shots source/shots
 ```
 `source/text/`、`index.tsv`、`images.tsv` 是 `tools/extract.py` 生成的，不手改；`UP_SECS` 的节名和词数从 index.tsv 生成。
+
+## 以后改这本书
+
+- 改哪一页就只动那一页；改完跑上面三项检查，`git add projects/` 提交推送即部署。
+- 新加的概念块 `terms.html` 自动汇总；精彩回顾改了 `recap.html` 自动跟着变。
+- `assets/chapters.js` 的 `UP_PAGES` 里 t、d 是主编从作者报告收的；`yrs`、`age`、`where`、`need` 和 `UP_STAGES` 是主编写的。页名表改了的话，`~/tutorials-home/words.html` 里 up 的 `pages` 也要跟着改。
+- 「对照今天」写了核对日期（2026-10），近况（最低工资、Davis-Bacon 废除法案、执照比例）一两年就会过时。
