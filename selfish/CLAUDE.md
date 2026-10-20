@@ -31,7 +31,8 @@
 - [x] F 样板页 `chapters/05a.html`（第 5 章上半，鹰和鸽，带模拟器，主编写）：三项检查通过；审读员改 19 处（`source/ACCEPTANCE.md`），九类易犯的错写进 `source/BRIEF.md`；用户要求后加了「译本勘误」（11 条）。**用户 2026-10-20 认可**（「可以」）。派人前两位核对员把 13 章底稿对原文核了一遍，改 65 处（`source/ACCEPTANCE.md`）
 - [x] G 铺开（2026-10-20，交回一位补派一位；21 页全部交齐并由主编读过收下）：第一批 01 02 03a 03b 04a 04b 05b 06a 06b 07 08a，第二批 08b 09a 09b 10a 10b 11 12a 12b 13a 13b；作者报告 `source/reports/`　
 - [x] H 审读轮（2026-10-20，核查和词条审读合一，说明 `source/REVIEW.md`）：11 位审读员审完 23 页，记录和小结在 `source/ACCEPTANCE.md`。最大的问题是主编的译本提取把分数小图删掉，造出一批错勘误，已全部改正
-- [ ] I 上线　[ ] J 收尾
+- [x] I 上线（2026-10-21，用户 B 步授权「直接做」）：https://t.miaowuao.cn/selfish/ ；首页卡片 `sg-done-:22`；sync.js PREFIXES 和 sync_server.py KEY_RE 加 sg-（已 sync-apply）；words.html 的 `sg`（按页显示）和两处前缀正则
+- [x] J 收尾：本仓库 README 书单、tutorials-deploy README（教程表、踩坑八条）、PLAYBOOK 各站答案
 
 ## 页和节
 
@@ -50,3 +51,12 @@ python3 -I tools/overlap.py chapters/<页>.html
 node tools/check.mjs chapters/<页>.html --shots source/shots/<页>
 ```
 `source/text/`、`index.tsv`、`source/IMG_ERRATA.md` 是 `tools/extract.py` 生成的，不手改。`source/.venv` 装了 Pillow（取图）。
+
+## 以后改这本书
+
+- 改哪一页就只动那一页；改完跑上面三项检查（00 只跑 overlap 和 check），`git add selfish/` 提交推送即部署。
+- `assets/chapters.js`：`SG_PAGES` 的 t、d 是主编从作者报告收的；`SG_SECS` 的 t、en、line 和 `SG_STAGES` 是主编定的「全书的线」（底稿在 `source/line/`）。页名改了的话，`~/tutorials-home/words.html` 里 sg 的 `pages` 也要跟着改。
+- 汇总页都是自动的：`terms.html` 收概念块，`today.html` 收对照今天，`zh.html` 收译本勘误，`recap.html` 收精彩回顾和本站的总体看法。
+- 译本勘误以读者手上的译本电子书为准：`source/text/zh/` 由 `tools/extract.py` 生成，分数小图按 `ZFRAC` 换成了文字；拿不准就打开 `source/calibre-zh/` 的 epub 看。
+- 模拟器在 05a、06a、09a、10b、12a 页末的 `<script>` 里，改了要把「试试看」照读者的顺序连着点一遍。
+- 作者报告摘要在 `source/reports/<页>.md`，验收和审读记录在 `source/ACCEPTANCE.md`，作者任务说明 `source/BRIEF.md`，审读说明 `source/REVIEW.md`。
