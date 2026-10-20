@@ -1,0 +1,4 @@
+- `02b-stone-section.jpg` — File:Vegetable Mould and Worms figure 6.png — 作者不详 — Public domain — https://commons.wikimedia.org/wiki/File%3AVegetable_Mould_and_Worms_figure_6.png
+- `02b-silchester-wall.jpg` — File:Silchester, Roman town wall and St. Mary's Church - geograph.org.uk - 6261667.jpg — Michael Garlick — CC BY-SA 2.0 — https://commons.wikimedia.org/wiki/File%3ASilchester%2C_Roman_town_wall_and_St._Mary%27s_Church_-_geograph.org.uk_-_6261667.jpg
+- `02b-darwin-1881.jpg` — File:Charles Darwin by Elliott and Fry.jpg — Elliott & Fry — Public domain — https://commons.wikimedia.org/wiki/File%3ACharles_Darwin_by_Elliott_and_Fry.jpg
+- `02b-castings.jpg` — File:Worm castings, Bwlch Mawr - geograph.org.uk - 1058560.jpg — ceridwen — CC BY-SA 2.0 — https://commons.wikimedia.org/wiki/File%3AWorm_castings%2C_Bwlch_Mawr_-_geograph.org.uk_-_1058560.jpg
