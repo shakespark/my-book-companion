@@ -395,3 +395,6 @@ ul.secnames .en { font-size: 13px; color: var(--muted); }
 .views p.ours b { color: var(--accent); }
 p.verdict { background: var(--warn-soft); border: 1px solid var(--border); border-left: 4px solid var(--warn); border-radius: var(--radius); padding: 10px 14px; margin: 14px 0; }
 p.verdict b { color: var(--warn); }
+/* 不带勾选框的地图（vm 专页的七章地图）：单列 */
+.secmap.plain li { grid-template-columns: 1fr; }
+.secmap.plain .en, .secmap.plain .what { grid-column: 1 / -1; }

@@ -190,12 +190,12 @@
     const box = document.getElementById("recap");
     if (!box) return;
     let shown = 0, lastCh = 0;
-    for (const p of PAGES) {
+    for (const p of ALL.filter((x) => x.id !== "00")) {  // vm（达尔文的蚯蚓书）排在 02b 后面，归在达尔文篇下
       if (!READY.has(p.id)) continue;
       const doc = await fetchPage(p.id); if (!doc) continue;
       const line = doc.querySelector(".recall-line"), items = doc.querySelector(".recall"), verdict = doc.querySelector(".verdict");
       if (!items) continue;
-      if (p.ch !== lastCh) { lastCh = p.ch; const c = chOf(p); box.append(h("h2", { class: "recap-part" }, `${c.t}　${c.en}`)); }
+      if (p.ch && p.ch !== lastCh) { lastCh = p.ch; const c = chOf(p); box.append(h("h2", { class: "recap-part" }, `${c.t}　${c.en}`)); }
       for (const a of items.querySelectorAll(".sec")) a.replaceWith(h("a", { class: "sec", href: href(p.id) }, a.textContent));
       box.append(h("section", { class: "recap-ch" },
         h("h3", {}, h("a", { href: href(p.id) }, title(p))),

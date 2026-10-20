@@ -17,6 +17,7 @@ SECS = ["这一页在做什么", "读之前：这一页在全书的哪里", "这
         "书里的人和作品", "原典：达尔文和弗洛伊德的原文", "词与短语", "值得停下来的句子", "读完：作者到底说了什么",
         "本站怎么看", "检查一下理解", "精彩回顾"]
 PD_SEC = "原典：达尔文和弗洛伊德的原文"
+VM_SECS = ["这本书是什么", "七章地图", "达尔文做了哪些实验", "原文选读", "Phillips 怎么读它", "今天怎么看", "精彩回顾"]
 han = lambda s: len(re.findall(r"[一-鿿]", re.sub(r"<[^>]+>", "", s)))
 plain = lambda s: html.unescape(re.sub(r"<[^>]+>", "", s)).strip()
 
@@ -67,6 +68,29 @@ bad = 0
 for path in sys.argv[1:]:
     t = open(path, encoding="utf-8").read(); errs = []
     pid = re.search(r"(\w+)\.html$", path).group(1)
+    if pid == "vm":  # 达尔文的蚯蚓书：只查原典块、看法块、图片和标记
+        errs = []
+        if '<body data-page="vm">' not in t: errs.append('<body> 应写成 <body data-page="vm">')
+        for s_ in VM_SECS:
+            if f"<h2>{s_}</h2>" not in t: errs.append(f"缺少小节：{s_}")
+        pds = re.findall(r'<div class="pd">\s*<h4>(.*?)</h4>\s*<p class="where">(.*?)</p>\s*<blockquote class="pd-orig" lang="en">(.*?)</blockquote>\s*<p class="pd-zh"><b>本站译：</b>(.*?)</p>\s*(?:<p class="pd-note">(.*?)</p>\s*)?</div>', t, flags=re.S)
+        if t.count('<div class="pd"') != len(pds): errs.append("原典块的写法不对：<div class=\"pd\"><h4>…</h4><p class=\"where\">…</p><blockquote class=\"pd-orig\" lang=\"en\">原文</blockquote><p class=\"pd-zh\"><b>本站译：</b>…</p>（可选 <p class=\"pd-note\">）</div>")
+        if not 4 <= len(pds) <= 10: errs.append(f"原文选读应有 4–10 块，现在 {len(pds)} 块")
+        for h4, where, orig, zh, note in pds:
+            o = pdnorm(plain(orig))
+            for x in [x.strip(" .,;:") for x in re.split(r"\s*(?:…|\.\.\.)\s*", o) if len(x.split()) >= 3]:
+                if x not in PD: errs.append(f"原典「{plain(h4)[:20]}」：这段原文在 source/pd/ 里找不到：{x[:60]!r}")
+            if len(o.split()) > 300: errs.append(f"原典「{plain(h4)[:20]}」：原文超过 300 词")
+            if not han(zh): errs.append(f"原典「{plain(h4)[:20]}」：要有本站的中文全译")
+        vws = re.findall(r'<div class="views"><h4>(.*?)</h4>\s*<p><b>主流看法：</b>(.*?)</p>\s*<p><b>(?:达尔文|作者)的看法：</b>(.*?)</p>\s*<p class="ours"><b>本站的评论：</b>(.*?)</p></div>', t, flags=re.S)
+        if t.count('<div class="views">') != len(vws): errs.append("看法块写法不对（主流看法 / 达尔文的看法 / 本站的评论）")
+        if '<p class="verdict"><b>本站的总体看法：</b>' not in t: errs.append("「今天怎么看」最后要有 <p class=\"verdict\"><b>本站的总体看法：</b>…</p>")
+        errs += check_quotes(t, 2)
+        errs += check_images(t, path, min_photos=6, min_svgs=1, pattern=r"\.\./assets/img/(?:vm|02b)-[a-z0-9-]+\.jpg")
+        errs += check_markup(t)
+        print(("✗" if errs else "✓"), path, f"原典 {len(pds)} 看法 {len(vws)}", " ".join(f"{k} {v}" for k, v in counts(t).items()))
+        for e in errs: print("    " + e)
+        bad += bool(errs); continue
     if pid not in PAGES: print(f"✗ {path}  chapters.js 的 DW_PAGES 里没有页 {pid}"); bad += 1; continue
     ch, want, need = PAGES[pid]
     paras, quoted, secs = load(ch, want)
@@ -126,7 +150,7 @@ for path in sys.argv[1:]:
 
     # 概念块
     cp = part("先用中文过一遍：这一页的概念")
-    blocks = re.findall(r'<div class="concept" id="([^"]+)">(.*?)</div>\s*(?=<div class="concept"|<h2>|<p class="lede">|<figure|$)', cp, flags=re.S)
+    blocks = re.findall(r'<div class="concept" id="([^"]+)">(.*?)</div>\s*(?=<div class="concept"|<h2>|<p[ >]|<figure|$)', cp, flags=re.S)
     if cp.count('<div class="concept"') != len(blocks): errs.append("概念块的写法不对：<div class=\"concept\" id=\"c-…\"><h3>…</h3><p>…</p><p class=\"use\">…</p></div>")
     if not 2 <= len(blocks) <= 5: errs.append(f"概念块应有 2–5 个，现在 {len(blocks)} 个")
     for cid, body in blocks:

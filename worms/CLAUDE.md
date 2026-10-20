@@ -34,8 +34,9 @@
 - [x] A 找书　[x] B 问用户　[x] C 开目录（2026-10-20）
 - [x] D 提取（2026-10-20）：`tools/extract.py` → `source/text/01–04.txt`、`index.tsv`
 - [x] E 规范和骨架（2026-10-20）：`AUTHORING.md`、`assets/dw.js`、`assets/style.css`（照 borrowed，末尾加原典块和看法块）、`assets/chapters.js`、`index.html`、`recap.html`、`terms.html`、`tools/lint.py`、`tools/overlap.py`；`source/LINE.md`、`source/REVIEW.md`
-- [ ] F 样板页 `chapters/02b.html`（达尔文篇 §3–§5，主编写）：三项检查通过，审读中；**等用户认可**
-- [ ] G 铺开　[ ] H 审读轮　[ ] I 上线　[ ] J 收尾
+- [x] F 样板页 `chapters/02b.html`（达尔文篇 §3–§5，主编写）：三项检查通过；审读员改 22 处，九类易犯的错写进 `source/BRIEF.md`，记录在 `source/ACCEPTANCE.md`。**用户 2026-10-20 认可**；用户在 Kindle 上搜得到 `what was worm talking about`，错字一致，`.loc` 照错字抄
+- [x] G 铺开（2026-10-20）：9 位作者（Opus）一页一人，两批派出：01a 01b 02a 03a vm、03b 03c 04a 04b，全部交稿并由主编逐页读过收下（`source/ACCEPTANCE.md`，作者报告 `source/reports/`）。vm 照 AUTHORING 末尾「专页」一节，lint 有 vm 分支。主编写 00。共享文件改动：`.secmap.plain`、全书回顾收 vm
+- [x] H 审读轮（2026-10-20，核查和词条审读合一，`source/REVIEW.md`）：4 位审读员 01a 01b / 02a vm / 03a 03b 03c / 04a 04b 00，记录在 `source/ACCEPTANCE.md`。最大的发现：序章第 10 段那句「达尔文」其实是华莱士 1858 年 Ternate 论文的原话。trap 普遍从七八成降到五六成
 
 ## 怎么验
 
