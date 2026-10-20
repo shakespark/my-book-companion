@@ -37,6 +37,8 @@
 - [x] F 样板页 `chapters/02b.html`（达尔文篇 §3–§5，主编写）：三项检查通过；审读员改 22 处，九类易犯的错写进 `source/BRIEF.md`，记录在 `source/ACCEPTANCE.md`。**用户 2026-10-20 认可**；用户在 Kindle 上搜得到 `what was worm talking about`，错字一致，`.loc` 照错字抄
 - [x] G 铺开（2026-10-20）：9 位作者（Opus）一页一人，两批派出：01a 01b 02a 03a vm、03b 03c 04a 04b，全部交稿并由主编逐页读过收下（`source/ACCEPTANCE.md`，作者报告 `source/reports/`）。vm 照 AUTHORING 末尾「专页」一节，lint 有 vm 分支。主编写 00。共享文件改动：`.secmap.plain`、全书回顾收 vm
 - [x] H 审读轮（2026-10-20，核查和词条审读合一，`source/REVIEW.md`）：4 位审读员 01a 01b / 02a vm / 03a 03b 03c / 04a 04b 00，记录在 `source/ACCEPTANCE.md`。最大的发现：序章第 10 段那句「达尔文」其实是华莱士 1858 年 Ternate 论文的原话。trap 普遍从七八成降到五六成
+- [x] I 上线（2026-10-20，用户：「做完后直接上线就行，有问题我会后续再说」）：https://t.miaowuao.cn/worms/ ；首页卡片 `dw-done-:9`；sync.js PREFIXES 和 sync_server.py KEY_RE 加 dw-（已 sync-apply）；words.html 的 `dw`（按页显示）和两处前缀正则
+- [x] J 收尾：本仓库 README 书单、tutorials-deploy README（教程表、踩坑四条）、PLAYBOOK 各站答案
 
 ## 怎么验
 
@@ -46,3 +48,12 @@ python3 -I tools/overlap.py chapters/<页>.html
 node tools/check.mjs chapters/<页>.html --shots source/shots
 ```
 `source/text/`、`index.tsv` 是 `tools/extract.py` 生成的，不手改。`source/.venv` 装了 Pillow（取图）。
+
+## 以后改这本书
+
+- 改哪一页就只动那一页；改完跑上面三项检查（00 只跑 overlap 和 check；vm 走 lint 的专页分支），`git add worms/` 提交推送即部署。
+- `assets/chapters.js` 的 `DW_PAGES` 里 t、d 是主编从作者报告收的；`DW_SECS` 的 t、en、line 和 `DW_STAGES` 是主编写的「全书的线」。页名表改了的话，`~/tutorials-home/words.html` 里 dw 的 `pages` 也要跟着改。
+- 新加的概念块 `terms.html` 自动汇总；精彩回顾和「本站的总体看法」改了，`recap.html` 自动跟着变（vm 排在 02b 后面）。
+- 原典块的原文必须出自 `source/pd/*.txt`（lint 查）；要放新的公有领域原文，先放进 `source/pd/`，在 `INDEX.md` 记一行。
+- 作者报告摘要在 `source/reports/<页>.md`，验收和审读记录在 `source/ACCEPTANCE.md`。
+
