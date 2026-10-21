@@ -25,6 +25,7 @@ my_book_companion/
 | Up from the Projects（Walter E. Williams 自传） | `projects/` · https://t.miaowuao.cn/projects/ | `up-` | 5613 | 2026-10-20 上线：12 页＋开读之前，审读轮做过；和 Odyssey、Letters 互链 |
 | Darwin's Worms（Adam Phillips），附达尔文 1881 年蚯蚓书专页 | `worms/` · https://t.miaowuao.cn/worms/ | `dw-` | 5612 | 2026-10-20 上线：9 页＋开读之前＋蚯蚓书专页，审读轮做过；页面「原典」整段放达尔文、弗洛伊德的公有领域原文 |
 | The Selfish Gene（Richard Dawkins，30 周年版），对照中译本 40 周年增订版 | `selfish/` · https://t.miaowuao.cn/selfish/ | `sg-` | 2218（译本 6839） | 2026-10-21 上线：22 页＋开读之前，审读轮做过；5 个模拟器，每页尾注导读和逐段译本勘误，另有对照今天、译本勘误两个汇总页 |
+| 国富论（Adam Smith，Cannan 1904 年版），对照杨敬年中译本 | `wealth/` · https://t.miaowuao.cn/wealth/ | `wn-` | 6844、6845（译本 6840） | 2026-10-21 上线：28 页＋开读之前（9 核心、19 轻量），核心页做过收窄审读；节分先读 / 有空 / 可跳过，全书最短读法；每条论点标今天怎么看；逐段译本勘误；2 个模拟器 |
 
 ## 新增一本书
 
