@@ -1,0 +1,5 @@
+- `01-pin-plate.jpg` — File:Defehrt epinglier pl2.jpg — Designed by Goussier, engraved by Defehrt (1762); file author unknown — Public domain — https://commons.wikimedia.org/wiki/File%3ADefehrt_epinglier_pl2.jpg
+- `00-smith-muir.jpg` — File:Adam Smith The Muir portrait (cropped 2).jpg — 作者不详 — Public domain — https://commons.wikimedia.org/wiki/File%3AAdam_Smith_The_Muir_portrait_%28cropped_2%29.jpg
+- `01-newcomen-model.jpg` — File:Newcomen engine model (Hunterian museum).jpg — Andy Dingley — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File%3ANewcomen_engine_model_%28Hunterian_museum%29.jpg
+- `01-stage-waggon.jpg` — File:Stage Waggon 1816 (14596016587).jpg — Internet Archive Book Images — No restrictions — https://commons.wikimedia.org/wiki/File%3AStage_Waggon_1816_%2814596016587%29.jpg
+- `02-edward-penny.jpg` — File:Edward I Silver Penny 1280 - 1281 (36134770724).jpg — Joe deSousa — CC0 — https://commons.wikimedia.org/wiki/File%3AEdward_I_Silver_Penny_1280_-_1281_%2836134770724%29.jpg
