@@ -27,7 +27,7 @@
   `--wp` 另出 Heilbroner 第 2、3 章（`wp-02/03.txt`、`zh/wp-0*.txt`），只给 overlap 和 lint 查照抄用。
 - [ ] E 规范和骨架（2026-10-21，大部分完成）：五位代理通读写底稿 `source/line/01–28.md`（任务 `source/LINE-TASK.md`）；主编的拍板记在 `source/DECISIONS.md`，**还要写 `source/LINE.md`（概念分工、术语表、全书的线）和 `source/BRIEF.md`**。
   已有：`AUTHORING.md`、`assets/wn.js`、`assets/style.css`、`assets/chapters.js`（`tools/build_chapters.py` 从 `source/pages.json` 和底稿节表生成，不手改）、`index.html`、`recap.html`、`terms.html`、`today.html`、`zh.html`、`tools/lint.py`、`tools/overlap.py`。
-- [ ] F 样板页 `chapters/01.html`（核心页，全书引言和卷一第 1–3 章，带别针厂模拟器，主编写）：三项检查通过，审读员在审；之后给用户看。轻量页的样板还没写。
+- [ ] F 样板页（2026-10-21 推上线，等用户认可）：核心页 `chapters/01.html`（全书引言和卷一第 1–3 章，别针厂模拟器），轻量页 `chapters/02.html`（卷一第 4 章，货币）。两页都过了审读（`source/ACCEPTANCE.md`）。首页卡片还没加。
 - [ ] G 铺开　[ ] H 审读轮　[ ] I 上线　[ ] J 收尾
 
 ## 页和节
