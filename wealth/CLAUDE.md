@@ -19,23 +19,28 @@
 - 原书是公版：名段可以整段放英文原文，配本站白话译（照 Darwin's Worms 的「原典」）。杨译是商业出版物，引用受限。
 - 部署：**到时候直接做，做完告诉用户**（首页卡片、同步白名单、推送上线；授权只管这一本书）。
 
-## 进度
+## 进度（handoff，2026-10-21 晚）
 
-- [x] A 找书　[x] B 问用户　[x] C 开目录（2026-10-21）
-- [x] D 提取（2026-10-21）：`tools/extract.py` → `source/text/<章>.txt`（章号 `1-08` 式，`[k]` 段号，`{M:…}` Cannan 页边小结，`{nK}` 脚注，章末 `## 注` 的 `{S}` 斯密注、`{C}` Cannan 注）、`index.tsv`；
-  杨译 `source/text/zh/<章>.txt`（`{M}` 行是混在正文里的小标题，即 Cannan 页边小结的中译，有漂移）、`zh/daodu/`（各章导读）、`zh/front.txt`；
-  `--wp` 另出 Heilbroner 第 2、3 章（`wp-02/03.txt`、`zh/wp-0*.txt`），只给 overlap 和 lint 查照抄用。
-- [ ] E 规范和骨架（2026-10-21，大部分完成）：五位代理通读写底稿 `source/line/01–28.md`（任务 `source/LINE-TASK.md`）；主编的拍板记在 `source/DECISIONS.md`，**还要写 `source/LINE.md`（概念分工、术语表、全书的线）和 `source/BRIEF.md`**。
-  已有：`AUTHORING.md`、`assets/wn.js`、`assets/style.css`、`assets/chapters.js`（`tools/build_chapters.py` 从 `source/pages.json` 和底稿节表生成，不手改）、`index.html`、`recap.html`、`terms.html`、`today.html`、`zh.html`、`tools/lint.py`、`tools/overlap.py`。
-- [x] F 样板页（2026-10-21 上线，用户看过后让继续做下一页）：核心页 `chapters/01.html`（全书引言和卷一第 1–3 章，别针厂模拟器），轻量页 `chapters/02.html`（卷一第 4 章，货币）。两页都过了审读（`source/ACCEPTANCE.md`）。首页卡片还没加。
-- [ ] G 铺开（用户要求：受 5 小时额度限制，一批写完、审完就停，等用户说话再继续；审读按 `source/REVIEW.md` 收窄版，每页写完即审，不另设审读轮）。
-  已上线：01 02 04 05 07 08 16 17（2026-10-21）。剩核心页 21、25，轻量页 03 06 09–15 18–20 22–24 26–28，主编页 00。作者任务说明 `source/BRIEF.md`，验收记录 `source/ACCEPTANCE.md`，作者报告 `source/reports/`。
-- [ ] I 上线（首页卡片、同步白名单还没做）　[ ] J 收尾
+- [x] A–F 完成。样板页 01（核心）、02（轻量）用户看过，让继续。
+- [ ] G 铺开，**已上线 19 页**：00 01 02 03 04 05 06 07 08 09 10 11 12 13 16 17 21 25（核心页 9 个全部完成）。
+  **还剩 12 个轻量页**：卷三 14、15；卷四 18、19、20、22；卷五 23、24、26、27、28。用户按卷下令（「可以开始处理卷X」）。
+- [ ] I 上线收尾（用户 B 步已授权直接做）：首页卡片（`~/tutorials-home/index.html` 加 `.tut` 块，`data-progress="wn-done-:28"`）、同步白名单（`~/tutorials-home/sync.js` 的 PREFIXES 和 `~/tutorials-deploy/sync/sync_server.py` 的 KEY_RE 加 `wn-`，用 `scripts/sync-apply.sh` 推）。不是英文伴读，**不接 words.html**。
+- [ ] J 收尾：本仓库 README 书单、`~/tutorials-deploy/README.md` 踩坑记录和教程表、PLAYBOOK 各站答案。
+
+## 怎么接着做（用户定的规矩）
+
+- **额度有 5 小时窗口**：一批写完、验收完、上线后，把结果和 token 用量报给用户，**等用户说话再派下一批**。用户说「开始处理卷X」就做那一卷。
+- **轻量页两页派一个 Opus 作者**（一人约 35 万 token、25–30 分钟），任务说明照之前的写法：读 `source/BRIEF.md`（<ID> 换页号）、样板 `chapters/02.html` 和已验收的轻量页（03、06、09–13 都写得好）、`source/LINE.md` 的概念分工；交代这一卷「今天怎么看」的要点、别把斯密说绝对再反驳；两页报告写进 `source/reports/<页>.md`；只碰自己的文件。很长的章（4-07 殖民地 3.7 万词、5-02 赋税 4 万词）可以单独派一人。
+- **轻量页不派审读员**：主编验收时读原典的本站译（对着英文）和「今天怎么看」两节，跑三项检查，`source/pages.json` 填 t、d、加进 ready，`python3 -I tools/build_chapters.py`，记 `source/ACCEPTANCE.md`。核心页（已全部完成）才派收窄版审读（`source/REVIEW.md`）。
+- 作者报告里新起的概念 id 要登记进 `source/LINE.md`；勘误收不收、节名统一等拍板记 `source/DECISIONS.md` 或 ACCEPTANCE。
+- 提交只加 `wealth/`（有作者在写时只加已验收页的文件），推送后 `gh run watch` 再 `~/tutorials-deploy/scripts/check-site.sh wealth chapters/<页>.html`（刚推完偶尔 404，等部署跑完再查）。
+- 已定的译名：settlement laws =「定居法」（注杨译「户籍法」）；police 按上下文译治理、政策；projector 搞新计划的人。术语表在 `source/LINE.md` 第 5 节。
 
 ## 页和节
 
 - 28 页 + 主编页 00（开读之前）。核心页 9 个：01 04 05 07 08 16 17 21 25；其余 19 个轻量页。页表 `source/PAGES.md`、`source/pages.json`。
 - 节分三档：先读 / 有空 / 可跳过。全书先读约 10.3 万字（杨译），`wn.js` 按每分钟 300 字估时间，00 页的 `#path` 自动列出全书最短读法。
+- 核心页十四节、轻量页九节，见 `AUTHORING.md`；`tools/lint.py` 按 `kind` 分别检查。正文里指路用的杨译小标题写 `<span class="zh">…</span>`（lint 核对）。
 - 模拟器 2 个：01 别针厂、04 价格回摆。
 
 ## 怎么验
