@@ -22,9 +22,9 @@
 ## 进度（handoff，2026-10-21 晚）
 
 - [x] A–F 完成。样板页 01（核心）、02（轻量）用户看过，让继续。
-- [ ] G 铺开，**已上线 19 页**：00 01 02 03 04 05 06 07 08 09 10 11 12 13 16 17 21 25（核心页 9 个全部完成）。
-  **还剩 12 个轻量页**：卷三 14、15；卷四 18、19、20、22；卷五 23、24、26、27、28。用户按卷下令（「可以开始处理卷X」）。
-- [ ] I 上线收尾（用户 B 步已授权直接做）：首页卡片（`~/tutorials-home/index.html` 加 `.tut` 块，`data-progress="wn-done-:28"`）、同步白名单（`~/tutorials-home/sync.js` 的 PREFIXES 和 `~/tutorials-deploy/sync/sync_server.py` 的 KEY_RE 加 `wn-`，用 `scripts/sync-apply.sh` 推）。不是英文伴读，**不接 words.html**。
+- [ ] G 铺开，**已上线 21 页**：00 01–17 21 25（核心页 9 个全部完成）。
+  **还剩 10 个轻量页**：卷四 18、19、20、22；卷五 23、24、26、27、28。用户按卷下令（「可以开始处理卷X」）。
+- [x] I 上线收尾（2026-10-21）：首页卡片已加（`~/tutorials-home/index.html`，`data-progress="wn-done-:28"`；标签里的数字等全书写完再补），`wn-` 已进同步白名单（sync.js PREFIXES、sync_server.py KEY_RE，已 sync-apply）。不接 words.html。
 - [ ] J 收尾：本仓库 README 书单、`~/tutorials-deploy/README.md` 踩坑记录和教程表、PLAYBOOK 各站答案。
 
 ## 怎么接着做（用户定的规矩）
