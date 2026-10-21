@@ -175,10 +175,10 @@
     for (const { p, s } of all.filter((x) => x.s.tier === "先读")) {
       const c = chOf(s.ch);
       ol.append(h("li", { class: secDone(p.id, s.k) ? "done" : "" },
-        h("span", { class: "where" }, c ? (c.n ? `${BOOKS.find((b) => b.n === c.book).t} 第 ${c.n} 章` : c.zh) : ""),
+        h("span", { class: "where" }, c ? `${BOOKS.find((b) => b.n === c.book).t}${c.n ? ` 第 ${c.n} 章` : c.book ? " 引言" : ""}` : ""),
         h("b", {}, s.t), h("span", { class: "zh" }, `从「${s.zh}」读起`),
         h("span", { class: "w" }, `约 ${round(s.zc, 100)} 字`),
-        READY.has(p.id) ? h("a", { href: href(p.id) }, `导读 ${p.id} →`) : h("span", { class: "w" }, `导读 ${p.id}（待写）`)));
+        READY.has(p.id) ? h("a", { href: href(p.id) }, `导读 ${p.id} →`) : h("span", { class: "todo" }, `导读 ${p.id} 待写`)));
     }
     box.append(ol);
   }

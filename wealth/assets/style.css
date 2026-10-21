@@ -514,3 +514,4 @@ ul.oldwords li .sec { font-size: 12px; margin-left: 8px; color: var(--muted); }
 /* 正文里指路用的杨译小标题：<span class="zh">…</span>，加书名号样的引号 */
 p.where .zh::before { content: "「"; } p.where .zh::after { content: "」"; }
 .crux::before { content: "这一页要回答的问题"; }
+ol.pathlist .todo { grid-column: 3; grid-row: 2; font-size: 12.5px; color: var(--muted); white-space: nowrap; }
