@@ -22,8 +22,7 @@
 ## 进度（handoff，2026-10-21 晚）
 
 - [x] A–F 完成。样板页 01（核心）、02（轻量）用户看过，让继续。
-- [ ] G 铺开，**已上线 25 页**：00 01–22 25（核心页 9 个全部完成）。
-  **还剩 5 个轻量页**：卷五 23、24、26、27、28（5-02 赋税 4 万词，页 27 可单独派一人）。用户按卷下令（「可以开始处理卷X」）。
+- [x] G 铺开，**28 页加 00 全部上线**（2026-10-21）。
 - [x] I 上线收尾（2026-10-21）：首页卡片已加（`~/tutorials-home/index.html`，`data-progress="wn-done-:28"`；标签里的数字等全书写完再补），`wn-` 已进同步白名单（sync.js PREFIXES、sync_server.py KEY_RE，已 sync-apply）。不接 words.html。
 - [ ] J 收尾：本仓库 README 书单、`~/tutorials-deploy/README.md` 踩坑记录和教程表、PLAYBOOK 各站答案。
 
