@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 3 章 · Uncontrolled 导读</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/chapters.js"></script>
+<script src="../assets/uc.js"></script>
+</head>
+<body data-page="03">
+<main>
+
+<h2>这一页在做什么</h2>
+<div class="gist"><p>前两章讲科学怎样靠实验认识因果。这一章换个方向问：没有人懂其中的道理，一个系统能不能也越变越好？作者拿两件事作比：一个猜数字游戏，和用遗传算法去调一座有 100 个开关的化工厂。他想借此分清两种知识：写得出来、能拿去检验的明确知识，和演化、常识、传统里那种说不出道理却管用的隐性知识；最后把科学本身也放进这场竞争里看。读的时候抓两条线：演化凭什么比瞎猜快，科学和这种演化差在哪里。</p></div>
+<figure class="fig"><img src="../assets/img/03-plant.jpg" alt="蓝天下一片玉米地，远处是一座化工厂，中间立着一根红白相间的高烟囱，周围是厂房和电线杆" loading="lazy">
+<figcaption>白俄罗斯 Gomel 的一座化工厂，2018 年。与本书无关：书里那座有 100 个开关的化工厂是作者设想出来讲道理的，这张照片只帮你想象它。<span class="src">Bsivko，CC BY-SA 4.0，维基共享资源</span></figcaption></figure>
+
+<h2>读之前：这一页在全书的哪里</h2>
+<div class="linehere"></div>
+<p>第 2 章最后一段留了个问题：科学不再追求绝对真理，那它的「进步」以什么为参照？这一章第 53 段回来作答。导言第 14 段预告过，要细讲基因演化怎样不靠意识就积累起「管用的东西」，讲的就是这一章。这里立起的「隐性知识」，第 13 章讲「自由当手段」、第 14 章讲演化经济学时都要用，第 13 章第 3 段还会回到这座化工厂。</p>
+<div class="heads-up"><p>§1 第 24 段说交叉才是搜索的主力，这话作者是对演化本身说的，没加限定。它只对了一半：有性生殖时每代的新组合多半来自重组，但真正新的变异最终来自突变。</p></div>
+<div class="crux"><p>没有人懂其中道理的试错，凭什么能越试越准？科学又和它差在哪？</p></div>
+<p class="lede">读的时候带着这几个问题。不用先找答案，读完回来对照「检查一下理解」。</p>
+<ol class="qs">
+  <li>猜数字游戏里，「只告诉对错」和「告诉高了还是低了」差在哪？作者拿它比演化的哪一点？<span class="sec">§1</span></li>
+  <li>遗传算法每一代做哪几步？作者说哪一步才是搜索的主力？<span class="sec">§1</span></li>
+  <li>化学工程师和遗传算法比赛调工厂，谁来当裁判？<span class="sec">§2</span></li>
+  <li>作者为什么说科学更像「育种」，不像自然选择？接受科学的理由为什么又在科学之外？<span class="sec">§3</span></li>
+</ol>
+
+<h2>这一页的路线</h2>
+<p>§1 从一个猜数字游戏起步，先立一个对比：同样是试错，有没有反馈差得很远。接着很长一段像算法教程，一步步讲遗传算法怎么调化工厂，读着像离题，其实是在给后面每一个比方备料。第 25–27 段是转身处，作者从算法里拎出两条对社会制度的启示，这是 §1 唯一直接说到社会的地方。§2 把「方法」本身放进比赛：不同参数的算法、拿着笔记本计算的工程师，一层套一层地比，作者顺手定义了一个词。§3 突然跳回科学哲学，接上第 2 章的范式：先说科学像什么，再画一棵知识树，拿哥白尼说明理论之间怎么裁决，然后再往上一层，把整个科学放进和常识、传统的竞争里。最后几段用手机定位落地，回答第 2 章结尾的问题。</p>
+<figure class="fig"><svg class="diagram" viewBox="0 0 640 350" role="img" aria-label="路线示意图：四行方框按蛇形连接。第一行是第一节：猜数字、化工厂、两条启示；第二行是第二节：方法之间比赛、工程师入场、一层套一层；第三、四行是第三节：像育种、知识树、更大的树、真是什么意思、手机定位">
+<defs><marker id="ar03" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="f-a"/></marker></defs>
+<text x="8" y="57" class="t-b">§1</text>
+<text x="8" y="137" class="t-b">§2</text>
+<text x="8" y="257" class="t-b">§3</text>
+<rect x="70" y="30" width="150" height="44" rx="6" class="box"/><text x="145" y="49" text-anchor="middle">猜数字</text><text x="145" y="66" text-anchor="middle" class="t-m">瞎猜对二分法</text>
+<rect x="260" y="30" width="150" height="44" rx="6" class="box"/><text x="335" y="49" text-anchor="middle">化工厂</text><text x="335" y="66" text-anchor="middle" class="t-m">遗传算法的三步</text>
+<rect x="450" y="30" width="150" height="44" rx="6" class="f-soft"/><text x="525" y="49" text-anchor="middle" class="t-b">两条启示</text><text x="525" y="66" text-anchor="middle" class="t-m">给社会制度</text>
+<rect x="450" y="110" width="150" height="44" rx="6" class="box"/><text x="525" y="129" text-anchor="middle">方法之间比赛</text><text x="525" y="146" text-anchor="middle" class="t-m">改算法的参数</text>
+<rect x="260" y="110" width="150" height="44" rx="6" class="box"/><text x="335" y="129" text-anchor="middle">工程师入场</text><text x="335" y="146" text-anchor="middle" class="t-m">明确知识对隐性知识</text>
+<rect x="70" y="110" width="150" height="44" rx="6" class="box"/><text x="145" y="129" text-anchor="middle">一层套一层</text><text x="145" y="146" text-anchor="middle" class="t-m">工厂、组、超级组</text>
+<rect x="70" y="190" width="150" height="44" rx="6" class="box"/><text x="145" y="209" text-anchor="middle">像育种</text><text x="145" y="226" text-anchor="middle" class="t-m">不像自然选择</text>
+<rect x="260" y="190" width="150" height="44" rx="6" class="box"/><text x="335" y="209" text-anchor="middle">知识树</text><text x="335" y="226" text-anchor="middle" class="t-m">哥白尼上诉</text>
+<rect x="450" y="190" width="150" height="44" rx="6" class="box"/><text x="525" y="209" text-anchor="middle">更大的树</text><text x="525" y="226" text-anchor="middle" class="t-m">科学对常识和传统</text>
+<rect x="450" y="270" width="150" height="44" rx="6" class="box"/><text x="525" y="289" text-anchor="middle">真是什么意思</text><text x="525" y="306" text-anchor="middle" class="t-m">工具主义</text>
+<rect x="260" y="270" width="150" height="44" rx="6" class="f-soft"/><text x="335" y="289" text-anchor="middle" class="t-b">手机定位</text><text x="335" y="306" text-anchor="middle" class="t-m">回到第 2 章的问题</text>
+<line x1="220" y1="52" x2="257" y2="52" class="ln-a" marker-end="url(#ar03)"/>
+<line x1="410" y1="52" x2="447" y2="52" class="ln-a" marker-end="url(#ar03)"/>
+<line x1="525" y1="74" x2="525" y2="107" class="ln-a" marker-end="url(#ar03)"/>
+<line x1="450" y1="132" x2="413" y2="132" class="ln-a" marker-end="url(#ar03)"/>
+<line x1="260" y1="132" x2="223" y2="132" class="ln-a" marker-end="url(#ar03)"/>
+<line x1="145" y1="154" x2="145" y2="187" class="ln-a" marker-end="url(#ar03)"/>
+<line x1="220" y1="212" x2="257" y2="212" class="ln-a" marker-end="url(#ar03)"/>
+<line x1="410" y1="212" x2="447" y2="212" class="ln-a" marker-end="url(#ar03)"/>
+<line x1="525" y1="234" x2="525" y2="267" class="ln-a" marker-end="url(#ar03)"/>
+<line x1="450" y1="292" x2="413" y2="292" class="ln-a" marker-end="url(#ar03)"/>
+<text x="8" y="340" class="t-m">浅底的两格是落脚处：一个落在社会，一个落在科学。</text>
+</svg>
+<figcaption>本站示意图。顺着箭头走：§1 从左往右，§2 折回来，§3 再走一个来回。</figcaption></figure>
+<p class="landing"><b>作者落在哪：</b>演化不是瞎试，它能在没人懂的情况下积累隐性知识，所以好的制度要鼓励点子交叉混搭；科学是有意识的另一套办法，也只是和常识、传统竞争的一方，在某些问题上更快更可靠，凭的是让我们更能掌控物质世界，而不是证明了自己符合「实在」。</p>
+
+<h2>分节地图</h2>
+<p class="lede">这一页是原书第 3 章的三节，粗体是本站给的节名，下面是原书这一节第一段开头的几个词，在 Kindle 里搜它就能跳过去（原书的小标题也在目录里）。每节标了档：「先读」不读就跟不上全书主线，「有空」好看但跳过不丢线。读完打个勾。</p>
+<ol class="secmap">
+  <li data-sec="1"><b>一百个开关的化工厂<span class="w">约 1900 词</span></b><span class="en">Evolution through natural selection is a …</span><span class="what">前 5 段是猜数字游戏，第 7–24 段是遗传算法教程，可以读快些；第 25–27 段是落点，作者的两条启示在这里。</span></li>
+  <li data-sec="2"><b>一万座工厂比赛<span class="w">约 900 词</span></b><span class="en">Evolutionary methods can compete with one …</span><span class="what">化工厂比赛的升级版。看点是第 30–31 段的工程师：明确知识和隐性知识谁对，让产量来判。</span></li>
+  <li data-sec="3"><b>知识树和手机里的相对论<span class="w">约 1900 词</span></b><span class="en">To my knowledge, Francis Bacon never …</span><span class="what">第 38 段「育种」是全章最反直觉的一句；第 44–47 段把整个科学放进更大的竞争；第 52–55 段讲「真」是什么意思。</span></li>
+</ol>
+
+<h2>先用中文过一遍：这一页的概念</h2>
+<p class="lede">先把这一页用到、作者默认你懂的几个概念讲一遍。讲的是概念本身，作者拿它推出什么，读原书时自己看。前面讲过的<a class="term" href="01.html#c-problem-of-induction">归纳问题</a>、<a class="term" href="01.html#c-hidden-conditional">隐藏条件</a>、<a class="term" href="02.html#c-falsification">证伪</a>、<a class="term" href="02.html#c-paradigm">范式</a>，还有导言的<a class="term" href="in.html#c-trial-and-error">结构化和非结构化试错</a>，点进去看。</p>
+<div class="concept" id="c-implicit-knowledge">
+<h3><span class="sec">§1</span>隐性知识和明确知识 <span class="en">implicit knowledge, explicit knowledge</span></h3>
+<p>明确知识是说得出来、写得下来、能拿去检验的知识：一条物理定律、一份操作规程、一个可以被实验推翻的理论。隐性知识是「这么做管用」的倾向，却没人说得出为什么：一个物种的基因里存着适应环境的大量「经验」，一个社会的常识、习俗、老规矩里也有。这是作者的用法，比通行的说法宽。哲学家 Michael Polanyi 说的默会知识（tacit knowledge）指的是人身上说不出的本事，比如会骑自行车却讲不清怎么保持平衡；作者的隐性知识连基因、连没人意识到的社会惯例都算进去。程序员的类比：老系统里有一段谁也看不懂的代码，删了就出事，它「知道」一个没人记得的边界情况，这是隐性知识；查清楚、写进文档、配上测试，才变成明确知识。</p>
+<p class="use"><b>在这一页：</b>第 4 段说二分法在形成「隐性理论」，第 5、7 段说演化也是；第 30–31 段让两种知识比赛；第 45 段把常识、传统都算作隐性知识。</p>
+</div>
+<div class="concept" id="c-genetic-algorithm">
+<h3><span class="sec">§1</span>遗传算法 <span class="en">genetic algorithm, GA</span></h3>
+<p>借自然选择的思路找好答案的计算机方法，1970 年代由 John Holland 系统化。先随机造一批候选答案，每个写成一串 0 和 1，叫基因组（genome）；拿每一个去试，量出成绩，叫适应度（fitness）；淘汰差的，剩下的两两配对生后代：有的原样复制，有的交叉（crossover），在随机一处切开、互换后半段；最后以极低的概率随机翻转几位，叫突变（mutation）。一代代循环下去。它不需要懂问题的道理，只要能给每个候选打分。适合可能性多到试不完的问题：100 个开关就有 2<sup>100</sup> 种组合，约 1.3×10<sup>30</sup>，第 8 段那个「2100」就是它，有的阅读器会把上标显示成普通数字。它不保证找到最好的那个，只是通常比乱试快得多。</p>
+<figure class="fig"><svg class="diagram" viewBox="0 0 640 426" role="img" aria-label="遗传算法一代的循环：一千个基因组，按开关跑一遍量产量，淘汰低的五百个，剩下的配成二百五十对，抛硬币决定复制还是交叉，再加少量突变，回到下一代。下方是一个八位的交叉小例子">
+<defs><marker id="ar03b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="f-fg"/></marker></defs>
+<text x="8" y="18" class="t-m">一代的循环（数字照书里的例子）</text>
+<rect x="8" y="30" width="190" height="48" rx="6" class="f-soft"/><text x="103" y="50" text-anchor="middle" class="t-b">1000 个基因组</text><text x="103" y="68" text-anchor="middle" class="t-m">每个是 100 位 0 和 1</text>
+<rect x="225" y="30" width="190" height="48" rx="6" class="box"/><text x="320" y="50" text-anchor="middle">按开关跑一遍</text><text x="320" y="68" text-anchor="middle" class="t-m">量出的产量叫适应度</text>
+<rect x="442" y="30" width="190" height="48" rx="6" class="box"/><text x="537" y="50" text-anchor="middle">淘汰低的 500 个</text><text x="537" y="68" text-anchor="middle" class="t-m">这一步是选择</text>
+<rect x="442" y="110" width="190" height="48" rx="6" class="box"/><text x="537" y="130" text-anchor="middle">剩下的配成 250 对</text><text x="537" y="148" text-anchor="middle" class="t-m">每对抛一次硬币</text>
+<rect x="225" y="110" width="190" height="48" rx="6" class="box"/><text x="320" y="130" text-anchor="middle">正面各复制一份</text><text x="320" y="148" text-anchor="middle" class="t-m">反面交叉生两个</text>
+<rect x="8" y="110" width="190" height="48" rx="6" class="box"/><text x="103" y="130" text-anchor="middle">约万分之一的位翻转</text><text x="103" y="148" text-anchor="middle" class="t-m">这一步是突变</text>
+<line x1="198" y1="54" x2="222" y2="54" class="ln" marker-end="url(#ar03b)"/>
+<line x1="415" y1="54" x2="439" y2="54" class="ln" marker-end="url(#ar03b)"/>
+<line x1="537" y1="78" x2="537" y2="107" class="ln" marker-end="url(#ar03b)"/>
+<line x1="442" y1="134" x2="418" y2="134" class="ln" marker-end="url(#ar03b)"/>
+<line x1="225" y1="134" x2="201" y2="134" class="ln" marker-end="url(#ar03b)"/>
+<line x1="60" y1="110" x2="60" y2="81" class="ln-a" marker-end="url(#ar03b)"/>
+<text x="68" y="98" class="t-m">下一代</text>
+<text x="8" y="192" class="t-b">交叉：随机一处切开，互换后半段（本站的 8 位小例子）</text>
+<text x="8" y="222">父 A</text><text x="8" y="252">父 B</text>
+<text x="8" y="322">子 1</text><text x="8" y="352">子 2</text>
+<g>
+<rect x="50" y="206" width="22" height="22" class="f-soft"/><text x="61" y="222" text-anchor="middle">1</text>
+<rect x="72" y="206" width="22" height="22" class="f-soft"/><text x="83" y="222" text-anchor="middle">0</text>
+<rect x="94" y="206" width="22" height="22" class="f-soft"/><text x="105" y="222" text-anchor="middle">1</text>
+<rect x="116" y="206" width="22" height="22" class="f-soft"/><text x="127" y="222" text-anchor="middle">1</text>
+<rect x="138" y="206" width="22" height="22" class="f-soft"/><text x="149" y="222" text-anchor="middle">0</text>
+<rect x="160" y="206" width="22" height="22" class="f-soft"/><text x="171" y="222" text-anchor="middle">1</text>
+<rect x="182" y="206" width="22" height="22" class="f-soft"/><text x="193" y="222" text-anchor="middle">0</text>
+<rect x="204" y="206" width="22" height="22" class="f-soft"/><text x="215" y="222" text-anchor="middle">0</text>
+<rect x="50" y="236" width="22" height="22" class="box"/><text x="61" y="252" text-anchor="middle">0</text>
+<rect x="72" y="236" width="22" height="22" class="box"/><text x="83" y="252" text-anchor="middle">1</text>
+<rect x="94" y="236" width="22" height="22" class="box"/><text x="105" y="252" text-anchor="middle">1</text>
+<rect x="116" y="236" width="22" height="22" class="box"/><text x="127" y="252" text-anchor="middle">0</text>
+<rect x="138" y="236" width="22" height="22" class="box"/><text x="149" y="252" text-anchor="middle">1</text>
+<rect x="160" y="236" width="22" height="22" class="box"/><text x="171" y="252" text-anchor="middle">0</text>
+<rect x="182" y="236" width="22" height="22" class="box"/><text x="193" y="252" text-anchor="middle">1</text>
+<rect x="204" y="236" width="22" height="22" class="box"/><text x="215" y="252" text-anchor="middle">1</text>
+<line x1="116" y1="200" x2="116" y2="266" class="ln-d"/>
+<line x1="245" y1="222" x2="245" y2="334" class="ln-a" marker-end="url(#ar03b)"/><text x="254" y="282" class="t-m">交叉后</text>
+<rect x="50" y="306" width="22" height="22" class="f-soft"/><text x="61" y="322" text-anchor="middle">1</text>
+<rect x="72" y="306" width="22" height="22" class="f-soft"/><text x="83" y="322" text-anchor="middle">0</text>
+<rect x="94" y="306" width="22" height="22" class="f-soft"/><text x="105" y="322" text-anchor="middle">1</text>
+<rect x="116" y="306" width="22" height="22" class="box"/><text x="127" y="322" text-anchor="middle">0</text>
+<rect x="138" y="306" width="22" height="22" class="box"/><text x="149" y="322" text-anchor="middle">1</text>
+<rect x="160" y="306" width="22" height="22" class="box"/><text x="171" y="322" text-anchor="middle">0</text>
+<rect x="182" y="306" width="22" height="22" class="box"/><text x="193" y="322" text-anchor="middle">1</text>
+<rect x="204" y="306" width="22" height="22" class="box"/><text x="215" y="322" text-anchor="middle">1</text>
+<rect x="50" y="336" width="22" height="22" class="box"/><text x="61" y="352" text-anchor="middle">0</text>
+<rect x="72" y="336" width="22" height="22" class="box"/><text x="83" y="352" text-anchor="middle">1</text>
+<rect x="94" y="336" width="22" height="22" class="box"/><text x="105" y="352" text-anchor="middle">1</text>
+<rect x="116" y="336" width="22" height="22" class="f-soft"/><text x="127" y="352" text-anchor="middle">1</text>
+<rect x="138" y="336" width="22" height="22" class="f-soft"/><text x="149" y="352" text-anchor="middle">0</text>
+<rect x="160" y="336" width="22" height="22" class="f-soft"/><text x="171" y="352" text-anchor="middle">1</text>
+<rect x="182" y="336" width="22" height="22" class="f-soft"/><text x="193" y="352" text-anchor="middle">0</text>
+<rect x="204" y="336" width="22" height="22" class="f-soft"/><text x="215" y="352" text-anchor="middle">0</text>
+<line x1="116" y1="300" x2="116" y2="366" class="ln-d"/>
+</g>
+<text x="8" y="392" class="t-m">浅底的位来自 A，白底的位来自 B。虚线是切开的地方。</text>
+<text x="8" y="414" class="t-m">每个孩子都和一个父母大半相同：新尝试是旧成功者的小改动。</text>
+</svg>
+<figcaption>本站示意图。上面是作者描述的一代循环；下面的交叉例子是本站编的 8 位小串，书里用的是 100 位。</figcaption></figure>
+<p class="use"><b>在这一页：</b>第 7–24 段整段讲它；第 24 段说交叉是主力，作者把这话也说给生物演化。第 13 章第 3 段会回到这座化工厂。</p>
+</div>
+<div class="concept" id="c-evolutionary-epistemology">
+<h3><span class="sec">§2</span>演化认识论：盲目变异加选择性保留 <span class="en">evolutionary epistemology, blind variation and selective retention</span></h3>
+<p>一种把知识的增长看成演化的哲学主张：不管是生物适应环境、人想出新点子，还是科学换理论，都是先冒出各种尝试，再把经得起考验的留下。美国社会科学家 Donald T. Campbell 是主要的提出者：1960 年的论文用「盲目变异加选择性保留」概括这个过程，1974 年在一本讨论 Popper 的文集里用了「演化认识论」这个名字。Campbell 还强调选择是一层套一层的：底层的一种做法好不好，要看它让上一层的群体更能胜出没有。作者第 33 段定义的「替代适应性」（vicarious adaptiveness，作者的用法），说的就是这种多层竞争里一个工厂的办法对它所在的组有多大帮助。注意：这一章第 1 段只说演化「常被说成」随机变异加保留，第 5、25 段用了「盲目变异加选择性保留」的说法，都没点名 Campbell；导言第 15 段才提到他的演化认识论。</p>
+<p class="use"><b>在这一页：</b>第 25、27 段作者要修正的，就是「盲目变异加保留」这个说法；第 33–36 段的多层竞争，第 35 段点明出自 Campbell。</p>
+</div>
+<div class="concept" id="c-instrumentalism">
+<h3><span class="sec">§3</span>工具主义 <span class="en">instrumentalism</span></h3>
+<p>科学哲学里的一种立场：科学理论不必是对世界的真实描述，它只是做预测的工具，好用就行；电子、夸克是不是「真有」，可以不问。对面是科学实在论（scientific realism）：成功的理论大致说中了世界本来的样子，不然它凭什么预测得这么准。一个有名的例子是 1543 年哥白尼《天体运行论》出版时，神学家 Andreas Osiander 匿名加的序言：书里的假设不必是真的，只要算出来和观测相符就够了。两派至今在争；2020 年一项对哲学家的调查（PhilPapers）里，约四分之三的人接受或倾向实在论。分清一件事：工具主义说「理论只是工具」，作者第 52 段说的是另一件事：科学自己判断不了理论是不是只是工具。</p>
+<p class="use"><b>在这一页：</b>第 52 段作者先说这个结论顺理成章，紧接着说他不这样主张；第 53–55 段讲他说的「真」是什么意思。</p>
+</div>
+
+<h2>书里的人、研究和背景</h2>
+<p class="lede">按在书里出现的顺序排，标题前是节号。只讲到读懂这一页需要的程度。</p>
+
+<h3><span class="sec">§1</span>猜数字：五亿次对三十次</h3>
+<p>程序员一眼认得出，第 3 段讲的就是二分查找。每猜一次排除一半，2 的 30 次方约等于 10.7 亿，所以 1 到 10 亿之间的数，30 次之内一定猜中。只告诉对错时，平均要试一半的数，约 5 亿次。5 亿除以 30 约是 1700 万，作者写「约 1500 万倍」，量级没错。作者自己说这个类比「非常粗略」（第 4 段）：演化没有人在旁边报「高了、低了」，它靠别的办法让下一次猜得更准，这一节后面的遗传算法就是在讲这个办法。</p>
+
+<h3><span class="sec">§1</span>遗传算法从哪来</h3>
+<p>遗传算法是 1960–70 年代在美国密歇根大学由 John Holland 和他的学生发展起来的，Holland 1975 年的书《自然系统和人工系统中的适应》是它的奠基之作。作者书后注释说，这一段参考的是 Melanie Mitchell 1996 年的入门书《遗传算法导论》。书里说它用来排送货卡车的路线、调工厂的控制参数（第 7 段），这类「组合多到试不完」的问题正是它的用武之地。第 15 段有一句容易漏掉：实际做的时候，跑的是工厂的软件模拟，不是真把工厂开一千遍。</p>
+
+<h3><span class="sec">§2</span>Donald T. Campbell</h3>
+<p>第 35 段那个拗口的术语出自 Campbell。他在这本书里出场好几次：导言第 15 段说他把演化和随机试验合起来，提出演化认识论；第 8 章讲推广难题时，用的「内部效度、外部效度」也是他起的名字。作者全书「让社会一边试一边学」的思路，很大一部分从他那里来。</p>
+<div class="who">
+  <div><b>Donald T. Campbell</b><span class="en">1916–1996</span>美国社会心理学家、方法论学者，长期在西北大学任教。以「准实验」设计、内部效度和外部效度的区分、「把改革当作实验」的主张闻名，也是演化认识论的主要提出者。</div>
+</div>
+
+<h3><span class="sec">§3</span>Popper、Kuhn 和演化的比方</h3>
+<p>第 38 段说，达尔文之后，人们几乎忍不住拿演化来比科学知识的发展，Popper 和 Kuhn 都这么比过。Popper 1972 年有一本文集就叫《客观知识：一个演化的进路》，说科学是不断提出猜想、淘汰错误；Kuhn 1962 年《科学革命的结构》的结尾，也把科学的进步比作没有预定目标的达尔文式演化。两人是第 2 章的主角，见第 2 章的页面。作者在这里和他们分开：他说科学家有意识地挑选理论，更像育种。</p>
+
+<h3><span class="sec">§3</span>哥白尼和本轮</h3>
+<figure class="fig small"><img src="../assets/img/03-copernicus.jpg" alt="一页古书的版面：上下是拉丁文正文，中间是一组同心圆，圆心标着太阳，各圈写着行星的名字" loading="lazy">
+<figcaption>哥白尼《天体运行论》（1543）里的一页，同心圆的中心是太阳，从里往外第三条轨道上是地球和月亮。<span class="src">Nicolaus Copernicus，公有领域，维基共享资源</span></figcaption></figure>
+<p>哥白尼之前的天文学以地球为中心。行星在天上有时会倒着走，为了解释它，天文学家让行星在一个小圆上转，小圆的圆心再绕地球转，这个小圆叫本轮（epicycle）；预测不准就再加。作者第 42 段说，地心说的行家判不了日心说，本轮的学问派不上用场，哥白尼只能「上诉」到整个讲科学的共同体。顺带一提：哥白尼自己的体系仍然用圆轨道，为了合上观测也还用着小本轮，一开始并不比旧体系算得更准。</p>
+<div class="who">
+  <div><b>Nicolaus Copernicus</b><span class="en">1473–1543</span>波兰天文学家。临终那年出版《天体运行论》，提出地球和行星都绕太阳转。</div>
+</div>
+
+<h3><span class="sec">§3</span>人类基因组测序</h3>
+<p>第 39、42 段用它说明「范式之内的归纳很直接」。人类基因组计划 1990 年在美国启动，1998 年私营的 Celera 公司加入竞赛，两边 2000 年一起宣布完成草图，2003 年宣布基本完成。测序做到后来，读出新的一段就像流水线作业，这就是作者说的「范式内部的理论」：规则早已定好，照着做就是。</p>
+
+<h3><span class="sec">§3</span>新教、读经和识字</h3>
+<p>第 50 段说，一些新教派别强调信徒为了得救要自己读圣经，人们普遍认为这推高了识字率。背景是宗教改革：天主教会过去由神父讲解经文，路德把圣经译成德文，主张信徒直接读经。经济学里还有一个更有名的说法，社会学家 Max Weber 1905 年的「新教伦理」：新教的工作伦理和节俭，培养出了资本主义精神。作者没有提 Weber，他用的是识字这条线，拿它说明不以物质利益为目标的社会，可能反而更会积累物质力量。这个说法后来的研究怎么看，见「对照今天」。</p>
+
+<h3><span class="sec">§3</span>手机里的量子力学和相对论</h3>
+<figure class="fig"><img src="../assets/img/03-gps.jpg" alt="一颗金色箔片包裹的卫星展开两翼太阳能板，悬在蓝色地球的上空" loading="lazy">
+<figcaption>GPS Block IIF 卫星在轨道上的想象图，NASA 绘制。<span class="src">NASA，公有领域，维基共享资源</span></figcaption></figure>
+<p>第 54 段是作者的落地例子。手机里的晶体管靠半导体工作，半导体的道理要用量子力学才讲得清。GPS 靠卫星上的原子钟报时，钟差一点，距离就算错一截：卫星飞得快，按狭义相对论钟会走慢；离地球远、引力弱，按广义相对论钟又会走快，两样相加，卫星钟每天比地面快约 38 微秒。系统设计时就把这个修正算了进去，不然定位误差每天会累积到好几公里。</p>
+
+<h2>词与短语</h2>
+<p class="lede">按节排，每节前面是分节地图里的节名。标着「每个字都认识」的，是熟词生义、习语和反话，最容易读错。灰色的那几个字是原句里的位置，在 Kindle 里搜它就能找到。</p>
+
+<h3 class="sec-head" id="s1">§1 <span class="first">一百个开关的化工厂</span></h3>
+<div class="entry trap"><div class="en">fine as far as it goes</div><div class="loc" data-p="1">… is fine as far as it goes …</div><div class="zh">就它说到的而言没错</div><div class="note">言下之意是「但还不够」。下半句马上补上：变异只是部分随机。</div></div>
+<div class="entry"><div class="en">very roughly speaking</div><div class="loc" data-p="4">… for subsequent guesses. Very roughly speaking …</div><div class="zh">非常粗略地说</div><div class="note">作者自己给类比打了折扣：猜数字和演化只是大致相像。</div></div>
+<div class="entry"><div class="en">omniscient interlocutor</div><div class="loc" data-p="5">… there is no omniscient interlocutor to …</div><div class="zh">全知的对话者</div><div class="note">第 1 章第 41 段用过的说法：一个什么都知道、能直接告诉你答案的人。这里说演化身边没有人喊「热了、冷了」。原文 to prove 应是 to provide 的笔误。</div></div>
+<div class="entry trap"><div class="en">say</div><div class="loc" data-p="14">… by randomly generating, say, 1,000 genomes …</div><div class="zh">比如说、假定</div><div class="note">夹在逗号中间的 say 不是「说」，是举个数：「比如 1000 个」。</div></div>
+<div class="entry"><div class="en">production run</div><div class="loc" data-p="15">… doing 1,000 sequential production runs at …</div><div class="zh">一轮生产、一次试产</div><div class="note">工厂用语：按一套设定从头到尾开一次。</div></div>
+<div class="entry"><div class="en">a soupçon of</div><div class="loc" data-p="21">… a soupçon of mutation is added …</div><div class="zh">（法语）一丁点儿</div><div class="note">本是厨房里的说法，「一撮、一点点」。作者用它说突变的量极小。</div></div>
+<div class="entry trap"><div class="en">in fits and starts</div><div class="loc" data-p="22">… and in fits and starts the algorithm …</div><div class="zh">时断时续地、一阵一阵地</div><div class="note">fit 在这里是「一阵发作」，不是「合适」。进步不是平滑上升的，一阵快一阵停。</div></div>
+<div class="entry trap"><div class="en">workhorse</div><div class="loc" data-p="24">… crossover is the workhorse of the search</div><div class="zh">主力、干重活的</div><div class="note">本义是干活的役马。说交叉承担了搜索的大部分工作。</div></div>
+<div class="entry"><div class="en">high-risk bet</div><div class="loc" data-p="24">… Mutations are rare, high-risk bets. …</div><div class="zh">高风险的赌注</div><div class="note">把突变比作下大注：多半输掉（提高不了适应度），偶尔一把赢大的。</div></div>
+<div class="entry"><div class="en">I believe</div><div class="loc" data-p="25">… social evolution, I believe that engagement …</div><div class="zh">我认为</div><div class="note">从这里起是作者自己的推论，不是遗传算法的事实。后面两条启示都挂在这句 I believe 下面。</div></div>
+<div class="entry"><div class="en">cross-pollination</div><div class="loc" data-p="26">… encourage cross-pollination and mixing and matching …</div><div class="zh">异花授粉：点子之间互相借鉴</div><div class="note">比方，对应遗传算法里的交叉；后面的 mixing and matching 是「混搭、拼配」。</div></div>
+<div class="entry"><div class="en">subject to contention</div><div class="loc" data-p="27">… the algorithm itself are subject to contention</div><div class="zh">可以争、可以拿来比</div><div class="note">contention 有「争论」也有「竞争」的意思。这里两层都有：参数定多少说不出道理，下一节就让它们比赛。</div></div>
+
+<h3 class="sec-head" id="s2">§2 <span class="first">一万座工厂比赛</span></h3>
+<div class="entry trap"><div class="en">arbitrarily large</div><div class="loc" data-p="29">… imagine an arbitrarily large number of …</div><div class="zh">任意多的</div><div class="note">数学腔。arbitrarily 平常是「武断地」，在数学里是「任意地」：想要多少就有多少。</div></div>
+<div class="entry"><div class="en">shortcut</div><div class="loc" data-p="30">… to shortcut the evolutionary process …</div><div class="zh">（动词）抄近路绕过</div><div class="note">工程师觉得自己懂原理，就不必一代代地试了。</div></div>
+<div class="entry"><div class="en">vicarious adaptiveness</div><div class="loc" data-p="34">… Vicarious adaptiveness can be defined up …</div><div class="zh">替代适应性（作者的用法）</div><div class="note">作者第 33 段自己定义的词，见概念块「演化认识论」。vicarious 本义是「替别人、间接的」：一个工厂的办法好不好，看的是它让所在的组赢没赢。</div></div>
+<div class="entry trap"><div class="en">a mouthful</div><div class="loc" data-p="35">… Campbell used a mouthful of a term …</div><div class="zh">又长又拗口的话</div><div class="note">本义「满满一口」。作者在调侃 Campbell 那个六个词的术语。</div></div>
+<div class="entry"><div class="en">frame of reference</div><div class="loc" data-p="36">… no absolute frame of reference for …</div><div class="zh">参照系</div><div class="note">物理学用语。作者借来说：没有一个绝对的基准能判定什么为真。第 53 段回答第 2 章结尾的问题时又用到它。</div></div>
+
+<h3 class="sec-head" id="s3">§3 <span class="first">知识树和手机里的相对论</span></h3>
+<div class="entry"><div class="en">to my knowledge</div><div class="loc" data-p="37">… To my knowledge, Francis Bacon never …</div><div class="zh">据我所知</div><div class="note">留余地的说法：作者没查到培根用过 paradigm 这个词，但不打包票。</div></div>
+<div class="entry"><div class="en">Novum Organum</div><div class="loc" data-p="37">… remains operative from Novum Organum is …</div><div class="zh">（书名）《新工具》</div><div class="note">培根 1620 年的拉丁文著作，第 1 章讲过。</div></div>
+<div class="entry trap"><div class="en">denatured</div><div class="loc" data-p="37">… denatured from any specific physical theory …</div><div class="zh">剥掉了……的</div><div class="note">化学里是「使变性」。这里是说把培根方案里那些具体的物理理论剥掉，只剩下方法和心态。</div></div>
+<div class="entry"><div class="en">apropos</div><div class="loc" data-p="38">… be more apropos (though still only …</div><div class="zh">恰当的、贴切的</div><div class="note">从法语来的词。注意括号里作者的限定：仍然只是比方。</div></div>
+<div class="entry trap"><div class="en">breed</div><div class="loc" data-p="38">… that scientists breed theories than to …</div><div class="zh">育种、人工选育</div><div class="note">原文斜体强调。breed 平常是「繁殖、饲养」，这里取「育种」：育种的人有意识地挑，自然选择没有人挑。这是全章最要紧的一个词。</div></div>
+<div class="entry"><div class="en">philosophically sloppy</div><div class="loc" data-p="39">… practically useful but philosophically sloppy …</div><div class="zh">哲学上不严谨</div><div class="note">作者先给自己的区分打预防针：用起来顺手，经不起哲学推敲。</div></div>
+<div class="entry trap"><div class="en">get murky</div><div class="loc" data-p="39">… In between, it can get murky. …</div><div class="zh">界线变得模糊</div><div class="note">murky 本义是水浑。两头分得清，中间说不清哪个算理论、哪个算范式。</div></div>
+<div class="entry trap"><div class="en">where you sit</div><div class="loc" data-p="40">… a theory depends on where you sit …</div><div class="zh">你坐在哪个位置上</div><div class="note">sit 指在组织里的位子、层级，不是座位。紧接着的中尉、上校、将军就是在解释它。</div></div>
+<div class="entry"><div class="en">expendable</div><div class="loc" data-p="41">… may be an expendable theory from …</div><div class="zh">可以牺牲的、随时可弃的</div><div class="note">军事用语，接着上一段军队的比方：在更上一层看来，一个小专业的范式只是可丢的理论。</div></div>
+<div class="entry"><div class="en">appeal the decision to the higher court</div><div class="loc" data-p="42">… He appealed the decision to the higher …</div><div class="zh">上诉到上一级法院</div><div class="note">法律比方：在本学科这一审赢不了，就把官司打到更高一层。</div></div>
+<div class="entry trap"><div class="en">sentence</div><div class="loc" data-p="44">… abide by the sentence of a tribunal …</div><div class="zh">判决</div><div class="note">熟词生义，不是「句子」。这是作者转引的培根的话：不能要我服从一个本身正在受审的法庭的判决。</div></div>
+<div class="entry trap"><div class="en">received wisdom</div><div class="loc" data-p="45">… Common sense, received wisdom, tradition, and …</div><div class="zh">公认的看法、老说法</div><div class="note">received 是「传下来、大家都接受的」，不是「收到的」。常带一点「没人检验过」的意味。</div></div>
+<div class="entry"><div class="en">don’t yet even begin to</div><div class="loc" data-p="45">… we don’t yet even begin to understand …</div><div class="zh">连门都还没摸到</div><div class="note">很重的否定。前半句还有 if any such process exists：观念会不会像基因那样演化，作者连有没有都没下结论。</div></div>
+<div class="entry trap"><div class="en">as it were</div><div class="loc" data-p="47">… are delegated, as it were, to science …</div><div class="zh">可以这么说、打个比方</div><div class="note">插入语，提醒这是比方：接受哪些发现的决定，像授权一样一层层交给科学界。</div></div>
+<div class="entry trap"><div class="en">reserve</div><div class="loc" data-p="47">… society can always reserve any of these …</div><div class="zh">保留（决定权）</div><div class="note">熟词生义，不是「预订」，是「留在自己手里」：社会随时可以把某个决定收回来自己做。</div></div>
+<div class="entry"><div class="en">established mores</div><div class="loc" data-p="47">… conclusions offensive to established mores …</div><div class="zh">既有的风俗和道德观</div><div class="note">mores 是拉丁来的复数名词，读作 MOR-ayz，指一个社会公认的规矩。</div></div>
+<div class="entry trap"><div class="en">not with discourse, but with works</div><div class="loc" data-p="48">… itself not with discourse, but with works …</div><div class="zh">不靠空谈，靠实效</div><div class="note">works 不是「作品」，是做成的事。呼应第 1 章第 20 段培根的话：经院哲学导向议论，他的方法导向实效。</div></div>
+<div class="entry"><div class="en">widely believed</div><div class="loc" data-p="50">… is widely believed to have contributed …</div><div class="zh">普遍认为</div><div class="note">作者没说自己核过，只借一个「大家都这么认为」的说法当例子。后来的研究怎么看，见「对照今天」。</div></div>
+<div class="entry"><div class="en">life is full of ironies</div><div class="loc" data-p="52">… Life is full of ironies, and this …</div><div class="zh">世事常常很讽刺</div><div class="note">自嘲式的插话：只把一切当工具，也许恰恰是找到真正真理的最好办法。</div></div>
+<div class="entry"><div class="en">as if</div><div class="loc" data-p="52">… Science operates as if all findings …</div><div class="zh">当作、仿佛</div><div class="note">原文斜体。科学「当作」一切结论都是暂定的工具来运作，不等于主张它们只是工具。第 1 章第 20 段讲培根时也用过这个 as if。</div></div>
+<div class="entry"><div class="en">in the sense that</div><div class="loc" data-p="55">… are true in the sense that they …</div><div class="zh">在……这个意义上</div><div class="note">关键的限定：作者说的「真」是能让人做成事，不是哲学上的「符合实在」。</div></div>
+
+<h2>值得停下来的句子</h2>
+<blockquote class="quote">It would be more apropos (though still only metaphorical) to say that scientists breed theories than to say theories evolve through natural selection.<cite>— §3 第 38 段。本站译：说科学家在「育种」理论，比说理论经由自然选择而演化更贴切（虽然仍然只是比方）。</cite></blockquote>
+<p>这是全章最反直觉的一句。前面两节花了大力气讲演化多么高明，读者很容易顺势以为「科学也是一种演化」。作者在这里刹住：演化的长处是不需要意识，科学家偏偏是有意识地隔离原因、挑选理论。关键词是 breed，原文还特意用了斜体；括号里那句限定也别漏掉，他没说科学「就是」育种。</p>
+<blockquote class="quote">We know our physical theories are true in the sense that they enable human capability.<cite>— §3 第 55 段。本站译：我们知道物理理论是真的，是在它们让人类有能力做成事这个意义上。</cite></blockquote>
+<p>口气很笃定，但重心在 in the sense that 这几个字上。作者不回答「理论是否符合实在」这个哲学问题，他换了一个能检验的标准：能不能做出可靠、不显然的预测。这是第 2 章结尾那个问题的答案，也是全书反复回来的态度：让结果当裁判。</p>
+
+<h2>读完：作者到底说了什么</h2>
+<p class="lede">读完这一页的几节再看。下面是作者在这几节里的论点，由本站按论点重新组织，不按原书的顺序；每条下面是依据所在的段落，拿不准就回书里那几段再读一遍。</p>
+<div class="claims">
+  <div class="claim"><h4>演化是有偏的试错，不是瞎试</h4><p>作者说，把演化说成「随机变异加保留成功」没错但不够：变异只是部分随机。有「高了、低了」的反馈，二分法就比瞎猜快千万倍；演化也在不靠意识的情况下积累隐性理论，让下一次尝试的胜算高于瞎猜。他自己说这个类比「非常粗略」。</p><span class="sec">§1 第 1–7 段</span></div>
+  <div class="claim"><h4>交叉是搜索的主力，演化因此是保守的</h4><p>选择、繁殖、突变三步循环，种群的平均产量一代代往上走，通常比随机试开关快得多。作者说，流行的说法以为突变是主要手段，其实交叉才是：新基因组多半和之前成功的很像；突变罕见，是多半失败的大赌注。这话他是对演化本身说的。</p><span class="sec">§1 第 14–24 段</span></div>
+  <div class="claim"><h4>对制度的两条启示（作者说是他认为的）</h4><p>好的制度不只要产生新点子、留下成功的，还要让新点子天生胜算更高；办法不是有人有意识地指定方向，而是让规则本身鼓励点子交叉混搭。其次，算法的参数本身也是可以拿来竞争的。</p><span class="sec">§1 第 25–27 段</span></div>
+  <div class="claim"><h4>方法之间可以层层比赛，裁判是现实的结果</h4><p>不同参数的算法、凭物理原理算开关的工程师，都可以比；工程师论证再精巧，判输赢的是工厂产量。比赛还能一层套一层，作者把一种做法让上一层更能胜出的程度叫替代适应性，并说科学正是这种嵌套结构。</p><span class="sec">§2 第 28–36 段</span></div>
+  <div class="claim"><h4>科学像育种；接受科学的理由在科学之外</h4><p>科学家有意识地挑理论，所以更像育种（仍是比方）。理论之争交给上一层范式裁决；整个科学又在和常识、传统竞争，接受它的决定最终在科学之外，平时许多决定层层委托给科学界。作者不说理论只是工具，只说科学判断不了；「真」指能做出可靠、不显然的预测。</p><span class="sec">§3 第 38–47、52–55 段</span></div>
+</div>
+<p class="sowhat"><b>合起来：</b>这一章给全书备下两样工具：隐性知识，和「方法之争由结果裁判」。前一样撑起第三部「让社会自己去试」的主张，后一样就是全书反复说的：让实验当裁判。</p>
+
+<h2>对照今天</h2>
+<p class="lede">这本书 2012 年出版。下面挑出这一页里能被后来的研究检验的说法，分「书里 / 当时 / 今天」三栏，并给一个结论。结论判的是标题里「书里的说法：」后面那一句。全书的这一节汇总在<a href="../today.html">对照今天</a>。</p>
+<ul class="verdicts"><li><span class="v ok">成立</span>后来的研究支持这句话。</li><li><span class="v mid">部分成立</span>大方向对，细节或适用范围要改。</li><li><span class="v bad">被改写</span>后来的研究推翻了它，或者换了一种说法。</li><li><span class="v dis">有争议</span>学界至今没有定论，两边各有代表性的研究。</li></ul>
+<div class="today" data-verdict="成立"><h4>书里的说法：手机定位离不开量子力学和相对论，GPS 能定到离真实位置约 50 英尺以内</h4><dl>
+  <dt>书里</dt><dd>作者说他几乎每天用 iPhone 查自己的位置：晶体管靠量子力学，GPS 卫星的软件要计入相对论预言的时空变形，才能准到约 50 英尺，约 15 米（§3 第 54 段）。</dd>
+  <dt>当时</dt><dd>相对论修正是 GPS 工程的常识。物理学家 Neil Ashby 2003 年的综述开头就说，卫星钟的引力频移和运动频移大到不仔细计入相对论效应，系统就无法工作。</dd>
+  <dt>今天</dt><dd>成立，而且更准了。美国政府的 GPS 官网说，智能手机在开阔天空下一般能定到 4.9 米（16 英尺）以内，靠近楼群、桥、树会变差。<span class="asof">核对于 2026-10。依据：GPS.gov 精度说明页（该页注明 2025 年 2 月起未更新）；Ashby，Living Reviews in Relativity 2003。</span></dd>
+</dl></div>
+<div class="today" data-verdict="有争议"><h4>书里的说法：人们普遍认为，新教徒为得救而读经推高了识字率，识字最终是这些群体经济成功的关键一环</h4><dl>
+  <dt>书里</dt><dd>作者以「widely believed」引出，拿它说明不以物质利益为目标的社会，可能反而更会积累物质力量（§3 第 50 段）。</dd>
+  <dt>当时</dt><dd>经济史里流行的说法，接着 Weber「新教伦理」的话题，但把重点从工作伦理挪到了识字。</dd>
+  <dt>今天</dt><dd>读经和识字这一环证据较强。Becker 和 Woessmann 2009 年在《经济学季刊》上用 19 世纪末普鲁士各县的数据，借「离宗教改革发源地 Wittenberg 有多远」来减少别的因素干扰，发现新教地区更富也更有文化，识字率的差别能解释大部分的经济差距。<span class="asof">核对于 2026-10。依据：Becker &amp; Woessmann，Quarterly Journal of Economics 124(2)，2009；Cantoni，Journal of the European Economic Association，2015。</span></dd>
+  <dt>另一边</dt><dd>经济学家 Davide Cantoni 2015 年用 1300–1900 年德意志地区 272 座城市的人口数据检验，找不到新教对城市增长的影响。「新教带来经济成功」这一环至今没有定论。</dd>
+</dl></div>
+<div class="today" data-verdict="部分成立"><h4>书里的说法：有理论认为人的观念也有类似基因演化的过程，但即便真有，我们还根本不理解它</h4><dl>
+  <dt>书里</dt><dd>第 45 段。同一段里作者也说，常识规则的演化「类似于（也许等同于）」自然选择，已经嵌进文化规范里。</dd>
+  <dt>当时</dt><dd>用演化的数学模型研究文化传播，在人类学和生物学里已经有人在做，但还是小众。</dd>
+  <dt>今天</dt><dd>「根本不理解」说重了。这个领域此后扩大了很多：人类学家 Joseph Henrich 2015 年的《我们成功的秘密》主张人类靠一代代累积、没人完全说得清道理的文化做法适应各种环境，典型例子是美洲一些族群加工木薯去毒的繁琐步骤，几乎就是作者说的隐性知识。但观念的传播是不是像基因那样「靠选择」，仍在争。<span class="asof">核对于 2026-10。依据：Henrich，Princeton University Press，2015；Claidière &amp; Sperber 2007。</span></dd>
+  <dt>另一边</dt><dd>认知人类学家 Dan Sperber 一派认为，观念在传播时会被人脑系统地改写，朝某些容易记、容易信的形态靠拢（「文化吸引」），不能简单照搬自然选择；Claidière 和 Sperber 2007 年就和 Henrich 一派争过这一点。</dd>
+</dl></div>
+
+<h2>本站怎么看</h2>
+<p class="lede">读完作者的论点，再看它站不站得住。每一块摆出三样：主流怎么看，作者怎么看，本站的评论。最后一句是本站对这一页的总体判断。</p>
+<div class="views"><h4>从遗传算法推到社会制度，推得过去吗</h4>
+<p><b>主流看法：</b>用演化看经济和制度是一条有来历的路：Hayek 讲文化演化，Nelson 和 Winter 1982 年写了《经济变迁的演化理论》，今天还有文化演化研究。大家同意这类比方有启发，分歧在细处：选择的是什么，谁来选，多快。</p>
+<p><b>作者的看法：</b>他用 I believe 提出两条启示：制度要让新点子天生胜算更高，鼓励交叉混搭；方法的参数本身也可以竞争（第 25–27 段）。第 13 章第 3 段他自己补了限定：社会没有固定的适应度函数，环境一直在变。</p>
+<p class="ours"><b>本站的评论：</b>直觉有力，「鼓励混搭」在讲创新的研究里也常听到。弱处有两条。遗传算法有人定好的打分标准，一代只要几秒；社会的打分是「谁活下来」，一代以年代计，作者第 13 章也承认社会演化慢、粗、整包裁决。其次，「替代适应性」最后靠谁赢了来认定，容易变成循环：活下来的就叫适应得好。读第三部时，留意作者从「演化管用」走到「所以该让各地去试」，中间补了哪些论证。</p></div>
+<div class="views"><h4>交叉是主力，演化是保守的？</h4>
+<p><b>主流看法：</b>在遗传算法研究里，交叉和突变哪个更要紧争过很久；William Spears 1993 年的分析认为两者各有对方没有的本事。生物学里，新的基因变异最终都来自突变，有性生殖时的重组把已有的变异重新搭配；细菌等大量生物主要靠无性繁殖。</p>
+<p><b>作者的看法：</b>流行的说法以为突变是演化的主要搜索手段，其实交叉才是主力；演化在这个意义上是保守的，新尝试多半和之前成功的很像，突变是罕见的高风险赌注（第 24 段）。他是对演化本身说的，没有只限于算法。</p>
+<p class="ours"><b>本站的评论：</b>放到生物上，这话对了一半。有性生殖的物种里，每一代的新基因组合确实多半来自重组，孩子和活下来的父母很像；但重组只能重排已有的变异，真正新的变异最终来自突变，主要无性繁殖的生物更是如此。对他论证要紧的是「新尝试多半是旧成功者的小改动」这一半，它撑得起第 26 段「鼓励混搭」；「突变是次要的」那一半打个折扣。另外，生物学强调突变对「有没有用」是随机的，作者说的「部分随机」指变异的结构，不是突变会挑方向。</p></div>
+<div class="views"><h4>「真」就是「能用」？</h4>
+<p><b>主流看法：</b>科学哲学里，实在论和反实在论（工具主义是其中一种）一直在争。2020 年 PhilPapers 对哲学家的调查里，约四分之三接受或倾向科学实在论；常见的理由是，理论若不是大致说中了世界，它的预测一再成功就成了奇迹。</p>
+<p><b>作者的看法：</b>他明说不主张工具主义，只说科学判断不了；科学「当作」一切结论都是暂定的工具来运作；接受科学的标准最终在科学之外，由社会决定，实际中层层委托给科学界（第 46–47、52–55 段）。</p>
+<p class="ours"><b>本站的评论：</b>这是一个谨慎、务实的立场，和全书「让结果当裁判」一致。容易误读的是「接受科学在科学之外决定」，它不是说科学结论可以投票推翻：作者紧接着说，社会去指定科学结论、禁止冒犯习俗的结论，看来对社会自己不利（第 47 段）。他也留下一个没回答的问题：第 51 段问什么样的社会才算成功，科学答不了，这正是第三部要面对的。</p></div>
+<p class="verdict"><b>本站的总体看法：</b>这一章是全书的工具箱：遗传算法讲得清楚准确，隐性知识是第三部的地基。值得带走的是「变异有偏」和「让结果当裁判」两条；要打折扣的是从算法到社会制度的那一步，类比有启发，证据要到后面几章去找。</p>
+
+<h2>检查一下理解</h2>
+<p class="lede">先在心里答，再点开。答错的那题，回书里把对应那一节再读一遍。</p>
+<details class="check"><summary>1.（§1）猜 1 到 10 亿之间的数，告诉高低时约 30 次就够。为什么是 30？</summary><p>每猜一次排除一半，2 的 30 次方约 10.7 亿，30 次就能把范围缩到一个数。作者拿它说明：同样是试错，用上了反馈的那种快得多。</p></details>
+<details class="check"><summary>2.（§1）遗传算法淘汰了 500 个基因组之后，空出来的位置怎么补上？</summary><p>剩下的 500 个随机配成 250 对，每对抛硬币：正面各复制一份，反面交叉生两个。500 个后代加上 500 个父母凑回 1000 个，再按约万分之一的位突变。</p></details>
+<details class="check"><summary>3.（§1）作者说演化「保守」，指的是什么？</summary><p>新基因组主要靠交叉产生，和之前成功的基因组很像；突变少、风险高。他把这话说给演化本身，不只是遗传算法。</p></details>
+<details class="check"><summary>4.（§1）作者的第一条启示，是不是「让专家决定该试哪些点子」？</summary><p>不是。他明说不是指有人有意识地出点子，或把试错集中到某些题目上，而是让游戏规则本身累积起好的偏向，比如鼓励点子交叉混搭。</p></details>
+<details class="check"><summary>5.（§2）化学工程师宣布她算出了最优的开关组合，论证精巧、证据充分。按作者的说法，她对不对怎么判断？</summary><p>看她那座工厂的产量是不是比别的高。在这一层上，一种方法内部的逻辑不是裁判，它本身是一个要拿现实来检验的理论。</p></details>
+<details class="check"><summary>6.（§3）作者为什么说科学更像「育种」？</summary><p>自然选择的厉害之处是不需要意识，科学家却有意识地隔离原因、挑选理论，像育种的人挑种。他也说这仍只是比方。</p></details>
+<details class="check"><summary>7.（§3）作者是工具主义者吗？</summary><p>不是。他说科学判断不了理论是不是只是工具，只是当作它们是暂定的工具来运作；他说的「真」，是能做出可靠、不显然的预测。</p></details>
+<textarea class="note" data-key="03-oneline" placeholder="用一句话说这一页"></textarea>
+<div class="ponder"><p>想一想：你维护过的系统里，有没有「没人知道为什么、但删了就出事」的代码、配置或流程？你当时是怎么决定动不动它的：先读懂再改，先小范围试，还是干脆不碰？</p>
+<textarea class="note" data-key="03-ponder"></textarea></div>
+
+<h2>精彩回顾</h2>
+<p class="lede">读过又忘了，从这里想起来。挑的是这一页最值得记住的故事、人和说法，不按原书顺序；每条后面是节号，想细看就回书里那一节。全书各页的这一节都收在<a href="../recap.html">全书回顾</a>。</p>
+<p class="recall-line"><b>一句话：</b>演化不是瞎试，没人懂也能积累隐性知识；科学是有意识的另一套办法，它的「真」在于让我们做成事。</p>
+<div class="recall">
+  <div class="item"><b>五亿次对三十次</b><p>猜 1 到 10 亿的数：只听对错，平均要猜约五亿次；听高低，用二分法三十次就够。同是试错，有没有反馈天差地别。</p><span class="sec">§1</span></div>
+  <div class="item"><b>比沙粒还多的开关组合</b><p>100 个开关有 2 的 100 次方种组合，比地球上的沙粒还多，试一百万辈子也试不完。遗传算法靠选择、交叉、突变一代代逼近。</p><span class="sec">§1</span></div>
+  <div class="item"><b>交叉是干重活的</b><p>在遗传算法里，新基因组主要靠交叉产生，和旧的成功者很像；突变是罕见的大赌注。作者说，演化在这个意义上是保守的。</p><span class="sec">§1</span></div>
+  <div class="item"><b>工程师对擂算法</b><p>化学工程师读标签、算几笔，自信地拨好所有开关。她的论证再漂亮，判输赢的也是工厂的产量。</p><span class="sec">§2</span></div>
+  <div class="item"><b>哥白尼上诉</b><p>地心说的行家判不了日心说，本轮的学问派不上用场。哥白尼把官司打到整个讲科学的共同体那一级。</p><span class="sec">§3</span></div>
+  <div class="item"><b>手机里的相对论</b><p>作者几乎每天用 iPhone 查位置，这离不开量子力学和相对论。理论「真」，是在它让人做成了事这个意义上。</p><span class="sec">§3</span></div>
+</div>
+
+</main>
+</body>
+</html>

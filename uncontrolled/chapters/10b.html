@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 10 章（下） · Uncontrolled 导读</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/chapters.js"></script>
+<script src="../assets/uc.js"></script>
+<style>
+#sim-10b .stage svg { width: 100%; min-width: 560px; height: auto; display: block; }
+#sim-10b .controls input[type="range"] { width: 110px; }
+#sim-10b .part { font-weight: 700; margin: 18px 0 8px; font-size: 15px; }
+#sim-10b .part:first-child { margin-top: 0; }
+#sim-10b .controls .vars { display: inline-flex; flex-wrap: wrap; gap: 4px 12px; }
+</style>
+</head>
+<body data-page="10b">
+<main>
+
+<h2>这一页在做什么</h2>
+<div class="gist"><p>上一页说，企业里的分析一碰到人的行为，就很难知道对不对。这一页用作者做过很多次的一类分析把它拆开：一家连锁便利店，挂 FastMart 牌子的店平均比 QwikMart 多卖 10 万美元，全改成 FastMart 能多卖吗？作者先用历史数据做回归，再拿已经改过名的门店当自然实验，一路找毛病，最后落到随机试验。读的时候抓住：每一种办法错在哪里，这些错能不能靠更多数据和更聪明的算法补救。</p></div>
+<figure class="fig"><img src="../assets/img/10b-travel-stop.jpg" alt="夜里一家亮着灯的加油站便利店，招牌上是红色的心形标志，左边连着一家快餐店，门口摆着冰柜和成箱的瓶装水" loading="lazy">
+<figcaption>佛罗里达州 4 号州际公路边的一家加油站便利店，2021 年。与本书无关。第 56–57 段说，高速公路服务区的店往往最挤、销售最高，店的面积也可能是管理方规定的：一家店卖得好，原因可以有很多层。<span class="src">MatthewHoobin，CC BY-SA 4.0，维基共享资源</span></figcaption></figure>
+
+<h2>读之前：这一页在全书的哪里</h2>
+<div class="linehere"></div>
+<p>上一页（第 10 章前两节）停在一句话：只要是在预测人的行为，问题就超出了手头的分析工具。这一页是作者给这句话举的「家常例子」。它和第 9 章是平行的：作者在第 49、53 段明说，他要拿批评 Bartels 和 Levitt 的眼光来审自己做过的回归；第 65 段又把两种标准做法分别对上第 9 章的那两类研究。结尾第 72 段把话头交给第 11 章：真实的企业里怎样做试验。</p>
+<div class="heads-up"><p>作者说随机试验是检验因果「唯一普遍可靠」的办法。经济学里用观察数据做因果推断的方法（双重差分、断点回归等）2021 年拿了诺奖，不是所有人都同意这么说，见「本站怎么看」。</p></div>
+<div class="crux"><p>门店的数据要多少有多少，为什么还是回答不了「改个名能多卖多少」？</p></div>
+<p class="lede">读的时候带着这几个问题。不用先找答案，读完回来对照「检查一下理解」。</p>
+<ol class="qs">
+  <li>作者说回归有三个毛病。数据多了，哪一个能缓解一部分，哪两个不能？<span class="sec">§3</span></li>
+  <li>拿已经改过名的 100 家店做前后对比，解决了什么老问题，又带来了什么新问题？<span class="sec">§3</span></li>
+  <li>为什么统计检验、多请几位分析师看看，都判断不了模型对不对？<span class="sec">§3</span></li>
+  <li>既然最后要靠试验，作者为什么不干脆说「别分析了，直接试」？<span class="sec">§3</span></li>
+</ol>
+
+<h2>这一页的路线</h2>
+<p>这一节读起来像一份分析报告，按「一种办法，它的毛病」一轮轮往前推。先是问题和数字（第 47 段），接着是一长串可能影响销售的因素（第 48 段，读快一点，它只是要你感到列不完）。第一轮是回归：第 50–52 段讲怎么做，第 53–58 段拆出三个毛病。第二轮是第 59–61 段：给模型加结构、换机器学习算法，作者说都绕不过那三个毛病。第三轮从第 62 段起：加上时间，拿改过名的门店做自然实验，毛病换成了选谁当对照、门店当初是怎么被挑中的。第 69 段容易一眼带过，却是关键：这些方法没法从内部检验自己。最后三段才到随机试验，又立刻加了两条限定。</p>
+<figure class="fig"><svg class="diagram" viewBox="0 0 640 250" role="img" aria-label="路线示意图：第一行是问题、回归、三个毛病、换算法；第二行是自然实验、选对照和挑店的偏差、方法检验不了自己、随机试验；第三行是仍要理论，然后指向第 11 章">
+<defs><marker id="ar10b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="f-a"/></marker></defs>
+<rect x="8" y="16" width="140" height="44" rx="6" class="box"/><text x="78" y="36" text-anchor="middle">问题：改名</text><text x="78" y="52" text-anchor="middle" class="t-m">第 47–48 段</text>
+<rect x="166" y="16" width="140" height="44" rx="6" class="box"/><text x="236" y="36" text-anchor="middle">回归：控制变量</text><text x="236" y="52" text-anchor="middle" class="t-m">第 49–52 段</text>
+<rect x="324" y="16" width="140" height="44" rx="6" class="box"/><text x="394" y="36" text-anchor="middle">三个毛病</text><text x="394" y="52" text-anchor="middle" class="t-m">第 53–58 段</text>
+<rect x="482" y="16" width="150" height="44" rx="6" class="box"/><text x="557" y="36" text-anchor="middle">换结构、换算法</text><text x="557" y="52" text-anchor="middle" class="t-m">第 59–61 段</text>
+<line x1="148" y1="38" x2="164" y2="38" class="ln-a" marker-end="url(#ar10b)"/>
+<line x1="306" y1="38" x2="322" y2="38" class="ln-a" marker-end="url(#ar10b)"/>
+<line x1="464" y1="38" x2="480" y2="38" class="ln-a" marker-end="url(#ar10b)"/>
+<polyline points="557,60 557,82 78,82 78,104" fill="none" class="ln-d" marker-end="url(#ar10b)"/>
+<text x="320" y="77" text-anchor="middle" class="t-m">加上时间这一维</text>
+<rect x="8" y="108" width="140" height="44" rx="6" class="box"/><text x="78" y="128" text-anchor="middle">自然实验</text><text x="78" y="144" text-anchor="middle" class="t-m">第 62–63 段</text>
+<rect x="166" y="108" width="140" height="44" rx="6" class="box"/><text x="236" y="128" text-anchor="middle">选对照、挑店</text><text x="236" y="144" text-anchor="middle" class="t-m">第 64–68 段</text>
+<rect x="324" y="108" width="140" height="44" rx="6" class="box"/><text x="394" y="128" text-anchor="middle">没法自己检验</text><text x="394" y="144" text-anchor="middle" class="t-m">第 69 段</text>
+<rect x="482" y="108" width="150" height="44" rx="6" class="f-soft"/><text x="557" y="128" text-anchor="middle" class="t-b">随机试验</text><text x="557" y="144" text-anchor="middle" class="t-m">第 70 段</text>
+<line x1="148" y1="130" x2="164" y2="130" class="ln-a" marker-end="url(#ar10b)"/>
+<line x1="306" y1="130" x2="322" y2="130" class="ln-a" marker-end="url(#ar10b)"/>
+<line x1="464" y1="130" x2="480" y2="130" class="ln-a" marker-end="url(#ar10b)"/>
+<line x1="557" y1="152" x2="557" y2="186" class="ln-a" marker-end="url(#ar10b)"/>
+<rect x="324" y="190" width="140" height="44" rx="6" class="box"/><text x="394" y="210" text-anchor="middle">第 11 章</text><text x="394" y="226" text-anchor="middle" class="t-m">企业里怎样做</text>
+<rect x="482" y="190" width="150" height="44" rx="6" class="box"/><text x="557" y="210" text-anchor="middle">仍要理论</text><text x="557" y="226" text-anchor="middle" class="t-m">第 71–72 段</text>
+<line x1="482" y1="212" x2="466" y2="212" class="ln-d" marker-end="url(#ar10b)"/>
+</svg>
+<figcaption>本站示意图。三轮「一种办法，它的毛病」：用历史数据做回归，换模型和算法，加上时间做自然实验；最后才是随机试验，而它仍离不开理论。</figcaption></figure>
+<p class="landing"><b>作者落在哪：</b>回归和各种找规律方法的三个毛病出在现象本身，换算法解决不了，加数据最多缓解一项；唯一普遍可靠的办法是随机挑店改名做试验，但试验仍要靠理论来挑选和推广。</p>
+
+<h2>分节地图</h2>
+<p class="lede">这一页是原书第 10 章的一节，粗体是本站给的节名，下面是原书这一节第一段开头的几个词，在 Kindle 里搜它就能跳过去（原书的小标题也在目录里）。每节标了档：「先读」不读就跟不上全书主线，「有空」好看但跳过不丢线。读完打个勾。</p>
+<ol class="secmap">
+  <li data-sec="3"><b>改名 FastMart<span class="w">约 3400 词</span></b><span class="en">I was once asked a seemingly …</span><span class="what">第 53 段起回归的三个毛病，第 62 段起改过名的门店，第 70 段起随机试验。第 48 段那串因素可以扫读。</span></li>
+</ol>
+
+<h2>先用中文过一遍：这一页的概念</h2>
+<p class="lede">先把这一页用到、作者默认你懂的几个概念讲一遍。讲的是概念本身，作者拿它推出什么，读原书时自己看。前面讲过的<a class="term" href="09.html#c-regression">回归分析和控制变量</a>、<a class="term" href="09.html#c-natural-experiment">自然实验</a>、<a class="term" href="07.html#c-confounder">混杂因素和选择偏差</a>、<a class="term" href="06.html#c-reference-class">参照类问题</a>、<a class="term" href="07.html#c-randomization">随机分组</a>，点进去看。</p>
+<div class="concept" id="c-omitted-variable">
+<h3><span class="sec">§3</span>遗漏变量偏差 <span class="en">omitted variable bias</span></h3>
+<p>回归里漏掉了一个因素，它既影响结果，又和你关心的那个变量相关，它的作用就会被算到你关心的变量头上。例：想知道上补习班对成绩有多大作用，回归里控制了家庭收入，却没有「父母多重视学习」的数据；重视学习的家庭更爱送孩子去补习，孩子本来也更用功，补习班的系数就被夸大了。偏差的方向取决于漏掉的因素怎样和两头相关，可能夸大，可能缩小，甚至把正负号翻过来。所以多控制几个变量不一定离真相更近：如果漏掉的几样作用正好互相抵消，补上其中一样，反而更偏。它就是<a class="term" href="07.html#c-confounder">混杂因素</a>换成回归的说法；随机分组能治它，因为抽签让漏掉的因素也和处理无关。</p>
+<figure class="fig"><svg class="diagram" viewBox="0 0 640 220" role="img" aria-label="箭头图：门前车流和附近竞争店两个没进方程的因素，各有一条虚线指向是 FastMart，各有一条实线指向销售额，一条加号一条减号；是 FastMart 指向销售额的粗箭头上打着问号">
+<defs><marker id="ar10b2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="f-fg"/></marker></defs>
+<rect x="8" y="20" width="150" height="40" rx="6" class="f-soft"/><text x="83" y="45" text-anchor="middle">门前车流</text>
+<rect x="8" y="160" width="150" height="40" rx="6" class="f-soft"/><text x="83" y="185" text-anchor="middle">附近竞争店</text>
+<rect x="250" y="90" width="150" height="40" rx="6" class="box"/><text x="325" y="115" text-anchor="middle">是 FastMart</text>
+<rect x="482" y="90" width="150" height="40" rx="6" class="box"/><text x="557" y="115" text-anchor="middle">销售额</text>
+<line x1="158" y1="48" x2="250" y2="96" class="ln-d" marker-end="url(#ar10b2)"/>
+<line x1="158" y1="172" x2="250" y2="124" class="ln-d" marker-end="url(#ar10b2)"/>
+<line x1="158" y1="36" x2="490" y2="90" class="ln" marker-end="url(#ar10b2)"/>
+<line x1="158" y1="184" x2="490" y2="130" class="ln" marker-end="url(#ar10b2)"/>
+<line x1="400" y1="110" x2="478" y2="110" class="ln-a" marker-end="url(#ar10b2)"/>
+<text x="439" y="102" text-anchor="middle" class="t-b">？</text>
+<text x="350" y="50" class="t-m">＋ 车多卖得多</text>
+<text x="350" y="182" class="t-m">− 对手多卖得少</text>
+<text x="170" y="84" class="t-m">FastMart 车更多</text>
+<text x="170" y="146" class="t-m">FastMart 对手更多</text>
+</svg>
+<figcaption>本站示意图，用的是下面模拟器里的设定。两个浅色框没进方程：一个让 FastMart 显得好，一个让它显得差。两个都漏掉，偏差部分抵消；只补上一个，另一个的偏差就全露出来。</figcaption></figure>
+<p class="use"><b>在这一页：</b>第 54 段，作者说只控制一部分变量常常弊大于利，出处是他注释里引的 Clarke 2005 年的论文。模拟器上半部分演的就是它。</p>
+</div>
+<div class="concept" id="c-interaction-effect">
+<h3><span class="sec">§3</span>交互效应 <span class="en">interaction effect</span></h3>
+<p>一个因素的作用大小，取决于另一个因素。两种药各自无害，一起吃就出事；同一句广告词，对年轻人有用，对老人反而招烦。回归里每个变量只有一个系数，等于假定它在哪儿作用都一样；有交互时，这个系数是各种情况混在一起的平均，可能接近 0，什么也说明不了。标准的补救是加交互项（两个变量相乘），让系数分情况。麻烦在于组合会爆炸：10 个是或否的因素，两两组合就有 45 项，三三组合又有 120 项，要估的数很快比手上的数据点还多。程序员熟悉的类比：每个模块的单元测试都过了，组合起来才出 bug，而所有组合是测不完的。</p>
+<p class="use"><b>在这一页：</b>第 55–56 段用 ATM 在大店帮忙、在小店添乱来讲它；第 61 段说数据多了最多部分缓解这一项。模拟器里勾上「ATM × 大店」看。</p>
+</div>
+<div class="concept" id="c-intercorrelation">
+<h3><span class="sec">§3</span>因果方向不明（作者的用法） <span class="en">variable intercorrelation</span></h3>
+<p>这是作者第 57–58 段的叫法，讲的是：你放进回归里「控制」的那些变量，和结果之间谁因谁果往往说不清。店大了卖得多；也可能是卖得多才扩建；还可能是第三个因素（地价便宜、服务区的规定）让店又大又旺。统计里分别叫反向因果和共同原因。注意它不是统计课上的「多重共线性」（几个自变量彼此高度相关，系数估不稳），虽然字面上像。控制一个变量，等于默认它是原因、而且朝一个方向起作用；如果它其实有一部分是结果，控制它就会把你要量的效果扣掉一块。</p>
+<p class="use"><b>在这一页：</b>第 57 段拿门店面积举例，说三种情况多半同时存在；第 58 段把它列为三个毛病中的第三个。</p>
+</div>
+<div class="concept" id="c-pattern-finding">
+<h3><span class="sec">§3</span>模式发现（作者的用法） <span class="en">pattern finding</span></h3>
+<p>作者第 60 段起的统称，指从历史数据里找规律、拿来预测的所有办法：回归，加上决策树、神经网络、支持向量机、聚类、现代的贝叶斯方法这些机器学习和数据挖掘技术。今天通行的说法是「预测模型」或「机器学习」。要分清两类问题：预测（这笔信用卡交易像不像盗刷）和因果（要是把这家店改名，它会多卖多少）。前者只要求过去的规律将来照样出现，机器学习很擅长；后者问的是你主动改一样东西会怎样，而历史数据里那样东西是谁、为什么改的，算法看不见。数据再多，也只是同一种来源的数据更多。</p>
+<p class="use"><b>在这一页：</b>第 60–61 段，作者说这些算法各有用武之地（如神经网络查信用卡盗刷），但都解决不了三个毛病，因为毛病出在现象本身。</p>
+</div>
+
+<h2>动手：模拟器</h2>
+<p>先猜：FastMart 的店平均比 QwikMart 多卖约 10 万美元，可改名本身其实一分钱也不多卖（真实效果设成 0）。用历史数据做回归，把店的面积、有没有 ATM 都「控制」住，品牌的系数会降到 0 吗？再勾上更多变量，它会一路往 0 走吗？先在上半部分点几下勾选框验证，再到下半部分试改名。</p>
+<div class="sim" id="sim-10b">
+  <div class="sim-head"><span class="tag">模拟器</span><h3>改名能多卖多少</h3><p class="desc">一家连锁便利店，8000 家叫 QwikMart，2000 家叫 FastMart，每家店的数据是本站编的。上半部分用历史数据做回归：勾选要「控制」哪些变量，看品牌的系数怎么变。下半部分拿一批 QwikMart 改名，一年后和对照组比。「改名的真实效果」只有模拟器知道，先保持 0，直接从上半部分的勾选框开始。</p></div>
+  <div class="sim-body"><p>需要浏览器打开脚本才能运行。</p></div>
+</div>
+<p>图例和数字：上半部分的数轴上有两个圆点：「原始差距」（FastMart 平均比 QwikMart 多卖多少）和「回归估计」（回归算出的品牌系数），哪个颜色是哪个，看图右上角的图例；竖线是真实效果，单位都是万美元。下面的方程是这一次回归算出的结果，每一行是一个变量和它的系数；「±」是误差范围（约两倍标准误）。五个变量里，面积和 ATM 是公司数据里有的；门前车流和附近竞争店，现实里公司往往没收集，模拟器让你偷看一眼。下半部分的数轴上，每个点是一次改名估出来的效果（改名店的销售变化减去对照组的变化，单位是百分点），竖线是真实效果；真实效果按每店约 100 万美元的销售额折算，上面的 1 万美元就是 1 个百分点。</p>
+<ol class="qs">
+  <li>试试看：真实效果保持 0，先什么都不勾：品牌系数就是原始差距，约 +10 万，误差范围只有 ±0.6 万左右，这就是第 48 段说的「差别大到极不可能是随机出现」。再勾上「面积」「有 ATM」「ATM × 大店」：系数降到约 +5 万，误差范围仍很窄，看起来像一个可靠的结论，可真实效果是 0。</li>
+  <li>试试看：接着勾上「附近竞争店」：系数不降反升，到约 +10 万；取消它、改勾「门前车流」：约 −4 万，正负号都反了；两个都勾上，才回到 0 附近。这就是第 54 段：只控制一部分变量常常弊大于利，而你不知道名单全不全。再看 ATM：取消「ATM × 大店」，「有 ATM」只剩一个系数，约 −1 万；勾回来，它分成两个：小店约 −2 万，大店两项相加约 +2 万（第 55–56 段）。</li>
+  <li>试试看：到下半部分。默认是「芝加哥的 100 家」改名、拿「全公司其他店」当对照，点「改名，一年后比较」：改名店约 −2%，对照组约 −3%，算出改名多卖约 1 个百分点，其实是芝加哥的衰退轻（第 63–64 段）。对照组换成「同地区的其他店」，点「再做 20 次」，平均回到 0 附近。改名的店换成「经理挑看着最差的」再做 20 次：两种对照都算出约 −3（第 66 段）。最后换成「随机挑 50 家」再做 20 次，点子围着 0 上下跳；换成「随机挑 100 家」，跳得更小（第 70 段）。</li>
+</ol>
+<p>这个模拟器的数字（每千平方英尺多卖多少、车流和竞争店的作用、芝加哥的衰退比别处轻一个百分点、经理眼里「看着最差」的店本来就要多跌几个百分点）都是本站编的，只为看清道理。QwikMart 和 FastMart 是作者匿名化的例子，书里的 −2.2% 和 −3.2% 也是作者举的假设数字。模拟器没有实现第 60 段那些机器学习算法。</p>
+
+<h2>书里的人、研究和背景</h2>
+<p class="lede">按在书里出现的顺序排，标题前是节号。只讲到读懂这一页需要的程度。</p>
+
+<h3><span class="sec">§3</span>QwikMart 和 FastMart：一个匿名化的例子</h3>
+<p>第 47 段作者说，这是一位高管真问过他的问题，但品牌、数据、名字都改过，为了保密。一家公司有 1 万家便利店，8000 家叫 QwikMart，2000 家叫 FastMart，平均年销售额 100 万对 110 万美元。他说之所以多用零售业的例子，是因为读者都熟悉。这类「改个名、换个装修、调个价，能多卖多少」的问题，是零售企业天天要拍板的事，也正是作者后来创办的公司做的生意（见「本站怎么看」）。</p>
+
+<h3><span class="sec">§3</span>Bartels、Levitt 和第 9 章</h3>
+<p>第 53 段说要拿审 Bartels 和 Levitt 的眼光审自己。这两位是第 9 章的例子：政治学家 Larry Bartels 在 2008 年的《不平等的民主》里用回归说，共和党总统和民主党总统执政时，富人和穷人的收入差距变化不同；经济学家 Steven Levitt（《魔鬼经济学》的作者之一）主张 1970 年代堕胎合法化是 1990 年代美国犯罪率下降的重要原因之一，用的是回归和自然实验。作者在第 9 章说，这类结论随一个假设的改变就站不住。第 65 段他又说，匹配很像那个堕胎—犯罪的自然实验，对变化量做回归很像 Bartels 和 Levitt 的回归模型。</p>
+
+<h3><span class="sec">§3</span>Clarke 2005：幻影威胁</h3>
+<p>第 54 段「只控制一部分变量常常弊大于利」，书后注释的出处是政治学家 Kevin Clarke 2005 年在《冲突管理与和平科学》上发表的《幻影威胁：计量经济研究中的遗漏变量偏差》。题目借了《星球大战》前传第一部的片名，讨论的是回归里的控制变量和遗漏变量偏差。作者引它，是要说明「多控制不一定更好」不是他一个人的看法。这个话题在计量经济学里至今有来有回，Clarke 2009 年还写过续篇，也有人撰文和他商榷。</p>
+
+<h3><span class="sec">§3</span>匹配和「合并回归」</h3>
+<p>第 65 段处理改名门店的两种标准做法。匹配（matching）：给每家改名店找几家最像它的没改名的店当对照，比一比两边的变化。另一种是拿「销售额的变化」做回归，再控制其他因素。作者说后者通常叫 pooled regression；在今天的教科书里，这个词一般指把多期、多个单位的数据混在一起做回归，作者描述的做法更接近「一阶差分」或双重差分（difference-in-differences）：先算每家店自己前后的变化，再和对照组的变化相减。第 68 段他说这比直接对销售额回归好，原因是店与店之间的差别，通常远大于同一家店前后的变化。</p>
+
+<h3><span class="sec">§3</span>Peirce、Neyman 和 Fisher</h3>
+<figure class="fig small"><img src="../assets/img/10b-neyman.jpg" alt="一位戴深色框眼镜、白发、穿白衬衫打领带的老人侧身回头看镜头的黑白照片，身后有一位年轻人" loading="lazy">
+<figcaption>Jerzy Neyman，图片说明写的是 1969 年在伯克利。<span class="src">Konrad Jacobs，CC BY-SA 2.0 de，维基共享资源</span></figcaption></figure>
+<p>第 70 段点名的三个人，第 7 章都讲过：美国哲学家 Peirce 1884 年做了一个随机化的心理学实验；Neyman 和 Fisher 在 1920–30 年代把随机化试验做成一门学问。作者在这里只是说，「随机挑店改名，再和没改名的店比」这个办法，就是他们几十年前想出来的那一套，用到了便利店上。</p>
+<div class="who">
+  <div><b>Jerzy Neyman</b><span class="en">1894–1981</span>波兰裔统计学家，后来在加州大学伯克利分校任教。置信区间、Neyman–Pearson 假设检验都出自他；他 1923 年分析农业试验时写下的记号，被看作今天因果推断里「潜在结果」框架的源头。在这一页里，他是随机试验的发现者之一。</div>
+</div>
+
+<h2>词与短语</h2>
+<p class="lede">按节排，每节前面是分节地图里的节名。标着「每个字都认识」的，是熟词生义、习语和反话，最容易读错。灰色的那几个字是原句里的位置，在 Kindle 里搜它就能找到。</p>
+
+<h3 class="sec-head" id="s3">§3 <span class="first">改名 FastMart</span></h3>
+<div class="entry"><div class="en">seemingly simple</div><div class="loc" data-p="47">… asked a seemingly simple question by …</div><div class="zh">看似简单的</div><div class="note">seemingly 是在预告：下面会证明它一点也不简单。</div></div>
+<div class="entry"><div class="en">unlikely to have occurred randomly</div><div class="loc" data-p="48">… extremely unlikely to have occurred randomly …</div><div class="zh">极不可能是随机出现的</div><div class="note">这就是「统计显著」的大白话，作者没用这个术语。紧接着他说，显著不等于是品牌造成的。</div></div>
+<div class="entry"><div class="en">ad infinitum</div><div class="loc" data-p="48">… in practical terms, ad infinitum …</div><div class="zh">（拉丁文）无穷无尽</div><div class="note">in practical terms 是限定：理论上也许有尽头，实际上列不完。</div></div>
+<div class="entry"><div class="en">manifestly</div><div class="loc" data-p="48">… It is manifestly an environment of …</div><div class="zh">显然、一望而知</div><div class="note">和后面的 high causal density 连读：因果密度高，是这一长串因素自己摆在那儿的。</div></div>
+<div class="entry trap"><div class="en">one little corner of the world</div><div class="loc" data-p="49">… in this one little corner of …</div><div class="zh">（世界上）这么一小块地方</div><div class="note">带讽刺：Henderson 想理解整个竞争系统的大梦，在这里缩成了「弄清一个店名的作用」，下文会说连这一小块也做不到。</div></div>
+<div class="entry trap"><div class="en">hedging</div><div class="loc" data-p="50">… the careful and important hedging in …</div><div class="zh">留有余地的措辞</div><div class="note">熟词生义：hedge 本是树篱、对冲。这里指 associated with（与……相关）这种不把话说死的说法，作者提醒它和 caused by（由……导致）差得很远。</div></div>
+<div class="entry"><div class="en">couched as</div><div class="loc" data-p="52">… conclusion is typically couched as …</div><div class="zh">（结论）表述成</div><div class="note">couch 作动词是「用某种措辞表达」。</div></div>
+<div class="entry"><div class="en">critical lens</div><div class="loc" data-p="53">… the same critical lens to my …</div><div class="zh">挑剔的眼光</div><div class="note">作者先审别人（第 9 章），再用同一把尺子审自己做过的分析。</div></div>
+<div class="entry"><div class="en">statistical proxy</div><div class="loc" data-p="54">… brand is a statistical proxy for …</div><div class="zh">统计上的替身</div><div class="note">proxy 是代理：品牌这个变量可能只是替某个没进方程的真原因「背了锅」。</div></div>
+<div class="entry"><div class="en">more harm than good</div><div class="loc" data-p="54">… often does more harm than good …</div><div class="zh">弊大于利</div><div class="note">注意前面的 often：常常，不是总是。</div></div>
+<div class="entry trap"><div class="en">go by many names</div><div class="loc" data-p="54">… This problem goes by many names …</div><div class="zh">有很多叫法</div><div class="note">go by 是「被叫作」，不是「经过」。</div></div>
+<div class="entry trap"><div class="en">on balance</div><div class="loc" data-p="55">… on balance it reduces sales …</div><div class="zh">好坏相抵之后、总的来说</div><div class="note">和天平有关，不是「在平衡上」：ATM 在小店也有好处，但扣掉拥挤带来的坏处，净效果是负的。</div></div>
+<div class="entry"><div class="en">peripheral issues</div><div class="loc" data-p="56">… interaction effects are not peripheral issues …</div><div class="zh">边缘问题</div><div class="note">作者的判断：在人的行为驱动的系统里，交互效应通常是核心，不是枝节。</div></div>
+<div class="entry trap"><div class="en">outcome of interest</div><div class="loc" data-p="57">… and the outcome of interest is …</div><div class="zh">所关心的那个结果</div><div class="note">学术腔，of interest 不是「有趣的」，是「我们要研究的」。</div></div>
+<div class="entry"><div class="en">force structure on</div><div class="loc" data-p="59">… to force structure on the model …</div><div class="zh">硬给（模型）加上结构</div><div class="note">指用模型外的信念规定变量该怎么起作用，比如认定涨价一定少卖。</div></div>
+<div class="entry"><div class="en">you might be surprised</div><div class="loc" data-p="59">… You might be surprised at how …</div><div class="zh">说出来你可能不信</div><div class="note">口气：作者在揭行内的短，删掉「不听话」的变量这种事很常见。</div></div>
+<div class="entry trap"><div class="en">beg the question</div><div class="loc" data-p="59">… such approaches beg the question of …</div><div class="zh">把待证的东西当了前提</div><div class="note">逻辑学的原义是「循环论证」，口语里又常当「引出问题」用。这里两层都说得通：这样做先假定了自己的因果信念是对的，于是逼出「我们凭什么知道它对」。</div></div>
+<div class="entry trap"><div class="en">hot new</div><div class="loc" data-p="60">… always some hot new pattern-finding algorithm …</div><div class="zh">时髦的新（算法）</div><div class="note">hot 是「当红的、热门的」，口气里带一点不以为然。</div></div>
+<div class="entry"><div class="en">application niche</div><div class="loc" data-p="61">… have specific application niches in …</div><div class="zh">适用的小领域</div><div class="note">作者承认这些算法在各自的地盘上确实更好用，他的批评只针对因果问题。</div></div>
+<div class="entry"><div class="en">partially ameliorate</div><div class="loc" data-p="61">… partially ameliorate the problem of …</div><div class="zh">部分缓解</div><div class="note">限定很多：前面还有 might (or might not)，可能缓解、也可能不，而且只是部分。</div></div>
+<div class="entry trap"><div class="en">the balance of</div><div class="loc" data-p="64">… we have the balance of the …</div><div class="zh">其余的、剩下的</div><div class="note">熟词生义：balance 在这里是「余额、余下部分」，the balance of the 9,900 stores 就是其余那 9900 家店。</div></div>
+<div class="entry trap"><div class="en">play into</div><div class="loc" data-p="66">… might have played into, for example …</div><div class="zh">（在决定里）起作用、掺进来</div><div class="note">不是「落入圈套」那个 play into someone’s hands：各种考虑都可能影响经理要不要改名。</div></div>
+<div class="entry"><div class="en">foreknowledge</div><div class="loc" data-p="67">… a manager’s foreknowledge of local demand …</div><div class="zh">事先知道的情况</div><div class="note">经理比分析师先知道当地的需求要变，这份先知会悄悄带进挑店和备货的决定里。</div></div>
+<div class="entry"><div class="en">draw-down</div><div class="loc" data-p="67">… inventory buildups or draw-downs are …</div><div class="zh">（库存）消减</div><div class="note">零售和财务行话，和 buildup（囤货）相对。</div></div>
+<div class="entry"><div class="en">plausibly</div><div class="loc" data-p="68">… still plausibly severe enough to …</div><div class="zh">很可能、有理由认为</div><div class="note">作者的把握程度：他没说合并回归一定不可靠，说的是「有理由认为」严重到不可靠。</div></div>
+<div class="entry"><div class="en">roughly speaking</div><div class="loc" data-p="70">… discovered many decades ago: roughly speaking …</div><div class="zh">粗略地说</div><div class="note">提醒后面是简化版：真做起来还有分层、样本量等讲究。</div></div>
+<div class="entry trap"><div class="en">on the order of</div><div class="loc" data-p="71">… likely would cost on the order …</div><div class="zh">大约、在……的量级</div><div class="note">和「顺序」无关。改 50 家店约 100 万美元。</div></div>
+<div class="entry trap"><div class="en">material</div><div class="loc" data-p="72">… will have a material competitive advantage …</div><div class="zh">实质性的、可观的</div><div class="note">熟词生义：形容词 material 在商业和法律里是「重大的、足以影响结果的」，不是「物质的」。</div></div>
+<div class="entry"><div class="en">all else equal</div><div class="loc" data-p="72">… All else equal, an organization in …</div><div class="zh">其他条件相同时</div><div class="note">作者给自己的结论加的限定，别丢：他没说做试验的公司一定赢。</div></div>
+<div class="entry trap"><div class="en">the porch of Plato’s Academy</div><div class="loc" data-p="72">… a discussion on the porch of …</div><div class="zh">柏拉图学园门廊上的讨论</div><div class="note">反话：作者说科学界把试验和判断合在一起的方式已经「哲学上不令人满意」，企业里的做法乱得多，比起来科学界简直像古希腊哲人在门廊下从容论道。</div></div>
+
+<h2>值得停下来的句子</h2>
+<blockquote class="quote">these problems are not at root a result of some unique shortcoming of regression as a method, but are inherent to the phenomenon under study.<cite>— §3 第 61 段。本站译：这些问题从根上说，并不是回归作为一种方法独有的缺陷造成的，而是所研究的现象本身固有的。</cite></blockquote>
+<p>这是这一页最要紧的一句，口气是下判断。关键词是 inherent：毛病不在工具，在对象。所以换一个更新的算法、换一批更聪明的分析师，都不治本。容易误读成「作者反对回归、反对机器学习」；他在前一句刚说过这些算法各有擅长的地方，他反对的只是拿它们回答「改了会怎样」这类因果问题。</p>
+<blockquote class="quote">The only generally reliable way to test our theory is the approach that C. S. Peirce, Jerzy Neyman, and R. A. Fisher discovered<cite>— §3 第 70 段。本站译：检验我们的理论，唯一普遍可靠的办法，是 C. S. Peirce、Jerzy Neyman 和 R. A. Fisher 发现的那一套。</cite></blockquote>
+<p>这是全书口气最硬的句子之一，但也带着限定：generally（普遍地），不是 always。注意他说的是「检验理论」，不是「取代理论」：下一段他马上解释，为什么做试验之前和之后，分析都还用得上。把这句读成「只信试验」，就把第 71 段丢了。</p>
+
+<h2>读完：作者到底说了什么</h2>
+<p class="lede">读完这一页的几节再看。下面是作者在这几节里的论点，由本站按论点重新组织，不按原书的顺序；每条下面是依据所在的段落，拿不准就回书里那几段再读一遍。</p>
+<div class="claims">
+  <div class="claim"><h4>回归给的是「相关」，三个毛病出在现象本身</h4><p>作者说，用历史数据做回归、「控制住其他因素」，有三个毛病：永远列不全原因（遗漏变量），因素之间的作用层层交互，控制变量和结果之间因果方向不明。只控制一部分变量常常弊大于利，而不知道全部名单，就无从知道哪种情况。</p><span class="sec">§3 第 50、53–58 段</span></div>
+  <div class="claim"><h4>换模型、换算法、加数据，都补不上</h4><p>用模型外的信念给模型加结构，是先假定了自己的因果信念是对的。机器学习各有擅长之处，但三个毛病不是回归独有的。数据多了，也许能部分缓解交互效应，对遗漏变量毫无帮助，对因果方向常常也帮不上多少。</p><span class="sec">§3 第 59–61 段</span></div>
+  <div class="claim"><h4>拿改过名的门店当自然实验，换来了新的偏差</h4><p>同一家店前后比，消掉了店与店之间的差别，却要回答「不改名会怎样」：选谁当对照（参照类），门店当初为什么被挑去改名（选择偏差），都可能大到盖过改名本身。对变化量做回归通常比直接回归好，但作者认为仍很可能不可靠。</p><span class="sec">§3 第 62–68 段</span></div>
+  <div class="claim"><h4>这些方法没法从内部检验自己</h4><p>统计显著和置信度说明不了问题，因为要问的是模型的假设是否被违反；多请几位分析师也没用，他们缺同样的数据，就会得出同样的错结论。换更聪明的人、收更多数据、用新算法，同理。</p><span class="sec">§3 第 69 段</span></div>
+  <div class="claim"><h4>随机试验是唯一普遍可靠的检验，但离不开理论</h4><p>随机挑一批店改名、和没改名的比，才是普遍可靠的办法。分析仍有用：试验贵，要靠理论挑先试哪些；试验做完，还要靠理论推广到其他店。作者说，在面向消费者的行业，其他条件相同时，把试验当评估首选的企业会有实在的竞争优势。</p><span class="sec">§3 第 70–72 段</span></div>
+</div>
+<p class="sowhat"><b>合起来：</b>作者用一个便利店的例子，把第 9 章对社会科学回归的批评搬到了企业里，而且说问题不在工具在对象。他给出的出路是随机试验，但不是「只信试验」：试验负责检验，理论负责挑选和推广。第 11 章讲这在企业里怎样落地。</p>
+<p class="chapsum"><b>第 10 章合起来：</b>作者说商业战略就是应用社会科学，撞上的是同一堵墙。上半页讲战略界想把战略变成科学：有物理规律撑着的经验曲线管用，Henderson 预测整个竞争系统的大梦落空，作者自己的项目说明模型永远不是系统，一碰到人的行为就很难知道对不对。下半页把这堵墙拆开：回归的三个毛病出在现象本身，换算法、加数据补不了；自然实验又碰上选对照和挑店的偏差。普遍可靠的只有随机试验，但它仍要靠理论来挑选和推广。</p>
+
+<h2>对照今天</h2>
+<p class="lede">这本书 2012 年出版。下面挑出这一页里能被后来的研究检验的说法，分「书里 / 当时 / 今天」三栏，并给一个结论。结论判的是标题里「书里的说法：」后面那一句。全书的这一节汇总在<a href="../today.html">对照今天</a>。</p>
+<ul class="verdicts"><li><span class="v ok">成立</span>后来的研究支持这句话。</li><li><span class="v mid">部分成立</span>大方向对，细节或适用范围要改。</li><li><span class="v bad">被改写</span>后来的研究推翻了它，或者换了一种说法。</li><li><span class="v dis">有争议</span>学界至今没有定论，两边各有代表性的研究。</li></ul>
+<div class="today" data-verdict="成立"><h4>书里的说法：机器学习这类找规律的方法，数据再多，也解决不了遗漏变量</h4><dl>
+  <dt>书里</dt><dd>各种模式发现算法都解决不了三个毛病；就算有 1000 万条客户记录，也许能部分缓解交互效应，对遗漏变量毫无帮助（§3 第 60–61 段）。</dd>
+  <dt>当时</dt><dd>2012 年前后「大数据」正热，常听到「数据够多，相关就够了」的说法。</dd>
+  <dt>今天</dt><dd>2018 年起「因果机器学习」兴起，如双重 / 去偏机器学习（Chernozhukov 等）、因果森林（Wager 和 Athey），能更灵活地控制大量变量，但前提仍是「混杂因素都已观测到」。Gordon、Moakler 和 Zettelmeyer 2023 年拿 Facebook 的 663 个大规模广告试验当标尺检验：用平台上丰富的用户数据，双重机器学习估出的广告效果中位数约为试验结果的三到五倍，作者结论是这样估不可靠。<span class="asof">核对于 2026-10。依据：Gordon、Moakler、Zettelmeyer，Marketing Science 2023；Gordon 等，Marketing Science 2019。</span></dd>
+  <dt>另一边</dt><dd>那篇论文也说，如果平台记录下和广告竞价有关的特征，观察数据的估计也许能改善。因果机器学习的支持者也从不说它能替代试验，只说在混杂都已观测到时更好用。</dd>
+</dl></div>
+<div class="today" data-verdict="成立"><h4>书里的说法：面向消费者的企业把试验当作评估项目的首选，其他条件相同时会有实在的竞争优势</h4><dl>
+  <dt>书里</dt><dd>企业把试验放到决策的中心、当作项目评估的首选方法，可以赚很多钱；在面向消费者的行业，其他条件相同时，这样做的组织会有实在的竞争优势（§3 第 72 段）。</dd>
+  <dt>当时</dt><dd>谷歌、亚马逊、微软等已在网上大量做 A/B 测试，零售、银行业的门店和客户试验刚起步。</dd>
+  <dt>今天</dt><dd>在线试验成了科技公司的日常：Kohavi、Tang 和 Xu 2020 年的书说，他们所在的公司各自每年做两万多个受控试验，并举了必应 2012 年一次改广告标题的试验，收入涨约 12%。Koning、Hasan 和 Chatterji 2022 年追踪大批初创公司，发现采用 A/B 测试工具的公司不多，但用了一年后，按他们的估计业绩提升 30% 到 100%。<span class="asof">核对于 2026-10。依据：Kohavi 等，Trustworthy Online Controlled Experiments（2020）；Koning 等，Management Science 2022。</span></dd>
+  <dt>另一边</dt><dd>支持这句话的证据本身多是非实验的：Koning 等用的是固定效应、工具变量、合成控制，正是作者说要打折扣的那类方法；企业不会为了检验「做试验好不好」去抽签决定谁做试验。</dd>
+</dl></div>
+
+<h2>本站怎么看</h2>
+<p class="lede">读完作者的论点，再看它站不站得住。每一块摆出三样：主流怎么看，作者怎么看，本站的评论。最后一句是本站对这一页的总体判断。</p>
+<div class="views"><h4>检验因果，真的只有随机试验「普遍可靠」吗</h4>
+<p><b>主流看法：</b>经济学过去三十年的「可信性革命」认为，在没法做试验的地方，设计得好的准实验也能给出可信的因果估计：双重差分、断点回归、工具变量。2021 年诺贝尔经济学奖颁给了 David Card、Joshua Angrist 和 Guido Imbens，表彰的正是这一路。另一方面，它们的可信度都押在「挑选机制已经看清」这类假设上，所以随机试验仍被当作标尺。</p>
+<p><b>作者的看法：</b>对变化量做回归通常比直接回归好，但仍很可能严重到不可靠；方法检验不了自己；唯一普遍可靠的是随机试验（第 68–70 段）。</p>
+<p class="ours"><b>本站的评论：</b>在门店改名、广告这类企业能自己决定、也做得起试验的问题上，作者站得住，Facebook 的比对就是证据。但他的「普遍」放到政策上要打折扣：很多问题根本没法抽签，准实验是最好的办法，而且当挑选机制清楚时（比如按某条规定、某个分数线），它可以很可信。他第 63–64 段拿未改名门店当对照，其实就是双重差分的雏形。</p></div>
+<div class="views"><h4>做试验的公司更赚钱：这话出自谁之口</h4>
+<p><b>主流看法：</b>业界和学界大体认同试验是企业学习的利器（Kohavi 等 2020；Koning 等 2022），也常提醒它的局限：试验偏爱能很快量出来的短期指标，大的战略转向很难拿来做试验。</p>
+<p><b>作者的看法：</b>试验要和非实验分析、乃至完全凭判断的决定合在一起用；但把试验当首选，在其他条件相同时会带来实在的优势（第 71–72 段）。</p>
+<p class="ours"><b>本站的评论：</b>读第 72 段时要知道作者的身份：第 11 章他会交代，1999 年他创办了 Applied Predictive Technologies，卖的正是帮零售商、银行设计和分析门店试验的软件，2015 年这家公司被万事达以 6 亿美元收购。这不说明他错，他的限定也写得清楚；但「试验带来竞争优势」出自卖试验的人之口，证据又多是非实验的，读者应把它当一个有根据的行家判断，而不是已证实的定论。</p></div>
+<p class="verdict"><b>本站的总体看法：</b>这是全书讲方法最清楚的一节：三个毛病、自然实验的两个坑、「方法检验不了自己」，今天的统计学和计量经济学课本都会同意，后来大公司的广告比对也支持他。要打折扣的是两处：「唯一普遍可靠」说得比经济学界的共识更绝对；「竞争优势」那句出自试验软件公司的创办人。</p>
+
+<h2>检查一下理解</h2>
+<p class="lede">先在心里答，再点开。答错的那题，回书里把对应那一节再读一遍。</p>
+<details class="check"><summary>1.（§3）原始差距 10 万美元，控制了面积和 ATM 之后剩 5 万。能说「FastMart 这个名字让每家店多卖 5 万」吗？</summary><p>不能。5 万只是「和品牌相关」的部分，里面可能混着没进方程的原因（比如门前车流多），也可能被因果方向不明的控制变量扭过。回归给的是相关，不是因果。</p></details>
+<details class="check"><summary>2.（§3）为什么多控制一个变量，品牌的系数反而可能离真相更远？</summary><p>漏掉的几个因素可能正好互相抵消，比如一个让 FastMart 显得好、一个让它显得差。补上其中一个，另一个的偏差就露出来了。不知道全部名单，就不知道多控制一个是变好还是变坏。</p></details>
+<details class="check"><summary>3.（§3）ATM 在大店帮忙、在小店添乱，回归里只放一个「有 ATM」变量，会算出什么？</summary><p>一个混在一起的平均数，可能是正、可能是负，也可能接近 0，哪种店都不适用。加上「ATM 且大店」这样的交互项能分开，但交互还会再交互，变量很快多过数据。</p></details>
+<details class="check"><summary>4.（§3）改过名的 100 家店全在芝加哥。拿全公司其他店当对照有什么问题？换成芝加哥的店就够了吗？</summary><p>芝加哥这段时间的经济可能和全国不一样，差别会被算成改名的效果。换成芝加哥的店好一些，但改名店都是 QwikMart、可能都比较大，还有别的不同，到底该拿哪一类店比（参照类），没有标准答案。</p></details>
+<details class="check"><summary>5.（§3）如果当初是经理挑了「看着最差」的店去改名，问题出在哪？数据里看得出来吗？</summary><p>这些店本来就可能要下滑，改名后的下滑会被算在改名头上，不管拿谁当对照都偏。挑店的理由在经理脑子里，数据里多半看不出来，作者说这类偏差大多不明显。</p></details>
+<details class="check"><summary>6.（§3）作者为什么说统计显著、多请几位分析师，都判断不了模型对不对？</summary><p>统计检验是在模型的假设成立的前提下算的，它回答不了假设本身有没有被违反。分析师如果缺的是同一份数据，就会一起得出同样的错结论。</p></details>
+<details class="check"><summary>7.（§3）随机试验既然最可靠，作者为什么还说需要理论和分析？</summary><p>试验贵：改 50 家店约 100 万美元，要靠分析挑出最值得试的想法。试验做完，结果只属于那几十家店，要推广到另外几千家，又要靠理论，这就是第 8 章讲的推广难题。</p></details>
+<textarea class="note" data-key="10b-oneline" placeholder="用一句话说这一页"></textarea>
+<div class="ponder"><p>想一想：产品数据里常见这种结论：「用了某个新功能的用户，留存率高出 20%」。按这一页的三个毛病，这个 20% 里可能混着什么？如果要真知道这个功能的作用，你会怎么设计？</p>
+<textarea class="note" data-key="10b-ponder"></textarea></div>
+
+<h2>精彩回顾</h2>
+<p class="lede">读过又忘了，从这里想起来。挑的是这一页最值得记住的故事、人和说法，不按原书顺序；每条后面是节号，想细看就回书里那一节。全书各页的这一节都收在<a href="../recap.html">全书回顾</a>。</p>
+<p class="recall-line"><b>一句话：</b>用历史数据找规律回答不了「改了会怎样」，毛病出在现象本身而不是工具；能普遍可靠地检验的只有随机试验，而它仍要靠理论来挑选和推广。</p>
+<div class="recall">
+  <div class="item"><b>多卖 10 万的 FastMart</b><p>FastMart 的店平均比 QwikMart 多卖 10 万美元，差别显著。可店大、车多、竞争少，哪一样都可能是原因，品牌只是嫌疑人之一。</p><span class="sec">§3</span></div>
+  <div class="item"><b>控制之后剩一半</b><p>控制了面积等因素，回归说「品牌的效果是 5 万」。作者说，这种句子在各种期刊里随处可见，而没进方程的原因可能还混在里面。</p><span class="sec">§3</span></div>
+  <div class="item"><b>ATM 在大店帮忙，在小店添乱</b><p>同一台 ATM，大店里招来顾客，小店里堵住收银台。一个系数说不清，交互项又会层层加码，变量比门店还多。</p><span class="sec">§3</span></div>
+  <div class="item"><b>都在芝加哥</b><p>改过名的 100 家店跌了 2.2%，全公司跌了 3.2%，改名立功了？要是这 100 家都在芝加哥，那里的衰退轻一点，结论就靠不住。</p><span class="sec">§3</span></div>
+  <div class="item"><b>经理挑的店</b><p>要是经理挑了「看着最差」的店去改名，它们本来就要下滑。挑店的理由在经理脑子里，数据里多半看不出来。</p><span class="sec">§3</span></div>
+  <div class="item"><b>随机挑 50 家，100 万美元</b><p>唯一普遍可靠的办法：随机挑一批店改名，和没改的比。改 50 家约要 100 万美元，所以还得靠分析挑出值得试的想法。</p><span class="sec">§3</span></div>
+</div>
+
+</main>
+<script>
+(() => {
+  // 改名能多卖多少：1 万家便利店（8000 QwikMart、2000 FastMart），数据都是本站编的。
+  // 年销售额（万美元）= 66 + 2.5 × 面积（千平方英尺）+ ATM（面积 ≥ 4 的大店 +2，小店 −2）+ 3 × 门前车流（千辆/日）− 2 × 附近竞争店 + 品牌真实效果 + 随机波动。
+  // FastMart 平均更大（+1.5 千平方英尺）、车流更多（+3）、竞争店更多（+2），三项分别让原始差距多出约 +5（含 ATM 在大店的好处）、+9、−4 万，合计约 10 万。
+  // 改名：每家店一年的销售变化（%）= 地区的大势（芝加哥 −2.2，别处 −3.2）+ 这家店自己的走势（经理大致看得出来）+ 随机波动 + 改名的真实效果（1 万美元折 1 个百分点）。
+  const root = document.getElementById("sim-10b");
+  if (!root) return;
+  const { h } = window.UC;
+  const NS = "http://www.w3.org/2000/svg";
+  const NQ = 8000, NF = 2000;
+  const mulberry = (s) => () => { s = (s + 0x6d2b79f5) | 0; let t = Math.imul(s ^ (s >>> 15), 1 | s); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
+  const gaussOf = (r) => () => { let u = 0; while (u === 0) u = r(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * r()); };
+  let rB = mulberry(7), gB = gaussOf(rB);
+  const st = { b: 0, use: { size: false, atm: false, atmbig: false, traffic: false, comp: false }, how: "chi", ctrl: "all", runs: [], last: null, S: [], gap: 0, reg: null };
+  const VARS = [
+    ["size", "面积", "万 × 面积（千平方英尺）", (s) => s.size],
+    ["atm", "有 ATM", "万 × 有 ATM（0 或 1）", (s) => s.atm],
+    ["atmbig", "ATM × 大店", "万 × 有 ATM 且是大店（0 或 1）", (s) => s.atm * s.big],
+    ["traffic", "门前车流", "万 × 门前车流（千辆/日）", (s) => s.traffic],
+    ["comp", "附近竞争店", "万 × 附近竞争店（家）", (s) => s.comp],
+  ];
+
+  // 生成门店：同一个种子，只有品牌的真实效果会变
+  function makeStores() {
+    const r = mulberry(1), g = gaussOf(r), S = [];
+    for (let i = 0; i < NQ + NF; i++) {
+      const F = i >= NQ;
+      const size = Math.max(1, (F ? 4.5 : 3) + g() * 0.8), atm = r() < 0.5 ? 1 : 0, big = size >= 4 ? 1 : 0;
+      const traffic = Math.max(1, (F ? 13 : 10) + g() * 3), comp = (F ? 2 : 0) + Math.floor(r() * 3), chi = r() < 0.06;
+      const sales = 66 + 2.5 * size + atm * (big ? 2 : -2) + 3 * traffic - 2 * comp + (F ? st.b : 0) + g() * 8;
+      S.push({ F, size, atm, big, traffic, comp, chi, sales, drift: g() * 1.2, chg: 0 });
+    }
+    st.S = S;
+    const m = (xs) => xs.reduce((a, s) => a + s.sales, 0) / xs.length;
+    st.gap = m(S.filter((s) => s.F)) - m(S.filter((s) => !s.F));
+  }
+
+  // 最小二乘：正规方程 + 高斯—若尔当求逆；主元接近 0 返回 null
+  function ols(X, y) {
+    const k = X[0].length, n = X.length, A = Array.from({ length: k }, () => new Array(2 * k).fill(0)), v = new Array(k).fill(0);
+    for (let r = 0; r < n; r++) { const x = X[r]; for (let i = 0; i < k; i++) { v[i] += x[i] * y[r]; for (let j = 0; j < k; j++) A[i][j] += x[i] * x[j]; } }
+    for (let i = 0; i < k; i++) A[i][k + i] = 1;
+    for (let c = 0; c < k; c++) {
+      let p = c; for (let r = c + 1; r < k; r++) if (Math.abs(A[r][c]) > Math.abs(A[p][c])) p = r;
+      if (Math.abs(A[p][c]) < 1e-9) return null;
+      [A[c], A[p]] = [A[p], A[c]]; const d = A[c][c];
+      for (let j = 0; j < 2 * k; j++) A[c][j] /= d;
+      for (let r = 0; r < k; r++) if (r !== c && A[r][c]) { const f = A[r][c]; for (let j = 0; j < 2 * k; j++) A[r][j] -= f * A[c][j]; }
+    }
+    const inv = A.map((row) => row.slice(k)), beta = inv.map((row) => row.reduce((a, x, j) => a + x * v[j], 0));
+    let rss = 0; for (let r = 0; r < n; r++) { let p = 0; for (let i = 0; i < k; i++) p += X[r][i] * beta[i]; rss += (y[r] - p) ** 2; }
+    const s2 = rss / (n - k);
+    return { beta, se: inv.map((row, i) => Math.sqrt(Math.max(0, s2 * row[i]))) };
+  }
+  function runReg() {
+    const on = VARS.filter(([id]) => st.use[id]);
+    st.reg = { on, fit: ols(st.S.map((s) => [1, s.F ? 1 : 0, ...on.map((x) => x[3](s))]), st.S.map((s) => s.sales)) };
+  }
+
+  // 改名一次：挑店、过一年、和对照组比
+  function rebrand() {
+    const S = st.S, Q = S.filter((s) => !s.F);
+    const shuffle = (a) => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(rB() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+    let T;
+    if (st.how === "r50") T = shuffle([...Q]).slice(0, 50);
+    else if (st.how === "r100") T = shuffle([...Q]).slice(0, 100);
+    else if (st.how === "chi") T = shuffle(Q.filter((s) => s.chi)).slice(0, 100);
+    else T = Q.map((s) => [s, s.drift + gB() * 0.6]).sort((a, b) => a[1] - b[1]).slice(0, 100).map((x) => x[0]);   // 经理挑看着最差的
+    const ts = new Set(T);
+    for (const s of S) s.chg = (s.chi ? -2.2 : -3.2) + s.drift + gB() * 2.5 + (ts.has(s) ? st.b : 0);
+    const others = S.filter((s) => !ts.has(s)), m = (xs) => xs.reduce((a, s) => a + s.chg, 0) / xs.length;
+    const mt = m(T);
+    let mc;
+    if (st.ctrl === "all") mc = m(others);
+    else { const oc = m(others.filter((s) => s.chi)), on = m(others.filter((s) => !s.chi)); mc = T.reduce((a, s) => a + (s.chi ? oc : on), 0) / T.length; }
+    st.last = { mt, mc, est: mt - mc, n: T.length };
+    st.runs.push(st.last.est);
+  }
+  function resetB(msg) { rB = mulberry(7); gB = gaussOf(rB); st.runs = []; st.last = null; drawB(msg || "已重置。点「改名，一年后比较」。"); }
+
+  // 控件
+  const sel = (opts, val, on) => { const e = h("select", {}); for (const [v, t] of opts) e.append(h("option", { value: v }, t)); e.value = val; e.onchange = () => on(e.value); return e; };
+  const eff = h("input", { type: "range", min: "-5", max: "10", step: "1", value: "0", "aria-label": "改名的真实效果，万美元" });
+  const effV = h("b", {}, "0");
+  eff.oninput = () => { st.b = +eff.value; effV.textContent = eff.value; makeStores(); runReg(); drawA(); resetB(); };
+  const boxes = h("span", { class: "vars" });
+  for (const [id, label] of VARS) {
+    const c = h("input", { type: "checkbox", "aria-label": label });
+    c.onchange = () => { st.use[id] = c.checked; runReg(); drawA(); };
+    boxes.append(h("label", {}, c, label));
+  }
+  const ctlA = h("div", { class: "controls" },
+    h("label", {}, "改名的真实效果", eff, effV, "万美元"),
+    h("span", { class: "sep" }),
+    h("label", {}, "回归里控制："), boxes);
+  const how = sel([["chi", "芝加哥的 100 家"], ["worst", "经理挑看着最差的 100 家"], ["r50", "随机挑 50 家"], ["r100", "随机挑 100 家"]], st.how, (v) => { st.how = v; resetB(); });
+  const ctrl = sel([["all", "全公司其他店"], ["region", "同地区的其他店"]], st.ctrl, (v) => { st.ctrl = v; resetB(); });
+  const ctlB = h("div", { class: "controls" },
+    h("label", {}, "哪些店改名", how),
+    h("label", {}, "对照组", ctrl),
+    h("span", { class: "sep" }),
+    h("button", { onclick() { rebrand(); drawB(); } }, "改名，一年后比较"),
+    h("button", { onclick() { for (let i = 0; i < 20; i++) rebrand(); drawB(); } }, "再做 20 次"),
+    h("button", { onclick() { resetB(); } }, "重置"));
+
+  // 画图的小工具
+  const el = (tag, attrs, txt) => { const e = document.createElementNS(NS, tag); for (const [k, v] of Object.entries(attrs)) e.setAttribute(k, v); if (txt != null) e.textContent = txt; return e; };
+  const mkSvg = (hgt, label) => { const s = document.createElementNS(NS, "svg"); s.setAttribute("viewBox", `0 0 640 ${hgt}`); s.setAttribute("class", "diagram"); s.setAttribute("role", "img"); s.setAttribute("aria-label", label); return s; };
+  function axis(svg, lo, hi, step, Y, title, unit) {
+    const L = 40, R = 600, X = (v) => L + ((Math.max(lo, Math.min(hi, v)) - lo) / (hi - lo)) * (R - L);
+    svg.append(el("text", { x: 8, y: 18, class: "t-b" }, title));
+    svg.append(el("line", { x1: L, y1: Y, x2: R, y2: Y, class: "ln" }));
+    for (let v = lo; v <= hi; v += step) {
+      svg.append(el("line", { x1: X(v), y1: Y - 4, x2: X(v), y2: Y + 4, class: "ln" }));
+      svg.append(el("text", { x: X(v), y: Y + 20, "text-anchor": "middle", class: "t-m" }, (v > 0 ? "+" : "") + v + unit));
+    }
+    return X;
+  }
+  const sign = (x, d = 1) => Math.abs(x) < 0.5 / 10 ** d ? (0).toFixed(d) : `${x > 0 ? "+" : "−"}${Math.abs(x).toFixed(d)}`;
+  const stat = (v, l) => h("div", { class: "stat" }, h("div", { class: "v" }, v), h("div", { class: "l" }, l));
+
+  // 上半部分：回归
+  const svgA = mkSvg(130, "数轴上标出原始差距、回归算出的品牌系数和真实效果，单位万美元");
+  const readout = h("div", { class: "readout" }), narA = h("div", { class: "narrate" }), statsA = h("div", { class: "stats" });
+  function drawA() {
+    svgA.replaceChildren();
+    const X = axis(svgA, -10, 20, 5, 92, "品牌（是 FastMart）的作用估出来是多少（万美元）", "");
+    svgA.append(el("line", { x1: X(st.b), y1: 52, x2: X(st.b), y2: 98, class: "ln-a" }));
+    svgA.append(el("text", { x: X(st.b), y: 126, "text-anchor": "middle", class: "t-b" }, `真实效果 ${sign(st.b, 0)}`));
+    svgA.append(el("circle", { cx: 360, cy: 38, r: 6, class: "f3" }), el("text", { x: 372, y: 42, class: "t-m" }, "原始差距"));
+    svgA.append(el("circle", { cx: 460, cy: 38, r: 6, class: "f1" }), el("text", { x: 472, y: 42, class: "t-m" }, "回归估计"));
+    svgA.append(el("circle", { cx: X(st.gap), cy: 66, r: 6, class: "f3" }));
+    statsA.replaceChildren();
+    const f = st.reg && st.reg.fit;
+    if (!f) {
+      readout.textContent = "这几个变量重合，算不出来。";
+      narA.textContent = "这几个变量重合，回归算不出唯一的答案，换一种勾法。";
+      statsA.append(stat(sign(st.gap), "原始差距：FastMart 平均多卖（万美元）"), stat(sign(st.b, 0), "改名的真实效果（万美元）"));
+      return;
+    }
+    const est = f.beta[1], err = 2 * f.se[1];
+    svgA.append(el("circle", { cx: X(est), cy: 80, r: 6, class: "f1" }));
+    const lines = [`年销售额 ≈ ${f.beta[0].toFixed(1)} 万`];
+    st.reg.on.forEach(([, , txt], i) => lines.push(`  ${sign(f.beta[2 + i])} ${txt}`));
+    lines.push(`  ${sign(est)} 万 × 是 FastMart（±${err.toFixed(1)}）`);
+    readout.textContent = lines.join("\n");
+    statsA.append(stat(sign(st.gap), "原始差距：FastMart 平均多卖（万美元）"),
+      stat(`${sign(est)}`, `回归里品牌的系数（±${err.toFixed(1)}）`),
+      stat(sign(st.b, 0), "改名的真实效果（万美元）"),
+      stat(sign(est - st.b), "回归估计比真实效果偏多少"));
+    const names = st.reg.on.map((x) => x[1]);
+    const miss = ["traffic", "comp"].filter((id) => !st.use[id]).map((id) => VARS.find((x) => x[0] === id)[1]);
+    const missAll = VARS.filter(([id]) => !st.use[id]).map((x) => x[1]);
+    narA.textContent = (names.length ? `控制了：${names.join("、")}。` : "什么都没控制，品牌的系数就是两种店的平均差距。") +
+      `品牌的系数是 ${sign(est)} 万，误差范围 ±${err.toFixed(1)} 万，真实效果是 ${sign(st.b, 0)} 万。` +
+      (miss.length ? `${miss.join("和")}没进方程，它们的作用混在品牌里。` :
+        missAll.length ? `${missAll.join("、")}还没进方程，和品牌沾边的那部分作用仍混在品牌里。` :
+        "所有真原因都进了方程，系数才回到真实效果附近；现实里你不知道名单全不全。");
+  }
+
+  // 下半部分：改名
+  const svgB = mkSvg(130, "数轴上每个点是一次改名估出来的效果，竖线是真实效果，单位百分点");
+  const narB = h("div", { class: "narrate" }), statsB = h("div", { class: "stats" });
+  function drawB(msg) {
+    svgB.replaceChildren();
+    const X = axis(svgB, -6, 6, 2, 92, "每次改名估出来的效果（百分点）", "");
+    svgB.append(el("line", { x1: X(st.b), y1: 30, x2: X(st.b), y2: 98, class: "ln-a" }));
+    svgB.append(el("text", { x: X(st.b), y: 126, "text-anchor": "middle", class: "t-b" }, `真实效果 ${sign(st.b, 0)}`));
+    st.runs.forEach((v, i) => svgB.append(el("circle", { cx: X(v), cy: 80 - (i % 6) * 8, r: 3.5, class: i === st.runs.length - 1 ? "f1" : "f3" })));
+    statsB.replaceChildren();
+    const r = st.last;
+    if (!r) { narB.textContent = msg || ""; return; }
+    const avg = st.runs.reduce((a, v) => a + v, 0) / st.runs.length;
+    statsB.append(stat(`${sign(r.mt)}%`, "改名店一年的销售变化"),
+      stat(`${sign(r.mc)}%`, "对照组同期的销售变化"),
+      stat(sign(r.est), "这一次估出的改名效果（百分点）"),
+      stat(st.runs.length > 1 ? sign(avg) : "—", `${st.runs.length} 次的平均（真实 ${sign(st.b, 0)}）`));
+    const why = {
+      chi: "改名的店都在芝加哥，那里的衰退比全国轻。",
+      worst: "经理挑的是本来就要下滑的店，这份下滑被算到了改名头上。",
+      r50: "随机挑的 50 家，和对照组只差运气。书里说改 50 家约要 100 万美元。",
+      r100: "随机挑的 100 家，比 50 家的运气成分更小。",
+    }[st.how];
+    narB.textContent = msg || `第 ${st.runs.length} 次：改名店变化 ${sign(r.mt)}%，对照组（${st.ctrl === "all" ? "全公司其他店" : "同地区的其他店"}）${sign(r.mc)}%，算出改名的效果 ${sign(r.est)} 个百分点，真实效果是 ${sign(st.b, 0)}。${why}`;
+  }
+
+  root.querySelector(".sim-body").replaceChildren(
+    h("div", { class: "part" }, "上半部分：用历史数据做回归"), ctlA, h("div", { class: "stage" }, svgA), readout, narA, statsA,
+    h("div", { class: "part" }, "下半部分：拿一批店改名，一年后和对照组比"), ctlB, h("div", { class: "stage" }, svgB), narB, statsB);
+  makeStores(); runReg(); drawA(); resetB();
+})();
+</script>
+</body>
+</html>

@@ -26,6 +26,7 @@ my_book_companion/
 | Darwin's Worms（Adam Phillips），附达尔文 1881 年蚯蚓书专页 | `worms/` · https://t.miaowuao.cn/worms/ | `dw-` | 5612 | 2026-10-20 上线：9 页＋开读之前＋蚯蚓书专页，审读轮做过；页面「原典」整段放达尔文、弗洛伊德的公有领域原文 |
 | The Selfish Gene（Richard Dawkins，30 周年版），对照中译本 40 周年增订版 | `selfish/` · https://t.miaowuao.cn/selfish/ | `sg-` | 2218（译本 6839） | 2026-10-21 上线：22 页＋开读之前，审读轮做过；5 个模拟器，每页尾注导读和逐段译本勘误，另有对照今天、译本勘误两个汇总页 |
 | 国富论（Adam Smith，Cannan 1904 年版），对照杨敬年中译本 | `wealth/` · https://t.miaowuao.cn/wealth/ | `wn-` | 6844、6845（译本 6840） | 2026-10-21 上线：28 页＋开读之前（9 核心、19 轻量），核心页做过收窄审读；节分先读 / 有空 / 可跳过，全书最短读法；每条论点标今天怎么看；逐段译本勘误；2 个模拟器 |
+| Uncontrolled（Jim Manzi，2012） | `uncontrolled/` · https://t.miaowuao.cn/uncontrolled/ | `uc-` | 6452 | 2026-10-22 上线：20 页＋开读之前，样板审读、底稿核对、审读轮都做过；节就是原书小标题，节分先读 / 有空 / 可跳过和全书最短读法；5 个模拟器；对照今天只用出版后的证据 |
 
 ## 新增一本书
 

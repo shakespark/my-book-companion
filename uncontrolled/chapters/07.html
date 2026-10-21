@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 7 章 · Uncontrolled 导读</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/chapters.js"></script>
+<script src="../assets/uc.js"></script>
+<style>
+#sim-07 .stage svg { width: 100%; min-width: 560px; height: auto; display: block; }
+#sim-07 .controls input[type="range"] { width: 110px; }
+</style>
+</head>
+<body data-page="07">
+<main>
+
+<h2>这一页在做什么</h2>
+<div class="gist"><p>前六章在讲科学怎样认识因果，这一章第一次落到一件具体的工具上：随机试验。问题是：一种药吃下去，病好了，我们怎么知道是药的功劳？人体复杂到列不全影响病情的原因，医生又会不自觉地挑人。作者从 18 世纪船上的坏血病讲到 20 世纪的链霉素，讲人们怎样一步步找到「抽签分组」这个办法。读的时候抓两条线：抽签到底控制住了什么，以及它控制不住什么。</p></div>
+<figure class="fig small"><img src="../assets/img/07-lind.jpg" alt="一位戴白色卷发假发的中年男子的油画肖像，一手扶着竖起的书，一手按在摊开的书页上，背后窗外是一排红砖建筑" loading="lazy">
+<figcaption>James Lind 的肖像，George Chalmers 画于 1783 年。§1 第 11 段：1747 年，他在一条英国军舰上把 12 个得了坏血病的水手分成六组试六种疗法，常被算作第一次临床对照试验。<span class="src">George Chalmers，公有领域，维基共享资源</span></figcaption></figure>
+
+<h2>读之前：这一页在全书的哪里</h2>
+<div class="linehere"></div>
+<p>第 5 章给「可能的原因多到数不清」起了个名字，叫因果密度；第 6 章说概率也救不了归纳。这一章接着问：在因果密度这么高的地方，有没有办法照样做出可靠的对照实验？医学是作者挑的第一个现场，后面第 11 章的商业试验、第 12 章的社会政策试验，都照着这里的方法来。章末第 38 段点出随机试验的软肋，直接引出第 8 章。</p>
+<div class="crux"><p>我们不知道影响病情的全部原因，怎么还能断定「是这个药起的作用」？</p></div>
+<p class="lede">读的时候带着这几个问题。不用先找答案，读完回来对照「检查一下理解」。</p>
+<ol class="qs">
+  <li>外科手术几千年前就能靠经验进步，吃药治病却进步得很慢。作者说差别在哪？<span class="sec">§1</span></li>
+  <li>19 世纪的生理学家很重视「控制」，也会用盲法。他们卡在哪一步？<span class="sec">§1</span></li>
+  <li>作者说随机分组有两个用处，其中一个「更深刻」。是哪一个？<span class="sec">§1</span></li>
+  <li>医生的三条反对里，作者认为哪一条分量最重？他为什么不把它当成借口打发掉？<span class="sec">§2</span></li>
+</ol>
+
+<h2>这一页的路线</h2>
+<p>§1 很长，是一条按年代走的路。前三段先立题：治病是「在看不懂的复杂系统里找因果」的典型。接着往回倒到古代：理论医学几千年大多没用，经验医学在外科上有进步，在药上很慢。然后进入主线，看人们怎样一步步改进「对照」：Lind 凭眼光挑相似的病人，生理学家想把已知的原因一个个固定住，巴斯德那样效果奇大的试验不在乎对照粗糙；直到 Peirce 和 Fisher 想到抽签。第 21–23 段是全章的心脏，读两遍。后面几段讲 Bell 的两个改进和今天的规模，像一份档案。§2 换了口气：作者先替反对者说话，再落到推广这个难题上，和第 8 章接上。</p>
+<figure class="fig"><svg class="diagram" viewBox="0 0 640 230" role="img" aria-label="路线示意图：上面一行是对照的办法怎样一步步改进，下面一行是对应的例子和年份，最后一个箭头指向第 8 章的推广问题">
+<defs><marker id="ar07" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="f-a"/></marker></defs>
+<text x="8" y="22" class="t-m">对照的办法</text>
+<text x="8" y="150" class="t-m">例子（书里的年份）</text>
+<rect x="8" y="34" width="110" height="44" rx="6" class="box"/><text x="63" y="54" text-anchor="middle">凭眼光</text><text x="63" y="71" text-anchor="middle">挑相似的人</text>
+<rect x="140" y="34" width="110" height="44" rx="6" class="box"/><text x="195" y="54" text-anchor="middle">固定</text><text x="195" y="71" text-anchor="middle">已知的原因</text>
+<rect x="272" y="34" width="110" height="44" rx="6" class="f-soft"/><text x="327" y="54" text-anchor="middle" class="t-b">抽签分组</text><text x="327" y="71" text-anchor="middle">连未知的也分匀</text>
+<rect x="404" y="34" width="110" height="44" rx="6" class="box"/><text x="459" y="54" text-anchor="middle">抽签加分层</text><text x="459" y="71" text-anchor="middle">意向治疗</text>
+<rect x="536" y="34" width="96" height="44" rx="6" class="box"/><text x="584" y="54" text-anchor="middle">推广？</text><text x="584" y="71" text-anchor="middle" class="t-m">第 8 章</text>
+<line x1="118" y1="56" x2="138" y2="56" class="ln-a" marker-end="url(#ar07)"/>
+<line x1="250" y1="56" x2="270" y2="56" class="ln-a" marker-end="url(#ar07)"/>
+<line x1="382" y1="56" x2="402" y2="56" class="ln-a" marker-end="url(#ar07)"/>
+<line x1="514" y1="56" x2="534" y2="56" class="ln-d" marker-end="url(#ar07)"/>
+<line x1="63" y1="78" x2="63" y2="160" class="ln-d"/><line x1="195" y1="78" x2="195" y2="160" class="ln-d"/>
+<line x1="327" y1="78" x2="327" y2="160" class="ln-d"/><line x1="459" y1="78" x2="459" y2="160" class="ln-d"/>
+<text x="63" y="178" text-anchor="middle">Lind 的水手</text><text x="63" y="196" text-anchor="middle" class="t-m">1747</text>
+<text x="195" y="178" text-anchor="middle">Bernard、巴斯德</text><text x="195" y="196" text-anchor="middle" class="t-m">19 世纪</text>
+<text x="327" y="178" text-anchor="middle">Peirce、Fisher</text><text x="327" y="196" text-anchor="middle" class="t-m">1884、1935</text>
+<text x="459" y="178" text-anchor="middle">Bell、Hill</text><text x="459" y="196" text-anchor="middle" class="t-m">1938、1940 年代</text>
+<text x="584" y="178" text-anchor="middle">医生的反对</text><text x="584" y="196" text-anchor="middle" class="t-m">§2</text>
+<text x="8" y="222" class="t-m">§1 走完上面四格，§2 停在最右边那格的门口。</text>
+</svg>
+<figcaption>本站示意图。上面一行是「怎样让两组人只差一个药」的办法，一格比一格少依赖「我们已经知道什么」；下面是书里对应的人和年份。</figcaption></figure>
+<p class="landing"><b>作者落在哪：</b>抽签分组让我们不必知道疾病的全部原因，也能把药的作用单独量出来，这是认识上谦卑的办法。但它量出的只是这一批人、这一次的平均差别，能不能搬到别人身上，是另一个问题。</p>
+
+<h2>分节地图</h2>
+<p class="lede">这一页是原书第 7 章的两节，粗体是本站给的节名，下面是原书这一节第一段开头的几个词，在 Kindle 里搜它就能跳过去（原书的小标题也在目录里）。每节标了档：「先读」不读就跟不上全书主线，「有空」好看但跳过不丢线。读完打个勾。</p>
+<ol class="secmap">
+  <li data-sec="1"><b>从坏血病到抽签分组<span class="w">约 3500 词</span></b><span class="en">Anyone who has ever sought treatment …</span><span class="what">一节读完要四十分钟。第 11 段起 Lind，第 18 段起 Peirce 和 Fisher（全章最要紧），第 24 段起现代试验的细节。</span></li>
+  <li data-sec="2"><b>医生的三条反对<span class="w">约 1200 词</span></b><span class="en">Like many innovations, the RFT faced …</span><span class="what">先看第 35–36 段那条「其他条件从不相等」，最后两段是到第 8 章的桥。</span></li>
+</ol>
+
+<h2>先用中文过一遍：这一页的概念</h2>
+<p class="lede">先把这一页用到、作者默认你懂的几个概念讲一遍。讲的是概念本身，作者拿它推出什么，读原书时自己看。前面讲过的<a class="term" href="in.html#c-counterfactual">反事实</a>、<a class="term" href="01.html#c-hidden-conditional">隐藏条件</a>、<a class="term" href="05.html#c-causal-density">因果密度</a>，点进去看。</p>
+<div class="concept" id="c-signal-noise">
+<h3><span class="sec">§1</span>信噪比 <span class="en">signal-to-noise ratio</span></h3>
+<p>本来是通信和电子工程的说法：你要的信号有多强，和混在里面的杂音有多大，两者之比。借到试验里，「信号」是处理带来的效果，「噪声」是结果本身的自然起伏。比如一种降压药平均让血压多降 5 毫米汞柱，可同一个人今天和明天量出来就能差 10，这就是信噪比低：光看几个病人吃药前后的读数，分不清是药还是起伏。信噪比越低，越需要严格的对照、越需要多的人。程序员熟悉的类比：性能优化只快了 2%，而每次跑基准测试的结果本来就上下浮动 5%，跑一两次根本说不清优化有没有用。</p>
+<p class="use"><b>在这一页：</b>第 6 段用它解释外科为什么比吃药进步得快；第 23、37 段又用它说明样本量和「什么样的疗法最适合做试验」。</p>
+</div>
+<div class="concept" id="c-control-group">
+<h3><span class="sec">§1</span>试验组、对照组和配对 <span class="en">test group, control group, matching</span></h3>
+<p>想知道一种处理有没有用，找两组人：一组接受处理，叫试验组；另一组不接受，叫对照组，结果的差别就算在处理头上。这个推理只有一个前提：两组除了处理以外一模一样。怎么做到？最早的办法是配对：凭经验挑出病情、年龄相近的人，一边一个。配对的毛病是，你只能对着你知道的因素配，不知道的因素配不了。对照组常吃安慰剂（placebo），一种看起来一样、没有药效的东西，免得「知道自己吃了药」本身影响结果；记录结果的医生也最好不知道谁在哪组，这叫盲法（blinding）。</p>
+<p class="use"><b>在这一页：</b>第 12 段给出这个基本思路，第 13–17 段讲 19 世纪的人怎样在配对这条路上走到头。</p>
+</div>
+<div class="concept" id="c-confounder">
+<h3><span class="sec">§1</span>混杂因素和选择偏差 <span class="en">confounder, selection bias</span></h3>
+<p>混杂因素是同时影响两件事的第三个因素，它会把自己的作用冒充成处理的作用。比如医生更愿意把新药给病情轻的人，病情轻的人本来就恢复得好：病情轻重既影响「谁吃了药」，又影响「好得快不快」，于是药显得有效。因为两组的人一开始就不一样而造成的偏差，叫选择偏差；挑人的可以是医生，也可以是病人自己（愿意按时吃药的人，往往也更注意饮食和作息）。下面这张图左右对照：左边医生挑人时，病情轻重有两条路通到结果；右边改成抽签，从病情到分组那条路被切断了。</p>
+<figure class="fig"><svg class="diagram" viewBox="0 0 640 200" role="img" aria-label="两张对照的箭头图。左图：病情轻重指向谁吃药，也指向血压降了多少，吃药也指向血压降了多少。右图：抽签指向谁吃药，病情轻重只指向血压降了多少">
+<defs><marker id="ar07b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="f-fg"/></marker></defs>
+<text x="10" y="20" class="t-b">医生凭印象挑人</text>
+<rect x="10" y="40" width="110" height="36" rx="6" class="f-soft"/><text x="65" y="63" text-anchor="middle">病情轻重</text>
+<rect x="10" y="130" width="110" height="36" rx="6" class="box"/><text x="65" y="153" text-anchor="middle">谁吃药</text>
+<rect x="190" y="130" width="110" height="36" rx="6" class="box"/><text x="245" y="153" text-anchor="middle">血压降多少</text>
+<line x1="65" y1="76" x2="65" y2="126" class="ln" marker-end="url(#ar07b)"/>
+<line x1="110" y1="76" x2="200" y2="126" class="ln" marker-end="url(#ar07b)"/>
+<line x1="120" y1="148" x2="186" y2="148" class="ln-a" marker-end="url(#ar07b)"/>
+<text x="10" y="192" class="t-m">两条路都通到结果，分不开</text>
+<text x="340" y="20" class="t-b">抽签分组</text>
+<rect x="340" y="40" width="110" height="36" rx="6" class="f-soft"/><text x="395" y="63" text-anchor="middle">病情轻重</text>
+<rect x="500" y="40" width="110" height="36" rx="6" class="box"/><text x="555" y="63" text-anchor="middle">抽签</text>
+<rect x="340" y="130" width="110" height="36" rx="6" class="box"/><text x="395" y="153" text-anchor="middle">谁吃药</text>
+<rect x="500" y="130" width="110" height="36" rx="6" class="box"/><text x="555" y="153" text-anchor="middle">血压降多少</text>
+<line x1="530" y1="76" x2="430" y2="126" class="ln" marker-end="url(#ar07b)"/>
+<line x1="440" y1="76" x2="530" y2="126" class="ln-d" marker-end="url(#ar07b)"/>
+<line x1="450" y1="148" x2="496" y2="148" class="ln-a" marker-end="url(#ar07b)"/>
+<text x="340" y="192" class="t-m">病情只影响结果，不再影响分组</text>
+</svg>
+<figcaption>本站示意图。粗线是我们想量的那条路：药对血压的作用。</figcaption></figure>
+<p class="use"><b>在这一页：</b>第 22 段说的随机分组的第一个用处，就是防选择偏差；第 25 段「肯照医嘱吃药的人」也是它。</p>
+</div>
+<div class="concept" id="c-randomization">
+<h3><span class="sec">§1</span>随机分组 <span class="en">random assignment, randomization</span></h3>
+<p>谁进试验组、谁进对照组，由抛硬币、抽签或随机数表决定，不由任何人挑。它的妙处在于：抽签不看任何特征，所以任何特征，包括谁也没想到要查的，在两组里都会大致一样多。「大致」是因为抽签有运气（抽样误差），组越大越匀。这个想法 Fisher 在 1920–30 年代的农业试验里系统化，1940 年代进了临床试验，今天叫随机对照试验（randomized controlled trial，RCT），是新药上市前的必经之路。作者全书把它叫 RFT（randomized field trial，随机现场试验），第 24 段交代过，是社会科学里的叫法；上网查资料要搜 RCT。已知的重要因素还可以先分层再抽签（分层随机，stratification）：年轻人、老年人各自抽签，让两组的老少比例几乎一样。</p>
+<p class="use"><b>在这一页：</b>第 20–23 段讲它为什么管用，第 26–27 段讲分层，第 29 段说它成了医学的「金标准」。</p>
+</div>
+<div class="concept" id="c-intent-to-treat">
+<h3><span class="sec">§1</span>意向治疗和依从性 <span class="en">intent-to-treat, compliance</span></h3>
+<p>依从性是病人肯不肯照医嘱做，比如按时吃药。分进试验组的人，总有一些人不吃药。如果只拿「真吃了药的人」和对照组比，就又把选择偏差请回来了：肯按时吃药的人，往往在别的方面也更自律，本来就更健康。意向治疗原则是：分进哪组就按哪组算，不管实际吃没吃。这样估出来的是「给病人开这个药」的效果，偏小但不偏心。一个有名的教训是美国 1960–70 年代的冠心病药物项目（Coronary Drug Project）：吃安慰剂的人里，按时吃的五年死亡率也比不按时吃的低一大截，可见「肯照做」本身就和健康有关。</p>
+<p class="use"><b>在这一页：</b>第 25 段，作者拿它说明 Bell 的眼光；那个项目在书里只有一句话，数字是本站补的（见「书里的人、研究和背景」）。</p>
+</div>
+
+<h2>动手：模拟器</h2>
+<p>先猜：一种降压药其实完全没用（真实疗效设成 0）。让医生凭印象挑一半病人吃新药，另一半吃安慰剂，最后比两组血压平均降了多少。算出来的「疗效」会是 0 吗？改成抛硬币分组呢？再点「做一次试验」验证。</p>
+<div class="sim" id="sim-07">
+  <div class="sim-head"><span class="tag">模拟器</span><h3>为什么要抽签分组</h3><p class="desc">每次试验招一批高血压病人，分成试验组和对照组。每个病人有两样会让血压更难降的特征：年纪大（医生看得见），和一个大约十分之一的人带着的基因变体（谁也不知道）。「谁进试验组」选医生挑、抛硬币或先按年纪分层再抛硬币；「药真实能多降」是药本身的作用，模拟器知道，做试验的人不知道。先直接点「做一次试验」。</p></div>
+  <div class="sim-body"><p>需要浏览器打开脚本才能运行。</p></div>
+</div>
+<p>图例：上半部分每个小方块是一个病人，浅色底的是年纪大的，方块里有圆点的是带着基因变体的；下半部分的数轴上，每个点是一次试验估出来的疗效（试验组血压平均比对照组多降多少毫米汞柱），竖线是真实疗效。下面四个数依次是：这一次估出的疗效；两组里带基因变体的人各占多少；两组里年纪大的人各占多少；到目前为止所有试验的估计平均比真实疗效偏多少。</p>
+<ol class="qs">
+  <li>试试看：保持默认（医生挑、每组 100 人、真实疗效 0），点「做一次试验」，再点「再做 20 次」。估出来的疗效大多是正的，21 次平均偏多少？看两组带基因变体的比例差多少：医生没见过基因，却把它分偏了，因为它让病人「看上去」病得重。这是第 22 段随机分组的第一个用处要防的事。</li>
+  <li>试试看：接着把「谁进试验组」换成「抛硬币」（换了会自动重置），点「做一次试验」，再「再做 20 次」。点子散在 0 两边，平均偏差接近 0；两组带基因变体的人数大致一样。这就是第 22 段说的第二个、作者说「更深刻」的用处：没人知道的因素也被分匀了。</li>
+  <li>试试看：还是抛硬币，把人数改成「每组 20 人」，再做 20 次，点子散得很开，有的离 0 很远；改成「每组 1500 人」再做 20 次，点子挤成一小团。第 23 段：抽签也有运气，组越大越匀。最后把真实疗效拖到 10 再试一次每组 20 人：效果大了，小试验也看得出来，这是第 6、14 段说的「信号强」。</li>
+</ol>
+<p>这个模拟器的数字（基因变体让血压少降 8、年纪大少降 4、每个人的随机起伏）都是本站编的，只为看清道理，不是哪项研究的数据。</p>
+
+<h2>书里的人、研究和背景</h2>
+<p class="lede">按在书里出现的顺序排，标题前是节号。只讲到读懂这一页需要的程度。</p>
+
+<h3><span class="sec">§1</span>古代的对照：《但以理书》、伊本·西那和《本草图经》</h3>
+<p>第 7 段一口气列了好几个古代的例子。《但以理书》里，但以理请求和同伴只吃素菜喝清水十天，再和吃王膳的少年比面色。Avicenna（伊本·西那，980–1037）的《医典》写下了检验药物的规则。书里写「Ben Cao Tu Jing 给一个跑步的人吃人参、另一个不吃」，把 Ben Cao Tu Jing 当成了人名，其实这是宋代苏颂等人编的药书《本草图经》（1061 年），书里记载：要试人参真假，让两人同走三五里，含人参的不喘。</p>
+
+<h3><span class="sec">§1</span>James Lind 和坏血病</h3>
+<p>坏血病是缺维生素 C 造成的，远洋水手常常因此大批死去。1747 年，Lind 在英国军舰 Salisbury 号上把 12 个病人两两一组，分别试了苹果酒、稀硫酸、醋、海水、柑橘等六种办法，吃柑橘的两人好得最快。他 1753 年写了《论坏血病》。作者拿这个例子说明对照试验的基本思路，也点出它粗糙：分组靠 Lind 的眼光，他自己说过有一组是「病得最重的两个」（第 11 段）。</p>
+<div class="who">
+  <div><b>James Lind</b><span class="en">1716–1794</span>苏格兰海军军医。他的坏血病试验常被当作临床对照试验的起点，讲「公平试验」历史的网站 James Lind Library 就以他命名。</div>
+</div>
+
+<h3><span class="sec">§1</span>巴斯德的公开试验</h3>
+<p>第 14 段讲巴斯德的炭疽疫苗：打了疫苗的全活，没打的全死，效果大到怎么粗糙的对照都看得出来。书里写的是 1882 年、各 25 头牛。通常的记载是 1881 年 5 月在巴黎东南的 Pouilly-le-Fort 农场，主要用的是羊：打疫苗的一组是 24 只羊、1 只山羊、6 头牛，对照组大致同样多；打完第二针两周后，所有动物都接种了炭疽菌，没打疫苗的羊和山羊很快全死了。细节和书里不同，作者要说的道理不受影响。</p>
+
+<h3><span class="sec">§1</span>Peirce、Fisher 和 Rothamsted</h3>
+<figure class="fig small"><img src="../assets/img/07-fisher.jpg" alt="一位戴圆眼镜的年轻男子的黑白半身照，穿西装、打领带，胸前别着一枚奖章" loading="lazy">
+<figcaption>1913 年的 R. A. Fisher，二十出头。<span class="src">作者不详，公有领域，维基共享资源</span></figcaption></figure>
+<p>美国哲学家 Peirce 1884 年和学生 Jastrow 做了一个分辨轻重的心理学实验，用随机的顺序给出砝码，作者说「据我所知」这是第一个随机化实验（第 18 段）。真正把随机化做成一门学问的是 Fisher：他在伦敦北边的 Rothamsted 农业试验站分析施肥试验，发现必须把不同处理随机分到田块上，才能算出可信的差别。他 1935 年的书《实验设计》（The Design of Experiments）开创了这门学科。</p>
+<div class="who">
+  <div><b>R. A. Fisher</b><span class="en">1890–1962</span>英国统计学家、遗传学家。随机化、方差分析、显著性检验的很多基础都出自他。他也是第 8 章「吸烟致癌之争」里怀疑的一方。</div>
+</div>
+<figure class="fig"><img src="../assets/img/07-rothamsted.jpg" alt="阴天下的麦田，被泥土小道分成一条条长长的试验带，远处有树和一排低矮的建筑" loading="lazy">
+<figcaption>Rothamsted 试验站的 Broadbalk 小麦田，1995 年。这块田从 1843 年起分成一条条施不同肥料的试验带，至今还在种。Fisher 在这里工作时，分析的就是这类田间试验的数据。<span class="src">Mick Crawley，CC BY-SA 2.0，维基共享资源</span></figcaption></figure>
+
+<h3><span class="sec">§1</span>Bradford Hill、Bell 和现代临床试验</h3>
+<p>英国医学研究理事会 1948 年发表的链霉素治肺结核试验，常被当作第一个现代随机对照试验，统计负责人是 Austin Bradford Hill（1897–1991）。作者引 Iain Chalmers 的发现，说 1938 年美国弗吉尼亚州 Norfolk 的百日咳疫苗试验更早，主持人 Joseph Bell 用随机数表分组，还用了意向治疗和分地区的分层（第 24–26 段）。第 25 段一笔带过的冠心病药物项目，1980 年的分析里，吃安慰剂的人中按时吃的五年死亡率约 15%，不按时吃的约 28%。</p>
+
+<h3><span class="sec">§1</span>临床试验分期</h3>
+<p>第 28 段那四期，是今天新药上市的规矩。一期找少数人看安全和剂量；二期在病人里初看有没有效；三期是大规模的随机对照试验，这一期的结果决定药能不能批准上市；四期是上市后继续盯着看副作用。美国由食品药品监督管理局（FDA）把关，各国大同小异。所以医学里的随机试验，很大程度上是法规逼出来的，这也是第 32 段说「依法禁止没通过试验的疗法」的背景。</p>
+
+<h3><span class="sec">§2</span>循证医学</h3>
+<p>第 32 段提到今天有些医生抵制「循证医学」。这个词 1990 年代初由加拿大 McMaster 大学的 Gordon Guyatt 等人推开，主张治疗方案主要依据试验和系统综述的证据，而不是医生个人的经验和权威。作者把当年医生抵制随机试验和今天的抵制放在一起，后面第 11 章讲企业里的人抵制试验，明说和医生是同一个套路。</p>
+
+<h2>词与短语</h2>
+<p class="lede">按节排，每节前面是分节地图里的节名。标着「每个字都认识」的，是熟词生义、习语和反话，最容易读错。灰色的那几个字是原句里的位置，在 Kindle 里搜它就能找到。</p>
+
+<h3 class="sec-head" id="s1">§1 <span class="first">从坏血病到抽签分组</span></h3>
+<div class="entry trap"><div class="en">a long way from</div><div class="loc" data-p="1">… are still a long way from comprehending …</div><div class="zh">离……还差得远</div><div class="note">不是「离得很远」的空间意思，是说「远远没做到」：医学研究者还远远没弄懂人体。</div></div>
+<div class="entry"><div class="en">come to fruition</div><div class="loc" data-p="2">… a long time to come to fruition …</div><div class="zh">显出结果</div><div class="note">fruition 本义是结果实。这里说一次治疗引起的连锁反应，要很久才显出后果，而且不一定是好果子。</div></div>
+<div class="entry"><div class="en">as per</div><div class="loc" data-p="4">… But as per Bacon’s indictment, no …</div><div class="zh">正如、按照</div><div class="note">公文腔的「按照」。作者在指回第 1 章：培根痛批经院哲学的理论对实际毫无用处，医学理论也是这样。</div></div>
+<div class="entry"><div class="en">nontrivial</div><div class="loc" data-p="8">… A nontrivial portion of the modern …</div><div class="zh">不小的、相当可观的</div><div class="note">数学和工程腔，字面「不是微不足道的」。作者爱用这种往轻里说的说法，意思其实是「相当大」。</div></div>
+<div class="entry trap"><div class="en">rain dance</div><div class="loc" data-p="9">… this has always been rain dances …</div><div class="zh">求雨舞：做了也白做的仪式</div><div class="note">比喻传统疗法里很多都只是心理安慰，就像跳舞求雨，雨下不下和舞无关。</div></div>
+<div class="entry trap"><div class="en">glacial</div><div class="loc" data-p="9">… therefore progress was glacial …</div><div class="zh">慢得像冰川移动</div><div class="note">熟词生义：不是「冰川的」，是「极慢的」。</div></div>
+<div class="entry"><div class="en">be credited with</div><div class="loc" data-p="11">… Lind is conventionally credited with executing …</div><div class="zh">被认为是……的功劳</div><div class="note">credit 在这里是「归功」。conventionally 是「按通常的说法」，作者留了余地：第一个是谁，有别的说法。</div></div>
+<div class="entry"><div class="en">place a burden on</div><div class="loc" data-p="12">… places an enormous burden on the assumption …</div><div class="zh">把重担压在……上</div><div class="note">整个推理都靠「两组除了处理以外一模一样」这一个假设撑着，假设一垮，结论就垮。</div></div>
+<div class="entry"><div class="en">use a parachute</div><div class="loc" data-p="14">… makes sense to use a parachute …</div><div class="zh">跳伞要不要背降落伞</div><div class="note">医学界的一个老笑话：效果一目了然的事，不需要随机试验来证明。2003 年《英国医学杂志》还发过一篇戏仿的「降落伞的随机对照试验系统综述」，结论是一篇都没有。</div></div>
+<div class="entry trap"><div class="en">not for lack of</div><div class="loc" data-p="16">… This wasn’t for lack of diligent …</div><div class="zh">并不是因为缺少……</div><div class="note">「不是因为不够努力」：作者在替 19 世纪的研究者说话，他们很用心，问题出在方法上。</div></div>
+<div class="entry trap"><div class="en">devolve to</div><div class="loc" data-p="17">… would devolve to the question of who …</div><div class="zh">最后归结为、落到</div><div class="note">devolve 常见的意思是「权力下放」，这里是「一路退化成」：讨论来讨论去，变成了「谁说了算哪些病人算相似」。</div></div>
+<div class="entry trap"><div class="en">stumble into</div><div class="loc" data-p="18">… Peirce did not stumble into this …</div><div class="zh">误打误撞碰上</div><div class="note">作者强调 Peirce 是从自己的理论推出随机化的，不是碰运气碰上的。</div></div>
+<div class="entry"><div class="en">epistemic humility</div><div class="loc" data-p="21">… is another statement of epistemic humility …</div><div class="zh">认识上的谦卑</div><div class="note">epistemic 是「和知识有关的」。全书的关键词之一：承认自己不知道。第 2 章第 3 段作者说过，实验本身就体现了科学根子上的这种谦卑；这里说随机分组是同一种态度的又一种表达。</div></div>
+<div class="entry trap"><div class="en">of interest</div><div class="loc" data-p="22">… with the gene variant of interest …</div><div class="zh">所关心的、所研究的那个</div><div class="note">学术腔，不是「有趣的」。the treatment of interest 就是「我们要考察的那种处理」。</div></div>
+<div class="entry"><div class="en">all else being equal</div><div class="loc" data-p="23">… therefore, all else being equal, larger group …</div><div class="zh">在其他条件相同的情况下</div><div class="note">经济学里常说的拉丁文 ceteris paribus 的英文版。记住这个短语，§2 第 35 段医生的第三条反对会把它反过来说。</div></div>
+<div class="entry"><div class="en">a marker for</div><div class="loc" data-p="25">… compliance can act as a marker …</div><div class="zh">某种东西的标志</div><div class="note">医学用语：肯不肯照医嘱吃药，本身就暗示了一个人在生活习惯上的许多别的东西。</div></div>
+<div class="entry trap"><div class="en">belt and suspenders</div><div class="loc" data-p="27">… the outcome of interest on a …</div><div class="zh">又系腰带又挂背带：双保险</div><div class="note">美国口语，形容过分小心、留双重保障。这里是说随机加配对两手都用。</div></div>
+<div class="entry trap"><div class="en">gold standard</div><div class="loc" data-p="29">… the so-called scientific gold standard …</div><div class="zh">公认最可靠的标准</div><div class="note">本义是金本位。so-called 在这里不带贬义，只是「人们所说的」。</div></div>
+<div class="entry trap"><div class="en">dwarf</div><div class="loc" data-p="29">… and dwarfs the cost of such …</div><div class="zh">（动词）使……相形见绌</div><div class="note">熟词生义：名词是「矮人」，动词是「比得像个矮子」。</div></div>
+
+<h3 class="sec-head" id="s2">§2 <span class="first">医生的三条反对</span></h3>
+<div class="entry"><div class="en">incumbent</div><div class="loc" data-p="30">… faced fierce resistance from incumbents …</div><div class="zh">在位者、既得者</div><div class="note">政治和商业里常用，指占着位置的现任者。这里是当时掌握话语权的医生和研究者。</div></div>
+<div class="entry"><div class="en">rote script</div><div class="loc" data-p="32">… production workers executing a rote script …</div><div class="zh">死记硬背的照本宣科</div><div class="note">医生怕自己从「独立的专业人士」变成流水线工人，只会照着规程走。</div></div>
+<div class="entry trap"><div class="en">appropriately enough</div><div class="loc" data-p="34">… often termed, appropriately enough, holistic medicine …</div><div class="zh">名副其实地</div><div class="note">插入语，带一点打趣：「整体医学」这个名字正好说出了它的主张。</div></div>
+<div class="entry trap"><div class="en">miss the forest for the trees</div><div class="loc" data-p="34">… missed the forest for the trees …</div><div class="zh">见树不见林</div><div class="note">只盯着一种病一种药，忽略了人的整体。</div></div>
+<div class="entry"><div class="en">all else is never equal</div><div class="loc" data-p="35">… all else is never equal …</div><div class="zh">其他条件从来不会相同</div><div class="note">把 §1 那句 all else being equal 翻过来用：试验比的是平均，可眼前这个病人和平均的病人总有不同。作者说这条反对更根本，分量很重。</div></div>
+<div class="entry"><div class="en">ad infinitum</div><div class="loc" data-p="35">… and so on ad infinitum …</div><div class="zh">（拉丁文）无穷无尽</div></div>
+<div class="entry"><div class="en">politically expedient</div><div class="loc" data-p="35">… as a politically expedient way for …</div><div class="zh">政治上图方便的</div><div class="note">expedient 是「权宜的、对自己有利的」。作者点出这条反对可以被医生拿来保住自己的权力。</div></div>
+<div class="entry trap"><div class="en">independent of interest</div><div class="loc" data-p="36">… Even considered independent of interest, however …</div><div class="zh">撇开利益不谈</div><div class="note">interest 在这里是「私利」，不是「兴趣」。作者先承认医生有私心，再说即使撇开私心，这条反对也很有分量。</div></div>
+<div class="entry"><div class="en">Achilles’ heel</div><div class="loc" data-p="38">… heel of any randomized experiment …</div><div class="zh">阿喀琉斯之踵：致命的弱点</div><div class="note">希腊神话：阿喀琉斯全身刀枪不入，只有脚后跟是弱点。</div></div>
+
+<h2>值得停下来的句子</h2>
+<blockquote class="quote">Random assignment in experiments is another statement of epistemic humility.<cite>— §1 第 21 段。本站译：在实验里随机分组，是认识上谦卑的又一种表达。</cite></blockquote>
+<p>这句很短，却把这一章接回了全书。第 1、2 章说科学的起点是承认人容易自以为是；这里作者说，随机分组的精神也是承认无知：我们列不全影响病情的原因，干脆不去挑，让抽签替我们把不知道的东西也分匀。注意他没说随机分组能告诉我们「为什么」有效，它只回答「有没有效」。</p>
+<blockquote class="quote">This raises the Achilles’ heel of any randomized experiment: generalization.<cite>— §2 第 38 段。本站译：这就碰到了一切随机试验的致命弱点：推广。</cite></blockquote>
+<p>前面整章都在讲随机试验有多可靠，最后一段突然转身：它可靠的，只是「这一批病人、这些医生、这几个日期」的结论。作者用 any，是说再好的随机试验也逃不掉。这句话是第 8 章的题目，也是全书后半部分反复回来的地方：商业和政策里的试验，往往不是做得不对，而是带不走。</p>
+
+<h2>读完：作者到底说了什么</h2>
+<p class="lede">读完这一页的几节再看。下面是作者在这几节里的论点，由本站按论点重新组织，不按原书的顺序；每条下面是依据所在的段落，拿不准就回书里那几段再读一遍。</p>
+<div class="claims">
+  <div class="claim"><h4>判断疗效难，难在要回答「不吃药会怎样」</h4><p>人体是因果密度极高的系统，同一种疗法对不同的人、不同的时候效果差很多，血压自己也会起伏。很多外科手术效果立竿见影，靠经验就能进步；吃药往往只是把好转的概率挪一点，信噪比低，没有好的对照就分不清真假，所以几千年里进步很慢。</p><span class="sec">§1 第 1–3、5–6、9–10 段</span></div>
+  <div class="claim"><h4>配对式的对照，卡在「要先知道所有原因」</h4><p>从 Lind 到 19 世纪的生理学家，办法都是挑相似的病人、把已知的原因固定住。可这要求先知道影响病情的全部原因，而这正是不知道的；最后变成「谁来判定哪些病人算相似」的争执。效果像巴斯德疫苗那样大的，不在乎对照粗糙，但这样的疗法很少。</p><span class="sec">§1 第 11–17 段</span></div>
+  <div class="claim"><h4>随机分组更深刻的价值，在平衡我们不知道的因素</h4><p>作者说随机分组有两个用处：防止实验者有意无意地挑人；更深刻的是，让连研究者都不知道的隐藏条件在两组里大致均衡。它是在承认无知的前提下做出对照实验的办法。均衡不是精确的，组越大越接近；再加上意向治疗和分层，就是今天医学的随机试验。</p><span class="sec">§1 第 20–27 段</span></div>
+  <div class="claim"><h4>「其他条件从不相等」是一条真正有分量的反对</h4><p>作者认为医生的抵制部分出于权力和面子，但第三条反对即使撇开私心也很重：试验给的是平均，眼前的病人总有不同。所以单次随机试验最适合「中间地带」的疗法：效果不至于明显到不用试，也不至于小到要考虑太多别的因素才能拿主意。</p><span class="sec">§2 第 32、35–37 段</span></div>
+</div>
+<p class="sowhat"><b>合起来：</b>随机试验是作者心目中可靠因果知识的样板，它的力量来自不必懂机制、不必列全原因。但它回答的只是一批人、一个时间地点的问题。全书后面每一次讲试验，都会回到这两头：可靠，和带不走。</p>
+
+<h2>对照今天</h2>
+<p class="lede">这本书 2012 年出版。下面挑出这一页里能被后来的研究检验的说法，分「书里 / 当时 / 今天」三栏，并给一个结论。结论判的是标题里「书里的说法：」后面那一句。全书的这一节汇总在<a href="../today.html">对照今天</a>。</p>
+<ul class="verdicts"><li><span class="v ok">成立</span>后来的研究支持这句话。</li><li><span class="v mid">部分成立</span>大方向对，细节或适用范围要改。</li><li><span class="v bad">被改写</span>后来的研究推翻了它，或者换了一种说法。</li><li><span class="v dis">有争议</span>学界至今没有定论，两边各有代表性的研究。</li></ul>
+<div class="today" data-verdict="成立"><h4>书里的说法：随机试验已是医学里判断疗效的公认「金标准」</h4><dl>
+  <dt>书里</dt><dd>随机化之争到 1970 年代初就结束了，随机试验在能用的地方挤掉了别的办法，几乎被普遍接受为金标准（§1 第 29 段，§2 第 31 段）。</dd>
+  <dt>当时</dt><dd>循证医学的证据等级里，随机对照试验和它们的系统综述排在最上面，新药审批靠三期随机试验。</dd>
+  <dt>今天</dt><dd>仍然如此。变化在边上：美国 2016 年的《21 世纪治愈法案》要求 FDA 研究怎样使用临床试验以外的「真实世界证据」，FDA 2018 年发布了框架，主要用于已上市药物的补充适应症等场合；统计学界也发展了用观察数据「模拟一个目标试验」的方法，前提仍是把随机试验当标尺。<span class="asof">核对于 2026-10。依据：FDA Framework for FDA’s Real-World Evidence Program（2018）。</span></dd>
+  <dt>另一边</dt><dd>经济学家 Angus Deaton 和哲学家 Nancy Cartwright 2018 年在 Social Science &amp; Medicine 上撰文，批评人们过分迷信随机试验：它最多给出一个无偏的平均效果，推广到别的人群要靠别的知识。这和作者第 38 段的担心一致。</dd>
+</dl></div>
+<div class="today" data-verdict="成立"><h4>书里的说法：病来得快又几乎必死、疗效又近乎完美时，对照做得粗糙也能下结论</h4><dl>
+  <dt>书里</dt><dd>巴斯德那次，炭疽几乎立刻致命，疫苗又近乎完美，两样合起来，任何方法上的不精确都压得住；可惜这样的疗法很少（§1 第 14 段）。</dd>
+  <dt>当时</dt><dd>这是医学界的常识，「降落伞不需要随机试验」的笑话说的就是它。2007 年 Glasziou、Chalmers 等人在《英国医学杂志》上把它说得更具体：效果大到两组的发生率相差十倍以上、又不大可能是别的原因造成时，不做随机试验也可以下结论。</dd>
+  <dt>今天</dt><dd>仍然这样看。新冠疫苗是一个对照：2020 年辉瑞疫苗的三期试验，保护效果约 95%，仍随机分了 4 万多人，因为几个月里两组一共只有 170 人确诊（疫苗组 8 人，安慰剂组 162 人）。效果再大，病例少就要大样本；巴斯德是给每只动物都接种了炭疽菌，病例是「造」出来的，这正是书里说的那两个条件。<span class="asof">核对于 2026-10。依据：Glasziou 等，BMJ 2007;334:349；Polack 等，《新英格兰医学杂志》2020。</span></dd>
+</dl></div>
+
+<h2>本站怎么看</h2>
+<p class="lede">读完作者的论点，再看它站不站得住。每一块摆出三样：主流怎么看，作者怎么看，本站的评论。最后一句是本站对这一页的总体判断。</p>
+<div class="views"><h4>随机分组真能平衡「不知道的原因」吗</h4>
+<p><b>主流看法：</b>能，但只在概率意义上、只在平均上。统计学教科书的说法是：随机分组让两组在所有特征上的差别都只剩运气，运气的大小可以算出来；所以随机试验的结论附带误差范围，单次试验仍可能碰巧不均。</p>
+<p><b>作者的看法：</b>随机分组让隐藏条件「大致均衡」，均衡不精确，组越大越接近，统计学就是用来估计这份把握的（第 21–23 段）。</p>
+<p class="ours"><b>本站的评论：</b>作者这里讲得准确，限定词也都在。值得补一句的是它的边界：随机分组解决的是「两组可比」，解决不了「量的是不是你关心的东西」，比如试验只量血压，没量生活质量（第 33 段医生的第一条反对），也解决不了推广。读后面的章节时，分清作者在批评哪一种问题。</p></div>
+<div class="views"><h4>医生抵制随机试验，是出于私心吗</h4>
+<p><b>主流看法：</b>医学史研究一般认为两样都有：随机试验削弱了医生个人判断的权威，也确实有伦理上的难处，比如让病人抽签决定拿不拿到可能有效的新药，一直有人质疑。</p>
+<p><b>作者的看法：</b>反对者的动机不全是纯的，医生像所有人一样不愿被外人指挥；但最严格的反对点出了随机试验真正的局限（第 30、32、35–36 段）。</p>
+<p class="ours"><b>本站的评论：</b>作者两边都说了，这是这一章公道的地方，读的时候别只记住「医生护权」那半句。他没有提伦理这条理由，而它在后面的社会政策试验里更重要：拿学校、福利、警察出警做抽签，常被质疑不公平。另外，「技术之争延续四十年，正好一个职业生涯」（第 31 段）是作者的推测，书里没有给证据。</p></div>
+<p class="verdict"><b>本站的总体看法：</b>这是全书最扎实的一章：讲的是教科书级的方法和历史，作者的判断大多站得住。细节上有几处小错（巴斯德试验的年份和动物，《本草图经》被当成人名），不影响论证。最值得带走的是他自己在结尾泼的冷水：随机试验可靠，但可靠的范围很窄。</p>
+
+<h2>检查一下理解</h2>
+<p class="lede">先在心里答，再点开。答错的那题，回书里把对应那一节再读一遍。</p>
+<details class="check"><summary>1.（§1）为什么外科几千年前就能靠经验进步，药物却很慢？</summary><p>外科的效果往往立竿见影，「要不是做了手术会怎样」一目了然；药物通常只是把好转的可能性挪一点，效果比病情自己的起伏还小，信噪比低，不靠严格对照就分不清。</p></details>
+<details class="check"><summary>2.（§1）Lind 和 19 世纪的生理学家都在努力「控制」，他们的办法卡在哪？</summary><p>他们靠配对，或者把已知的影响因素固定住。这要求先知道影响病情的全部原因，可人体太复杂，原因列不全，最后变成谁说了算哪些病人算相似。</p></details>
+<details class="check"><summary>3.（§1）随机分组的两个用处是什么？作者说哪个更深刻？</summary><p>一是防止实验者有意无意地把不同的人分进两组；二是让我们不知道的因素也在两组里大致均衡。作者说第二个更深刻。</p></details>
+<details class="check"><summary>4.（§1）一项试验里，分到试验组的人有三成没吃药。只拿吃了药的人和对照组比，会有什么问题？</summary><p>肯吃药的人本来就可能更注意健康，结果的差别会混进这份「自律」的作用，药显得比实际有效。意向治疗原则是：分进哪组就按哪组算。</p></details>
+<details class="check"><summary>5.（§1）既然随机分组能平衡未知因素，为什么还要分层？</summary><p>抽签只能让两组「大致」均衡，组小时可能碰巧不均。对已知的重要因素（年龄、性别等），先分层再抽签，可以让它们在两组里的比例几乎一样，同时不放弃随机。作者说这是双保险。</p></details>
+<details class="check"><summary>6.（§2）一种疗法对 52% 的病人比现有疗法好，对 48% 的病人更差。作者为什么说这时单次试验不太能指导行动？</summary><p>平均上它赢了，但赢得很少，说明有很多隐藏条件在左右效果；眼前这个病人属于哪一半，试验回答不了，医生还得考虑很多别的因素。</p></details>
+<textarea class="note" data-key="07-oneline" placeholder="用一句话说这一页"></textarea>
+<div class="ponder"><p>想一想：你工作里做过「上线一个改动，看指标涨了，就认为是改动的功劳」这类判断吗？如果当时指标本来就在涨，或者改动只给了一部分愿意尝鲜的用户，你怎么知道涨的是不是它带来的？</p>
+<textarea class="note" data-key="07-ponder"></textarea></div>
+
+<h2>精彩回顾</h2>
+<p class="lede">读过又忘了，从这里想起来。挑的是这一页最值得记住的故事、人和说法，不按原书顺序；每条后面是节号，想细看就回书里那一节。全书各页的这一节都收在<a href="../recap.html">全书回顾</a>。</p>
+<p class="recall-line"><b>一句话：</b>抽签分组让我们不懂机制、列不全原因，也能把一种疗法的作用量出来；但量出的只是这一批人的平均，带不带得走是另一回事。</p>
+<div class="recall">
+  <div class="item"><b>船上的柑橘</b><p>1747 年 Lind 把 12 个坏血病水手两两分组试六种疗法，吃柑橘的好得最快。他不懂维生素 C，照样得出了结论，但分组全凭眼光。</p><span class="sec">§1</span></div>
+  <div class="item"><b>像测降落伞</b><p>巴斯德的疫苗试验全活对全死，效果大到怎么粗糙的对照都压得住。作者说，可惜这样的疗法极少。</p><span class="sec">§1</span></div>
+  <div class="item"><b>抽签是一种谦卑</b><p>我们列不全影响病情的原因，干脆不挑，让抽签把不知道的东西也分匀。这是随机分组「更深刻」的那个用处。</p><span class="sec">§1</span></div>
+  <div class="item"><b>肯吃药的人本来就健康</b><p>只比较真吃了药的人会上当：依从本身就是健康的标志。Bell 早在 1938 年就按分组而不是按吃没吃来算。</p><span class="sec">§1</span></div>
+  <div class="item"><b>阿喀琉斯之踵</b><p>随机试验可靠的，只是这些病人、这些医生、这几天的结论。怎么推广到别人身上，是一切随机试验的致命弱点。</p><span class="sec">§2</span></div>
+</div>
+
+</main>
+<script>
+(() => {
+  // 为什么要抽签分组：一批高血压病人试一种新药。每个病人有两样会让血压更难降的特征：年纪大（医生看得见），和一个约一成人带着的基因变体（谁也不知道）。
+  // 三种分组：医生凭印象挑（印象 = 病情轻重 + 看走眼的误差，病情轻重同时受年纪和基因影响）、抛硬币、先按年纪分层再抛硬币。
+  // 估出的疗效 = 试验组血压平均降了多少 − 对照组平均降了多少；真实疗效由滑杆定。数字都是本站编的。
+  const root = document.getElementById("sim-07");
+  if (!root) return;
+  const { h } = window.UC;
+  const NS = "http://www.w3.org/2000/svg";
+  const OLD = 0.5, GENE = 0.1, AGE_HURT = 4, GENE_HURT = 8, NOISE = 10;
+  const st = { method: "doctor", n: 100, effect: 0, runs: [], last: null };
+
+  // 带种子的伪随机数（mulberry32），「重置」后结果一样
+  let seed = 1;
+  const rand = () => { seed = (seed + 0x6d2b79f5) | 0; let t = Math.imul(seed ^ (seed >>> 15), 1 | seed); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
+  const gauss = () => { let u = 0; while (u === 0) u = rand(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * rand()); };
+  const shuffle = (a) => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(rand() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+  const mean = (xs, f) => xs.reduce((a, x) => a + f(x), 0) / xs.length;
+
+  // 一次试验：招 2n 个病人，分成两组，各 n 人
+  function trial() {
+    const P = [];
+    for (let i = 0; i < 2 * st.n; i++) {
+      const old = rand() < OLD, gene = rand() < GENE;
+      const prog = -(old ? AGE_HURT : 0) - (gene ? GENE_HURT : 0);   // 这个人的底子：不吃药时血压大约多降多少（负数是降得少）
+      P.push({ old, gene, prog, look: prog + gauss() * 4 });           // look：医生凭印象看他病得轻不轻，有看走眼的误差
+    }
+    let test;
+    if (st.method === "doctor") {
+      test = new Set([...P].sort((a, b) => b.look - a.look).slice(0, st.n));   // 新药给看上去病得轻、更可能见效的那一半
+    } else if (st.method === "coin") {
+      test = new Set(shuffle([...P]).slice(0, st.n));
+    } else {
+      test = new Set();                                                  // 年纪大的、不大的各自抽签，各分一半进试验组
+      for (const g of [P.filter((p) => p.old), P.filter((p) => !p.old)]) shuffle(g).slice(0, Math.round(g.length / 2)).forEach((p) => test.add(p));
+    }
+    for (const p of P) { p.t = test.has(p); p.drop = p.prog + (p.t ? st.effect : 0) + gauss() * NOISE; }
+    const T = P.filter((p) => p.t), C = P.filter((p) => !p.t);
+    return { P, T, C, est: mean(T, (p) => p.drop) - mean(C, (p) => p.drop),
+      gT: mean(T, (p) => +p.gene), gC: mean(C, (p) => +p.gene), oT: mean(T, (p) => +p.old), oC: mean(C, (p) => +p.old) };
+  }
+  function runOnce() { st.last = trial(); st.runs.push(st.last.est); }
+  function reset(msg) { seed = 1; st.runs = []; st.last = null; draw(msg || "已重置。点「做一次试验」。"); }
+
+  // 控件
+  const sel = (opts, val, on) => { const e = h("select", {}); for (const [v, t] of opts) e.append(h("option", { value: v }, t)); e.value = val; e.onchange = () => on(e.value); return e; };
+  const method = sel([["doctor", "医生凭印象挑"], ["coin", "抛硬币"], ["strat", "按年纪分层后抛硬币"]], st.method, (v) => { st.method = v; reset(); });
+  const size = sel([["20", "每组 20 人"], ["100", "每组 100 人"], ["1500", "每组 1500 人"]], String(st.n), (v) => { st.n = +v; reset(); });
+  const eff = h("input", { type: "range", min: "0", max: "10", step: "1", value: String(st.effect), "aria-label": "药真实能多降多少毫米汞柱" });
+  const effV = h("b", {}, String(st.effect));
+  eff.oninput = () => { st.effect = +eff.value; effV.textContent = eff.value; reset(); };
+  const controls = h("div", { class: "controls" },
+    h("label", {}, "谁进试验组", method),
+    h("label", {}, "人数", size),
+    h("label", {}, "药真实能多降", eff, effV, "毫米汞柱"),
+    h("span", { class: "sep" }),
+    h("button", { onclick() { runOnce(); draw(); } }, "做一次试验"),
+    h("button", { onclick() { for (let i = 0; i < 20; i++) runOnce(); draw(); } }, "再做 20 次"),
+    h("button", { onclick() { reset(); } }, "重置"));
+
+  // 画面：上面是这一次的病人（左试验组、右对照组），下面一条数轴是每次试验估出来的疗效
+  const svg = document.createElementNS(NS, "svg");
+  svg.setAttribute("viewBox", "0 0 640 270"); svg.setAttribute("class", "diagram"); svg.setAttribute("role", "img");
+  svg.setAttribute("aria-label", "上半部分是这一次试验的病人分组，下半部分是每次试验估出来的疗效落在数轴上的位置");
+  const el = (tag, attrs, txt) => { const e = document.createElementNS(NS, tag); for (const [k, v] of Object.entries(attrs)) e.setAttribute(k, v); if (txt != null) e.textContent = txt; return e; };
+  function drawPeople(r) {
+    const show = (grp, x0, label) => {
+      svg.append(el("text", { x: x0, y: 16, class: "t-b" }, label));
+      const cols = 20, sz = 12;
+      grp.slice(0, 100).forEach((p, i) => {
+        const x = x0 + (i % cols) * (sz + 2), y = 26 + Math.floor(i / cols) * (sz + 2);
+        svg.append(el("rect", { x, y, width: sz, height: sz, rx: 2, class: p.old ? "f-soft" : "box" }));
+        if (p.gene) svg.append(el("circle", { cx: x + sz / 2, cy: y + sz / 2, r: 3.5, class: "f2" }));
+      });
+      if (grp.length > 100) svg.append(el("text", { x: x0, y: 112, class: "t-m" }, `（只画了前 100 人，共 ${grp.length} 人）`));
+    };
+    show(r.T, 8, "试验组（吃新药）");
+    show(r.C, 330, "对照组（吃安慰剂）");
+  }
+  function drawAxis() {
+    const L = 40, R = 600, Y = 200, lo = -10, hi = 20;
+    const X = (v) => L + ((Math.max(lo, Math.min(hi, v)) - lo) / (hi - lo)) * (R - L);
+    svg.append(el("text", { x: 8, y: 140, class: "t-b" }, "每次试验估出来的疗效（毫米汞柱）"));
+    svg.append(el("line", { x1: L, y1: Y, x2: R, y2: Y, class: "ln" }));
+    for (let v = lo; v <= hi; v += 5) {
+      svg.append(el("line", { x1: X(v), y1: Y - 4, x2: X(v), y2: Y + 4, class: "ln" }));
+      svg.append(el("text", { x: X(v), y: Y + 20, "text-anchor": "middle", class: "t-m" }, String(v)));
+    }
+    svg.append(el("line", { x1: X(st.effect), y1: Y - 44, x2: X(st.effect), y2: Y + 6, class: "ln-a" }));
+    svg.append(el("text", { x: X(st.effect), y: Y + 42, "text-anchor": "middle", class: "t-b" }, `真实疗效 ${st.effect}`));
+    st.runs.forEach((v, i) => svg.append(el("circle", { cx: X(v), cy: Y - 10 - (i % 5) * 7, r: 3.5, class: i === st.runs.length - 1 ? "f1" : "f3" })));
+  }
+  const narrate = h("div", { class: "narrate" });
+  const stats = h("div", { class: "stats" });
+  const stat = (v, l) => h("div", { class: "stat" }, h("div", { class: "v" }, v), h("div", { class: "l" }, l));
+  const pct = (x) => `${Math.round(x * 100)}%`;
+  const sign = (x) => `${x >= 0 ? "+" : "−"}${Math.abs(x).toFixed(1)}`;
+  function draw(msg) {
+    svg.replaceChildren();
+    const r = st.last;
+    if (r) drawPeople(r); else svg.append(el("text", { x: 8, y: 40, class: "t-m" }, "还没做试验。"));
+    drawAxis();
+    stats.replaceChildren();
+    if (!r) { narrate.textContent = msg || ""; return; }
+    const bias = mean(st.runs, (v) => v) - st.effect;
+    stats.append(stat(sign(r.est), "这一次估出的疗效"),
+      stat(`${pct(r.gT)} / ${pct(r.gC)}`, "带基因变体的人：试验组 / 对照组"),
+      stat(`${pct(r.oT)} / ${pct(r.oC)}`, "年纪大的人：试验组 / 对照组"),
+      stat(st.runs.length > 1 ? sign(bias) : "—", `${st.runs.length} 次试验的平均比真实疗效偏多少`));
+    const how = { doctor: "医生把新药给了看上去病得轻的一半人", coin: "抛硬币决定谁吃新药", strat: "年纪大的、不大的各自抛硬币" }[st.method];
+    narrate.textContent = msg || `第 ${st.runs.length} 次：${how}。试验组血压平均比对照组多降 ${sign(r.est)}，真实疗效是 ${st.effect}。` +
+      (st.method === "doctor" ? "试验组本来就病得轻，这份先天的优势被算到了药的头上。" : "没人知道谁带着基因变体，抽签照样把它大致分匀了。");
+  }
+  root.querySelector(".sim-body").replaceChildren(controls, h("div", { class: "stage" }, svg), narrate, stats);
+  reset();
+})();
+</script>
+</body>
+</html>
