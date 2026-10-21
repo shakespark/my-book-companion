@@ -27,8 +27,10 @@
   `--wp` 另出 Heilbroner 第 2、3 章（`wp-02/03.txt`、`zh/wp-0*.txt`），只给 overlap 和 lint 查照抄用。
 - [ ] E 规范和骨架（2026-10-21，大部分完成）：五位代理通读写底稿 `source/line/01–28.md`（任务 `source/LINE-TASK.md`）；主编的拍板记在 `source/DECISIONS.md`，**还要写 `source/LINE.md`（概念分工、术语表、全书的线）和 `source/BRIEF.md`**。
   已有：`AUTHORING.md`、`assets/wn.js`、`assets/style.css`、`assets/chapters.js`（`tools/build_chapters.py` 从 `source/pages.json` 和底稿节表生成，不手改）、`index.html`、`recap.html`、`terms.html`、`today.html`、`zh.html`、`tools/lint.py`、`tools/overlap.py`。
-- [ ] F 样板页（2026-10-21 推上线，等用户认可）：核心页 `chapters/01.html`（全书引言和卷一第 1–3 章，别针厂模拟器），轻量页 `chapters/02.html`（卷一第 4 章，货币）。两页都过了审读（`source/ACCEPTANCE.md`）。首页卡片还没加。
-- [ ] G 铺开　[ ] H 审读轮　[ ] I 上线　[ ] J 收尾
+- [x] F 样板页（2026-10-21 上线，用户看过后让继续做下一页）：核心页 `chapters/01.html`（全书引言和卷一第 1–3 章，别针厂模拟器），轻量页 `chapters/02.html`（卷一第 4 章，货币）。两页都过了审读（`source/ACCEPTANCE.md`）。首页卡片还没加。
+- [ ] G 铺开（用户要求：受 5 小时额度限制，一批写完、审完就停，等用户说话再继续；审读按 `source/REVIEW.md` 收窄版，每页写完即审，不另设审读轮）。
+  已上线：01 02 04 05 07 08 16 17（2026-10-21）。剩核心页 21、25，轻量页 03 06 09–15 18–20 22–24 26–28，主编页 00。作者任务说明 `source/BRIEF.md`，验收记录 `source/ACCEPTANCE.md`，作者报告 `source/reports/`。
+- [ ] I 上线（首页卡片、同步白名单还没做）　[ ] J 收尾
 
 ## 页和节
 
