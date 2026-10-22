@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>姿态（1/4） · Impro 导读</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/chapters.js"></script>
+<script src="../assets/im.js"></script>
+<style>
+#sim-02a .board { width: 100%; max-width: 480px; display: block; margin: 0 auto; }
+#sim-02a .modes { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+#sim-02a .modes button[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
+#sim-02a .picks { display: grid; gap: 6px; margin: 10px 0 0; }
+#sim-02a .picks button { white-space: normal; text-align: left; border-radius: 8px; padding: 6px 12px; line-height: 1.5; }
+#sim-02a .picks button .mv { display: inline-block; font-size: 12px; font-weight: 700; color: var(--muted); margin-right: 6px; }
+#sim-02a .log { margin: 10px 0 0; padding: 0; list-style: none; font-size: 14px; display: grid; gap: 4px; }
+#sim-02a .log li { background: var(--surface-2); border-radius: 6px; padding: 4px 10px; }
+#sim-02a .log li b { margin-right: 6px; }
+#sim-02a .log li .mv { color: var(--muted); font-size: 12.5px; margin-left: 6px; }
+#sim-02a .row { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; margin-top: 8px; font-size: 14px; }
+</style>
+</head>
+<body data-page="02a">
+<main>
+
+<h2>这一页在做什么</h2>
+<div class="gist"><p>这是全书最有名的一篇的开头。作者在伦敦一家剧院的工作室里发现，演员怎么也演不像普通的闲聊，直到他要求每个人「比对方高一点或低一点」，场景一下子活了。这两节从这个发现出发，拿一段心理治疗小组的对话、他中学的三位老师、一本《战争与和平》和几则笑话，立起一个后面三页都要用的看人方法。读的时候抓两件事：作者说的 status 到底是什么，以及「跷跷板」。</p></div>
+<figure class="fig"><img src="../assets/img/02a-cherry-orchard.jpg" alt="一张老舞台照：布景是爬满藤叶图案的高墙和几扇门，十来个穿二十世纪初服装的人散在台上，有人站着，有人坐在扶手椅里" loading="lazy">
+<figcaption>莫斯科艺术剧院 1904 年首演《樱桃园》的一幕。作者说他看这个剧院的《樱桃园》时，觉得台上每个人都挑了最强烈的动机，这让他想到去问「最弱的动机是什么」（§1）。他看的是几十年后的演出，不是这一版。<span class="src">Alexander Bakshy，公有领域，维基共享资源</span></figcaption></figure>
+
+<h2>读之前：这一页在全书的哪里</h2>
+<div class="linehere"></div>
+<p>上一篇是作者的自述，停在他怎样在皇家宫廷剧院的工作室里开始教即兴。这一篇正式讲他的第一套方法：地位。这一页的两节是总论，下一页（§3）讲他在课上怎么教，再往后是骂人游戏、空间、主仆和剧本。§2 他拿跷跷板去解释喜剧和悲剧，是全篇最像理论的一段。</p>
+<div class="heads-up"><p>作者说每一个语调、每一个动作都暗含着地位，口气很满。这是演员训练里极好用的一副眼镜，但心理学并不认为人和人之间只有地位较量。读的时候当放大镜用，本站的看法在页末。</p></div>
+<div class="crux"><p>两个人随便聊几句天的时候，他们到底在交换什么？</p></div>
+<p class="lede">读的时候带着这几个问题。不用先找答案，读完回来对照「检查一下理解」。</p>
+<ol class="qs">
+  <li>作者说 status 是一个人「做」的事。这和你平常理解的「地位」差在哪？<span class="sec">§1</span></li>
+  <li>有人夸作者的戏，他答「哦，没什么」，自以为谦虚。他后来为什么说这是在压低对方？<span class="sec">§1</span></li>
+  <li>他凭什么说柏格森把香蕉皮的笑话解释错了？你被说服了吗？<span class="sec">§2</span></li>
+</ol>
+
+<h2>这一页的路线</h2>
+<p>这两节像一堂课的录音。从一个困惑出发（演员演不像闲聊），一次看戏得到灵感，一句课堂指令改变了一切。接着他不先下定义，而是摆出两组例子：拜昂书里的一段小组对话（他逐句批注）、他中学的三位老师，然后才说 status 该怎么理解，并拿流浪汉和公爵夫人示范。后半是他和学生的一连串发现，一条接一条，最后落到跷跷板，再用莫里哀的一段戏、谐星的段子和两则笑话示范。§2 节奏突然变快，从哲学跳到人类学：先反驳柏格森，再讲悲剧和献祭，证据也比前面薄。</p>
+<figure class="fig">
+<svg class="diagram" viewBox="0 0 640 250" role="img" aria-label="路线示意图：§1 从困惑和灵感出发，经过一句课堂指令、两组例子和定义，到四个发现，最后是跷跷板；§2 从跷跷板分出喜剧和悲剧两支">
+<defs><marker id="ar02a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="f-a"/></marker></defs>
+<text x="8" y="20" class="t-m">§1</text>
+<rect x="8" y="30" width="112" height="44" rx="6" class="box"/><text x="64" y="50" text-anchor="middle">演不像闲聊</text><text x="64" y="66" text-anchor="middle" class="t-m">《樱桃园》</text>
+<rect x="136" y="30" width="112" height="44" rx="6" class="f-soft"/><text x="192" y="50" text-anchor="middle" class="t-b">高一点</text><text x="192" y="66" text-anchor="middle" class="t-b">或低一点</text>
+<rect x="264" y="30" width="112" height="44" rx="6" class="box"/><text x="320" y="50" text-anchor="middle">两组例子</text><text x="320" y="66" text-anchor="middle" class="t-m">小组·老师</text>
+<rect x="392" y="30" width="112" height="44" rx="6" class="box"/><text x="448" y="50" text-anchor="middle">做出来的地位</text><text x="448" y="66" text-anchor="middle" class="t-m">流浪汉·公爵夫人</text>
+<rect x="520" y="30" width="112" height="44" rx="6" class="box"/><text x="576" y="50" text-anchor="middle">四个发现</text><text x="576" y="66" text-anchor="middle" class="t-m">演反·无中立·朋友</text>
+<line x1="120" y1="52" x2="134" y2="52" class="ln-a" marker-end="url(#ar02a)"/>
+<line x1="248" y1="52" x2="262" y2="52" class="ln-a" marker-end="url(#ar02a)"/>
+<line x1="376" y1="52" x2="390" y2="52" class="ln-a" marker-end="url(#ar02a)"/>
+<line x1="504" y1="52" x2="518" y2="52" class="ln-a" marker-end="url(#ar02a)"/>
+<line x1="576" y1="74" x2="576" y2="104" class="ln-a" marker-end="url(#ar02a)"/>
+<rect x="456" y="106" width="176" height="44" rx="6" class="f-soft"/><text x="544" y="126" text-anchor="middle" class="t-b">跷跷板</text><text x="544" y="142" text-anchor="middle" class="t-m">莫里哀·谐星·笑话</text>
+<text x="8" y="190" class="t-m">§2</text>
+<line x1="456" y1="128" x2="330" y2="200" class="ln-d" marker-end="url(#ar02a)"/>
+<line x1="456" y1="140" x2="520" y2="200" class="ln-d" marker-end="url(#ar02a)"/>
+<rect x="210" y="202" width="150" height="40" rx="6" class="box"/><text x="285" y="227" text-anchor="middle">喜剧：香蕉皮</text>
+<rect x="430" y="202" width="180" height="40" rx="6" class="box"/><text x="520" y="227" text-anchor="middle">悲剧和献祭</text>
+<text x="8" y="227" class="t-m">虚线：推想多、证据少</text>
+</svg>
+<figcaption>本站示意图。§1 从一个课堂难题走到一个定义、四个发现和跷跷板，§2 拿跷跷板去解释喜剧和悲剧。</figcaption></figure>
+<p class="landing"><b>作者落在哪：</b>地位不是你的身份，而是两个人在互动中随时「做」出来的相对高低；它像跷跷板一样此起彼伏，闲聊、（他说）大多数喜剧和悲剧都靠它推着走。</p>
+
+<h2>分节地图</h2>
+<p class="lede">这一页是原书和译本「姿态」一篇的前两节。粗体是本站给的节名，下面是译本的节号和小标题、这一节在译本电子书中开头的几个字（搜它就能跳过去），再下面是英文原文的开头。每节标了档：「先读」是这本书最精彩、不读就错过的，「有空」好看但跳过不丢线。读完打个勾。</p>
+<ol class="secmap">
+  <li data-sec="1"><span class="what">从演员演不像闲聊讲起，一路举例。全篇最该读的一节：小组对话、三位老师、流浪汉和公爵夫人、《战争与和平》、跷跷板都在这里。后半莫里哀那段剧本可以快读。</span></li>
+  <li data-sec="2"><span class="what">很短。先跟柏格森争香蕉皮为什么好笑，再推到悲剧和献祭。是作者的推想，读来有趣，证据不多。</span></li>
+</ol>
+
+<h2>先用中文过一遍：这一页的概念</h2>
+<p class="lede">先把这一页用到、作者默认你懂的几个概念讲一遍。讲的是概念本身，作者拿它推出什么，读原书时自己看。</p>
+<div class="concept" id="c-status">
+<h3><span class="sec">§1</span>地位 <span class="en">status，译本：姿态</span></h3>
+<p>日常说「地位」，指一个人的身份：职位、财富、名气。作者用 status 指另一样东西：两个人相处的这一刻，一个人把自己摆得比对方高还是低。它是做出来的，一句话、一个眼神就能变。社会地位低的人可以演得很高（乞丐冲着贵妇吆喝），社会地位高的人也可以演得很低（总经理对门卫点头哈腰）。</p>
+<p>程序员熟悉的例子：代码评审里，同样职级的两个人，一个写「这种写法我三年前就不用了」，一个写「我可能没看懂，这里为什么这样写？」，职级没变，在对方面前的高低完全不同。心理学里相近的说法是支配和顺从，作者也承认那才是准确的叫法，只是怕学生抵触，才用了 status。这个词<span class="zhv">译本：「姿态」</span>，取的是「摆出来的样子」；本站统一叫「地位」，读到「高姿态」「低姿态」，就是演高、演低。</p>
+<p class="use"><b>在这一页：</b>§1 先摆例子再给定义，强调「你是什么地位」和「你演什么地位」是两回事；后面三页都建在这个区分上。</p>
+</div>
+<div class="concept" id="c-status-expert">
+<h3><span class="sec">§1</span>演高、演低和地位专家 <span class="en">high-status player / low-status player / status expert</span></h3>
+<p>作者认为多数人有一种习惯的玩法：有人总把自己往上抬，有人总往下缩。演高不等于傲慢，演低也不等于谦虚，它们是一整套信号，后面一页他会拆成眼神、头、手和说话前的那一声「呃」。第三种人：能看场合随时抬高或放低自己，作者叫他 status expert（地位专家）。</p>
+<p>注意和下一页的 status specialist 分开：那是只会演一头的人（只会高或只会低），和地位专家正好相反。译本把两个都译成「姿态专家」，读到时看上下文。</p>
+<p class="use"><b>在这一页：</b>§1 的三位老师就是这三种人；同一节后半作者还发现，人常常演着和自己以为相反的那一头。</p>
+</div>
+<div class="concept" id="c-see-saw">
+<h3><span class="sec">§1</span>跷跷板原理 <span class="en">the see-saw principle</span></h3>
+<p>地位是相对的：两个人坐在跷跷板两头，一头上去，另一头就下来。所以「抬高自己」和「压低对方」效果差不多，「放低自己」和「抬高对方」也差不多。日常的例子：同事说「我的方案被老板夸了」，大家恭喜，心里却往下沉了一点；他要是说「我的方案被毙了」，大家安慰，心情反倒好了些。例外是你和那个人坐在同一头：自家孩子考了第一，你不会觉得被压低。</p>
+<figure class="fig">
+<svg class="diagram" viewBox="0 0 640 170" role="img" aria-label="跷跷板示意图：左边是说话的人，右边是对方；左边写着抬高自己和压低对方都让左边升起，右边写着放低自己和抬高对方都让左边落下">
+<line x1="140" y1="70" x2="500" y2="120" class="ln" stroke-width="6"/>
+<path d="M300 98 L280 140 L340 140 Z" class="f-soft"/>
+<circle cx="150" cy="52" r="16" class="f1"/><text x="150" y="30" text-anchor="middle" class="t-b">说话的人</text>
+<circle cx="490" cy="100" r="16" class="f2"/><text x="490" y="78" text-anchor="middle" class="t-b">对方</text>
+<text x="20" y="100" class="t-m">让这头上去：</text><text x="20" y="120">抬高自己</text><text x="20" y="140">压低对方</text>
+<text x="520" y="140" class="t-m">让这头上去：</text><text x="520" y="160">放低自己 · 抬高对方</text>
+<text x="320" y="164" text-anchor="middle" class="t-m">一头上去，另一头就下来</text>
+</svg>
+<figcaption>本站示意图。四种动作其实只有两个方向：抬自己和压对方是一个方向，放低自己和抬对方是另一个方向。</figcaption></figure>
+<p>博弈论里管这种「一方所得就是另一方所失」叫零和。作者没有用这个词，地位也不全是零和，这一点页末「本站怎么看」再说。</p>
+<p class="use"><b>在这一页：</b>§1 后半作者正式提出它，并据此教演员在「抬自己」和「压对方」之间交替；§2 他拿它解释喜剧和悲剧。</p>
+</div>
+
+<h2>动手：模拟器</h2>
+<p>先猜：一个人说「昨晚的故障是我两点爬起来修好的」，和说「听说昨晚的故障是你的代码引起的」，在跷跷板上的效果一样吗？再点下面「茶水间」里的两种说法验证。</p>
+<div class="sim" id="sim-02a">
+  <div class="sim-head"><span class="tag">模拟器</span><h3>地位的跷跷板</h3><p class="desc">上面四个按钮换场景。每一步从下面几句台词里选一句，跷跷板跟着动：板往谁那头翘起，谁此刻就高。台词和场景都是本站编的，每句后面灰字是它做的动作（抬自己、压对方……）。先从「茶水间」开始。</p></div>
+  <div class="sim-body"><p>需要浏览器打开脚本才能运行。</p></div>
+</div>
+<p>图例：板上左边是 A，右边是 B；「后台报喜」里还有一个旁观的 C。板一般每句动一格，最多倾斜四格；在下面的一方抬自己或压对方，会一下子翻到上面（书里 Y 太太「立刻盖过」X 太太就是这样）。下面三个数依次是：此刻谁高、高出几格；到目前为止高低换了几次位（「翻转」）；这一场里最大的差距是几格。</p>
+<ol class="qs">
+  <li>试试看：在「茶水间」里，第一句选 A「抬自己」，看板翘向哪头；点「重来」，第一句改选 A「压对方」。两次板动得一样：这就是 §1 后半说的「我闻起来香」和「你真臭」效果相近。</li>
+  <li>试试看：「茶水间」里让 A 和 B 每一句都选「压对方」，一直走到底。板来回摆，翻转次数多、最大差距却不大：两个人都在暗暗压对方，表面上谁也没吵起来。这很像拜昂那组看似和气、其实人人在压别人的人。再重来一次，让 A 每一句都「抬自己」、B 每一句都「放低自己」，看差距怎样越拉越大。</li>
+  <li>试试看：换到「后台报喜」，先选「我拿到那个角色了」，看 C；再勾上「C 是你的铁杆朋友（和你坐同一头）」，重选一次。不勾时 C 跟着 B 一起下去，勾上以后 C 跟你一起上去：这是跷跷板的例外。然后试「一句早上好」和「最喜欢的书」，各对照书里的说法。</li>
+</ol>
+<p>这个模拟器只演一件事：话里的地位往哪个方向挪。声音、姿势、眼神（下一页的内容）它不管；书里的喜剧要「丢了地位又不招人同情」，同不同情它也算不出来。</p>
+
+<h2>动手：书里的游戏</h2>
+<p class="lede">作者在课上用过、照着就能玩的；个别几张是本站照书里的段落改的，卡里写明了来历。几个人、怎么玩、看什么写在卡片上；「先猜」那一栏是书里的课堂上发生了什么，先自己猜，或者先玩一次，再点开。全书的游戏卡汇总在<a href="../games.html">游戏汇总</a>。</p>
+<div class="game" id="g-status-nudge">
+<h3><span class="sec">§1</span>只高一点，或只低一点 <span class="en">just a little above or below</span></h3>
+<dl class="howto">
+  <dt>几个人</dt><dd>两个人演，最好再有一两个人看。</dd>
+  <dt>怎么玩</dt><dd>两人即兴演一段普通闲聊，比如两个陌生人在车站等车。不许讲笑话，不许抖机灵。开演前每人心里定好：这一场我要比对方高一点，或低一点，只差一点点，不要差很多。演完让看的人猜，谁定的是高、谁定的是低。</dd>
+  <dt>看什么</dt><dd>对话是不是一下子像真的了；谁先开口、谁的目光先移开、谁停顿得久，是不是都在泄露自己定的高低。</dd>
+  <dt>一个人</dt><dd>下次和同事闲聊时，暗暗给自己定「这次比他略高一点」，留心自己的话和动作哪里变了，聊完再换成「略低一点」。</dd>
+</dl>
+<details class="reveal"><summary>先猜：只是让演员「比对方高一点或低一点」，场景会变成什么样？想好了再点开</summary><p>作者说演员好像一下就懂了，场景变得「真实」，大家显得出奇地敏锐。又好笑又让人不安：所有暗中的小心机都暴露了，谁说一句「无害」的话，大家立刻看穿他背后的用意。</p></details>
+</div>
+<div class="game" id="g-raise-lower">
+<h3><span class="sec">§1</span>一句抬自己，一句压对方 <span class="en">raising themselves and lowering their partners</span></h3>
+<dl class="howto">
+  <dt>几个人</dt><dd>两个人；一个人也可以写成剧本。</dd>
+  <dt>怎么玩</dt><dd>两人吵一架（为谁该洗碗、谁又迟到了）。每一句话只许做一件事：抬高自己，或者压低对方，两种交替着来。吵到一半换规则，改成「放低自己」和「抬高对方」交替，看这架还吵不吵得下去。</dd>
+  <dt>看什么</dt><dd>同一块跷跷板从两头使劲，感觉有什么不同；交替着来的台词，是不是比一直骂对方更有花样。</dd>
+  <dt>一个人</dt><dd>找一段你喜欢的电视剧对白，或者自己写一段吵架，在每句后面用括号注明它在抬谁、压谁。</dd>
+</dl>
+<details class="reveal"><summary>先猜：作者为什么要演员交替着来，而不是一直压对方？想好了再点开</summary><p>作者说，想放低自己这一头却卡壳的时候，可以改去抬高对方那一头；同理，说「我闻起来香」和说「你真臭」效果相近。交替着来，台词就有变化。他说好剧作家也这样写，还把莫里哀《屈打成医》的开场逐句标了一遍：谁在抬自己，谁在压谁，连亚里士多德和证婚人都被压了。</p></details>
+</div>
+<div class="game" id="g-joke-status">
+<h3><span class="sec">§1</span>给笑话标地位 <span class="en">examine jokes</span></h3>
+<dl class="howto">
+  <dt>几个人</dt><dd>一个人就行，几个人一起比较更好玩。</dd>
+  <dt>怎么玩</dt><dd>找几则你喜欢的笑话，或几格连环漫画，逐句（逐格）标出：这一句谁上去了，谁下来了。漫画还可以比一比第一格和最后一格里人物的身体姿势。</dd>
+  <dt>看什么</dt><dd>笑点是不是正好落在某个人的地位突然掉下去的那一下；掉下去的人，你同不同情他。</dd>
+</dl>
+<details class="reveal"><summary>先猜：书里「厕所里有只蟑螂」那则笑话，笑点在谁的地位掉了？想好了再点开</summary><p>作者只说大多数连环漫画都建立在很简单的地位互动上，笑话也可以这样分析，这两则他没有逐句解释。本站的读法：顾客以客人的身份来抱怨，女招待却把蟑螂当成一位正在用厕所的客人，让顾客等着，抱怨的人一下子排到了蟑螂后面。</p></details>
+</div>
+
+<h2>书里的人和背景</h2>
+<p class="lede">按在书里出现的顺序排，标题前是节号。只讲到读懂这一页需要的程度。</p>
+
+<h3><span class="sec">§1</span>斯坦尼斯拉夫斯基和莫斯科艺术剧院</h3>
+<div class="who">
+  <div><b>Konstantin Stanislavski</b><span class="en">1863–1938</span>俄国演员、导演，1898 年和 Nemirovich-Danchenko 一起创办莫斯科艺术剧院，导演了契诃夫的《海鸥》《樱桃园》等戏。他发展出的「斯坦尼斯拉夫斯基体系」要演员为人物的每个行动找到目的，二十世纪西方的表演训练大多从这里来。</div>
+</div>
+<p>作者看的是这个剧院几十年后的《樱桃园》，他觉得每个演员都挑了最强烈的动机，像是被「完善」过了头。他反过来问：人物最弱、最平常的动机是什么？这一问后来引出了整套地位练习。下一篇和面具一篇他还会回到斯坦尼斯拉夫斯基。</p>
+
+<h3><span class="sec">§1</span>拜昂和他的治疗小组</h3>
+<div class="who">
+  <div><b>Wilfred Bion</b><span class="en">1897–1979</span>英国精神分析师，二战期间在军医院、战后在伦敦的塔维斯托克诊所带团体治疗，研究一群人在一起时怎样不自觉地互相牵制。这些文章后来结集成《团体中的经验》（Experiences in Groups，1961）。</div>
+</div>
+<p>作者从这本书里借来一段小组谈话：几位太太和先生轮流说自己身体不适，每一句都在悄悄盖过别人。拜昂原本是拿它说明「这个小组表面和气，其实毫无合作的希望」，方括号里逐句的地位批注是作者加的。</p>
+
+<h3><span class="sec">§1</span>《钦差大臣》和卓别林的流浪汉</h3>
+<figure class="fig small"><img src="../assets/img/02a-chaplin-kid.jpg" alt="黑白剧照：戴圆顶礼帽、留小胡子、穿破旧宽大衣服的男人抱着胳膊坐在门口台阶上，旁边坐着一个戴鸭舌帽的小男孩" loading="lazy">
+<figcaption>卓别林和童星 Jackie Coogan，1921 年电影《寻子遇仙记》（The Kid）的宣传照。<span class="src">摄影者不详，公有领域，维基共享资源</span></figcaption></figure>
+<p>作者说观众喜欢看演出来的地位和社会地位的反差，比如流浪汉被错当成老板。果戈理的喜剧《钦差大臣》（1836）就是这样：一个小官吏路过外省小城，被当地官员误当成微服私访的钦差，一路被捧上天。卓别林的流浪汉是另一种：社会的最底层，却常常把周围的体面人一个个拉下来。</p>
+
+<h3><span class="sec">§1</span>莫里哀《屈打成医》和 Ken Dodd</h3>
+<p>《屈打成医》（Le Médecin malgré lui，1666）是莫里哀的闹剧：樵夫斯加纳列尔和妻子吵架，妻子为了报复，骗别人说他是个怪脾气的名医，非得挨顿打才肯承认，于是他被打着当上了医生。作者引的是开场夫妻对骂那一段。Ken Dodd（1927–2018）是利物浦出身的英国谐星，以龅牙、乱发、一根彩色的「挠痒棒」和连珠炮似的段子出名，作者记下的那段「站在水槽里洗澡」就是他的自嘲。</p>
+
+<h3><span class="sec">§2</span>柏格森和《笑》</h3>
+<figure class="fig small"><img src="../assets/img/02a-bergson.jpg" alt="黑白肖像照：一位秃顶、留小胡子的中年男子，穿深色西装和白色高领，侧身望向画面左边" loading="lazy">
+<figcaption>Henri Bergson。<span class="src">Henri Manuel，公有领域，维基共享资源</span></figcaption></figure>
+<div class="who">
+  <div><b>Henri Bergson</b><span class="en">1859–1941</span>法国哲学家，1927 年获诺贝尔文学奖。1900 年出版的小书《笑》（Le Rire）认为，人显得像机器一样僵硬、不会随机应变的时候最好笑。</div>
+</div>
+<p>作者在 §2 开头引的就是这本书：一个人踩到香蕉皮滑倒，柏格森说好笑在于他的肌肉还在照老样子动，像个自动机。作者不同意，他的理由见「读完」和「本站怎么看」。</p>
+
+<h3><span class="sec">§2</span>临刑的雷利</h3>
+<p>Walter Raleigh（约 1552–1618）是伊丽莎白一世时代的英国廷臣、航海家，1618 年在伦敦被斩首。流传下来的故事说，行刑前有人问他头要不要朝东放，他答：只要心正，头朝哪边有什么要紧。作者拿这件事说明，连临刑的人也被期望「死得体面」，也就是到最后都保持高姿态。</p>
+
+<h2>原文里的关键句</h2>
+<p class="lede">读译本时值得翻一下原文的地方：双关、行话、口语，和译本传不出的语气。灰色斜体是原文里的一小段，在英文电子书里搜它就能找到；方框里是译本这一句的译法。译错的放在下一节「译本勘误」。</p>
+<div class="entry"><div class="en">the weakest possible motives</div><div class="loc" data-p="2">… what were the weakest possible motives …</div><div class="zhq"><span class="zhv">译本：「我第一次问自己，最弱的可能动机是什么」</span></div><div class="zh">人物做这件事最不起眼、最平常的理由</div><div class="note">原文 weakest 是斜体，和前面斜体的 strongest 对着。斯坦尼斯拉夫斯基体系要演员替人物的行动找目的，作者看的那一版里人人挑了最强烈的；作者反过来问最弱的，整套地位练习就从这一问开始。</div></div>
+<div class="entry"><div class="en">every inflection and movement</div><div class="loc" data-p="3">… every inflection and movement implies a status, and that no action …</div><div class="zhq"><span class="zhv">译本：「每一个变化和动作都意味着一种姿态」</span></div><div class="zh">每一处语调的起伏、每一个动作，都在表明你把自己摆多高</div><div class="note">inflection 是说话时声音的抑扬，不是笼统的「变化」。作者的意思是连腔调都算数，下一页他会专门讲声音。</div></div>
+<div class="entry"><div class="en">a nasty turn</div><div class="loc" data-p="5">… I had a nasty turn last week …</div><div class="zhq"><span class="zhv">译本：「我上周排个队给我恶心坏了」</span></div><div class="zh">上周我突然犯了一回病</div><div class="note">turn 在英式口语里指一阵突发的不适、头晕。X 太太一开口就是在抢「谁最值得关心」的话头，后面几个人轮番盖过她。</div></div>
+<div class="entry"><div class="en">something one does</div><div class="loc" data-p="27">… unless it’s understood as something one does …</div><div class="zhq"><span class="zhv">译本：「除非你把它理解成一个人所做的事情」</span></div><div class="zh">（地位）是一个人「做」出来的</div><div class="note">原文 does 是斜体，全篇的钥匙就在这个词上：地位不是你「是」什么，而是你此刻「做」了什么。译本没有把强调译出来。</div></div>
+<div class="entry"><div class="en">’Ere!</div><div class="loc" data-p="28">… Ere! Where are you going? …</div><div class="zhq"><span class="zhv">译本：「喂！你要去哪里？」</span></div><div class="zh">喂！上哪儿去？</div><div class="note">’Ere 是把 Here 的 h 吞掉的伦敦下层口音，流浪汉一张嘴就露出阶层，他冲公爵夫人吆五喝六才好笑。译本的「喂」传不出口音。</div></div>
+<div class="entry"><div class="en">you old cow</div><div class="loc" data-p="50">… Get up, you old cow …</div><div class="zhq"><span class="zhv">译本：「起来，你这头老母牛」</span></div><div class="zh">快起来，你这老家伙</div><div class="note">old cow 本是骂女人的粗话，朋友之间说反而显得亲。作者的意思是：朋友就是约好了一起玩地位游戏的人，假装压低对方是在玩。</div></div>
+<div class="entry"><div class="en">I go up and you go down</div><div class="loc" data-p="51">… I go up and you go down …</div><div class="zhq"><span class="zhv">译本：「一上一下」</span></div><div class="zh">我上去，你就下来</div><div class="note">跷跷板原理的原话，短得可以记住。英文是一个完整的句子，主语「我」和「你」都在，译本缩成四个字，丢了「谁上谁下」。</div></div>
+<div class="entry"><div class="en">Ken Dodd’s patter</div><div class="loc" data-p="63">… I remember some of Ken Dodd’s patter …</div><div class="zhq"><span class="zhv">译本：「我记得肯·多德（Ken Dodd）说过这样的话」</span></div><div class="zh">Ken Dodd 的一段段子</div><div class="note">patter 指谐星、魔术师、推销员那种又快又顺、背熟了的一套说辞。</div></div>
+<div class="entry"><div class="en">the pecking order</div><div class="loc" data-p="76">… a position lower in the pecking order …</div><div class="zhq"><span class="zhv">译本：「但绝不可能接受一个在排序中更低的位置」</span></div><div class="zh">啄序，等级次序</div><div class="note">pecking order 本指鸡群里谁啄谁的先后，二十世纪二十年代挪威学者 Schjelderup-Ebbe 观察鸡群时提出，后来泛指等级。作者通篇拿动物群体打比方（狼、鸭子），译本的「排序」把这层丢了。</div></div>
+
+<h2>译本勘误</h2>
+<p class="lede">对着译本读这两节时，下面这些地方会把人读歪。方框里是译本的原句，在译本电子书里搜它就能找到；灰色斜体是英文原文那一处。只收意思错了、反了、漏了的，措辞上的出入不收。全书的勘误汇总在<a href="../zh.html">译本勘误</a>。</p>
+<div class="zherr" data-p="3"><h4><span class="sec">§1</span>不是「不好回答」，是懒得回答<span class="mark">误译</span></h4>
+<p class="loc">… we didn’t bother to answer it …</p>
+<p class="zhq"><span class="zhv">译本：「如果有人问了一个我们不好回答的问题」</span></p>
+<p>原文是说：练过地位以后，有人提个问题，大家根本不去答问题本身，只琢磨他为什么要这么问。译本像是在说碰到了难题。</p></div>
+<div class="zherr" data-p="3"><h4><span class="sec">§1</span>一开口就被看穿<span class="mark">误译</span></h4>
+<p class="loc">… without everyone instantly grasping what lay …</p>
+<p class="zhq"><span class="zhv">译本：「如果没有立即掌握其背后的原理」</span></p>
+<p>原文：谁说一句「无害」的话，大家立刻看穿他背后的用意。译本写成「不掌握原理就说不出无害的话」，意思不对。</p></div>
+<div class="zherr" data-p="3"><h4><span class="sec">§1</span>是「不许看见」，不只是「没意识到」<span class="mark">误译</span></h4>
+<p class="loc">… to see status transactions except when …</p>
+<p class="zhq"><span class="zhv">译本：「通常情况下我们对这种姿态互动是没有意识的」</span></p>
+<p>原文说平时我们是被「禁止」看见地位往来的（作者给「禁止」加了引号），只有起了冲突才允许看见，像一条不成文的规矩。译本只说「没有意识」，这层意思丢了。</p></div>
+<div class="zherr" data-p="5"><h4><span class="sec">§1</span>X 太太是觉得浑身不对劲<span class="mark">误译</span></h4>
+<p class="loc">… when I felt ever so queer …</p>
+<p class="zhq"><span class="zhv">译本：「然后闻到了奇怪的味道」</span></p>
+<p>queer 在这里是老派英式口语「不舒服、发晕」，ever so 是「特别」。她是排队时突然觉得特别难受、差点晕倒，没有什么气味；后面 A 先生劝她弯腰让血回到头上，才接得上。</p></div>
+<div class="zherr" data-p="9"><h4><span class="sec">§1</span>Z 太太是说自己更严重<span class="mark">误译</span></h4>
+<p class="loc">… only I should have had to …</p>
+<p class="zhq"><span class="zhv">译本：「要是我就不排队了」</span></p>
+<p>原文是「我也是这种感觉，只不过换了我，早就得离队了」：她站在 X 太太一边，同时说自己病得更重。作者紧接着的批注夸她「很有天分」，靠的就是这层意思。</p></div>
+<div class="zherr" data-p="23"><h4><span class="sec">§1</span>他拿到的是一封好推荐信<span class="mark">误译</span></h4>
+<p class="loc">… given an excellent reference just to …</p>
+<p class="zhq"><span class="zhv">译本：「我们的行为反而成了他被辞退的依据」</span></p>
+<p>原文：学校为了打发他走，给他写了一封极好的推荐信，他反倒在郡的另一头当上了校长。译本写成学生的行为成了辞退的依据、他另找了一所学校，故事结尾的讽刺没了。</p></div>
+<div class="zherr" data-p="26"><h4><span class="sec">§1</span>「地位专家」不是下一页的「姿态专家」<span class="mark">术语</span></h4>
+<p class="loc">… The third was a status expert …</p>
+<p class="zhq"><span class="zhv">译本：「第三位老师则是姿态专家」</span></p>
+<p>这里的 status expert 是能随时抬高、放低自己的人。下一页的 status specialist 是只会演一头的人，译本也译作「姿态专家」。两个词意思相反，读到时看上下文分开。</p></div>
+<div class="zherr" data-p="27"><h4><span class="sec">§1</span>「姿态」就是作者的 status<span class="mark">术语</span></h4>
+<p class="loc">… Status is a confusing term unless …</p>
+<p class="zhq"><span class="zhv">译本：「姿态是一个令人困惑的术语」</span></p>
+<p>译本全书把 status 译作「姿态」，这个译法本身不算错，但中文「高姿态」多指摆架子、有风度，作者说的高低却时时在变、谁都在演。读到「姿态」就想成「此刻把自己摆多高」；本站统一叫「地位」，这一条只报这一次。</p></div>
+<div class="zherr" data-p="32"><h4><span class="sec">§1</span>不是作者遇到障碍，是学生会抵触<span class="mark">误译</span></h4>
+<p class="loc">… but I’d create a resistance …</p>
+<p class="zhq"><span class="zhv">译本：「但我遇到了些障碍」</span></p>
+<p>原文：其实该叫支配和服从，可这么叫会引起学生抵触：肯「抬高、降低地位」的学生，你让他去「支配」「服从」，他可能不干。译本「我应该谈谈……了，但我遇到了些障碍」读来像他要转入新话题却卡住了；其实这是他不用「支配」而用 status 的理由。</p></div>
+<div class="zherr" data-p="49"><h4><span class="sec">§1</span>不是叉腰，是手臂贴着身子<span class="mark">误译</span></h4>
+<p class="loc">… with arms folded or close to …</p>
+<p class="zhq"><span class="zhv">译本：「他们摆出的姿势要么抱臂要么叉腰」</span></p>
+<p>原文是抱着胳膊，或者两臂紧贴身体两侧，意思是「我没多占地方」。叉腰正好是撑开胳膊、多占空间，和作者的意思相反。同一段的「装傻」原文是故意面无表情。</p></div>
+<div class="zherr" data-p="50"><h4><span class="sec">§1</span>是一早端杯茶给还没起床的人<span class="mark">误译</span></h4>
+<p class="loc">… take an acquaintance an early morning cup …</p>
+<p class="zhq"><span class="zhv">译本：「如果我请一位熟人喝早茶」</span></p>
+<p>英国有一早把茶端到床边、叫醒家人或留宿客人的习惯。作者说的是这个场景，所以下文朋友之间才会说「起来，你这头老母牛」。中文「喝早茶」容易让人想到茶楼。</p></div>
+<div class="zherr" data-p="51"><h4><span class="sec">§1</span>想听的是「我们」的糗事<span class="mark">误译</span></h4>
+<p class="loc">… to be told things to our discredit …</p>
+<p class="zhq"><span class="zhv">译本：「令自己感到丢脸的事情」</span></p>
+<p>原文：别人其实想听说话人自己的丢脸事，而且最好讲得让他们用不着同情。译本把丢脸的人换成了听的人。下一句「演低的人攒着自己的糗事来逗别人」就是接着这层说的。</p></div>
+<div class="zherr" data-p="63"><h4><span class="sec">§1</span>奴隶是「被指望」唱着干活<span class="mark">误译</span></h4>
+<p class="loc">… slaves are always supposed to sing …</p>
+<p class="zhq"><span class="zhv">译本：「所以奴隶们总是边工作边唱歌」</span></p>
+<p>supposed to 是「人们指望他们这样」：我们希望地位低的人显得快活，好不必同情他们。作者在挖苦这种指望，不是在说奴隶真的爱唱歌。</p></div>
+<div class="zherr" data-p="75"><h4><span class="sec">§2</span>是「不成悲剧，只剩可怜」<span class="mark">误译</span></h4>
+<p class="loc">… The effect wouldn’t be tragic, but pathetic …</p>
+<p class="zhq"><span class="zhv">译本：「结局就不是悲惨的，而是可怜的」</span></p>
+<p>tragic 指悲剧这种效果（让观众得到净化），pathetic 指只叫人觉得可怜。作者的意思：主角一旦摆出低姿态，观众就得不到悲剧该有的宣泄，戏就从悲剧掉成了惨剧。译本「悲惨」「可怜」意思太近，区分没了。</p></div>
+<div class="zherr" data-p="75"><h4><span class="sec">§2</span>是「死得体面」，不是「好结局」<span class="mark">误译</span></h4>
+<p class="loc">… criminals about to be executed were supposed …</p>
+<p class="zhq"><span class="zhv">译本：「即使是将被处死的犯人也期待有个“好结局”」</span></p>
+<p>make a good end 是英语里「从容赴死」的老说法：临刑的人被期望死得体面，也就是到最后都保持高姿态。译本像是犯人自己盼着结局圆满。</p></div>
+<div class="zherr" data-p="76"><h4><span class="sec">§2</span>是「自己往上升了一级」<span class="mark">误译</span></h4>
+<p class="loc">… the feeling of moving up a step …</p>
+<p class="zhq"><span class="zhv">译本：「体验到了前进的感觉」</span></p>
+<p>原文是看着高位的人被打倒，每个人都觉得自己在等级里往上挪了一格，正是跷跷板的意思。译本「前进」把等级的意思丢了。</p></div>
+
+<h2>值得停下来的句子</h2>
+<blockquote class="quote">Status is a confusing term unless it’s understood as something one does. You may be low in social status, but play high, and vice versa.<cite>— §1。本站译：「地位」这个词容易让人糊涂，除非把它理解成一个人「做」的事。你的社会地位可以很低，却演得很高，反过来也一样。</cite></blockquote>
+<p>这是全篇的定义，口气平静，像在纠正一个常见的误会。关键是 does（原文斜体）和 play：地位是动词，不是名词。读完这一页再回来看，前面的三位老师、拜昂的小组，都是在「做」地位。</p>
+<blockquote class="quote">A comedian is someone paid to lower his own or other people’s status.<cite>— §1。本站译：喜剧演员，就是被雇来降低自己或别人地位的人。</cite></blockquote>
+<p>一句俏皮的定义，带着作者常有的那种把话说满的劲头。前面一句其实有限定：大多数（most）喜剧靠跷跷板。别把这句当成喜剧的完整理论，它更像一个好用的经验法则，§2 他会拿它去和柏格森争。</p>
+
+<h2>读完：作者到底说了什么</h2>
+<p class="lede">读完这一页的两节再看。下面是作者在这两节里的主张，由本站按主张重新组织，不按原书的顺序；每条后面是节号，拿不准就回书里那一节再读一遍。</p>
+<div class="claims">
+  <div class="claim"><h4>地位是互动里做出来的，不是身份</h4><p>作者区分「你是什么地位」和「你演什么地位」：社会地位低的人可以演高，反之亦然，观众爱看两者的反差。他承认准确的说法是支配和服从，选 status 这个词是为了不让学生抵触。</p><span class="sec" data-p="27 31 32 33">§1</span></div>
+  <div class="claim"><h4>没有中立的一句话</h4><p>他在工作室里发现，每个语调、每个动作都暗含地位；同一句「早上好」，经理听来可能是被放低，银行职员听来可能是被抬高，信息由接收的人改写。照集体照时人们想摆出中立，恰恰说明中立摆不出来。朋友之间也玩，只是约好了当游戏玩。</p><span class="sec" data-p="3 48 49 50">§1</span></div>
+  <div class="claim"><h4>人常常演着和自己以为相反的那一头</h4><p>作者说，一练地位他们就发现，人会演着一种地位，却深信自己演的是相反的那种。他自己就是：以为在表示友好、谦虚，其实是在压低对方；学生被要求放低自己，一开口却在炫耀读过大部头。这种错位会让一群人合不来，拜昂那组人表面和气，其实人人在压别人。</p><span class="sec" data-p="21 34 35 44">§1</span></div>
+  <div class="claim"><h4>地位像跷跷板</h4><p>一方上去，另一方就下来；例外是你和被抬高的人坐在同一头。所以抬自己和压别人效果相近，演员卡壳时可以换个方向使劲，交替着来，台词更有变化。</p><span class="sec" data-p="51 52">§1</span></div>
+  <div class="claim"><h4>喜剧和悲剧也是跷跷板</h4><p>他认为大多数喜剧靠降低地位，前提是观众不必同情；好笑不在于像柏格森说的那样像机器，而在于丢了地位；悲剧则是把高地位的人逐出群体，主角到最后都得保持高姿态，否则只剩可怜。这一节是他的推想，没有举研究。</p><span class="sec" data-p="63 74 75 76">§2</span></div>
+</div>
+<p class="sowhat"><b>合起来：</b>作者交给演员一把尺子：别先问人物「想要什么」，先问他「此刻把自己摆多高」。这把尺子在后面三页会被拆成具体的身体信号、空间和主仆关系。</p>
+
+<h2>今天怎么看</h2>
+<p class="lede">这本书 1979 年出版。下面挑出这一页里能被后来的研究检验的说法，分「书里 / 当时 / 今天」三栏，并给一个结论。结论判的是标题里「书里的说法：」后面那一句。全书的这一节汇总在<a href="../today.html">今天怎么看</a>。</p>
+<ul class="verdicts"><li><span class="v ok">成立</span>后来的研究或实践支持这句话。</li><li><span class="v mid">部分成立</span>大方向对，细节或适用范围要改。</li><li><span class="v bad">被改写</span>后来的研究推翻了它、换了一种说法，或者情况变了。</li><li><span class="v dis">有争议</span>至今没有定论，两边各有代表性的研究。</li></ul>
+<div class="today" data-verdict="部分成立"><h4>书里的说法：人和人一来一往，会不自觉地一上一下，像跷跷板</h4><dl>
+  <dt>书里</dt><dd>作者从课堂里看到：一个人上去，别人就觉得被压低；朋友之间也在玩，只是当成游戏。<span class="at" data-p="50 51">§1</span></dd>
+  <dt>当时</dt><dd>动物的等级（啄序）已经研究了半个世纪；人的非语言交流在 1960–70 年代才成为实验课题，「一上一下」这种来回主要还是剧场和临床里的观察。</dd>
+  <dt>今天</dt><dd>社会心理学的实验找到了相当接近的现象：面对一个舒展身体、占据空间的人，被试会不自觉地收缩身体，面对一个缩着的人则会舒展开；而且这样「互补」的一对，比互相模仿的一对更喜欢对方、更自在。另一面，研究也发现地位有两条路：靠威慑的「支配」和靠别人敬重的「声望」，信号不同，不全是此消彼长。<span class="asof">核对于 2026-10。依据：Tiedens 和 Fragale 2003 年在《人格与社会心理学杂志》的实验；Cheng、Tracy 等 2013 年同刊关于支配和声望的研究。</span></dd>
+</dl></div>
+<div class="today" data-verdict="有争议"><h4>书里的说法：踩香蕉皮的人好笑，是因为他丢了地位、我们又不必同情他，而不是柏格森说的「像机器」</h4><dl>
+  <dt>书里</dt><dd>作者说，要是好笑只因为人僵得像机器，我们就会笑溺水的人、笑阅兵；老爷爷摔倒不好笑，是因为我们同情他。<span class="at" data-p="73 74">§2</span></dd>
+  <dt>当时</dt><dd>关于笑的理论分三大家：优越论（柏拉图、霍布斯，笑来自突然觉得自己比别人强）、不协调论（柏格森大致属于这一路）、释放论（弗洛伊德）。作者的说法接近优越论，加了「不同情」这个条件。</dd>
+  <dt>今天</dt><dd>至今没有公认的统一理论。影响较大的「良性冒犯论」认为，一件事既要冒犯了什么、又要让人觉得无伤大雅，才好笑；作者的「不必同情」很像这里的「无伤大雅」。但这个理论的一些实验结果后来被质疑过。<span class="asof">核对于 2026-10。依据：McGraw 和 Warren 2010 年在《心理科学》的论文，及其后的重复研究。</span></dd>
+  <dt>另一边</dt><dd>双关、荒诞笑话里往往找不到谁丢了地位，优越论解释不了它们。</dd>
+</dl></div>
+
+<h2>本站怎么看</h2>
+<p class="lede">读完作者的主张，再看它站不站得住。每一块摆出三样：主流怎么看，作者怎么看，本站的评论。最后一句是本站对这一页的总体判断。</p>
+<div class="views"><h4>地位真的无处不在吗</h4>
+<p><b>主流看法：</b>社会心理学大体同意，人对地位极其敏感，2015 年一篇综述认为追求地位是人的基本动机之一；地位和姿势、眼神、说话方式这些非语言信号的关系，也有大量研究。但研究也把靠威慑的支配和靠敬重的声望分开，人与人之间还有大量合作、照顾和单纯的信息交换。</p>
+<p><b>作者的看法：</b>每个语调和动作都暗含地位，没有中立，连朋友之间也在玩，只是约好了当游戏。<span class="at" data-p="3 48 50">§1</span></p>
+<p class="ours"><b>本站的评论：</b>作为看人的镜头，它好用得惊人：读完这一节，开会、聚餐时你会忍不住数谁在抬谁。但「每一个」是演员训练的口气，目的是让学生不放过任何细节。把一切都看成地位较量，会漏掉别的东西，也容易让人变得多疑。把它当放大镜，不当世界观。</p></div>
+<div class="views"><h4>喜剧就是让人掉下去吗</h4>
+<p><b>主流看法：</b>笑的理论至今没有定论。优越论最古老，能解释嘲笑、滑稽戏和互损，解释不了文字游戏和荒诞；后来的理论多半把「冒犯」和「安全」两个条件放在一起讲。</p>
+<p><b>作者的看法：</b>踩香蕉皮的人只有在丢了地位、我们又不必同情他的时候才好笑；柏格森的「机械」解释说不通。<span class="at" data-p="74">§2</span></p>
+<p class="ours"><b>本站的评论：</b>作者的反例有一半打偏了：柏格森在《笑》的开头自己就说，笑要求暂时收起怜悯，情感是笑最大的敌人，所以老爷爷摔倒不好笑，他也解释得了。「同不同情」这个开关两人都认，后来的理论也保留了；真正的分歧是好笑的那一下是什么，柏格森说「像机器」，作者说「掉了地位」。另外他原话说的是「大多数」喜剧靠跷跷板，这个限定要留住；冷笑话、谐音梗里很难找到谁掉了下去。</p></div>
+<div class="views"><h4>悲剧和献祭：漂亮的猜想</h4>
+<p><b>主流看法：</b>讲悲剧，最常被引的是亚里士多德：悲剧借怜悯和恐惧让观众得到净化。法国学者吉拉尔在《暴力与神圣》（1972）里提出，献祭是把群体的暴力集中到一个替罪羊身上，这个理论影响很大，争议也很大。</p>
+<p><b>作者的看法：</b>悲剧的主题是把高地位的动物逐出群体，主角必须保持高姿态；献祭前，牺牲者要先被抬高。<span class="at" data-p="75 77">§2</span></p>
+<p class="ours"><b>本站的评论：</b>这是一段漂亮的联想，不是论证：他说读过献祭的报告，却没说是哪些，没法核对。拿来指导演员很有用（悲剧主角别在地上打滚），当作人类学结论就要打折扣。</p></div>
+<p class="verdict"><b>本站的总体看法：</b>这一页值得带走两样工具：地位是做出来的，和跷跷板。拿它们去看身边的对话，会有很多「原来如此」。作者把话说得很满，那是教演员的口气；喜剧、悲剧那几段是他的推想，好玩，别当定论。</p>
+
+<h2>检查一下理解</h2>
+<p class="lede">先在心里答，再点开。答错的那题，回书里把对应那一节再读一遍。</p>
+<details class="check"><summary>1.（§1）作者为什么要求演员把地位差定得「只高一点或只低一点」？</summary><p>他想让演员重现生活里普通的闲聊：看《樱桃园》时他想到，人物真正的动机往往是最弱、最平常的。差距定得很小，场景一下子像真的了（为什么要小，书里没细说）；差得大了是另一种戏，后面「最大地位差」一节会讲。</p></details>
+<details class="check"><summary>2.（§1）三位老师分别是哪种玩法？</summary><p>管不住纪律的那位习惯演低：动作多，爱脸红，在教室里像个闯入者。让学生害怕的那位是停不下来地演高。受爱戴的那位是地位专家，能随时抬高或放低自己。</p></details>
+<details class="check"><summary>3.（§1）有人夸作者的戏，他说「哦，没什么」。为什么他后来认为这是在压低对方？</summary><p>否定自己的作品，等于说夸奖的人眼光不行。表面上放低了自己，实际上把对方的品味也拉了下去。</p></details>
+<details class="check"><summary>4.（§1）学生被要求放低自己，却说「那是我最喜欢的书」，全班笑了。他错在哪，怎么改？</summary><p>这句话暗示他读过好几遍这部大书，是在炫耀文化上的优势。改成「我一直想读」，或者接着自嘲一句「我只看里面的插图」，地位就下来了。</p></details>
+<details class="check"><summary>5.（§1）按跷跷板原理，同事报喜时大家为什么心里一沉？什么时候不会？</summary><p>他上去了，别人就相对下来了。如果你和他坐在同一头，比如他是你的孩子，或者你一向以认识他为荣，他升，你也跟着升。</p></details>
+<details class="check"><summary>6.（§2）作者用什么理由反驳柏格森？</summary><p>如果好笑只因为人像机器那样僵，我们就会笑溺水的人、笑阅兵。实际上老爷爷摔倒我们不笑，因为同情他；只有摔倒的人丢了地位、我们又不必同情时，才好笑。</p></details>
+<p>用一句话说这一页：</p>
+<textarea class="note" data-key="02a-oneline" rows="2" placeholder="比如：……"></textarea>
+<div class="ponder"><p>想一想：回想你最近一次开会或家庭聚餐，谁一直在抬高自己，谁在悄悄放低自己？你自己那天习惯演高还是演低？有没有哪一句话，你当时以为是谦虚，现在看是在压别人？</p>
+<textarea class="note" data-key="02a-ponder" rows="3"></textarea></div>
+
+<h2>精彩回顾</h2>
+<p class="lede">读过又忘了，从这里想起来。挑的是这一页最值得记住的故事、游戏和说法，不按原书顺序；每条后面是节号，想细看就回书里那一节。全书各页的这一节都收在<a href="../recap.html">全书回顾</a>。</p>
+<p class="recall-line"><b>一句话：</b>地位不是你是谁，而是你此刻把自己摆多高；两个人坐在一块跷跷板上，你上去，我就下来。</p>
+<div class="recall">
+  <div class="item"><b>三位老师</b><p>管不住课堂的，让人害怕的，受爱戴的。作者多年后才明白：三人分别是习惯演低的、停不下来演高的，和能随时换挡的地位专家。</p><span class="sec">§1</span></div>
+  <div class="item"><b>流浪汉吆喝公爵夫人</b><p>「喂！上哪儿去？」「对不起，我没听清……」社会地位和演出来的地位可以完全相反，观众爱看这种反差。</p><span class="sec">§1</span></div>
+  <div class="item"><b>《战争与和平》</b><p>学生要放低自己，却说「那是我最喜欢的书」，全班大笑：他在炫耀读过大部头。加一句「我只看插图」，就降下来了。</p><span class="sec">§1</span></div>
+  <div class="item"><b>后台报喜</b><p>说「我拿到角色了」，人人道贺，心里却往下沉；说「他们嫌我太老」，大家安慰，却明显高兴起来。这就是跷跷板。</p><span class="sec">§1</span></div>
+  <div class="item"><b>老爷爷和香蕉皮</b><p>作者反驳柏格森：老爷爷摔倒我们会冲过去扶，只有丢了地位、又不招人同情的摔倒才好笑。</p><span class="sec">§2</span></div>
+</div>
+
+</main>
+<script>
+(() => {
+  // 地位的跷跷板：两个人（「后台报喜」里多一个旁观的 C）。每一步选一句台词，台词带一个动作：抬自己、压对方（说话的人那头上去一格），放低自己、抬对方（下来一格）。
+  // gap = A 比 B 高几格（正数 A 高），限在 ±4。翻转：高的一方换了人。台词和场景都是本站编的。
+  // 「茶水间」里，低的一方（或一样高时）抬自己、压对方，会一下子翻到上面高出一格：书里 Y 太太「立刻盖过」X 太太就是这样；高的一方再抬，只多高一格。
+  const root = document.getElementById("sim-02a");
+  if (!root) return;
+  const { h } = window.IM;
+  const NS = "http://www.w3.org/2000/svg";
+  const UP = { 抬自己: 1, 压对方: 1, 放低自己: -1, 抬对方: -1, 中性: 0 };
+  const MAX = 4;
+
+  // 茶水间：两个同组的程序员在咖啡机前，前一晚线上出了故障。8 句，A、B 轮流说；每句四种说法。
+  const PANTRY = [
+    { 抬自己: "昨晚那个故障，最后是我两点爬起来修好的。", 压对方: "听说昨晚的故障是你那块代码引起的？", 放低自己: "昨晚我睡死了，群里喊我都没听见。", 抬对方: "昨晚多亏你在群里盯着，我看你在就放心睡了。" },
+    { 抬自己: "这种故障我见多了，十分钟就能定位。", 压对方: "你也看群了？我还以为你从来不看消息。", 放低自己: "其实我也没搞懂，就是跟着重启了几次。", 抬对方: "这块还是你熟，下次我直接找你。" },
+    { 抬自己: "我跟老板说了，这块以后归我管。", 压对方: "那你得多看看文档，别每次都靠重启。", 放低自己: "说实话，我现在一看到告警就手抖。", 抬对方: "你上次写的那份排查手册，我一直存着。" },
+    { 抬自己: "老板昨天还专门来问我的意见。", 压对方: "文档？组里那几页文档就是你写的，一半都过时了。", 放低自己: "唉，我这个月已经被点名两次了。", 抬对方: "你这么一讲我就明白了，你讲东西真清楚。" },
+    { 抬自己: "下周我去给隔壁组讲讲怎么防这种事。", 压对方: "你先把你那个咖啡杯洗了再说吧。", 放低自己: "我连这台咖啡机都不会用，你帮我按一下？", 抬对方: "要不你去讲？你讲肯定比我好。" },
+    { 抬自己: "我等会儿还有三个会，先拿一杯。", 压对方: "讲？上回你讲的时候，一半人在看手机。", 放低自己: "我也不会，每次都按错。", 抬对方: "你忙你的，这点小事我来。" },
+    { 抬自己: "行，我也得去见客户了。", 压对方: "三个会？难怪你的代码没时间测。", 放低自己: "你们都好忙，就我闲着。", 抬对方: "辛苦了，组里有你大家都轻松。" },
+    { 抬自己: "那这杯我先拿了，我赶时间。", 压对方: "慢走，下次别把告警设成静音。", 放低自己: "那……这杯给你吧，我再等一杯。", 抬对方: "这杯你先拿，你比我急。" },
+  ];
+  const MOVES = ["抬自己", "压对方", "放低自己", "抬对方"];
+
+  const SCENES = {
+    pantry: { name: "茶水间", left: "A", right: "B", intro: "A 和 B 是同组的程序员，昨晚线上出了故障，早上在咖啡机前碰到。两人轮流说，每句从四种说法里选一种。走完 8 句看看这一场是什么样子。" },
+    news: { name: "后台报喜", left: "你", right: "B", intro: "剧团后台，你刚从选角那里回来，B 和 C 在化妆。你说哪一句？（书里 §1 后半的例子，台词是本站改写的。）" },
+    morning: { name: "一句早上好", left: "说话的人", right: "听的人", intro: "同一句平平常常的「早上好」，说给不同的人听。先选听的人是谁，再说这一句。（书里 §1 后半：信息由接收的人改写。）" },
+    book: { name: "最喜欢的书", left: "A", right: "B", intro: "老师要 A 在这一场里放低自己。B 在看书，A 走过去问「在看什么？」，B 答「《战争与和平》」。A 接下来说哪一句？（书里 §1 的课堂实录，台词是本站转述的。）" },
+  };
+
+  const st = { scene: "pantry", gap: 0, step: 0, flips: 0, maxGap: 0, lastHigh: 0, log: [], c: 0, friend: false, hearer: "经理", note: "" };
+  const modes = h("div", { class: "modes" });
+  const stage = h("div", { class: "stage" });
+  const intro = h("p", { class: "desc" });
+  const picks = h("div", { class: "picks" });
+  const extra = h("div", { class: "row" });
+  const narrate = h("div", { class: "narrate" });
+  const stats = h("div", { class: "stats" });
+  const log = h("ol", { class: "log" });
+  const reset = h("button", { onclick: () => start(st.scene) }, "重来");
+  const body = root.querySelector(".sim-body");
+  body.innerHTML = "";
+  body.append(modes, h("div", { class: "controls" }, reset), intro, stage, extra, picks, narrate, stats, log);
+
+  for (const [k, s] of Object.entries(SCENES)) modes.append(h("button", { "data-k": k, onclick: () => start(k) }, s.name));
+
+  // 画跷跷板：gap > 0 左边高。旁观的 C 只在「后台报喜」出现，站在板下面，按 st.c 上下挪
+  function svg(tag, attrs) { const e = document.createElementNS(NS, tag); for (const [k, v] of Object.entries(attrs)) e.setAttribute(k, v); return e; }
+  function draw() {
+    stage.innerHTML = "";
+    const s = SCENES[st.scene];
+    const g = svg("svg", { viewBox: "0 0 360 170", class: "board", role: "img", "aria-label": `跷跷板：${s.left} 比 ${s.right} ${st.gap > 0 ? "高" : st.gap < 0 ? "低" : "一样高"}${st.gap ? ` ${Math.abs(st.gap)} 格` : ""}` });
+    const lx = 50, rx = 290, cy = 100, ly = cy - st.gap * 9, ry = cy + st.gap * 9;   // 每格两头各差 9
+    const line = svg("line", { x1: lx, y1: ly, x2: rx, y2: ry, "stroke-width": 5 }); line.style.stroke = "var(--fg)";
+    const tri = svg("path", { d: "M170 100 L154 140 L186 140 Z" }); tri.style.fill = "var(--surface-2)"; tri.style.stroke = "var(--border)";
+    g.append(tri, line);
+    const who = (x, y, label, color) => {
+      const c = svg("circle", { cx: x, cy: y - 15, r: 12 }); c.style.fill = color;
+      const t = svg("text", { x, y: y - 33, "text-anchor": "middle", "font-size": 15 }); t.textContent = label; t.style.fill = "var(--fg)";
+      g.append(c, t);
+    };
+    who(lx, ly, s.left, "var(--c1)"); who(rx, ry, s.right, "var(--c2)");
+    if (st.scene === "news") {
+      const y = 140 - st.c * 22;
+      const c = svg("circle", { cx: 336, cy: y - 12, r: 10 }); c.style.fill = "var(--c3)";
+      const t = svg("text", { x: 336, y: y - 28, "text-anchor": "middle", "font-size": 15 }); t.textContent = "C"; t.style.fill = "var(--fg)";
+      g.append(c, t);
+    }
+    const lab = svg("text", { x: 170, y: 164, "text-anchor": "middle", "font-size": 14 }); lab.style.fill = "var(--muted)";
+    lab.textContent = st.gap === 0 ? "两头一样高" : `${st.gap > 0 ? s.left : s.right} 高 ${Math.abs(st.gap)} 格`;
+    g.append(lab);
+    stage.append(g);
+  }
+
+  function stat(v, l) { return h("div", { class: "stat" }, h("div", { class: "v" }, v), h("div", { class: "l" }, l)); }
+  function paint() {
+    const s = SCENES[st.scene];
+    for (const b of modes.children) b.setAttribute("aria-pressed", String(b.dataset.k === st.scene));
+    intro.textContent = s.intro;
+    draw();
+    narrate.textContent = st.note;
+    stats.innerHTML = "";
+    stats.append(stat(st.gap === 0 ? "一样高" : `${st.gap > 0 ? s.left : s.right} 高 ${Math.abs(st.gap)}`, "此刻谁高、高几格"),
+      stat(String(st.flips), "高低换了几次位"), stat(String(st.maxGap), "这一场最大的差距（格）"));
+    log.innerHTML = "";
+    for (const x of st.log) log.append(h("li", {}, h("b", {}, `${x.who}：`), x.line, h("span", { class: "mv" }, x.mv)));
+    picks.innerHTML = ""; extra.innerHTML = "";
+    if (st.scene === "pantry") {
+      if (st.step >= PANTRY.length) { picks.append(h("p", {}, "这一场走完了。看看翻转次数和最大差距，再点「重来」换一种走法。")); return; }
+      const speaker = st.step % 2 === 0 ? "A" : "B";
+      picks.append(h("p", {}, `第 ${st.step + 1} / ${PANTRY.length} 句，轮到 ${speaker}：`));
+      for (const mv of MOVES) picks.append(h("button", { onclick: () => say(speaker, PANTRY[st.step][mv], mv) }, h("span", { class: "mv" }, `${speaker}·${mv}`), PANTRY[st.step][mv]));
+    } else if (st.scene === "news") {
+      const box = h("input", { type: "checkbox" }); box.checked = st.friend;
+      box.onchange = () => { st.friend = box.checked; start("news", true); };
+      extra.append(h("label", {}, box, " C 是你的铁杆朋友（和你坐同一头）"));
+      if (st.step) { picks.append(h("p", {}, "点「重来」，或者改一下上面的勾，再选一次。")); return; }
+      picks.append(h("button", { onclick: () => news(1) }, h("span", { class: "mv" }, "你·抬自己"), "我拿到那个角色了！"),
+        h("button", { onclick: () => news(-1) }, h("span", { class: "mv" }, "你·放低自己"), "他们说我太老了，没要我。"));
+    } else if (st.scene === "morning") {
+      const sel = h("select", { onchange: (e) => { st.hearer = e.target.value; start("morning", true); } },
+        ...["经理", "银行职员"].map((x) => Object.assign(h("option", { value: x }, x), { selected: st.hearer === x })));
+      extra.append(h("label", {}, "听的人是：", sel));
+      if (st.step) { picks.append(h("p", {}, "换一个听的人，再说一次。")); return; }
+      picks.append(h("button", { onclick: () => morning() }, h("span", { class: "mv" }, "说话的人·中性"), "早上好。"));
+    } else if (st.scene === "book") {
+      if (st.step >= 2) { picks.append(h("p", {}, "点「重来」，试另一种说法。")); return; }
+      if (st.step === 0) {
+        picks.append(h("button", { onclick: () => book("啊！那是我最喜欢的书！", "抬自己", "全班笑了：这句暗示他读过好几遍这部大书，是在炫耀，他以为在放低，其实在抬高自己。") }, h("span", { class: "mv" }, "A"), "啊！那是我最喜欢的书！"),
+          h("button", { onclick: () => book("我一直想读那本书来着。", "放低自己", "这回真低下去了：承认自己没读过，B 高了。") }, h("span", { class: "mv" }, "A"), "我一直想读那本书来着。"));
+      } else if (st.log[0].mv === "抬自己") {
+        picks.append(h("button", { onclick: () => book("……当然了，我只看里面的插图。", "放低自己", "补一句自嘲，刚才抬上去的又放下来了：书里作者给的另一种改法。") }, h("span", { class: "mv" }, "A"), "……当然了，我只看里面的插图。"));
+      } else picks.append(h("p", {}, "点「重来」，试另一种说法。"));
+    }
+  }
+
+  function move(d) {
+    const before = st.gap;
+    st.gap = Math.max(-MAX, Math.min(MAX, st.gap + d));
+    const hi = Math.sign(st.gap);
+    if (hi && st.lastHigh && hi !== st.lastHigh) st.flips++;
+    if (hi) st.lastHigh = hi;
+    st.maxGap = Math.max(st.maxGap, Math.abs(st.gap));
+    return st.gap - before;
+  }
+  // A 说话：抬自己让 gap +1；B 说话：抬自己让 gap −1
+  function say(speaker, line, mv) {
+    if (st.scene !== "pantry") return;
+    const sign = speaker === "A" ? 1 : -1;
+    let target = st.gap + UP[mv] * sign;
+    if (UP[mv] > 0) target = sign > 0 ? Math.max(target, 1) : Math.min(target, -1);
+    const flipsBefore = st.flips;
+    const moved = move(target - st.gap);
+    st.log.push({ who: speaker, line, mv });
+    st.step++;
+    const s = SCENES.pantry;
+    const dir = moved === 0 ? "板已经翘到头了，没再动" : st.flips > flipsBefore ? `${speaker} 一下子翻到了上面` : `板往 ${moved > 0 ? s.left : s.right} 那头翘起一格`;
+    const why = { 抬自己: "把自己往上推", 压对方: "把对方往下按", 放低自己: "把自己往下放", 抬对方: "把对方往上捧" }[mv];
+    st.note = `${speaker} ${mv}（${why}）：${dir}。` + (mv === "压对方" || mv === "抬自己" ? "抬自己和压对方，在跷跷板上是同一个方向。" : "放低自己和抬对方，是另一个方向。");
+    paint();
+  }
+  function news(d) {
+    if (st.scene !== "news" || st.step) return;
+    move(d);
+    st.c = st.friend ? d : -d;
+    st.step = 1;
+    st.log.push({ who: "你", line: d > 0 ? "我拿到那个角色了！" : "他们说我太老了，没要我。", mv: d > 0 ? "抬自己" : "放低自己" });
+    st.note = d > 0
+      ? (st.friend ? "你上去了，C 和你坐在同一头，跟着上去：他替你高兴是真的。这是跷跷板的例外。" : "你上去了。B 和 C 都会恭喜你，可在跷跷板上他们下去了一格。")
+      : (st.friend ? "你下来了，C 和你坐在同一头，也跟着难过。" : "你下来了。B 和 C 会安慰你，可他们明显轻松了一点：他们上去了。");
+    paint();
+  }
+  // 一句中性的话：效果 = 实际得到的和听的人预期的差。经理预期被恭敬对待，平常的问候是放低他；职员预期被无视，同一句是抬高他
+  function morning() {
+    if (st.scene !== "morning" || st.step) return;
+    const d = st.hearer === "经理" ? 1 : -1;      // 说话的人那头：经理被放低 → 说话的人相对上去
+    move(d);
+    st.step = 1;
+    st.log.push({ who: "说话的人", line: "早上好。", mv: `中性，听的人是${st.hearer}` });
+    st.note = st.hearer === "经理"
+      ? "经理习惯了别人恭恭敬敬，一句平平常常的「早上好」，他听来是被放低了：板往说话的人那头翘。"
+      : "银行职员习惯了没人搭理，同一句「早上好」，他听来是被抬高了：板往他那头翘。没有中立的话，效果由听的人决定。";
+    paint();
+  }
+  function book(line, mv, note) {
+    if (st.scene !== "book" || st.step >= 2) return;
+    move(UP[mv]);
+    st.step++;
+    st.log.push({ who: "A", line, mv });
+    st.note = note;
+    paint();
+  }
+  function start(k, keepOpts) {
+    Object.assign(st, { scene: k, gap: 0, step: 0, flips: 0, maxGap: 0, lastHigh: 0, log: [], c: 0, note: "" });
+    if (!keepOpts) { st.friend = false; st.hearer = "经理"; }
+    paint();
+  }
+  start("pantry");
+})();
+</script>
+</body>
+</html>

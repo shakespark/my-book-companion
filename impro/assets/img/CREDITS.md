@@ -1,0 +1,59 @@
+- `02a-cherry-orchard.jpg` — File:The Cherry Orchard MAT.jpg — Alexander Bakshy — Public domain — https://commons.wikimedia.org/wiki/File%3AThe_Cherry_Orchard_MAT.jpg
+- `02a-bergson.jpg` — File:Henri Bergson 02.jpg — Henri Manuel — Public domain — https://commons.wikimedia.org/wiki/File%3AHenri_Bergson_02.jpg
+- `02a-chaplin-kid.jpg` — File:Chaplin The Kid edit.jpg — Unknown photographer — Public domain — https://commons.wikimedia.org/wiki/File%3AChaplin_The_Kid_edit.jpg
+- `00-royal-court.jpg` — File:Royal Court Theatre - geograph.org.uk - 4194351.jpg — N Chadwick — CC BY-SA 2.0 — https://commons.wikimedia.org/wiki/File%3ARoyal_Court_Theatre_-_geograph.org.uk_-_4194351.jpg
+- `02d-victoria-brown.jpg` — File:Sir Edwin Landseer (1803-73) - Queen Victoria at Osborne - RCIN 403580 - Royal Collection.jpg — Edwin Landseer — Public domain — https://commons.wikimedia.org/wiki/File%3ASir_Edwin_Landseer_%281803-73%29_-_Queen_Victoria_at_Osborne_-_RCIN_403580_-_Royal_Collection.jpg
+- `02d-callot-sfessania.jpg` — File:Titelprent voor de prentserie 'Balli di Sfessania','Dansen van Sfessania', RP-P-OB-20.866.jpg — Rijksmuseum — CC0 — https://commons.wikimedia.org/wiki/File%3ATitelprent_voor_de_prentserie_%27Balli_di_Sfessania%27%2C%27Dansen_van_Sfessania%27%2C_RP-P-OB-20.866.jpg
+- `02d-cavendish.jpg` — File:Henry Cavendish, Chemist. 1731-1810 Wellcome M0014171.jpg — 作者不详 — CC BY 4.0 — https://commons.wikimedia.org/wiki/File%3AHenry_Cavendish%2C_Chemist._1731-1810_Wellcome_M0014171.jpg
+- `02b-kittiwakes.jpg` — File:Kittiwake colony on Castle Cliff - geograph.org.uk - 7177073.jpg — Oliver Dixon — CC BY-SA 2.0 — https://commons.wikimedia.org/wiki/File%3AKittiwake_colony_on_Castle_Cliff_-_geograph.org.uk_-_7177073.jpg
+- `02d-godot-avignon.jpg` — File:En attendant Godot, Festival d'Avignon, 1978 f22.jpg — Fernand Michaud — CC0 — https://commons.wikimedia.org/wiki/File%3AEn_attendant_Godot%2C_Festival_d%27Avignon%2C_1978_f22.jpg
+- `02b-alexander-poster.jpg` — File:Poster made to advertise services of F M Alexander.gif — unknown- commissioned by F Matthias Alexander as publicity material — Public domain — https://commons.wikimedia.org/wiki/File%3APoster_made_to_advertise_services_of_F_M_Alexander.gif
+- `01a-nataraja.jpg` — File:Shiva as the Lord of Dance LACMA edit.jpg — 作者不详 — Public domain — https://commons.wikimedia.org/wiki/File%3AShiva_as_the_Lord_of_Dance_LACMA_edit.jpg
+- `02b-pigeons.jpg` — File:Man with many pigeons in Washington Square Park, New York.jpg — JoeInQueens from Queens, USA — CC BY 2.0 — https://commons.wikimedia.org/wiki/File%3AMan_with_many_pigeons_in_Washington_Square_Park%2C_New_York.jpg
+- `01a-laozi.jpg` — File:Zhang Lu-Laozi Riding an Ox (cropped).jpg — Zhang Lu — Public domain — https://commons.wikimedia.org/wiki/File%3AZhang_Lu-Laozi_Riding_an_Ox_%28cropped%29.jpg
+- `02b-hamlet-gravediggers.jpg` — File:Eugène Delacroix, Hamlet and Horatio before the Gravediggers (Act V, Scene I), 1843, NGA 58068.jpg — Eugène Delacroix — CC0 — https://commons.wikimedia.org/wiki/File%3AEug%C3%A8ne_Delacroix%2C_Hamlet_and_Horatio_before_the_Gravediggers_%28Act_V%2C_Scene_I%29%2C_1843%2C_NGA_58068.jpg
+- `01a-earth.jpg` — File:Earth Dovzhenko 1.jpg — Alexander Dovzhenko — Public domain — https://commons.wikimedia.org/wiki/File%3AEarth_Dovzhenko_1.jpg
+- `04a-red-riding-hood.jpg` — File:Dore ridinghood.jpg — Gustave Dore — Public domain — https://commons.wikimedia.org/wiki/File%3ADore_ridinghood.jpg
+- `01a-unicycle.jpg` — File:Skeeter Reece on Unicycle.jpg — Owen Carey — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File%3ASkeeter_Reece_on_Unicycle.jpg
+- `04a-lear-fool.jpg` — File:William Dyce - King Lear and the Fool in the Storm.jpg — William Dyce — Public domain — https://commons.wikimedia.org/wiki/File%3AWilliam_Dyce_-_King_Lear_and_the_Fool_in_the_Storm.jpg
+- `01b-royal-court.jpg` — File:The Royal Court theatre, Sloane Square - geograph.org.uk - 2581033.jpg — Stacey Harris — CC BY-SA 2.0 — https://commons.wikimedia.org/wiki/File%3AThe_Royal_Court_theatre%2C_Sloane_Square_-_geograph.org.uk_-_2581033.jpg
+- `04b-shannon.jpg` — File:C.E. Shannon. Tekniska museet 43069 (cropped).jpg — 作者不详 — CC BY 2.0 — https://commons.wikimedia.org/wiki/File%3AC.E._Shannon._Tekniska_museet_43069_%28cropped%29.jpg
+- `04c-speke.jpg` — File:John Hanning Speke (1827-64) RMG F8616 (cropped).jpg — S. Hollyer; Southwell Brothers — Public domain — https://commons.wikimedia.org/wiki/File%3AJohn_Hanning_Speke_%281827-64%29_RMG_F8616_%28cropped%29.jpg
+- `01b-brecht.jpg` — File:Bundesarchiv Bild 183-W0409-300, Bertolt Brecht.jpg — Kolbe, Jörg — CC BY-SA 3.0 de — https://commons.wikimedia.org/wiki/File%3ABundesarchiv_Bild_183-W0409-300%2C_Bertolt_Brecht.jpg
+- `04b-pope.jpg` — File:Alexander Pope portrait painting.jpg — Godfrey Kneller — Public domain — https://commons.wikimedia.org/wiki/File%3AAlexander_Pope_portrait_painting.jpg
+- `02c-salvini.jpg` — File:Sig. Salvini as Othello.jpg — The London Printing and Publishing Company Limited / F. Armytage — Public domain — https://commons.wikimedia.org/wiki/File%3ASig._Salvini_as_Othello.jpg
+- `01b-copeau.jpg` — File:Jacques Copeau 001.jpg — The Bellman — Public domain — https://commons.wikimedia.org/wiki/File%3AJacques_Copeau_001.jpg
+- `03c-stonehenge.jpg` — File:Stonehenge 2016.jpg — DeFacto — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File%3AStonehenge_2016.jpg
+- `04c-tempest.jpg` — File:Robert Smirke - Stephano and Trinculo with Caliban - B1977.14.3443 - Yale Center for British Art.jpg — Robert Smirke — CC0 — https://commons.wikimedia.org/wiki/File%3ARobert_Smirke_-_Stephano_and_Trinculo_with_Caliban_-_B1977.14.3443_-_Yale_Center_for_British_Art.jpg
+- `04b-turandot.jpg` — File:Princess Turandot - 1922.jpg — 作者不详 — Public domain — https://commons.wikimedia.org/wiki/File%3APrincess_Turandot_-_1922.jpg
+- `03a-schiller.jpg` — File:Anton Graff - Friedrich Schiller.jpg — Anton Graff — Public domain — https://commons.wikimedia.org/wiki/File%3AAnton_Graff_-_Friedrich_Schiller.jpg
+- `05c-half-masks.jpg` — File:Pierangelo Summa e maschere, Commedia dell'Arte Day, Torino, 2011.jpg — Grobinetdesbois — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File%3APierangelo_Summa_e_maschere%2C_Commedia_dell%27Arte_Day%2C_Torino%2C_2011.jpg
+- `03c-rousseau.jpg` — File:Maurice Quentin de La Tour - Portrait of Jean-Jacques Rousseau - adjusted.jpg — Maurice Quentin de La Tour (Life time: 1788) — Public domain — https://commons.wikimedia.org/wiki/File%3AMaurice_Quentin_de_La_Tour_-_Portrait_of_Jean-Jacques_Rousseau_-_adjusted.jpg
+- `04c-bierce.jpg` — File:Ambrose Bierce in 1896.jpg — F. Soulé Campbell — Public domain — https://commons.wikimedia.org/wiki/File%3AAmbrose_Bierce_in_1896.jpg
+- `02c-putto.jpg` — File:Donatello (attr.) putto danzante.JPG — sailko — CC BY 2.5 — https://commons.wikimedia.org/wiki/File%3ADonatello_%28attr.%29_putto_danzante.JPG
+- `04b-hippo.jpg` — File:Hippo (Hippopotamus amphibius) with open mouth (16587676107).jpg — Bernard DUPONT from FRANCE — CC BY-SA 2.0 — https://commons.wikimedia.org/wiki/File%3AHippo_%28Hippopotamus_amphibius%29_with_open_mouth_%2816587676107%29.jpg
+- `05e-noh-koomote.jpg` — File:Ko-omote (Noh mask), Tokyo National Museum C-1551.jpg — 東京国立博物館 — Public domain — https://commons.wikimedia.org/wiki/File%3AKo-omote_%28Noh_mask%29%2C_Tokyo_National_Museum_C-1551.jpg
+- `03b-karno-advert.jpg` — File:Chaplin Karno advert.jpg — Empress Theatre — Public domain — https://commons.wikimedia.org/wiki/File%3AChaplin_Karno_advert.jpg
+- `03a-rousseau-tiger.jpg` — File:Henri Rousseau - Surprise!.jpg — Henri Rousseau — Public domain — https://commons.wikimedia.org/wiki/File%3AHenri_Rousseau_-_Surprise%21.jpg
+- `05b-kemble.jpg` — File:Miss Fanny Kemble (BM 1838,0425.178).jpg — After: Sir Thomas Lawrence Print made by: Richard James Lane Printed by: Charles — Public domain — https://commons.wikimedia.org/wiki/File%3AMiss_Fanny_Kemble_%28BM_1838%2C0425.178%29.jpg
+- `05a-shakers.jpg` — File:Shaker-dance.png — Scan by NYPL — Public domain — https://commons.wikimedia.org/wiki/File%3AShaker-dance.png
+- `05c-hanamichi.jpg` — File:National Theatre of Japan - Hanamichi 2018 10 21.JPG — Nesnad — CC BY 4.0 — https://commons.wikimedia.org/wiki/File%3ANational_Theatre_of_Japan_-_Hanamichi_2018_10_21.JPG
+- `03b-mantis.jpg` — File:Conehead mantis.jpg — Mkrc85 — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File%3AConehead_mantis.jpg
+- `03a-inuit-bone.jpg` — File:Bone carving (6360892101).jpg — Emma — CC BY 2.0 — https://commons.wikimedia.org/wiki/File%3ABone_carving_%286360892101%29.jpg
+- `02c-beach.jpg` — File:St. Ives beach, Cornwall - geograph.org.uk - 605009.jpg — Dr Neil Clifton — CC BY-SA 2.0 — https://commons.wikimedia.org/wiki/File%3ASt._Ives_beach%2C_Cornwall_-_geograph.org.uk_-_605009.jpg
+- `05a-cham.jpg` — File:Ham dance at Deskit Monastery.jpg — WikClick — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File%3AHam_dance_at_Deskit_Monastery.jpg
+- `05f-kuda-kepang.jpg` — File:Kuda Kepang Semanjung Johor with Buluh Ponorogo style.jpg — Dheirawa — CC0 — https://commons.wikimedia.org/wiki/File%3AKuda_Kepang_Semanjung_Johor_with_Buluh_Ponorogo_style.jpg
+- `05e-garbo.jpg` — File:Greta Garbo MP831.jpg — Motion Picture — Public domain — https://commons.wikimedia.org/wiki/File%3AGreta_Garbo_MP831.jpg
+- `05d-chekhov.jpg` — File:Mikhail Chekhov 4.jpg — Published by Brentano's, NY, 1922 — Public domain — https://commons.wikimedia.org/wiki/File%3AMikhail_Chekhov_4.jpg
+- `05c-roman-carnival.jpg` — File:Carnaval de Rome, via del Corso, 1836.JPG — Anonymous Unknown author — Public domain — https://commons.wikimedia.org/wiki/File%3ACarnaval_de_Rome%2C_via_del_Corso%2C_1836.JPG
+- `05d-chekhov-studio.jpg` — File:Stocktraining MTSB 01.jpg — Jobst Langhans — CC BY-SA 3.0 — https://commons.wikimedia.org/wiki/File%3AStocktraining_MTSB_01.jpg
+- `05a-tartaglia.jpg` — File:Tartaglia.jpg — Maurice Sand (Sand, Maurice, 1823-1889) — Public domain — https://commons.wikimedia.org/wiki/File%3ATartaglia.jpg
+- `05e-duse.jpg` — File:Eleonora Duse by Pau Audouard RP-R-1933-19.jpg — Pau Audouard Deglaire — Public domain — https://commons.wikimedia.org/wiki/File%3AEleonora_Duse_by_Pau_Audouard_RP-R-1933-19.jpg
+- `03c-farrier.jpg` — File:Plougoulm - Gouel an Eost 2011 - Remplacement du fer d'un cheval étape 014.jpg — Thesupermat — CC BY-SA 3.0 — https://commons.wikimedia.org/wiki/File%3APlougoulm_-_Gouel_an_Eost_2011_-_Remplacement_du_fer_d%27un_cheval_%C3%A9tape_014.jpg
+- `05b-gede-altar.jpg` — File:Haitian vodou altar to Petwo, Rada, and Gede spirits; November 5, 2010..jpg — Calvin Hennick, for WBUR Boston — CC BY 3.0 — https://commons.wikimedia.org/wiki/File%3AHaitian_vodou_altar_to_Petwo%2C_Rada%2C_and_Gede_spirits%3B_November_5%2C_2010..jpg
+- `05d-mary-lamb.jpg` — File:Mary had a little lamb 1 - WW Denslow - Project Gutenberg etext 18546.jpg — 作者不详 — Public domain — https://commons.wikimedia.org/wiki/File%3AMary_had_a_little_lamb_1_-_WW_Denslow_-_Project_Gutenberg_etext_18546.jpg
+- `05a-tramp.jpg` — File:The Tramp Essanay.jpg — Essanay Studios — Public domain — https://commons.wikimedia.org/wiki/File%3AThe_Tramp_Essanay.jpg
+- `05f-perchten-mask.jpg` — File:Andree-Eysn(1910)-p171-fig136-Rüsselmaske-aus-Fichtenholz.png — Marie Andree-Eysn (d. 1929) — Public domain — https://commons.wikimedia.org/wiki/File%3AAndree-Eysn%281910%29-p171-fig136-R%C3%BCsselmaske-aus-Fichtenholz.png
+- `05b-hypnotist-poster.jpg` — File:Albani poster.jpg — Double-M — Public domain — https://commons.wikimedia.org/wiki/File%3AAlbani_poster.jpg
+- `05d-teddy.jpg` — File:Steiff Teddy Bear.jpg — 作者不详 — Public domain — https://commons.wikimedia.org/wiki/File%3ASteiff_Teddy_Bear.jpg
+- `05f-bosch-hell.jpg` — File:Hieronymus Bosch - The Garden of Earthly Delights - Hell Detail.jpg — Hieronymus Bosch — Public domain — https://commons.wikimedia.org/wiki/File%3AHieronymus_Bosch_-_The_Garden_of_Earthly_Delights_-_Hell_Detail.jpg

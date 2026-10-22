@@ -1,0 +1,98 @@
+// 全站目录。tools/gen_chapters.py 生成，别手改节表；每页的 t、d 和 IM_READY 由 tools/accept.py 填（重新生成时保留）。页 id 和 tools/lint.py 用同一套（lint 从这里读）。
+// IM_CHAPTERS：五篇（01 篇是序言加 Notes on Myself，05 篇末尾并进了全书附录）。en 原书篇名，t 译本篇名，d 一句话（主编补）。
+// IM_SECS：每篇的节，就是原书和译本的编号小节（04 篇 §3 本站拆成 3a、3b）。k 节号，p 段号范围（source/text/NN.txt 的 [k]），w 英文词数，en 这一节英文开头几个词，
+//   zh 译本的节号和小标题，zs 这一节在译本里开头的几个字（读者在译本电子书里搜它），zw 译本字数（汉字），t 本站中文节名，tier 档（先读 / 有空 / 可跳过），line 这一节起什么作用。
+// IM_PAGES：页。secs 这一页包含的节，need 这一页必写的可省小节（sim：动手：模拟器；lint 查），t 本站标题（不超过 10 个字），d 一句话（不超过 24 个字）。
+window.IM_CHAPTERS = [
+  { n: 1, en: "Introduction + Notes on Myself", t: "序言 · 关于我自己", d: "" },
+  { n: 2, en: "Status", t: "姿态", d: "" },
+  { n: 3, en: "Spontaneity", t: "自发性", d: "" },
+  { n: 4, en: "Narrative Skills", t: "叙事技巧", d: "" },
+  { n: 5, en: "Masks and Trance", t: "面具与催眠", d: "" },
+];
+window.IM_SECS = {
+  "01": [
+    { k: 1, p: [1, 20], w: 1154, zw: 1951, t: "Wardle 的序言", tier: "有空", en: "If teachers were honoured in the", zh: "序言", zs: "在英国的剧院里", line: "别人写的总评：Royal Court 的人怎么看他；后文都会展开" },
+    { k: 2, p: [21, 27], w: 755, zw: 1130, t: "喊错名字，世界变亮", tier: "先读", en: "As I grew up, everything started", zh: "开头（第一个小标题之前）", zs: "随着长大，一切都变得黯淡", line: "全书起点：知觉变钝来自教育，不来自年龄" },
+    { k: 3, p: [28, 28], w: 145, zw: 212, t: "把每句话倒过来", tier: "有空", en: "At about the age of nine", zh: "叛逆", zs: "大约在9岁的时候", line: "他的方法从「反着老师做」开始" },
+    { k: 4, p: [29, 30], w: 133, zw: 181, t: "不能播的短片", tier: "可跳过", en: "I made a two-minute film for", zh: "瘸子", zs: "我曾为一个电视节目拍了一", line: "一则没下结论的轶事，和主线无关" },
+    { k: 5, p: [31, 36], w: 331, zw: 490, t: "花园里的一朵花", tier: "先读", en: "I once had a close rapport", zh: "疯丫头", zs: "我曾经和一个十几岁的女孩", line: "「这朵尤其漂亮」：温柔的否定也是暴力；block 首次出场" },
+    { k: 6, p: [37, 37], w: 97, zw: 136, t: "教育不是一种物质", tier: "先读", en: "People think of good and bad", zh: "作为一种物质的“教育”", zs: "人们认为好老师和坏老师做", line: "好老师坏老师做的是相反的事，不是多少之分" },
+    { k: 7, p: [38, 40], w: 247, zw: 360, t: "越上学越僵", tier: "有空", en: "As I grew up I began", zh: "成长", zs: "长大之后，我开始感到不自", line: "离校时体态、声音、自发性都比入学时差" },
+    { k: 8, p: [41, 42], w: 111, zw: 150, t: "十八岁第一次落泪", tier: "有空", en: "One day, when I was eighteen,", zh: "情绪", zs: "18岁的一天", line: "学校教人不去回应；「文评姿势」" },
+    { k: 9, p: [43, 44], w: 444, zw: 619, t: "《大地》里跳舞的人", tier: "有空", en: "I tried to resist my schooling,", zh: "智力", zs: "我试图抵制学校教育", line: "不再按智力而按行动看人" },
+    { k: 10, p: [45, 71], w: 1068, zw: 1352, t: "小丑骑车的第一课", tier: "先读", en: "I felt crippled, and ‘unfit’ for", zh: "安东尼·斯特林", zs: "我觉得自己残废了", line: "全书教法的源头：老师不示范、不评好坏" },
+    { k: 11, p: [72, 80], w: 1448, zw: 2210, t: "巴特西的「不可教」班", tier: "有空", en: "I chose to teach in Battersea,", zh: "成为一名老师", zs: "我选择在伦敦的巴特西教书", line: "故事最好看，结论和 §10 相同：不干预就能放出才能" },
+    { k: 12, p: [81, 87], w: 901, zw: 1399, t: "伪品特、仿奥斯本", tier: "有空", en: "In 1956 the Royal Court Theatre", zh: "皇家宫廷剧院", zs: "1956年，皇家宫廷剧院", line: "读剧本、写戏、导戏，才华又一次丢掉；成人是萎缩的孩子" },
+    { k: 13, p: [88, 89], w: 333, zw: 544, t: "能演的不讨论", tier: "有空", en: "George Devine had announced that the", zh: "编剧小组", zs: "乔治·迪瓦恩曾宣布", line: "「演出来，不讨论」的来历；讨论里尽是地位较量" },
+    { k: 14, p: [90, 96], w: 1150, zw: 1838, t: "工作室和戏剧机器", tier: "有空", en: "Devine had been a student of", zh: "皇家宫廷剧院工作室", zs: "迪瓦恩是米歇尔·圣", line: "反斯坦尼，地位和一人一字游戏的来历" },
+    { k: 15, p: [97, 110], w: 1584, zw: 2378, t: "老师坐到地上", tier: "先读", en: "If you want to apply the", zh: "建立正确的关系", zs: "如果你想应用我在本书中描", line: "他怎么教：揽下失败、当恐惧症来治、「我在玩」" },
+  ],
+  "02": [
+    { k: 1, p: [1, 72], w: 2737, zw: 4154, t: "跷跷板和三种老师", tier: "先读", en: "When I began teaching at the", zh: "1 跷跷板", zs: "当我在皇家宫廷剧院工作室", line: "立起「地位 是做出来的」，跷跷板原理，没有中立" },
+    { k: 2, p: [73, 77], w: 605, zw: 916, t: "香蕉皮和狼的悲剧", tier: "有空", en: "In his essay on laughter Bergson", zh: "2 喜剧与悲剧", zs: "在柏格森的一篇关于笑的文", line: "用跷跷板解释喜剧和悲剧，反驳柏格森；推测成分多" },
+    { k: 3, p: [78, 198], w: 5153, zw: 7703, t: "呃、不动的头和拆信", tier: "先读", en: "Social animals have inbuilt rules which", zh: "3 姿态教学", zs: "群居动物有其内在的规则", line: "地位 的身体机制，偏好姿态，进错房间，不设防" },
+    { k: 4, p: [199, 243], w: 944, zw: 1507, t: "买帽子骂人", tier: "有空", en: "If you can get the students", zh: "4 侮辱", zs: "如果你能让学生们开玩笑互", line: "骂人游戏：学会被压低；「只管买卖别拒绝」预告 03 篇" },
+    { k: 5, p: [244, 251], w: 817, zw: 1309, t: "两个放不开的学生", tier: "可跳过", en: "If you wish to teach status", zh: "5 姿态专家", zs: "如果你想教姿态互动", line: "写给老师：怎么化解学生对陌生 地位 的抗拒" },
+    { k: 6, p: [252, 272], w: 2642, zw: 4106, t: "海滩、长椅和让路", tier: "有空", en: "I can’t avoid talking about ‘space’", zh: "6 空间", zs: "我不能再避而不谈", line: "地位 是领地：空间怎么「流动」，街上谁让谁" },
+    { k: 7, p: [273, 385], w: 2977, zw: 4461, t: "主仆戏和摘帽子", tier: "有空", en: "One status relationship that gives immense", zh: "7 主仆场景", zs: "有一种为观众带来巨大乐趣", line: "「空间全归主人」；主仆游戏、等级链、摘帽子" },
+    { k: 8, p: [386, 407], w: 625, zw: 938, t: "打响指的主人", tier: "有空", en: "In life, status gaps are often", zh: "8 最大姿态差", zs: "在生活中，姿态差常常大到", line: "最大 地位 差：仆人一出错就「死」，演出荒诞戏" },
+    { k: 9, p: [408, 424], w: 703, zw: 1176, t: "波卓和幸运儿", tier: "有空", en: "Although this short essay is no", zh: "9 文本", zs: "虽然这一章内容仅仅是一个", line: "收束：好戏就是 地位 的展示和反转；人是等级动物" },
+  ],
+  "03": [
+    { k: 1, p: [1, 13], w: 1521, zw: 2308, t: "孤儿台词和蓝色雪人", tier: "有空", en: "‘I was given the part of", zh: "1", zs: "我要扮演可怜的阿姆加德", line: "学校教人收起想象；多是轶事和论战，判断要打折扣" },
+    { k: 2, p: [14, 71], w: 1695, zw: 2649, t: "守望者和「悲伤点」", tier: "先读", en: "Many teachers express surprise at the", zh: "2", zs: "很多老师都对发生在青春期", line: "立起「想象像感知一样省力」「接第一个念头」" },
+    { k: 3, p: [72, 102], w: 2677, zw: 4240, t: "疯狂、下流、不原创", tier: "有空", en: "At school any spontaneous act was", zh: "3（精神错乱 · 下流 · 原创）", zs: "在学校里，任何自发的行为", line: "第一个念头被审掉的三条理由；结论：越直白越原创" },
+    { k: 4, p: [103, 189], w: 981, zw: 1486, t: "盒子里有什么", tier: "先读", en: "Let’s see how these theories work", zh: "4", zs: "让我们看看这些理论在实践", line: "课堂实录：当场抓到学生换掉第一个词" },
+    { k: 5, p: [190, 356], w: 2809, zw: 4209, t: "史密斯：接受还是拒绝", tier: "先读", en: "There are people who prefer to", zh: "5（“安排”别人 · 拒绝与接受）", zs: "有喜欢说“是”的人，也有", line: "立起提议、接受、拒绝，并用一场场戏示范" },
+    { k: 6, p: [357, 427], w: 1735, zw: 2523, t: "礼物、星期二和即兴诗", tier: "有空", en: "Here are some games I’ve used", zh: "6（“异地” · “礼物” · “隐蔽提议” · “今天星期二” · “是的，但是……” · 诗歌）", zs: "以下是我和我的学生们一起", line: "六个能照着玩的游戏，都套提议和接受的分类" },
+    { k: 7, p: [428, 429], w: 132, zw: 191, t: "要过的三道坎", tier: "先读", en: "Reading about spontaneity won’t make you", zh: "7", zs: "阅读关于自发性的文章不会", line: "两段话收束全篇：三个阶段" },
+  ],
+  "04": [
+    { k: 1, p: [1, 101], w: 2894, zw: 4269, t: "熊、小鸟和猜故事", tier: "先读", en: "Playboy: Knife in the Water was", zh: "1", zs: "《花花公子》：《水中刀》", line: "立起「不管内容、只看结构」和「重新纳入」" },
+    { k: 2, p: [102, 123], w: 980, zw: 1439, t: "倒着走的人", tier: "有空", en: "The improviser has to be like", zh: "2", zs: "即兴演员必须像一个倒着走", line: "把讲故事拆成「联想」「连接」两半来练" },
+    { k: "3a", p: [124, 301], w: 3295, zw: 5072, t: "从列清单到河马织毛衣", tier: "有空", en: "If I tell a student, ‘Say", zh: "3（清单 · 意象联想 · “角色” · 自动写作 · “梦” · “专家”）", zs: "如果我对一个学生说", line: "六个绕过审查的游戏，体会想象会自己来" },
+    { k: "3b", p: [302, 432], w: 3851, zw: 5996, t: "一人一字和十四封信", tier: "有空", en: "Students can become better at playing", zh: "3（“快问快答” · “一人一字”）", zs: "如果学生先玩了", line: "一人一字：谁也控制不了，故事像外力在讲" },
+    { k: 4, p: [433, 448], w: 1764, zw: 2589, t: "打破常规的三条规则", tier: "先读", en: "An improviser can study status transactions,", zh: "4（“剧本写作”）", zs: "一个即兴演员可以研究姿态", line: "编故事＝打断例行；留在台上、别抵消" },
+    { k: 5, p: [449, 452], w: 382, zw: 597, t: "骗学生别管内容", tier: "先读", en: "I began this essay by saying", zh: "5", zs: "我在本章的开头说", line: "收回开头：好演员懂内容，「别管」是教学的骗术" },
+  ],
+  "05": [
+    { k: 1, p: [1, 11], w: 1229, zw: 1887, t: "蟾蜍神和大写的 M", tier: "有空", en: "George Devine gave a Mask class", zh: "1 乔治·迪瓦恩", zs: "1958年，乔治·迪瓦恩", line: "立起「Mask 要的是附身」；Devine 和作者的分歧；卓别林的流浪汉" },
+    { k: 2, p: [12, 27], w: 1006, zw: 1603, t: "一块蛋糕两个丑角", tier: "有空", en: "At first I thought that Mask", zh: "2 俄国人", zs: "起初，我认为面具作品完全", line: "斯坦尼和瓦赫坦戈夫早就碰到过面具状态" },
+    { k: 3, p: [28, 34], w: 854, zw: 1283, t: "冰箱里的灯", tier: "有空", en: "Masks seem exotic when you first", zh: "3 摧毁面具", zs: "当你第一次学习面具时", line: "我们大半时间都在出神；作者说西方文化一直在压制面具" },
+    { k: 4, p: [35, 39], w: 651, zw: 982, t: "镜子里的陌生人", tier: "有空", en: "We have instinctive responses to faces.", zh: "4 脸", zs: "我们对面孔有着本能的反应", line: "脸决定我们怎么看人；化妆和乔装能让人变成另一个人" },
+    { k: 5, p: [40, 59], w: 1188, zw: 1917, t: "人格是公关部", tier: "先读", en: "Many actors report ‘split’ states of", zh: "5 催眠", zs: "许多演员都反馈过意识的", line: "讲清「出神」：时间跳跃、失忆、人格靠别人的目光维持" },
+    { k: 6, p: [60, 72], w: 1129, zw: 1757, t: "硬币在哪个杯子下", tier: "有空", en: "How do we enter trance states?", zh: "6 引导", zs: "我们如何进入催眠状态", line: "怎么进入出神：静止、阻断语言、服从高地位者" },
+    { k: 7, p: [73, 107], w: 3412, zw: 5184, t: "玛雅·黛伦被附身", tier: "有空", en: "The type of trance I am", zh: "7 附身", zs: "我在本章中关注的催眠状态", line: "拿附身仪式对照面具：受控出神，神像孩子" },
+    { k: 8, p: [108, 172], w: 4555, zw: 7125, t: "镜子、道具和语言课", tier: "有空", en: "For an introductory Mask class I", zh: "8 面具教学", zs: "在面具入门课上", line: "全书面具课的操作实录：镜子、免责、婴儿般的面具、两种感觉" },
+    { k: 9, p: [173, 183], w: 1084, zw: 1674, t: "流浪儿和泰迪熊", tier: "先读", en: "I’ll consider one particular Mask in", zh: "9 流浪儿", zs: "我将更详细地讨论一个特殊", line: "一个面具从橡皮泥到会长大的「人」，全过程个案" },
+    { k: 10, p: [184, 188], w: 524, zw: 896, t: "龇牙的刽子手", tier: "有空", en: "Another type of character Mask is", zh: "10 刽子手、“长鼻”与“男人”", zs: "另一种角色面具是刽子手", line: "三种简单面具，龇牙鬼脸读者现在就能试" },
+    { k: 11, p: [189, 210], w: 1432, zw: 2246, t: "不戴面具的面具课", tier: "有空", en: "Most of my ‘acting theory’ comes", zh: "11 面具前的练习", zs: "我的“表演理论”大部分来", line: "不用面具的入门练习，一个人能做的多在这里" },
+    { k: 12, p: [211, 225], w: 1424, zw: 2193, t: "面具演剧本", tier: "有空", en: "Scholars have advanced many reasons for", zh: "12 文本", zs: "学者们提出了许多理由来解", line: "面具不肯重复；「这是第一次」口令和 *The Last Bird* 排练" },
+    { k: 13, p: [226, 275], w: 3842, zw: 5846, t: "嘉宝的脸和照片面具", tier: "有空", en: "George Devine gave a second Mask", zh: "13 悲剧面具", zs: "乔治·迪瓦恩在给编剧小组", line: "全脸面具靠静止，和高地位的庄重相连；有空里最值得读" },
+    { k: 14, p: [276, 327], w: 3465, zw: 5101, t: "面具到底危不危险", tier: "先读", en: "Many people express alarm about the", zh: "14 危险", zs: "许多人对“面具作品的危险", line: "作者为面具辩护：暴力和发疯的担心从哪来、老师怎么收场" },
+    { k: 15, p: [328, 346], w: 902, zw: 1338, t: "流浪儿笔记和三个梦", tier: "有空", en: "Here are some earlier notes also", zh: "附录", zs: "以下是英格丽德早期的一些", line: "§9 的补记（泰迪熊被抢那次），加全书最后三个梦" },
+  ],
+};
+window.IM_PAGES = [
+  { id: "01a", ch: 1, secs: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], need: ["game"], t: "被教钝的人", d: "世界变灰是被教钝的，好老师不挡路" },
+  { id: "01b", ch: 1, secs: [12, 13, 14, 15], need: ["game"], t: "老师坐到地上", d: "方法从哪来：能演不讨论，老师揽下失败" },
+  { id: "02a", ch: 2, secs: [1, 2], need: ["sim", "game"], t: "跷跷板", d: "地位是做出来的，你上去我就下来" },
+  { id: "02b", ch: 2, secs: [3], need: ["game"], t: "地位长在身上", d: "目光、一声呃、不动的头，地位都在身体上" },
+  { id: "02c", ch: 2, secs: [4, 5, 6], need: ["game"], t: "骂人和让路", d: "先学会挨骂；地位说到底是领地" },
+  { id: "02d", ch: 2, secs: [7, 8, 9], need: ["game"], t: "主仆和等级链", d: "空间全归主人，编号就成等级链" },
+  { id: "03a", ch: 3, secs: [1, 2, 3], need: ["game"], t: "守望者和第一个念头", d: "你不是没想象力，是念头在门口被挡了" },
+  { id: "03b", ch: 3, secs: [4, 5], need: ["sim", "game"], t: "接受还是拒绝", d: "拒绝是挡住戏，不是说「不」" },
+  { id: "03c", ch: 3, secs: [6, 7], need: ["game"], t: "礼物、星期二和三道坎", d: "六个接住提议的游戏，三道要过的坎" },
+  { id: "04a", ch: 4, secs: [1, 2], need: ["game"], t: "先放开，再接回来", d: "一串事件怎样才成故事：先联想，再接回来" },
+  { id: "04b", ch: 4, secs: ["3a"], need: ["game"], t: "从清单到河马", d: "六个游戏，让冒出来的念头不算你的" },
+  { id: "04c", ch: 4, secs: ["3b", 4, 5], need: ["game"], t: "一人一字和三条规则", d: "放下控制，打断例行，别跑偏、别抵消" },
+  { id: "05a", ch: 5, secs: [1, 2, 3, 4], need: ["game"], t: "蟾蜍神和行头", d: "面具状态并不怪：衣服、油彩、一张脸就能换掉人" },
+  { id: "05b", ch: 5, secs: [5, 6, 7], need: ["game"], t: "人格是公关部", d: "出神是人格下班，有人替你负责它就下班" },
+  { id: "05c", ch: 5, secs: [8], need: ["game"], t: "一堂面具课", d: "镜子、道具和语言课：面具课的操作实录" },
+  { id: "05d", ch: 5, secs: [9, 10, 11, 15], need: ["game"], t: "流浪儿和泰迪熊", d: "橡皮泥捏的脸长成会哭会长大的孩子" },
+  { id: "05e", ch: 5, secs: [12, 13], need: ["game"], t: "静止的面具", d: "面具不肯重复，全脸面具靠静止和庄重" },
+  { id: "05f", ch: 5, secs: [14], need: ["game"], t: "面具危险吗", d: "危险不在面具，在带课的人；老师预备什么就得到什么" },
+];
+window.IM_EXTRA = { "00": { t: "开读之前", d: "" } };
+window.IM_READY = ["00", "01a", "01b", "02a", "02b", "02c", "02d", "03a", "03b", "03c", "04a", "04b", "04c", "05a", "05b", "05c", "05d", "05e", "05f"];

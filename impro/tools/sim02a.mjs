@@ -1,0 +1,24 @@
+// 照「试试看」的顺序用 playwright 连着点 02a 的模拟器，打印每步的统计栏和说明。用法：node tools/sim02a.mjs（03b 照它改）
+import { createRequire } from "node:module";
+const require = createRequire(import.meta.url);
+const { chromium } = require(process.env.HOME + "/.npm/_npx/e41f203b7505f1fb/node_modules/playwright");
+const b = await chromium.launch(); const p = await b.newPage({ viewport: { width: 1100, height: 900 } });
+await p.goto("file://" + new URL("../chapters/02a.html", import.meta.url).pathname);
+const S = "#sim-02a";
+const mode = (t) => p.click(`${S} .modes button:has-text("${t}")`);
+const pick = (t) => p.click(`${S} .picks button:has-text("${t}")`);
+const show = async (lab) => console.log(lab, "|", (await p.$$eval(`${S} .stat`, (e) => e.map((x) => x.innerText.replace(/\n/g, " ")))).join(" | "), "|", await p.textContent(`${S} .narrate`));
+await mode("茶水间"); await pick("A·抬自己"); await show("1a 抬自己");
+await p.click(`${S} button:has-text("重来")`); await pick("A·压对方"); await show("1b 压对方");
+await p.click(`${S} button:has-text("重来")`);
+for (let i = 0; i < 8; i++) await pick(i % 2 ? "B·压对方" : "A·压对方");
+await show("2a 都压对方");
+await p.click(`${S} button:has-text("重来")`);
+for (let i = 0; i < 8; i++) await pick(i % 2 ? "B·放低自己" : "A·抬自己");
+await show("2b B 一直放低");
+await mode("后台报喜"); await pick("我拿到那个角色了"); await show("3a 不勾");
+await p.check(`${S} input[type=checkbox]`); await pick("我拿到那个角色了"); await show("3b 勾上");
+await mode("一句早上好"); await pick("早上好"); await show("4a 经理");
+await p.selectOption(`${S} select`, "银行职员"); await pick("早上好"); await show("4b 职员");
+await mode("最喜欢的书"); await pick("最喜欢的书"); await show("5a"); await pick("插图"); await show("5b");
+await b.close();
