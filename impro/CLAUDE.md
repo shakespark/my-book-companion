@@ -47,7 +47,10 @@
 - [x] 00 开读之前（主编页，2026-10-22 写好）：作者是谁（Johnstone 1933–2023、Royal Court、Theatresports）、全书五篇的地图、最短读法（`<div id="path">`）、译本须知（「姿态」「催眠」、作者注混在译注里、段落和原书不完全对应）、术语表摘要。
 - **（已做）全部审完以后要做**：结论图例的「被改写」改成「后来的研究推翻了它、换了一种说法，或者情况变了」（today.html 和各页「今天怎么看」的 `ul.verdicts`；r05d 建议，审读还在改页面时不动）；`tools/counts.py` 数出首页卡片的数字，替换 `~/tutorials-home/index.html` 里的 COUNT_*。
 - 2026-10-22 全书审完后第一次提交上线。
-- [ ] I 上线 / J 收尾：照仓库 CLAUDE.md 的 I、J；首页卡片 `data-progress="im-done-:18"`；PREFIXES 和 KEY_RE 加 `im-`；不接词本（关键句没有「记下」按钮）。
+- [x] I 上线（2026-10-22）：总仓库提交 cea4e0c，部署 13 分钟（首次传图）；`check-site.sh impro` 全部正常；首页卡片 `im-done-:18`（tutorials-home be2aa0b）；sync.js PREFIXES 和 sync_server.py KEY_RE 加 `im-`，已 sync-apply；不接词本（关键句没有「记下」按钮）。
+- [x] J 收尾（2026-10-22）：本仓库 README 书单；tutorials-deploy README 教程表和踩坑八条、PLAYBOOK 一行。
+
+**全书完成。** 以后用户报 Impro 多半是要改某一页：照「怎么验」跑检查，改完 `git add impro/` 提交推送即部署。用户读到哪段想要准确译法，可以单段对照原文给（不整本翻译）。
 
 ## 页和节
 
