@@ -38,8 +38,8 @@
 - [x] G 铺开（2026-10-27，两个会话）：in、01–10 全部收齐，都在 `MM_READY`。验收记录在 `source/ACCEPTANCE.md`，作者报告在 `source/reports/`。
 - [x] 00 开读之前（主编页，2026-10-27 第二个会话写好）：作者是谁、好在哪窄在哪、2019 年以后（26 条今天怎么看的统计和四件大变化，事实都取自各页已核过的「今天怎么看」）、全书地图、译本须知（97 处勘误的五类）、最短读法（`#path`）。只跑 overlap 和 check。
 - [x] H 审读（2026-10-27 第二个会话）：6 位 Opus 审读员，说明 `source/REVIEW.md`（核查和词条审读合一）。约 80 处改动，真会读歪的 19 处；勘误 97→84；trap 去 64。主编收尾（in/01 情境卡和判断题去重、06 今天卡、00 总数）见 `source/ACCEPTANCE.md` 末尾。
-- [ ] I 上线
-- [ ] J 收尾
+- [x] I 上线（2026-10-27）：总仓库 ad45f25；首页卡片 `mm-done-:11`（tutorials-home 4babe08）；sync.js PREFIXES、sync_server.py KEY_RE 加 `mm-`，已 sync-apply（tutorials-deploy acd8b41）；词本 `words.html` 的 BOOKS 加 `mm`，两个前缀正则加 `mm`。
+- [x] J 收尾（2026-10-27）：本仓库 README 书单；tutorials-deploy README 教程表和踩坑五条、PLAYBOOK 一行。
 
 ## 怎么改、怎么验
 
@@ -47,13 +47,9 @@
 - `assets/chapters.js` 由 `tools/gen_chapters.py` 生成（读 `source/SECS.tsv`），节表别手改；每页的 t、d 和 `MM_READY` 用 `python3 -I tools/accept.py <页> "<标题>" "<一句话>"` 填。
 - 页码（纸书 p.）全由 `mm.js` 按 `MM_PG` 补，页面里只写 `data-p` 段号。
 
-## 待办（2026-10-27 第二个会话结束时写；下个会话从这里接着做）
+## 以后
 
-正文 11 页（in、01–10）和 00 开读之前都收了，H 审读轮也做完了，下一步是 I 上线（用户已授权，直接做）。还没提交、没上线，`manager/` 整个目录还没入库。
-
-3. 档已调过（2026-10-27）：06 §4、09 §6 升「先读」；07 §4、09 §4、10 §5 从「可跳过」改「有空」。全书先读 22/61。01 §5 没升（第 1 章已有三节先读）。
-4. **I 上线**（用户已授权，不用再问）：首页卡片 `data-progress="mm-done-:11"`（11 = in + 10 章；00 算不算进去看 Impro 怎么做）；`mm-` 加进 `~/tutorials-home/sync.js` 的 `PREFIXES` 和 `~/tutorials-deploy/sync/sync_server.py` 的 `KEY_RE`，`scripts/sync-apply.sh`；`words.html` 的 `BOOKS` 加 `mm: {dir:"manager", …}`，两个前缀正则加 `mm`；`git add manager/` 提交推送，`gh run watch`，`check-site.sh manager index.html chapters/04.html`。
-5. **J 收尾**：本仓库 README 书单、`~/tutorials-deploy/README.md` 踩坑、PLAYBOOK 一行。
-
-以后要再派代理，先把 `source/BRIEF.md`、`source/REVIEW.md` 里的 scratchpad 路径换成新会话的。
-J 收尾时给 `~/tutorials-deploy/README.md` 记的教训：主编页（00）汇总各页时只看了页面上的转述，两处把话安错了人，写 00 也要回原文；trap 里字面就能猜对的（zoom out、resonate）作者仍常标，审读轮去掉 64 个。
+**全书完成。** 以后用户报这本书，多半是要改某一页：照「怎么改、怎么验」跑三项检查，改完 `git add manager/` 提交推送即部署。
+- 档（2026-10-27 调过）：06 §4、09 §6 升「先读」；07 §4、09 §4、10 §5 改「有空」。全书先读 22/61。
+- 首页卡片上的数字是 2026-10-27 手数的（`tools/counts.py` 是从 Impro 抄来的，数的是游戏卡，没改，别用）：情境卡 38、判断题 32、概念 33、词条 587、勘误 84、今天怎么看 26、看法 33、理解题 70。改了页面要更新卡片时重新数。
+- 以后要再派代理，先把 `source/BRIEF.md`、`source/REVIEW.md` 里的 scratchpad 路径换成新会话的。

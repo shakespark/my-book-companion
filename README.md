@@ -28,6 +28,7 @@ my_book_companion/
 | 国富论（Adam Smith，Cannan 1904 年版），对照杨敬年中译本 | `wealth/` · https://t.miaowuao.cn/wealth/ | `wn-` | 6844、6845（译本 6840） | 2026-10-21 上线：28 页＋开读之前（9 核心、19 轻量），核心页做过收窄审读；节分先读 / 有空 / 可跳过，全书最短读法；每条论点标今天怎么看；逐段译本勘误；2 个模拟器 |
 | Uncontrolled（Jim Manzi，2012） | `uncontrolled/` · https://t.miaowuao.cn/uncontrolled/ | `uc-` | 6452 | 2026-10-22 上线：20 页＋开读之前，样板审读、底稿核对、审读轮都做过；节就是原书小标题，节分先读 / 有空 / 可跳过和全书最短读法；5 个模拟器；对照今天只用出版后的证据 |
 | Impro（Keith Johnstone，1979），对照饶昊鹏中译本 | `impro/` · https://t.miaowuao.cn/impro/ | `im-` | 6413（译本 6846） | 2026-10-22 上线：18 页＋开读之前，每页一位审读员全审；游戏卡 73 张（`games.html`），逐段译本勘误 332 条（`zh.html`），2 个模拟器，节分先读 / 有空 / 可跳过和全书最短读法；页头和分节地图以译本为主 |
+| The Making of a Manager（Julie Zhuo，2019），对照許恬寧繁体译本 | `manager/` · https://t.miaowuao.cn/manager/ | `mm-` | 6847（译本 6848） | 2026-10-27 上线：11 页＋开读之前，英文纸书为主、对着繁体译本逐段读；情境卡 38 张（`cases.html`）、原创判断题 32 道（`drills.html`）、词条 587 条接词本、逐段译本勘误 84 条（`zh.html`）；节分先读 / 有空 / 可跳过和全书最短读法；6 位审读员两页一人审完 |
 
 ## 新增一本书
 
