@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 3 章（上）· 随机骗局导读</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/chapters.js"></script>
+<script src="../assets/fb.js"></script>
+<style>
+#sim-03a .presets { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+#sim-03a .presets button[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
+#sim-03a .presets .lbl { font-size: 13px; color: var(--muted); align-self: center; margin-right: 2px; }
+#sim-03a .grid { width: 100%; max-width: 420px; display: block; margin: 0 auto; }
+#sim-03a .strip { width: 100%; max-width: 480px; display: block; margin: 6px auto 0; }
+#sim-03a .path { width: 100%; max-width: 480px; display: block; margin: 6px auto 0; }
+#sim-03a .legend { font-size: 13px; color: var(--muted); margin: 6px 0 0; text-align: center; }
+#sim-03a .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin: 0 4px 0 10px; vertical-align: -1px; }
+#sim-03a .cap { font-size: 13px; color: var(--muted); margin: 12px 0 0; }
+</style>
+</head>
+<body data-page="03a">
+<main>
+
+<h2>这一页在做什么</h2>
+<div class="gist"><p>这一章把第 2 章的「另类历史」做成一件工具。作者先画两幅漫画，邋遢的纯数学家和赌场里的花花公子，说他要的数学是两者合一；接着讲样本路径、阁楼里用电脑造的轮盘、乱枪打出的圆周率，讲他的模拟里谁活了下来。后半转到人怎样对待历史：烫手的火炉、藏着针的握手、一位要交易员「把赚钱的单子加倍」的新上司，最后回到他祖父在雅典的公寓。读的时候抓一条线：看到一个结果，就去想没发生的那些。</p></div>
+<figure class="fig"><img src="../assets/img/03a-roulette.jpg" alt="版画风格的明信片：华丽的大厅里吊着水晶灯，一张长桌边围坐着穿礼服的男女在赌轮盘，前景一位穿燕尾服的男士挽着一位女士走过" loading="lazy">
+<figcaption>蒙特卡洛赌场施密特厅（Salle Schmitt）里的轮盘赌桌，约 1910 年的明信片。§1 作者说「蒙特卡洛」这个名字让人想起赌场里衣着考究、算准下注大小的花花公子；蒙特卡洛方法的名字也正是从这家赌场来的。<span class="src">Neurdein Frères，公有领域，维基共享资源</span></figcaption></figure>
+
+<h2>读之前：这一页在全书的哪里</h2>
+<div class="linehere"></div>
+<p>第 2 章用俄罗斯轮盘讲了「另类历史」：同样一千万美元，靠轮盘赢来的和靠当牙医挣来的，依赖运气的程度不同。作者在那里说，下一章要用蒙特卡洛把这个想法变成数学。这一章的前五节就是兑现：工具、他的模拟、他的自述。§6 到 §8 换了话题，讲人怎样对待历史；§9 回到第 1 章梭伦的故事，并在最后一段抛出一个新词：遍历性。这一章从 §10 起的后半在下一页，讲噪声和信息。</p>
+<div class="heads-up"><p>§5 作者说他的模拟里多头、空头几乎全军覆没，只有一部分做期权的人活得长。模型和参数书里都没给，而他说他想成为的正是这种人。把它当作者对自己打法的说明，不当研究结论，页末再说。</p></div>
+<div class="crux"><p>看到一个人赢了，为什么还要去想他本来可能怎样输？</p></div>
+<p class="lede">读的时候带着这几个问题。不用先找答案，读完回来对照「检查一下理解」。</p>
+<ol class="qs">
+  <li>作者说蒙特卡洛与其说是计算方法，不如说是思考方式。读完 §2，你能说清一条「样本路径」比一个「结果」多了什么吗？<span class="sec">§2</span></li>
+  <li>在作者的模拟里，为什么期权买方比多头和空头都活得久？<span class="sec">§5</span></li>
+  <li>新上司要交易员把赚钱的单子加倍。这个主意错在哪里？<span class="sec">§8</span></li>
+  <li>作者说时间够长，坏交易总会找上门。照这个说法，靠运气发财的人会怎样？<span class="sec">§9</span></li>
+</ol>
+
+<h2>这一页的路线</h2>
+<p>§1 是两幅漫画，读着好玩，引出「数学用来沉思」这层意思。§2 是这一章最像教科书的一节：几个概念排着队出来，最后落到阁楼里的电脑轮盘。§3 从圆周率跳到作者自嘲「数学带口音」，又拉上爱因斯坦和凯恩斯，有点像在报家门。§4、§5 是他的自述：九成五的时间可以自由思考，模拟出来的怪物和交易员；§5 里藏着这一章最值得记的一句话。§6 突然转向，话题从工具换成历史，从这里起是另一条线。§7 讲人只从自己的伤里学，故事最多：火炉、失忆的病人、一张爆仓名单。§8 是全章最好看的办公室故事。§9 先是一段家族往事，读着像离题，最后一段却抛出遍历性，把工具和历史两条线接在一起，也引向下一页。</p>
+<figure class="fig">
+<svg class="diagram" viewBox="0 0 640 290" role="img" aria-label="路线示意图：第一行是工具这条线，§1 两幅漫画、§2 工具、§3 圆周率、§4 阁楼、§5 佐葛鲁伯；第二行从右往左是历史这条线，§6 学历史、§7 火炉、§8 新上司、§9 祖父和遍历性，最后指向下一页">
+<defs><marker id="ar03a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="f-a"/></marker></defs>
+<text x="6" y="16" class="t-m">工具这条线</text>
+<rect x="6" y="26" width="112" height="50" rx="6" class="box"/><text x="62" y="46" text-anchor="middle">§1 两幅漫画</text><text x="62" y="64" text-anchor="middle" class="t-m">数学家·花花公子</text>
+<rect x="134" y="26" width="112" height="50" rx="6" class="f-soft"/><text x="190" y="46" text-anchor="middle" class="t-b">§2 工具</text><text x="190" y="64" text-anchor="middle" class="t-m">样本路径·轮盘</text>
+<rect x="262" y="26" width="112" height="50" rx="6" class="box"/><text x="318" y="46" text-anchor="middle">§3 圆周率</text><text x="318" y="64" text-anchor="middle" class="t-m">口音·爱因斯坦</text>
+<rect x="390" y="26" width="112" height="50" rx="6" class="box" stroke-dasharray="5 4"/><text x="446" y="46" text-anchor="middle">§4 阁楼</text><text x="446" y="64" text-anchor="middle" class="t-m">自述</text>
+<rect x="518" y="26" width="116" height="50" rx="6" class="f-soft"/><text x="576" y="46" text-anchor="middle" class="t-b">§5 佐葛鲁伯</text><text x="576" y="64" text-anchor="middle" class="t-m">谁活了下来</text>
+<line x1="118" y1="51" x2="132" y2="51" class="ln-a" marker-end="url(#ar03a)"/>
+<line x1="246" y1="51" x2="260" y2="51" class="ln-a" marker-end="url(#ar03a)"/>
+<line x1="374" y1="51" x2="388" y2="51" class="ln-a" marker-end="url(#ar03a)"/>
+<line x1="502" y1="51" x2="516" y2="51" class="ln-a" marker-end="url(#ar03a)"/>
+<line x1="576" y1="76" x2="576" y2="134" class="ln-d" marker-end="url(#ar03a)"/><text x="570" y="110" text-anchor="end" class="t-m">话题突然换了</text>
+<text x="634" y="128" text-anchor="end" class="t-m">历史这条线</text>
+<rect x="518" y="136" width="116" height="50" rx="6" class="box"/><text x="576" y="156" text-anchor="middle">§6 学历史</text><text x="576" y="174" text-anchor="middle" class="t-m">前人·模拟</text>
+<rect x="390" y="136" width="112" height="50" rx="6" class="f-soft"/><text x="446" y="156" text-anchor="middle" class="t-b">§7 火炉</text><text x="446" y="174" text-anchor="middle" class="t-m">别针·爆仓名单</text>
+<rect x="262" y="136" width="112" height="50" rx="6" class="f-soft"/><text x="318" y="156" text-anchor="middle" class="t-b">§8 新上司</text><text x="318" y="174" text-anchor="middle" class="t-m">加倍的单子</text>
+<rect x="134" y="136" width="112" height="50" rx="6" class="box"/><text x="190" y="156" text-anchor="middle">§9 祖父</text><text x="190" y="174" text-anchor="middle" class="t-m">末段：遍历性</text>
+<rect x="6" y="136" width="112" height="50" rx="6" class="box" stroke-dasharray="2 3"/><text x="62" y="156" text-anchor="middle">下一页</text><text x="62" y="174" text-anchor="middle" class="t-m">噪声和信息</text>
+<line x1="518" y1="161" x2="504" y2="161" class="ln-a" marker-end="url(#ar03a)"/>
+<line x1="390" y1="161" x2="376" y2="161" class="ln-a" marker-end="url(#ar03a)"/>
+<line x1="262" y1="161" x2="248" y2="161" class="ln-a" marker-end="url(#ar03a)"/>
+<line x1="134" y1="161" x2="120" y2="161" class="ln-a" marker-end="url(#ar03a)"/>
+<path d="M190 136 C190 112, 190 100, 190 80" class="ln-d" marker-end="url(#ar03a)"/><text x="198" y="112" class="t-m">两条线在这里接上</text>
+<rect x="6" y="216" width="24" height="14" rx="3" class="f-soft"/><text x="38" y="228" class="t-m">故事和要点最密</text>
+<rect x="200" y="216" width="24" height="14" rx="3" class="box" stroke-dasharray="5 4"/><text x="232" y="228" class="t-m">可跳过</text>
+<text x="6" y="262" class="t-m">§1–§5 讲蒙特卡洛这件工具，§6–§9 讲人怎样对待历史</text>
+</svg>
+<figcaption>本站示意图。第一行从左往右，第二行从右往左。§9 最后一段的遍历性同时用到「很多条路径」和「历史」，是两条线的接头。</figcaption></figure>
+
+<h2>分节地图</h2>
+<p class="lede">这一页是原书和译本第 3 章的前 9 节，后 4 节在下一页。粗体是本站给的节名，后面是档和译本字数；下面是译本的小标题和这一节在译本电子书里开头的几个字（搜它就能跳过去），再下面是英文原文的开头。「先读」是这一章的骨架，「有空」好看、跳过不丢线，「可跳过」读不读都行。读完打个勾。</p>
+<ol class="secmap">
+  <li data-sec="1"><span class="what">两幅漫画，读着轻松。留意最后一段：作者说数学主要用来沉思，不是用来算的，这是读这一章的钥匙。</span></li>
+  <li data-sec="2"><span class="what">这一章最像教科书的一节，一口气给出样本路径、随机过程、蒙特卡洛（概念都在「先用中文过一遍」）。最后的俄罗斯轮盘就是本页模拟器演的东西。</span></li>
+  <li data-sec="3"><span class="what">圆周率的例子可以自己验算（见检查题）。后半作者讲自己怎么学的数学，再拉上爱因斯坦和凯恩斯，像在报家门。</span></li>
+  <li data-sec="4"><span class="what">很短的自述：交易员的闲暇、电脑变快。跳过只少一句：模拟出的结果越分散，越经不起随机。</span></li>
+  <li data-sec="5"><span class="what">这一页的重心。看模拟里谁活了下来，以及作者说他再也没法只看实现了的结果。新小说那段是比喻，可以略读。</span></li>
+  <li data-sec="6"><span class="what">话题从工具换成历史。只有一段，留意他说的「历史」指什么、不指什么，和他说的两种学历史的办法。</span></li>
+  <li data-sec="7"><span class="what">故事最多的一节：火炉、失忆的病人、一张爆仓名单。留意作者怎样定义爆仓，以及「我认识的」这几个字。</span></li>
+  <li data-sec="8"><span class="what">全章最好看的办公室故事，接着讲后见之明。新上司的结论乍听很有道理，先自己想想错在哪。</span></li>
+  <li data-sec="9"><span class="what">前半是家族往事，读着像离题；从<span class="zhv">译本：「歷史思維有個相當重要的層面」</span>起是这一页的收尾，遍历性在这里出现。</span></li>
+</ol>
+
+<h2>先用中文过一遍：这一页的概念</h2>
+<p class="lede">先把这一页用到、作者默认你懂的几个概念讲一遍。讲的是概念本身，作者拿它推出什么，读原书时自己看。别页讲过的概念，点链接过去看。</p>
+<div class="concept" id="c-sample-path">
+<h3><span class="sec">§2</span>样本路径和随机过程 <span class="en">sample path, stochastic process，译本：樣本路徑、或然過程</span></h3>
+<p>一个结果只是终点：一年后账户里有多少钱。一条路径是整个过程：这一年每一天的余额，中途跌到过多深、涨到过多高。两个人年底都是 145 美元，一个一路慢慢涨上来，一个中途跌到过 10 美元，过的是两种日子。</p>
+<p>统计学把随时间展开的随机现象叫随机过程（stochastic 是希腊词根，意思就是随机），它的一次具体走法叫一条样本路径。「样本」两个字提醒你：你看到的只是许多条可能的路径里实现的那一条。随机也不等于每种结果机会均等：掷两个骰子，点数和是 7 的机会比 2 大得多。程序员熟悉的例子是压测：同一套配置重跑一遍，延迟曲线不会一样，平均值相同的两次，中间的尖峰可以差很多。</p>
+<figure class="fig">
+<svg class="diagram" viewBox="0 0 640 230" role="img" aria-label="从左边同一个起点出发的七条折线，向右散开；其中一条用粗线标出，写着你看到的这一条；另一条中途跌到底线，写着中途出局的一条">
+<line x1="40" y1="190" x2="600" y2="190" class="ln"/><text x="600" y="210" text-anchor="end" class="t-m">时间 →</text>
+<text x="40" y="210" class="t-m">起点</text>
+<polyline points="40,110 120,96 200,104 280,80 360,88 440,64 520,70 600,52" class="ln" fill="none"/>
+<polyline points="40,110 120,124 200,116 280,132 360,120 440,138 520,128 600,140" class="ln" fill="none"/>
+<polyline points="40,110 120,100 200,84 280,92 360,70 440,78 520,46 600,36" class="ln" fill="none"/>
+<polyline points="40,110 120,118 200,140 280,128 360,150 440,146 520,160 600,156" class="ln" fill="none"/>
+<polyline points="40,110 120,128 200,150 280,172 330,190" class="ln-d" fill="none"/><text x="338" y="184" class="t-m">中途出局的一条</text>
+<polyline points="40,110 120,104 200,122 280,108 360,112 440,96 520,104 600,92" class="ln" fill="none"/>
+<polyline points="40,110 120,92 200,98 280,66 360,76 440,58 520,62 600,72" class="ln-a" fill="none" stroke-width="3"/><text x="600" y="22" text-anchor="end" class="t-b">粗线：你看到的这一条</text>
+<text x="40" y="22" class="t-m">七条可能的路径，同一个起点</text>
+</svg>
+<figcaption>本站示意图，线是随手画的，不是算出来的。现实只给你看粗的那一条；蒙特卡洛模拟就是把细的那些也造出来给你看。</figcaption></figure>
+<p class="use"><b>在这一页：</b>§2 给样本路径和随机过程下定义；§5 作者说看到实现的结果就会想到没实现的那些；§9 的遍历性说的也是很多条路径。</p>
+</div>
+<div class="concept" id="c-monte-carlo">
+<h3><span class="sec">§2</span>蒙特卡洛模拟 <span class="en">Monte Carlo simulation，译本：蒙地卡羅模擬</span></h3>
+<p>有些问题公式很难解，却很容易「照着规则演一遍」。蒙特卡洛模拟就是让电脑按设定好的概率把一件事重演成千上万次，再看结果的整体样子：多少次赢、多少次输、最坏能坏到哪里。它在二战后的洛斯阿拉莫斯实验室发展起来，名字取自摩纳哥的蒙特卡洛赌场。</p>
+<p>§3 的圆周率是经典例子：往一个正方形里均匀地乱打点，落进内切圆的比例约等于 π/4，乘以 4 就是 π 的估计。代价是精度来得很慢：误差大约和打点数的平方根成反比，想多准一位小数，要多打约 100 倍的点。还有一条要记住：模拟只会照你设的规则演，规则设错了，演一百万遍也是错的。</p>
+<p class="use"><b>在这一页：</b>§2 讲它是什么，§3 拿圆周率说它的好处，§4、§5 是作者自己用它做的事。下面的模拟器就是一台小小的蒙特卡洛。</p>
+</div>
+<div class="concept" id="c-hindsight-bias">
+<h3><span class="sec">§8</span>后见之明偏差 <span class="en">hindsight bias，「I knew it all along」，译本：事後諸葛偏誤</span></h3>
+<p>知道了结果，人会觉得自己早就料到，并且高估当时能看出多少。心理学家 Baruch Fischhoff 1975 年的实验是这方面的经典：先告诉被试某段历史的结局，他们估计的「事前看来的可能性」就明显偏向那个结局，而且以为自己没受影响。</p>
+<p>它的近亲是「以结果论决定」：一次上线出了事故，大家回头看代码评审，个个觉得「当时就该看出来」；同一份代码要是平安无事，没人会说评审做得差。决策研究把后一种叫结果偏差（outcome bias）。</p>
+<p>作者在 §8 还用了 historical determinism 这个词（<span class="zhv">译本：「歷史決定論」</span>），说专家把「以为历史发生的时候自己会知道」叫这个名字。哲学和史学里通常说的历史决定论，是指历史有规律、照规律展开，两者不是一回事。</p>
+<p class="use"><b>在这一页：</b>§8 新上司的故事之后，作者点出这个名字，并说第 11 章还会再谈。</p>
+</div>
+
+<h2>动手：模拟器</h2>
+<p>先猜：一千个人各拿一把六个弹巢、一颗子弹的左轮，对着自己玩一次，赢的拿一千万美元。大约多少人活着拿到钱？如果这一千个人从 25 岁起每年玩一次，玩到 50 岁，还剩几个？再点下面的模拟器验证。</p>
+<div class="sim" id="sim-03a">
+  <div class="sim-head"><span class="tag">模拟器</span><h3>平行的历史</h3><p class="desc">第 2 章那个俄罗斯轮盘的玩具版。上面的方块是一千个「平行的你」，绿色还活着，红色已经死了；下面每个点是一个人最后手上的钱。先点「6 孔，玩 1 次」。</p></div>
+  <div class="sim-body"><p>需要浏览器打开脚本才能运行。</p></div>
+</div>
+<p>各个控件：「策略」里，俄罗斯轮盘每玩一次，送命的机会是 1 除以弹巢数，活下来就拿一千万美元，死了就什么都没有，也不再玩；牙医每一轮也挣一千万上下（每轮随机浮动，多数在上下一成以内，偶尔差到两三成），靠的是干活，不会送命。牙医的数是本站设的，书里没给：每一轮挣得和轮盘赢家一样多，只为让活下来的人和牙医账面上一样多，这就是第 2 章 §2 说的「同样一千万」。这样设，牙医的平均比轮盘所有人的平均（死了算 0）高，所以别拿两边的平均比谁划算：第 2 章比的是同样的一千万依赖运气的程度。「弹巢数」是左轮里有几个弹巢，子弹始终只有一颗。「玩几次」是每个人连着玩多少轮，每轮独立。「看法」可以看一千个平行的你，也可以只看一个你一路玩下去。统计栏里标「精确」的是按公式算的；标「随机」的（这一回还活着几个人、方块和点的红绿、「你」那一条线）是用固定的起点抽出来的，所以每次打开页面看到的都是同一批；点「换一批运气」再抽一次，点「重置」回到第一次的抽法。</p>
+<ol class="qs">
+  <li>试试看：点「6 孔，玩 1 次」。照概率该剩约 833 人，每人一千万美元；这一回实际剩几个，看「随机」那一栏。再把策略换成牙医：一千人都在，挤在一千万上下。两边活下来的人账面一样多，差在那一片红色。</li>
+  <li>试试看：点「25 岁玩到 50 岁」。照概率只该剩 10.5 人，每人 2.5 亿美元。多点几次「换一批运气」：活着的人数常在 5 到 16 之间跳。报纸能采访到的，就是这几位。</li>
+  <li>试试看：点「500 孔，玩 30 次」：约 94% 的人还活着，看上去几乎没风险。再把「玩几次」改成 1000、3000，或者点「1000 孔，玩 3000 次」，看剩下多少。子弹变稀以后，改变了什么，没改变什么？</li>
+  <li>试试看：先点「一千人各玩一次」，再点「一人连玩一百次」。同一把六孔左轮，前一种约 83% 的人活着，平均每人 833 万美元；后一种，一个人活过一百次的机会约 8300 万分之一，他平均第 6 次就送命，一半的人活不过第 4 次。把弹巢数改成 500：平均第 500 次，中位数第 347 次。</li>
+</ol>
+<p>这个模拟器只演一件事：同一个「生成器」（第 2 章的说法：产生结果的那套机制）能产生多少种历史。每轮独立、概率已知，现实没这么干净：第 2 章 §4 说，现实的弹巢是看不见的。第四步那对切换是作者后来的说法。他 2018 年的《非对称风险》（Skin in the Game）把它叫作「群体概率」（一百个人各去一次赌场）和「时间概率」（一个人去一百次）的区别，详见<a class="term" href="09a.html#c-ergodicity">遍历性</a>；这一章 §9 讲的遍历性，是同一个词的另一面，读完 §9 再回来对照。</p>
+
+<h2>书里的人和背景</h2>
+<p class="lede">按在书里出现的顺序排，标题前是节号。只讲到读懂这一页需要的程度。</p>
+
+<h3><span class="sec">§1</span>「大学炸弹客」和他的论文</h3>
+<p>§1 那位蓄大胡子、独居小屋的数学家是 Theodore Kaczynski，美国媒体叫他「大学炸弹客」（Unabomber）。他 1967 年在密歇根大学拿到数学博士，在伯克利短暂任教后辞职隐居，此后近二十年间寄出、放置邮包炸弹，炸死三人，1996 年被捕。书里说他的论文叫 Complex Boundaries，实际题目是 Boundary Functions（边界函数）。complex number 是数学里的「复数」，含负一的平方根，作者在拿这个词的两层意思打趣。</p>
+
+<h3><span class="sec">§2</span>洛斯阿拉莫斯和「蒙特卡洛」这个名字</h3>
+<p>书里说蒙特卡洛方法是在洛斯阿拉莫斯研制原子弹时首创的。更准确地说是二战之后：1946 年，数学家 Stanisław Ulam 养病时玩单人纸牌，想算赢的机会，想到干脆多发几副牌数一数；他和 John von Neumann 把这个办法用到核武器里中子扩散的计算上。同事 Nicholas Metropolis 借 Ulam 的叔叔常去赌钱的蒙特卡洛赌场给它取了代号。此后它在氢弹设计里用得很多。作者说 1980 年代它在金融数学里流行起来，用来模拟资产价格的随机游走。</p>
+
+<h3><span class="sec">§3</span>爱因斯坦、凯恩斯和那个「几乎」</h3>
+<figure class="fig small"><img src="../assets/img/03a-keynes.jpg" alt="黑白照片：三位穿粗花呢西装的男子站在树下，中间一位叼着烟斗，右边一位留着小胡子、身材高瘦" loading="lazy">
+<figcaption>1914 年的凯恩斯（右），和哲学家 G. E. Moore（中）、Oliver Strachey（左）。这时《论概率》已大体写完，1921 年才出版。<span class="src">Ray Strachey 摄，公有领域，维基共享资源</span></figcaption></figure>
+<div class="who">
+  <div><b>John Maynard Keynes</b><span class="en">1883–1946</span>英国经济学家，1936 年的《通论》奠定了宏观经济学。作者偏说他首先是概率学家，指的是 1921 年出版的《论概率》（A Treatise on Probability）。</div>
+</div>
+<p>作者说爱因斯坦 1905 年那篇布朗运动的论文，「几乎」是最早用概率描述一连串随机事件的。这个「几乎」留得对：法国数学家 Louis Bachelier 1900 年的博士论文《投机理论》已经用随机游走描述巴黎交易所的价格，比爱因斯坦早五年，今天常被当作金融随机游走模型的源头。作者说凯恩斯炒自己的账户爆过仓：他确实几次大亏，1929 年股灾后资产几乎被抹掉，但很快赚了回来，去世时是个富人，还替剑桥国王学院管了多年的基金。</p>
+
+<h3><span class="sec">§5</span>费曼、新小说和佐葛鲁伯</h3>
+<p>Richard Feynman（1918–1988）是美国物理学家。他给量子力学换了一种算法：一个粒子从 A 到 B，要把它所有可能走的路径都加起来，英文常叫 sum over histories。作者把它改成 summing under histories（<span class="zhv">译本：「歷史之總和」</span>），只借了这个画面，和物理无关。Alain Robbe-Grillet（1922–2008）是法国「新小说」的代表作家，常把同一个场景反复改写。佐葛鲁伯（Zorglub）是作者模拟里虚构的一种快速变异的动物，名字很可能借自比利时漫画《斯皮鲁》里的一个反派科学家，作者没说。</p>
+
+<h3><span class="sec">§7</span>Kahneman、Tversky 和 Claparède 的针</h3>
+<div class="who">
+  <div><b>Édouard Claparède</b><span class="en">1873–1940</span>瑞士神经科医生、心理学家，后来以儿童心理学和教育研究出名。藏针握手是他最常被引用的病例。</div>
+</div>
+<p>书里说这是十九世纪的实验，通常引的是 Claparède 1911 年的报告。病人失去了形成新记忆的能力，旧事和推理却还在。今天的记忆研究把「说得出来的记忆」和「身体记住、说不出来的记忆」分开，前者叫陈述性记忆，后者叫非陈述性记忆，这个病例常被当作后者的早期例子。Daniel Kahneman 和 Amos Tversky 是以「前景理论」和一系列判断偏误实验出名的两位心理学家，Kahneman 2002 年获诺贝尔经济学奖，Tversky 1996 年已去世。作者说他们研究过人怎样选择有风险的疗法，没说是哪一项研究。</p>
+
+<h3><span class="sec">§7</span>一张爆仓名单</h3>
+<p>作者列了几次让一批交易员<a class="term" href="01.html#c-blow-up">爆仓</a>的行情：1987 年 10 月美股一天跌两成多；1990 年日本股市从 1989 年底的顶点崩下来，日经指数一年里跌去近四成；1994 年美联储连续加息，债券价格大跌；1998 年 8 月俄罗斯政府债务违约；还有做空纳斯达克科技股的人，在 2000 年前后泡沫最后的猛涨里被逼出局。做空就是押下跌，见<a class="term" href="06.html#c-short-selling">做空</a>。</p>
+
+<h3><span class="sec">§8</span>外汇交易和「后台」</h3>
+<p>Jean-Patrice 是第 2 章作者的一位上司，那位只看「生成器」、不看一时结果的人，这一节讲他被换掉以后的事。外汇交易员替银行买卖各国货币，一天可能做很多笔；后台（back office）是负责清算、对账、记账的部门，交易笔数越多，它的开销越大。新上司分析的就是这些交易的盈亏记录。</p>
+
+<h3><span class="sec">§9</span>君士坦丁堡和作者的家</h3>
+<figure class="fig small"><img src="../assets/img/03a-constantinople.jpg" alt="油画：一位留胡子、穿铠甲的骑手骑着白马穿过石拱门，身后是红色和绿色的旗帜与成群的士兵，脚下躺着倒地的人" loading="lazy">
+<figcaption>意大利画家 Fausto Zonaro 的油画《穆罕默德二世进入君士坦丁堡》。§9 作者说，他们这类人心里像刻着那个春天的记忆。<span class="src">Fausto Zonaro，公有领域，维基共享资源</span></figcaption></figure>
+<p>1453 年 5 月 29 日，奥斯曼苏丹穆罕默德二世攻下君士坦丁堡，东罗马（拜占庭）帝国就此灭亡。作者出身黎巴嫩的希腊正教家庭，说自己这类人是一个已经消失的帝国的遗民，在伊斯兰世界里富有，财富却很脆弱。他的外祖父和外曾祖父都当过黎巴嫩副总理（书里只说祖父是前副总理、副总理之子，没写国名）。黎巴嫩内战从 1975 年打到 1990 年，作者在战争中度过了少年时代。</p>
+
+<h2>原文里的词和句</h2>
+<p class="lede">读英文原文时值得停一下的词和句：交易员的行话、作者的反话和双关、熟词生义。灰色斜体是原句里连续的几个词，在英文电子书里搜它就能找到；标「每个字都认识」的，是每个词都眼熟、合起来意思却变了的，最容易读错。点「记下」收进词本。</p>
+<div class="entry trap"><div class="en">hold one’s own</div><div class="loc" data-p="3">… also can hold his own in chess …</div><div class="zh">（下棋打桥牌）也不落下风</div><div class="note">hold one’s own 是「顶得住、不输给别人」，不是「拿着自己的东西」。</div></div>
+<div class="entry"><div class="en">a modicum of greed</div><div class="loc" data-p="13">… with a modicum of greed …</div><div class="zh">（再加上）一点点贪心</div><div class="note">modicum 是少量。作者自嘲：没有真问题、没有一点钱可赚，他就解不进一个方程。</div></div>
+<div class="entry"><div class="en">born, not made</div><div class="loc" data-p="14">… Mathematicians are born, never made …</div><div class="zh">数学家是天生的，不是后天造出来的</div><div class="note">套的是老话 poets are born, not made。作者把 not 换成更绝对的 never。</div></div>
+<div class="entry"><div class="en">tweed-clad</div><div class="loc" data-p="15">… economist that tweed-clad leftists love to quote …</div><div class="zh">穿粗花呢外套的（左派学者）</div><div class="note">粗花呢西装是英美大学教授的刻板形象。作者在挖苦爱引凯恩斯的学院左派。</div></div>
+<div class="entry trap"><div class="en">shellacking</div><div class="loc" data-p="19">… prices higher, until their ultimate shellacking …</div><div class="zh">（直到最后）被打得落花流水</div><div class="note">shellac 本是虫胶漆，口语里 shellacking 是惨败、被痛宰，体育新闻常用。</div></div>
+<div class="entry trap"><div class="en">drop like flies</div><div class="loc" data-p="19">… bears dropped out like flies in …</div><div class="zh">（空头）一个接一个地倒下</div><div class="note">「像苍蝇一样掉下来」，形容大批地、接连地倒下或出局。</div></div>
+<div class="entry trap"><div class="en">paper profits</div><div class="loc" data-p="19">… as paper profits vanished when …</div><div class="zh">账面利润</div><div class="note">还没卖出、没落袋的利润，行情一变就可能没了。和「纸」无关。</div></div>
+<div class="entry trap"><div class="en">when the music stops</div><div class="loc" data-p="19">… vanished when the music stopped …</div><div class="zh">音乐一停（泡沫一破）</div><div class="note">出自抢椅子游戏：音乐一停，没抢到椅子的人出局。金融圈常用它比喻泡沫破灭的那一刻。</div></div>
+<div class="entry"><div class="en">the patina of time</div><div class="loc" data-p="23">… have benefited from the patina of time</div><div class="zh">被时间镀上的那层光泽</div><div class="note">patina 是铜器上的锈色、老物件的包浆。作者承认古人的故事被岁月美化过。</div></div>
+<div class="entry trap"><div class="en">go against the grain</div><div class="loc" data-p="23">… However, this goes against the grain …</div><div class="zh">违背（人的）本性</div><div class="note">grain 是木头的纹理，逆着纹理刨木头不顺手。引申为违反天性、习惯。</div></div>
+<div class="entry trap"><div class="en">leverage</div><div class="loc" data-p="23">… ideas of others and leverage them …</div><div class="zh">（把别人的想法）拿来放大利用</div><div class="note">这里不是金融里的「加杠杆」，是职场英语里的「借力、充分利用」。</div></div>
+<div class="entry trap"><div class="en">divorced</div><div class="loc" data-p="23">… where age and success are somewhat divorced</div><div class="zh">（年纪和成功）有点脱节</div><div class="note">be divorced from 是「和……脱节、没关系」，不是离婚。交易这一行年轻人也能赚大钱。</div></div>
+<div class="entry trap"><div class="en">take a hit</div><div class="loc" data-p="27">… a risk taker taking a hit …</div><div class="zh">（冒险的人）吃了一记亏损</div><div class="note">交易员的行话：挨了一下、亏了一笔，不是「打人」也不是「走红」。</div></div>
+<div class="entry trap"><div class="en">to the effect that</div><div class="loc" data-p="27">… They all made claims to the effect …</div><div class="zh">（他们说的话）大意是</div><div class="note">to the effect that 引出一句话的大意，不是「效果」。后面就是那句「这次不一样」。</div></div>
+<div class="entry trap"><div class="en">civil servant type</div><div class="loc" data-p="29">… by an interesting civil servant type …</div><div class="zh">一个官僚做派的人</div><div class="note">type 放在名词后面是「那一类人」。作者说他像公务员：会写报告，没碰过和随机打交道的行当。interesting 是反话。</div></div>
+<div class="entry trap"><div class="en">back office</div><div class="loc" data-p="29">… incurring very large back office expenditure …</div><div class="zh">后台部门（的开销）</div><div class="note">银行里负责清算、记账的部门，和前台的交易员相对。不是「后面的办公室」。</div></div>
+<div class="entry"><div class="en">a janitorial life</div><div class="loc" data-p="33">… preferable to living a janitorial life …</div><div class="zh">（像门房、清洁工那样）低声下气地活着</div><div class="note">janitor 是看门扫地的人。作者用它形容失去体面的穷日子，口气很重。</div></div>
+<div class="entry trap"><div class="en">catch up with</div><div class="loc" data-p="34">… Bad trades catch up with you …</div><div class="zh">（坏交易）迟早会找上你</div><div class="note">catch up with 在这里是「（报应、后果）终于追上」，不是「赶上进度」。交易员的口头禅。</div></div>
+<div class="entry"><div class="en">lucky fool</div><div class="loc" data-p="34">… The lucky fool might have benefited …</div><div class="zh">幸运的傻瓜</div><div class="note">全书的关键人物类型：靠运气成功、却以为靠本事的人。序和前言里就出现了这个词。</div></div>
+
+<h2>译本勘误</h2>
+<p class="lede">对着译本读这一章时，下面这些地方会把人读歪。方框里是译本的原句，在译本电子书里搜它就能找到；灰色斜体是英文原文那一处。只收意思错了、反了、漏了的，措辞上的出入和台湾用语不收。全书的勘误汇总在<a href="../zh.html">译本勘误</a>。</p>
+<div class="zherr" data-p="2"><h4><span class="sec">§1</span>complex number 是「复数」<span class="mark">术语</span></h4>
+<p class="loc">… a complex number being an entirely abstract …</p>
+<p class="zhq"><span class="zhv">译本：「那是一個複雜的數字」</span></p>
+<p>complex number 是数学名词「复数」（台湾也叫複數），就是含负一平方根的那种数。读成「一个复杂的数字」，就看不出作者在拿论文题目里的 Complex 打趣，后半句为什么讲负一的平方根也接不上。</p></div>
+<div class="zherr" data-p="10"><h4><span class="sec">§2</span>是五百个弹巢，子弹还是一颗<span class="mark">误译</span></h4>
+<p class="loc">… change the barrel to contain 500 holes …</p>
+<p class="zhq"><span class="zhv">译本：「把彈匣改成能裝五百發子彈」</span></p>
+<p>原文是把转轮改成有 500 个弹巢，子弹仍然只有一颗，所以送命的机会从六分之一降到五百分之一。读成「装五百发子弹」，就成了必死无疑，和同一句的「降低死亡機率」自相矛盾。本页模拟器的「弹巢数」就是这个意思。</p></div>
+<div class="zherr" data-p="13"><h4><span class="sec">§3</span>带外国口音讲数学的是作者自己<span class="mark">误译</span></h4>
+<p class="loc">… speaks it with a trace of …</p>
+<p class="zhq"><span class="zhv">译本：「但有些人講起數學來帶有一點外國腔」</span></p>
+<p>原文的主语一直是 I：作者说自己不是以数学为母语的人，是带着一点外国口音讲数学的人。译本换成了「有些人」，这一段的自嘲就变成在说别人，和后面他讲自己怎样学数学接不上。</p></div>
+<div class="zherr" data-p="15"><h4><span class="sec">§3</span>要把偶然的巧合清除出去<span class="mark">误译</span></h4>
+<p class="loc">… cleaning the argument from the chance coincidence …</p>
+<p class="zhq"><span class="zhv">译本：「以及不掃除若干論調」</span></p>
+<p>原文是说：评估知识的品质，要考虑取得知识时有随机的成分，并把可能偶然混进论证的巧合清除出去。译本成了「不扫除若干论调，以便偶然掺进一些东西」，方向弄反了，这句是全书方法论的要点之一。</p></div>
+<div class="zherr" data-p="19"><h4><span class="sec">§5</span>空头是撑不到崩盘那一天<span class="mark">误译</span></h4>
+<p class="loc">… rarely made it in the boom …</p>
+<p class="zhq"><span class="zhv">译本：「很少能在市場大漲時放空」</span></p>
+<p>原文是：空头很少能熬过涨势、活到崩盘到来，他们押的方向也许最后是对的，人却先出局了。译本说成他们很少能在大涨时放空、崩盘时回补获利，把「活不活得下来」读成了「时机抓得准不准」。</p></div>
+<div class="zherr" data-p="24"><h4><span class="sec">§7</span>selection 是「天择」，不是挑人<span class="mark">误译</span></h4>
+<p class="loc">… but through selection of those who …</p>
+<p class="zhq"><span class="zhv">译本：「而是透過選擇具備某些有利特質的人去移轉」</span></p>
+<p>原文说：人类的天赋不利于靠文化传递经验，经验靠的是筛选，带着有利特质的人活下来。这是进化论的意思。译本读来像是有人刻意挑选某些人来传递经验。</p></div>
+<div class="zherr" data-p="25"><h4><span class="sec">§7</span>病人是失忆，不是痴呆<span class="mark">术语</span></h4>
+<p class="loc">… had an amnesic patient completely crippled …</p>
+<p class="zhq"><span class="zhv">译本：「十分嚴重的癡呆病患」</span></p>
+<p>amnesic 是失忆症。这位病人记不住新的人和事，别的能力还在，所以才能显出「没意识到的学习」。痴呆是全面的认知衰退，读成痴呆，这个病例证明什么就模糊了。</p></div>
+<div class="zherr" data-p="27"><h4><span class="sec">§7</span>爆仓和「只是亏钱」不同<span class="mark">误译</span></h4>
+<p class="loc">… different from merely incurring a monetary loss …</p>
+<p class="zhq"><span class="zhv">译本：「這種陣亡和其他陣亡不同的地方」</span></p>
+<p>原文拿爆仓和单纯的亏钱对比：爆仓是亏了一笔自己认为根本不可能亏的钱。译本的后半句译出了这层，前半句却成了「这种爆仓和别的爆仓不同」，读来像有的爆仓只是亏钱。爆仓本身就不同于亏钱。</p></div>
+<div class="zherr" data-p="32"><h4><span class="sec">§8</span>是「事后看来，当时就能预测」<span class="mark">误译</span></h4>
+<p class="loc">… appears to have been predictable then</p>
+<p class="zhq"><span class="zhv">译本：「當時似乎也能預測」</span></p>
+<p>appears 是现在（事后）看起来，then 是当时：事后回头看，连双子塔倒塌都像是当时就能料到的。译本读来像当时的人就觉得能预测，正好丢了后见之明这层意思。</p></div>
+<div class="zherr" data-p="33"><h4><span class="sec">§9</span>作者的根就在那片土地上<span class="mark">误译</span></h4>
+<p class="loc">… I hark back to the very …</p>
+<p class="zhq"><span class="zhv">译本：「我回想起這個故事發生在東地中海」</span></p>
+<p>hark back to 在这里是「我的来历可以追溯到」：作者出身的地方，正是梭伦和克罗伊斯的故事发生的那片东地中海土地，这就是他迷这个故事的「另一个理由」。读成「我回想起」，理由就不见了。</p></div>
+<div class="zherr" data-p="34"><h4><span class="sec">§9</span>是「许多短路径的平均」<span class="mark">误译</span></h4>
+<p class="loc">… properties of an average of shorter ones</p>
+<p class="zhq"><span class="zhv">译本：「類似於一般較短路徑的蒙地卡羅特質」</span></p>
+<p>原文说一条极长路径的性质，会接近许多较短路径取平均后的性质。「平均」是遍历性的要害：一个人走很久，等于很多人各走一段再平均。译本的「一般」读着像「普通的」，这层意思丢了。</p></div>
+
+<div class="gate"></div>
+
+<h2>读完：作者到底说了什么</h2>
+<p class="lede">读完这一章再看。下面是作者在这一章前半的主张，由本站按主张之间的逻辑重新组织，不按原书的顺序；每条后面是节号，拿不准就回书里那一节再读一遍。</p>
+<div class="claims">
+  <div class="claim"><h4>看一个结果，要连同没发生的那些一起看</h4><p>他说蒙特卡洛与其说是计算方法，不如说是一种思考方式，数学主要用来沉思。玩了多年模拟，他已经没法只看一个实现了的结果，而不想到没实现的那些，借费曼的说法叫「对历史求和」。他说书里的大多数例子都出自他的蒙特卡洛生成器。</p><span class="sec" data-p="4 21">§1 §5</span></div>
+  <div class="claim"><h4>活得下来，比一时赚多少要紧</h4><p>他说自己的模拟里，多头赚了钱就加码，直到被宰；空头熬不过涨势；最后几乎没人活下来。例外是一部分做期权的人（他叫期权买方）：他们买了防爆仓的保险，职业生涯不会毁于一天，他想成为这种人。§4 他还说，模拟出的结果越分散，越经不起随机。依据是他自己的模拟，书里没给模型。</p><span class="sec" data-p="17 19">§4 §5</span></div>
+  <div class="claim"><h4>人天生不从别人的历史里学</h4><p>孩子要被烫过才不碰火炉；失忆的病人认不出医生，手却记得那根针。他说从经验里学到的避险，多半是这种不自觉的记忆，所以读历史书帮不了多少。他认识的看不起历史的同行，全都爆了仓，都说过「这次不一样」。他强调，爆仓不只是亏钱，而是亏了一笔自以为不可能亏的钱。</p><span class="sec" data-p="24 25 27">§7</span></div>
+  <div class="claim"><h4>错误要按当时掌握的信息来判</h4><p>新上司看了外汇交易的记录，要大家多做赚钱的单子。作者说事后看什么都显而易见，心理学叫后见之明偏差；把事后亏钱的交易叫错误，是用结果判决定。更糟的是，擅长「预测过去」的人会以为自己也能预测未来。</p><span class="sec" data-p="29 30 31 32">§8</span></div>
+  <div class="claim"><h4>时间站在历史那边，坏交易终会找上门</h4><p>他要的历史是前人的掌故，不是黑格尔式的历史规律；他向前人学，也用模拟向「未来」学。历史做不了实验，但在中长期里会把大多数可能的情景演一遍。他借用遍历性：大致说，在某些条件下，很长的路径最终彼此相像，幸运的傻瓜长期会回到他本来的水平。</p><span class="sec" data-p="23 34">§6 §9</span></div>
+</div>
+<p class="sowhat"><b>合起来：</b>别被一个结果骗了：看人看事，要想到他本来可能经历的那些历史；评价一个决定，回到当时的信息。时间够长，靠运气赢的人会被追上。</p>
+
+<h2>值得停下来的句子</h2>
+<blockquote class="quote">I can no longer visualize a realized outcome without reference to the nonrealized ones.<cite>— §5。本站译：我再也没法只看一个已经实现的结果，而不去想那些没有实现的。</cite></blockquote>
+<p>口气是自述，带一点得意：玩模拟玩出了改不掉的习惯。关键词是 nonrealized，没实现的那些历史，也就是第 2 章说的另类历史。译本这句以<span class="zhv">译本：「如果不看未實現的結果」</span>开头，意思到了。容易被误读成「别看结果」：他不是不看结果，是看结果时把没发生的一起算上。</p>
+<blockquote class="quote">A mistake is not something to be determined after the fact, but in the light of the information until that point.<cite>— §8。本站译：一个决定是不是错误，不该事后判定，而要看到那一刻为止手上有哪些信息。</cite></blockquote>
+<p>下判断的口气，前面还先说了一句要重复到嗓子哑为止，可见是他最想让人记住的话之一。关键是 in the light of：借着当时那点光来看，不是借事后的全景。容易被误读成「结果不重要」；他说的是单凭一次结果，定不了一个决定的对错。</p>
+
+<h2>今天怎么看</h2>
+<p class="lede">这本书 2004 年出第二版，书里讲的多是 1980–2003 年的事。下面挑出这一页里能被后来的研究或事情检验的说法，分「书里 / 当时 / 今天」几栏，并给一个结论。结论判的是标题里「书里的说法：」后面那一句。全书的这一节汇总在<a href="../today.html">今天怎么看</a>。</p>
+<ul class="verdicts"><li><span class="v ok">成立</span>后来的研究或事情支持这句话。</li><li><span class="v mid">部分成立</span>大方向对，细节或适用范围要改。</li><li><span class="v bad">被改写</span>后来的研究推翻了它、换了一种说法，或者情况变了。</li><li><span class="v dis">有争议</span>至今没有定论，两边各有代表性的研究或证据。</li></ul>
+<div class="today" data-verdict="成立"><h4>书里的说法：一轮轮的泡沫和崩盘结构相同，身在其中的人总说「这次不一样」</h4><dl>
+  <dt>书里</dt><dd>作者说市场里结构相同的暴涨暴跌一再重演；他见过的爆仓者都说过这次、或者他们的市场不一样，而讲历次崩盘的书每家书店都有。<span class="at" data-p="23 27">§6 §7</span></dd>
+  <dt>当时</dt><dd>书出版前不久的纳斯达克泡沫里，「新经济让老规矩失效」是很流行的说法。</dd>
+  <dt>今天</dt><dd>2008 年金融危机之后，Carmen Reinhart 和 Kenneth Rogoff 出版了《这次不一样：八百年金融危机史》，整理了六十多个国家几百年的货币崩溃、通胀和政府违约，书名就是这句话：每一轮繁荣里都有人拿出新理由，说老规矩这次不适用。他们发现危机成群出现，频率、持续时间和凶猛程度都惊人地相似。作者的观察大方向站得住；「都」字说的是他认识的人，不是统计。<span class="asof">核对于 2026-10。依据：Reinhart &amp; Rogoff, This Time Is Different, Princeton University Press 2009（哈佛大学国际事务中心的书目页）。</span></dd>
+</dl></div>
+<div class="today" data-verdict="成立"><h4>书里的说法：人知道结果以后，会高估自己当时能知道多少（后见之明偏差）</h4><dl>
+  <dt>书里</dt><dd>作者转述心理学家的说法，用它解释新上司为什么觉得赚钱的单子事先就该认得出来。<span class="at" data-p="30">§8</span></dd>
+  <dt>当时</dt><dd>Fischhoff 1975 年的实验之后，这个效应被反复研究。Guilbault 等 2004 年的元分析汇总了 95 项研究，效应稳定，大小中等。</dd>
+  <dt>今天</dt><dd>Roese 和 Vohs 2012 年在《心理科学展望》（Perspectives on Psychological Science）的综述，把它分成从记忆走样到推断和信念的几个层次，并说提醒自己想想别的可能的原因和结局，能减轻它。2021 年 Chen 等做了预注册的大样本复制，重现了效应；也有个别复制 Fischhoff 原实验没成功（2024、2025 年两项）。整体看，这是判断偏误里证据较扎实的一个。<span class="asof">核对于 2026-10。依据：Roese &amp; Vohs, Perspectives on Psychological Science 7(5), 2012；Chen et al., Journal of Experimental Social Psychology 96, 2021；FORRT 复制图谱（FLoRA）对 Fischhoff 1975 的复制记录。</span></dd>
+</dl></div>
+<div class="today" data-verdict="被改写"><h4>书里的说法：时间够长，靠运气的人终会回到他本来的水平（遍历性）</h4><dl>
+  <dt>书里</dt><dd>作者说遍历性大致是指，在某些条件下，很长的样本路径最终彼此相像；第 1 章中了彩票的门卫活一千年，也不会再多中几次。<span class="at" data-p="34">§9</span></dd>
+  <dt>当时</dt><dd>在概率论里，遍历性说的是「一条路径沿时间的平均」等于「许多路径在同一时刻的平均」。</dd>
+  <dt>今天</dt><dd>作者自己在 2018 年的《非对称风险》里把重点翻了过来：一百个人各去一次赌场，和一个人去一百次，不是一回事；只要有一种结局会让人出局（破产、送命），群体的平均就代表不了一个人的一生。物理学家 Ole Peters 2019 年在《自然·物理》上主张，经济学太随便地默认了遍历性，应该看一个人的财富随时间怎样增长；也有经济学家批评这一派没给出多少可检验的预测。书里那句带着「在某些条件下」；作者后来自己换了说法，强调这些条件常常不成立，重点从「运气会被冲淡」变成了「出局的人没有长期」。<span class="asof">核对于 2026-10。依据：Taleb, Skin in the Game（2018）第 19 章；Peters, The ergodicity problem in economics, Nature Physics 15, 2019；Toda, arXiv 2306.03275（2023）。</span></dd>
+</dl></div>
+
+<h2>本站怎么看</h2>
+<p class="lede">读完作者的主张，再看它站不站得住。每一块摆出三样：主流怎么看，作者怎么看，本站的评论。最后一句是本站对这一页的总体判断。</p>
+<div class="views"><h4>看不起历史的人，真的都爆仓了吗</h4>
+<p><b>主流看法：</b>金融史的研究支持「危机反复出现、身在其中的人总能找到理由说这次不同」（Reinhart 和 Rogoff 2009 年的书）。但从一群爆仓者身上找共同点，再推出这个共同点导致爆仓，需要看看有这个共同点、却没爆仓的人。</p>
+<p><b>作者的看法：</b>他认识的看不起历史的同行全都爆了，他还没碰到过没爆的；这些人都说过「这次不一样」。<span class="at" data-p="27">§7</span></p>
+<p class="ours"><b>本站的评论：</b>这里有一点循环。作者把爆仓定义为「亏了一笔自以为不可能亏的钱」，那么爆仓的人按定义就是没把历史上的坏情形当回事，「爆仓的人都说过这次不一样」几乎是从定义里推出来的。要紧的是另一个方向：看不起历史的人是不是都会爆仓。作者说他还没碰到过没爆的，但这是他认识的人，不是统计，谁算「看不起历史」也常常是出事以后才看清的；那些暂时没出事的，书里分不出是还没到时候（作者 §9 的说法），还是就是没事。</p></div>
+<div class="views"><h4>错误只能按当时的信息来判吗</h4>
+<p><b>主流看法：</b>决策研究同意要把决定的好坏和结果的好坏分开。Baron 和 Hershey 1988 年的实验发现，同一个决定，结果好时人们就把决定和做决定的人评得更高，他们把这叫结果偏差；2023 年一项预注册的复制重现了这个结果。</p>
+<p><b>作者的看法：</b>错误不该事后判定，要按到那一刻为止的信息来判；新上司把事后亏钱的交易叫作「重大错误」，是后见之明。<span class="at" data-p="29 31">§8</span></p>
+<p class="ours"><b>本站的评论：</b>新上司错得一目了然：赚钱的单子只有事后才认得出，事前没法「多做一点」。但这条原则也有边界。一次结果说明不了什么，几十次结果一贯地差，结果本身就是信息，说明当时的判断方式可能有问题。作者 §9 说时间长了坏交易会找上门，其实就是在让一长串结果说话。</p></div>
+<div class="views"><h4>只有期权买方活得下来吗</h4>
+<p><b>主流看法：</b>期权买方最多亏掉付出去的权利金，亏损有上限，这是合约的性质。至于长期赚不赚钱，研究最多的美国股指期权，结论大多是买保护长期平均要付出代价（见<a class="term" href="06.html#c-skewness">偏态</a>那一页的「今天怎么看」）。</p>
+<p><b>作者的看法：</b>他的模拟显示多头和空头最后几乎都没活下来，只有一部分期权买方活得长，因为他们买了防爆仓的保险。<span class="at" data-p="19">§5</span></p>
+<p class="ours"><b>本站的评论：</b>作者说的是生存，不是赚钱，这一点要分开读。期权买方不会一天爆仓，靠的是亏损有上限，不需要模拟来证明；他们长期是赚是赔，模拟里没说，书里也没给模型和参数。作者在 §5 说他想成为这种人，所以这一段读作他对自己打法的说明，比读作研究结论更合适。<a class="term" href="01.html#c-option">期权</a>是什么，见第 1 章那一页。</p></div>
+<p class="verdict"><b>本站的总体看法：</b>这一页最该带走的是两个习惯：看到一个结果，就想想没实现的那些；评价一个决定，回到当时的信息。两样都有心理学的研究撑着。看不起历史的人都爆仓、期权买方活得长，是作者的经验和他自己的模拟，打个折扣听。遍历性那段，作者后来自己换了重点，读到第 9 章时再对照。</p>
+
+<h2>检查一下理解</h2>
+<p class="lede">先在心里答，再点开。答错的那题，回书里把对应那一节再读一遍。</p>
+<details class="check"><summary>1.（§2）一只股票一年里从 100 美元涨到 145 美元，和它中途跌到 10 美元再涨回 145 美元，结果一样吗？样本路径比结果多看了什么？</summary><p>终点一样，路不一样。样本路径看的是一路上的起落：中途跌到 10 美元的那条，很多持有的人熬不过去，早就卖掉或者被吓跑了。作者说他关心的是投资人这一年经历的起伏，不只是年底的数。</p></details>
+<details class="check"><summary>2.（§3）往一个正方形里均匀地乱打 1 万发子弹，落进内切圆的大约占多少？怎样从中得到 π？</summary><p>约 78.5%，也就是 π/4，乘以 4 就是 π 的估计。1 万发的估计大约在真值上下 0.03 以内；想稳稳准到小数点后两位，要打四十多万发。作者说精度「可能无限」，原则上对，实际上来得很慢。</p></details>
+<details class="check"><summary>3.（§5）在作者的模拟里，空头押的是下跌，最后也常常没活下来。为什么？期权买方又凭什么活得长？</summary><p>涨势里空头一直在亏，常常撑不到崩盘那一天就出局了，押对方向也没用。期权买方最多亏掉付出的权利金，像买了防爆仓的保险，不会因为一天的行情毁掉职业生涯。</p></details>
+<details class="check"><summary>4.（§7）按作者的说法，爆仓和普通的亏钱差在哪里？</summary><p>爆仓是亏了一笔自己以为根本不可能亏的钱。一个事先说清自己在冒险的人亏了钱，作者认为没什么不对；爆仓的人错在以为那件坏事不会发生。</p></details>
+<details class="check"><summary>5.（§8）新上司发现只有约 1% 的外汇交易赚了大钱，就要交易员多做赚钱的、少做亏钱的。错在哪？</summary><p>赚钱的单子只有事后才认得出，下单那一刻它和亏钱的单子看上去一样。他拿事后的结果去评判当时的决定，正是作者说的后见之明。</p></details>
+<details class="check"><summary>6.（§2）六孔一弹的轮盘每年玩一次，从 25 岁玩到 50 岁（25 次），一个人活下来的机会是多少？一千个人里大约剩几个？</summary><p>(5/6)<sup>25</sup> 约等于 1.05%，一千人里平均剩 10 个左右。实际剩几个有随机波动，常在 5 到 16 人之间。这就是第 2 章说的「一小撮极富的幸存者和一大片墓地」。</p></details>
+<details class="check"><summary>7.（§9）作者说第 1 章那位中了彩票的门卫活一千年，也不能指望再中几次。这和「幸运的傻瓜」有什么关系？</summary><p>一次好运不会照样重来。时间拉长，每个人都会回到自己长期的样子：幸运的傻瓜慢慢变回一个没那么走运的傻瓜，有本事却一时倒霉的人会冒出头来。作者说这在某些条件下成立。</p></details>
+<p>用一句话说这一页：</p>
+<textarea class="note" data-key="03a-oneline" rows="2" placeholder="比如：……"></textarea>
+<div class="ponder"><p>想一想：你最近一次因为结果不好而后悔的决定，回到当时，你手上有哪些信息？换成那时的你，会不会还是那样选？</p>
+<textarea class="note" data-key="03a-ponder" rows="3"></textarea></div>
+
+<h2>精彩回顾</h2>
+<p class="lede">读过又忘了，从这里想起来。挑的是这一页最值得记住的故事和说法，不按原书顺序；每条后面是节号，想细看就回书里那一节。全书各页的这一节都收在<a href="../recap.html">全书回顾</a>。</p>
+<p class="recall-line"><b>一句话：</b>看到一个赢家，先想想那些和他下了同样的注、却没走到今天的人。</p>
+<div class="recall">
+  <div class="item"><b>花花公子和数学家</b><p>作者说他要的蒙特卡洛数学，是赌场里算准下注大小的花花公子的务实，加上邋遢数学家的直觉，再各自去掉毛病。</p><span class="sec">§1</span></div>
+  <div class="item"><b>五百个弹巢的轮盘</b><p>在电脑里造一具轮盘，让玩家连着玩，数数多少次发财、平均多久送命；把弹巢改成五百个，再演一遍。</p><span class="sec">§2</span></div>
+  <div class="item"><b>阁楼里谁活了下来</b><p>作者在阁楼里模拟多头、空头和谨慎的交易员：多头被宰，空头撑不到崩盘，只有一部分期权买方活得长：他们给自己买了防爆仓的保险。</p><span class="sec">§5</span></div>
+  <div class="item"><b>藏着针的握手</b><p>失忆的病人记不住医生。被藏在手心的针扎过一次以后，医生再伸手，她就缩回去，却还是不认得他。</p><span class="sec">§7</span></div>
+  <div class="item"><b>把赚钱的单子加倍</b><p>新上司分析交易记录，发现只有约 1% 的单子赚了大钱，于是问交易员：你们拿高薪，怎么没想到多做赚钱的、少做亏钱的？</p><span class="sec">§8</span></div>
+  <div class="item"><b>雅典的公寓</b><p>作者的祖父当过副总理，晚年住在雅典一间不起眼的公寓里，家产毁于黎巴嫩内战。作者说他怕失去体面的穷，甚于怕身体上的危险。</p><span class="sec">§9</span></div>
+</div>
+
+</main>
+<script>
+(() => {
+  // 平行的历史：俄罗斯轮盘 n 个弹巢、一颗子弹，每玩一次送命的概率 1/n，活着每次拿 1000 万美元，死了归零、不再玩。
+  // 一千个人各玩 T 次：每个人第几次送命服从几何分布（用带种子的伪随机数抽），活过 T 次的概率 q^T（q = 1 − 1/n）精确算。
+  // 牙医：每轮挣 1000 万 ×（1 + 0.1·z），z 是标准正态，T 轮合计 = 1000 万 ×（T + 0.1·√T·z），不会送命。本站设的数，书里没给。
+  // 「看法」切换：一千个平行的你 / 一个你连着玩（作者 2018 年说的群体概率和时间概率）。「重置」回到种子 1。
+  const root = document.getElementById("sim-03a");
+  if (!root) return;
+  const { h } = window.FB;
+  const NS = "http://www.w3.org/2000/svg";
+  const PEOPLE = 1000, PRIZE = 1000; // 钱的单位：万美元
+  const NN = [6, 100, 500, 1000], TT = [1, 10, 25, 30, 100, 250, 1000, 3000];
+  const PRESETS = [
+    { k: "p1", name: "6 孔，玩 1 次", n: 6, T: 1 },
+    { k: "p25", name: "25 岁玩到 50 岁", n: 6, T: 25 },
+    { k: "p500", name: "500 孔，玩 30 次", n: 500, T: 30 },
+    { k: "p1000", name: "1000 孔，玩 3000 次", n: 1000, T: 3000 },
+  ];
+  const ERG = [
+    { k: "e1", name: "一千人各玩一次", view: "crowd", T: 1 },
+    { k: "e100", name: "一人连玩一百次", view: "one", T: 100 },
+  ];
+  const st = { strat: "roulette", n: 6, T: 1, view: "crowd", seed: 1, preset: "p1" };
+
+  function rng(seed) { let a = seed * 2654435761 >>> 0; return () => { a = (a + 0x6D2B79F5) >>> 0; let t = a; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+  const normal = (r) => { const u = 1 - r(), v = r(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v); };
+  const deathRound = (r, q) => Math.floor(Math.log(1 - r()) / Math.log(q)) + 1; // 第几次送命：P(活过 k 次) = q^k
+
+  const trim = (s) => s.replace(/\.0+$|(\.\d*?)0+$/, "$1");
+  const money = (m) => (m >= 10000 ? trim((m / 10000).toFixed(m >= 1e6 ? 0 : 2)) + " 亿美元" : Math.round(m) + " 万美元");
+  const pct = (p) => (p === 0 ? "0" : p === 1 ? "100%" : p > 0.9995 ? "超过 99.9%" : (p * 100).toFixed(p < 0.1 ? 2 : 1) + "%");
+  const big = (x) => { const s = (v) => String(Number(v.toPrecision(2))); return x < 1e4 ? s(x) : x < 1e8 ? s(x / 1e4) + " 万" : s(x / 1e8) + " 亿"; };
+  const prob = (p) => (p >= 0.0005 ? pct(p) : p < 1e-12 ? "不到一万亿分之一" : "约 " + big(1 / p) + "分之一");
+  const cnt = (x) => (x >= 100 ? "约 " + Math.round(x) + " 人" : x >= 0.1 ? "约 " + x.toFixed(1) + " 人" : "不到 0.1 人");
+
+  function exact() {
+    const rl = st.strat === "roulette", q = 1 - 1 / st.n;
+    const pAll = rl ? Math.pow(q, st.T) : 1;
+    return { rl, q, pDie: rl ? 1 / st.n : 0, pAll, expAlive: PEOPLE * pAll, mean: pAll * st.T * PRIZE,
+      med: Math.ceil(Math.log(0.5) / Math.log(q)) };
+  }
+  function crowd(c) {
+    const r = rng(st.seed), out = [];
+    for (let i = 0; i < PEOPLE; i++) {
+      if (c.rl) { const d = deathRound(r, c.q); out.push(d > st.T ? { alive: true, w: st.T * PRIZE } : { alive: false, w: 0, d }); }
+      else out.push({ alive: true, w: Math.max(0, PRIZE * (st.T + 0.1 * Math.sqrt(st.T) * normal(r))) });
+    }
+    return out;
+  }
+  function one(c) {
+    const r = rng(st.seed), pts = [0];
+    if (c.rl) {
+      const d = deathRound(r, c.q), last = Math.min(d - 1, st.T);
+      for (let i = 1; i <= last; i++) pts.push(i * PRIZE);
+      if (d <= st.T) pts.push(0);
+      return { pts, d: d <= st.T ? d : null, end: d <= st.T ? 0 : st.T * PRIZE };
+    }
+    let w = 0;
+    for (let i = 1; i <= st.T; i++) { w += Math.max(0, PRIZE * (1 + 0.1 * normal(r))); pts.push(w); }
+    return { pts, d: null, end: w };
+  }
+
+  const el = (tag, attrs, style) => { const e = document.createElementNS(NS, tag); for (const [k, v] of Object.entries(attrs)) e.setAttribute(k, v); if (style) Object.assign(e.style, style); return e; };
+  const txt = (x, y, s, anchor, muted) => { const t = el("text", { x, y, "text-anchor": anchor || "start", "font-size": 13 }, { fill: muted ? "var(--muted)" : "var(--fg)" }); t.textContent = s; return t; };
+
+  const row1 = h("div", { class: "presets" }, h("span", { class: "lbl" }, "书里的场景："));
+  const row2 = h("div", { class: "presets" }, h("span", { class: "lbl" }, "作者后来的说法："));
+  const sel = (label, list, key, fmt) => {
+    const s = h("select", { "aria-label": label, onchange: () => { st[key] = key === "n" || key === "T" ? Number(s.value) : s.value; st.preset = ""; draw(); } }, ...list.map(([v, t]) => h("option", { value: String(v) }, t)));
+    return [h("label", {}, label, s), s];
+  };
+  const [lS, sS] = sel("策略", [["roulette", "俄罗斯轮盘"], ["dentist", "牙医"]], "strat");
+  const [lN, sN] = sel("弹巢数", NN.map((v) => [v, String(v)]), "n");
+  const [lT, sT] = sel("玩几次", TT.map((v) => [v, String(v)]), "T");
+  const [lV, sV] = sel("看法", [["crowd", "一千个平行的你"], ["one", "一个你连着玩"]], "view");
+  const again = h("button", { onclick: () => { st.seed += 1; draw(); } }, "换一批运气");
+  const reset = h("button", { onclick: () => { Object.assign(st, { strat: "roulette", n: 6, T: 1, view: "crowd", seed: 1, preset: "p1" }); draw(); } }, "重置");
+  const stage = h("div", { class: "stage" }), narrate = h("div", { class: "narrate" }), stats = h("div", { class: "stats" });
+  const body = root.querySelector(".sim-body");
+  body.innerHTML = "";
+  body.append(row1, row2, h("div", { class: "controls" }, lS, lN, lT, lV, again, reset), stage, narrate, stats);
+  for (const p of PRESETS) row1.append(h("button", { "data-k": p.k, onclick: () => { Object.assign(st, { strat: "roulette", n: p.n, T: p.T, view: "crowd", preset: p.k }); draw(); } }, p.name));
+  for (const p of ERG) row2.append(h("button", { "data-k": p.k, onclick: () => { Object.assign(st, { strat: "roulette", n: 6, T: p.T, view: p.view, preset: p.k }); draw(); } }, p.name));
+
+  function grid(out) {
+    const alive = out.filter((x) => x.alive).length;
+    const g = el("svg", { viewBox: "0 0 400 250", class: "grid", role: "img", "aria-label": `一千个人里这一回有 ${alive} 人还活着` });
+    out.forEach((x, i) => g.append(el("rect", { x: (i % 40) * 10 + 1, y: Math.floor(i / 40) * 10 + 1, width: 8, height: 8, rx: 1.5 }, { fill: x.alive ? "var(--ok)" : "var(--bad)" })));
+    return g;
+  }
+  function strip(out) {
+    const W = 400, H = 120, L = 14, R = 14, T = 8, B = 30, full = st.T * PRIZE, xmax = full * 1.4;
+    const X = (w) => L + (W - L - R) * w / xmax, r = rng(st.seed + 7919);
+    const g = el("svg", { viewBox: `0 0 ${W} ${H}`, class: "strip", role: "img", "aria-label": "每个点是一个人最后手上的钱" });
+    g.append(el("line", { x1: L, x2: W - R, y1: H - B, y2: H - B }, { stroke: "var(--border)" }));
+    for (const x of out) g.append(el("circle", { cx: X(x.w) + (x.alive ? 0 : r() * 8), cy: T + r() * (H - B - T - 4), r: 2 }, { fill: x.alive ? "var(--ok)" : "var(--bad)", opacity: 0.55 }));
+    g.append(txt(L, H - 10, "0", "start", true));
+    g.append(txt(X(full), H - 10, money(full), "middle", true));
+    g.append(txt(W - R, H - 10, "钱 →", "end", true));
+    return g;
+  }
+  function chart(you) {
+    const { pts } = you, W = 360, H = 170, L = 64, R = 10, T = 12, B = 28;
+    const hi = Math.max(PRIZE, ...pts);
+    const X = (i) => L + (W - L - R) * i / Math.max(1, st.T), Y = (v) => T + (H - T - B) * (hi - v) / hi;
+    const g = el("svg", { viewBox: `0 0 ${W} ${H}`, class: "path", role: "img", "aria-label": you.d ? `「你」第 ${you.d} 次送命` : `「你」玩完 ${st.T} 次，手上 ${money(you.end)}` });
+    g.append(el("line", { x1: L, x2: W - R, y1: Y(0), y2: Y(0) }, { stroke: "var(--border)" }));
+    g.append(txt(L - 6, Y(0) + 4, "0", "end", true));
+    g.append(txt(L - 6, Y(hi) + 4, money(hi).replace("美元", ""), "end", true));
+    const step = Math.max(1, Math.floor(pts.length / 600));
+    const d = pts.map((v, i) => (i % step === 0 || i === pts.length - 1 ? `${X(i).toFixed(1)},${Y(v).toFixed(1)}` : null)).filter(Boolean).join(" ");
+    g.append(el("polyline", { points: d, fill: "none", "stroke-width": 2 }, { stroke: "var(--accent)" }));
+    if (you.d) {
+      const cx = X(you.d), cy = Y(0);
+      g.append(el("circle", { cx, cy, r: 4 }, { fill: "var(--bad)" }));
+      g.append(txt(Math.min(cx + 8, W - R - 120), cy - 10, `第 ${you.d} 次送命，没有以后`, "start", false));
+    }
+    g.append(txt(L, H - 8, "开始", "start", true));
+    g.append(txt(W - R, H - 8, `第 ${st.T} 次`, "end", true));
+    return g;
+  }
+
+  function draw() {
+    for (const b of root.querySelectorAll(".presets button")) b.setAttribute("aria-pressed", String(b.dataset.k === st.preset));
+    sS.value = st.strat; sN.value = String(st.n); sT.value = String(st.T); sV.value = st.view;
+    sN.disabled = st.strat !== "roulette";
+    const c = exact();
+    stage.innerHTML = ""; stats.innerHTML = "";
+    const box = (v, l) => h("div", { class: "stat" }, h("div", { class: "v" }, v), h("div", { class: "l" }, l));
+    if (st.view === "crowd") {
+      const out = crowd(c), alive = out.filter((x) => x.alive), na = alive.length;
+      const ws = alive.map((x) => x.w).sort((a, b) => a - b), med = na ? ws[Math.floor((na - 1) / 2)] : 0;
+      const legend = h("p", { class: "legend" });
+      legend.innerHTML = `<i style="background:var(--ok)"></i>还活着 <i style="background:var(--bad)"></i>已经死了`;
+      stage.append(grid(out), legend, h("p", { class: "cap" }, "每个点是一个人玩完以后手上的钱（红点是死了的人，堆在 0）"), strip(out));
+      if (c.rl) {
+        narrate.textContent = `一千个「你」各拿一把 ${st.n} 个弹巢、一颗子弹的左轮，每人连着玩 ${st.T} 次，活着每次拿一千万美元，死了就什么都没有。` +
+          (na ? `这一回活下来 ${na} 人，每人 ${money(st.T * PRIZE)}；照概率该剩${cnt(c.expAlive)}。报纸只会采访活下来的那几位，${PEOPLE - na} 个死了的人没人报道。` : `这一回一个都没剩下；照概率该剩${cnt(c.expAlive)}。`);
+        stats.append(box(pct(c.pDie), "每玩一次送命的机会（精确）"), box(na + " 人", "这一回还活着（随机）"), box(cnt(c.expAlive), "照概率该剩（精确）"),
+          box(na ? money(st.T * PRIZE) : "没人活着", "活着的人每人手上"), box(money(c.mean), "所有人平均，死了算 0（精确）"));
+      } else {
+        narrate.textContent = `一千个牙医每人干 ${st.T} 轮，每轮挣一千万上下。这一回最少的 ${money(ws[0])}，最多的 ${money(ws[na - 1])}，中间那个人 ${money(med)}。没人送命，大家挤在一起。`;
+        stats.append(box("0", "每一轮送命的机会"), box(na + " 人", "这一回还活着"), box(cnt(PEOPLE), "照概率该剩（精确）"),
+          box(money(med), "中间那个人手上（随机）"), box(money(st.T * PRIZE), "所有人平均（精确）"));
+      }
+    } else {
+      const you = one(c);
+      stage.append(h("p", { class: "cap" }, `只看一个「你」：每一次之后手上累计的钱，连着玩 ${st.T} 次`), chart(you));
+      if (c.rl) {
+        narrate.textContent = `只看一个「你」，同一把 ${st.n} 孔左轮连着玩 ${st.T} 次。` +
+          (you.d ? `这一回第 ${you.d} 次就送命了，之前拿到 ${money((you.d - 1) * PRIZE)}，此后没有以后。` : `这一回活过了全部 ${st.T} 次，手上 ${money(st.T * PRIZE)}。`) +
+          `照概率，活过全部 ${st.T} 次的机会是${prob(c.pAll)}。`;
+        stats.append(box(pct(c.pDie), "每玩一次送命的机会（精确）"), box(you.d ? `第 ${you.d} 次送命` : `活过 ${st.T} 次`, "「你」这一回（随机）"),
+          box(prob(c.pAll), `活过全部 ${st.T} 次的机会（精确）`), box(`第 ${st.n} 次`, "平均第几次送命（均值，精确）"), box(`第 ${c.med} 次`, "一半的人活不过第几次（中位数，精确）"));
+      } else {
+        narrate.textContent = `只看一个牙医，连着干 ${st.T} 轮，最后手上 ${money(you.end)}。没有哪一轮会让他出局。`;
+        stats.append(box("0", "每一轮送命的机会"), box(money(you.end), "「你」最后手上（随机）"), box("100%", `干完 ${st.T} 轮的机会`), box("不会送命", "平均第几次送命"), box("不会送命", "中位数"));
+      }
+    }
+  }
+  draw();
+})();
+</script>
+</body>
+</html>

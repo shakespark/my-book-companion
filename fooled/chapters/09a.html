@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 9 章（上） · 随机骗局导读</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/chapters.js"></script>
+<script src="../assets/fb.js"></script>
+<style>
+#sim-09a .bars { width: 100%; max-width: 460px; display: block; margin: 0 auto; }
+#sim-09a .path { width: 100%; max-width: 480px; display: block; margin: 10px auto 0; }
+#sim-09a .cap { font-size: 13px; color: var(--muted); margin: 12px 0 4px; }
+#sim-09a .roster { list-style: none; padding: 0; margin: 4px 0 0; font-size: 14px; }
+#sim-09a .roster li { margin: 3px 0; overflow-wrap: anywhere; }
+#sim-09a .roster .yw { color: var(--ok); }
+#sim-09a .roster .yl { color: var(--bad); }
+#sim-09a .roster .sep { color: var(--muted); margin: 0 4px; }
+#sim-09a .roster .tot { color: var(--muted); margin-left: 6px; }
+</style>
+</head>
+<body data-page="09a">
+<main>
+
+<h2>这一页在做什么</h2>
+<div class="gist"><p>第二部讲「好纪录靠不靠得住」，这一章是它的技术章。作者从自己一天的日程说起：看牙医、听钢琴、看雕塑，这些本事都很难靠运气装出来；明天要见的基金经理却不一样。接着他用抛硬币「造」出一万个毫无本事的基金经理，一年一年数还剩多少，顺路讲到篮球的连中、狗的个头、一只飞过来的打火机，再把同一笔账搬到荐股信、电视广告、生日和偶遇上。读的时候抓一条线：看到一份漂亮的纪录，想一想没让你看见的那些人。</p></div>
+<figure class="fig small"><img src="../assets/img/09a-canova.jpg" alt="一座白色大理石群像立在方形石座上：三个裸身的年轻女子相互搂抱，脸贴着脸，身上搭着一条布" loading="lazy">
+<figcaption>卡诺瓦的《美惠三女神》（1814–1817，「沃本修道院」那一版），2013 年摄于伦敦维多利亚与艾伯特博物馆。§1 作者在这家博物馆站在卡诺瓦的雕塑前，问这样的作品能不能是运气的产物；书里没说他看的是哪一件。<span class="src">ketrin1407，CC BY 2.0，维基共享资源</span></figcaption></figure>
+
+<h2>读之前：这一页在全书的哪里</h2>
+<div class="linehere"></div>
+<p>第 8 章用打字机前的猴子和《隔壁的百万富翁》讲了幸存者偏差：输掉的人不会出现在你眼前。这一章是第二部的第二章，把同一个问题做成算术：作者搬出前面用过的蒙特卡洛「引擎」，造一群明知没本事的经理，一年一年数还剩多少。§2 他回提第 5 章，§9 回提 John 和 Carlos。这一章的后半在下一页，从彩票、书评一路讲到科学论文。</p>
+<div class="heads-up"><p>§4 作者把篮球的「热手」当作人看错随机序列的例子，这是 1985 年一项有名研究的结论。2018 年有研究指出那项研究的算法本身有偏差，改正以后，数据里看得到热手。读的时候把这个例子打个问号，详细的在页末。</p></div>
+<div class="crux"><p>一个人连续五年赚钱，能说明他有本事吗？</p></div>
+<p class="lede">读的时候带着这几个问题。不用先找答案，读完回来对照「检查一下理解」。</p>
+<ol class="qs">
+  <li>作者不怀疑牙医和钢琴家的本事，却怀疑明天要见的基金经理。这两类人差在哪里？<span class="sec">§1</span></li>
+  <li>作者说，十个人里冒出的佼佼者，他眼都不眨就交出一半积蓄；一万个人里冒出的，他不看结果。他凭什么这样分？<span class="sec">§5</span></li>
+  <li>神秘荐股信的收信人，是在哪一步被骗的？<span class="sec">§7</span></li>
+  <li>有本事的人为什么也可能被淘汰？他们会怎样设法留下来？<span class="sec">§9</span></li>
+</ol>
+
+<h2>这一页的路线</h2>
+<p>§1 是日记式的开头：一天里的三个场景，话锋一转到明天要见的基金经理，再列出这一章要讲的几个统计名词。§2、§3 是全章的发动机：两个思想实验，一个用公平的硬币，一个用对经理不利的罐子，都是一年一年往下数人数。§4 从篮球跳到抛硬币、交易室，又跳到狗的个头，四段里话题换了好几回，是全章最散的一节。§5 换成更技术的说法，中间插进一位朝作者扔打火机的交易员，最后回到「明天上午 11:45」的约会，把开头那条线收住。§6 只有一句话，是个过门。§7 到 §11 是五个很短的小节，每节一个生活里的例子，节奏很快；§10 第一句点出一个统计名词，§11 第二段把它推到电脑上，交给下一页。</p>
+<figure class="fig">
+<svg class="diagram" viewBox="0 0 640 300" role="img" aria-label="路线示意图：§1 三个场景和明天的约会，§2 §3 造一万个经理，§4 热手和狗是离题，§5 遍历性和打火机，§6 过门，§7 到 §11 五个短例子，箭头指向下一页">
+<defs><marker id="ar09a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="f-a"/></marker></defs>
+<rect x="8" y="20" width="150" height="50" rx="6" class="box"/><text x="83" y="40" text-anchor="middle">§1 三个场景</text><text x="83" y="58" text-anchor="middle" class="t-m">牙医·钢琴家·雕塑</text>
+<rect x="178" y="20" width="140" height="50" rx="6" class="box"/><text x="248" y="40" text-anchor="middle">§1 明天的约会</text><text x="248" y="58" text-anchor="middle" class="t-m">一份好纪录</text>
+<rect x="338" y="20" width="294" height="50" rx="6" class="f-soft"/><text x="485" y="40" text-anchor="middle" class="t-b">§2 §3 造一万个经理</text><text x="485" y="58" text-anchor="middle" class="t-m">公平的硬币·不利的罐子</text>
+<line x1="158" y1="45" x2="176" y2="45" class="ln-a" marker-end="url(#ar09a)"/>
+<line x1="318" y1="45" x2="336" y2="45" class="ln-a" marker-end="url(#ar09a)"/>
+<line x1="560" y1="70" x2="560" y2="106" class="ln-a" marker-end="url(#ar09a)"/>
+<rect x="448" y="108" width="184" height="50" rx="6" class="box" stroke-dasharray="5 4"/><text x="540" y="128" text-anchor="middle">§4 热手·狗</text><text x="540" y="146" text-anchor="middle" class="t-m">四段四个话题</text>
+<line x1="448" y1="133" x2="430" y2="133" class="ln-a" marker-end="url(#ar09a)"/>
+<rect x="168" y="108" width="260" height="50" rx="6" class="f-soft"/><text x="298" y="128" text-anchor="middle" class="t-b">§5 遍历性</text><text x="298" y="146" text-anchor="middle" class="t-m">打火机·回到 11:45</text>
+<line x1="200" y1="158" x2="90" y2="194" class="ln-a" marker-end="url(#ar09a)"/>
+<rect x="8" y="196" width="120" height="50" rx="6" class="box" stroke-dasharray="5 4"/><text x="68" y="216" text-anchor="middle">§6 过门</text><text x="68" y="234" text-anchor="middle" class="t-m">一句话</text>
+<line x1="128" y1="221" x2="146" y2="221" class="ln-a" marker-end="url(#ar09a)"/>
+<rect x="148" y="196" width="300" height="50" rx="6" class="f-soft"/><text x="298" y="216" text-anchor="middle" class="t-b">§7–§11 五个短例子</text><text x="298" y="234" text-anchor="middle" class="t-m">荐股信·广告·高手·生日·偶遇</text>
+<line x1="448" y1="221" x2="466" y2="221" class="ln-d" marker-end="url(#ar09a)"/>
+<rect x="468" y="196" width="164" height="50" rx="6" class="box"/><text x="550" y="216" text-anchor="middle">下一页</text><text x="550" y="234" text-anchor="middle" class="t-m">§12 起</text>
+<rect x="8" y="270" width="24" height="14" rx="3" class="f-soft"/><text x="40" y="282" class="t-m">算术和例子最集中</text>
+<rect x="210" y="270" width="24" height="14" rx="3" class="box" stroke-dasharray="5 4"/><text x="242" y="282" class="t-m">离题、过门</text>
+</svg>
+<figcaption>本站示意图。第一行是开头和发动机，§4 绕了一段，§5 收回到明天的约会，最后一行是一串快节奏的小例子，交给下一页。</figcaption></figure>
+
+<h2>分节地图</h2>
+<p class="lede">这一页是原书和译本第 9 章的前半，一共 11 节（§12 起在下一页）。粗体是本站给的节名，后面是档和译本字数；下面是译本的小标题和这一节在译本电子书里开头的几个字（搜它就能跳过去），再下面是英文原文的开头。「先读」是这一章的骨架，「有空」好看、跳过不丢线，「可跳过」读不读都行。读完打个勾。</p>
+<ol class="secmap">
+  <li data-sec="1"><span class="what">日记式的开头：三种装不出来的本事，一个让作者发愁的约会。最后两段列出这一章要讲的几个统计名词，留意他说金融为什么特别适合研究它们。</span></li>
+  <li data-sec="2"><span class="what">全章的发动机：用硬币造一万个经理，一年一年往下数。数到 313 时先停一下，想想这些人有什么共同点。最后一段是传记作者和分析师怎样替幸存者找原因。</span></li>
+  <li data-sec="3"><span class="what">换一个对经理不利的罐子再算一遍。后两段作者列出两点「有违直观」的地方，第二点用了一个拗口的说法「最大值的期望」，「动手：模拟器」一节有解释。</span></li>
+  <li data-sec="4"><span class="what">最散的一节：篮球、硬币、交易室的英雄、狗的个头挤在四段里。先看概念块的「回归平均」再读。只有一句话的最后一段，是作者给自己留的余地。</span></li>
+  <li data-sec="5"><span class="what">第一段是全章最技术的一段，「遍历性」是作者自己的用法，见概念块。接着是扔打火机的故事，然后回到起跑人数，最后是明天 11:45 的会面。</span></li>
+  <li data-sec="6"><span class="what">只有一句话的过门：从基金经理转到生活里的巧合。</span></li>
+  <li data-sec="7"><span class="what">一个骗局，两段：前一段是受害者看到的，后一段是骗子做的。读完前一段，先自己猜骗子怎么做到，再往下读。书里的人数是举例的整数。</span></li>
+  <li data-sec="8"><span class="what">一段话：电视上打广告的基金。留意「找上门来」和「你自己去找」的区别，经济学叫逆向选择，背景里有讲。</span></li>
+  <li data-sec="9"><span class="what">一段话，把方向倒过来：有本事的人也会被淘汰，于是有人去冒另一种风险。这里回提了第 1 章和第 5 章的两位交易员。</span></li>
+  <li data-sec="10"><span class="what">生日问题，作者说它算不上真的悖论。可以拿身边的群聊、班级验证一下。</span></li>
+  <li data-sec="11"><span class="what">偶遇熟人和「世界真小」，再推到统计学家用电脑找关系。第二段是交给下一页的接力棒。</span></li>
+</ol>
+
+<h2>先用中文过一遍：这一页的概念</h2>
+<p class="lede">先把这一页用到、作者默认你懂的几个概念讲一遍。讲的是概念本身，作者拿它推出什么，读原书时自己看。别页讲过的概念，点链接过去看。</p>
+<div class="concept" id="c-track-record">
+<h3><span class="sec">§1</span>业绩记录 <span class="en">track record，译本：績效紀錄</span></h3>
+<p>业绩记录是一个投资经理过去管钱的成绩单：哪一年赚了多少、赔了多少，比大盘好还是差。基金招揽客户、投资人挑选<a class="term" href="08.html#c-fund-manager">基金经理</a>，最常看的就是它。国内基金的宣传材料末尾常印着一句风险提示「基金的过往业绩并不预示其未来表现」，提醒的就是它的局限。</p>
+<p>统计上，一份纪录是一个样本。判断它有多少分量，除了看它本身，还要问它是怎么来到你面前的：从多少份纪录里挑出来的，没被挑中的那些去了哪里。下面是一个和书无关的例子。</p>
+<figure class="fig">
+<svg class="diagram" viewBox="0 0 640 230" role="img" aria-label="条形图：1024 个人各抛 5 次硬币，每抛一次，次次正面的人少一半：512、256、128、64，最后剩 32 人">
+<text x="8" y="36" class="t-m">起跑</text><rect x="110" y="22" width="440" height="20" rx="3" class="f-soft"/><text x="558" y="37" class="t-b">1024 人</text>
+<text x="8" y="70" class="t-m">第 1 次正面</text><rect x="110" y="56" width="220" height="20" rx="3" class="f-soft"/><text x="338" y="71" class="t-b">512</text>
+<text x="8" y="104" class="t-m">连 2 次</text><rect x="110" y="90" width="110" height="20" rx="3" class="f-soft"/><text x="228" y="105" class="t-b">256</text>
+<text x="8" y="138" class="t-m">连 3 次</text><rect x="110" y="124" width="55" height="20" rx="3" class="f-soft"/><text x="173" y="139" class="t-b">128</text>
+<text x="8" y="172" class="t-m">连 4 次</text><rect x="110" y="158" width="28" height="20" rx="3" class="f-soft"/><text x="146" y="173" class="t-b">64</text>
+<text x="8" y="206" class="t-m">连 5 次</text><rect x="110" y="192" width="14" height="20" rx="3" class="f-a"/><text x="132" y="207" class="t-b">32 人次次正面</text>
+</svg>
+<figcaption>本站示意图：1024 个人各抛 5 次硬币，每次正面的机会一半，平均每抛一轮少一半人，最后约 32 人次次正面。你只看到这 32 人时，会以为他们很会抛硬币。</figcaption></figure>
+<p class="use"><b>在这一页：</b>§1 作者明天要见的经理拿它当招牌；§2、§3 的思想实验算的是纯运气能造出多少份好纪录。</p>
+</div>
+<div class="concept" id="c-regression-to-mean">
+<h3><span class="sec">§4</span>回归平均 <span class="en">regression to the mean，译本：回歸平均數</span></h3>
+<p>把一次成绩看成「本事加运气」。挑出成绩最极端的那批人，他们多半既有本事、又碰上了好运气；下一次本事还在，运气却不会专门跟着他们，于是成绩往平均靠回来一些。这个说法来自十九世纪的高尔顿（Galton）：特别高的父母，孩子平均也偏高，但没那么高。</p>
+<p>程序员的例子：某个迭代线上事故少得出奇，下一个迭代多半会多回来一点，不必急着表扬或问责。它不是「运气会补偿」（以为输多了就该赢，那是赌徒谬误），也不说连胜的人下一次更容易输；只是说，别把一次极端的结果全算在本事上。</p>
+<figure class="fig">
+<svg class="diagram" viewBox="0 0 640 240" role="img" aria-label="示意图：左边一列是第一次成绩最高的五个点，右边是这五个人第二次的成绩，连线都往中间的平均线靠">
+<line x1="80" y1="130" x2="600" y2="130" class="ln-d"/><text x="604" y="134" class="t-m" text-anchor="end">平均</text>
+<line x1="180" y1="20" x2="180" y2="220" class="ln"/><text x="180" y="236" text-anchor="middle" class="t-b">第一次</text>
+<line x1="460" y1="20" x2="460" y2="220" class="ln"/><text x="460" y="236" text-anchor="middle" class="t-b">第二次</text>
+<line x1="180" y1="34" x2="460" y2="96" class="ln-a"/><line x1="180" y1="46" x2="460" y2="122" class="ln-a"/><line x1="180" y1="58" x2="460" y2="84" class="ln-a"/><line x1="180" y1="70" x2="460" y2="140" class="ln-a"/><line x1="180" y1="82" x2="460" y2="108" class="ln-a"/>
+<circle cx="180" cy="34" r="6" class="f-a"/><circle cx="180" cy="46" r="6" class="f-a"/><circle cx="180" cy="58" r="6" class="f-a"/><circle cx="180" cy="70" r="6" class="f-a"/><circle cx="180" cy="82" r="6" class="f-a"/>
+<circle cx="460" cy="96" r="6" class="f-a"/><circle cx="460" cy="122" r="6" class="f-a"/><circle cx="460" cy="84" r="6" class="f-a"/><circle cx="460" cy="140" r="6" class="f-a"/><circle cx="460" cy="108" r="6" class="f-a"/>
+<text x="168" y="62" text-anchor="end" class="t-m">最好的五个</text>
+<text x="472" y="100" class="t-m">多半仍高于平均，</text><text x="472" y="118" class="t-m">但没那么高了</text>
+</svg>
+<figcaption>本站示意图，没有画具体的数。越往上表示成绩越好：第一次最好的五个人，第二次多数仍在平均以上，但都往平均线靠了，有一个还掉到了平均以下。</figcaption></figure>
+<p class="use"><b>在这一页：</b>§4 作者用篮球、抛硬币和狗的个头讲它；模拟器里的「淘汰期后再看几年」可以看幸存者往后怎样。</p>
+</div>
+<div class="concept" id="c-ergodicity">
+<h3><span class="sec">§5</span>遍历性（作者的用法） <span class="en">ergodicity，译本：遍歷性</span></h3>
+<p>这是物理和概率里的词。粗略地说，一个随机过程如果「遍历」，那么一个人沿着时间走很久得到的平均，和很多人同时各走一次得到的平均一样：一个骰子掷一万次，和一万个骰子各掷一次，平均点数相同。</p>
+<p>作者在这本书里用得更松：他说遍历性就是时间久了，随机性的效果会被冲掉，幸运的人长期会回到他本来的样子（第 3 章也这样用过）。这更接近大数定律和回归平均。他在 2018 年的《非对称风险》（Skin in the Game）里换了重点，讲的是不遍历：一百个人各进一次赌场，和一个人连进一百次，结果不一样，因为一个人一旦输光，就没有下一次了。本站两种说法都会出现，读的时候分清是哪一种。</p>
+<p class="use"><b>在这一页：</b>§5 的标题就是它，打火机那一段的括号里又出现一次。这一页的模拟器演的是本书的用法，<a href="03a.html#sim-03a">第 3 章的模拟器</a>演后一种。</p>
+</div>
+<div class="concept" id="c-birthday-problem">
+<h3><span class="sec">§10</span>生日问题 <span class="en">birthday problem / paradox，译本：生日詭辯</span></h3>
+<p>一个房间里有 23 个人，至少两人同一天生日的概率约 50.7%（不算闰年，假设生日在一年里均匀分布）。直觉觉得低，是因为想的是「有人和我同一天」，那只有约 6%。可 23 个人能配出 253 对，任何一对撞上都算。</p>
+<p>背后是一个通用的道理：事先不指定找什么，随便哪一种巧合都算数，巧合就会多得惊人。统计学里这叫多重比较：同时检验的东西越多，纯属偶然的「显著」结果就越多。程序员熟悉的哈希碰撞是同一笔账：哈希值的空间看着很大，表里的东西一多就会撞上。</p>
+<p class="use"><b>在这一页：</b>§10 作者用它向外行解释一个问题，§11 推到偶遇和用电脑找关系；下一页的<a class="term" href="09b.html#c-data-mining">数据挖掘</a>接着讲。</p>
+</div>
+
+<h2>动手：模拟器</h2>
+<p>先猜：一万个经理，每人每年赚 1 万美元或赔 1 万美元的机会各一半，谁都没有本事，输一年就出局。五年后大约还剩多少人？如果起跑的只有十个人，冒出一个「五连胜」的机会有多大？再点下面的模拟器验证。</p>
+<div class="sim" id="sim-09a">
+  <div class="sim-head"><span class="tag">模拟器</span><h3>一万个抛硬币的基金经理</h3><p class="desc">设定起跑人数、每年赚钱的概率和淘汰规则，看每年年底还剩多少人。上面的横条是这一次跑出来的人数，下面是前几位幸存者的逐年纪录。先用默认设置看一次，再点「重新跑一次」。</p></div>
+  <div class="sim-body"><p>需要浏览器打开脚本才能运行。</p></div>
+</div>
+<p>各个控件：「起跑人数」是一开始入行的经理数；「每年赚钱的概率」是每人每年赚 1 万美元的机会，剩下的是赔 1 万美元的机会，各年独立，所有人的胜算都一样（50% 就是抛硬币，谁都没有本事；低于 50% 就是 §3 那种期望亏钱的罐子；高于 50% 是人人都有一点本事）；「淘汰期」是连着考核几年；「淘汰规则」是考核期里怎样算出局；「淘汰期后再看几年」是让留下来的人接着干几年、不再淘汰，看他们后来怎样。</p>
+<p>统计栏前四个数：按概率算平均会剩几人（精确算出的期望值，书里的数就是它）；这一次随机跑出来实际剩几人；平均会剩的人占起跑的比例；起跑这么多人时，至少冒出一个幸存者的机会。选了「再看几年」，后面再多三个，也是精确算的：幸存者此后平均每年赚多少；此后这几年合起来净赚的幸存者占多少；把考核期和此后合起来，整段纪录平均每年赚多少。「这一次」跑出来的对应数字写在统计栏上面的说明里。</p>
+<ol class="qs">
+  <li>试试看：默认设置（一万人、50%、考核五年、输一年就出局）看一次。统计栏的「平均会剩」是 5000、2500、1250、625 这样一路减半到第五年的 312.5，书里的 313 就是它取整；横条是这一次随机跑出来的，每次在它上下几十人。名单上的人个个五连胜，按设定一个有本事的都没有。再把概率改成 45%：平均剩 184.5 人，书里写 184。全是期望亏钱的人，也剩下将近 2%。</li>
+  <li>试试看：概率回到 50%，起跑人数改成 10：平均只剩 0.3 人，但「至少冒出一个」的机会有 27.2%。多点几次「重新跑一次」，大约四次里有一次冒出一位常胜将军。再改成 100000：平均剩 3125 人。对比一下：起跑一万人时，把概率从 45% 提到 55%，平均剩下的人从 184.5 变成 503.3，只变成约 2.7 倍；起跑人数乘 10，剩下的人也乘 10。</li>
+  <li>试试看：一万人、50%、五年，把「淘汰期后再看几年」改成 10。幸存者此后平均每年 0 美元；这 10 年合起来净赚的只占 37.7%，净亏的也是 37.7%，其余约四分之一刚好打平；整段 15 年的纪录，平均每年从 1 万美元掉到 3,333 美元，看下面那条折线怎样在第 5 年以后走平。最后试有本事的人：概率 60%、规则「连输两年出局」、淘汰期 10 年，平均只剩 29% 的人，七成被淘汰，这是 §9 说的方向。</li>
+</ol>
+<p>这个模拟器只演一件事：没有本事的人，靠运气能留下多少份好纪录，以后又会怎样。每人每年赚赔金额一样、各年独立，这是最简单的情形。它数的是「五连胜的人数」；§3 说的「最大值的期望」（expectation of the maximum，译本：極大值的期望值）指的是你看得到的最好那几份纪录会有多好，两者相关，但不是同一个量。§7 的骗局和 §8 的广告讲的是这些纪录怎样找上门，模拟器不演。§9 的「两年表现很糟」书里没说是不是连续的，所以给了两种规则。</p>
+
+<h2>书里的人和背景</h2>
+<p class="lede">按在书里出现的顺序排，标题前是节号。只讲到读懂这一页需要的程度。</p>
+
+<h3><span class="sec">§1</span>卡诺瓦、奥维德和马基雅维利</h3>
+<figure class="fig small"><img src="../assets/img/09a-machiavelli.jpg" alt="一幅油画半身像：一位短发的男子穿黑色长袍、红色袖子，一手按着桌上的书，一手拿着一副手套，嘴角带笑" loading="lazy">
+<figcaption>马基雅维利像，16 世纪的佛罗伦萨画家 Santi di Tito 所作。<span class="src">Santi di Tito，公有领域，维基共享资源</span></figcaption></figure>
+<div class="who">
+  <div><b>Niccolò Machiavelli</b><span class="en">1469–1527</span>佛罗伦萨的外交官、政治思想家，《君主论》的作者。作者引的是他对命运的估算。</div>
+</div>
+<p>卡诺瓦（Antonio Canova，1757–1822）是意大利新古典主义雕塑家，以光滑、匀称的大理石人像出名。作者引的拉丁文出自古罗马诗人奥维德（Ovid）的《变形记》第二卷，原本描写太阳神宫殿的银门，意思是「手艺胜过了材料」。马基雅维利那句在《君主论》第 25 章：命运主宰我们一半的行动，另一半留给我们自己。</p>
+
+<h3><span class="sec">§2</span>索罗斯和「明年一半人走人」</h3>
+<div class="who">
+  <div><b>George Soros</b><span class="en">1930–</span>匈牙利出生的美国投资人，量子基金的创办人，以大手笔押注汇率和宏观事件出名，第 13 章还会出现。</div>
+</div>
+<p>作者说这句话是「据说」索罗斯对手下的经理们讲的，书里没给出处。管别人钱的经理，一两年业绩不好，客户撤资、老板换人，在对冲基金和投行交易室都是常事，所以思想实验里「输一年就出局」这条规则不算离谱。对冲基金是什么，见<a class="term" href="03b.html#c-hedge-fund">对冲基金</a>。</p>
+
+<h3><span class="sec">§4</span>篮球的「热手」</h3>
+<p>热手（hot hand）是球迷和球员普遍的感觉：一个人连进几球，手就「热」了，下一球更容易进。1985 年，心理学家 Gilovich、Vallone 和 Tversky 在《认知心理学》（Cognitive Psychology）发表研究，分析球员的投篮记录和大学球队的投篮实验，没找到这种效应，认为热手是人看错了随机序列。论文的副标题就是「论对随机序列的误解」，作者 §4 第一句的说法和它一样，正文没点名，书后注释列了这篇论文。这项研究后来怎样，见「今天怎么看」。</p>
+
+<h3><span class="sec">§4</span>高尔顿和「回归」</h3>
+<figure class="fig small"><img src="../assets/img/09a-galton.jpg" alt="一张老照片：一位秃顶、留着白色络腮胡的老人侧身朝右，穿深色西装，系圆点领结" loading="lazy">
+<figcaption>高尔顿，1890 年代的铂金照片。<span class="src">Eveleen Myers（née Tennant），公有领域，维基共享资源</span></figcaption></figure>
+<div class="who">
+  <div><b>Francis Galton</b><span class="en">1822–1911</span>英国博物学家、统计学家，达尔文的表亲，相关和回归这两个统计概念的开创者之一，也是优生学的创始人，后者今天备受批评。</div>
+</div>
+<p>1886 年他比较父母和成年子女的身高，发现特别高的父母，孩子平均没有那么高；特别矮的父母，孩子平均没有那么矮。他把这叫「向平庸回归」，今天叫回归平均。作者 §4 说的身高和狗的个头，就是这一类例子，但他没提高尔顿的名字。</p>
+
+<h3><span class="sec">§5</span>「宇宙主宰」和 1994 年的债市</h3>
+<figure class="fig small"><img src="../assets/img/09a-greenspan.jpg" alt="一位戴大框眼镜、头发稀疏的老人穿深色西装、系红色领带，侧身看向镜头，背后是深红色的幕布" loading="lazy">
+<figcaption>格林斯潘，2000 年 9 月在布拉格出席国际货币基金组织和世界银行的年会。<span class="src">International Monetary Fund，公有领域，维基共享资源</span></figcaption></figure>
+<div class="who">
+  <div><b>Alan Greenspan</b><span class="en">1926–2026</span>美国经济学家，1987 年到 2006 年任美联储主席。</div>
+</div>
+<p>「宇宙主宰」出自 Tom Wolfe 1987 年的小说《虚荣的篝火》，主人公是华尔街的债券交易员，暗自以「宇宙的主宰」自居，后来成了讥讽华尔街大人物的说法。1994 年 2 月 4 日，美联储五年来第一次加息，之后一年里又加了六次，把联邦基金利率从 3% 提到 6%。利率一涨，利息低的旧债券就没人要，价格下跌；押利率继续下降、又借钱放大赌注的交易员和基金损失惨重，加州橙县当年 12 月为此申请破产。作者说 A. 手下那批交易员就倒在这场债灾里。</p>
+
+<h3><span class="sec">§7</span>一月效应和离岸基金</h3>
+<p>一月效应是学者早有注意、1970 年代起反复研究的现象：美国股票（尤其是小公司的股票）在一月的平均涨幅高于其他月份。所以故事里第一封信说「这个月会涨」，收信人不当回事。离岸基金注册在开曼群岛这类海外地方，监管比本国宽松，钱汇出去以后很难追回，骗子爱用它。骗局本身的算法，模拟器的「起跑人数」一项就能演：一万个名字，每个月只留下收到正确预测的一半。</p>
+
+<h3><span class="sec">§8</span>逆向选择</h3>
+<p>经济学和保险业的说法：交易的一方比另一方更清楚底细时，主动来跟你做交易的，往往正是对你不利的那一批。保险是典型：最急着买健康险的，常常是最清楚自己身体有问题的人。经济学家 Akerlof 1970 年的《柠檬市场》用二手车讲这个道理（卖家知道车好不好，买家不知道），他因此在 2001 年和另外两人分享了诺贝尔经济学奖。作者 §8 把它用到找上门来的基金上。</p>
+
+<h2>原文里的词和句</h2>
+<p class="lede">读英文原文时值得停一下的词和句：交易员的行话、作者的反话和双关、熟词生义。灰色斜体是原句里连续的几个词，在英文电子书里搜它就能找到；标「每个字都认识」的，是每个词都眼熟、合起来意思却变了的，最容易读错。点「记下」收进词本。</p>
+<div class="entry"><div class="en">it is harder to fry an egg than buy and sell</div><div class="loc" data-p="5">… harder to fry an egg than …</div><div class="zh">煎个蛋都比买进卖出难</div><div class="note">章名就出自这句：学会下单买卖不算本事。作者在挖苦那位拿业绩当招牌的经理。</div></div>
+<div class="entry trap"><div class="en">who do you think you are</div><div class="loc" data-p="8">… Who do you think you are …</div><div class="zh">你凭什么（来对我说……）</div><div class="note">不是在问身份，是不服气的质问，意思是「你算老几」。</div></div>
+<div class="entry trap"><div class="en">a nobody</div><div class="loc" data-p="8">… man-make pure nobodies to laugh at …</div><div class="zh">（造出一些）纯粹的无名小卒</div><div class="note">nobody 作可数名词，是「无足轻重的人」。man-make 是作者临时造的动词：人工制造。</div></div>
+<div class="entry trap"><div class="en">by design</div><div class="loc" data-p="8">… they will be by design stripped …</div><div class="zh">按照设定、存心如此（毫无本事）</div><div class="note">by design 是「有意为之」，和 by accident 相对，不是「通过设计」。</div></div>
+<div class="entry"><div class="en">even a broken clock is right twice a day</div><div class="loc" data-p="9">… a broken clock is right twice …</div><div class="zh">停了的钟，一天也准两次</div><div class="note">英语俗语，说瞎蒙的人偶尔也会说中。</div></div>
+<div class="entry"><div class="en">a knife that cuts on both sides</div><div class="loc" data-p="9">… a knife that cuts on both sides …</div><div class="zh">两面都能伤人的刀</div><div class="note">英文更常说 a double-edged sword：既能帮你，也能伤你。</div></div>
+<div class="entry trap"><div class="en">good-bye and have a nice life</div><div class="loc" data-p="9">… good-bye and have a nice life …</div><div class="zh">再见，您走好（被踢出局）</div><div class="note">反话：表面是客气的祝福，意思是「你出局了，以后与我们无关」。</div></div>
+<div class="entry trap"><div class="en">the odds are stacked against someone</div><div class="loc" data-p="12">… the odds being stacked against him …</div><div class="zh">胜算对他不利</div><div class="note">stack the deck 是洗牌时做手脚，引申为局面一开始就偏向一方。不是「赔率堆起来」。</div></div>
+<div class="entry"><div class="en">revert to obscurity</div><div class="loc" data-p="18">… people in trading rapidly reverting to obscurity …</div><div class="zh">（很快）又回到默默无闻</div><div class="note">revert 和这一节讲的 reversion（回归）同根，读来正好暗合这一节的主题：明星交易员「回归」平庸。</div></div>
+<div class="entry trap"><div class="en">a large litter</div><div class="loc" data-p="18">… average-sized parents produce a large litter …</div><div class="zh">一窝生了很多只</div><div class="note">litter 在这里是动物的一窝幼崽，不是「垃圾」。large litter 说的是只数多，不是个头大。</div></div>
+<div class="entry trap"><div class="en">Master of the Universe</div><div class="loc" data-p="21">… a then Master-of-the-Universe type …</div><div class="zh">（当时）那种自以为呼风唤雨的华尔街大人物</div><div class="note">出自 Tom Wolfe 的小说《虚荣的篝火》，讥讽自命不凡的华尔街交易员。a then 是「当时的」。</div></div>
+<div class="entry"><div class="en">without a blink</div><div class="loc" data-p="22">… half my savings without a blink …</div><div class="zh">眼都不眨一下</div><div class="note">毫不犹豫。作者用这个夸张说法强调起跑人数少时纪录才有分量。</div></div>
+<div class="entry trap"><div class="en">go to the cemetery</div><div class="loc" data-p="28">… still ends up going to the cemetery …</div><div class="zh">（职业生涯）完蛋，被淘汰出局</div><div class="note">不是真的死了，是比喻：在这一行彻底出局。同一段后面说的就是职业生涯终结。</div></div>
+<div class="entry"><div class="en">stay in the game</div><div class="loc" data-p="28">… their odds of staying in the game …</div><div class="zh">留在场上，不被淘汰</div><div class="note">原指留在赛场上，这里是还能在这一行干下去。</div></div>
+<div class="entry"><div class="en">ferret out</div><div class="loc" data-p="31">… to ferret out the correlation between …</div><div class="zh">（仔细地）查出、揪出</div><div class="note">ferret 是雪貂，以前用来把兔子从洞里赶出来，所以 ferret out 是费力地搜出来。</div></div>
+<div class="entry trap"><div class="en">odds are (that)</div><div class="loc" data-p="31">… odds are that the results can …</div><div class="zh">多半、很可能（结果靠得住）</div><div class="note">odds are 是口语的「十有八九」，和赔率无关。这句说的是先定好检验什么，结果就可以认真对待。</div></div>
+<div class="entry trap"><div class="en">throw the computer at data</div><div class="loc" data-p="31">… when one throws the computer at data …</div><div class="zh">拿电脑去对着数据一通乱算</div><div class="note">throw X at a problem 是不加思考地把大量 X 砸到问题上。不是「把电脑扔向数据」。</div></div>
+
+<h2>译本勘误</h2>
+<p class="lede">对着译本读这一章时，下面这些地方会把人读歪。方框里是译本的原句，在译本电子书里搜它就能找到；灰色斜体是英文原文那一处。只收意思错了、反了、漏了的，措辞上的出入和台湾用语不收。全书的勘误汇总在<a href="../zh.html">译本勘误</a>。</p>
+<div class="zherr" data-p="4"><h4><span class="sec">§1</span>是「手艺胜过了材料」<span class="mark">误译</span></h4>
+<p class="loc">… materiam superabat opus comes to mind …</p>
+<p class="zhq"><span class="zhv">译本：「鬼斧神工超越作品」</span></p>
+<p>这半句拉丁文的意思是做工胜过了用料。作者借它说，卡诺瓦雕像好在手艺，不在大理石，这正是运气装不出来的那部分。「超越作品」说不通，读不出作者为什么在这里想起它。</p></div>
+<div class="zherr" data-p="18"><h4><span class="sec">§4</span>是「一窝生了很多只」<span class="mark">误译</span></h4>
+<p class="loc">… average-sized parents produce a large litter …</p>
+<p class="zhq"><span class="zhv">译本：「產下體型很大的小狗」</span></p>
+<p>large litter 是一窝的只数多，不是小狗个头大。原文的道理是：一窝里大小参差，其中个头大得离谱的，后代多半没那么大。读成普通父母生出大狗，下一句为什么要往回缩就接不上了。</p></div>
+<div class="zherr" data-p="18"><h4><span class="sec">§4</span>reversion 就是「回归」<span class="mark">术语</span></h4>
+<p class="loc">… for the large outliers is what …</p>
+<p class="zhq"><span class="zhv">译本：「我們在歷史上見過大離群值的這種「返祖」現象」</span></p>
+<p>reversion 和同一句的 regression 是一回事，高尔顿最早就用过这个词，指极端值往平均靠。「返祖」是另一个概念，指后代重新出现祖先的特征，读者会以为在讲遗传上的隔代相似。</p></div>
+<div class="zherr" data-p="21"><h4><span class="sec">§5</span>A. 是自命不凡的华尔街大人物<span class="mark">术语</span></h4>
+<p class="loc">… a then Master-of-the-Universe type …</p>
+<p class="zhq"><span class="zhv">译本：「幾年前，我對那時的「太空超人」甲說」</span></p>
+<p>Master of the Universe 是 Tom Wolfe 小说里华尔街交易员的自况，后来专门讥讽不可一世的交易员。「太空超人」读来像个卡通外号，读不出 A. 是一位正得意的交易部门主管，下文他为什么被这句话激怒也就淡了。</p></div>
+<div class="zherr" data-p="29"><h4><span class="sec">§10</span>paradox 是「悖论」，不是「诡辩」<span class="mark">术语</span></h4>
+<p class="loc">… what is called the birthday paradox …</p>
+<p class="zhq"><span class="zhv">译本：「所謂的生日詭辯」</span></p>
+<p>paradox 指看似荒谬、其实成立的结论；作者紧接着说它算不上悖论，只是直觉上的怪。「詭辯」是故意歪曲的狡辩，读来像有人在耍花招。中文通行的叫法是「生日问题」或「生日悖论」，查资料用这两个词。</p></div>
+<div class="zherr" data-p="30"><h4><span class="sec">§11</span>偶遇「一点也不稀奇」<span class="mark">误译</span></h4>
+<p class="loc">… these are not improbable occurrences …</p>
+<p class="zhq"><span class="zhv">译本：「但這種事情並非沒有發生的可能」</span></p>
+<p>not improbable 是并不罕见、相当可能发生。作者的意思是这种偶遇其实很常见；译成「并非不可能」，口气弱了好几级，下文说它的机会比指定的那种偶遇高几千倍，就接不上了。</p></div>
+<div class="zherr" data-p="31"><h4><span class="sec">§11</span>事先定好的检验「靠得住」<span class="mark turn">译反</span></h4>
+<p class="loc">… odds are that the results can …</p>
+<p class="zhq"><span class="zhv">译本：「結果很可能讓人信以為真」</span></p>
+<p>原文是：先定好要检验哪一种关系再看数据，这样的结果多半可以认真对待。「信以为真」是把假的当成真的，意思正好反了。这一段对比的是两种做法：事先指定的检验靠得住，漫无目的地找才会冒出假关联。</p></div>
+
+<div class="gate"></div>
+
+<h2>读完：作者到底说了什么</h2>
+<p class="lede">读完这一章再看。下面是作者在这一页几节里的主张，由本站按主张之间的逻辑重新组织，不按原书的顺序；每条后面是节号，拿不准就回书里那一节再读一遍。</p>
+<div class="claims">
+  <div class="claim"><h4>纯运气就能造出好纪录，而且能算出有多少</h4><p>他用蒙特卡洛（他说抛硬币、做代数也行）造一万个明知没本事的经理：公平的游戏，五年后剩约 313 个五连胜；期望每年亏 1000 美元的罐子，也剩 184 个，不到 2%。他说全是庸才的一群人，也会产出少数几份漂亮的纪录，波动反而帮了坏决策。</p><span class="sec" data-p="8 9 10 12 13 14">§2 §3</span></div>
+  <div class="claim"><h4>纪录有多少分量，要看它是从多少人里冒出来的</h4><p>他说一个人过去赚过钱，这个信息单看本身既无意义也不相干；要知道有多少人试过又失败了。好纪录的多少，更取决于入行的人数和波动，而不是每个人的胜算。起跑十个人，他愿把一半积蓄交给胜出者；起跑一万人，他不看结果。他也留了余地：有些时候纪录可以信，只是不多。</p><span class="sec" data-p="5 15 22">§1 §3 §5</span></div>
+  <div class="claim"><h4>极端的表现不成比例地来自运气，时间会把幸运者拉回去</h4><p>他说偏离常态越远，越可能是运气而非本事，并提醒不是所有偏离都这样，只是不成比例地多。幸存者往后任何一段时间都只能预期打平，不比早早出局的人强，他把这叫遍历性。佐证是他的经历：朝他扔打火机的 A. 手下那批交易员，1994 年债灾后几年，他几乎找不到还在交易的。</p><span class="sec" data-p="18 19 20 21">§4 §5</span></div>
+  <div class="claim"><h4>找上门的纪录要审得更严，有本事的人反倒可能被淘汰</h4><p>他说主动来推销的投资，本身就被运气筛过，评估它要比你自己去找的更严，这是逆向选择；神秘荐股信是人为造出幸存者的骗局。反过来，胜算很大的人也可能两年不顺就出局，于是人们去冒「大多时候不错、却有爆仓风险」的黑天鹅风险求存，像 John 和 Carlos。</p><span class="sec" data-p="26 27 28">§7 §8 §9</span></div>
+  <div class="claim"><h4>不指定要找什么，巧合就一定会冒出来</h4><p>23 个人里有两人同一天生日的机会约一半，因为任何一对都算；偶遇熟人也一样，我们算的是和任何熟人在任何地方碰面，他估计也许（perhaps）比指定的那一种高几千倍。事先定好检验什么，结果多半可以认真对待；拿电脑漫无目的地找任何关系，他说一定会冒出假关联。</p><span class="sec" data-p="29 30 31">§10 §11</span></div>
+</div>
+<p class="sowhat"><b>合起来：</b>看到一份漂亮的纪录，先别问他有多聪明，先问有多少人和他一起起跑、输掉的人去了哪里，再看往后几年他会不会回到平均。作者没说业绩全是运气，他说的是：光凭纪录，你分不出来。</p>
+
+<h2>值得停下来的句子</h2>
+<blockquote class="quote">The information that a person derived some profits in the past, just by itself, is neither meaningful nor relevant.<cite>— §5。本站译：一个人过去赚过一些钱，这个信息单看本身，既没有意义，也不相干。</cite></blockquote>
+<p>下判断的一句，口气很满，但关键在 just by itself：他不是说纪录毫无用处，而是说光有纪录、不知道起跑人数时没有用。下一句他就补上了要知道什么。<span class="zhv">译本：「單單它本身既無意義，也無關緊要」</span>把限定词留住了。容易被误读成「过去的业绩全是噪音」，作者在 §1 自己说过，有些时候纪录可以信。</p>
+<blockquote class="quote">Remember that nobody accepts randomness in his own success, only his failure.<cite>— §5。本站译：记住，没人承认自己的成功里有运气，只在失败时才承认。</cite></blockquote>
+<p>这是作者从打火机事件里得出的人性观察，用的是 nobody 这种全称的说法，依据是他自己的经历，不是实验。心理学里有个相近的概念叫自利性归因：把成功归给自己，把失败推给外界。读的时候留意它和这一章的算术不是一回事：硬币经理证明的是纪录分不出运气，这一句讲的是人为什么不愿承认。</p>
+
+<h2>今天怎么看</h2>
+<p class="lede">这本书 2004 年出第二版，书里讲的多是 1980–2003 年的事。下面挑出这一页里能被后来的研究或事情检验的说法，分「书里 / 当时 / 今天」几栏，并给一个结论。结论判的是标题里「书里的说法：」后面那一句。全书的这一节汇总在<a href="../today.html">今天怎么看</a>。</p>
+<ul class="verdicts"><li><span class="v ok">成立</span>后来的研究或事情支持这句话。</li><li><span class="v mid">部分成立</span>大方向对，细节或适用范围要改。</li><li><span class="v bad">被改写</span>后来的研究推翻了它、换了一种说法，或者情况变了。</li><li><span class="v dis">有争议</span>至今没有定论，两边各有代表性的研究或证据。</li></ul>
+<div class="today" data-verdict="成立"><h4>书里的说法：一个经理过去赚过钱，对判断他将来能不能赚钱帮助不大</h4><dl>
+  <dt>书里</dt><dd>作者说经理过去赚钱这件事也许有点关系，但关系不大；幸存者往后只能预期打平。<span class="at" data-p="5 20">§1 §5</span></dd>
+  <dt>当时</dt><dd>Carhart 1997 年在《金融杂志》发表的研究用剔除了幸存者偏差的样本，发现基金业绩的持续性几乎全能用股票的共同因素和费用解释；唯一明显延续的，是最差的基金继续差。</dd>
+  <dt>今天</dt><dd>S&amp;P 道琼斯指数每年发布的美国「持续性记分卡」反复发现，排在前四分之一的主动股票基金，几年后还留在前四分之一的很少；连续五年留在前一半的比例，常常比纯靠运气预期的还低。Fama 和 French 2010 年用模拟把运气和本事分开：基金这么多，不少极端业绩靠运气就会出现，扣掉费用后，能证明本事足以覆盖成本的基金很少。<span class="asof">核对于 2026-10。依据：Carhart, Journal of Finance 1997；S&amp;P DJI U.S. Persistence Scorecard（2024、2025 年末版）；Fama &amp; French, Journal of Finance 2010。</span></dd>
+  <dt>另一边</dt><dd>Harvey 和 Liu 2022 年改进了 Fama 和 French 的模拟方法，算出的跑赢基金数量和他们很不一样。争的是「有本事的有多少」，不是「纪录能不能直接信」。</dd>
+</dl></div>
+<div class="today" data-verdict="被改写"><h4>书里的说法：篮球的「热手」是人看错了随机序列</h4><dl>
+  <dt>书里</dt><dd>作者把篮球热手当作误读随机序列的又一个例子：球员一多，总有人会有一段长得出奇的好手气。<span class="at" data-p="16">§4</span></dd>
+  <dt>当时</dt><dd>Gilovich、Vallone 和 Tversky 1985 年的研究没找到热手，「热手谬误」成了行为经济学最常被引用的例子之一，Kahneman 等人也这样讲。</dd>
+  <dt>今天</dt><dd>Miller 和 Sanjurjo 2018 年在《计量经济学》（Econometrica）发表论文，指出原研究的算法有一个选择偏差：在有限长的投篮序列里专挑「连进之后」的那几投算命中率，即使完全随机，算出来也会偏低。改正这个偏差后，原研究的结论反了过来，数据里看得到热手。热手到底有多大，还在讨论。<span class="asof">核对于 2026-10。依据：Gilovich, Vallone &amp; Tversky, Cognitive Psychology 1985；Miller &amp; Sanjurjo, Econometrica 2018。</span></dd>
+</dl></div>
+
+<h2>本站怎么看</h2>
+<p class="lede">读完作者的主张，再看它站不站得住。每一块摆出三样：主流怎么看，作者怎么看，本站的评论。最后一句是本站对这一页的总体判断。</p>
+<div class="views"><h4>一万个硬币经理证明了什么</h4>
+<p><b>主流看法：</b>金融学界普遍承认，凭几年业绩很难分辨本事和运气：基金收益的波动大，样本又短。Fama 和 French 2010 年、Barras、Scaillet 和 Wermers 2010 年都拿「纯运气会造出多少好业绩」当对照，检验真实的基金；后者估计，有本事（真有正超额收益）的基金在 1996 年以前还占一定比例，到 2006 年几乎找不到了。</p>
+<p><b>作者的看法：</b>好纪录单看本身既无意义也不相干，要知道起跑人数；起跑一万人，他就不看结果。<span class="at" data-p="15 22">§3 §5</span></p>
+<p class="ours"><b>本站的评论：</b>这个思想实验证明的是「光凭纪录分不出」，不是「真实的经理都是硬币」。这一点很硬，后来二十年的基金数据也大体站在他这边。但有一处说过头：起跑十个人时，纯运气冒出一个五连胜的机会也有 27%，「眼都不眨交出一半积蓄」是修辞。另外，纪录之外还能看别的：他靠什么赚钱、冒什么风险。作者自己在 §5 也说，见面要先问对方怎么交易。</p></div>
+<div class="views"><h4>这里的「遍历性」和后来的遍历性</h4>
+<p><b>主流看法：</b>在物理和概率里，遍历指时间平均等于总体平均。物理学家 Ole Peters 2019 年在《自然·物理》发文，主张经济学长期默认了遍历，把期望值当成一个人长期会得到的结果；这套「遍历经济学」很受关注，也有不少经济学家批评它新意不大、可检验的推论少。</p>
+<p><b>作者的看法：</b>遍历性是时间会消掉随机性的烦人效果，幸存者往后只能打平；A. 那批交易员几年后几乎都不见了，他也叫遍历性。<span class="at" data-p="20 21">§5</span></p>
+<p class="ours"><b>本站的评论：</b>这里说的其实是各年独立加回归平均：过去的运气不影响将来，所以幸存者往后只能打平，模拟器演的就是这个。作者在《非对称风险》里把重点换到了「不遍历」：一个人输光就再没有下一局，群体的平均代表不了个人的命运。按这个后来的说法，A. 手下的交易员爆仓离场，恰恰是不遍历的典型。读这本书时，把这里的遍历性当成「长期看，运气会被冲淡」就够了，别和后来的定义混在一起。</p></div>
+<div class="views"><h4>热手、连胜和回归平均是不是一回事</h4>
+<p><b>主流看法：</b>回归平均来自高尔顿的身高研究：两次测量的相关不完全时，第一次极端的，第二次平均会往中间靠。热手问的是另一件事：这一投的结果和上一投有没有关系。前者讲挑出极端值以后会怎样，后者讲序列是否独立。</p>
+<p><b>作者的看法：</b>热手是误读随机序列，是回归平均的表现；偏离越大越可能来自运气，但不是所有偏离都这样，只是不成比例地多。<span class="at" data-p="16 18 19">§4</span></p>
+<p class="ours"><b>本站的评论：</b>§4 把三件事拧在了一起：热手（序列独不独立）、很长的连胜（人数多了必然出现）、回归平均（极端值下一次往回靠）。核心句「偏离越大，运气成分越可能越大」在「成绩等于本事加运气」的模型里是对的，统计上的收缩估计就是这么做的，很实用。但说热手「是回归平均的表现」并不准确，而热手本身也被后来的研究改写了。</p></div>
+<p class="verdict"><b>本站的总体看法：</b>一万个硬币经理是这一章最干净、最值得带走的论证：光凭纪录分不出本事和运气，先问起跑有多少人。后来二十年的基金数据大体站在作者这边。要打折扣的是周边的说法：热手的例子被改写了，这里的「遍历性」是他自己的松散用法，十个人、五百封信这些数是修辞和举例。</p>
+
+<h2>检查一下理解</h2>
+<p class="lede">先在心里答，再点开。答错的那题，回书里把对应那一节再读一遍。</p>
+<details class="check"><summary>1.（§2）一万个经理五年后剩下的 313 人，按设定有多少本事？如果有人替其中一位写传记，会写些什么？</summary><p>一点也没有，每人每年赚钱的机会始终是一半。作者说分析师和传记作者会从他的风格、童年、父母的榜样里找原因；他下一年不再出色，又会怪他工作松懈、生活挥霍。真相只是运气用完了。</p></details>
+<details class="check"><summary>2.（§3）一群期望每年亏 1000 美元的经理，为什么还能产出漂亮的纪录？</summary><p>期望是负的，但每年的结果有波动，赚赔各 1 万美元，总有人连着赚。五年后剩下 184 人，不到 2%。作者说波动反而帮了坏的投资决策。</p></details>
+<details class="check"><summary>3.（§3、§5）甲市场 100 人入行，乙市场 10000 人入行，人人抛硬币、输一年就出局。五年后两边平均各有多少人五连胜？这说明什么？</summary><p>甲约 3 人，乙约 313 人。乙的「明星」多一百倍，只因入行的人多一百倍，不因为谁更有本事。所以作者说，看到一份好纪录，要先知道它是从多大的人群里冒出来的。</p></details>
+<details class="check"><summary>4.（§5）五连胜的幸存者再干五年、不再淘汰，平均每年能赚多少？</summary><p>0 美元。每年仍是一半赚一半赔，过去的运气不影响将来，作者说他们不会比早早出局的人强。他在这里把这叫遍历性。</p></details>
+<details class="check"><summary>5.（§7）骗子从一万个名字开始，每月把看涨、看跌的信各寄给一半人，只给猜对的那一半继续寄。寄完第四封、第五封后，各剩多少人收到的全对？</summary><p>第四封后 625 人，第五封后约 313 人。书里「缩到 500 人、其中 200 人上钩」是举例的整数。收信人看到的是一连串全对的预测，看不到另外几千人收到的错信。</p></details>
+<details class="check"><summary>6.（§8）一只基金在电视上打广告，说过去三年跑赢大盘。为什么要比你自己从一万只基金里挑出来的更警惕？</summary><p>跑输的基金不会来打广告，找上门的那一只已经被运气筛过一遍。作者说这是逆向选择：自己去一万个经理里找，碰上假幸存者的机会约 2%；待在家里等门铃响，来推销的是假幸存者的可能接近百分之百。</p></details>
+<details class="check"><summary>7.（§10）你们部门 40 个人里有两人同一天生日，奇怪吗？</summary><p>不奇怪。40 个人里至少两人同一天生日的概率约 89%，因为任何一对都算，40 人能配出 780 对。要是指定「有人和我同一天」，机会才约 10%。</p></details>
+<p>用一句话说这一页：</p>
+<textarea class="note" data-key="09a-oneline" rows="2" placeholder="比如：……"></textarea>
+<div class="ponder"><p>想一想：你挑过的东西里（一本畅销书、一个热门的开源库、一位博主推荐的理财产品、一个「从不出错」的同事），有没有哪一样，你只看到了它的好纪录，却不知道有多少同类没让你看见？</p>
+<textarea class="note" data-key="09a-ponder" rows="3"></textarea></div>
+
+<h2>精彩回顾</h2>
+<p class="lede">读过又忘了，从这里想起来。挑的是这一页最值得记住的故事和说法，不按原书顺序；每条后面是节号，想细看就回书里那一节。全书各页的这一节都收在<a href="../recap.html">全书回顾</a>。</p>
+<p class="recall-line"><b>一句话：</b>一份好纪录，先问它是从多少人里挑出来的：一万个抛硬币的人，五年后也有三百多个常胜将军。</p>
+<div class="recall">
+  <div class="item"><b>一万个抛硬币的经理</b><p>每人每年赚赔 1 万美元的机会各半，输一年就出局。五年后还剩 313 人，个个五连胜，按设计没有一个有本事。</p><span class="sec">§2</span></div>
+  <div class="item"><b>十个人还是一万个人</b><p>作者说，起跑只有十个人，他愿把一半积蓄交给胜出的那位；起跑一万人，他就不看结果。纪录的分量，取决于它是从多少人里冒出来的。</p><span class="sec">§5</span></div>
+  <div class="item"><b>飞来的打火机</b><p>作者对一位华尔街大人物说纪录没他想的那么要紧，对方朝他扔了打火机。那批「了不起的交易员」后来倒在 1994 年的债市里。</p><span class="sec">§5</span></div>
+  <div class="item"><b>神秘的荐股信</b><p>骗子把一万个名字分两半，分别寄看涨、看跌的信，只给猜对的那一半继续寄。几轮下来，剩下的人收到的全对，其中不少人就把积蓄交给了他。</p><span class="sec">§7</span></div>
+  <div class="item"><b>23 个人的生日</b><p>房间里 23 个人，有两人同一天生日的机会约一半，因为不指定是谁，任何一对都算。</p><span class="sec">§10</span></div>
+</div>
+
+</main>
+<script>
+(() => {
+  // 一万个抛硬币的基金经理：起跑 n 人，每人每年以概率 p 赚 1 万美元、否则赔 1 万美元，各年独立，人人胜算相同（p = 50% 时谁都没有本事）。
+  // 考核 k 年，按规则淘汰（输一年 / 累计输两年 / 连输两年）；之后再看 m 年，不再淘汰。
+  // 统计栏的数精确算：存活概率和幸存者过去的盈亏用动态规划（状态：赚的年数、上一年是否输），此后 m 年按二项分布。
+  // 横条、名单和折线是「这一次」：带种子的伪随机数逐人逐年抛，「重置」回到种子 1。
+  const root = document.getElementById("sim-09a");
+  if (!root) return;
+  const { h } = window.FB;
+  const NS = "http://www.w3.org/2000/svg";
+  const AMT = 10000;
+  const NN = [10, 100, 1000, 10000, 100000], PS = [40, 45, 50, 55, 60, 70], KS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], MS = [0, 5, 10, 20];
+  const RULES = [["one", "输一年就出局（书里的规则）"], ["cum2", "累计输两年出局"], ["con2", "连输两年出局"]];
+  const DEF = { n: 10000, p: 50, k: 5, rule: "one", m: 0, seed: 1 };
+  const st = Object.assign({}, DEF);
+
+  const MINUS = "−";
+  const int = (x) => Math.round(x).toLocaleString("en-US");
+  const money = (x) => { const r = Math.round(x); return r > 0 ? "+" + r.toLocaleString("en-US") : r < 0 ? MINUS + Math.abs(r).toLocaleString("en-US") : "0"; };
+  const ex = (x) => (x >= 1000 ? int(x) : x > 0 && x < 0.05 ? "不到 0.1" : (Math.round(x * 10) / 10).toLocaleString("en-US", { maximumFractionDigits: 1 }));
+  const pct = (x, sure) => (x <= 0 ? "0%" : x < 0.0005 ? "不到 0.1%" : x >= 1 && sure ? "100%" : x > 0.9995 ? "超过 99.9%" : (Math.round(x * 1000) / 10).toFixed(1) + "%");
+  const wan = (x) => { const r = Math.round(x / 1000) / 10; return (r > 0 ? "+" : r < 0 ? MINUS : "") + Math.abs(r).toLocaleString("en-US", { maximumFractionDigits: 1 }) + " 万"; };
+  const dies = (L, last) => (st.rule === "one" ? L >= 1 : st.rule === "cum2" ? L >= 2 : last === 1 && L >= 1);
+
+  function rng(seed) { let a = seed * 2654435761 >>> 0; return () => { a = (a + 0x6D2B79F5) >>> 0; let t = a; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+  function binom(m, p) { const out = []; let c = 1; for (let w = 0; w <= m; w++) { if (w > 0) c = (c * (m - w + 1)) / w; out.push(c * Math.pow(p, w) * Math.pow(1 - p, m - w)); } return out; }
+
+  // 精确：考核 k 年后的存活概率、幸存者考核期赚的年数的期望；此后 m 年的期望和净赚的概率
+  function exact() {
+    const p = st.p / 100, q = 1 - p, k = st.k, m = st.m;
+    let S = new Map([[0, 1]]);   // 键 = 赚的年数 * 2 + 上一年是否输
+    for (let j = 0; j < k; j++) {
+      const T = new Map();
+      for (const [key, pr] of S) {
+        const w = key >> 1, last = key & 1, L = j - w;
+        T.set((w + 1) << 1, (T.get((w + 1) << 1) || 0) + pr * p);
+        if (!dies(L + 1, last)) T.set((w << 1) | 1, (T.get((w << 1) | 1) || 0) + pr * q);
+      }
+      S = T;
+    }
+    let ps = 0, ew = 0;
+    for (const [key, pr] of S) { ps += pr; ew += pr * (key >> 1); }
+    ew = ps > 0 ? ew / ps : 0;
+    const past = (2 * ew - k) * AMT, fut = (2 * p - 1) * AMT;
+    const bm = binom(m, p);
+    let pos = 0, even = 0;
+    for (let w = 0; w <= m; w++) { if (2 * w > m) pos += bm[w]; else if (2 * w === m) even += bm[w]; }
+    return { ps, exp: st.n * ps, one: ps > 0 ? 1 - Math.exp(st.n * Math.log1p(-ps)) : 0, fut, pos, even, whole: (past + m * fut) / (k + m) };
+  }
+
+  // 这一次：逐人逐年抛
+  function run() {
+    const r = rng(st.seed), p = st.p / 100, k = st.k, m = st.m;
+    const alive = new Array(k + 1).fill(0); alive[0] = st.n;
+    const surv = [];
+    for (let i = 0; i < st.n; i++) {
+      let L = 0, last = 0, ok = true; const rec = [];
+      for (let j = 0; j < k; j++) {
+        const win = r() < p;
+        rec.push(win);
+        if (win) last = 0; else { L += 1; if (dies(L, last)) { ok = false; break; } last = 1; }
+        alive[j + 1] += 1;
+      }
+      if (ok) surv.push({ id: i + 1, rec });
+    }
+    const path = new Array(k + m + 1).fill(0);
+    let fsum = 0, fpos = 0, next = 0, whole = 0;
+    for (const s of surv) {
+      for (let j = 0; j < m; j++) s.rec.push(r() < p);
+      let c = 0;
+      s.rec.forEach((w, t) => { c += w ? AMT : -AMT; path[t + 1] += c; });
+      const f = s.rec.slice(k).reduce((a, w) => a + (w ? AMT : -AMT), 0);
+      fsum += f; if (f > 0) fpos += 1; if (m > 0 && s.rec[k]) next += 1; whole += c / (k + m);
+    }
+    const ns = surv.length;
+    return { alive, surv, ns, path: path.map((v) => (ns ? v / ns : 0)), fut: ns && m ? fsum / ns / m : 0, fpos: ns ? fpos / ns : 0, next: ns ? next / ns : 0, whole: ns ? whole / ns : 0 };
+  }
+
+  const el = (tag, attrs, style) => { const e = document.createElementNS(NS, tag); for (const [a, v] of Object.entries(attrs)) e.setAttribute(a, v); if (style) Object.assign(e.style, style); return e; };
+  const txt = (x, y, s, anchor, muted) => { const t = el("text", { x, y, "text-anchor": anchor || "start", "font-size": 13 }, { fill: muted ? "var(--muted)" : "var(--fg)" }); t.textContent = s; return t; };
+
+  const sel = (label, list, key) => {
+    const s = h("select", { "aria-label": label, onchange: () => { st[key] = typeof DEF[key] === "number" ? Number(s.value) : s.value; draw(); } }, ...list.map(([v, t]) => h("option", { value: String(v) }, t)));
+    return [h("label", {}, label, s), s];
+  };
+  const [l1, s1] = sel("起跑人数", NN.map((v) => [v, v.toLocaleString("en-US") + " 人"]), "n");
+  const [l2, s2] = sel("每年赚钱的概率", PS.map((v) => [v, v + "%"]), "p");
+  const [l3, s3] = sel("淘汰期（年）", KS.map((v) => [v, v + " 年"]), "k");
+  const [l4, s4] = sel("淘汰规则", RULES, "rule");
+  const [l5, s5] = sel("淘汰期后再看几年", MS.map((v) => [v, v ? v + " 年" : "不看"]), "m");
+  const again = h("button", { onclick: () => { st.seed += 1; draw(); } }, "重新跑一次");
+  const reset = h("button", { onclick: () => { Object.assign(st, DEF); draw(); } }, "重置");
+  const stage = h("div", { class: "stage" });
+  const narrate = h("div", { class: "narrate" });
+  const stats = h("div", { class: "stats" });
+  const body = root.querySelector(".sim-body");
+  body.innerHTML = "";
+  body.append(h("div", { class: "controls" }, l1, l2, l3, l4, l5, again, reset), stage, narrate, stats);
+
+  function bars(alive) {
+    const k = alive.length - 1, row = 22, H = row * (k + 1) + 8, X0 = 70, W = 200;
+    const g = el("svg", { viewBox: `0 0 360 ${H}`, class: "bars", role: "img", "aria-label": `这一次：起跑 ${int(alive[0])} 人，第 ${k} 年后剩 ${int(alive[k])} 人` });
+    alive.forEach((c, j) => {
+      const y = 4 + j * row;
+      g.append(txt(4, y + 15, j === 0 ? "起跑" : `第 ${j} 年后`, "start", true));
+      const w = c > 0 ? Math.max(1.5, (W * c) / alive[0]) : 0;
+      if (w) g.append(el("rect", { x: X0, y: y + 3, width: w.toFixed(1), height: row - 8, rx: 2 }, { fill: j === k ? "var(--accent)" : "var(--accent-soft)", stroke: "var(--accent)", "stroke-width": "1" }));
+      g.append(txt(356, y + 15, int(c) + " 人", "end"));
+    });
+    return g;
+  }
+  function chart(path) {
+    const k = st.k, n = path.length - 1, W = 360, H = 170, L = 58, R = 10, T = 14, B = 28;
+    const lo = Math.min(0, ...path), hi = Math.max(0, ...path), span = hi - lo || 1;
+    const X = (i) => L + ((W - L - R) * i) / n, Y = (v) => T + ((H - T - B) * (hi - v)) / span;
+    const g = el("svg", { viewBox: `0 0 ${W} ${H}`, class: "path", role: "img", "aria-label": `幸存者平均累计盈亏：第 ${k} 年 ${wan(path[k])} 美元，第 ${n} 年 ${wan(path[n])} 美元` });
+    g.append(el("line", { x1: L, x2: W - R, y1: Y(0), y2: Y(0), "stroke-dasharray": "4 4" }, { stroke: "var(--border)" }));
+    g.append(el("line", { x1: X(k), x2: X(k), y1: T, y2: H - B, "stroke-dasharray": "3 3" }, { stroke: "var(--muted)" }));
+    g.append(txt(X(k) + 4, H - B - 6, "考核结束", "start", true));
+    g.append(txt(L - 6, Y(0) + 4, "0", "end", true));
+    if (hi > 0) g.append(txt(L - 6, Y(hi) + 4, wan(hi), "end", true));
+    if (lo < 0) g.append(txt(L - 6, Y(lo) + 4, wan(lo), "end", true));
+    g.append(el("polyline", { points: path.map((v, i) => `${X(i).toFixed(1)},${Y(v).toFixed(1)}`).join(" "), fill: "none", "stroke-width": 2 }, { stroke: "var(--accent)" }));
+    g.append(txt(L, H - 8, "起跑", "start", true));
+    g.append(txt(W - R, H - 8, `第 ${n} 年`, "end", true));
+    return g;
+  }
+  function roster(res) {
+    const ul = h("ul", { class: "roster" });
+    for (const s of res.surv.slice(0, 5)) {
+      const li = h("li", {}, `第 ${s.id.toLocaleString("en-US")} 号：`);
+      s.rec.forEach((w, t) => {
+        if (t === st.k) li.append(h("span", { class: "sep" }, "｜"));
+        li.append(h("span", { class: w ? "yw" : "yl" }, w ? "赚" : "赔"));
+      });
+      const tot = s.rec.reduce((a, w) => a + (w ? AMT : -AMT), 0);
+      li.append(h("span", { class: "tot" }, `合计 ${wan(tot)} 美元`));
+      ul.append(li);
+    }
+    return ul;
+  }
+
+  function draw() {
+    s1.value = String(st.n); s2.value = String(st.p); s3.value = String(st.k); s4.value = st.rule; s5.value = String(st.m);
+    const e = exact(), res = run(), k = st.k, m = st.m;
+    stage.innerHTML = "";
+    stage.append(h("p", { class: "cap" }, `这一次：每年年底还留在场上的人数（深色是第 ${k} 年后的幸存者）`), bars(res.alive));
+    if (res.ns) {
+      stage.append(h("p", { class: "cap" }, `前几位幸存者的逐年纪录（绿色赚、红色赔${m ? "，竖线后是考核结束以后" : ""}）`), roster(res));
+      if (m) stage.append(h("p", { class: "cap" }, "幸存者平均累计赚了多少（美元）"), chart(res.path));
+    } else stage.append(h("p", { class: "cap" }, "这一次一个都没剩下，点「重新跑一次」再试。"));
+    const rname = RULES.find((x) => x[0] === st.rule)[1].replace("（书里的规则）", "");
+    let s = `起跑 ${int(st.n)} 人，每人每年赚 1 万美元的机会 ${st.p}%，赔 1 万美元的机会 ${100 - st.p}%，${st.p === 50 ? "谁都没有本事" : st.p < 50 ? "人人都期望亏钱" : "人人都有一点本事"}。考核 ${k} 年、${rname}：按概率算平均剩 ${ex(e.exp)} 人，这一次剩 ${int(res.ns)} 人。`;
+    if (m && res.ns) s += `此后 ${m} 年不再淘汰：这一次幸存者平均每年 ${money(res.fut)} 美元，下一年赚钱的占 ${pct(res.next)}，${m} 年合起来净赚的占 ${pct(res.fpos)}，整段 ${k + m} 年平均每年 ${money(res.whole)} 美元。`;
+    narrate.textContent = s;
+    stats.innerHTML = "";
+    const box = (v, l) => h("div", { class: "stat" }, h("div", { class: "v" }, v), h("div", { class: "l" }, l));
+    stats.append(box(ex(e.exp), "按概率算，平均会剩（人）"), box(int(res.ns), "这一次实际剩下（人）"), box(pct(e.ps, true), "平均会剩的占起跑的"), box(pct(e.one, e.ps >= 1), "至少冒出一个的机会"));
+    if (m) stats.append(box(money(e.fut), "幸存者此后平均每年（美元）"), box(pct(e.pos), `此后 ${m} 年合起来净赚的幸存者`), box(money(e.whole), `整段 ${k + m} 年平均每年（美元）`));
+  }
+  draw();
+})();
+</script>
+</body>
+</html>

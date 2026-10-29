@@ -1,0 +1,515 @@
+/* Fooled by Randomness · 导读：共享样式。照 Impro 导读复制（它照 Uncontrolled、The Selfish Gene 一路改来）。末尾是本站加的组件：读前 / 读后分界、译本章名、各部的章。 */
+:root {
+  --bg: #f7f6f2;
+  --surface: #ffffff;
+  --surface-2: #f0eee8;
+  --fg: #1d1d1f;
+  --muted: #62625e;
+  --faint: #9a9892;
+  --border: #dedbd2;
+  --accent: #2f5bd3;
+  --accent-soft: #e6ecfb;
+  --ok: #1f8a4c;
+  --ok-soft: #e3f4ea;
+  --bad: #c2362b;
+  --bad-soft: #fbe6e3;
+  --warn: #b7791f;
+  --warn-soft: #fcf1dc;
+  --code-bg: #f3f1ea;
+  --on-accent: #ffffff;
+  /* 进程/线程/实体配色：模拟器里 A、B、C… 一律用 --c1..--c8 */
+  --c1: #3b6fe0; --c2: #e0673b; --c3: #2f9e6a; --c4: #a855c9;
+  --c5: #d6a21e; --c6: #1ca3b8; --c7: #d94f8a; --c8: #6b7280;
+  --part0: #6b7280; --part1: #3b6fe0; --part2: #e0673b; --part3: #2f9e6a; --part4: #a855c9; --part5: #b7791f;
+  /* 代码高亮 */
+  --tk-k: #a626a4; --tk-t: #0e7490; --tk-s: #2f8132; --tk-c: #8a8780; --tk-n: #b45309; --tk-p: #9d4edd;
+  --radius: 10px;
+  --shadow: 0 1px 2px rgba(0,0,0,.04), 0 2px 8px rgba(0,0,0,.04);
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+  --mono: "JetBrains Mono", "Cascadia Code", "SF Mono", Consolas, "Noto Sans Mono CJK SC", monospace;
+  color-scheme: light;
+}
+:root[data-theme="dark"] {
+  --bg: #16171a; --surface: #1f2024; --surface-2: #28292e; --fg: #e8e6e1; --muted: #a3a19b; --faint: #6d6b66;
+  --border: #34353b; --accent: #7aa2ff; --accent-soft: #232c45; --ok: #4cc27f; --ok-soft: #1b3326;
+  --bad: #f07167; --bad-soft: #3a2220; --warn: #c48a18; --warn-soft: #3a2f18; --code-bg: #1a1b1f; --on-accent: #10131a;
+  /* 实体色既当文字色（在深色底上）又当色块底色（上面写白字）：亮度取中间值，两种用法对比度都 ≥ 3 */
+  --c1: #6590ff; --c2: #ff6021; --c3: #33a870; --c4: #c075e3; --c5: #bd8c0f; --c6: #25a2b4; --c7: #f0639c; --c8: #8c95a2;
+  --part1: #6f97ff; --part2: #ff8a5c; --part3: #4cc98d; --part4: #c98ae6; --part5: #d9a441;
+  --tk-k: #d58fe0; --tk-t: #5cc6d6; --tk-s: #8fcf7f; --tk-c: #858279; --tk-n: #e7a65a; --tk-p: #c39cf0;
+  --shadow: 0 1px 2px rgba(0,0,0,.3);
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #16171a; --surface: #1f2024; --surface-2: #28292e; --fg: #e8e6e1; --muted: #a3a19b; --faint: #6d6b66;
+    --border: #34353b; --accent: #7aa2ff; --accent-soft: #232c45; --ok: #4cc27f; --ok-soft: #1b3326;
+    --bad: #f07167; --bad-soft: #3a2220; --warn: #c48a18; --warn-soft: #3a2f18; --code-bg: #1a1b1f; --on-accent: #10131a;
+    --c1: #6590ff; --c2: #ff6021; --c3: #33a870; --c4: #c075e3; --c5: #bd8c0f; --c6: #25a2b4; --c7: #f0639c; --c8: #8c95a2;
+    --part1: #6f97ff; --part2: #ff8a5c; --part3: #4cc98d; --part4: #c98ae6; --part5: #d9a441;
+  --tk-k: #d58fe0; --tk-t: #5cc6d6; --tk-s: #8fcf7f; --tk-c: #858279; --tk-n: #e7a65a; --tk-p: #c39cf0;
+    --shadow: 0 1px 2px rgba(0,0,0,.3);
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.75 var(--font); -webkit-font-smoothing: antialiased; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+img, svg { max-width: 100%; }
+:root { --serif: Georgia, "Times New Roman", "Songti SC", "Noto Serif CJK SC", serif; }
+
+/* ---------- 顶栏、页脚（cm.js 注入） ---------- */
+.topbar { position: sticky; top: 0; z-index: 20; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
+.topbar-inner { max-width: 820px; margin: 0 auto; padding: 8px 16px; display: flex; gap: 10px; align-items: center; font-size: 14px; }
+.topbar .home { font-weight: 700; color: var(--fg); white-space: nowrap; }
+.topbar .crumb { color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; min-width: 0; }
+.btn { font: inherit; font-size: 13.5px; padding: 4px 12px; border-radius: 999px; border: 1px solid var(--border); background: var(--surface); color: var(--fg); cursor: pointer; white-space: nowrap; }
+.btn:hover { border-color: var(--accent); text-decoration: none; }
+.btn[aria-pressed="true"], .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.site-footer { text-align: center; padding: 24px 16px 32px; font-size: 13px; }
+.site-footer a { color: var(--muted); }
+
+/* ---------- 版式 ---------- */
+main { max-width: 780px; margin: 0 auto; padding: 24px 16px 40px; }
+.chapter-head { margin: 4px 0 20px; }
+.chapter-head .kicker { font-size: 13px; letter-spacing: .08em; color: var(--muted); }
+.chapter-head h1 { font-size: clamp(26px, 5vw, 36px); line-height: 1.25; margin: 6px 0 10px; text-wrap: balance; }
+.badges { display: flex; flex-wrap: wrap; gap: 6px; font-size: 13px; }
+.badge { padding: 2px 10px; border-radius: 999px; background: var(--surface-2); color: var(--muted); white-space: nowrap; }
+.badge.l1 { background: var(--warn-soft); color: var(--warn); }
+.badge.l2 { background: var(--bad-soft); color: var(--bad); }
+h2 { font-size: 21px; margin: 44px 0 12px; padding-top: 16px; border-top: 1px solid var(--border); line-height: 1.3; }
+h3 { font-size: 16.5px; margin: 26px 0 8px; }
+p { margin: 0 0 12px; }
+.lede { color: var(--muted); }
+.gist { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: var(--radius); padding: 12px 16px; }
+.gist p:last-child { margin-bottom: 0; }
+
+/* ---------- 图 ---------- */
+figure.fig { margin: 16px 0 18px; }
+figure.fig img, figure.fig svg { display: block; width: 100%; height: auto; border-radius: var(--radius); border: 1px solid var(--border); background: var(--surface); }
+figure.fig.narrow { max-width: 420px; margin-inline: auto; }
+figcaption { font-size: 13.5px; color: var(--muted); margin-top: 6px; line-height: 1.6; }
+figcaption .src { display: block; font-size: 12px; color: var(--muted); }
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items: start; margin: 16px 0 18px; }
+.pair figure.fig { margin: 0; }
+.pair.crop img { aspect-ratio: 3 / 4; object-fit: cover; object-position: top; }
+@media (max-width: 520px) { .pair { grid-template-columns: 1fr; } }
+/* 自绘示意图：颜色一律用这些类（SVG 属性里写 var() 不生效） */
+svg.diagram text { font-family: var(--font); font-size: 13px; fill: var(--fg); }
+svg.diagram .t-b { font-weight: 700; font-size: 14px; }
+svg.diagram .t-m { fill: var(--muted); font-size: 12px; }
+svg.diagram .t-on { fill: #fff; }
+svg.diagram .ln { stroke: var(--muted); stroke-width: 1.5; fill: none; }
+svg.diagram .ln-a { stroke: var(--accent); stroke-width: 2.5; fill: none; }
+svg.diagram .ln-d { stroke: var(--faint); stroke-width: 1.5; stroke-dasharray: 5 4; fill: none; }
+svg.diagram .box { fill: var(--surface-2); stroke: var(--border); }
+svg.diagram .f-fg { fill: var(--fg); } svg.diagram .f-a { fill: var(--accent); } svg.diagram .f-soft { fill: var(--accent-soft); }
+svg.diagram .f1 { fill: var(--c1); } svg.diagram .f2 { fill: var(--c2); } svg.diagram .f3 { fill: var(--c3); } svg.diagram .f4 { fill: var(--c4); } svg.diagram .f5 { fill: var(--c5); } svg.diagram .f6 { fill: var(--c6); }
+svg.diagram .s1 { stroke: var(--c1); } svg.diagram .s2 { stroke: var(--c2); } svg.diagram .s3 { stroke: var(--c3); } svg.diagram .s4 { stroke: var(--c4); } svg.diagram .s5 { stroke: var(--c5); } svg.diagram .s6 { stroke: var(--c6); }
+svg.diagram [class*=" s"], svg.diagram [class^="s"] { stroke-width: 2.5; fill: none; }
+
+/* ---------- 人物卡、名词表 ---------- */
+.who { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px; margin: 12px 0 16px; }
+.who > div { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 10px 14px; font-size: 14.5px; }
+.who b { display: block; font-size: 15.5px; }
+.who .en { display: block; color: var(--muted); font-family: var(--serif); font-size: 14px; }
+.table-wrap { overflow-x: auto; margin: 12px 0 16px; }
+table.terms { border-collapse: collapse; width: 100%; font-size: 14.5px; background: var(--surface); }
+table.terms th, table.terms td { border: 1px solid var(--border); padding: 7px 10px; text-align: left; vertical-align: top; }
+table.terms th { background: var(--surface-2); font-weight: 600; white-space: nowrap; }
+table.terms td:first-child { font-family: var(--serif); font-weight: 700; }
+
+/* ---------- 词与短语 ---------- */
+.toolbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 12px 0 6px; }
+.toolbar .count { color: var(--muted); font-size: 13.5px; margin-left: auto; font-variant-numeric: tabular-nums; }
+.entry { display: grid; grid-template-columns: 1fr auto; gap: 2px 10px; padding: 10px 14px; margin: 8px 0; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); }
+.entry.trap { border-left: 4px solid var(--warn); }
+.entry.starred { border-color: var(--ok); }
+.entry .en { font-family: var(--serif); font-size: 18px; font-weight: 700; }
+.entry .tag { font-family: var(--font); font-size: 11.5px; font-weight: 600; color: var(--warn); background: var(--warn-soft); border-radius: 4px; padding: 1px 6px; margin-left: 8px; vertical-align: 2px; white-space: nowrap; }
+.entry .loc { grid-column: 1 / -1; font-family: var(--serif); font-style: italic; color: var(--muted); font-size: 14.5px; }
+.entry .zh { grid-column: 1 / -1; font-weight: 600; }
+.entry .note { grid-column: 1 / -1; color: var(--muted); font-size: 14.5px; }
+.entry .note i, .entry .zh i, p i { font-family: var(--serif); }
+.entry .star { align-self: start; font-size: 12.5px; padding: 2px 10px; }
+.entry.starred .star { color: var(--ok); border-color: var(--ok); }
+body.only-starred .entry:not(.starred), body.only-traps .entry:not(.trap) { display: none; }
+.empty-note { display: none; color: var(--muted); font-size: 14.5px; }
+body.only-starred.none-starred .empty-note { display: block; }
+
+/* ---------- 引文、理解检查 ---------- */
+blockquote.quote { margin: 14px 0; padding: 10px 16px; border-left: 3px solid var(--accent); background: var(--accent-soft); border-radius: 0 var(--radius) var(--radius) 0; font-family: var(--serif); font-size: 17px; }
+blockquote.quote cite { display: block; font-family: var(--font); font-style: normal; font-size: 13.5px; color: var(--muted); margin-top: 6px; }
+details.check { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 10px 14px; margin: 8px 0; }
+details.check summary { cursor: pointer; font-weight: 600; }
+details.check p { margin: 8px 0 2px; color: var(--muted); }
+
+/* ---------- 章末、首页 ---------- */
+.chapter-end { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; margin-top: 44px; padding-top: 18px; border-top: 1px solid var(--border); }
+.chapter-end .nav { display: flex; gap: 8px; flex-wrap: wrap; }
+.hero { display: grid; grid-template-columns: 1fr 220px; gap: 24px; align-items: center; margin: 8px 0 8px; }
+.hero h1 { font-size: clamp(30px, 6vw, 44px); line-height: 1.2; margin: 0 0 8px; }
+.hero .en { font-family: var(--serif); color: var(--muted); font-size: 18px; margin: 0 0 12px; }
+.hero img { width: 100%; border-radius: var(--radius); border: 1px solid var(--border); display: block; }
+@media (max-width: 600px) { .hero { grid-template-columns: 1fr; } .hero img { max-width: 240px; } }
+.toc { list-style: none; padding: 0; margin: 12px 0; display: grid; gap: 8px; }
+.toc a { display: grid; grid-template-columns: 54px 1fr auto; gap: 4px 12px; align-items: center; padding: 10px 14px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); color: var(--fg); }
+.toc a:hover { border-color: var(--accent); text-decoration: none; }
+.toc .n { font-family: var(--serif); font-size: 20px; color: var(--muted); }
+.toc .t { font-weight: 600; }
+.toc .d { grid-column: 2 / -1; color: var(--muted); font-size: 13.5px; }
+.toc .b { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; font-size: 12px; }
+.toc .done .n { color: var(--ok); }
+.toc .todo { opacity: .45; }
+.progress { height: 8px; border-radius: 999px; background: var(--surface-2); overflow: hidden; margin: 6px 0 4px; }
+.progress > i { display: block; height: 100%; background: var(--ok); }
+.wordbook { display: grid; gap: 6px; }
+.wordbook div { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; padding: 6px 12px; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; font-size: 14.5px; }
+.wordbook b { font-family: var(--serif); font-size: 16px; }
+.wordbook a { margin-left: auto; font-size: 12.5px; color: var(--muted); }
+
+/* 手机上示意图不缩到看不清：保持 560px 宽，图自己横向滚动 */
+@media (max-width: 600px) {
+  figure.fig:has(> svg.diagram) { overflow-x: auto; }
+  figure.fig > svg.diagram { width: 560px; max-width: none; }
+  figure.fig:has(> svg.diagram)::before { content: "图比屏幕宽，左右滑动看全图"; display: block; position: sticky; left: 0; width: max-content; font-size: 12px; color: var(--muted); margin-bottom: 4px; }
+}
+
+/* ---------- 分节地图、分节小标题（cm.js 接管打勾） ---------- */
+.secmap { list-style: none; padding: 0; margin: 12px 0 16px; display: grid; gap: 6px; }
+.secmap li { display: grid; grid-template-columns: auto auto 1fr auto; gap: 2px 10px; align-items: baseline; padding: 8px 14px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); font-size: 14.5px; }
+.secmap li.done { border-color: var(--ok); }
+.secmap input { accent-color: var(--ok); width: 16px; height: 16px; align-self: center; margin: 0; }
+.secmap .k { font-family: var(--serif); font-weight: 700; color: var(--muted); }
+.secmap b { font-family: var(--serif); font-size: 15.5px; }
+.secmap .w { color: var(--muted); font-size: 12.5px; white-space: nowrap; margin-left: 8px; font-weight: 400; font-family: var(--font); }
+.secmap .what { grid-column: 3 / -1; color: var(--muted); }
+.secmap .jump { font-size: 12.5px; color: var(--muted); white-space: nowrap; grid-row: 1; grid-column: 4; }
+h3 .sec { font-family: var(--serif); font-size: 13px; font-weight: 700; color: var(--accent); background: var(--accent-soft); border-radius: 4px; padding: 1px 7px; margin-right: 8px; vertical-align: 1px; white-space: nowrap; }
+h3.sec-head { margin: 30px 0 4px; padding: 6px 0; border-bottom: 2px solid var(--border); font-size: 16px; scroll-margin-top: 56px; }
+h3.sec-head .first { font-family: var(--serif); font-weight: 400; font-style: italic; color: var(--muted); font-size: 14.5px; margin-left: 8px; }
+.toc .te { font-family: var(--serif); font-weight: 400; color: var(--muted); font-size: 14px; margin-left: 10px; }
+.toc .sp { color: var(--ok); }
+.toc .te { display: block; margin-left: 0; }
+@media (max-width: 600px) { .toc a { grid-template-columns: 36px 1fr; } .toc .b { grid-column: 2; justify-content: flex-start; } }
+/* 首页：全书一张图 */
+.chains { list-style: none; padding: 0; margin: 12px 0; display: grid; gap: 8px; }
+.chains li { display: grid; grid-template-columns: 124px 1fr; gap: 12px; align-items: center; padding: 8px 12px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); font-size: 14.5px; }
+.chains a { display: block; text-align: center; font-weight: 700; color: #fff; border-radius: 8px; padding: 4px 6px; white-space: nowrap; }
+.chains .k1 { background: var(--c1); } .chains .k2 { background: var(--c2); } .chains .k3 { background: var(--c3); } .chains .k4 { background: var(--c4); } .chains .k7 { background: var(--c7); } .chains .k6 { background: var(--c6); }
+@media (max-width: 520px) { .chains li { grid-template-columns: 1fr; gap: 6px; } .chains a { justify-self: start; padding: 3px 12px; } }
+
+/* ===================== 本站加的组件 ===================== */
+.chapter-head .by { color: var(--muted); font-size: 14px; margin: -4px 0 10px; }
+.badge.k-国家 { background: var(--accent-soft); color: var(--accent); }
+.badge.k-公司 { background: var(--ok-soft); color: var(--ok); }
+.badge.k-总论 { background: var(--warn-soft); color: var(--warn); }
+
+/* 读之前：这一篇要回答的问题 + 带着读的问题 */
+.crux { border: 1px solid var(--border); border-left: 4px solid var(--c2); background: var(--surface); border-radius: var(--radius); padding: 12px 16px; margin: 12px 0 14px; }
+.crux::before { content: "这一篇要回答的问题"; display: block; font-size: 12px; font-weight: 700; letter-spacing: .06em; color: var(--c2); margin-bottom: 4px; }
+.crux > :last-child { margin-bottom: 0; }
+ol.qs { margin: 8px 0 14px; padding-left: 1.4em; }
+ol.qs li { margin: 6px 0; }
+ol.qs li .sec, .findit .sec { font-family: var(--serif); font-size: 12.5px; color: var(--accent); background: var(--accent-soft); border-radius: 4px; padding: 0 6px; margin-left: 6px; white-space: nowrap; }
+.tip { background: var(--warn-soft); border: 1px solid var(--border); border-left: 4px solid var(--warn); border-radius: var(--radius); padding: 10px 14px; margin: 12px 0; font-size: 14.5px; }
+.tip > :last-child { margin-bottom: 0; }
+
+/* 分节地图里的"坐下"分隔 */
+.secmap li.sit { display: block; background: none; border: none; padding: 10px 2px 0; font-size: 13.5px; font-weight: 700; color: var(--c2); }
+.secmap li.sit:first-child { padding-top: 0; }
+.secmap li.sit span { font-weight: 400; color: var(--muted); margin-left: 8px; }
+
+/* 边读边填 */
+table.findit { border-collapse: collapse; width: 100%; font-size: 14.5px; background: var(--surface); }
+table.findit th, table.findit td { border: 1px solid var(--border); padding: 7px 10px; text-align: left; vertical-align: top; }
+table.findit th { background: var(--surface-2); font-weight: 600; white-space: nowrap; }
+table.findit td:first-child { white-space: nowrap; font-weight: 600; }
+table.findit td.hint { color: var(--muted); font-size: 13.5px; }
+input.note, textarea.note { width: 100%; font: inherit; font-size: 14.5px; color: var(--fg); background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 5px 8px; }
+input.note:focus, textarea.note:focus { outline: 2px solid var(--accent-soft); border-color: var(--accent); }
+textarea.note { min-height: 64px; resize: vertical; display: block; margin-top: 8px; }
+.note-tip { color: var(--muted); font-size: 12.5px; margin: 4px 0 12px; }
+
+details.reveal { background: var(--surface); border: 1px dashed var(--border); border-radius: var(--radius); padding: 8px 14px; margin: 10px 0 14px; font-size: 14.5px; }
+details.reveal summary { cursor: pointer; color: var(--accent); font-weight: 600; }
+details.reveal ul { margin: 8px 0 4px; padding-left: 1.3em; }
+
+/* 对照今天：<div class="today" data-verdict="部分成立"><h4>…</h4><dl><dt>书里</dt><dd>…</dd>…</dl></div> */
+.today { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px 16px; margin: 14px 0; box-shadow: var(--shadow); }
+.today h4 { margin: 0 0 8px; font-size: 16px; }
+.today::before { content: attr(data-verdict); display: inline-block; font-size: 12px; font-weight: 700; border-radius: 4px; padding: 1px 8px; margin-bottom: 6px; }
+.today[data-verdict="成立"]::before { background: var(--ok-soft); color: var(--ok); }
+.today[data-verdict="部分成立"]::before { background: var(--warn-soft); color: var(--warn); }
+.today[data-verdict="被改写"]::before { background: var(--bad-soft); color: var(--bad); }
+.today dl { display: grid; grid-template-columns: 4.5em 1fr; gap: 6px 12px; margin: 0; font-size: 14.5px; }
+.today dt { font-weight: 700; color: var(--muted); }
+.today dd { margin: 0; }
+.today .asof { display: block; color: var(--muted); font-size: 12.5px; margin-top: 2px; }
+@media (max-width: 520px) { .today dl { grid-template-columns: 1fr; gap: 2px; } .today dd { margin-bottom: 6px; } }
+
+/* 和姊妹站对照的卡片 */
+.who a.go { display: block; margin-top: 6px; font-size: 13.5px; }
+
+/* 术语：章节页里的链接和全书术语页 */
+a.term { border-bottom: 1px dashed var(--accent); }
+a.term:hover { text-decoration: none; }
+.gloss { display: grid; gap: 10px; margin: 12px 0; }
+.gloss .term { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 10px 14px; scroll-margin-top: 60px; }
+.gloss .term:target { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+.gloss .term h3 { margin: 0 0 4px; font-size: 16px; }
+.gloss .term h3 .en { font-family: var(--serif); font-size: 17px; margin-right: 8px; }
+.gloss .term p { margin: 0 0 4px; font-size: 14.5px; }
+.gloss .term .where { color: var(--muted); font-size: 13px; }
+
+/* 首页：按国家分块的目录、四国四块 */
+.toc li.blk { font-weight: 700; color: var(--muted); font-size: 14px; margin: 10px 0 0; letter-spacing: .04em; }
+.blocks { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; margin: 12px 0; }
+.blocks > div { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 10px 14px; font-size: 14px; }
+.blocks b { display: block; font-size: 16px; margin-bottom: 4px; }
+.blocks .sat { color: var(--accent); }
+.blocks .heli { color: var(--ok); }
+
+/* 对照今天的结论图例 */
+ul.verdicts { list-style: none; padding: 0; margin: 4px 0 10px; display: grid; gap: 4px; font-size: 14px; color: var(--muted); }
+ul.verdicts .v { display: inline-block; min-width: 4.8em; text-align: center; font-size: 12px; font-weight: 700; border-radius: 4px; padding: 1px 8px; margin-right: 8px; }
+.v.ok { background: var(--ok-soft); color: var(--ok); } .v.mid { background: var(--warn-soft); color: var(--warn); } .v.bad { background: var(--bad-soft); color: var(--bad); }
+
+/* 边读边填：问题在上，答题框在下 */
+table.findit p.q { margin: 0 0 6px; font-size: 14.5px; }
+
+/* 精彩回顾（章节页最后一节；recap.html 把各章的汇总在一起） */
+.recall-line { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--ok); border-radius: var(--radius); padding: 10px 14px; }
+.recall { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; margin: 12px 0; }
+.recall .item { position: relative; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 10px 14px 12px; font-size: 14.5px; }
+.recall .item b { display: block; font-size: 15.5px; margin-bottom: 4px; padding-right: 48px; }
+.recall .item p { margin: 0; color: var(--fg); }
+.recall .item .sec { position: absolute; top: 10px; right: 12px; font-family: var(--serif); font-size: 12.5px; color: var(--accent); background: var(--accent-soft); border-radius: 4px; padding: 0 6px; }
+.recap-ch { margin-top: 28px; }
+.recap-ch h2 a { color: var(--fg); }
+
+/* ---- Paris to the Moon 导读加的 ---- */
+.badge.k-journal { background: var(--warn-soft); color: var(--warn); }
+/* 分节地图：<b> 是中文地标（读译本时找得到的东西），.en 是英文那一节开头的几个词（翻电子书时用） */
+.secmap .en { grid-column: 3 / -1; font-family: var(--serif); font-style: italic; color: var(--muted); font-size: 13.5px; }
+.secmap li.ours .k::after { content: "*"; color: var(--warn); }
+/* 「这一篇的路线」最后一句：作者落在哪 */
+p.landing { background: var(--accent-soft); border-left: 3px solid var(--accent); border-radius: 0 var(--radius) var(--radius) 0; padding: 10px 14px; margin: 12px 0 16px; }
+p.landing b { color: var(--accent); }
+/* 「后来」卡片 */
+.later { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px 16px; margin: 14px 0; box-shadow: var(--shadow); font-size: 14.5px; }
+.later h4 { margin: 0 0 6px; font-size: 16px; }
+.later p { margin: 0 0 4px; }
+.later .asof { display: block; color: var(--muted); font-size: 12.5px; margin-top: 4px; }
+h2.recap-part { margin-top: 32px; }
+.toc li.blk .te { font-weight: 400; font-family: var(--serif); letter-spacing: 0; }
+.toc li.blk .d { display: block; font-weight: 400; letter-spacing: 0; font-size: 13.5px; }
+/* 原图很小的照片（如 195px 宽的档案照）：按原尺寸显示，不放大到糊 */
+figure.fig.small { max-width: 240px; margin-inline: auto; }
+
+/* ---- On Borrowed Time 导读加的 ---- */
+/* 页头：这一页包含的原书节名 */
+ul.secnames { list-style: none; padding: 0; margin: -2px 0 10px; font-size: 14px; color: var(--muted); }
+ul.secnames li { margin: 2px 0; }
+ul.secnames .k { font-family: var(--serif); font-weight: 700; color: var(--accent); margin-right: 6px; }
+ul.secnames .en { font-family: var(--serif); color: var(--fg); }
+/* 读之前：全书的线（bt.js 画在 .linehere 里） */
+.linehere { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 10px 14px; margin: 8px 0 14px; }
+.linehere:empty { display: none; }
+.linehere .cap { margin: 0 0 6px; font-size: 12px; font-weight: 700; letter-spacing: .06em; color: var(--muted); }
+.linehere .cap a { font-weight: 400; letter-spacing: 0; }
+ol.lineband { list-style: none; padding: 0; margin: 0 0 8px; display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 6px; counter-reset: st; }
+ol.lineband li { counter-increment: st; border: 1px solid var(--border); border-radius: 8px; padding: 5px 8px; font-size: 12.5px; color: var(--muted); background: var(--bg); }
+ol.lineband li b { display: block; font-size: 13.5px; color: var(--fg); }
+ol.lineband li b::before { content: counter(st) " "; color: var(--faint); font-weight: 400; }
+ol.lineband li.here { border-color: var(--accent); background: var(--accent-soft); }
+ol.lineband li.here b, ol.lineband li.here b::before { color: var(--accent); }
+ul.linesecs { list-style: none; padding: 0; margin: 0; font-size: 14px; }
+ul.linesecs li { margin: 4px 0; }
+ul.linesecs .k { font-family: var(--serif); font-weight: 700; color: var(--accent); margin-right: 6px; }
+/* 先用中文过一遍：概念块（terms.html 汇总） */
+.concept { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--c4); border-radius: var(--radius); padding: 10px 16px 12px; margin: 14px 0; scroll-margin-top: 60px; }
+.concept:target { box-shadow: 0 0 0 3px var(--accent-soft); }
+.concept h3 { margin: 2px 0 8px; }
+.concept h3 .en { font-family: var(--serif); font-weight: 400; color: var(--muted); font-size: 15px; margin-left: 6px; }
+.concept p { margin: 0 0 8px; }
+.concept p.use { margin: 0; font-size: 14.5px; color: var(--muted); }
+.concept p.use b { color: var(--c4); }
+.concepts .concept h3 a.sec { float: right; font-size: 12.5px; font-weight: 400; }
+/* 图里的引文 */
+.imgq { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--c3); border-radius: var(--radius); padding: 10px 16px 12px; margin: 16px 0 8px; }
+.imgq h4 { margin: 0 0 4px; font-size: 15px; }
+.imgq h4 .sec { font-family: var(--serif); font-size: 12.5px; color: var(--accent); background: var(--accent-soft); border-radius: 4px; padding: 0 6px; margin-right: 6px; }
+.imgq p.where { color: var(--muted); font-size: 13.5px; margin: 0 0 8px; }
+.imgq ol.lines { margin: 0; padding-left: 1.6em; }
+.imgq ol.lines li { margin: 4px 0; }
+.imgq ol.lines .l { font-family: var(--serif); font-style: italic; color: var(--muted); margin-right: 10px; }
+.imgq p.gq { margin: 0; }
+.entry.img { border-left: 4px solid var(--c3); }
+.entry .tag.img { color: var(--c3); }
+/* 扫描错字表 */
+ul.ocr { margin: 10px 0; padding-left: 1.3em; font-size: 14.5px; }
+ul.ocr .loc { font-family: var(--serif); font-style: italic; color: var(--muted); margin-right: 8px; }
+/* 想一想 */
+.ponder { background: var(--warn-soft); border: 1px solid var(--border); border-left: 4px solid var(--warn); border-radius: var(--radius); padding: 10px 14px; margin: 16px 0; }
+.ponder p { margin: 0; font-weight: 600; }
+.ponder .note-tip { margin-bottom: 0; }
+/* 首页没有配图时单栏 */
+.hero.solo { grid-template-columns: 1fr; }
+/* 读完：作者到底说了什么 */
+.claims { display: grid; gap: 10px; margin: 12px 0; counter-reset: cl; }
+.claim { position: relative; background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: var(--radius); padding: 10px 14px 12px; counter-increment: cl; }
+.claim h4 { margin: 0 0 6px; font-size: 15.5px; padding-right: 92px; }
+.claim h4::before { content: counter(cl) "　"; color: var(--accent); }
+.claim p { margin: 0; color: var(--muted); font-size: 14.5px; }
+.claim .sec { position: absolute; top: 10px; right: 12px; font-family: var(--serif); font-size: 12px; color: var(--accent); background: var(--accent-soft); border-radius: 4px; padding: 0 6px; }
+p.sowhat, p.chapsum { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--ok); border-radius: var(--radius); padding: 10px 14px; margin: 12px 0; }
+p.sowhat b, p.chapsum b { color: var(--ok); }
+/* 段号标签长的时候不盖标题：标签放到标题上方，单独一行 */
+.claim h4 { padding-right: 0; }
+.claim .sec { position: static; display: inline-block; margin-bottom: 4px; }
+.claim { display: flex; flex-direction: column; }
+.claim .sec { order: -1; align-self: flex-start; }
+
+/* ---- Darwin's Worms 导读加的 ---- */
+ul.secnames .en { font-size: 13px; color: var(--muted); }
+/* 原典：达尔文、弗洛伊德的公有领域原文和本站全译 */
+.pd { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--c3); border-radius: var(--radius); padding: 10px 16px 12px; margin: 16px 0; }
+.pd h4 { margin: 0 0 4px; font-size: 15px; }
+.pd h4 .sec { font-family: var(--serif); font-size: 12.5px; color: var(--accent); background: var(--accent-soft); border-radius: 4px; padding: 0 6px; margin-right: 6px; }
+.pd p.where { color: var(--muted); font-size: 13.5px; margin: 0 0 8px; }
+.pd blockquote.pd-orig { margin: 0 0 8px; padding: 8px 12px; background: var(--surface-2); border-radius: 6px; font-family: var(--serif); font-size: 15px; line-height: 1.65; overflow-wrap: anywhere; }
+.pd p.pd-zh { margin: 0 0 6px; }
+.pd p.pd-zh b { color: var(--c3); }
+.pd p.pd-note { margin: 0; font-size: 14.5px; color: var(--muted); }
+/* 本站怎么看：主流看法 / 作者的看法 / 本站的评论（照 Up from the Projects） */
+.views { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--c2); border-radius: var(--radius); padding: 10px 16px; margin: 14px 0; font-size: 14.5px; }
+.views h4 { margin: 0 0 8px; font-size: 15.5px; }
+.views p { margin: 0 0 8px; }
+.views p:last-child { margin-bottom: 0; }
+.views p b { color: var(--c2); }
+.views p.ours { background: var(--accent-soft); border-radius: 6px; padding: 6px 10px; }
+.views p.ours b { color: var(--accent); }
+p.verdict { background: var(--warn-soft); border: 1px solid var(--border); border-left: 4px solid var(--warn); border-radius: var(--radius); padding: 10px 14px; margin: 14px 0; }
+p.verdict b { color: var(--warn); }
+/* 不带勾选框的地图（vm 专页的七章地图）：单列 */
+.secmap.plain li { grid-template-columns: 1fr; }
+.secmap.plain .en, .secmap.plain .what { grid-column: 1 / -1; }
+
+/* ---- The Selfish Gene 导读加的 ---- */
+.today[data-verdict="有争议"]::before { background: var(--accent-soft); color: var(--accent); }
+.v.dis { background: var(--accent-soft); color: var(--accent); }
+/* 模拟器（照 DDIA 导读） */
+.sim { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; margin: 26px 0; box-shadow: var(--shadow); overflow: hidden; }
+.sim-head { padding: 12px 18px; border-bottom: 1px solid var(--border); display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; background: var(--surface-2); }
+.sim-head .tag { font-size: 11.5px; font-weight: 700; letter-spacing: .08em; color: var(--on-accent); background: var(--accent); border-radius: 4px; padding: 1px 7px; }
+.sim-head h3 { margin: 0; font-size: 16.5px; }
+.sim-head .desc { color: var(--muted); font-size: 14px; flex-basis: 100%; }
+.sim-body { padding: 16px 18px; }
+.sim-body > :last-child { margin-bottom: 0; }
+.controls { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; margin-bottom: 14px; font-size: 14px; }
+.sim button { font: inherit; font-size: 13.5px; padding: 4px 12px; border-radius: 999px; border: 1px solid var(--border); background: var(--surface); color: var(--fg); cursor: pointer; white-space: nowrap; }
+.sim button:hover { border-color: var(--accent); }
+.controls .sep { width: 1px; height: 22px; background: var(--border); }
+.controls label { display: inline-flex; gap: 6px; align-items: center; color: var(--muted); }
+.controls select, .controls input[type="number"] { font: 14px var(--mono); background: var(--surface); color: var(--fg); border: 1px solid var(--border); border-radius: 6px; padding: 3px 6px; }
+.controls input[type="number"] { width: 5em; }
+.controls input[type="range"] { accent-color: var(--accent); }
+.stage { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 12px; overflow-x: auto; min-height: 60px; }
+.readout { font-family: var(--mono); font-size: 13px; background: var(--code-bg); border-radius: 8px; padding: 10px 12px; margin-top: 12px; white-space: pre-wrap; overflow-x: auto; }
+.narrate { margin-top: 12px; padding: 10px 14px; border-radius: 8px; background: var(--accent-soft); font-size: 14.5px; min-height: 44px; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 8px; margin-top: 12px; }
+.stat { background: var(--surface-2); border-radius: 8px; padding: 8px 12px; }
+.stat .v { font-size: 22px; font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1.2; }
+.stat .l { font-size: 12.5px; color: var(--muted); }
+.cell { display: inline-flex; align-items: center; justify-content: center; min-width: 34px; height: 28px; padding: 0 6px; border: 1px solid var(--border); border-radius: 5px; background: var(--surface); font: 12.5px var(--mono); margin: 2px; color: var(--fg); }
+.cell.on { border-color: var(--accent); background: var(--accent-soft); }
+.cell.ok { border-color: var(--ok); background: var(--ok-soft); }
+.cell.bad { border-color: var(--bad); background: var(--bad-soft); }
+.cell.dim { color: var(--muted); text-decoration: line-through; }
+.cell.k1 { border-color: var(--c1); } .cell.k2 { border-color: var(--c2); } .cell.k3 { border-color: var(--c3); } .cell.k4 { border-color: var(--c4); }
+.lane { display: flex; flex-wrap: wrap; align-items: center; gap: 2px; margin: 4px 0; }
+.lane > .lbl { min-width: 9.5em; font-size: 13px; color: var(--muted); }
+.pill { display: inline-block; font-size: 12.5px; padding: 1px 8px; border-radius: 999px; background: var(--surface-2); border: 1px solid var(--border); }
+/* 首页目录：全书的线分段的段名 */
+.toc li.blk.stage { color: var(--accent); font-size: 15px; margin-top: 18px; border-bottom: 1px solid var(--border); padding-bottom: 2px; }
+
+/* ---- Uncontrolled 导读加的（照国富论导读） ---- */
+/* 分档：先读 / 有空 / 可跳过 */
+.tier { display: inline-block; font-family: var(--font); font-size: 11.5px; font-weight: 700; border-radius: 4px; padding: 0 6px; margin-left: 8px; vertical-align: 1px; }
+.tier.t-先读, .badge.t-先读 { background: var(--ok-soft); color: var(--ok); }
+.tier.t-有空 { background: var(--warn-soft); color: var(--warn); }
+.tier.t-可跳过, .badge.t-可跳过 { background: var(--surface-2); color: var(--muted); }
+.secmap li.t-可跳过:not(.done) { opacity: .8; }
+p.pathline { font-size: 14px; color: var(--muted); margin: 8px 0; }
+p.pathline .tier { margin-left: 0; }
+.linesecs .tier { margin: 0 6px 0 0; }
+/* 全书最短读法 */
+ol.pathlist { list-style: none; padding: 0; margin: 10px 0; display: grid; gap: 6px; counter-reset: pl; }
+ol.pathlist li { counter-increment: pl; display: grid; grid-template-columns: 2.2em 1fr auto; gap: 0 10px; align-items: baseline; padding: 8px 12px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); font-size: 14.5px; }
+ol.pathlist li::before { content: counter(pl); grid-row: 1 / 4; font-family: var(--serif); color: var(--muted); font-size: 18px; }
+ol.pathlist li.done { border-color: var(--ok); }
+ol.pathlist .where { grid-column: 2; color: var(--muted); font-size: 12.5px; }
+ol.pathlist b { grid-column: 2; }
+ol.pathlist .en { grid-column: 2; color: var(--muted); font-size: 13.5px; font-family: var(--serif); }
+ol.pathlist .w { grid-column: 3; grid-row: 1; color: var(--muted); font-size: 12.5px; white-space: nowrap; }
+ol.pathlist a { grid-column: 3; grid-row: 2; font-size: 13px; white-space: nowrap; }
+ol.pathlist .todo { grid-column: 3; grid-row: 2; font-size: 12.5px; color: var(--muted); white-space: nowrap; }
+/* 防带歪：页面上半部分可用的提醒框 */
+.heads-up { background: var(--bad-soft); border: 1px solid var(--border); border-left: 4px solid var(--bad); border-radius: var(--radius); padding: 10px 14px; margin: 14px 0; font-size: 14.5px; }
+.heads-up::before { content: "别被带歪"; display: block; font-size: 12px; font-weight: 700; color: var(--bad); margin-bottom: 4px; }
+.heads-up > :last-child { margin-bottom: 0; }
+
+/* ---- The Selfish Gene 导读的译本组件 ---- */
+.today[data-verdict="有争议"]::before { background: var(--accent-soft); color: var(--accent); }
+.v.dis { background: var(--accent-soft); color: var(--accent); }
+/* 译本译法：<span class="zhv">译本：「……」</span>，行内 */
+.zhv { color: var(--muted); font-size: .92em; white-space: normal; }
+/* 译本勘误：<div class="zherr" data-p="13"><h4>…<span class="mark">误译</span></h4><p class="loc">英文定位</p><p class="zhq"><span class="zhv">译本：「…」</span></p><p>…</p></div> */
+.zherr { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--c6); border-radius: var(--radius); padding: 8px 14px; margin: 10px 0; font-size: 14.5px; }
+.zherr h4 { margin: 0 0 4px; font-size: 15px; }
+.zherr h4 .sec { font-size: 12.5px; color: var(--accent); background: var(--accent-soft); border-radius: 4px; padding: 0 6px; margin-right: 6px; }
+.zherr .mark { display: inline-block; font-size: 12px; font-weight: 700; border-radius: 4px; padding: 0 7px; margin-left: 6px; background: var(--surface-2); color: var(--muted); }
+.zherr .mark.turn { background: var(--bad-soft); color: var(--bad); }
+.zherr p { margin: 0 0 4px; }
+.zherr p:last-child { margin-bottom: 0; }
+.zherr p.loc { color: var(--muted); font-size: 13.5px; overflow-wrap: anywhere; font-family: var(--serif); font-style: italic; }
+.zherr p.zhq .zhv { color: var(--fg); font-size: 1em; }
+
+/* ---- Impro 导读加的 ---- */
+/* 分节地图里译本的地标：节号和小标题、这一节在译本里开头的几个字（在译本电子书里搜它） */
+.secmap .zhh { grid-column: 3 / -1; font-size: 13.5px; color: var(--fg); }
+.secmap .zhh .zs { color: var(--muted); margin-left: 6px; }
+/* 原文关键句：.entry 里多一行译本的译法 */
+.entry .zhq { grid-column: 1 / -1; font-size: 14px; }
+/* 游戏卡：<div class="game" id="g-…"><h3>…</h3><dl class="howto">…</dl><details class="reveal">…</details></div> */
+.game { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--c3); border-radius: var(--radius); padding: 10px 16px 12px; margin: 14px 0; scroll-margin-top: 60px; }
+.game:target { box-shadow: 0 0 0 3px var(--accent-soft); }
+.game h3 { margin: 2px 0 6px; }
+.game h3 .en { font-family: var(--serif); font-weight: 400; color: var(--muted); font-size: 15px; margin-left: 6px; }
+.game h3 .sec { font-size: 12.5px; font-weight: 400; color: var(--accent); background: var(--accent-soft); border-radius: 4px; padding: 0 6px; margin-right: 8px; vertical-align: 2px; }
+.game .zhname { margin: 0 0 6px; font-size: 14px; }
+.game dl.howto { display: grid; grid-template-columns: 5em 1fr; gap: 6px 12px; margin: 0 0 8px; font-size: 14.5px; }
+.game dl.howto dt { font-weight: 700; color: var(--c3); }
+.game dl.howto dd { margin: 0; }
+.game details.reveal { background: var(--surface-2); border-radius: 8px; padding: 6px 12px; font-size: 14.5px; }
+.game details.reveal summary { cursor: pointer; color: var(--accent); }
+.game details.reveal p { margin: 6px 0 2px; }
+.game p.care { margin: 8px 0 0; font-size: 14px; color: var(--warn); }
+.game p.care::before { content: "注意　"; font-weight: 700; }
+.games .game h3 a.sec { float: right; font-size: 12.5px; font-weight: 400; }
+@media (max-width: 520px) { .game dl.howto { grid-template-columns: 1fr; gap: 2px; } .game dl.howto dd { margin-bottom: 6px; } }
+
+/* —— Fooled by Randomness 加的 —— */
+.chapter-head .zhtitle { margin: 2px 0 6px; color: var(--muted); font-size: 15px; }
+.linechs { font-size: 13.5px; color: var(--muted); margin: 6px 0 4px; }
+.linechs b { color: var(--fg); }
+/* 读前 / 读后：.gate 由 fb.js 填字和按钮，之后的各节包进 section.after，默认收起 */
+.gate { margin: 44px 0 28px; padding: 18px 18px 16px; border: 2px dashed var(--accent); border-radius: var(--radius); background: var(--accent-soft); text-align: center; }
+.gate b { display: block; font-size: 18px; margin-bottom: 6px; }
+.gate p { margin: 0 0 12px; color: var(--muted); font-size: 14.5px; }
+section.after[hidden] { display: none; }

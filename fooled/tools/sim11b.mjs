@@ -1,0 +1,22 @@
+// 照「试试看」的顺序用 playwright 连着点 11b 的模拟器（体检的假阳性），打印每步的统计栏和说明。用法：node tools/sim11b.mjs
+import { createRequire } from "node:module";
+const require = createRequire(import.meta.url);
+const { chromium } = require(process.env.HOME + "/.npm/_npx/e41f203b7505f1fb/node_modules/playwright");
+const b = await chromium.launch(); const p = await b.newPage({ viewport: { width: 1100, height: 900 } });
+const errs = []; p.on("pageerror", (e) => errs.push(String(e)));
+await p.goto("file://" + new URL("../chapters/11b.html", import.meta.url).pathname);
+const S = "#sim-11b";
+const set = (label, v) => p.selectOption(`${S} select[aria-label="${label}"]`, String(v));
+const show = async (lab) => console.log(lab, "|", (await p.$$eval(`${S} .stat`, (e) => e.map((x) => x.innerText.replace(/\n/g, " ")))).join(" | "), "\n   ", await p.textContent(`${S} .narrate`));
+await p.click(`${S} button:has-text("书里的题")`); await show("1 书里的题");
+await set("发病率", 100); await show("2a 发病率 1/100");
+await set("发病率", 10); await show("2b 发病率 1/10");
+await set("发病率", 1000); await set("误报率", 1); await show("3a 误报 1%");
+await set("误报率", 0.1); await show("3b 误报 0.1%");
+await set("误报率", 5); await set("漏报率", 10); await show("3c 漏报 10%");
+await set("漏报率", 0); await set("连着查几次", 2); await show("4a 查 2 次");
+await set("连着查几次", 3); await show("4b 查 3 次");
+await p.click(`${S} button:has-text("书里的题")`); await set("发病率", 10000); await show("5 发病率 1/10000（换成一万人）");
+const body = await p.textContent(S); if (/undefined|NaN|Infinity/.test(body)) errs.push("页面上出现 undefined / NaN / Infinity");
+console.log(errs.length ? "✗ " + errs.join("; ") : "✓ 没有脚本错误");
+await b.close();

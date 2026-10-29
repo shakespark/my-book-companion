@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 2 章 · 随机骗局导读</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/chapters.js"></script>
+<script src="../assets/fb.js"></script>
+</head>
+<body data-page="02">
+<main>
+
+<h2>这一页在做什么</h2>
+<div class="gist"><p>这一章给全书立一把尺子。作者从一个思想实验讲起：一位闲得发慌的大亨出一千万美元，请你玩一次俄罗斯轮盘。赢来的一千万和牙医一颗颗补牙挣的一千万，会计看来一模一样，作者看来不一样。接着他拿这把尺子去量华尔街：MBA 和俄国物理学家、两位脾气相反的上司、一位电视评论员拿「听你的就亏钱」去问经济学家席勒、去机场问旅客买保险的实验、公司里新设的风险经理。读的时候抓一条线：你看到的那一次结果，只是好几种可能里碰巧发生的一种。</p></div>
+<figure class="fig"><img src="../assets/img/02-cylinder.jpg" alt="一把银色左轮手枪的转轮向侧面摆出，六个空弹巢排成一圈，旁边是枪身和木质握把的一角" loading="lazy">
+<figcaption>柯尔特 Python 左轮手枪摆出的转轮，六个弹巢都是空的（瑞士洛桑的一处私人收藏）。§2 的轮盘就是这样一把枪：六个弹巢装一颗子弹，扣一次扳机，六种历史里只发生一种。<span class="src">Rama，CC BY-SA 2.0 fr，维基共享资源</span></figcaption></figure>
+
+<h2>读之前：这一页在全书的哪里</h2>
+<div class="linehere"></div>
+<p>第 1 章末尾，作者说按 Nero「可能过的所有人生」平均起来算，他其实很富；可以说，牙医也比开粉色劳斯莱斯的摇滚明星富。他说那种怪算法下一章再讲，就是这一章。这一章是第一部的理论起点：「另类历史」「产生器」两个词后面每章都用。§2 的轮盘到第 3 章会被搬进电脑，做成蒙特卡洛模拟；§7 顺口提到的幸存者偏差是第二部的主题；§6 和 §10 碰到的人怎样误判概率，第 11 章才正式讲。</p>
+<div class="heads-up"><p>§10 作者说，察觉和躲避风险主要靠大脑里管情绪的部分，理性思考和躲避风险「几乎没有关系」，还说这是科学事实。他依据的那派研究说的是情绪「常常」左右人对风险的反应，比他说得轻。读的时候把那几句当作者的概括，详细的在页末。</p></div>
+<div class="crux"><p>两个人挣到同样多的钱，能不能说他们干得一样好？</p></div>
+<p class="lede">读的时候带着这几个问题。不用先找答案，读完回来对照「检查一下理解」。</p>
+<ol class="qs">
+  <li>作者说靠轮盘赢的一千万和牙医挣的一千万不一样。哪里不一样？会计为什么看不出来？<span class="sec">§2</span></li>
+  <li>现实里的轮盘比那把六个弹巢的枪「更恶毒」。作者数了几条，各是什么？<span class="sec">§4</span></li>
+  <li>两位上司，一位稳重体面，一位脾气火爆、生活多彩。作者为什么更服后一位？<span class="sec">§7</span></li>
+  <li>威尔对席勒说：要是大家早听你的，早就亏钱了。这句话听起来很有道理，它的问题在哪里？<span class="sec">§8</span></li>
+</ol>
+
+<h2>这一页的路线</h2>
+<p>前四节是一条直线：一个定义，一个思想实验（轮盘），一段很快的学术巡礼（哲学、物理、经济学里同一个想法），再把轮盘换成现实。§3 最像课本，跳过不丢线。§5 起突然转进交易室：谁肯去想看不见的历史，1980 年代的 MBA 怎样成批出局，俄国物理学家怎样涌进华尔街，两位上司怎样处处相反。这三节是作者的见闻和挖苦，读着轻松，主题藏在第二位上司身上。§8 回到正题，从历史学家怎样评名将讲到一次电视访谈，中间插了《伊利亚特》。§9 到 §11 是一串短节：辩论、机场保险的实验、新闻、一句法国格言，从「人天生读不懂概率」一路说到「好懂不等于对」，节和节之间跳得厉害。最后两节落到公司里的风险经理，以作者自己生意的一个悖论收尾，交棒给第 3 章。</p>
+<figure class="fig">
+<svg class="diagram" viewBox="0 0 640 330" role="img" aria-label="路线示意图：§1 定义，§2 轮盘，§3 学术巡礼可跳过，§4 更狠的轮盘；§5 到 §7 转进交易室，是离题；§8 威尔和席勒；§9 到 §11 一串短节；§12 和 §13 风险经理，箭头指向第 3 章蒙特卡洛">
+<defs><marker id="ar02" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="f-a"/></marker></defs>
+<rect x="8" y="20" width="140" height="50" rx="6" class="box"/><text x="78" y="40" text-anchor="middle">§1 定义</text><text x="78" y="58" text-anchor="middle" class="t-m">另类历史</text>
+<rect x="168" y="20" width="140" height="50" rx="6" class="f-soft"/><text x="238" y="40" text-anchor="middle" class="t-b">§2 轮盘</text><text x="238" y="58" text-anchor="middle" class="t-m">一千万·牙医</text>
+<rect x="328" y="20" width="140" height="50" rx="6" class="box" stroke-dasharray="5 4"/><text x="398" y="40" text-anchor="middle">§3 学术巡礼</text><text x="398" y="58" text-anchor="middle" class="t-m">可能世界·状态空间</text>
+<rect x="488" y="20" width="144" height="50" rx="6" class="f-soft"/><text x="560" y="40" text-anchor="middle" class="t-b">§4 更狠的轮盘</text><text x="560" y="58" text-anchor="middle" class="t-m">弹巢看不见</text>
+<line x1="148" y1="45" x2="166" y2="45" class="ln-a" marker-end="url(#ar02)"/>
+<line x1="308" y1="45" x2="326" y2="45" class="ln-a" marker-end="url(#ar02)"/>
+<line x1="468" y1="45" x2="486" y2="45" class="ln-a" marker-end="url(#ar02)"/>
+<line x1="560" y1="70" x2="560" y2="106" class="ln-a" marker-end="url(#ar02)"/>
+<rect x="248" y="108" width="384" height="50" rx="6" class="box" stroke-dasharray="5 4"/><text x="440" y="128" text-anchor="middle">§5–§7 转进交易室</text><text x="440" y="146" text-anchor="middle" class="t-m">MBA·物理学家·两位上司</text>
+<line x1="248" y1="133" x2="210" y2="133" class="ln-a" marker-end="url(#ar02)"/>
+<rect x="8" y="108" width="200" height="50" rx="6" class="f-soft"/><text x="108" y="128" text-anchor="middle" class="t-b">§8 威尔和席勒</text><text x="108" y="146" text-anchor="middle" class="t-m">名将·《伊利亚特》·访谈</text>
+<line x1="108" y1="158" x2="108" y2="194" class="ln-a" marker-end="url(#ar02)"/>
+<rect x="8" y="196" width="384" height="50" rx="6" class="box"/><text x="200" y="216" text-anchor="middle">§9–§11 一串短节</text><text x="200" y="234" text-anchor="middle" class="t-m">辩论·机场保险·新闻·法国格言</text>
+<line x1="392" y1="221" x2="430" y2="221" class="ln-a" marker-end="url(#ar02)"/>
+<rect x="432" y="196" width="200" height="50" rx="6" class="box"/><text x="532" y="216" text-anchor="middle">§12–§13 风险经理</text><text x="532" y="234" text-anchor="middle" class="t-m">罗盘和船·作者的悖论</text>
+<line x1="532" y1="246" x2="532" y2="270" class="ln-d" marker-end="url(#ar02)"/>
+<rect x="432" y="272" width="200" height="40" rx="6" class="box"/><text x="532" y="297" text-anchor="middle">第 3 章 蒙特卡洛</text>
+<rect x="8" y="282" width="24" height="14" rx="3" class="f-soft"/><text x="40" y="294" class="t-m">主线</text>
+<rect x="100" y="282" width="24" height="14" rx="3" class="box" stroke-dasharray="5 4"/><text x="132" y="294" class="t-m">可跳过、离题多</text>
+</svg>
+<figcaption>本站示意图。第一行是论证的主干；第二行先绕进交易室，再由 §8 回到主线；最后两节把话题交给下一章。</figcaption></figure>
+
+<h2>分节地图</h2>
+<p class="lede">这一页就是原书和译本的第 2 章，一共 13 节。粗体是本站给的节名，后面是档和译本字数；下面是译本的小标题和这一节在译本电子书里开头的几个字（搜它就能跳过去），再下面是英文原文的开头。「先读」是这一章的骨架，「有空」好看、跳过不丢线，「可跳过」读不读都行。读完打个勾。</p>
+<ol class="secmap">
+  <li data-sec="1"><span class="what">很短，全章的定义在这里。留意作者紧跟着补的一句带刺的话：这种道理似乎只有失败的人在讲。</span></li>
+  <li data-sec="2"><span class="what">轮盘思想实验和作者说的「另类会计」。中间夹着两件私事：黎巴嫩战争里的同伴、小说家格林。最后几句给下一章的蒙特卡洛定调。</span></li>
+  <li data-sec="3"><span class="what">快速巡礼：莱布尼茨、量子力学的多世界、阿罗和德布鲁。开头括号里作者给「确定」「不确定」下了一个自己的定义。跳过不丢线。</span></li>
+  <li data-sec="4"><span class="what">现实比轮盘狠在三处，作者一条条数。第一条连到黑天鹅和第 7 章的归纳问题；第三条是他自己替投资人做「保护」产品的经历。</span></li>
+  <li data-sec="5"><span class="what">谁会去想看不见的历史：受过科学训练的人，一位按概率付账的朋友。最后讲 1980 年代交易室里的 MBA 怎样成批出局。</span></li>
+  <li data-sec="6"><span class="what">1990 年代科学家涌进华尔街的轶事和挖苦：拿棋盘面试、门把手。跳过会少一个「会解方程不等于会判断」的例子。</span></li>
+  <li data-sec="7"><span class="what">两位上司的对照，全章最好看的人物素描。第一位从<span class="zhv">译本：「我稱第一位為甘尼」</span>起，第二位从<span class="zhv">译本：「和甘尼相反，是個法國人」</span>起，作者的结论在<span class="zhv">译本：「在我漫長的事業生涯中」</span>那一段。</span></li>
+  <li data-sec="8"><span class="what">全章的高潮。前半从历史学家怎样评汉尼拔和恺撒讲到《伊利亚特》，后半是一次电视访谈。留意作者怎样把访谈和自己职业里的「噩梦」连在一起。</span></li>
+  <li data-sec="9"><span class="what">只有一段：作者回忆辩论输掉的经历，又挖苦了一次 MBA。跳过会少作者对「简化」的一句辩护。</span></li>
+  <li data-sec="10"><span class="what">两个心理学实验（机场保险、加州地震），再到新闻怎样放大情绪：疯牛病、911 之后的市场。第 11 章心理学的预演。</span></li>
+  <li data-sec="11"><span class="what">正确和好懂是两回事。一句法国格言、爱因斯坦的一句话，最后又拐回第一位上司。</span></li>
+  <li data-sec="12"><span class="what">公司里新设的风险经理：作者为什么想当又没当，这个职位难在哪里。</span></li>
+  <li data-sec="13"><span class="what">很短，两段：一个罗盘和船的比喻，再是作者生意的悖论，全章收在这里。</span></li>
+</ol>
+
+<h2>先用中文过一遍：这一页的概念</h2>
+<p class="lede">先把这一页用到、作者默认你懂的几个概念讲一遍。讲的是概念本身，作者拿它推出什么，读原书时自己看。别页讲过的概念，点链接过去看。</p>
+<div class="concept" id="c-alternative-history">
+<h3><span class="sec">§1</span>另类历史 <span class="en">alternative histories，译本：另類歷史</span></h3>
+<p>「另类历史」是作者的用法：一件事本来可能有好几种走法，实际只走了一种，没走成的那几种就是另类历史。最接近的通行说法是「反事实」（counterfactual）：要是当时……，会怎样。</p>
+<p>程序员熟悉的例子：一次上线没出事，不等于这次上线做得好，可能只是那条没测到的分支今天恰好没人走。要评价做得好不好，得把「本来可能出的事」也算进来。决策研究里也把「决策的好坏」和「结果的好坏」分开：好的决策可能碰上坏结果，糟的决策也可能碰上好结果。</p>
+<p class="use"><b>在这一页：</b>§1 下定义，§2 用轮盘演示，§8 拿它去看历史学家和电视评论员。后面几乎每一章都用这个词。</p>
+</div>
+<div class="concept" id="c-generator">
+<h3><span class="sec">§2</span>产生器（作者的用法） <span class="en">generator，译本：產生器</span></h3>
+<p>产生器是作者的叫法，指产生结果的那台「随机机器」：轮盘的六个弹巢，一笔交易背后押的风险，一门生意赚钱的方式。我们看得到的是它吐出来的结果（财富、业绩、一份漂亮的年终奖），看不到机器本身。</p>
+<p>打个比方：两个人都从抽奖箱里摸出了一等奖。一个箱子里一半是一等奖，另一个箱子里一万张才有一张。奖品一样，箱子不一样。只看结果的人看到的是奖品；问「箱子里装的是什么」的人，看的是产生器。</p>
+<p class="use"><b>在这一页：</b>§2 起反复出现：§4 说现实的产生器肉眼看不见，§7 第二位上司只关心它，§12 风险经理的差事就是盯着它。</p>
+</div>
+<div class="concept" id="c-expectation">
+<h3><span class="sec">§2</span>期望值：按所有可能的结果平均 <span class="en">expectation, expected value，译本：期望值</span></h3>
+<p>期望值是概率论里最基本的平均：把每一种可能的结果乘上它的概率，再加起来。抛一次硬币，正面赢 10 元，反面输 4 元，期望值是 0.5×10 − 0.5×4 = 3 元：玩很多次，平均每次赚 3 元。</p>
+<p>换个角度看，它是「所有可能的你」的平均：假如同一件事重来一千遍，把一千个结局平均起来。轮盘那个赌局，赢的概率 5/6，奖金一千万美元，奖金的期望约 833 万；可另外六分之一里你死了，死没法和钱放在一起平均。所以期望值只告诉你平均，不告诉你最坏的那一种有多坏，也不告诉你自己会落在哪一种。</p>
+<p class="use"><b>在这一页：</b>§2 的「另类会计」就是这种看法；第 1 章 §11 说 Nero 和牙医「平均起来」很富，也是这个意思。第 6 章拿它算赌局。</p>
+</div>
+<figure class="fig">
+<svg class="diagram" viewBox="0 0 640 260" role="img" aria-label="六个弹巢、六种历史的示意图：一个转轮里一颗子弹，扣一次扳机分出六条路，五条是多了一千万，一条是讣告；其中一条赢的路被标成你看见的那一次。下方写着每年玩一次连活二十五年约百分之一，一千人里约剩十人">
+<defs><marker id="ar02b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="f-a"/></marker></defs>
+<circle cx="90" cy="105" r="62" class="box"/>
+<circle cx="90" cy="65" r="13" class="f-a"/>
+<circle cx="125" cy="85" r="13" class="ln"/><circle cx="125" cy="125" r="13" class="ln"/>
+<circle cx="90" cy="145" r="13" class="ln"/><circle cx="55" cy="125" r="13" class="ln"/><circle cx="55" cy="85" r="13" class="ln"/>
+<text x="90" y="192" text-anchor="middle" class="t-m">六个弹巢，一颗子弹</text>
+<line x1="160" y1="105" x2="250" y2="20" class="ln"/><line x1="160" y1="105" x2="250" y2="55" class="ln-a" marker-end="url(#ar02b)"/>
+<line x1="160" y1="105" x2="250" y2="90" class="ln"/><line x1="160" y1="105" x2="250" y2="125" class="ln"/>
+<line x1="160" y1="105" x2="250" y2="160" class="ln"/><line x1="160" y1="105" x2="250" y2="195" class="ln-d"/>
+<text x="258" y="24">+1000 万美元</text>
+<rect x="254" y="41" width="230" height="24" rx="4" class="f-soft"/><text x="258" y="59" class="t-b">+1000 万美元 ← 你看见的那一次</text>
+<text x="258" y="94">+1000 万美元</text><text x="258" y="129">+1000 万美元</text><text x="258" y="164">+1000 万美元</text>
+<text x="258" y="199" class="t-m">讣告（没人看见）</text>
+<text x="20" y="232" class="t-m">每年玩一次、连玩 25 年还活着：(5/6)²⁵ ≈ 1%</text>
+<text x="20" y="252" class="t-m">一千个人这样玩：大约剩 10 个，个个极富，其余进了墓地</text>
+</svg>
+<figcaption>本站示意图。实心的彩色圆是装了子弹的那个弹巢，空心的是空弹巢。扣一次扳机，六种历史的概率相同；人们只看见实际发生的那一种。下面两行是本站按书里 §2 的设定算的数。</figcaption></figure>
+<div class="concept" id="c-epiphenomenon">
+<h3><span class="sec">§13</span>副现象（作者的用法） <span class="en">epiphenomenalism，译本：副現象論</span></h3>
+<p>哲学里的「副现象论」本来是心灵哲学的一种主张：意识像机器运转时冒出的蒸汽，伴随着大脑的活动出现，本身却不推动任何事。作者用得宽得多：两件事总一起出现，人就以为一件引起了另一件，他都拿这个词来说。</p>
+<p>他问的是：罗盘推着船走吗？船转向，罗盘的指针跟着转，可推船的不是罗盘。办公室里也常见：项目顺利的那几周正好天天开站会，不等于是站会让项目顺利。</p>
+<p class="use"><b>在这一页：</b>§13 用它问：公司设了风险经理、天天「盯着」风险，风险是真少了，还是只让人觉得一切在控制之中？</p>
+</div>
+<p>这一页还碰到几个别页讲的概念：§4 的<a class="term" href="pr.html#c-black-swan">黑天鹅</a>和<a class="term" href="07.html#c-induction">归纳问题</a>，§5 的奇特期权见<a class="term" href="01.html#c-option">期权</a>，§7 的<a class="term" href="08.html#c-survivorship-bias">幸存者偏差</a>和<a class="term" href="01.html#c-blow-up">爆仓</a>，§10 的<a class="term" href="03b.html#c-volatility">波动</a>和<a class="term" href="11a.html#c-heuristics">启发法和偏误</a>，§12 医生的两类错误见<a class="term" href="11b.html#c-conditional-probability">条件概率和基础比率</a>。§2 预告的工具是<a class="term" href="03a.html#c-monte-carlo">蒙特卡洛模拟</a>。</p>
+
+<h2>书里的人和背景</h2>
+<p class="lede">按在书里出现的顺序排，标题前是节号。只讲到读懂这一页需要的程度。</p>
+
+<h3><span class="sec">§2</span>俄罗斯轮盘和格林</h3>
+<div class="who">
+  <div><b>Graham Greene</b><span class="en">1904–1991</span>英国小说家、记者，常被列为二十世纪最重要的英语小说家之一。作者说读到他少年时玩过这种「游戏」，才发觉自己对文学的兴趣不浅。</div>
+</div>
+<p>俄罗斯轮盘是一种拿命赌的「游戏」：左轮手枪的转轮里只装一颗子弹，随手转一下，对着自己的头扣扳机。作者在这一节说了两件私事：十几岁时，他在黎巴嫩战争中有一个同伴死于这种游戏；格林在自述里说小时候为了解闷扣过扳机，作者想到自己「至少有六分之一的机会」读不到格林的小说。黎巴嫩内战从 1975 年打到 1990 年，作者是黎巴嫩人，少年时经历了战争的头几年。</p>
+
+<h3><span class="sec">§3</span>莱布尼茨、克里普克、埃弗雷特、阿罗和德布鲁</h3>
+<figure class="fig small"><img src="../assets/img/02-leibniz.jpg" alt="一位戴着深棕色长卷发假发的中年男子的油画肖像，面部特写，衣领露出一点白色" loading="lazy">
+<figcaption>Leibniz 的油画肖像（局部），Christoph Bernhard Francke 作。<span class="src">Christoph Bernhard Francke，公有领域，维基共享资源</span></figcaption></figure>
+<div class="who">
+  <div><b>Gottfried Wilhelm Leibniz</b><span class="en">1646–1716</span>德国哲学家、数学家，和牛顿各自发明了微积分。他说上帝心里有无数个可能的世界，只挑了一个实现。</div>
+</div>
+<p>作者这一节在说：另类历史这个想法，好几门学问各自想到过。哲学：Saul Kripke（1940–2022）等逻辑学家用「可能世界」讨论一句话是不是在所有可能的世界里都成立。物理：Hugh Everett（1930–1982）1957 年的工作后来发展成量子力学的「多世界诠释」，每到一个分岔，宇宙就像树一样分枝。经济学：Kenneth Arrow（1921–2017，1972 年诺贝尔经济学奖）和 Gérard Debreu（1921–2004，1983 年获奖）把不确定的未来列成几种「自然状态」，这就是状态空间方法，作者说它是新古典经济学和数理金融的基石；简化版就是企业做预算时的情景分析。</p>
+
+<h3><span class="sec">§5</span>1980 年代的交易室和 1990 年代的「科学家」</h3>
+<p>作者 1980 年代进华尔街，那时交易室里多是商学院出身、「讲商业」的人。§5 说的奇特期权（exotic options），是条款比普通期权复杂得多的期权，比如要价格碰到某条线才生效的那种，赚赔方式反直觉。1990 年代起，大量物理、数学出身的人进了华尔街，给这些复杂的衍生品定价、做交易，作者说其中很多来自俄罗斯。§6 的 Aeroflot 是俄罗斯航空，JFK 是纽约的肯尼迪机场，Wharton（沃顿商学院）是作者自己读 MBA 的地方，FASB 是制定美国会计准则的机构，作者拿「讨论 FASB 准则」代表最无聊的午餐话题。</p>
+
+<h3><span class="sec">§7</span>两位上司</h3>
+<p>Kenny 和 Jean-Patrice 是作者给两位真实上司起的化名（「我叫他……」），不是他编的人物，真名不可考。Kenny 所在的公司以衍生品出名；1993 年欧洲债券大涨，他手下几位交易员赚得很好，作者毫不掩饰地认为他们只是碰运气。Regine’s 是纽约的一家高级夜总会。作者后来在巴黎读了博士（1998 年完成），§7 说 Jean-Patrice 在他论文答辩时突然出现在会场后排。</p>
+
+<h3><span class="sec">§8</span>席勒和威尔</h3>
+<figure class="fig small"><img src="../assets/img/02-shiller.jpg" alt="一位灰发、穿深色西装的男子坐着，右手握拳托着下巴，神情专注，背景是蓝色" loading="lazy">
+<figcaption>Robert Shiller 在 2012 年达沃斯世界经济论坛上，那一场讨论的题目是「评论员、教授和他们的预测」。<span class="src">World Economic Forum，CC BY-SA 2.0，维基共享资源</span></figcaption></figure>
+<div class="who">
+  <div><b>Robert J. Shiller</b><span class="en">1946–</span>美国经济学家，耶鲁大学教授，研究股价为什么比基本面晃得厉害。2000 年出版《非理性繁荣》，说美股涨过了头。2013 年和 Eugene Fama、Lars Peter Hansen 一起获诺贝尔经济学奖。</div>
+</div>
+<div class="who">
+  <div><b>George Will</b><span class="en">1941–</span>美国保守派专栏作家、电视评论员，长年为《华盛顿邮报》写专栏，1977 年得过普利策评论奖。</div>
+</div>
+<p>席勒从 1996 年起就说美股高估。威尔在一次访谈里对他说：你开始说高估以后，股市又涨了一倍多，听你的人早亏钱了。作者说威尔还为此写过文章，谈席勒的「预言」落空；书里没说是哪一年。前半节的汉尼拔（迦太基名将，进攻罗马失败）、希特勒、亚历山大大帝、恺撒，是作者拿来说「历史学家以成败论战略」的例子。Yogi Berra 是美国棒球明星，以说俏皮话出名。</p>
+<figure class="fig"><img src="../assets/img/02-patroclus.jpg" alt="圆形的红绘陶杯杯心画：一位戴头盔、穿鳞甲的年轻战士跪着，给坐在盾上的受伤战友的手臂缠绷带，受伤的人扭头咬着牙" loading="lazy">
+<figcaption>阿喀琉斯给中箭的帕特洛克罗斯包扎伤口，古希腊红绘陶杯的杯心画，约公元前 500 年，出土于意大利武尔奇，藏于柏林古代文物馆。§8 作者说，帕特洛克罗斯是英雄，不是因为他打赢了（他很快就战死了）。<span class="src">陶工 Sosias、画师「Sosias 画家」，公有领域，维基共享资源</span></figcaption></figure>
+
+<h3><span class="sec">§10</span>两个实验和疯牛病</h3>
+<p>作者把两个实验并在一句话里归给 Kahneman 和 Tversky。加州地震引起洪水那个确实是他们的：1983 年的论文里，一半学生估计「明年北美某地发大水、淹死上千人」的概率，另一半估计「明年加州地震引发大水、淹死上千人」，后者估得更高，可它只是前者的一种。这道题问的是加拿大的大学生；参加国际预测大会的专业预测者做的是另一道同类的题，也犯了同样的错。机场保险那个，出自 Johnson、Hershey、Meszaros 和 Kunreuther 1993 年的论文：人们愿意为只赔恐怖袭击的航空险多掏钱。疯牛病传到人身上的病叫变异型克雅氏病，据英国的监测机构，截至 2025 年初英国共有 178 人死于这种病。</p>
+
+<h3><span class="sec">§11</span>布瓦洛和爱因斯坦</h3>
+<div class="who">
+  <div><b>Nicolas Boileau</b><span class="en">1636–1711</span>法国诗人、批评家，以讲究清楚、合乎规矩的文风出名。作者背的那两行出自他谈作诗的长诗，法国学生常背。</div>
+</div>
+<p>作者说 1905 年向伦敦《泰晤士报》的记者解释「运动会让时间变慢」，人家会当你疯了。他还说诺贝尔奖委员会从没为狭义相对论给爱因斯坦发奖：爱因斯坦 1921 年的物理学奖，颁奖理由是他对理论物理的贡献，特别是发现了光电效应的定律。</p>
+
+<h3><span class="sec">§12</span>风险经理和作者的合伙人</h3>
+<p>风险经理是公司里专门盯风险的人：看交易员押了多少、出事会亏多少，必要时让他们减仓。作者说这是「最近」才有的奇怪职位，1990 年代几次大亏损以后，大银行纷纷设了独立的风险部门。§13 提到的 Donald Sussman（1946–）是美国对冲基金经理、Paloma 基金的创办人；作者说他在自己职业的第二阶段帮了忙，让他不再受雇于人。</p>
+
+<h2>原文里的词和句</h2>
+<p class="lede">读英文原文时值得停一下的词和句：交易员的行话、作者的反话和双关、熟词生义。灰色斜体是原句里连续的几个词，在英文电子书里搜它就能找到；标「每个字都认识」的，是每个词都眼熟、合起来意思却变了的，最容易读错。点「记下」收进词本。</p>
+<div class="entry trap"><div class="en">lead to a statistic</div><div class="loc" data-p="3">… one would lead to a statistic …</div><div class="zh">变成一个统计数字（也就是死了）</div><div class="note">黑色幽默：死者在统计表里只是一个数。作者紧接着补一句「也就是一份讣告」。</div></div>
+<div class="entry trap"><div class="en">go the extra mile</div><div class="loc" data-p="14">… training tend to go the extra mile …</div><div class="zh">多想一步、多下一份功夫</div><div class="note">不是真的多走一英里。作者说受过科学训练的人往往愿意去想看不见的那些历史。</div></div>
+<div class="entry"><div class="en">pay for half of it probabilistically</div><div class="loc" data-p="15">… paid for half of it probabilistically …</div><div class="zh">（按概率算）这顿饭他付了一半</div><div class="note">朋友的玩笑：抛硬币之前两人各有一半的机会付账，从另类历史看，他「付」了一半。正是这一章的道理。</div></div>
+<div class="entry"><div class="en">flat as a pancake</div><div class="loc" data-p="16">… flat as a pancake, and likely …</div><div class="zh">平得像煎饼，毫无深度</div><div class="note">说人没有内心生活、从不反省。</div></div>
+<div class="entry"><div class="en">drop like flies</div><div class="loc" data-p="16">… They dropped like flies; I do …</div><div class="zh">成片倒下、一个接一个出局</div><div class="note">像苍蝇一样成批死掉，说当年的 MBA 交易员被淘汰得很快。</div></div>
+<div class="entry trap"><div class="en">street smarts</div><div class="loc" data-p="17">… they lacked the street smarts to …</div><div class="zh">书本以外的精明、过日子的本事</div><div class="note">不是「街头」本身。作者挖苦那些物理学家连飞机上的好座位都抢不到。</div></div>
+<div class="entry trap"><div class="en">the judgment of a doorknob</div><div class="loc" data-p="19">… (and social graces) of a doorknob …</div><div class="zh">判断力跟门把手一样（等于没有）</div><div class="note">门把手不会思考。挖苦人毫无判断力，括号里把社交能力也一起骂了。</div></div>
+<div class="entry trap"><div class="en">make out</div><div class="loc" data-p="21">… person to make out my logic …</div><div class="zh">弄懂、看明白（我的逻辑）</div><div class="note">make out 在这里是「理解」。同一段后面又说他 could not make out 作者在讲什么。</div></div>
+<div class="entry"><div class="en">random gunslingers</div><div class="loc" data-p="21">… nothing better than random gunslingers …</div><div class="zh">乱开枪的枪手</div><div class="note">不瞄准、碰运气打中的人。作者说那几位赶上牛市的交易员只是运气好。</div></div>
+<div class="entry"><div class="en">a time bomb, ticking away</div><div class="loc" data-p="21">… a perfect time bomb, ticking away …</div><div class="zh">一颗正在嘀嗒走的定时炸弹</div><div class="note">外表稳重，风险在里面一点点攒着。</div></div>
+<div class="entry trap"><div class="en">steady bathing habits</div><div class="loc" data-p="22">… Frenchman with steady bathing habits …</div><div class="zh">（一个）天天洗澡的（法国人）</div><div class="note">玩笑，借「法国人不爱洗澡」的老刻板印象：作者说他受女人欢迎，也许就占了这个便宜。要反着读，是调侃，不是夸他爱干净。</div></div>
+<div class="entry trap"><div class="en">Masters of the Universe</div><div class="loc" data-p="25">… their customary Masters of the Universe demeanor …</div><div class="zh">（平时那副）宇宙主宰般的派头</div><div class="note">1980 年代形容华尔街交易员自命不凡的说法，出自汤姆·沃尔夫的小说《虚荣的篝火》。</div></div>
+<div class="entry trap"><div class="en">the fat lady has not sung yet</div><div class="loc" data-p="28">… the fat lady not having sung yet …</div><div class="zh">戏还没唱完，胜负未定</div><div class="note">来自俗语「胖女人没唱完，戏就没散」。作者说换了 Yogi Berra，会拿这句话顶回去。</div></div>
+<div class="entry"><div class="en">sound bite</div><div class="loc" data-p="29">… compress his ideas into vapid sound bites …</div><div class="zh">（空洞的）电视金句</div><div class="note">新闻里剪出来的一两句话，要短、要响。</div></div>
+<div class="entry"><div class="en">off-the-cuff remark</div><div class="loc" data-p="29">… was not an off-the-cuff remark …</div><div class="zh">随口一说</div><div class="note">作者说威尔不是一时口快，他还为此写过文章。</div></div>
+<div class="entry trap"><div class="en">cheapest to deliver</div><div class="loc" data-p="33">… the cheapest to deliver sensation …</div><div class="zh">成本最低就能送到你面前的刺激</div><div class="note">双关：cheapest to deliver 是国债期货的行话，指卖方交割时挑最便宜的那只债券。作者说新闻递给你的，也是最便宜的那种感觉。</div></div>
+<div class="entry"><div class="en">be here to stay</div><div class="loc" data-p="40">… risk managers are here to stay …</div><div class="zh">（风险经理）一直待着不走</div><div class="note">作者仿的格言：交易员来来去去，风险经理留下来。</div></div>
+<div class="entry trap"><div class="en">opportunity shekels</div><div class="loc" data-p="40">… the shareholder some precious opportunity shekels …</div><div class="zh">（害股东错过的）几个赚钱机会</div><div class="note">仿 opportunity cost（机会成本），把 cost 换成 shekels（谢克尔，以色列货币，口语里泛指钱），带点调侃。</div></div>
+<div class="entry trap"><div class="en">go against the grain</div><div class="loc" data-p="43">… I go against the grain …</div><div class="zh">和大多数人反着来</div><div class="note">本义是逆着木头的纹理刨，引申为和主流对着干。</div></div>
+
+<h2>译本勘误</h2>
+<p class="lede">对着译本读这一章时，下面这些地方会把人读歪。方框里是译本的原句，在译本电子书里搜它就能找到；灰色斜体是英文原文那一处。只收意思错了、反了、漏了的，措辞上的出入和台湾用语不收。全书的勘误汇总在<a href="../zh.html">译本勘误</a>。</p>
+<div class="zherr" data-p="5"><h4><span class="sec">§2</span>qualitative 是「定性」，不是「计量」<span class="mark">术语</span></h4>
+<p class="loc">… that probability is a qualitative subject …</p>
+<p class="zhq"><span class="zhv">译本：「我們將談到機率是個計性課題」</span></p>
+<p>qualitative 是「定性的」，和「定量」相对。作者的意思是：另类历史不必真的算出来，要看它们是什么性质，数学只拿来帮直觉。「計性」读着像「计量」，正好拧了，这几句的道理也跟着变了。</p></div>
+<div class="zherr" data-p="12"><h4><span class="sec">§4</span>是「提醒了也没人感谢」，不是「别碰抽象的东西」<span class="mark">误译</span></h4>
+<p class="loc">… ingratitude factor in warning people about …</p>
+<p class="zhq"><span class="zhv">译本：「警告人們不要碰抽象的東西」</span></p>
+<p>原文说：提醒人们防范一件抽象的风险（没发生的事都是抽象的），是得不到感谢的。后面他替投资人做防范稀有事件的产品、被抱怨白花钱的例子，讲的就是这个。译本读来像作者在劝人「别碰抽象的东西」，和下文接不上。</p></div>
+<div class="zherr" data-p="14"><h4><span class="sec">§5</span>是在夸这种人「特别爱思考」<span class="mark">误译</span></h4>
+<p class="loc">… Particularly thoughtful are those who had …</p>
+<p class="zhq"><span class="zhv">译本：「在有自知之明的情況下，不得不放棄科學研究」</span></p>
+<p>原文：特别爱思考的，是那些因为没法专注在一个狭窄问题上、不得不放弃科学研究的人（Nero 是受不了琐碎的细节）。这句是夸奖。译本把「特别爱思考」换成「有自知之明」，读来像这些人自知不行才退出。</p></div>
+<div class="zherr" data-p="19"><h4><span class="sec">§6</span>门把手是说「毫无判断力」<span class="mark turn">译反</span></h4>
+<p class="loc">… Some successful scientists had the judgment …</p>
+<p class="zhq"><span class="zhv">译本：「有些成功的科學家懂得怎麼轉開球形門把」</span></p>
+<p>原文说有些成功的科学家「判断力（和社交能力）跟门把手一样」，就是一点没有；后半句是「但绝不是所有人都这样」。译本说成他们「懂得怎么转开门把」，像在夸他们有点本事，意思正好反了。</p></div>
+<div class="zherr" data-p="23"><h4><span class="sec">§7</span>教训是「提防成熟的金融机构」<span class="mark">误译</span></h4>
+<p class="loc">… taught me to beware of mature financial …</p>
+<p class="zhq"><span class="zhv">译本：「要懂得明哲保身」</span></p>
+<p>原文的教训是对机构本身起戒心：会往上爬的 Kenny 升到高层，懂风险的 Jean-Patrice 却不顺，作者由此学会提防成熟的大金融机构。译本说成在这种机构里做事「要懂得明哲保身」，变成了教人怎样自保。</p></div>
+<div class="zherr" data-p="26"><h4><span class="sec">§8</span>「然而」应是「因为」<span class="mark">误译</span></h4>
+<p class="loc">… as Rome is not today Phoenician-speaking …</p>
+<p class="zhq"><span class="zhv">译本：「然而羅馬今天不講腓尼基語」</span></p>
+<p>原文的 as 是「因为」：我们说汉尼拔和希特勒疯狂，是因为罗马今天不讲腓尼基语、时报广场上没有纳粹标志，也就是因为他们输了。作者批评的正是这种以成败论战略的推理。译成「然而」，因果断了，讽刺也读不出来。</p></div>
+<div class="zherr" data-p="29"><h4><span class="sec">§8</span>「预言」在表 P.1 的右栏<span class="mark">术语</span></h4>
+<p class="loc">… prophecy belongs to the right column …</p>
+<p class="zhq"><span class="zhv">译本：「預言屬於下欄」</span></p>
+<p>表 P.1 分左右两栏：左栏的东西常被误认成右栏的，「预测」在左，「预言」在右。译本的表也是左右两栏，「预言」在表里作「先知」；这里却说「下栏」「上栏」，叫法也换了，对照着找表会找不到。</p></div>
+<div class="zherr" data-p="30"><h4><span class="sec">§9</span>漏了「个人见闻」这层限定<span class="mark">漏译</span></h4>
+<p class="loc">… anecdotal evidence in my business that …</p>
+<p class="zhq"><span class="zhv">译本：「企管碩士經常在金融市場陣亡的原因」</span></p>
+<p>原文作者先给自己加了限定：他在这一行有些「个人见闻式的证据」，说明 MBA 往往（tend to）在金融市场爆仓。译本丢了这层限定，「往往」又成了「经常」，读来像作者在陈述一条确定的规律。</p></div>
+<div class="zherr" data-p="31"><h4><span class="sec">§10</span>是「赔付相同」，不是「保费相同」<span class="mark">误译</span></h4>
+<p class="loc">… for insurance that pays the same …</p>
+<p class="zhq"><span class="zhv">译本：「保費相同的保單」</span></p>
+<p>实验问的是：同样赔一百万图格里克，一种保单任何原因死亡都赔，另一种只赔恐怖袭击，旅客各愿意付多少保费。译本把「赔付相同」译成「保费相同」，保费都定了，「愿意付多少」就问不下去，整个实验讲不通。</p></div>
+<div class="zherr" data-p="39"><h4><span class="sec">§11</span>「危险的白痴」说的是那位明星交易员<span class="mark">误译</span></h4>
+<p class="loc">… that he is a dangerous idiot …</p>
+<p class="zhq"><span class="zhv">译本：「說服他相信自己是冒很大危險的白癡」</span></p>
+<p>从上下文看，him 是 Kenny，he 是 Kenny 手下业绩「证明」很出色的明星交易员：作者有足够的理由说服 Kenny，那位交易员是个危险的白痴。译本写成「相信自己」，读来像要说服 Kenny 承认他自己是白痴。</p></div>
+
+<div class="gate"></div>
+
+<h2>读完：作者到底说了什么</h2>
+<p class="lede">读完这一章再看。下面是作者在这一章里的主张，由本站按主张之间的逻辑重新组织，不按原书的顺序；每条后面是节号，拿不准就回书里那一节再读一遍。</p>
+<div class="claims">
+  <div class="claim"><h4>评价一种表现，要看另类历史，不能只看结果</h4><p>他说这是老生常谈，难的是做到：实际发生的只有一种，看得见；没发生的几种看不见。他挖苦说，这话似乎只有失败者在讲。轮盘的一千万和牙医的一千万能买一样的东西，依赖运气的程度却不同，他说自己「忍不住」认为两者性质不同。</p><span class="sec" data-p="2 3 5">§1 §2</span></div>
+  <div class="claim"><h4>一直玩下去，坏的历史迟早追上来；现实比轮盘更狠</h4><p>一年玩一次，二十五岁的人很难活到五十岁；玩的人够多，会剩下一小撮巨富和一大片墓地。现实里子弹少见，几十次没事人就忘了它；弹巢看不见，人可能不知不觉地玩着轮盘，还管它叫「低风险」；替人防住了没发生的事，多半没人感谢。</p><span class="sec" data-p="4 10 11 12">§2 §4</span></div>
+  <div class="claim"><h4>看得见产生器的人少，只看结果的人在市场的墓地里多得不成比例</h4><p>依据是他在华尔街多年看人：受过一点科学训练的人往往（tend to）更会想看不见的历史，但他提醒未必是训练本身的功劳；1980 年代的 MBA 交易员成批出局；两位上司里，只关心产生器、不看结果的那位更懂风险。他说这不是巧合。</p><span class="sec" data-p="14 16 21 22 25">§5 §7</span></div>
+  <div class="claim"><h4>拿一次结果造就或推翻「先知」，是被随机愚弄的症状，媒体尤其如此</h4><p>历史学家以成败论名将，威尔拿「听你的就亏钱」问席勒，都是不考虑另类历史。他说不理性的市场完全可能更不理性，一次说错推翻不了席勒的看法。他还借心理学说，人判断风险靠情绪和鲜活的画面，新闻专挑刺激情绪的讲，新闻也许（may）是今天最大的祸害。</p><span class="sec" data-p="26 28 29 31 32 33">§8 §10</span></div>
+  <div class="claim"><h4>好懂不等于正确；风险经理多半只带来「风险降低了」的印象</h4><p>他说听起来聪明的话值得怀疑，反直觉的道理压不进一句电视台要的话。他断言机构设风险经理，与其说为了降低风险，不如说为了降低风险的「印象」。他自己的生意则要大多数人继续被随机愚弄，又要有少数人不被。</p><span class="sec" data-p="34 38 42 43">§11 §13</span></div>
+</div>
+<p class="sowhat"><b>合起来：</b>结果只是许多可能里碰巧发生的一种。评价一个人、一个决策、一笔钱，要问它背后的产生器，问「本来可能怎样」。这是作者给全书立的尺子，后面的蒙特卡洛、幸存者偏差、偏态都拿它来量。</p>
+
+<h2>值得停下来的句子</h2>
+<blockquote class="quote">$10 million earned through Russian roulette does not have the same value as $10 million earned through the diligent and artful practice of dentistry.<cite>— §2。本站译：靠俄罗斯轮盘挣来的一千万美元，和靠勤勉而高明地行医补牙挣来的一千万美元，价值不一样。</cite></blockquote>
+<p>这是全章的命题，口气像在讲一条会计规则，其实是在反会计：账面上这两笔钱一分不差。关键是 value：作者不是说两笔钱能买的东西不同（他紧接着承认能买一样的东西），而是说它们背后的产生器不同。diligent and artful 像是特意给牙医的一点体面，平淡的职业在这里成了正面角色。容易误读成「靠运气的钱不道德」；他讲的是风险，不是道德。</p>
+<blockquote class="quote">What sounds intelligent in a conversation or a meeting, or, particularly, in the media, is suspicious.<cite>— §11。本站译：在谈话里、会议上，尤其是在媒体上，听起来很聪明的话，都值得怀疑。</cite></blockquote>
+<p>原文整句是斜体，作者的口气是下判断，带着对电视评论员的不耐烦。关键词是 suspicious：可疑，不是错。他没说复杂的话才可信，只说「顺耳」本身不能当证据。<span class="zhv">译本：「說穿了其實不無可議之處」</span>意思到了，口气比原文绕了一圈，弱了不少。</p>
+
+<h2>今天怎么看</h2>
+<p class="lede">这本书 2004 年出第二版，书里讲的多是 1980–2003 年的事。下面挑出这一页里能被后来的研究或事情检验的说法，分「书里 / 当时 / 今天」几栏，并给一个结论。结论判的是标题里「书里的说法：」后面那一句。全书的这一节汇总在<a href="../today.html">今天怎么看</a>。</p>
+<ul class="verdicts"><li><span class="v ok">成立</span>后来的研究或事情支持这句话。</li><li><span class="v mid">部分成立</span>大方向对，细节或适用范围要改。</li><li><span class="v bad">被改写</span>后来的研究推翻了它、换了一种说法，或者情况变了。</li><li><span class="v dis">有争议</span>至今没有定论，两边各有代表性的研究或证据。</li></ul>
+<div class="today" data-verdict="成立"><h4>书里的说法：人习惯拿结果去评判一个决策的好坏</h4><dl>
+  <dt>书里</dt><dd>作者说决策的好坏不能只看结果，可这话似乎只有失败者在讲，成功者都把成功归给自己的决策。<span class="at" data-p="2">§1</span></dd>
+  <dt>当时</dt><dd>心理学已经给它起了名字：Baron 和 Hershey 1988 年在《人格与社会心理学杂志》上报告「结果偏差」（outcome bias）。同一个决策，告诉人结果好，他们给决策过程打的分就更高，也更觉得做决定的人能干。</dd>
+  <dt>今天</dt><dd>这个效应经得起重做。2023 年 Aiyer、Feldman 等人在《社会心理学国际评论》上预注册重做了那篇论文的实验 1，样本从 20 人扩到 692 人，结果偏差依然清楚；连那些自己说「评价决策不该看结果」的人，也照样受结果影响。<span class="asof">核对于 2026-10。依据：Baron &amp; Hershey, Journal of Personality and Social Psychology 54(4), 1988；Aiyer et al., International Review of Social Psychology, 2023。</span></dd>
+</dl></div>
+<div class="today" data-verdict="部分成立"><h4>书里的说法：911 之后十八个月，市场的波动远小于之前十八个月</h4><dl>
+  <dt>书里</dt><dd>作者说那十八个月的实际涨跌小得多，投资人心里却觉得波动得厉害，是媒体谈「恐怖威胁」放大了感受。<span class="at" data-p="33">§10</span></dd>
+  <dt>当时</dt><dd>911 之前的十八个月正是科技股泡沫破裂：纳斯达克综合指数从 2000 年 3 月的高点跌掉六成多。</dd>
+  <dt>今天</dt><dd>本站用每日收盘价算了两段的年化波动率（每天涨跌幅的标准差，折算成一年），前一段是 2000 年 3 月 11 日到 2001 年 9 月 10 日，后一段是 2001 年 9 月 17 日复市到 2003 年 3 月 17 日。纳斯达克从约 49% 降到约 34%，作者说得对；标普 500 却从约 22% 升到约 25%，单日涨跌超过 3% 的天数从 14 天增到 23 天，反映标普 500 预期波动的 VIX 指数，平均值也从约 24 升到约 28。看哪个指数，结论正好相反。<span class="asof">核对于 2026-10。依据：圣路易斯联储 FRED 数据库的 NASDAQCOM、VIXCLS 序列；标普 500 每日收盘价，本站计算。</span></dd>
+  <dt>另一边</dt><dd>作者真正要说的是投资人的感受被媒体放大，这一点收盘价检验不了；数据只说明他举的这个例子只对纳斯达克成立。</dd>
+</dl></div>
+<div class="today" data-verdict="成立"><h4>书里的说法：席勒说股市高估，不因为之后又涨了一倍就被推翻</h4><dl>
+  <dt>书里</dt><dd>威尔说席勒开始说高估以后股市又涨了一倍多；作者说不理性的市场可以更不理性，过去说错一次，推翻不了席勒对市场是否理性的看法。<span class="at" data-p="28 29">§8</span></dd>
+  <dt>当时</dt><dd>席勒从 1996 年起就说美股高估。那年 12 月初标普 500 约 745 点，到 2000 年 3 月涨到约 1527 点，翻了一倍多。</dd>
+  <dt>今天</dt><dd>泡沫随后破了：2002 年 10 月标普 500 跌回约 777 点，2009 年 3 月跌到约 677 点，低于 1996 年 12 月。2013 年席勒和 Fama、Hansen 一起获诺贝尔经济学奖，理由是「对资产价格的实证分析」。他的看法没有被那一倍的涨幅推翻。<span class="asof">核对于 2026-10。依据：标普 500 每日收盘价；诺贝尔奖官网 2013 年经济学奖页面。</span></dd>
+  <dt>另一边</dt><dd>威尔的话也不全是空话：要是有人 1996 年 12 月听席勒的话卖掉，单看指数点位，要等到 2002 年秋天才跌回卖出时的水平附近。「高估」的判断可以对，拿它来定买卖的时机却很难；作者在 §8 也说，席勒从没自称先知。</dd>
+</dl></div>
+
+<h2>本站怎么看</h2>
+<p class="lede">读完作者的主张，再看它站不站得住。每一块摆出三样：主流怎么看，作者怎么看，本站的评论。最后一句是本站对这一页的总体判断。</p>
+<div class="views"><h4>另类历史这把尺子怎么用</h4>
+<p><b>主流看法：</b>决策研究同意要把决策和结果分开评价，「结果偏差」1988 年就有人测出来，2023 年重做仍然成立。难处在于现实里的另类历史算不出来：没有人知道现实那把枪有几个弹巢，评估只能靠判断。</p>
+<p><b>作者的看法：</b>不必真的算出另类历史，要评估它们的性质；连最会算概率的科学家也给不出现实的赔率，因为看不见现实的弹巢。<span class="at" data-p="5 11">§2 §4</span></p>
+<p class="ours"><b>本站的评论：</b>这把尺子好用，也有一个危险：它能替任何失败开脱。「决策没错，只是运气不好」，正是 §1 里作者挖苦的卸任政客的话。用另类历史，最好事先说清「什么样的结果会说明我错了」，不然它就成了驳不倒的托词。作者替席勒辩护时也碰到这一点：「高估」要是多久都不必兑现，就很难被证明是错的。</p></div>
+<div class="views"><h4>人对风险的判断真的和理性无关吗</h4>
+<p><b>主流看法：</b>Loewenstein、Weber、Hsee 和 Welch 2001 年在《心理学公报》上提出「风险即感受」：人面对风险时的情绪反应常常和理性的评估不一致，不一致时，情绪常常主导行为。这是一个理论框架，用来补充只讲计算的决策理论，没有说理性评估不起作用。</p>
+<p><b>作者的看法：</b>察觉和躲避风险主要由情绪脑负责是科学事实，理性思考和躲避风险几乎没有关系，多半只是事后找理由；新闻也许是今天最大的祸害。<span class="at" data-p="32 33">§10</span></p>
+<p class="ours"><b>本站的评论：</b>方向对，话说满了。研究说的是「常常」，他说成「几乎没有关系」。而且这一章的劝告本身，就是要人用理性去想看不见的东西；理性要真和躲避风险无关，劝也就白劝了。机场保险是好例子，人确实爱为鲜活的风险掏钱；他配上的「911 之后波动小得多」却只对纳斯达克成立。</p></div>
+<div class="views"><h4>风险经理只是做样子吗</h4>
+<p><b>主流看法：</b>2008 年 3 月，几个国家的银行监管机构组成的「高级监管者小组」检查了十一家大银行和券商在次贷风暴里的表现：亏得少的那几家，管理层更积极地管住全公司的资产负债表和流动性，风险计量会随情况调整，能从全公司的角度看风险，也更多用压力测试和情景分析。</p>
+<p><b>作者的看法：</b>风险经理拦不住赚钱的交易员，出了事又要负责，只好写措辞含糊的备忘录自保；机构设这个职位，与其说为降低风险，不如说为降低风险的印象。<span class="at" data-p="40 41 42">§12 §13</span></p>
+<p class="ours"><b>本站的评论：</b>他把这个职位的两难讲得很准：拦对了，没人看得见，这正是另类历史的难处。但「只是印象」说得太绝：2008 年的检查显示，风险管理做得好坏，亏损大小真有差别。关键不在有没有风险经理，在他们有没有权力，这一点作者在 §12 自己也提到了。</p></div>
+<p class="verdict"><b>本站的总体看法：</b>这一章最值得带走的是前四节：结果只是许多可能里的一种，评价要看产生器。这个道理后来在心理学里有了名字，也经得起重做。交易室的人物素描好看，但那是作者的见闻和好恶；心理学和新闻几节话说得比研究满，风险经理一节说得太绝，都要打个折扣。</p>
+
+<h2>检查一下理解</h2>
+<p class="lede">先在心里答，再点开。答错的那题，回书里把对应那一节再读一遍。</p>
+<details class="check"><summary>1.（§2）轮盘一年玩一次，从二十五岁玩到五十岁还活着的概率大约多少？一千个人都这样玩，大约剩几个？</summary><p>要连着活 25 次，(5/6)²⁵ 约等于 1%，所以作者说「机会微乎其微」。一千个人里大约剩 10 个，个个极富，其余的进了墓地。</p></details>
+<details class="check"><summary>2.（§2）一个人靠轮盘赢了一千万，一个牙医多年攒下一千万。会计和邻居怎么看？作者怎么看？</summary><p>会计和邻居看来一模一样，钱能买的东西也一样。作者看产生器：前者依赖运气多得多，换一种走法就是一份讣告，所以他忍不住认为两者性质不同。</p></details>
+<details class="check"><summary>3.（§4）现实里的轮盘有几百、几千个弹巢。为什么这比六个弹巢更危险，而不是更安全？</summary><p>每次中弹的概率小了，可连着几十次没事，人就忘了里面有子弹，越玩越放心；而且现实的弹巢看不见，连有几个都不知道。按本站的算法，一千个弹巢玩 250 次，大约五个人里就有一个出事。</p></details>
+<details class="check"><summary>4.（§4）你花钱给工厂买了一年火灾险，这一年没着火。这笔钱白花了吗？</summary><p>按另类历史看不是：那一年工厂本来可能着火，在那几种历史里保险替你赔了。书里抱怨「白花钱」的投资人，只看了实际发生的那一种。</p></details>
+<details class="check"><summary>5.（§7）两位上司，作者为什么说更懂风险的，是脾气火爆、生活多彩的那一位？</summary><p>Jean-Patrice 只关心产生器、不看结果，脑子里一直设想可能出的每一件事，连飞机撞进办公楼都要作者做预案。Kenny 稳重体面，只看手下交易员赚了多少，作者跟他讲幸存者偏差也讲不通。</p></details>
+<details class="check"><summary>6.（§10）「任何原因死亡都赔」的航空险，为什么不可能比「只赔恐怖袭击」的更不值钱？人们为什么还是愿意为后者多掏钱？</summary><p>任何原因已经包括了恐怖袭击，赔的范围只大不小。人肯为后者多付，是因为恐怖袭击具体、有画面，「任何原因」太抽象；作者说他做衍生品交易时也看到人不爱为抽象的东西投保。</p></details>
+<details class="check"><summary>7.（§12）风险经理拦住一个赚钱的交易员，后来什么事也没有；或者没拦，后来爆仓了。两种情况他各会怎样？</summary><p>拦了没出事，事后会被威尔那样的人指责害股东错过了赚钱的机会；没拦而出事，责任算在他头上。所以作者说他们写措辞含糊的备忘录保护自己，像医生在假阳性和假阴性之间拿捏。</p></details>
+<p>用一句话说这一页：</p>
+<textarea class="note" data-key="02-oneline" rows="2" placeholder="比如：……"></textarea>
+<div class="ponder"><p>想一想：你的工作里有没有一件「做对了但没人知道」的事，比如提前修掉一个隐患、拦下一次危险的上线？当时别人怎么评价它？反过来，你有没有因为一次结果好，就高看了某个决定？</p>
+<textarea class="note" data-key="02-ponder" rows="3"></textarea></div>
+
+<h2>精彩回顾</h2>
+<p class="lede">读过又忘了，从这里想起来。挑的是这一页最值得记住的故事和说法，不按原书顺序；每条后面是节号，想细看就回书里那一节。全书各页的这一节都收在<a href="../recap.html">全书回顾</a>。</p>
+<p class="recall-line"><b>一句话：</b>你看到的结果只是许多可能里碰巧发生的一种：同样一千万，来路不同，分量不同。</p>
+<div class="recall">
+  <div class="item"><b>一千万的轮盘</b><p>无聊的大亨出一千万美元请你玩一次俄罗斯轮盘。赢的人会被记者夸、被邻居当榜样；没人看见另一种历史里的那份讣告。</p><span class="sec">§2</span></div>
+  <div class="item"><b>牙医的一千万</b><p>钱一样多，能买的东西也一样，一笔靠运气，一笔靠一颗颗补牙。会计看不出差别，作者说他忍不住认为两者性质不同。</p><span class="sec">§2</span></div>
+  <div class="item"><b>按概率付一半</b><p>作者和一位交易员朋友抛硬币决定谁请客，作者输了。朋友正要道谢，忽然改口：按概率算，这顿饭他付了一半。</p><span class="sec">§5</span></div>
+  <div class="item"><b>凌晨三点的电话</b><p>第二位上司从夜总会打电话吵醒作者，讨论他仓位上的小细节；还逼他为飞机撞进办公楼做预案，那是 2001 年 9 月之前很久的事。</p><span class="sec">§7</span></div>
+  <div class="item"><b>听你的就亏钱</b><p>电视评论员威尔对席勒说，要是大家早听他的，早就亏钱了。作者说，不理性的市场还可以更不理性，一次说错推翻不了一个人的判断。</p><span class="sec">§8</span></div>
+  <div class="item"><b>罗盘推着船走吗</b><p>公司设了风险经理，天天盯着风险。作者问：风险是真的降低了，还是只给人一种一切在控制之中的感觉？</p><span class="sec">§13</span></div>
+</div>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 11 章（下）· 随机骗局导读</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/chapters.js"></script>
+<script src="../assets/fb.js"></script>
+<style>
+#sim-11b .presets { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+#sim-11b .grid { width: 100%; max-width: 420px; display: block; margin: 0 auto; }
+#sim-11b .legend { font-size: 13px; color: var(--muted); margin: 6px 0 0; text-align: center; }
+#sim-11b .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin: 0 4px 0 10px; vertical-align: -1px; }
+#sim-11b .cap { font-size: 13px; color: var(--muted); margin: 10px 0 0; }
+</style>
+</head>
+<body data-page="11b">
+<main>
+
+<h2>这一页在做什么</h2>
+<div class="gist"><p>第 11 章的后半。前半讲心理学家怎样发现人的概率直觉有系统性的毛病；这一页先换两个角度解释毛病从哪来（进化心理学、神经科学），再摆出一串各行各业的概率错题：辛普森案的法庭、医生答错的体检题、期权交易员、医学记者、财经电视和彭博终端上的新闻标题。读的时候抓一条线：每碰到一个数，先问它是在什么条件下算的。最好玩的是那道体检题，「动手：模拟器」可以亲手算。</p></div>
+<figure class="fig"><img src="../assets/img/11b-bloomberg.jpg" alt="一块浅灰色的老式专用键盘，除了字母和数字键，还有一排排黄色、绿色的功能键，标着 EQUITY、CORP、CRNCY、GOVT 等字样，右边是一个圆形喇叭，右下角印着 Bloomberg" loading="lazy">
+<figcaption>纽约市博物馆展出的一台老式彭博终端的键盘：黄色的键按市场分类（股票、公司债、货币、国债……）。§21 作者说他离不开桌上这台机器，只想去掉机器上记者的评论。<span class="src">Paul Lowry，CC BY 4.0，维基共享资源</span></figcaption></figure>
+
+<h2>读之前：这一页在全书的哪里</h2>
+<div class="linehere"></div>
+<p>11a 页读到的第 11 章前半讲了 Kahneman 和 Tversky 的启发法与偏误、系统一和系统二，以一句预告收尾：接下来介绍进化心理学的观点。这一页 §10–§13 就是另外两派的解释，§14 起转到实际的例子。§17 回到作者的本行期权，提到第 1、5 章的 John；§18 呼应第 9 章「没有发现」和「发现没有」的区分；§24 把话交给第三部。</p>
+<div class="heads-up"><p>§14 作者批评律师和陪审团不懂条件概率，批评得在理，但他自己在这一节举的几个数也有滑脚的地方。读的时候照他教的办法，问问他每个数是在什么条件下算的。详细的在「本站怎么看」。</p></div>
+<div class="crux"><p>一个数字摆在面前，为什么连律师、医生、交易员也常常读错它？</p></div>
+<p class="lede">读的时候带着这几个问题。不用先找答案，读完回来对照「检查一下理解」。</p>
+<ol class="qs">
+  <li>进化心理学家和 Kahneman、Tversky 一派吵得很凶，作者却说在这本书关心的事上，他们意见一致。一致在哪里？<span class="sec">§10</span></li>
+  <li>体检结果是阳性的人，真得病的机会有多大？先自己算，再看作者怎么算。<span class="sec">§16</span></li>
+  <li>一个期权九成会到期作废，买它是不是白扔钱？卖它是不是白捡钱？<span class="sec">§17</span></li>
+  <li>作者凭什么说「道指涨 1.03 点」这条新闻不值得解释？<span class="sec">§21</span></li>
+</ol>
+
+<h2>这一页的路线</h2>
+<p>前四节是一段文献综述，读着最像教科书：§10 介绍进化心理学，§11 作者自称业余，想象三千年前的一座小城，中间插进希腊雕像和普鲁斯特；§12 讲 Gigerenzer 和「瑞士军刀」式的脑子，§13 换成神经科学家和两本书。§14 突然跳进辛普森案的法庭，§15 由卡夫卡说到「不懂数学」和「滥用数学」两头的错。§16 很短，就是一道题。§17 回到作者的本行，是这一页最长的一节，从一个一块钱的期权讲起。§18 起轮到新闻媒体：医学记者、CNBC、电视理财专家、彭博的标题，一个接一个，彼此只靠「概率」二字连着，可以当成一本错题本来读。§22 是两张原书的图，§23 换成打包行李，§24 一段招认收尾。</p>
+<figure class="fig">
+<svg class="diagram" viewBox="0 0 640 300" role="img" aria-label="路线示意图：§10 到 §13 换个解释，§14 和 §15 法庭，§16 体检题，§17 一块钱的期权，§18 到 §21 媒体的错题本，§22 和 §23 滤波和打包行李，§24 招认，箭头指向第三部">
+<defs><marker id="ar11b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="f-a"/></marker></defs>
+<rect x="8" y="20" width="200" height="50" rx="6" class="box" stroke-dasharray="5 4"/><text x="108" y="40" text-anchor="middle">§10–§13 换个解释</text><text x="108" y="58" text-anchor="middle" class="t-m">进化心理学·小城·三个脑</text>
+<rect x="228" y="20" width="190" height="50" rx="6" class="box"/><text x="323" y="40" text-anchor="middle">§14–§15 法庭</text><text x="323" y="58" text-anchor="middle" class="t-m">辛普森·卡夫卡</text>
+<rect x="438" y="20" width="194" height="50" rx="6" class="f-soft"/><text x="535" y="40" text-anchor="middle" class="t-b">§16 体检题</text><text x="535" y="58" text-anchor="middle" class="t-m">千分之一的病</text>
+<line x1="208" y1="45" x2="226" y2="45" class="ln-a" marker-end="url(#ar11b)"/>
+<line x1="418" y1="45" x2="436" y2="45" class="ln-a" marker-end="url(#ar11b)"/>
+<line x1="535" y1="70" x2="535" y2="106" class="ln-a" marker-end="url(#ar11b)"/>
+<rect x="438" y="108" width="194" height="50" rx="6" class="f-soft"/><text x="535" y="128" text-anchor="middle" class="t-b">§17 一块钱的期权</text><text x="535" y="146" text-anchor="middle" class="t-m">卖方·买方·期权盲</text>
+<line x1="438" y1="133" x2="420" y2="133" class="ln-a" marker-end="url(#ar11b)"/>
+<rect x="8" y="108" width="410" height="50" rx="6" class="box"/><text x="213" y="128" text-anchor="middle">§18–§21 媒体的错题本</text><text x="213" y="146" text-anchor="middle" class="t-m">医学记者·CNBC·剩余寿命·彭博的标题</text>
+<line x1="108" y1="158" x2="108" y2="194" class="ln-a" marker-end="url(#ar11b)"/>
+<rect x="8" y="196" width="200" height="50" rx="6" class="box" stroke-dasharray="5 4"/><text x="108" y="216" text-anchor="middle">§22–§23</text><text x="108" y="234" text-anchor="middle" class="t-m">电话杂音·打包行李</text>
+<line x1="208" y1="221" x2="226" y2="221" class="ln-a" marker-end="url(#ar11b)"/>
+<rect x="228" y="196" width="190" height="50" rx="6" class="box"/><text x="323" y="216" text-anchor="middle">§24 招认</text><text x="323" y="234" text-anchor="middle" class="t-m">一段话</text>
+<line x1="418" y1="221" x2="436" y2="221" class="ln-d" marker-end="url(#ar11b)"/>
+<rect x="438" y="196" width="194" height="50" rx="6" class="box"/><text x="535" y="216" text-anchor="middle">第三部</text><text x="535" y="234" text-anchor="middle" class="t-m">第 12 章起</text>
+<rect x="8" y="270" width="24" height="14" rx="3" class="f-soft"/><text x="40" y="282" class="t-m">先读的两节</text>
+<rect x="170" y="270" width="24" height="14" rx="3" class="box" stroke-dasharray="5 4"/><text x="202" y="282" class="t-m">综述、比喻多</text>
+</svg>
+<figcaption>本站示意图。第一行从综述走进法庭再到那道题，第二行从期权折回媒体，最后一行很短，交棒第三部。</figcaption></figure>
+
+<h2>分节地图</h2>
+<p class="lede">这一页是原书和译本第 11 章的后半，§10 到 §24 一共 15 节。粗体是本站给的节名，后面是档和译本字数；下面是译本的小标题和这一节在译本电子书里开头的几个字（搜它就能跳过去），再下面是英文原文的开头。「先读」是这一章的骨架，「有空」好看、跳过不丢线，「可跳过」读不读都行。读完打个勾。</p>
+<ol class="secmap">
+  <li data-sec="10"><span class="what">进化心理学派登场。看它和 Kahneman、Tversky 一派争的是什么，又在哪两点上一致；这两点才是作者要的。</span></li>
+  <li data-sec="11"><span class="what">作者自称业余，想象祖先住过的小城。希腊雕像和普鲁斯特那段是离题；留意他为什么说概率数学来得这么晚。</span></li>
+  <li data-sec="12"><span class="what">Gigerenzer 一派：同一道题换个说法就会做了。「抓作弊者」那个小测验的题目在书后的注释里，「书里的人和背景」的 §12 也讲了。</span></li>
+  <li data-sec="13"><span class="what">三个脑的说法和两本书：没有情绪的病人做不了决定，情绪先于理由。作者自己也说三个脑的理论有些过于简化。</span></li>
+  <li data-sec="14"><span class="what">辛普森案。作者批评律师和陪审团不懂条件概率和联合概率；他举的几个数，自己算一算站不站得住。</span></li>
+  <li data-sec="15"><span class="what">由卡夫卡的《审判》说到作者怕律师；后半是一维和多维、不懂数学和滥用数学两头的错。</span></li>
+  <li data-sec="16"><span class="what">这一页最该停下来的一道题。先自己写下答案，再看作者用「一千个人」怎么算，然后去模拟器验证。</span></li>
+  <li data-sec="17"><span class="what">全书第一次从头讲期权。从<span class="zhv">译本：「選擇權賣方還提供另一種滿足」</span>起转到卖期权的人为什么舒服；<span class="zhv">译本：「下面哪件事讓人比較不愉快」</span>那一问要对着原文读。</span></li>
+  <li data-sec="18"><span class="what">医学记者把「没有证据有效」写成「证明无效」。作者拿一篇假想的化疗论文举例，论文的作者就设成他自己。</span></li>
+  <li data-sec="19"><span class="what">健身房电视上听来的一句话：大盘离高点 10%，个股平均离高点 40%。看作者为什么说两者不矛盾。</span></li>
+  <li data-sec="20"><span class="what">电视理财专家算错了剩余寿命。结尾那个手术死亡率 1% 的笑话，是同一个错误。</span></li>
+  <li data-sec="21"><span class="what">彭博终端和它的新闻标题。作者分三步说为什么不该给小波动找原因：显著性、因果、只看大的变动。</span></li>
+  <li data-sec="22"><span class="what">可跳过。一个电话杂音的比喻加两张原书的图，跳过只少一个工程上的类比。译本把第二张图排在了 §23 后面。</span></li>
+  <li data-sec="23"><span class="what">打包行李：平均气温一样，上下浮动不同，要带的衣服就完全不同。原书用华氏度，译本换成了摄氏度。</span></li>
+  <li data-sec="24"><span class="what">一段话的招认，把话题交给第三部。</span></li>
+</ol>
+
+<h2>先用中文过一遍：这一页的概念</h2>
+<p class="lede">先把这一页用到、作者默认你懂的几个概念讲一遍。讲的是概念本身，作者拿它推出什么，读原书时自己看。别页讲过的概念，点链接过去看。</p>
+<div class="concept" id="c-joint-probability">
+<h3><span class="sec">§14</span>联合概率 <span class="en">joint probability，译本：聯合機率</span></h3>
+<p>两件事同时发生的概率叫联合概率。它一定不大于其中任何一件单独发生的概率：「明天下雨而且堵车」不可能比「明天下雨」更常见。两件事彼此独立（一件发生与否不影响另一件）时，联合概率等于两个概率相乘：抛两枚硬币都是正面，是 1/2 × 1/2 = 1/4。</p>
+<p>不独立时就不能直接相乘。线上事故是个好例子：两台服务器各自一年里宕机的概率都是 1%，如果它们在同一个机房、接同一路电，一起宕机的概率就远大于万分之一。证据也一样：几条证据如果来自同一个源头，叠在一起的分量没有乘出来的那么大。</p>
+<p class="use"><b>在这一页：</b>§14 作者说证据会像复利一样叠加，用的就是相乘，还举了粉红色凯迪拉克的例子；琳达问题也在这一节回头提到。</p>
+</div>
+<div class="concept" id="c-conditional-probability">
+<h3><span class="sec">§14</span>条件概率和基础比率 <span class="en">conditional probability; base rate，译本：條件機率</span></h3>
+<p>「已知 B 发生了，A 的概率」叫条件概率。它和「已知 A，B 的概率」是两回事：「程序员里戴眼镜的比例」和「戴眼镜的人里程序员的比例」可以差几十倍。</p>
+<p>最常见的错是忘了基础比率，也就是还没看任何证据之前，这件事本来有多常见。假设一种病每一百人里有一个，检查能查出九成病人，但会把一成健康人误报成阳性。拿一万人来数：一百个病人里查出 90 个；九千九百个健康人里误报 990 个。阳性一共 1080 人，真病的只占 8.3%。查得「挺准」，阳性却多半是虚惊。把概率换成「多少人里有几个」来数，最不容易错。</p>
+<figure class="fig">
+<svg class="diagram" viewBox="0 0 640 246" role="img" aria-label="一万人分成有病一百人和健康九千九百人，有病的里九十人阳性、十人漏掉，健康的里九百九十人误报阳性、八千九百一十人阴性，阳性一共一千零八十人，真病的约百分之八点三">
+<rect x="117" y="8" width="126" height="32" rx="6" class="box"/><text x="180" y="29" text-anchor="middle" class="t-b">10000 人</text>
+<line x1="162" y1="40" x2="93" y2="70" class="ln"/><line x1="198" y1="40" x2="274" y2="70" class="ln"/>
+<rect x="7" y="70" width="171" height="32" rx="6" class="box"/><text x="93" y="91" text-anchor="middle">有病 100 人（1%）</text>
+<rect x="189" y="70" width="171" height="32" rx="6" class="box"/><text x="274" y="91" text-anchor="middle">健康 9900 人</text>
+<line x1="72" y1="102" x2="49" y2="132" class="ln"/><line x1="113" y1="102" x2="137" y2="132" class="ln"/>
+<line x1="254" y1="102" x2="230" y2="132" class="ln"/><line x1="295" y1="102" x2="319" y2="132" class="ln"/>
+<rect x="7" y="132" width="83" height="44" rx="6" class="f-soft"/><text x="49" y="151" text-anchor="middle" class="t-b">阳性 90</text><text x="49" y="168" text-anchor="middle" class="t-m">查出九成</text>
+<rect x="95" y="132" width="83" height="44" rx="6" class="box"/><text x="137" y="151" text-anchor="middle">阴性 10</text><text x="137" y="168" text-anchor="middle" class="t-m">漏掉</text>
+<rect x="189" y="132" width="83" height="44" rx="6" class="f-soft"/><text x="230" y="151" text-anchor="middle" class="t-b">阳性 990</text><text x="230" y="168" text-anchor="middle" class="t-m">误报一成</text>
+<rect x="277" y="132" width="83" height="44" rx="6" class="box"/><text x="319" y="151" text-anchor="middle">阴性 8910</text><text x="319" y="168" text-anchor="middle" class="t-m">没事</text>
+<line x1="49" y1="176" x2="135" y2="202" class="ln-d"/><line x1="230" y1="176" x2="225" y2="202" class="ln-d"/>
+<rect x="7" y="202" width="353" height="36" rx="6" class="box"/><text x="184" y="225" text-anchor="middle" class="t-b">阳性共 1080 人，真病 90 人，约 8.3%</text>
+</svg>
+<figcaption>本站示意图，用的是这一块里那组自编的数，不是书里那道题。浅色的两格是查出阳性的人；分母是这两格加起来，不是一万人。</figcaption></figure>
+<p class="use"><b>在这一页：</b>§14 律师说的杀妻比例、§16 的体检题、§20 的剩余寿命，都是条件放错了地方。模拟器演 §16。</p>
+</div>
+<div class="concept" id="c-premium-seller">
+<h3><span class="sec">§17</span>权利金卖方和买方 <span class="en">premium sellers / premium buyers，译本：權利金賣方／買方</span></h3>
+<p><a class="term" href="01.html#c-option">期权</a>是一种权利：买方付一笔钱（权利金）买下它，卖方收下这笔钱，承担到期时按约定价交割的义务。所以卖方是先收钱、后担风险：多数时候期权到期作废，权利金白赚；少数时候行情大动，要赔一大笔。买方正好反过来：多数时候白付钱，偶尔赚很多。道理和卖保险、买保险相通。</p>
+<p>哪一方划算，不能只看哪种结局最常发生，要看<a class="term" href="02.html#c-expectation">期望值</a>：每种结果的概率乘金额再相加。九成作废、一成平均值 10 美元的期权，期望值就是 1 美元，卖 1 美元谁也不白赚。交易员说「做多波动率」，指的是买方这种多半小亏、偶尔大赚的仓位。</p>
+<figure class="fig">
+<svg class="diagram" viewBox="0 0 640 210" role="img" aria-label="十次到期的结果：卖方九次各赚一美元，一次亏九美元；买方九次各亏一美元，一次赚九美元">
+<text x="8" y="18" class="t-b">卖方：收 1 美元</text>
+<rect x="8" y="26" width="36" height="28" rx="4" class="f-soft"/><text x="26" y="45" text-anchor="middle">+1</text>
+<rect x="48" y="26" width="36" height="28" rx="4" class="f-soft"/><text x="66" y="45" text-anchor="middle">+1</text>
+<rect x="88" y="26" width="36" height="28" rx="4" class="f-soft"/><text x="106" y="45" text-anchor="middle">+1</text>
+<rect x="128" y="26" width="36" height="28" rx="4" class="f-soft"/><text x="146" y="45" text-anchor="middle">+1</text>
+<rect x="168" y="26" width="36" height="28" rx="4" class="f-soft"/><text x="186" y="45" text-anchor="middle">+1</text>
+<rect x="208" y="26" width="36" height="28" rx="4" class="f-soft"/><text x="226" y="45" text-anchor="middle">+1</text>
+<rect x="248" y="26" width="36" height="28" rx="4" class="f-soft"/><text x="266" y="45" text-anchor="middle">+1</text>
+<rect x="288" y="26" width="36" height="28" rx="4" class="f-soft"/><text x="306" y="45" text-anchor="middle">+1</text>
+<rect x="328" y="26" width="36" height="28" rx="4" class="f-soft"/><text x="346" y="45" text-anchor="middle">+1</text>
+<rect x="8" y="60" width="356" height="28" rx="4" class="box" stroke-dasharray="5 4"/><text x="186" y="79" text-anchor="middle" class="t-b">−9（赔 10，扣掉收的 1）</text>
+<text x="8" y="110" class="t-b">买方：付 1 美元</text>
+<rect x="8" y="118" width="36" height="28" rx="4" class="box"/><text x="26" y="137" text-anchor="middle">−1</text>
+<rect x="48" y="118" width="36" height="28" rx="4" class="box"/><text x="66" y="137" text-anchor="middle">−1</text>
+<rect x="88" y="118" width="36" height="28" rx="4" class="box"/><text x="106" y="137" text-anchor="middle">−1</text>
+<rect x="128" y="118" width="36" height="28" rx="4" class="box"/><text x="146" y="137" text-anchor="middle">−1</text>
+<rect x="168" y="118" width="36" height="28" rx="4" class="box"/><text x="186" y="137" text-anchor="middle">−1</text>
+<rect x="208" y="118" width="36" height="28" rx="4" class="box"/><text x="226" y="137" text-anchor="middle">−1</text>
+<rect x="248" y="118" width="36" height="28" rx="4" class="box"/><text x="266" y="137" text-anchor="middle">−1</text>
+<rect x="288" y="118" width="36" height="28" rx="4" class="box"/><text x="306" y="137" text-anchor="middle">−1</text>
+<rect x="328" y="118" width="36" height="28" rx="4" class="box"/><text x="346" y="137" text-anchor="middle">−1</text>
+<rect x="8" y="152" width="356" height="28" rx="4" class="f-soft"/><text x="186" y="171" text-anchor="middle" class="t-b">+9（拿到 10，扣掉付的 1）</text>
+<text x="8" y="204" class="t-m">十次到期：九次作废，一次值 10 美元。两组各自加起来都是 0。</text>
+</svg>
+<figcaption>本站示意图，用 §17 的数（九成作废、一成平均值 10 美元，价格 1 美元）。卖方的日子是九个小格加一个大坑，买方是九次小亏加一次大赚；按这个价格，长期下来谁都不白赚。</figcaption></figure>
+<p class="use"><b>在这一页：</b>§17 作者把期权交易员分成这两类，用一块钱的期权说明「最可能的结局」不等于期望值，并回提第 1、5 章的 John。</p>
+</div>
+<div class="concept" id="c-significance">
+<h3><span class="sec">§18</span>显著性：没有证据和证明没有 <span class="en">significance; absence of evidence vs evidence of absence，译本：顯著性、沒有證據</span></h3>
+<p>数据里看到一个差别（新药组多活了 3 个人、A 比 B 快 1 秒），先要问：如果其实毫无差别，光靠运气出现这么大的差别，机会有多大？机会很大，就说这个差别不显著：数据还不足以把它和<a class="term" href="03b.html#c-noise-signal">噪声</a>分开。</p>
+<p>不显著不等于证明没有差别。样本小的时候，真有效的药也常常测不出显著的效果。程序员熟悉的 A/B 测试就是这样：跑了三天，两组转化率差 0.2%，不显著，正确的结论是「还看不出来」，不是「新版没用」。要说「没有效果」，得有足够大的样本，把可能的效果压到很小的范围里。</p>
+<p class="use"><b>在这一页：</b>§18 医学记者把「没有证据」写成「证明无效」；§21 西伯利亚自行车赛赢的那一秒，讲的是显著性。</p>
+</div>
+
+<h2>动手：模拟器</h2>
+<p>先猜：一种病每一千人里有一个人得；检查对病人从不漏报，对健康的人有 5% 会误报成阳性。随便抽一个人去查，结果是阳性，他真得病的机会有多大？写下你的答案（§16 说多数医生答 95%），再用模拟器验证。</p>
+<div class="sim" id="sim-11b">
+  <div class="sim-head"><span class="tag">模拟器</span><h3>体检的假阳性</h3><p class="desc">一格是一个人。调发病率、误报率和漏报率，看查出阳性的那群人里，真病的占多少。先点「书里的题」，再一个一个改。</p></div>
+  <div class="sim-body"><p>需要浏览器打开脚本才能运行。</p></div>
+</div>
+<p>各个控件：「发病率」是多少人里有一个病人；「误报率」是健康的人被查成阳性的比例；「漏报率」是病人被查成阴性的比例；「连着查几次」是对同一批人重复检查，每次都是阳性才算阳性。统计栏的五个数依次是：发病率；按这组设定，每一千人（发病率是万分之一时换成每一万人）里查出阳性的有多少人；其中真病的有多少人；阳性的人里真病的比例；病人里被漏掉的有多少。人数是按比例算出来的平均数，所以会有小数；方块按取整后的人数涂色，比例是精确算的。</p>
+<ol class="qs">
+  <li>试试看：点「书里的题」。一千人里 1 个病人，被约 50 个误报的健康人围着，阳性的人里真病的比例是 1.96%。对一下 §16 作者的答案：51 个里 1 个，接近 2%。</li>
+  <li>试试看：把发病率改成 1/100、再改成 1/10，检查本身一点没变，比例变成 16.8%、69.0%。想一想：医生在诊室里查一个已经有症状的人，更像哪一种？</li>
+  <li>试试看：发病率放回 1/1000，把误报率改成 1%、再改成 0.1%：9.10%、50.0%，误报要少到千分之一才是一半对一半。再把误报率放回 5%、漏报率改成 10%：1.77%，几乎没动。这道题考的是误报和基础比率，不是漏报。</li>
+  <li>试试看：漏报率放回 0，把「连着查几次」改成 2、再改成 3：28.6%、88.9%。这里假设每次检查互相独立；现实里同一种检查的误报常常会重复出现，复查最好换一种方法。</li>
+</ol>
+<p>这个模拟器只演一件事：阳性的人里有多少是真的，取决于查的是什么人。它假设检查对每个人一样准、每次检查独立；§16 的题干特意写了不管有没有疑似、随机抽人去查，就是普查的情形。至于 §16 说答对的不到五分之一，那是一项真实研究的统计，模拟器复现不了，见「今天怎么看」。</p>
+
+<h2>书里的人和背景</h2>
+<p class="lede">按在书里出现的顺序排，标题前是节号。只讲到读懂这一页需要的程度。</p>
+
+<h3><span class="sec">§10</span>进化心理学和 Pinker</h3>
+<div class="who">
+  <div><b>Steven Pinker</b><span class="en">1954–</span>加拿大出生的美国认知心理学家，先后在麻省理工学院和哈佛大学任教，写过《语言本能》《心智探奇》等畅销书，是进化心理学最出名的代言人。<span class="zhv">译本：「史蒂芬．平克」</span></div>
+</div>
+<p>进化心理学认为，人的心理机制和身体器官一样，是在漫长的狩猎采集生活里被自然选择塑造的，要按祖先的环境去理解它。它和 1970 年代兴起的社会生物学一脉相承，作者把两个名字混着用。Pinker 那句话里的 fitness 是进化论的「适应度」，见「原文里的词和句」。作者顺带提到的 Terry Burnham 是经济学家，和生物学家 Jay Phelan 合写了 2000 年的科普书 <i>Mean Genes</i>。</p>
+
+<h3><span class="sec">§11</span>三千年前的小城和概率的起源</h3>
+<p>新月沃土是从两河流域沿着叙利亚弯到地中海东岸的一片弧形地带，最早的农业和城市出现在这里；巴力是古代近东的神。那座 Middle-Town（中间镇）和镇上的两个人名，都是作者编来打比方的。他说概率数学要等研究赌博的著作出现才发展起来：16 世纪意大利人 Cardano 写过一本讲掷骰子的书，1654 年 Pascal 和 Fermat 通信讨论一局赌博中途停下该怎样分赌注，一般算作概率论的起点。</p>
+
+<h3><span class="sec">§12</span>Gigerenzer 和抓作弊者的测验</h3>
+<div class="who">
+  <div><b>Gerd Gigerenzer</b><span class="en">1947–</span>德国心理学家，在马克斯·普朗克人类发展研究所领导 ABC（适应性行为与认知）研究组多年。他认为简单的「快速节俭」的启发法，放在合适的环境里很管用，常和 Kahneman、Tversky 一派唱对台戏。<span class="zhv">译本：「格爾德．吉格倫哲」</span></div>
+</div>
+<figure class="fig"><img src="../assets/img/11b-swiss-knife.jpg" alt="一把红色的瑞士军刀，刀片、剪刀、锉刀、开瓶器、螺旋开塞器都打开着，摆在白色桌面上" loading="lazy">
+<figcaption>一把打开的瑞士军刀（Victorinox 的 Mountaineer 型）。§12 的研究者说，脑子不像一台什么都管的中央处理器，更像这样一把各有专用的小工具。<span class="src">Jonas Bergsten，公有领域，维基共享资源</span></figcaption></figure>
+<p>作者在书后注释里给了那个小测验，心理学上叫 Wason 选择任务。四张卡片 E、6、K、9，规则是「一面是元音，另一面就是偶数」，要翻哪几张才能检验？多数人答错。换成酒吧查年龄：喝啤酒的、21 岁以上的、喝可乐的、21 岁以下的，该查谁？几乎人人答对。两道题的逻辑一样，都只需查第一个和第四个。进化心理学家说，这是因为人有一个专门抓「占便宜的人」的模块。</p>
+
+<h3><span class="sec">§13</span>三个脑、Damasio 和 LeDoux</h3>
+<p>「三个脑」（爬行脑、边缘脑、新皮质）是美国神经科学家 Paul MacLean 提出的模型，今天怎么看它，见「今天怎么看」。Antonio Damasio 是葡萄牙出生的美国神经科学家，1994 年出版《笛卡儿的错误》；Joseph LeDoux 是美国神经科学家，1996 年出版《情绪脑》。两本都是写给大众读的书。作者回提的 Claparède，是第 3 章 §7 讲过的那位瑞士医生和他的失忆病人。</p>
+
+<h3><span class="sec">§14</span>辛普森案</h3>
+<p>O. J. Simpson（1947–2024）是美式橄榄球明星，退役后当演员和体育解说员。1994 年 6 月，他的前妻 Nicole Brown Simpson 和她的朋友 Ron Goldman 在洛杉矶被人杀害，他被控谋杀。1995 年的刑事审判电视全程直播，被叫作「世纪审判」，DNA 和血迹证据是焦点，10 月陪审团判他无罪；1997 年的民事审判则判他要为两人的死赔偿。作者说的「一位哈佛律师」没点名，一般认为指辩护团的 Alan Dershowitz，他是哈佛法学院教授。美国刑事定罪的门槛是「排除合理怀疑」，作者套用的 beyond the shadow of a doubt（毫无疑问）是口语说法，比这个门槛还严。</p>
+
+<h3><span class="sec">§15</span>卡夫卡和《审判》</h3>
+<figure class="fig small"><img src="../assets/img/11b-kafka.jpg" alt="一位深色头发、大眼睛的年轻男子的黑白半身照，穿深色西装、白衬衫，打着斜条纹领带，直视镜头" loading="lazy">
+<figcaption>卡夫卡现存最晚的一张肖像照，大约 1923 年摄于柏林。<span class="src">摄影者不详，公有领域，维基共享资源</span></figcaption></figure>
+<div class="who">
+  <div><b>Franz Kafka</b><span class="en">1883–1924</span>生于布拉格、用德语写作的小说家，在保险机构当了十几年职员，代表作有《变形记》《审判》《城堡》。</div>
+</div>
+<p>《审判》的主人公 Joseph K. 一天早上莫名其妙地被捕，到最后也不知道自己犯了什么罪。这部小说卡夫卡生前没有写完，1925 年他去世后由朋友 Max Brod 整理出版。作者说听了辛普森案的庭审，他真怕哪天自己因为一个在概率上毫无道理的理由被抓，站在一群不懂随机性的陪审员面前。</p>
+
+<h3><span class="sec">§21</span>CNBC、彭博和道琼斯指数</h3>
+<p>CNBC 是美国的财经电视台，1989 年开播，1990 年代末网络股泡沫时最红，交易时段从早播到晚，§19 作者在健身房听到的就是它。彭博（Bloomberg）是 Michael Bloomberg 1981 年创办的公司，它的终端是交易员桌上的专用电脑，行情、新闻、历史数据、图表、消息都在一台机器上，按年收不低的订阅费。§21 的道琼斯指数在 11000 点上下，是 1999–2001 年前后的水平；作者说的 1997 年 10 月那次，是 10 月 27 日道指一天跌了约 7%，亚洲金融危机正在蔓延。</p>
+
+<h3><span class="sec">§23</span>华氏度和摄氏度</h3>
+<p>原书用的是美国人习惯的华氏度：60°F 约 16°C；上下 10 华氏度约等于上下 5.6 摄氏度，上下 30 华氏度约上下 17 摄氏度，上下 500 华氏度约上下 280 摄氏度。译本换算成了摄氏度，有一处漏了字，见「译本勘误」。作者拿亚利桑那当天气稳定的例子，拿芝加哥当变化大的例子。</p>
+
+<h2>原文里的词和句</h2>
+<p class="lede">读英文原文时值得停一下的词和句：交易员的行话、作者的反话和双关、熟词生义。灰色斜体是原句里连续的几个词，在英文电子书里搜它就能找到；标「每个字都认识」的，是每个词都眼熟、合起来意思却变了的，最容易读错。点「记下」收进词本。</p>
+<div class="entry trap"><div class="en">made for fitness, not for truth</div><div class="loc" data-p="38">… brains are made for fitness not …</div><div class="zh">（大脑）是为了活下来、留下后代而造的，不是为了认识真相</div><div class="note">fitness 是进化论的「适应度」，不是健身。Pinker 的名句。</div></div>
+<div class="entry"><div class="en">caveman economics</div><div class="loc" data-p="39">… with the caveman economics approach followed …</div><div class="zh">「穴居人经济学」：拿祖先的生活解释经济行为</div><div class="note">作者半开玩笑的叫法，指从进化心理学出发研究经济行为的一派。</div></div>
+<div class="entry"><div class="en">schlep</div><div class="loc" data-p="41">… you see schlepping groceries in the …</div><div class="zh">（吃力地）拎着、拖着买来的东西</div><div class="note">来自意第绪语，美国口语，带点狼狈的意思。</div></div>
+<div class="entry trap"><div class="en">take the other side of the trade</div><div class="loc" data-p="44">… taken the other side of the trade …</div><div class="zh">和（Kahneman、Tversky）对着干、唱对台戏</div><div class="note">交易员的行话：别人买你就卖，做他的对手盘。作者借来说 Gigerenzer 一派。</div></div>
+<div class="entry trap"><div class="en">pull the trigger</div><div class="loc" data-p="44">… need to meet before pulling the trigger …</div><div class="zh">（犹豫之后）下定决心，这里指决定结婚</div><div class="note">本义是扣扳机。口语里指终于拍板，交易员也用它说下单。</div></div>
+<div class="entry trap"><div class="en">even institutional investors seem to have a neocortex</div><div class="loc" data-p="48">… even institutional investors seem to have …</div><div class="zh">（连）机构投资人好像也有新皮质</div><div class="note">括号里的挖苦，要反着读：他们平时看着不像在用脑子。</div></div>
+<div class="entry trap"><div class="en">fly in the face of</div><div class="loc" data-p="50">… This flies in the face of …</div><div class="zh">和（人们原来以为的）完全相反</div><div class="note">不是「飞到脸上」，是公然违背、和……对着来。</div></div>
+<div class="entry trap"><div class="en">the shadow of a doubt</div><div class="loc" data-p="53">… exceeds the shadow of a doubt …</div><div class="zh">（把握）超出了一丝怀疑，几乎可以肯定</div><div class="note">套用 beyond the shadow of a doubt（毫无疑问）。作者说有的人已经到这个程度，却仍被放走。</div></div>
+<div class="entry"><div class="en">glib</div><div class="loc" data-p="56">… fight some glib lawyer in front …</div><div class="zh">油嘴滑舌的（律师）</div><div class="note">说得流利却不走心、不可信。</div></div>
+<div class="entry"><div class="en">between Charybdis and Scylla</div><div class="loc" data-p="57">… swinging between the Carybde of the …</div><div class="zh">在两头怪物之间来回：躲开一种错，就撞上另一种</div><div class="note">典出《奥德赛》：海峡一边是吞船的漩涡卡律布狄斯，一边是六头怪斯库拉。Carybde 是法文拼法。</div></div>
+<div class="entry trap"><div class="en">option writer</div><div class="loc" data-p="65">… at $110 from the option writer …</div><div class="zh">期权的卖方</div><div class="note">write an option 是卖出期权，writer 就是卖方，和「作者」无关。</div></div>
+<div class="entry trap"><div class="en">bleed</div><div class="loc" data-p="67">… the expectation of bleeding a little …</div><div class="zh">（预期要）一点一点地亏钱</div><div class="note">交易员说的「失血」：每天亏一点小钱，不是一次大亏。</div></div>
+<div class="entry"><div class="en">eat like chickens and go to the bathroom like elephants</div><div class="loc" data-p="68">… eat like chickens and go to …</div><div class="zh">吃得像鸡一样少，拉得像大象一样多：赚小钱，赔大钱</div><div class="note">交易员的粗话，说的是卖期权的人。</div></div>
+<div class="entry"><div class="en">fit one’s brain to one’s actions</div><div class="loc" data-p="69">… fit their brains to their actions …</div><div class="zh">让脑子去迎合自己已经在做的事</div><div class="note">倒过来说的俏皮话：本该按想法行事，他们却先做了再给自己找理由。</div></div>
+<div class="entry trap"><div class="en">long on theories</div><div class="loc" data-p="75">… extrovert practitioners long on theories to …</div><div class="zh">满肚子理论的（从业者）</div><div class="note">long on 是「有很多」。也可以读出交易员的 long（做多），像在说他们押的是理论。</div></div>
+<div class="entry trap"><div class="en">on the table</div><div class="loc" data-p="77">… probability of dying on the table …</div><div class="zh">（死在）手术台上</div><div class="note">不是「摆在桌面上、可以谈」。the table 在这里是手术台。</div></div>
+<div class="entry trap"><div class="en">the more plebeian Internet</div><div class="loc" data-p="79">… recourse to the more plebeian Internet …</div><div class="zh">（只好用）比较「平民」的互联网</div><div class="note">反话：交易员圈子里没有彭博账号就像没身份，只能用老百姓的网。作者在自嘲这个圈子的势利。</div></div>
+<div class="entry"><div class="en">born to be fooled by randomness</div><div class="loc" data-p="93">… I was born to be fooled …</div><div class="zh">我天生就会被随机性愚弄</div><div class="note">呼应书名的自嘲，第三部从这里接上。</div></div>
+
+<h2>译本勘误</h2>
+<p class="lede">对着译本读这一章时，下面这些地方会把人读歪。方框里是译本的原句，在译本电子书里搜它就能找到；灰色斜体是英文原文那一处。只收意思错了、反了、漏了的，措辞上的出入和台湾用语不收。全书的勘误汇总在<a href="../zh.html">译本勘误</a>。</p>
+<div class="zherr" data-p="43"><h4><span class="sec">§11</span>是「研究赌博的著作」，不是博弈论<span class="mark">术语</span></h4>
+<p class="loc">… emergence of the gambling literature to …</p>
+<p class="zhq"><span class="zhv">译本：「我們必須等到賽局文獻出現」</span></p>
+<p>gambling literature 是研究赌博的著作：概率论是从算骰子、纸牌的赔率起步的。「賽局」在台湾通常指博弈论，那是二十世纪的学问，读者会以为作者说概率数学要等博弈论出现才发展，时间就对不上了。</p></div>
+<div class="zherr" data-p="43"><h4><span class="sec">§11</span>变得太快的是环境，不是人<span class="mark">误译</span></h4>
+<p class="loc">… evolved out of such a habitat …</p>
+<p class="zhq"><span class="zhv">译本：「我們以遠快於基因的速度進化」</span></p>
+<p>原文说的是：我们离开祖先那种环境的速度，远远快过基因能跟上的速度。译本丢了「离开这种环境」，读来像人类自己进化得比基因还快，和下一句「基因根本没变」打架。</p></div>
+<div class="zherr" data-p="46"><h4><span class="sec">§12</span>脑子不像中央处理器，更像瑞士军刀<span class="mark">误译</span></h4>
+<p class="loc">… an analogy to the Swiss Army knife …</p>
+<p class="zhq"><span class="zhv">译本：「就像瑞士軍刀（有其特定的小工具）似乎井然有序」</span></p>
+<p>原文是对比：我们爱把脑子想成一台由上而下指挥的中央处理器，这些研究者却认为，拿瑞士军刀来比更恰当。in order 是「恰当」，不是「井然有序」。译本读来像在说中央处理器就像瑞士军刀，对比没了。</p></div>
+<div class="zherr" data-p="57"><h4><span class="sec">§15</span>judgment 是判断力，不是审判<span class="mark">误译</span></h4>
+<p class="loc">… mere judgment would probably suffice in …</p>
+<p class="zhq"><span class="zhv">译本：「單單審判可能就夠了」</span></p>
+<p>作者说的是：原始社会里要看的只有一个维度，凭常识判断就够，用不着数学。§14、§15 讲的都是法庭，「审判」二字很容易让人读成「原始社会开庭审一审就够了」。</p></div>
+<div class="zherr" data-p="61"><h4><span class="sec">§16</span>要的是「阳性的人里有几个真病」<span class="mark">误译</span></h4>
+<p class="loc">… someone selected at random who presented …</p>
+<p class="zhq"><span class="zhv">译本：「檢查結果為陽性且確實染病的機率」</span></p>
+<p>原文要的是条件概率：已经查出阳性的人里，真病的占多少，答案 1/51。译本说成「阳性而且真病」的概率，那是联合概率：随便抽一个人，他既阳性又真病，约千分之一。这一节考的正是这两样的区别。</p></div>
+<div class="zherr" data-p="67"><h4><span class="sec">§17</span>long volatility 是「做多波动率」<span class="mark">术语</span></h4>
+<p class="loc">… option traders can maintain what I …</p>
+<p class="zhq"><span class="zhv">译本：「很少選擇權交易人能夠抱牢我所說的」</span></p>
+<p>交易员的行话，指押行情会大动的仓位，典型的做法是买期权：多半到期小亏，偶尔大赚。译本的「長波動」读来像「长周期的波动」，和紧跟着的解释对不上。</p></div>
+<div class="zherr" data-p="70"><h4><span class="sec">§17</span>问的是「哪个没那么难受」<span class="mark turn">译反</span></h4>
+<p class="loc">… What is less unpleasant: to lose …</p>
+<p class="zhq"><span class="zhv">译本：「下面哪件事讓人比較不愉快」</span></p>
+<p>原文问：亏 100 次 1 美元，和一次亏 100 美元，哪个没那么难受？答案是后者，因为人对损失的敏感会递减。译本问成哪个更难受，再答「第二件」，就成了一次亏 100 美元更难受，和下一句对不上。</p></div>
+<div class="zherr" data-p="91"><h4><span class="sec">§23</span>芝加哥是上下十七度<span class="mark">数字</span></h4>
+<p class="loc">… will nevertheless vary by about 30 …</p>
+<p class="zhq"><span class="zhv">译本：「但可能增減約七度」</span></p>
+<p>原文用华氏：60 度，上下 30 度。译本换成了摄氏，30 华氏度的温差约等于 17 摄氏度，这里漏了「十」，同段后面又写的是十七度。照十七度读，「冬衣夏衣都要带」才说得通。</p></div>
+
+<div class="gate"></div>
+
+<h2>读完：作者到底说了什么</h2>
+<p class="lede">读完这一章再看。下面是作者在这一页里的主张，由本站按主张之间的逻辑重新组织，不按原书的顺序；每条后面是节号，拿不准就回书里那一节再读一遍。</p>
+<div class="claims">
+  <div class="claim"><h4>几派解释各不相同，但都同意人在今天的世界里会犯严重的概率错误</h4><p>他转述了几派：进化心理学家说脑子是为祖先的环境造的，题目换个说法就会做；神经科学家说情绪先于推理。他说原因怎样不要紧，对本书要紧的两点大家一致：做选择时我们不是在想，而是用启发法；我们在今天的世界里犯严重的概率错误。</p><span class="sec" data-p="38 39 44 45 50 51">§10 §12 §13</span></div>
+  <div class="claim"><h4>法庭和医院里，人常常分不清条件概率和联合概率</h4><p>他拿辛普森案说，律师说打妻子的男人只有一成会杀妻，这是没加条件的概率，该问的是妻子被杀、又被丈夫打过时，丈夫是凶手的比例；陪审员也不懂几条证据要相乘。体检题里多数医生答 95%，正确的答案接近 2%。</p><span class="sec" data-p="53 54 60 61">§14 §16</span></div>
+  <div class="claim"><h4>专业人士也是「期权盲」：把最可能的结局当成期望值</h4><p>一个九成会作废的期权，期望值照样可以是一块钱。他说很少有交易员受得了天天小亏、偶尔大赚，多数人当权利金卖方，因为天天小赚舒服，而人对损失的敏感会递减；有些金融学者还拿统计替卖期权辩护。依据是他做期权交易的观察。</p><span class="sec" data-p="66 67 68 69 70">§17</span></div>
+  <div class="claim"><h4>记者给噪声找原因；要紧的不是预测，是对预测有多大把握</h4><p>医学记者把「没有证据」写成「证明没有」；道指在 11000 点涨 1.03 点不值得解释，要解释先得显著、再得有因果。他自己只看超出平日幅度的变动。打包看的是温差，不是平均气温。最后他承认自己也生来会被随机性愚弄，只是知道这一点。</p><span class="sec" data-p="74 83 84 85 87 91 93">§18 §21 §23 §24</span></div>
+</div>
+<p class="sowhat"><b>合起来：</b>一个数摆在面前，先问它是在什么条件下算的、离平常有多远、把握有多大。作者说律师、医生、交易员和记者都会在这里栽跟头，他自己也不例外。</p>
+<p class="chapsum"><b>这一章合起来：</b>前半（11a 页）讲人为什么「概率盲」：脑子一次只装得下一种结果，想象不出按概率加权的混合；我们靠一堆彼此不一致的启发法做决定，只看离上一个参照点的变化。作者照 Kahneman 和 Tversky 的说法，说这是有缺陷，不只是不完美，并用系统一和系统二把它分成快慢两套。后半换上进化心理学和神经科学的解释，说它们在要紧处一致，再摆出法庭、医生、期权交易员和记者的错题，最后承认自己也一样会上当，把话交给第三部。</p>
+
+<h2>值得停下来的句子</h2>
+<blockquote class="quote">They confuse the expected value and the most likely scenario<cite>— §17。本站译：他们分不清期望值和最可能的结局</cite></blockquote>
+<p>一句下诊断的话，主语是「连专业人士」。关键是两个名词：expected value 是所有结局按概率加权的平均，most likely scenario 只是其中最常见的那一个。九成作废的期权，最可能的结局是零，期望值却是一块钱。<span class="zhv">译本：「把期望值和最可能出現的情境混為一談」</span>译得准。容易误读成「专业人士不会算」，作者的意思是他们会算，却在心里给最常见的那种结局加了太多分量。</p>
+<blockquote class="quote">It is not the estimate or the forecast that matters so much as the degree of confidence with the opinion.<cite>— §23。本站译：要紧的不是估计或预测本身，而是你对这个看法有多大把握。</cite></blockquote>
+<p>一句下判断的话，紧接着就是打包行李的比方。degree of confidence 在这里是口语的「把握多大」，接下来他讲的其实是波动范围（方差）：同样是 60 度，上下 10 度和上下 30 度，要带的衣服完全不同。<span class="zhv">译本：「不如人們對某個意見懷有的信賴水準」</span>用的是统计学的术语「信賴水準」，读者容易以为作者在讲 95% 置信区间那一套，其实他说得松得多。</p>
+
+<h2>今天怎么看</h2>
+<p class="lede">这本书 2004 年出第二版，书里讲的多是 1980–2003 年的事。下面挑出这一页里能被后来的研究或事情检验的说法，分「书里 / 当时 / 今天」几栏，并给一个结论。结论判的是标题里「书里的说法：」后面那一句。全书的这一节汇总在<a href="../today.html">今天怎么看</a>。</p>
+<ul class="verdicts"><li><span class="v ok">成立</span>后来的研究或事情支持这句话。</li><li><span class="v mid">部分成立</span>大方向对，细节或适用范围要改。</li><li><span class="v bad">被改写</span>后来的研究推翻了它、换了一种说法，或者情况变了。</li><li><span class="v dis">有争议</span>至今没有定论，两边各有代表性的研究或证据。</li></ul>
+<div class="today" data-verdict="成立"><h4>书里的说法：给医生出这道体检题，大多数人答不对</h4><dl>
+  <dt>书里</dt><dd>作者照 Deborah Bennett 的书转述：多数医生答 95%，答对（接近 2%）的专业人士不到五分之一。<span class="at" data-p="58 60">§16</span></dd>
+  <dt>当时</dt><dd>这道题出自 Casscells、Schoenberger 和 Graboys 1978 年在《新英格兰医学杂志》发表的研究：在哈佛医学院问了 60 位医生、住院医生和医学生，最常见的答案是 95%（27 人），答对的不到五分之一。</dd>
+  <dt>今天</dt><dd>2014 年 Manrai 等人在《JAMA 内科学》上照原题重做：61 人里 27 人答 95%，14 人（约四分之一）答对，最常见的答案仍是 95%，和三十多年前差不多。后来还有研究用这道题测医护人员，结果仍然相近。<span class="asof">核对于 2026-10。依据：Manrai 等，JAMA Internal Medicine 2014（含对 Casscells 等 1978 年原研究的转述）；2024 年 PMC 刊载的一项相关复测。</span></dd>
+</dl></div>
+<div class="today" data-verdict="部分成立"><h4>书里的说法：把概率题换成「多少人里有几个」的说法，有些常犯的错误就会消失</h4><dl>
+  <dt>书里</dt><dd>作者转述 Gigerenzer：人不懂概率，对频率却反应得不错，换个说法，有些通常会犯的错就消失了（书里把「频率」误写成了「百分比」）；§16 他自己就用一千个人来解题。<span class="at" data-p="45 61">§12 §16</span></dd>
+  <dt>当时</dt><dd>Gigerenzer 和 Hoffrage 1995 年在《心理学评论》发表实验：同样的题改用「自然频率」表述，答对的人明显增多。这是 Gigerenzer 一派和 Kahneman、Tversky 争论的核心之一。</dd>
+  <dt>今天</dt><dd>McDowell 和 Jacobs 2017 年在《心理学公报》发表元分析，汇总了几十项研究：用概率表述时平均约 4% 的人答对，换成自然频率升到约 24%。效果是真的，而且不小；但换了说法以后仍有约四分之三的人答错，说「错误消失」过头了。<span class="asof">核对于 2026-10。依据：McDowell &amp; Jacobs, Psychological Bulletin 2017（数字据 Weber、Binder 和 Krauss 2018 年在《心理学前沿》的引述）。</span></dd>
+  <dt>另一边</dt><dd>Kahneman 和 Tversky 1996 年在《心理学评论》上回应 Gigerenzer：对频率的判断同样会有大而系统的偏误。</dd>
+</dl></div>
+<div class="today" data-verdict="被改写"><h4>书里的说法：「三个脑」的理论虽然有些过于简化，似乎仍为分析脑功能提供了一个框架</h4><dl>
+  <dt>书里</dt><dd>作者转述神经生物学家：爬行脑管心跳，边缘脑管情绪，新皮质管认知；他说这个理论有些过于简化，但似乎提供了一个框架。<span class="at" data-p="48">§13</span></dd>
+  <dt>当时</dt><dd>这是 Paul MacLean 从 1960 年代起提出的模型，在科普书里很流行；研究比较神经解剖的学者到 2000 年前后已经大多放弃了它。</dd>
+  <dt>今天</dt><dd>Cesario、Johnson 和 Eisthen 2020 年发表综述，题目就叫「你的脑子不是一个里面藏着小爬虫的洋葱」：新的脑结构不是在旧的上面一层层加出来的，「爬行脑管本能、新皮质管理性」的分工是误解。MacLean 强调边缘系统是一个和情绪有关的功能系统，这一点倒被保留了下来。作者真正要用的「情绪先于理由」，不靠这个框架。<span class="asof">核对于 2026-10。依据：Cesario, Johnson &amp; Eisthen, Current Directions in Psychological Science 2020；英文维基「Triune brain」条目。</span></dd>
+</dl></div>
+
+<h2>本站怎么看</h2>
+<p class="lede">读完作者的主张，再看它站不站得住。每一块摆出三样：主流怎么看，作者怎么看，本站的评论。最后一句是本站对这一页的总体判断。</p>
+<div class="views"><h4>律师算错了，作者的算法站得住吗</h4>
+<p><b>主流看法：</b>把「无辜的人碰巧和证据匹配的概率」当成「匹配的人是无辜的概率」，统计学和法学界叫它「检察官谬误」，是法庭上最常见的概率错误之一。统计学家 I. J. Good 1995 年在《自然》上专门写信讨论辛普森案：该问的是妻子被杀、丈夫又打过她时，丈夫是凶手的概率，这和作者的方向一致。</p>
+<p><b>作者的看法：</b>律师用的是没加条件的概率；证据要相乘，叠起来对辛普森不利的赔率高到几万亿万亿。<span class="at" data-p="53 54 55">§14</span></p>
+<p class="ours"><b>本站的评论：</b>方向对，这一节值得读。但他自己有两处要打折。血型这样的人每五十万人里才有一个，不等于辛普森不是凶手的概率只有五十万分之一，把这两句当成一句，正是检察官谬误。几条证据直接相乘，前提是彼此独立，「他是丈夫」和「他打过她」就谈不上独立。他还把琳达问题记在可得性名下，那其实是联合概率的错。书里的 10%、50% 也没给出处。</p></div>
+<div class="views"><h4>卖期权的人是在犯傻吗</h4>
+<p><b>主流看法：</b>金融研究大多发现，长期看，买保护的一方付的价钱偏高，卖方平均是赚的（Coval 和 Shumway 2001 年对股指期权的研究，见<a href="06.html">第 6 章</a>的「今天怎么看」）。但卖方的亏损集中在少数几天：2018 年 2 月 5 日波动率指数 VIX 一天涨了一倍多，押波动率下跌的产品 XIV 当天亏掉九成以上，随后被发行方瑞士信贷提前清盘。</p>
+<p><b>作者的看法：</b>他见过的期权交易员多数当权利金卖方，是因为天天小赚舒服、人对损失的敏感递减：天天赚一块、最后一次全赔掉，享乐上舒服，经济上说不通；人明知卖期权不是好事还照卖，爆仓时赔的多半是别人的钱。<span class="at" data-p="67 68 70">§17</span></p>
+<p class="ours"><b>本站的评论：</b>要分开两句话。「卖方日子舒服、偶尔一次赔个大的」有大量事实撑着，XIV 就是活例子；拿别人的钱冒这种险，激励也确实歪。「所以卖期权不是好事」却没那么简单：保护如果常年偏贵，卖方平均是赚的，问题在于能不能熬过那几天、亏的是谁的钱。作者自己站在买方那边（第 6 章讲过他的生意），这段话里有他的立场。</p></div>
+<div class="views"><h4>噪声不配有解释，可「几十亿倍」是怎么算的</h4>
+<p><b>主流看法：</b>判断一个变动大不大，统计上的做法是看它比平常的波动大几倍。金融学早就知道价格的涨跌是「肥尾」的：Mandelbrot 1963 年研究棉花价格时就指出，大起大落比正态分布预言的常见得多。</p>
+<p><b>作者的看法：</b>只看超出平日幅度的变动；2% 的分量是 1% 的四到十倍，7% 可能是几十亿倍。<span class="at" data-p="83 87">§21</span></p>
+<p class="ours"><b>本站的评论：</b>「别给小波动找原因」完全对，今天的财经快讯照样天天在给 0.1% 的涨跌配理由。作者没说倍数怎么来的，看来是按正态分布的尾巴估的：把 1% 当一个标准差，2% 的变动比 1% 罕见约 7 倍，7% 罕见约一千亿倍。可作者后来在《黑天鹅》里最反对的，正是拿正态分布看市场；在真实的肥尾市场里，大变动没那么罕见，倍数要小得多。这段的直觉可取，数字别当真。</p></div>
+<p class="verdict"><b>本站的总体看法：</b>这一页的错题本很实用：条件概率、期望值和最可能的结局、显著性、波动范围，四样都值得带走，那道体检题尤其要亲手算一遍。作者在序里自己说第 11 章是全书「最不原创」的一章，前四节正是一段综述；三个脑的框架今天已经被放弃。他批评别人算错的地方，自己也偶有滑脚，正好照他教的办法检查他。</p>
+
+<h2>检查一下理解</h2>
+<p class="lede">先在心里答，再点开。答错的那题，回书里把对应那一节再读一遍。</p>
+<details class="check"><summary>1.（§10）进化心理学家和 Kahneman、Tversky 一派吵得凶，作者却说在本书关心的事上他们一致。一致的是哪两点？</summary><p>一是我们做选择时并不真的在想，而是用启发法；二是我们在今天的世界里会犯严重的概率错误。分歧在原因：一边说规则本身带着偏误，一边说是环境变了、题目的说法不对路。</p></details>
+<details class="check"><summary>2.（§16）把体检题的发病率改成一百人里一个，其他不变，阳性的人里真病的大约占多少？为什么医生在诊室里查有症状的人，不能照搬 2%？</summary><p>按一万人数：100 个病人全查出，9900 个健康人里误报 495 个，100 ÷ 595 约 17%。来看病的人本来就更可能有病，基础比率高得多；2% 只对随机普查成立。</p></details>
+<details class="check"><summary>3.（§17）一个期权九成到期作废，一成平均值 10 美元，卖方收 1 美元。卖方平均赚多少？最常见的结局是什么？</summary><p>平均不赚不赔：九成时候赚 1 美元，一成时候赔 10 美元、扣掉收的 1 美元净亏 9 美元，0.9 × 1 − 0.1 × 9 = 0。最常见的结局是白赚 1 美元，所以容易被当成白捡的钱。</p></details>
+<details class="check"><summary>4.（§19）两只股票，一只一月 100、二月 60，另一只一月 60、二月 100。拿它们的平均当「大盘」，大盘离高点多远？个股平均离各自的高点多远？</summary><p>大盘两个月都是 80，一直在高点上；而每个月都有一只股票离高点 40%，另一只在高点，个股平均离高点 20%。各股不在同一时间见顶，「大盘离高点近、个股离高点远」并不矛盾。</p></details>
+<details class="check"><summary>5.（§20）电视专家说平均寿命 73 岁，所以 68 岁的人还能活 5 年。错在哪？</summary><p>73 岁是出生时对一整批人算的平均，里面有很早就去世的人。已经活到 68 岁的人不在那些人里，他的剩余寿命要按「活到 68 岁的人」重新算，会比 5 年长。</p></details>
+<details class="check"><summary>6.（§18）一种新药让存活率从每百人 21 个升到 24 个，但样本小、差别不显著。「这药没用」和「还看不出有用」，哪个说法对？</summary><p>后者。不显著只说明数据还不足以和运气分开，不等于证明没有效果。把它写成「证明无效」，就是作者说的医学记者的错。</p></details>
+<details class="check"><summary>7.（§23）两个地方的平均气温都是 16 摄氏度，一个上下 6 度，一个上下 17 度。为什么作者说打包看的是后者？</summary><p>决定带什么衣服的，是可能碰上的最冷和最热，不是平均。浮动小，一套衣服就够；浮动大，冬衣夏衣都得带。</p></details>
+<p>用一句话说这一页：</p>
+<textarea class="note" data-key="11b-oneline" rows="2" placeholder="比如：……"></textarea>
+<div class="ponder"><p>想一想：你最近一次看到「某某指标下降了 0.3%，因为……」这样的解释（工作周报、监控大盘、新闻都算），那个变动比它平常的起伏大吗？如果不大，那个原因还站得住吗？</p>
+<textarea class="note" data-key="11b-ponder" rows="3"></textarea></div>
+
+<h2>精彩回顾</h2>
+<p class="lede">读过又忘了，从这里想起来。挑的是这一页最值得记住的故事和说法，不按原书顺序；每条后面是节号，想细看就回书里那一节。全书各页的这一节都收在<a href="../recap.html">全书回顾</a>。</p>
+<p class="recall-line"><b>一句话：</b>一个概率先问条件：「病人里查出阳性的比例」和「阳性的人里真病的比例」，可以差几十倍。</p>
+<div class="recall">
+  <div class="item"><b>一千人里的一个病人</b><p>千分之一的病，5% 的误报。一千人里一个真病人，被约 50 个误报的健康人围着，阳性的人里真病的只有 1/51。作者说多数医生答 95%。</p><span class="sec">§16</span></div>
+  <div class="item"><b>一块钱的期权</b><p>股价 100 美元时，花 1 美元买下一个月后按 110 美元买进的权利。九成会作废，期望值却仍是 1 美元：最可能的结局不等于期望值。</p><span class="sec">§17</span></div>
+  <div class="item"><b>像鸡一样吃，像大象一样拉</b><p>交易员这样说卖期权的人：天天赚一点，偶尔一次赔个大的。作者说他见过的期权交易员大多是这种，爆仓时赔的通常是别人的钱。</p><span class="sec">§17</span></div>
+  <div class="item"><b>68 岁还剩 5 年？</b><p>电视理财专家说平均寿命 73 岁，所以 68 岁的人该按 5 年规划。作者反问：那 80 岁的人，还剩负 7 年吗？</p><span class="sec">§20</span></div>
+  <div class="item"><b>道指涨 1.03 点</b><p>彭博终端上满屏这样的标题：道指在 11000 点涨 1.03 点，因为利率下滑。不到万分之一的变动，作者说根本不值得解释。</p><span class="sec">§21</span></div>
+  <div class="item"><b>去一个上下五百度的星球</b><p>同样平均 60 华氏度，亚利桑那上下 10 度，芝加哥上下 30 度，要带的衣服完全不同。决定怎么做的是波动范围，不是平均。</p><span class="sec">§23</span></div>
+</div>
+
+</main>
+<script>
+(() => {
+  // 体检的假阳性：发病率 p、误报率 fp（健康的人被查成阳性）、漏报率 fn（病人被查成阴性）、连着查 r 次（各次独立，次次阳性才算阳性）。
+  // 每 N 人的平均人数：病人 N·p，查出 N·p·(1−fn)^r，误报 N·(1−p)·fp^r；阳性的人里真病的比例 = 查出 ÷（查出 + 误报），精确算。
+  // 方块按取整后的人数涂色。没有随机，结果只由设定决定。
+  const root = document.getElementById("sim-11b");
+  if (!root) return;
+  const { h } = window.FB;
+  const NS = "http://www.w3.org/2000/svg";
+  const INVS = [10, 100, 1000, 10000], FPS = [0.1, 1, 5, 10], FNS = [0, 10, 50], RS = [1, 2, 3];
+  const DEF = { inv: 1000, fp: 5, fn: 0, r: 1 };
+  const st = { ...DEF };
+
+  const fmt = (x) => (Math.round(x * 100) / 100).toLocaleString("en-US", { maximumFractionDigits: 2 });
+  const pct = (x) => (x >= 0.1 ? (x * 100).toFixed(1) : (x * 100).toFixed(2)) + "%";
+  function calc() {
+    const p = 1 / st.inv, N = st.inv > 1000 ? 10000 : 1000, sens = 1 - st.fn / 100, f = st.fp / 100;
+    const sick = N * p, tp = sick * Math.pow(sens, st.r), fp = (N - sick) * Math.pow(f, st.r);
+    return { N, sick, tp, fp, miss: sick - tp, ppv: tp / (tp + fp) };
+  }
+
+  const el = (tag, attrs, style) => { const e = document.createElementNS(NS, tag); for (const [k, v] of Object.entries(attrs)) e.setAttribute(k, v); if (style) Object.assign(e.style, style); return e; };
+  const sel = (label, list, key, show) => {
+    const s = h("select", { "aria-label": label, onchange: () => { st[key] = Number(s.value); draw(); } }, ...list.map((v) => h("option", { value: String(v) }, show(v))));
+    return [h("label", {}, label, s), s];
+  };
+  const [lp, sp] = sel("发病率", INVS, "inv", (v) => "1/" + v.toLocaleString("en-US"));
+  const [lf, sf] = sel("误报率", FPS, "fp", (v) => v + "%");
+  const [ln, sn] = sel("漏报率", FNS, "fn", (v) => v + "%");
+  const [lr, sr] = sel("连着查几次", RS, "r", (v) => v + " 次");
+  const book = h("button", { onclick: () => { Object.assign(st, DEF); draw(); } }, "书里的题");
+  const stage = h("div", { class: "stage" });
+  const narrate = h("div", { class: "narrate" });
+  const stats = h("div", { class: "stats" });
+  const body = root.querySelector(".sim-body");
+  body.innerHTML = "";
+  body.append(h("div", { class: "presets" }, book), h("div", { class: "controls" }, lp, lf, ln, lr), stage, narrate, stats);
+
+  const COL = { tp: "var(--bad)", miss: "var(--warn)", fp: "var(--accent)", neg: "var(--border)" };
+  function grid(c) {
+    const big = c.N > 1000, cols = big ? 100 : 40, cell = big ? 4 : 10, rows = c.N / cols;
+    const nSick = Math.round(c.sick), nTP = Math.min(nSick, Math.round(c.tp)), nFP = Math.round(c.fp);
+    const g = el("svg", { viewBox: `0 0 400 ${rows * cell}`, class: "grid", role: "img", "aria-label": `每 ${c.N} 人里约 ${nTP + nFP} 人阳性，其中真病 ${nTP} 人` });
+    for (let i = 0; i < c.N; i++) {
+      const x = (i % cols) * cell, y = Math.floor(i / cols) * cell;
+      const fill = i < nTP ? COL.tp : i < nSick ? COL.miss : i < nSick + nFP ? COL.fp : COL.neg;
+      g.append(el("rect", { x: x + cell * 0.1, y: y + cell * 0.1, width: cell * 0.8, height: cell * 0.8, rx: cell * 0.15 }, { fill }));
+    }
+    return g;
+  }
+
+  function draw() {
+    sp.value = String(st.inv); sf.value = String(st.fp); sn.value = String(st.fn); sr.value = String(st.r);
+    book.setAttribute("aria-pressed", String(st.inv === DEF.inv && st.fp === DEF.fp && st.fn === DEF.fn && st.r === DEF.r));
+    const c = calc();
+    stage.innerHTML = "";
+    const legend = h("p", { class: "legend" });
+    legend.innerHTML = `<i style="background:${COL.tp}"></i>真病，查出阳性 <i style="background:${COL.miss}"></i>真病，被漏掉 <i style="background:${COL.fp}"></i>健康，被误报成阳性 <i style="background:${COL.neg}"></i>健康，阴性`;
+    stage.append(grid(c), legend, h("p", { class: "cap" }, `一格一个人，共 ${c.N.toLocaleString("en-US")} 人。有颜色的格子按比例取整，统计栏的数是精确算的平均人数。`));
+    const pos = st.r === 1 ? "查出阳性" : `连查 ${st.r} 次都是阳性`;
+    const missTxt = c.miss > 0.005 ? `，漏掉 ${fmt(c.miss)} 人` : "，一个不漏";
+    narrate.textContent = `每 ${c.N.toLocaleString("en-US")} 人里：病人 ${fmt(c.sick)} 人，${pos}的 ${fmt(c.tp)} 人${missTxt}；健康的 ${fmt(c.N - c.sick)} 人里，${fmt(c.fp)} 人被误报成${st.r === 1 ? "阳性" : "次次阳性"}。` +
+      `阳性一共 ${fmt(c.tp + c.fp)} 人，其中真病的 ${fmt(c.tp)} 人，占 ${pct(c.ppv)}。`;
+    stats.innerHTML = "";
+    const box = (v, l) => h("div", { class: "stat" }, h("div", { class: "v" }, v), h("div", { class: "l" }, l));
+    stats.append(box("1/" + st.inv.toLocaleString("en-US"), "发病率"), box(fmt(c.tp + c.fp), `阳性的人（每 ${c.N.toLocaleString("en-US")} 人）`), box(fmt(c.tp), "其中真病的"),
+      box(pct(c.ppv), "阳性的人里真病的比例"), box(fmt(c.miss), "漏掉的病人"));
+  }
+  draw();
+})();
+</script>
+</body>
+</html>

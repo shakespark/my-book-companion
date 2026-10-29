@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 3 章（下）· 随机骗局导读</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/chapters.js"></script>
+<script src="../assets/fb.js"></script>
+<style>
+#sim-03b .bell, #sim-03b .ladder { width: 100%; max-width: 440px; display: block; margin: 0 auto; }
+#sim-03b .strip { width: 100%; max-width: 440px; display: block; margin: 6px auto 0; }
+#sim-03b .cap { font-size: 13px; color: var(--muted); margin: 12px 0 2px; text-align: center; }
+</style>
+</head>
+<body data-page="03b">
+<main>
+
+<h2>这一页在做什么</h2>
+<div class="gist"><p>第 3 章的后半。作者先骂记者，再讲他为什么床头堆着老书、拿不准时宁可不碰新东西；中间插进经济学家席勒和默顿的一段公案，和「挑交易员要挑白头发的」这个说法。最后是全章的数学：一个本事很好的退休牙医在阁楼里盯盘，一年看一次、一个月看一次、一秒看一次，他看到的是同一个自己吗？读的时候抓一条线：看得越勤，看到的到底是什么。</p></div>
+<figure class="fig"><img src="../assets/img/03b-palm.jpg" alt="一只手托着一台黑色的掌上电脑，单色屏幕上是一排排应用图标，背后是笔记本电脑的键盘" loading="lazy">
+<figcaption>Palm 公司的一台掌上电脑（m125 型）。PalmPilot 是这家公司 1997 年推出的掌上电脑，§10 的英文小标题借它的名字打比方：口袋里随身带着的「蒸馏过的思想」。到作者写书时，行情已经能推送到这类设备和手机上（§13）。<span class="src">Siarhei Besarab，CC BY-SA 4.0，维基共享资源</span></figcaption></figure>
+
+<h2>读之前：这一页在全书的哪里</h2>
+<div class="linehere"></div>
+<p>03a 讲完蒙特卡洛和「坏交易迟早会找上你」，§9 讲完祖父的公寓，又借来遍历性：样本路径足够长，运气的成分会被冲淡。这一页接着走：如果「长」能滤掉噪声，那么老想法、历史、活得久的交易员，就都是被时间滤过的东西。§12 末句作者说要用数学把这些论点重说一遍，§13 就是那段数学。§10 开头回指第 2 章那位上电视的专栏作家 George Will，§11 的席勒也是第 2 章那位。</p>
+<div class="heads-up"><p>§10 作者说，拿不准时应该系统地拒绝新的想法、信息和方法，而且「总是」如此。这是他的立场，靠一段推理和他自己的判断撑着，书里没有给数。读的时候留意他算了哪一边的账，没算哪一边。</p></div>
+<div class="crux"><p>看得越多、越勤，知道得就越多吗？</p></div>
+<p class="lede">读的时候带着这几个问题。不用先找答案，读完回来对照「检查一下理解」。</p>
+<ol class="qs">
+  <li>作者说汽车、飞机这些例子证明不了「新东西值得追」。他认为人们漏看了什么？<span class="sec">§10</span></li>
+  <li>默顿批评席勒，后来又参与创办对冲基金。作者为什么觉得这前后矛盾？你同意吗？<span class="sec">§11</span></li>
+  <li>挑交易员时，作者为什么看「在市场里待了多少年」，不看「赚了多少钱」？<span class="sec">§12</span></li>
+  <li>同一个牙医、同一个策略，每秒看一次和每年看一次，他过的是不是同一种日子？<span class="sec">§13</span></li>
+</ol>
+
+<h2>这一页的路线</h2>
+<p>§10 从骂记者起头，很快变成一条推理：好记者应该像历史学家，淡化自己手里的消息；老想法经过了时间的筛选。接着是「新新事物」、有毒的信息、6:42 的通勤火车，故事和议论搅在一起。§11 突然转进经济学界的一段公案：席勒说股价波动太大，默顿出来反驳，后来却参与创办了对冲基金。这一节后两段又绕回「新闻快报」和几位他欣赏的记者，读着像离题。§12 只有一段，从挑老交易员跳到择偶，再跳到文艺复兴时期的寿险，末句宣布要用数学重说一遍。§13 先引一句古希腊的箴言和一首诗，再造出一个虚构的牙医，摆出一张按时间尺度排的表和三条结论，最后又回到报纸、倦怠和作者自己的沉默。数学集中在牙医那一段，其余是议论。</p>
+<figure class="fig">
+<svg class="diagram" viewBox="0 0 640 300" role="img" aria-label="路线示意图：§10 记者和历史学家、老想法、新新事物、通勤火车；§11 席勒和默顿，绕回新闻快报和好记者；§12 白发交易员、择偶、寿险；§13 箴言和诗、牙医和时间尺度、新闻和历史、作者的沉默">
+<defs><marker id="ar03b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="f-a"/></marker></defs>
+<rect x="8" y="20" width="200" height="50" rx="6" class="box"/><text x="108" y="40" text-anchor="middle">§10 记者和历史学家</text><text x="108" y="58" text-anchor="middle" class="t-m">老想法为什么可贵</text>
+<rect x="228" y="20" width="190" height="50" rx="6" class="f-soft"/><text x="323" y="40" text-anchor="middle" class="t-b">新新事物</text><text x="323" y="58" text-anchor="middle" class="t-m">有毒的信息</text>
+<rect x="438" y="20" width="194" height="50" rx="6" class="f-soft"/><text x="535" y="40" text-anchor="middle" class="t-b">6:42 的火车</text><text x="535" y="58" text-anchor="middle" class="t-m">读报的通勤族</text>
+<line x1="208" y1="45" x2="226" y2="45" class="ln-a" marker-end="url(#ar03b)"/>
+<line x1="418" y1="45" x2="436" y2="45" class="ln-a" marker-end="url(#ar03b)"/>
+<line x1="535" y1="70" x2="535" y2="106" class="ln-a" marker-end="url(#ar03b)"/>
+<rect x="328" y="108" width="304" height="50" rx="6" class="box" stroke-dasharray="5 4"/><text x="480" y="128" text-anchor="middle">§11 席勒和默顿</text><text x="480" y="146" text-anchor="middle" class="t-m">学界公案·绕回新闻快报和好记者</text>
+<line x1="328" y1="133" x2="290" y2="133" class="ln-a" marker-end="url(#ar03b)"/>
+<rect x="8" y="108" width="280" height="50" rx="6" class="box"/><text x="148" y="128" text-anchor="middle">§12 白发的价值</text><text x="148" y="146" text-anchor="middle" class="t-m">老交易员·择偶·寿险</text>
+<line x1="148" y1="158" x2="148" y2="194" class="ln-a" marker-end="url(#ar03b)"/>
+<rect x="8" y="196" width="200" height="50" rx="6" class="box"/><text x="108" y="216" text-anchor="middle">§13 箴言和一首诗</text><text x="108" y="234" text-anchor="middle" class="t-m">聪明人听意义</text>
+<rect x="228" y="196" width="190" height="50" rx="6" class="f-soft"/><text x="323" y="216" text-anchor="middle" class="t-b">牙医和时间尺度</text><text x="323" y="234" text-anchor="middle" class="t-m">一张表·三条结论</text>
+<rect x="438" y="196" width="194" height="50" rx="6" class="box"/><text x="535" y="216" text-anchor="middle">新闻和历史</text><text x="535" y="234" text-anchor="middle" class="t-m">倦怠·作者的沉默</text>
+<line x1="208" y1="221" x2="226" y2="221" class="ln-a" marker-end="url(#ar03b)"/>
+<line x1="418" y1="221" x2="436" y2="221" class="ln-a" marker-end="url(#ar03b)"/>
+<rect x="8" y="270" width="24" height="14" rx="3" class="f-soft"/><text x="40" y="282" class="t-m">故事和数学最集中</text>
+<rect x="210" y="270" width="24" height="14" rx="3" class="box" stroke-dasharray="5 4"/><text x="242" y="282" class="t-m">离题较多</text>
+</svg>
+<figcaption>本站示意图。第一行是 §10 的议论和故事，§11 绕进学界又绕回新闻，§12 一段话交棒，最后一行是 §13 的数学和它的推论。</figcaption></figure>
+
+<h2>分节地图</h2>
+<p class="lede">这一页是原书和译本第 3 章的后半，§10 到 §13，一共 4 节。粗体是本站给的节名，后面是档和译本字数；下面是译本的小标题和这一节在译本电子书里开头的几个字（搜它就能跳过去），再下面是英文原文的开头。「先读」是这一章的骨架，「有空」好看、跳过不丢线，「可跳过」读不读都行。读完打个勾。</p>
+<ol class="secmap">
+  <li data-sec="10"><span class="what">前半讲记者该像历史学家、老想法为什么可贵；后半把同一个道理从新发明搬到新闻上，以通勤火车上读报的人收尾。留意作者在哪里加了「拿不准时」。</span></li>
+  <li data-sec="11"><span class="what">一段经济学界的公案：席勒说股价比基本面波动得多，默顿从方法上反驳。后两段离题，回到新闻快报，并点名几位他欣赏的记者。</span></li>
+  <li data-sec="12"><span class="what">只有一段。从挑交易员讲到择偶和文艺复兴时期的寿险，末句交棒给 §13 的数学。留意作者说的模拟，书里没有给参数。</span></li>
+  <li data-sec="13"><span class="what">全章的数学核心。从<span class="zhv">译本：「假設有個快樂的退休牙醫」</span>起是设定；<span class="zhv">译本：「從另一個角度來談」</span>起换一种算法；<span class="zhv">译本：「同樣的方法可以解釋為什麼」</span>起推到新闻和历史。</span></li>
+</ol>
+
+<h2>先用中文过一遍：这一页的概念</h2>
+<p class="lede">先把这一页用到、作者默认你懂的几个概念讲一遍。讲的是概念本身，作者拿它推出什么，读原书时自己看。别页讲过的概念，点链接过去看。</p>
+<div class="concept" id="c-volatility">
+<h3><span class="sec">§13</span>波动和标准差 <span class="en">volatility, standard deviation，译本：波動性、標準差</span></h3>
+<p>波动说的是一个数每次围着平均值上下摆多远，统计里用标准差衡量。数据大致呈钟形（正态分布）时，约三分之二的情况落在平均值上下一个标准差之内，约 95% 落在两个标准差之内。</p>
+<p>通勤时间是个好例子：平均 40 分钟、标准差 5 分钟，大约三天里有两天在 35 到 45 分钟之间，二十天里约有一天跑出 30 到 50 分钟。投资里说「年化收益 15%、波动 10%」，意思是一年的收益多半落在 5% 到 25% 之间，少数年份更好或更差，偶尔还会亏。波动和收益用同一个单位，都是百分比。</p>
+<p class="use"><b>在这一页：</b>§13 的牙医就是「收益 15%、波动 10%」，作者用 68% 和 95% 两个数说明这组设定。模拟器和「噪声和信号」都要用它。</p>
+</div>
+<div class="concept" id="c-noise-signal">
+<h3><span class="sec">§10</span>噪声和信号：为什么看得越勤越像抛硬币 <span class="en">noise / signal (information)，译本：雜訊 / 訊號、資訊</span></h3>
+<p>信号是你真正想知道的东西（这笔投资平均能赚多少），噪声是叠在上面、不含信息的随机起伏。两者随时间长的方式不一样：平均收益和时间成正比，一年 15%，一个月就是 1.25%；波动只和时间的平方根成正比，一年 10%，一个月约 2.9%（10 除以 12 的平方根）。</p>
+<p>所以时间切得越短，噪声相对信号越大：看一年，信号比噪声大；看一个月，噪声已经是信号的两倍多；看一天，约十倍。程序员熟悉的例子是每天称体重：真实的趋势是每月掉半公斤，每天的读数却跟着喝水吃饭上下跳一公斤，天天看只会看到噪声。</p>
+<figure class="fig">
+<svg class="diagram" viewBox="0 0 640 260" role="img" aria-label="横轴是时间，从 0 到一年。一条直线是平均收益，随时间直线上升；围着它的一条阴影带是波动的范围，按时间的平方根变宽。一个月处阴影带大半在零以下，一年处整条带在零以上">
+<polygon points="60,200 65.4,193.1 81.6,184.4 108.6,173.9 146.4,161.6 195,147.5 254.4,131.6 324.6,113.9 405.6,94.4 497.4,73.1 600,50 600,170 497.4,181.1 405.6,190.4 324.6,197.9 254.4,203.6 195,207.5 146.4,209.6 108.6,209.9 81.6,208.4 65.4,205.1" class="f-soft"/>
+<line x1="60" y1="200" x2="620" y2="200" class="ln-d"/>
+<text x="56" y="204" text-anchor="end" class="t-m">0</text>
+<line x1="60" y1="200" x2="600" y2="110" class="ln-a" stroke-width="3"/>
+<line x1="105" y1="84" x2="105" y2="222" class="ln-d"/>
+<text x="105" y="240" text-anchor="middle" class="t-b">一个月</text>
+<text x="600" y="240" text-anchor="middle" class="t-b">一年</text>
+<text x="118" y="100" class="t-m">这里：阴影带跨过了零线，</text>
+<text x="118" y="118" class="t-m">看到亏一点也不稀奇</text>
+<text x="370" y="135" class="t-b">平均收益（信号）</text>
+<text x="370" y="153" class="t-m">随时间直线增长</text>
+<text x="440" y="44" class="t-m">波动的范围（噪声）</text>
+<text x="440" y="62" class="t-m">按时间的平方根变宽</text>
+</svg>
+<figcaption>本站示意图，按「年化收益 15%、波动 10%」画，阴影带是平均值上下一个标准差。越靠近起点，带子相对直线越宽：短时间里看到的主要是波动。</figcaption></figure>
+<p class="use"><b>在这一页：</b>§10 作者把「噪声和信息」比作「新闻和历史」，§13 用牙医把它算出来。模拟器演的就是这一条。</p>
+</div>
+<div class="concept" id="c-hedge-fund">
+<h3><span class="sec">§11</span>对冲基金和 LTCM <span class="en">hedge fund，译本：避險基金</span></h3>
+<p>对冲基金是只收富人和机构的钱、监管比普通基金松得多的投资合伙。它能做普通基金不大做的事：借钱放大仓位（杠杆）、做空、买卖各种衍生品。管理人一般按资产收管理费，再从赚到的钱里抽一大笔分成：赚得多时拿得多，亏光时损失主要落在投资人身上。名字里的「对冲」原指用一笔交易抵消另一笔的风险，今天的对冲基金未必在对冲什么。</p>
+<p>长期资本管理公司（Long-Term Capital Management，LTCM）是 1994 年成立的对冲基金，合伙人里有默顿和斯科尔斯（两人 1997 年获诺贝尔经济学奖）。它主要押相近的债券之间的价差会收拢，靠杠杆把小价差放大。1998 年俄罗斯违约后价差反而拉大，基金巨亏；9 月，纽约联储出面召集 14 家金融机构注资约 36 亿美元接手，没有动用公款，基金 2000 年初清盘。</p>
+<p class="use"><b>在这一页：</b>§11 默顿那家对冲基金就是 LTCM，正文没点它的名字，书后第 3 章的注释列了 Lowenstein 2000 年写 LTCM 的书。做空见<a class="term" href="06.html#c-short-selling">做空</a>，衍生品见<a class="term" href="01.html#c-derivatives">衍生品</a>。</p>
+</div>
+<div class="concept" id="c-efficient-market">
+<h3><span class="sec">§11</span>有效市场和「波动过度」 <span class="en">efficient markets, excess volatility，译本：效率市場</span></h3>
+<p>有效市场假说说：价格已经反映了所有公开的信息，新消息一出来就被吸收，所以没人能靠公开信息稳定地赚到超出所担风险的钱。它不是说价格永远「对」，而是说你很难事先知道它错在哪个方向。</p>
+<p>股价按理是公司未来能分给股东的钱（股利）折算到今天的价值。席勒 1981 年拿美国一百多年的数据比：如果股价只反映后来真实发生的股利，它的起伏应该平缓得多，实际却大得多。这叫「波动过度」。怎样解释它，经济学界分成两路：一路说是人的情绪和偏误，一路说是投资人要求的回报本身在随时间变。</p>
+<p class="use"><b>在这一页：</b>§11 席勒和默顿的争论就围着这个打转；作者把它接到「信息对社会的价值」上。</p>
+</div>
+
+<h2>动手：模拟器</h2>
+<p>先猜：一个本事很好的投资人，一年平均比国库券多赚 15%、波动 10%，一年下来多半是赚的。如果他每天看一次账户，大约有多少天看到的是「赚了」？每秒看一次呢？再点下面的模拟器验证。</p>
+<div class="sim" id="sim-03b">
+  <div class="sim-head"><span class="tag">模拟器</span><h3>看盘的频率</h3><p class="desc">选多久看一次账户，看「这一次看到的是赚还是亏」怎样变。最上面是看一次可能看到的结果（钟形，红色是亏、绿色是赚），中间是接下来 40 次看盘，最下面是七种频率各自「看到赚」的概率。先停在「每年」，再一档一档往下选。</p></div>
+  <div class="sim-body"><p>需要浏览器打开脚本才能运行。</p></div>
+</div>
+<p>各个控件：「看盘频率」是多久看一次账户，一年按 252 个交易日、每天 8 小时算（书里写了每天 8 小时）；「年化超额收益」是一年平均比国库券多赚多少；「年化波动」是一年收益的标准差；「难过的分量」是看到一次亏的难受，抵得上几次看到赚的高兴。模型假设每次看到的收益服从正态分布，平均值是年化收益除以一年看的次数，标准差是年化波动除以次数的平方根，各次独立。下面四个数依次是：看一次看到「赚了」的概率；噪声是信号的几倍（这一次波动的标准差除以这一次的平均收益）；一段时间里平均高兴几次、难过几次（标签上写着是 20 年、一年还是一天）；一年的心情账（每看到一次赚记 +1，每看到一次亏记减去「难过的分量」，一年加起来，不管亏了多少）。概率和次数是精确算的；40 个方块用带种子的伪随机数抽，点「换 40 次」再抽一组。</p>
+<ol class="qs">
+  <li>试试看：默认是「每年」：赚的概率 93.3%，20 年里平均约 18.7 次高兴、1.3 次难过。依次改成「每季」「每月」：77.3%、66.7%；每月看时一年约 8 次高兴、4 次难过。对一下 §13 表 3.1 的前三行和牙医看月报表的那一段。</li>
+  <li>试试看：再改成「每天」「每小时」「每分钟」「每秒」：53.8%、51.3%、50.17%、50.02%，越来越像抛硬币；噪声和信号之比从 0.67 涨到 1,796。停在「每分钟」，看一天 8 小时里高兴和难过各多少分钟，对一下书里的 241 和 239。</li>
+  <li>试试看：看「一年的心情账」。难过的分量是 2.5 时，从哪一档起账变成负的？概率图里那条虚线是账的分界。再把分量改成 1（亏和赚一样重），从「每年」往下选一遍，账怎样变？想一想：「看得勤伤人」靠的是哪一条假设。</li>
+</ol>
+<p>表 3.1 是一张图片，在译本电子书里搜不到。§13 作者说噪声和表现之比是「左栏除以右栏」，可表里只有「时间尺度」和「概率」两栏，没法相除；他实际算的是统计栏的第二个数，这一次波动的标准差除以平均收益，书里的 0.7、2.32、30、1,796 都能这样复现。§13 说每年看、二十年里「十九次惊喜对一次不愉快」，算出来是 18.7 次对 1.3 次，是取整的说法。这个模拟器只演一件事：同一个投资，看的频率不同，看到的东西就不同。正态、各次独立是最简单的假设，真实市场里极端的日子比这多。牙医的设定很乐观，作者自己也这么说：把收益改成 5%、波动改成 20%，每年看也只有约六成的年份是赚的。</p>
+
+<h2>书里的人和背景</h2>
+<p class="lede">按在书里出现的顺序排，标题前是节号。只讲到读懂这一页需要的程度。</p>
+
+<h3><span class="sec">§10</span>「新新事物」和通勤火车上的报纸</h3>
+<p>The New New Thing 是 Michael Lewis 1999 年一本书的书名，写网景的创始人 Jim Clark，互联网泡沫那几年成了「下一个改变世界的东西」的代称。6:42 的火车是从纽约郊区开进曼哈顿的早班通勤车；《华尔街日报》是美国的财经日报，每个工作日出版，§13 作者拿它和每周一期的《纽约客》比。作者还承认，他读的新闻只有《Tatler》《Paris Match》《Vanity Fair》里的上流社会八卦，外加《经济学人》。</p>
+
+<h3><span class="sec">§11</span>席勒</h3>
+<figure class="fig small"><img src="../assets/img/03b-shiller.jpg" alt="一位灰发男子穿深色西装，右手握拳托着下巴，眉头微皱，背景是蓝色" loading="lazy">
+<figcaption>Robert J. Shiller，2012 年在达沃斯世界经济论坛年会上。<span class="src">World Economic Forum，CC BY-SA 2.0，维基共享资源</span></figcaption></figure>
+<div class="who">
+  <div><b>Robert J. Shiller</b><span class="en">1946–</span>美国经济学家，耶鲁大学教授，2013 年和 Eugene Fama、Lars Peter Hansen 共获诺贝尔经济学奖。2000 年出版《非理性繁荣》（Irrational Exuberance），作者在书后的书目里推荐过。</div>
+</div>
+<p>作者说的是他 1981 年发表在《美国经济评论》上的论文，用的是 1871 年起的美国股价和股利数据。第 2 章那段电视访谈里，George Will 拿「你以前说错过」来反驳他，就是 §11 第一段末尾说的「前面一章」。</p>
+
+<h3><span class="sec">§11</span>默顿</h3>
+<figure class="fig small"><img src="../assets/img/03b-merton.jpg" alt="一位穿深色西装、打红色领带的男子面带微笑看着镜头" loading="lazy">
+<figcaption>Robert C. Merton，2010 年。<span class="src">Massachusetts Institute of Technology，CC BY-SA 4.0，维基共享资源</span></figcaption></figure>
+<div class="who">
+  <div><b>Robert C. Merton</b><span class="en">1944–</span>美国经济学家，MIT 斯隆管理学院教授，1997 年和 Myron Scholes 共获诺贝尔经济学奖，奖的是期权定价的方法（Black–Scholes–Merton 模型）。</div>
+</div>
+<p>书里没给反驳的出处。一般指的是 Marsh 和默顿 1986 年的论文：公司会刻意把股利维持平稳，所以拿股利当基本面的检验不成立，席勒同年发文回应。他参与创办的对冲基金是 LTCM，见「先用中文过一遍」的对冲基金块。</p>
+
+<h3><span class="sec">§11</span>作者点名的几位记者</h3>
+<p>Anatole Kaletsky 是伦敦的经济评论员；Jim Grant 在纽约办一份老派的利率和信贷通讯《格兰特利率观察》（Grant’s Interest Rate Observer）；Alan Abelson（1925–2013）在《巴伦周刊》写了几十年的专栏「Up and Down Wall Street」；Gary Stix 是《科学美国人》的编辑。作者说前三位是财经记者里被低估的一类，Stix 是科学记者里的代表。§11 末段的律师在第 11 章。</p>
+
+<h3><span class="sec">§12</span>文艺复兴时期的寿险</h3>
+<p>作者说，文艺复兴时期意大利的寿险商对二十几岁和五十几岁的人收一样的保费，说明他们认为两者的预期寿命相同。书后的书目没有给出处，本站也没有查到，当作者的说法读。同一段里择偶的说法来自进化心理学的一种观点，作者自己加了「总的来说」（on balance）和「其他条件相同」两层限定。</p>
+
+<h3><span class="sec">§13</span>斐洛斯特拉图斯和卡瓦菲</h3>
+<p>Philostratus 是罗马帝国时期用希腊文写作的智者（sophist），活在公元 2 到 3 世纪，写了《阿波罗尼乌斯传》。「神看未来，凡人看眼前，智者看将要发生的事」出自这本书第 8 卷。C. P. Cavafy（1863–1933）是住在埃及亚历山大港的希腊诗人，拿这句话作题记写了一首诗，作者说写于 1915 年。作者引它，是为「聪明人听意义，傻瓜只听噪声」开个头。</p>
+
+<h3><span class="sec">§13</span>牙医、国库券和超额收益</h3>
+<p>牙医是作者编的例子，作者说「我们先验地知道他是优秀的投资者」：本事是设定好的，这一节讲的是看的频率，不是怎样识别本事。他和第 2 章那位「靠钻牙赚了一千万」的牙医不是同一个设定。国库券是美国政府发行的短期借条，几乎没有风险；「比国库券多赚 15%」就是超额收益。Park Avenue 是纽约曼哈顿的富人区。</p>
+
+<h2>原文里的词和句</h2>
+<p class="lede">读英文原文时值得停一下的词和句：交易员的行话、作者的反话和双关、熟词生义。灰色斜体是原句里连续的几个词，在英文电子书里搜它就能找到；标「每个字都认识」的，是每个词都眼熟、合起来意思却变了的，最容易读错。点「记下」收进词本。</p>
+<div class="entry"><div class="en">bête noire</div><div class="loc" data-p="35">… The journalist, my bête noire, entered …</div><div class="zh">最讨厌的东西，眼中钉</div><div class="note">法语，字面是「黑色的野兽」，指最讨厌、最怕碰上的人或事。英文里直接借用。</div></div>
+<div class="entry"><div class="en">middlebrow</div><div class="loc" data-p="37">… Middlebrow inference (inference stripped of …</div><div class="zh">半吊子的（推理）</div><div class="note">highbrow 是阳春白雪，lowbrow 是下里巴人，middlebrow 是自以为懂的大众品味，带贬义。作者在括号里自己解释为「去掉了概率思维的推理」。</div></div>
+<div class="entry trap"><div class="en">actors are largely waiters</div><div class="loc" data-p="37">… that actors are largely waiters …</div><div class="zh">演员大多（其实）在当服务员</div><div class="note">在纽约、洛杉矶，没成名的演员多半靠端盘子过活。作者挖苦只看见明星、就说「演员都很有钱」的推理。</div></div>
+<div class="entry trap"><div class="en">silence rarely surpasses any word</div><div class="loc" data-p="38">… For a journalist, silence rarely surpasses …</div><div class="zh">（对记者来说）说什么都比不说强</div><div class="note">反用「沉默是金」：记者靠说话吃饭，在他眼里任何一句话都胜过沉默。</div></div>
+<div class="entry trap"><div class="en">genetic habitat</div><div class="loc" data-p="39">… living outside their genetic habitat …</div><div class="zh">离开了人天生适应的环境</div><div class="note">habitat 是动物的栖息地。作者说通勤上班的日子不是人的基因预备好要过的生活。</div></div>
+<div class="entry trap"><div class="en">an insurance for</div><div class="loc" data-p="39">… an insurance for my continuing in …</div><div class="zh">（别人读报）保证了他能继续（做期权生意）</div><div class="note">不是买保险。别人读了新闻就反应过度，他的期权生意才有钱赚，所以他看着高兴。</div></div>
+<div class="entry trap"><div class="en">take out a membership</div><div class="loc" data-p="39">… a health club membership taken out …</div><div class="zh">办的健身房会员卡</div><div class="note">take out 在这里是「办理、申请」，保险、贷款、会员都这样说，不是「拿出来」。新年办卡、很少去，是英文里常见的笑话。</div></div>
+<div class="entry trap"><div class="en">religious orders</div><div class="loc" data-p="40">… by the religious orders of high …</div><div class="zh">（金融学界的）正统派，像宗教修会</div><div class="note">religious order 是修会。作者接着用 infidel（异教徒）、apostasy（叛教）挖苦正统金融学家追杀席勒；§11 的「教皇改宗」也接着这个比方。</div></div>
+<div class="entry trap"><div class="en">on a silver plate</div><div class="loc" data-p="41">… deliver opportunities on a silver plate …</div><div class="zh">白白送上门（的赚钱机会）</div><div class="note">由 hand something to someone on a silver platter 变来：用银盘子端到你面前，不用费一点力。</div></div>
+<div class="entry trap"><div class="en">characteristic denial</div><div class="loc" data-p="41">… swan problem (with characteristic denial), his …</div><div class="zh">照例矢口否认</div><div class="note">characteristic 在这里是「一贯的、典型的」，不是名词「特征」。作者讽刺出了事照例不承认是这个问题。</div></div>
+<div class="entry"><div class="en">sound bites</div><div class="loc" data-p="43">… our attention, with adequate sound bites.</div><div class="zh">新闻里剪出来的一两句金句</div><div class="note">原指电视新闻里截取的一小段讲话，引申为好记、好传、没有内容的短句。</div></div>
+<div class="entry trap"><div class="en">error rate</div><div class="loc" data-p="48">… with a 10% error rate per …</div><div class="zh">（每年的）波动，即标准差</div><div class="note">作者的叫法，括号里自己说了「就是我们说的波动」。不是「出错率」，牙医没有做错什么。</div></div>
+<div class="entry"><div class="en">pang</div><div class="loc" data-p="51">… he feels a pang with every …</div><div class="zh">一阵心痛</div><div class="note">pang 是突然袭来的一阵（痛、悔、嫉妒）。§13 里的 negative pang、positive pang 都是它。</div></div>
+<div class="entry trap"><div class="en">dump on</div><div class="loc" data-p="62">… Before additional dumping on the journalist …</div><div class="zh">（再）数落、痛批（记者）</div><div class="note">口语，dump on someone 是把一肚子批评倒在某人身上，和「倾倒」垃圾无关。</div></div>
+<div class="entry"><div class="en">kicks</div><div class="loc" data-p="71">… about positive and negative kicks is …</div><div class="zh">正面和负面的刺激</div><div class="note">kick 口语里是「一下子的刺激、快感」，比如 get a kick out of it。作者借来说盈亏带来的情绪冲击。</div></div>
+<div class="entry trap"><div class="en">live on a different planet</div><div class="loc" data-p="73">… for living on a different planet.</div><div class="zh">脱离现实、不食人间烟火</div><div class="note">作者说有些雇主拿这句话怪他；同一段里，还有人怪他「忽视」日报里可能有用的信息。</div></div>
+
+<h2>译本勘误</h2>
+<p class="lede">对着译本读这一章时，下面这些地方会把人读歪。方框里是译本的原句，在译本电子书里搜它就能找到；灰色斜体是英文原文那一处。只收意思错了、反了、漏了的，措辞上的出入和台湾用语不收。全书的勘误汇总在<a href="../zh.html">译本勘误</a>。</p>
+<div class="zherr" data-p="36"><h4><span class="sec">§10</span>漏了「而且总是如此」<span class="mark">漏译</span></h4>
+<p class="loc">… Clearly and shockingly, always. …</p>
+<p class="zhq"><span class="zhv">译本：「這個道理很明顯，卻令人震驚」</span></p>
+<p>原文这一句里还有一个词 always：拿不准时系统地拒绝新东西，而且「总是」如此，这是全页口气最硬的一句。读译本会以为作者只是说这个道理令人吃惊，看不出他把话说到了「总是」。</p></div>
+<div class="zherr" data-p="37"><h4><span class="sec">§10</span>是「输家呢？」，不是反问<span class="mark">误译</span></h4>
+<p class="loc">… Losers? The Saturday newspaper lists …</p>
+<p class="zhq"><span class="zhv">译本：「我們可以不看輸家嗎？」</span></p>
+<p>原文是自问自答：输家在哪？周六的报纸上就列着几十项号称能改变生活的新专利，它们就是被忽略的那一大堆。译本成了反问「能不能不看输家」，下一句的专利就没头没尾，读不出它们正是输家。</p></div>
+<div class="zherr" data-p="44"><h4><span class="sec">§12</span>是「活到老本身就是基因好的证据」<span class="mark">误译</span></h4>
+<p class="loc">… provide some evidence of better genes …</p>
+<p class="zhq"><span class="zhv">译本：「因為證據顯示前者的基因比較好」</span></p>
+<p>原文是说，年纪大而健康的男人，本身就为「基因较好」提供了一点证据，和白发、老交易员是同一个道理：活下来就是证明。译本读来像是有研究证明年长男性基因更好，把一个推理变成了一条研究结论。</p></div>
+<div class="zherr" data-p="51"><h4><span class="sec">§13</span>是「看一次几乎什么也看不出」<span class="mark">误译</span></h4>
+<p class="loc">… the observation will reveal close to nothing …</p>
+<p class="zhq"><span class="zhv">译本：「賺賠觀察值幾乎相抵」</span></p>
+<p>原文说时间切得很细时，一次观察几乎不透露任何信息，看不出牙医有没有本事。译本说成赚和赔「几乎相抵」，像是金额抵消了；§13 讲倦怠时作者恰恰说难受和高兴抵消不了，两处读着会打架。</p></div>
+<div class="zherr" data-p="69"><h4><span class="sec">§13</span>「高时间尺度」是看得勤，不是时间拉得长<span class="mark">术语</span></h4>
+<p class="loc">… why the news (the high scale) is …</p>
+<p class="zhq"><span class="zhv">译本：「新聞（高時間尺度）充滿著雜訊」</span></p>
+<p>原文的 high scale 指观察的频率高、每次隔得很短，说的是新闻；low scale 指隔得长，说的是历史。中文说「时间尺度高」很容易理解成时间跨度大，正好反了。读这句时把新闻当成「短尺度」、历史当成「长尺度」。</p></div>
+<div class="zherr" data-p="70"><h4><span class="sec">§13</span>burn out 是「耗尽、倦怠」<span class="mark">误译</span></h4>
+<p class="loc">… too closely at randomness burn out …</p>
+<p class="zhq"><span class="zhv">译本：「太密集注意隨機性的人會被燒傷」</span></p>
+<p>burn out 是长期压力下身心耗尽，就是「职业倦怠」那个词，下一段说的「交易员的倦怠」也是它。译成「燒傷」，读来像是被烫了一下，丢了「一点点被耗干」的意思。</p></div>
+
+<div class="gate"></div>
+
+<h2>读完：作者到底说了什么</h2>
+<p class="lede">读完这一章再看。下面是作者在这一章里的主张，由本站按主张之间的逻辑重新组织，不按原书的顺序；每条后面是节号，拿不准就回书里那一节再读一遍。</p>
+<div class="claims">
+  <div class="claim"><h4>新闻多是噪声，历史和老想法是被时间滤过的</h4><p>他把「噪声和信息」类比成「新闻和历史」：记者要称职，就得像历史学家那样淡化手里的消息，可这样做会丢饭碗。他说媒体靠吸引注意力收钱，没经过蒸馏的信息所占的比例还在上升；但他也承认有不少深思的记者，问题在主流媒体没有把两者分开的机制。</p><span class="sec" data-p="35 38 42 43 69">§10 §11 §13</span></div>
+  <div class="claim"><h4>拿不准时，系统地拒绝新东西，而且总是如此</h4><p>理由是：进步只要求有些新东西比旧的好，平均的新东西并不更好；一个想法活过了很多轮，说明它相对适应。拿汽车、飞机说明新发明值得追，只数了赢家。他判断错过这些「珍宝」的代价，比翻遍垃圾的害处小得多，还说他常常（frequently）怀疑它们真改善了生活。</p><span class="sec" data-p="36 37">§10</span></div>
+  <div class="claim"><h4>挑交易员要看活了多久，不看赚了多少</h4><p>他说自己用蒙特卡洛模拟过多种「状态」下的交易员群体（书里没给参数），发现按从业年数挑（前提是没爆仓）有显著的优势：老的人经历稀有事件更久还活着。他拿白发、择偶和文艺复兴时期的寿险作旁证。</p><span class="sec" data-p="44">§12</span></div>
+  <div class="claim"><h4>看得越勤，看到的越是波动，情绪也越亏</h4><p>他造了一个本事已知的牙医：按年看，93% 的年份赚；按秒看，只有 50.02%。他说难受抵不掉高兴，并引「有些心理学家估计」亏的分量最多是赚的 2.5 倍，所以频繁看盘会让情绪亏空，他还认为会伤身体。他自己的办法是几乎不接触信息，重要的事自然会传到耳朵里。</p><span class="sec" data-p="48 51 60 61 65 68 70 71">§13</span></div>
+  <div class="claim"><h4>默顿反对席勒、又办对冲基金，等于承认市场无效</h4><p>他转述席勒 1981 年的结论：价格比它该反映的股利波动得多，市场不像理论说的那样有效。默顿从方法上反驳，后来却成了一家要利用市场无效的对冲基金的「创始合伙人」。作者说这就像教皇改宗伊斯兰教。</p><span class="sec" data-p="40 41">§11</span></div>
+</div>
+<p class="sowhat"><b>合起来：</b>判断一件事，先问它是在多长的时间里被观察的。短时间里看到的多半是噪声，经过长时间筛选还在的东西才可信；所以作者主张少看、慢看、偏爱老的。</p>
+<p class="chapsum"><b>这一章合起来：</b>前半（03a）把另类历史变成蒙特卡洛这件工具：看一个结果，要连同没发生的那些一起看；人只从自己被烫过的经历里学，又爱事后诸葛，可错误只能按当时掌握的信息来判；时间够长，坏交易迟早找上门。后半（03b）把「长」变成一道过滤：长的样本路径滤掉运气，老想法、历史、老交易员都是滤过的东西；时间切得越短，看到的越是噪声。两半说的是一件事：别凭一次实现的结果、一段很短的观察下结论。</p>
+
+<h2>值得停下来的句子</h2>
+<blockquote class="quote">Mathematically, progress means that some new information is better than past information, not that the average of new information will supplant past information<cite>— §10。本站译：从数学上说，进步的意思是有些新信息比过去的好，而不是平均的新信息会取代过去的。</cite></blockquote>
+<p>口气是下定义，像在写一道证明题。关键词是 some 和 average：进步只需要「有些」新东西更好，你每天碰到的却是「平均」的新东西。由此他推出拿不准时就拒绝新的。这句容易被读成「新的都不好」，他说的只是平均而言、而且是在拿不准的时候。the average of new information 在<span class="zhv">译本：「一般的新資訊」</span>里，按「平均水平的新信息」理解就对了。</p>
+<blockquote class="quote">Regardless of what people claim, a negative pang is not offset by a positive one<cite>— §13。本站译：不管人们怎么说，一次难受抵不掉一次高兴。</cite></blockquote>
+<p>这是 §13 情绪账的前提，口气是断言（Regardless of what people claim），依据放在后面的括号里：有些心理学家估计，最多（up to）2.5 倍。up to 是上限，不是公认的数。关键词是 offset：他说的是同样一次，难受更重。<span class="zhv">译本：「一次負面的痛苦無法被一次正面的愉悅抵消」</span>意思到了。</p>
+
+<h2>今天怎么看</h2>
+<p class="lede">这本书 2004 年出第二版，书里讲的多是 1980–2003 年的事。下面挑出这一页里能被后来的研究或事情检验的说法，分「书里 / 当时 / 今天」几栏，并给一个结论。结论判的是标题里「书里的说法：」后面那一句。全书的这一节汇总在<a href="../today.html">今天怎么看</a>。</p>
+<ul class="verdicts"><li><span class="v ok">成立</span>后来的研究或事情支持这句话。</li><li><span class="v mid">部分成立</span>大方向对，细节或适用范围要改。</li><li><span class="v bad">被改写</span>后来的研究推翻了它、换了一种说法，或者情况变了。</li><li><span class="v dis">有争议</span>至今没有定论，两边各有代表性的研究或证据。</li></ul>
+<div class="today" data-verdict="成立"><h4>书里的说法：股价的起伏比它该反映的股利大得多</h4><dl>
+  <dt>书里</dt><dd>作者转述席勒 1981 年的论文：价格的波动大于它理应反映的基本面，有时涨过头，有时跌过头。<span class="at" data-p="40">§11</span></dd>
+  <dt>当时</dt><dd>这篇论文在 1980 年代引起很大争论。Marsh 和默顿 1986 年反驳说，公司会刻意把股利维持平稳，席勒的检验方法因此不成立；席勒同年撰文回应。</dd>
+  <dt>今天</dt><dd>2013 年诺贝尔经济学奖同时颁给席勒和有效市场的代表人物 Fama，还有 Hansen。评奖的说明把「股价比股利波动得多、长期看可以部分预测」当作确立的发现，同时说明解释有两路：风险和人们对风险的态度随时间变化，或者行为偏误和市场摩擦，两者都有份。<span class="asof">核对于 2026-10。依据：Shiller, American Economic Review 1981；瑞典皇家科学院 2013 年诺贝尔经济学奖新闻稿和科学背景说明。</span></dd>
+  <dt>另一边</dt><dd>作者由此推出的「市场一定错了」至今有争议：有效市场一派认为，投资人要求的回报随时间变化，就能解释这种波动，不必说市场无效。</dd>
+</dl></div>
+<div class="today" data-verdict="成立"><h4>书里的说法：一次亏损带来的难受，比同样大小的一次赚钱带来的高兴更重</h4><dl>
+  <dt>书里</dt><dd>作者说一次难受抵不掉一次高兴，并引「有些心理学家估计」：一般的亏损，负面效果最多是正面的 2.5 倍。<span class="at" data-p="70">§13</span></dd>
+  <dt>当时</dt><dd>这叫损失厌恶，出自 Kahneman 和 Tversky 1979 年的前景理论，书后的注释引了它。Tversky 和 Kahneman 1992 年的估计约 2.25 倍。</dd>
+  <dt>今天</dt><dd>Brown、Imai、Vieider 和 Camerer 2024 年在《经济文献杂志》汇总了 150 篇文章里的 607 个估计，损失厌恶系数的平均约 1.96，95% 的可信区间是 1.82 到 2.10：亏的分量约是赚的两倍。方向和作者一致；他说的「最多 2.5 倍」在平均之上，作者自己也只说是上限。<span class="asof">核对于 2026-10。依据：Brown, Imai, Vieider &amp; Camerer, Journal of Economic Literature 62(2), 2024。</span></dd>
+</dl></div>
+<div class="today" data-verdict="有争议"><h4>书里的说法：同一个投资，看得越勤的人越会被短期的亏损左右</h4><dl>
+  <dt>书里</dt><dd>作者说牙医只看月报表比看得更勤过得好，只看年报也许更好。<span class="at" data-p="61 66">§13</span></dd>
+  <dt>当时</dt><dd>Benartzi 和 Thaler 1995 年提出「短视的损失厌恶」：越常评估投资，越常看到亏损，越不愿持有股票。Gneezy 和 Potters 1997 年在实验里看到，反馈越频繁的人，押在风险彩票上的钱越少。</dd>
+  <dt>今天</dt><dd>复制的结果不一。Moher 和 Koehler 2010 年照原设计重做，没有看到这种行为；2024 年《管理科学》上 Schwaiger、Strucks 和 Zeisberger 的「压力测试」把实验改得更像真实投资，摘要里说近来的证据显示这种效应可能只在很人工的设定里出现。2025 年荷兰养老金研究网络 Netspar 的一篇工作论文说，至今没有共识。还要留意，这些研究测的是看得勤的人押多少钱、敢不敢持有股票；作者 §13 说的是心情（牙医看月报「过得更好」），这一层没有对应的大样本研究，靠的是「本站怎么看」第 3 块讲的那套算术和它的两条假设。<span class="asof">核对于 2026-10。依据：Management Science 2024（doi 10.1287/mnsc.2024.05720）；Netspar 2025 年第 24 号工作论文（Goossens 等）。</span></dd>
+</dl></div>
+
+<h2>本站怎么看</h2>
+<p class="lede">读完作者的主张，再看它站不站得住。每一块摆出三样：主流怎么看，作者怎么看，本站的评论。最后一句是本站对这一页的总体判断。</p>
+<div class="views"><h4>拿不准时，真的该总是拒绝新东西吗</h4>
+<p><b>主流看法：</b>基础比率支持他的前半句：很多新产品、新公司撑不了几年，不少新的研究结论后来没能复制，心理学的复制危机就是一例。但研究创新的人也常说，新东西的回报极不对称：少数成功者的收益，能抵掉一大堆失败。</p>
+<p><b>作者的看法：</b>平均的新东西不比旧的好，所以拿不准时总是拒绝；错过汽车、飞机的代价微不足道。<span class="at" data-p="36 37">§10</span></p>
+<p class="ours"><b>本站的评论：</b>前半是很好的统计直觉，和第二部要讲的<a class="term" href="08.html#c-survivorship-bias">幸存者偏差</a>相通。后半「代价微不足道」没有给任何数，而且和他自己在第 6 章讲的偏态相冲：如果少数新东西的回报极大，「多数是垃圾」并不决定该不该押。他加了「拿不准时」，这是公平的限定；「总是」就说满了。</p></div>
+<div class="views"><h4>少看新闻真的更好吗</h4>
+<p><b>主流看法：</b>对长期投资的个人，证据大多站在作者这边：Barber 和 Odean 2000 年研究一家折扣券商 6.6 万户的账户，1991 到 1996 年交易最频繁的那些家庭年收益 11.4%，同期市场 17.9%。但这说的是交易太勤，不是看得太勤；对要及时反应的工作，信息的价值另当别论。</p>
+<p><b>作者的看法：</b>新闻是噪声，信息有毒，在不确定中做决定的人应当尽量少接触媒体；他自己几乎不看。<span class="at" data-p="38 68">§10 §13</span></p>
+<p class="ours"><b>本站的评论：</b>§13 的数学给了「高频的信息多半是噪声」一个站得住的理由，这部分骂得有道理。「通勤族显得抑郁」只是火车上的印象，他自己也说分不清因果。他还坦白，别人读报反应过度正是他期权生意的保障：这是交易员的立场，不纯是劝人向善。</p></div>
+<div class="views"><h4>情绪账的结论靠什么撑着</h4>
+<p><b>主流看法：</b>Kahneman 和 Tversky 1979 年的前景理论说，人按盈亏的变化来感受，亏比赚重；书后的注释正是拿它解释牙医。损失厌恶的平均估计约两倍。</p>
+<p><b>作者的看法：</b>每分钟看一次，一天 241 分钟高兴、239 分钟难过，难过又更重，所以情绪亏空。<span class="at" data-p="60 70">§13</span></p>
+<p class="ours"><b>本站的评论：</b>数学没错，模拟器里都复现了。但结论靠两条假设：每看一次就记一次完整的心情，一秒的涨跌和一年的涨跌一样重；难过的分量大于 1。分量设成 1，看得越勤账反而越好看；按涨跌的幅度记，每月看还略为正，每天看才转负。「19 次惊喜对 1 次不愉快」也是取整：20 年里约 18.7 次对 1.3 次，比例约 14 比 1。</p></div>
+<p class="verdict"><b>本站的总体看法：</b>§13 的数学是这一页最硬、最值得带走的东西：时间切得越短，看到的越是噪声，这一条到今天都成立。「信息有毒」「总是拒绝新东西」是作者的立场，有道理的部分是统计直觉，说满的部分是他的口气。可以带走一个习惯：判断一个数之前，先问它是在多长的时间里看到的。</p>
+
+<h2>检查一下理解</h2>
+<p class="lede">先在心里答，再点开。答错的那题，回书里把对应那一节再读一遍。</p>
+<details class="check"><summary>1.（§10）作者说称职的记者应该说「今天股市涨了，但这条消息不太重要」。为什么他说这样的记者会丢饭碗？</summary><p>记者的价值在他提供的消息，把手里的消息说成噪声，等于说自己的工作不重要。作者说媒体是靠吸引你的注意力挣钱的，不靠告诉你「没什么要紧的」。</p></details>
+<details class="check"><summary>2.（§10）汽车、飞机、电话都改变了生活，作者为什么说这证明不了新发明值得追？</summary><p>我们只看见、只数了成功的那几样。周六报纸上那几十项号称能改变生活的专利，就是被忽略的输家。只看赢家去推断全体，就是只数幸存者。</p></details>
+<details class="check"><summary>3.（§11）作者为什么说默顿参与创办对冲基金「就像教皇改宗伊斯兰教」？</summary><p>默顿替「市场有效、机会不会端到你面前」的正统理论辩护，批评席勒；可一家要利用市场无效赚钱的基金，前提就是市场有时无效。作者认为这等于默顿认同了席勒。</p></details>
+<details class="check"><summary>4.（§12）华尔街习惯挑赚得最多、最年轻的交易员。作者主张挑什么样的？理由是什么？</summary><p>挑在市场里待得最久、而且没爆仓的。老交易员经历稀有事件的时间更长还活着，说明他扛得住；赚得多可能只是运气好、还没碰上那一次。</p></details>
+<details class="check"><summary>5.（§13）牙医每年看一次，93% 的年份是赚的；每秒看一次，只有 50.02% 的秒是赚的。他的本事变了吗？</summary><p>没变，是同一个人、同一个策略。时间切得越短，平均收益缩得比波动快，每次看到的几乎全是波动，像抛硬币，看不出本事。</p></details>
+<details class="check"><summary>6.（§13）算一算：牙医每月看一次，67% 的月份是赚的。一年里高兴几次、难过几次？如果一次难过抵 2.5 次高兴，一年的心情账是正是负？</summary><p>约 8 次高兴、4 次难过。8 减去 2.5 乘 4 等于负 2，略亏（精确算约负 1.97）。每年只看一次时，赚的概率 93%，账是正的。</p></details>
+<details class="check"><summary>7.（§13）作者说他自己怎样对付这个弱点？</summary><p>他承认自己也扛不住，办法是除了极少数情况不接触信息：读诗，不看报（讣告除外），不聊市场。他说真重要的事总会传到他耳朵里。</p></details>
+<p>用一句话说这一页：</p>
+<textarea class="note" data-key="03b-oneline" rows="2" placeholder="比如：……"></textarea>
+<div class="ponder"><p>想一想：你每天会刷好几次的数字（APP 里的基金收益、监控面板、体重秤、文章的阅读量）里，有没有哪一个其实一周或一个月看一次就够？你刷它的时候，看到的是信号还是噪声？</p>
+<textarea class="note" data-key="03b-ponder" rows="3"></textarea></div>
+
+<h2>精彩回顾</h2>
+<p class="lede">读过又忘了，从这里想起来。挑的是这一页最值得记住的故事和说法，不按原书顺序；每条后面是节号，想细看就回书里那一节。全书各页的这一节都收在<a href="../recap.html">全书回顾</a>。</p>
+<p class="recall-line"><b>一句话：</b>时间切得越短，看到的越是噪声：同一个好投资人，按年看是赢家，按秒看是在抛硬币。</p>
+<div class="recall">
+  <div class="item"><b>6:42 的通勤火车</b><p>作者偶尔搭早班车进纽约，看见一车神情抑郁的上班族埋头读《华尔街日报》，读的是一些到他写书时大概已经倒闭的公司的琐事。</p><span class="sec">§10</span></div>
+  <div class="item"><b>演员大多是服务员</b><p>说新发明都改变了生活，就像说演员和作家都很有钱：只看见成名的那几个，没看见在端盘子、在麦当劳卖薯条的大多数。</p><span class="sec">§10</span></div>
+  <div class="item"><b>教皇改宗伊斯兰教</b><p>默顿为「市场有效」辩护、批评席勒，后来却成了一家要利用市场无效的对冲基金的「创始合伙人」。作者说这就像教皇改信伊斯兰教。</p><span class="sec">§11</span></div>
+  <div class="item"><b>白发和寿险</b><p>挑交易员要挑活得久的：白头发说明扛得住。作者说文艺复兴时期意大利的寿险，对二十几岁和五十几岁的人收一样的保费。</p><span class="sec">§12</span></div>
+  <div class="item"><b>牙医每秒看一次盘</b><p>同一个好牙医，按年看 93% 的年份赚；按秒看只有 50.02%。每分钟看，一天 241 分钟高兴、239 分钟难过，难过又更重。</p><span class="sec">§13</span></div>
+  <div class="item"><b>沉默好得多</b><p>作者说他知道自己面对新闻管不住情绪，所以不看报、不聊市场，在交易室里找数学家和秘书聊天。重要的事总会传到耳朵里。</p><span class="sec">§13</span></div>
+</div>
+
+</main>
+<script>
+(() => {
+  // 看盘的频率：年化超额收益 mu、年化波动 sigma，一年看 n 次。每次看到的收益 ~ 正态(mu/n, sigma/√n)，各次独立；
+  // 看到「赚了」的概率 P = Φ((mu/sigma)·√(1/n))。一年 = 252 个交易日 × 每天 8 小时（书里 §13 写了 8 小时）。
+  // 心情账按次数记：每次赚 +1，每次亏 −λ，一年合计 n·(P − λ(1−P))。概率和次数精确算；40 个方块用带种子的伪随机数抽，「重置」回到种子 1。
+  const root = document.getElementById("sim-03b");
+  if (!root) return;
+  const { h } = window.FB;
+  const NS = "http://www.w3.org/2000/svg";
+  const FREQS = [
+    { k: "y", name: "每年", short: "年", n: 1, hz: "y20" },
+    { k: "q", name: "每季", short: "季", n: 4, hz: "y1" },
+    { k: "m", name: "每月", short: "月", n: 12, hz: "y1" },
+    { k: "d", name: "每天", short: "天", n: 252, hz: "y1" },
+    { k: "h", name: "每小时", short: "时", n: 252 * 8, hz: "d1" },
+    { k: "i", name: "每分钟", short: "分", n: 252 * 8 * 60, hz: "d1" },
+    { k: "s", name: "每秒", short: "秒", n: 252 * 8 * 3600, hz: "d1" },
+  ];
+  const MUS = [5, 10, 15, 20], SIGS = [5, 10, 15, 20, 30], LAMS = [1, 1.5, 2, 2.5, 3];
+  const st = { f: "y", mu: 15, sig: 10, lam: 2.5, seed: 1 };
+  const MINUS = "−";
+
+  // erf 用泰勒级数（|x| ≤ 2.9 时精度远好于 1e-12；这里 x 最大是 4/√2 ≈ 2.83）
+  function erf(x) {
+    let sum = 0, term = x, n = 0;
+    while (Math.abs(term) > 1e-17 * Math.max(1, Math.abs(sum)) || n < 3) { sum += term / (2 * n + 1); n++; term *= -x * x / n; if (n > 200) break; }
+    return (2 / Math.sqrt(Math.PI)) * sum;
+  }
+  const Phi = (z) => 0.5 * (1 + erf(z / Math.SQRT2));
+
+  const group = (x, d) => x.toLocaleString("en-US", { minimumFractionDigits: d, maximumFractionDigits: d });
+  const pct = (p) => (Math.abs(p - 0.5) < 0.01 ? (p * 100).toFixed(2) : (p * 100).toFixed(1)) + "%";
+  const cnt = (x) => (x < 100 ? x.toFixed(1) : group(Math.round(x), 0));
+  const ratio = (x) => (x < 10 ? x.toFixed(2) : x < 100 ? x.toFixed(1) : group(Math.round(x), 0));
+  const signed = (x) => { const a = Math.abs(x), s = a < 100 ? a.toFixed(2) : group(Math.round(a), 0); return s === "0.00" ? "0" : (x > 0 ? "+" : MINUS) + s; };
+  const small = (x) => { const a = Math.abs(x); return (a >= 0.1 ? a.toFixed(2) : Number(a.toPrecision(2)).toFixed(Math.max(2, 1 - Math.floor(Math.log10(a))))) + "%"; };
+
+  function calc() {
+    const F = FREQS.find((x) => x.k === st.f), n = F.n, z = st.mu / st.sig / Math.sqrt(n), p = Phi(z);
+    const per = F.hz === "y20" ? 20 : F.hz === "y1" ? n : n / 252;
+    return { F, n, z, p, m: st.mu / n, s: st.sig / Math.sqrt(n), noise: (st.sig * Math.sqrt(n)) / st.mu, happy: per * p, sad: per * (1 - p), ledger: n * (p - st.lam * (1 - p)) };
+  }
+  function rng(seed) { let a = seed * 2654435761 >>> 0; return () => { a = (a + 0x6D2B79F5) >>> 0; let t = a; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+
+  const el = (tag, attrs, style) => { const e = document.createElementNS(NS, tag); for (const [k, v] of Object.entries(attrs)) e.setAttribute(k, v); if (style) Object.assign(e.style, style); return e; };
+  const txt = (x, y, s, anchor, muted, size) => { const t = el("text", { x, y, "text-anchor": anchor || "start", "font-size": size || 13 }, { fill: muted ? "var(--muted)" : "var(--fg)" }); t.textContent = s; return t; };
+
+  const sel = (label, list, key, fmt, isStr) => {
+    const s = h("select", { "aria-label": label, onchange: () => { st[key] = isStr ? s.value : Number(s.value); draw(); } }, ...list.map((v) => h("option", { value: String(isStr ? v.k : v) }, fmt(v))));
+    return [h("label", {}, label, s), s];
+  };
+  const [lf, sf] = sel("看盘频率", FREQS, "f", (v) => v.name, true);
+  const [lm, sm] = sel("年化超额收益", MUS, "mu", (v) => v + "%");
+  const [ls, ss] = sel("年化波动", SIGS, "sig", (v) => v + "%");
+  const [ll, sl] = sel("难过的分量", LAMS, "lam", (v) => "×" + v);
+  const again = h("button", { onclick: () => { st.seed += 1; draw(); } }, "换 40 次");
+  const reset = h("button", { onclick: () => { Object.assign(st, { f: "y", mu: 15, sig: 10, lam: 2.5, seed: 1 }); draw(); } }, "重置");
+  const stage = h("div", { class: "stage" });
+  const narrate = h("div", { class: "narrate" });
+  const stats = h("div", { class: "stats" });
+  const body = root.querySelector(".sim-body");
+  body.innerHTML = "";
+  body.append(h("div", { class: "controls" }, lf, lm, ls, ll, again, reset), stage, narrate, stats);
+
+  // 看一次可能看到的收益：标准正态的钟形，零点在 −z 个标准差处，左边（亏）红、右边（赚）绿
+  function bell(c) {
+    const W = 400, H = 152, X = (u) => 200 + u * 45, Y = (u) => 118 - 96 * Math.exp(-u * u / 2);
+    const g = el("svg", { viewBox: `0 0 ${W} ${H}`, class: "bell", role: "img", "aria-label": `看一次：亏的面积 ${pct(1 - c.p)}，赚的面积 ${pct(c.p)}` });
+    const u0 = Math.max(-4, -c.z);
+    const area = (a, b) => { let d = `M${X(a).toFixed(1)},${Y(-9).toFixed(1)}`; for (let u = a; u <= b + 1e-9; u += 0.05) d += ` L${X(u).toFixed(1)},${Y(u).toFixed(1)}`; return d + ` L${X(b).toFixed(1)},118 Z`; };
+    if (u0 > -4) g.append(el("path", { d: area(-4, u0) }, { fill: "var(--bad-soft)", stroke: "none" }));
+    g.append(el("path", { d: area(u0, 4) }, { fill: "var(--ok-soft)", stroke: "none" }));
+    let d = ""; for (let u = -4; u <= 4.0001; u += 0.05) d += (d ? " L" : "M") + `${X(u).toFixed(1)},${Y(u).toFixed(1)}`;
+    g.append(el("path", { d, fill: "none", "stroke-width": 2 }, { stroke: "var(--fg)" }));
+    g.append(el("line", { x1: 10, x2: 390, y1: 118, y2: 118 }, { stroke: "var(--border)" }));
+    g.append(el("line", { x1: X(u0), x2: X(u0), y1: 12, y2: 124, "stroke-dasharray": "4 3", "stroke-width": 2 }, { stroke: "var(--bad)" }));
+    g.append(txt(X(u0), 142, "0（不赚不亏）", u0 < -3 ? "start" : "middle", true, 15));
+    g.append(txt(X(u0) - 8, 30, "亏", "end", false, 17));
+    g.append(txt(X(u0) + 8, 30, "赚", "start", false, 17));
+    return g;
+  }
+  // 接下来 40 次看盘
+  function strip(c) {
+    const r = rng(st.seed), g = el("svg", { viewBox: "0 0 400 22", class: "strip", role: "img", "aria-label": "接下来 40 次看盘，绿是赚，红是亏" });
+    let up = 0;
+    for (let i = 0; i < 40; i++) { const win = r() < c.p; if (win) up++; g.append(el("rect", { x: i * 10 + 1, y: 2, width: 8, height: 18, rx: 1.5 }, { fill: win ? "var(--ok)" : "var(--bad)" })); }
+    return { g, up };
+  }
+  // 七种频率各自「看到赚」的概率；虚线是心情账的分界 λ/(1+λ)
+  function ladder(cur) {
+    const W = 400, H = 194, X = (i) => 40 + i * 55, Y = (p) => 140 - ((p - 0.5) / 0.5) * 120;
+    const g = el("svg", { viewBox: `0 0 ${W} ${H}`, class: "ladder", role: "img", "aria-label": "七种看盘频率各自看到赚的概率" });
+    g.append(el("line", { x1: 20, x2: 390, y1: Y(0.5), y2: Y(0.5) }, { stroke: "var(--border)" }));
+    g.append(txt(22, Y(0.5) + 20, "抛硬币 50%", "start", true, 15));
+    const be = st.lam / (1 + st.lam);
+    g.append(el("line", { x1: 20, x2: 390, y1: Y(be), y2: Y(be), "stroke-dasharray": "5 4" }, { stroke: "var(--accent)" }));
+    g.append(txt(390, Y(be) - 6, `心情账的分界 ${pct(be)}`, "end", true, 15));
+    let prev = null;
+    FREQS.forEach((F, i) => {
+      const p = Phi(st.mu / st.sig / Math.sqrt(F.n)), x = X(i), y = Y(p), on = F.k === cur;
+      if (prev) g.append(el("line", { x1: prev[0], y1: prev[1], x2: x, y2: y }, { stroke: "var(--muted)" }));
+      prev = [x, y];
+      g.append(el("circle", { cx: x, cy: y, r: on ? 7 : 4 }, { fill: on ? "var(--accent)" : "var(--muted)" }));
+      g.append(txt(x, 186, F.short, "middle", !on, 16));
+      if (on) g.append(txt(x + (i === 0 ? 4 : 0), y - 12 < 16 ? y + 26 : y - 12, pct(p), i === 0 ? "start" : "middle", false, 16));
+    });
+    return g;
+  }
+
+  function draw() {
+    sf.value = st.f; sm.value = String(st.mu); ss.value = String(st.sig); sl.value = String(st.lam);
+    const c = calc(), sp = strip(c);
+    stage.innerHTML = "";
+    stage.append(h("p", { class: "cap" }, `${c.F.name}看一次，看到的收益可能落在哪（钟形下面的面积）`), bell(c),
+      h("p", { class: "cap" }, `接下来 40 次看盘：绿是赚，红是亏（这一组 ${sp.up} 次赚）`), sp.g,
+      h("p", { class: "cap" }, "七种频率各自看到「赚了」的概率（年、季、月、天、小时、分钟、秒）"), ladder(st.f));
+    const hzLab = c.F.hz === "y20" ? "20 年里" : c.F.hz === "y1" ? "一年里" : "一天里（8 小时）";
+    const a = `${c.F.name}看一次，一年看 ${group(c.n, 0)} 次。每次看到的收益平均 ${small(c.m)}，上下波动约 ${small(c.s)}（标准差），波动是平均的 ${ratio(c.noise)} 倍；看到「赚了」的概率 ${pct(c.p)}。`;
+    const b = `${hzLab}平均约 ${cnt(c.happy)} 次高兴、${cnt(c.sad)} 次难过。`;
+    const l = `难过一次按 ${st.lam} 次高兴算，一年的心情账是 ${signed(c.ledger)}${c.ledger > 0 ? "，是正的" : c.ledger < 0 ? "，是负的" : ""}。`;
+    narrate.textContent = a + b + l;
+    stats.innerHTML = "";
+    const box = (v, lab) => h("div", { class: "stat" }, h("div", { class: "v" }, v), h("div", { class: "l" }, lab));
+    stats.append(box(pct(c.p), "看一次看到「赚了」的概率"), box(ratio(c.noise), "噪声是信号的几倍"),
+      box(`${cnt(c.happy)} / ${cnt(c.sad)}`, `${hzLab}：高兴 / 难过（次）`), box(signed(c.ledger), `一年的心情账（难过 ×${st.lam}）`));
+  }
+  draw();
+})();
+</script>
+</body>
+</html>

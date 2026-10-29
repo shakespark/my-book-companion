@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 6 章 · 随机骗局导读</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/chapters.js"></script>
+<script src="../assets/fb.js"></script>
+<style>
+#sim-06 .presets { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+#sim-06 .presets button[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
+#sim-06 .grid { width: 100%; max-width: 420px; display: block; margin: 0 auto; }
+#sim-06 .path { width: 100%; max-width: 480px; display: block; margin: 10px auto 0; }
+#sim-06 .legend { font-size: 13px; color: var(--muted); margin: 6px 0 0; text-align: center; }
+#sim-06 .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin: 0 4px 0 10px; vertical-align: -1px; }
+#sim-06 .cap { font-size: 13px; color: var(--muted); margin: 12px 0 0; }
+</style>
+</head>
+<body data-page="06">
+<main>
+
+<h2>这一页在做什么</h2>
+<div class="gist"><p>这一章是全书讲概率最集中的一章。作者从古生物学家古尔德被诊断出癌症、听说「中位数八个月」讲起，换成一个一千次里输一次的赌局，再讲他自己在投行周会上说「七成会涨」、手里却大量做空的故事。后半从「稀有事件」讲到墨西哥比索、俄罗斯卢布、解剖老鼠的研究员和哈利波特，最后落到一个装着红球和黑球的罐子。读的时候抓一条线：一件事多常发生，和它发生时有多大，是两个问题。</p></div>
+<figure class="fig"><img src="../assets/img/06-bull-bear.jpg" alt="铜铸的一头熊和一头公牛面对面站在石板广场上，背后是一座带雕像的石砌大楼" loading="lazy">
+<figcaption>法兰克福证券交易所门前的「牛和熊」铜像（Reinhard Dachlauer 作，1985）。牛代表看涨，熊代表看跌；§2 作者说，这两个词出了动物学就没什么意思。<span class="src">Dietmar Rabich，CC BY-SA 4.0，维基共享资源</span></figcaption></figure>
+
+<h2>读之前：这一页在全书的哪里</h2>
+<div class="linehere"></div>
+<p>第 3 章讲了看盘越勤越痛苦的牙医，第 5 章讲了两位交易员怎样被「从没发生过的事」击倒。这一章是第一部的倒数第二章：作者把「多常发生」和「发生时多大」正式分开，给它一个名字叫偏态，再用它去看市场、看统计学。§7 他回头提第 3 章的牙医，§4 提第 1 章的 Nero；最后两节换成统计学的语言，一路把读者送到第 7 章的归纳问题。</p>
+<div class="heads-up"><p>§4 作者说他相信越稀有的事件，市场越是低估它的价格。这是他的信念和交易经验，书里没有给数据；学界研究股指期权的结果大多和他相反。读的时候把它当作者的立场，详细的在页末。</p></div>
+<div class="crux"><p>一件事很可能发生，为什么还可能不值得押它？</p></div>
+<p class="lede">读的时候带着这几个问题。不用先找答案，读完回来对照「检查一下理解」。</p>
+<ol class="qs">
+  <li>古尔德查过文献以后，为什么不再把「八个月」当成自己还能活的日子？<span class="sec">§1</span></li>
+  <li>作者说下周七成会涨，手里却大量做空。他是前后矛盾，还是另有道理？<span class="sec">§2</span></li>
+  <li>作者说他尽可能「不常赚钱」。照这个做法，一个交易员的日子会是什么样子？<span class="sec">§4</span></li>
+  <li>从一个罐子里抽了很多次都没抽到红球，你能说里面没有红球吗？<span class="sec">§8</span></li>
+</ol>
+
+<h2>这一页的路线</h2>
+<p>前两节是一条直线：一个生病的科学家，一张赌局的表，一个交易室的故事，再一张表。§3 是插曲，作者讲父亲的朋友怎样逼他预测市场，读着轻松，和论证关系不大。§4 回到正题，讲他自己的生意，顺手反驳一位著名投资人。§5、§6 最散：从老师剔除最高最低分，突然跳到全球变暖，再到一位哲学家算错平均数，又插进一张「时间序列入门」的图和一段为自己辩护的话，读到这里会觉得「突然跳了」。§7 是一大节，故事最多：墨西哥、对冲基金的道歉信、只投卢布的人、牙医、研究员、出版商。最后两节换了语气，像统计课：罐子、红球、捣蛋的小孩，以对计量经济学的一通痛骂收尾，交棒给下一章。</p>
+<figure class="fig">
+<svg class="diagram" viewBox="0 0 640 300" role="img" aria-label="路线示意图：§1 古尔德和赌局，§2 交易室的周会，§3 插曲父亲的朋友，§4 作者的生意和罗杰斯，§5 和 §6 离题较多，§7 稀有事件的一串故事，§8 和 §9 罐子和小孩，箭头指向第 7 章">
+<defs><marker id="ar06" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="f-a"/></marker></defs>
+<rect x="8" y="20" width="140" height="50" rx="6" class="f-soft"/><text x="78" y="40" text-anchor="middle" class="t-b">§1 古尔德</text><text x="78" y="58" text-anchor="middle" class="t-m">赌局的表</text>
+<rect x="168" y="20" width="140" height="50" rx="6" class="f-soft"/><text x="238" y="40" text-anchor="middle" class="t-b">§2 交易室周会</text><text x="238" y="58" text-anchor="middle" class="t-m">七成会涨·做空</text>
+<rect x="328" y="20" width="140" height="50" rx="6" class="box" stroke-dasharray="5 4"/><text x="398" y="40" text-anchor="middle">§3 父亲的朋友</text><text x="398" y="58" text-anchor="middle" class="t-m">插曲</text>
+<rect x="488" y="20" width="144" height="50" rx="6" class="box"/><text x="560" y="40" text-anchor="middle">§4 作者的生意</text><text x="560" y="58" text-anchor="middle" class="t-m">罗杰斯·1987</text>
+<line x1="148" y1="45" x2="166" y2="45" class="ln-a" marker-end="url(#ar06)"/>
+<line x1="308" y1="45" x2="326" y2="45" class="ln-a" marker-end="url(#ar06)"/>
+<line x1="468" y1="45" x2="486" y2="45" class="ln-a" marker-end="url(#ar06)"/>
+<line x1="560" y1="70" x2="560" y2="106" class="ln-a" marker-end="url(#ar06)"/>
+<rect x="328" y="108" width="304" height="50" rx="6" class="box" stroke-dasharray="5 4"/><text x="480" y="128" text-anchor="middle">§5 剔除极端值 · §6 诺齐克</text><text x="480" y="146" text-anchor="middle" class="t-m">全球变暖·时间序列·自辩</text>
+<line x1="328" y1="133" x2="290" y2="133" class="ln-a" marker-end="url(#ar06)"/>
+<rect x="8" y="108" width="280" height="50" rx="6" class="f-soft"/><text x="148" y="128" text-anchor="middle" class="t-b">§7 稀有事件谬论</text><text x="148" y="146" text-anchor="middle" class="t-m">比索·道歉信·卢布·牙医·研究员</text>
+<line x1="148" y1="158" x2="148" y2="194" class="ln-a" marker-end="url(#ar06)"/>
+<rect x="8" y="196" width="280" height="50" rx="6" class="box"/><text x="148" y="216" text-anchor="middle">§8 红球 · §9 捣蛋小孩</text><text x="148" y="234" text-anchor="middle" class="t-m">统计课的语气</text>
+<line x1="288" y1="221" x2="440" y2="221" class="ln-d" marker-end="url(#ar06)"/>
+<rect x="442" y="196" width="190" height="50" rx="6" class="box"/><text x="537" y="216" text-anchor="middle">第 7 章</text><text x="537" y="234" text-anchor="middle" class="t-m">归纳问题</text>
+<rect x="8" y="270" width="24" height="14" rx="3" class="f-soft"/><text x="40" y="282" class="t-m">故事和例子最多</text>
+<rect x="190" y="270" width="24" height="14" rx="3" class="box" stroke-dasharray="5 4"/><text x="222" y="282" class="t-m">插曲、离题多</text>
+</svg>
+<figcaption>本站示意图。第一行是一条直线，§5、§6 绕了一段远路，§7 回到主线，最后两节把话题交给下一章。</figcaption></figure>
+
+<h2>分节地图</h2>
+<p class="lede">这一页就是原书和译本的第 6 章，一共 9 节。粗体是本站给的节名，后面是档和译本字数；下面是译本的小标题和这一节在译本电子书里开头的几个字（搜它就能跳过去），再下面是英文原文的开头。「先读」是这一章的骨架，「有空」好看、跳过不丢线，「可跳过」读不读都行。读完打个勾。</p>
+<ol class="secmap">
+  <li data-sec="1"><span class="what">一个病人和一张赌局的表。前半看古尔德怎样读懂「中位数」，后半看作者怎样把它换成钱。全章的道理在这一节已经摆出来了。</span></li>
+  <li data-sec="2"><span class="what">全章最好看的故事：投行周会上的一问一答。译本把第二张表（表 6.2）排到了这一节最后一段之后，对照原文找表时会错开一段。</span></li>
+  <li data-sec="3"><span class="what">插曲，作者自嘲的一段家事。看他为什么拒绝「预测市场」，跳过不影响后文。</span></li>
+  <li data-sec="4"><span class="what">作者第一次讲自己靠什么赚钱，并拿一位传奇投资人的话当反面例子。留意他哪些话是「我相信」。</span></li>
+  <li data-sec="5"><span class="what">别的学科剔除极端值的例子：老师算平均分、天气、全球变暖。跳过会少一个「为什么金融不能照搬」的说明。</span></li>
+  <li data-sec="6"><span class="what">前半是一位哲学家算错平均数的小例子，可以自己验算；后半是一张时间序列的图和作者的自辩，读得懂大意即可。</span></li>
+  <li data-sec="7"><span class="what">这一章最长、故事最密的一节，「稀有事件」在这里有了完整的样子。后半从<span class="zhv">译本：「我們在第三章提到的那位牙醫」</span>起，转到人为什么偏爱这种策略。</span></li>
+  <li data-sec="8"><span class="what">很短，统计学的一个罐子：抽到红球和「证明没有红球」难度差多少。下一章的伏笔。</span></li>
+  <li data-sec="9"><span class="what">罐子本身在变怎么办。后半是作者对计量经济学和「金融工程」的痛骂，最后一句交棒第 7 章。</span></li>
+</ol>
+
+<h2>先用中文过一遍：这一页的概念</h2>
+<p class="lede">先把这一页用到、作者默认你懂的几个概念讲一遍。讲的是概念本身，作者拿它推出什么，读原书时自己看。别页讲过的概念，点链接过去看。</p>
+<div class="concept" id="c-median-mean">
+<h3><span class="sec">§1</span>中位数和平均数 <span class="en">median / mean（average、expectation），译本：中位數 / 平均數</span></h3>
+<p>把一群人的数字从小到大排好，排在正中间那个人的数是中位数；把所有人的数加起来再除以人数，是平均数（统计里也叫均值，算概率时叫<a class="term" href="02.html#c-expectation">期望值</a>）。分布对称时两者差不多；一边拖着长尾巴时就分开了。</p>
+<p>外卖骑手的收入是个好例子：大多数人挣得差不多，少数人跑得特别多，平均数会被这几个人往上拉，高过中位数。反过来，一个小区九户中产、一户特别穷，平均数会被拉低，十户里九户「高于平均」。哪边的尾巴长，平均数就往哪边偏。</p>
+<p class="use"><b>在这一页：</b>§1 古尔德的生存期是第一种，§6 哲学家的例子是第二种。读到时自己判断尾巴在哪一边。</p>
+</div>
+<div class="concept" id="c-skewness">
+<h3><span class="sec">§1</span>偏态：多常发生和发生时多大 <span class="en">skewness，asymmetric odds / outcomes，译本：偏態</span></h3>
+<p>统计学里，偏态说的是一个分布「歪」向一边：一头挤着大多数结果，另一头拖着一条长尾巴。作者用得更宽：凡是「常发生的那种结果很小、少发生的那种结果很大」，他都叫偏态。</p>
+<p>他把它拆成两样。概率不对称：两种结果不是一半对一半。结果不对称：两种结果的金额不一样大。两样合在一起时，「哪种更可能」和「平均下来赚还是赔」可以完全相反。算平均要用每种结果的概率乘它的金额，再加起来。下面的示意图是一个常见的形状：大多数人聚在左边，少数人拖得很远。</p>
+<figure class="fig">
+<svg class="diagram" viewBox="0 0 640 220" role="img" aria-label="一条向右拖着长尾巴的分布曲线，左边高峰处标着中位数，右边稍远处标着平均数">
+<line x1="40" y1="180" x2="620" y2="180" class="ln"/>
+<path d="M40 180 C70 40, 110 30, 150 70 C200 120, 300 150, 620 175" class="ln-a" fill="none" stroke-width="3"/>
+<line x1="138" y1="58" x2="138" y2="180" class="ln-d"/><text x="138" y="200" text-anchor="middle" class="t-b">中位数</text>
+<line x1="230" y1="112" x2="230" y2="180" class="ln-d"/><text x="230" y="200" text-anchor="middle" class="t-b">平均数</text>
+<text x="420" y="140" class="t-m">少数人在这条长尾巴上</text><text x="420" y="158" class="t-m">把平均数往右拉</text>
+<text x="70" y="24" class="t-m">大多数人挤在这里</text>
+<text x="600" y="200" text-anchor="end" class="t-m">结果 →</text>
+</svg>
+<figcaption>本站示意图，形状示意，没有画具体的数。尾巴拖在右边时，平均数在中位数右边；拖在左边时正好反过来。</figcaption></figure>
+<p class="use"><b>在这一页：</b>§1 先立起这对区分，§2 用到交易里，§4、§7 用它讲稀有事件（<a class="term" href="01.html#c-rare-event">稀有事件</a>第 1 章讲过）。模拟器就演这个。</p>
+</div>
+<div class="concept" id="c-short-selling">
+<h3><span class="sec">§2</span>做空和股指期货 <span class="en">short, being short; SP500 futures，译本：放空</span></h3>
+<p>平常买股票是「做多」：先买，涨了卖掉赚差价。做空反过来：先卖出一份自己还没有的东西，约好以后再买回来交差，价格跌了就赚，涨了就亏。交易员说「我空着很多」，意思是手上押着下跌。</p>
+<p>股指期货是一种合约，押的是一个指数（比如美国的标普 500，由五百家大公司的股价算出）在未来某天的点数。它买卖都很方便，想押整个美股涨跌，用它最省事。它的赚赔和指数涨跌成正比：指数跌 10%，空头赚 10%；涨 1%，空头亏 1%。工具本身是对称的，不对称来自交易员对涨跌幅度的判断。</p>
+<p class="use"><b>在这一页：</b>§2 作者在周会上被人当场指出，他刚吹嘘过「空着很多标普 500 期货」，这是那段问答的前提。期权是另一种工具，见<a class="term" href="01.html#c-option">期权</a>。</p>
+</div>
+<div class="concept" id="c-peso-problem">
+<h3><span class="sec">§7</span>比索问题（作者的用法） <span class="en">peso problem，译本：披索問題</span></h3>
+<p>经济学里的「比索问题」本来说的是墨西哥比索：它长时间看上去很稳，利率却一直偏高，因为市场担心某天会突然大幅贬值。那一天迟迟不来，只看过去几年数据的研究者就会以为「高利率是白给的」，模型因此失灵。</p>
+<p>作者把它推广开：凡是平时风平浪静、过去的数据里看不出风险、某天突然大跌的投资，他都叫比索问题。生活里的例子是一个从不出事的系统：三年没有宕机，不等于它不会一次挂一整天。本站正文用大陆的译名「比索」，<span class="zhv">译本：「披索問題」</span>。</p>
+<p class="use"><b>在这一页：</b>§7 从墨西哥讲起，再推到抵押贷款证券和 1998 年的卢布。这是作者给稀有事件下定义的地方。</p>
+</div>
+<div class="concept" id="c-stationarity">
+<h3><span class="sec">§9</span>平稳性 <span class="en">stationarity，译本：平穩性</span></h3>
+<p>统计推断有一个默认前提：产生数据的那台「机器」不变。从罐子里抽球估计红球的比例，前提是没人往罐子里加球、换球。统计学把这叫平稳：分布本身不随时间变化。</p>
+<p>样本越多越有把握，只在平稳时成立。如果罐子的组成在悄悄变，抽得再多，估计的也只是「过去的那个罐子」。程序员熟悉的例子：拿去年的用户数据训练出来的推荐模型，今年用户的习惯变了，它就越来越不准，这在机器学习里叫数据漂移。</p>
+<p class="use"><b>在这一页：</b>§9 捣蛋小孩往罐子里换球就是这个意思；作者由此怀疑拿过去的金融数据预测未来，并交棒给下一章的<a class="term" href="07.html#c-induction">归纳问题</a>。</p>
+</div>
+
+<h2>动手：模拟器</h2>
+<p>先猜：一个赌局一千次里赢 999 次，每次赢 1 美元，输的那一次亏 1 万美元。一千个人各玩 100 次，大约多少人还在赚钱？所有人平均下来是赚是赔？再点下面的模拟器验证。</p>
+<div class="sim" id="sim-06">
+  <div class="sim-head"><span class="tag">模拟器</span><h3>赢的次数和赚的钱</h3><p class="desc">选一个赌局，再选玩多少局。上面的方块是同时在玩的一千个人，绿色是玩完还在赚的，红色是亏了的；下面的折线是其中一个人（「你」）每一局之后手上累计赚了多少。先点「表 6.1 的赌局」，玩 1 局。</p></div>
+  <div class="sim-body"><p>需要浏览器打开脚本才能运行。</p></div>
+</div>
+<p>各个控件：「每局赢的概率」是一局里赢的机会，剩下的就是输的机会；「赢一次赚」「输一次亏」是一局的金额；「玩多少局」是每个人连着玩几局，每局独立。下面五个数依次是：每局赢的概率；平均每局（每种结果的概率乘金额再相加，也就是期望值）；玩完以后还在赚的人占多少；一千个人按结局排队，正中间那个人的结局（中位数）；所有人结局的平均（均值）。百分比和中位数、均值是精确算出来的，方块按这个比例涂色；「你」那一条是随机抽的，点「换一个你」再抽一条。</p>
+<ol class="qs">
+  <li>试试看：点「表 6.1 的赌局」，玩 1 局。几乎人人都赢了，平均每局却是亏 9 美元多一点。再把「玩多少局」改成 100：还有九成的人一次都没输过，看上去个个是常胜将军，所有人的平均却已经是亏 900 美元。看看「你」那条折线是什么样子，多点几次「换一个你」。</li>
+  <li>试试看：把局数改成 700、1000、2000。还在赚的人从一半掉到三分之一以下，中间那个人从赚变成亏。想一想：要多少局，「中间那个人的结局」才追上「所有人的平均」？</li>
+  <li>试试看：点「表 6.2：做多」，玩 1 局：七成的人赚，平均每周却是亏 2.3（单位是百分点）。换成「表 6.2：做空」：只有三成的人赚，平均每周赚 2.3。再把两个都改成玩 4 周，看哪边的人多半领先。这就是 §2 作者那句「七成会涨，但我做空」。</li>
+</ol>
+<p>这个模拟器只演一件事：概率和金额合起来算。每局独立、概率不变、盈亏直接相加不算复利，这是最简单的情形；书里的稀有事件比这凶，因为现实里没人告诉你概率是多少（§8、§9 讲的就是这个）。你可以把赢的概率设成 10%、赢一次赚 50、输一次亏 1，看看 §4 作者设想的买期权的赔率：平均每局赚 4.1。这组数是作者假设的，不代表真实期权的赔率。</p>
+
+<h2>书里的人和背景</h2>
+<p class="lede">按在书里出现的顺序排，标题前是节号。只讲到读懂这一页需要的程度。</p>
+
+<h3><span class="sec">§1</span>古尔德和他的诊断</h3>
+<div class="who">
+  <div><b>Stephen Jay Gould</b><span class="en">1941–2002</span>美国古生物学家、科普作家，哈佛大学教授，和 Niles Eldredge 一起提出生物演化的「间断平衡」说。他在《自然史》杂志写了二十多年专栏，结集成十来本畅销的随笔集。</div>
+</div>
+<p>1982 年他被诊断出腹膜间皮瘤，一种长在腹腔内壁上的癌，常和接触石棉有关（书里说是「胃壁」，不够准确）。1985 年他在《发现》（Discover）杂志写了那篇〈中位数不是讯息〉，讲自己怎样从文献里读懂这个数。原书把他的名字拼成了 Steven。作者说他有一阵子是自己的榜样。以赛亚和希西家王的典故出自《旧约·列王纪下》：先知对病重的国王说，你要留遗命给你的家，因为你必死。</p>
+
+<h3><span class="sec">§2</span>投行的交易室和「首席策略师」</h3>
+<p>作者当时在一家大投行的纽约交易室。交易室里有几种人：交易员拿公司的钱买卖，年底按赚了多少拿奖金，赚赔一目了然；销售负责招呼客户；「经济学家」「策略师」负责对外发表市场看法，常上电视，但不拿自己的判断下注。作者的分类就照这条线划：有没有为说对说错付钱。标普 500 是美国五百家大公司股价算出的指数，上面「先用中文过一遍」的概念块讲了怎样用期货做空它。</p>
+
+<h3><span class="sec">§3</span>协和式客机</h3>
+<figure class="fig"><img src="../assets/img/06-concorde.jpg" alt="一架机头尖长下垂、三角形机翼的白色客机正在跑道上降落，机身涂着英国航空的标志" loading="lazy">
+<figcaption>英国航空的协和式客机 G-BOAC，2003 年 10 月 31 日最后一次降落在曼彻斯特机场。<span class="src">Ken Fielding，CC BY-SA 3.0，维基共享资源</span></figcaption></figure>
+<p>英法合造的超音速客机，1976 年投入商业飞行，2003 年退役，从纽约飞伦敦只要三个多小时，票价比普通航班的头等舱还贵。父亲的朋友一开口就说自己坐协和来的，还挑剔它不够舒服：作者借这个细节说他是什么样的人。他要的是「圣诞节前欧洲债券市场会怎样」这种精确的预测。</p>
+
+<h3><span class="sec">§4</span>罗杰斯、索罗斯和 1987 年股灾</h3>
+<div class="who">
+  <div><b>Jim Rogers</b><span class="en">1942–</span>美国投资人，1970 年代和索罗斯合伙管理后来很有名的量子基金，三十多岁就退休，后来写书、环游世界、在电视上评论市场。作者引的是他的一段访谈。</div>
+</div>
+<p>索罗斯（George Soros）是匈牙利出生的对冲基金经理，以大手笔押宏观事件出名，作者说后面还会谈到他（第 7 章）。罗杰斯话里的 SEC 是美国证券交易委员会，管证券市场的政府机构。1987 年 10 月 19 日，后来叫「黑色星期一」，道琼斯指数一天跌了两成多，至今仍是美股单日最大跌幅。作者说这一天成就了他：他手上押的正是这种事。</p>
+
+<h3><span class="sec">§6</span>诺齐克</h3>
+<div class="who">
+  <div><b>Robert Nozick</b><span class="en">1938–2002</span>美国哲学家，哈佛大学教授，1974 年的《无政府、国家与乌托邦》是二十世纪政治哲学的名著之一。作者引的是他 1993 年的《理性的本质》。</div>
+</div>
+<p>原书把他的名字拼成了 Nozik，译本照抄。作者对他是又敬又挑刺：先夸他敏锐、也许（perhaps）是同代美国哲学家里声望最高的，再指出他把「中位数」和「平均数」弄混了。例子里十个人的数，你可以自己算一遍平均数。</p>
+
+<h3><span class="sec">§7</span>钉住美元的货币、墨西哥比索和俄罗斯卢布</h3>
+<p>§6 后半先提到 1997 年的亚洲：几个国家的政府把本币和美元的汇率大体钉住，平时几乎不动，守不住时一次大贬。那年 7 月泰国放弃钉住，泰铢暴跌，马来西亚、印尼接连出事，这就是亚洲金融危机。墨西哥比索是另一条线：1982 年的债务危机、1994 年底的大贬值，都是平静了一段以后突然崩。§7 的卢布：1998 年 8 月俄罗斯政府对本国国债违约、卢布大贬，持有卢布资产的人几乎赔光。同年夏秋，美国的大对冲基金长期资本管理公司（LTCM）也濒临倒闭，书里这一章没有点它的名。</p>
+
+<h3><span class="sec">§7</span>抵押贷款证券和「宽客」</h3>
+<p>美国的银行把成千上万笔房贷打包，做成可以买卖的债券，叫抵押贷款证券。买它能拿到比美国国债高一点的利息，风险在于房主提前还款或违约。§7 那些交易员买进它，再用别的工具「对冲」掉波动，靠电脑模型操盘，请的是数学、物理、工程的博士。华尔街后来管这类人叫宽客（quant）。对冲基金是什么，见<a class="term" href="03b.html#c-hedge-fund">对冲基金</a>。</p>
+
+<h3><span class="sec">§9</span>卢卡斯</h3>
+<figure class="fig small"><img src="../assets/img/06-lucas.jpg" alt="一位戴眼镜、穿深色西装的白发男子坐在桌前讲话，面前立着话筒" loading="lazy">
+<figcaption>Robert E. Lucas Jr.，1996 年一次讲座的录像截图。<span class="src">Centro de Estudios Públicos，CC BY 3.0，维基共享资源</span></figcaption></figure>
+<div class="who">
+  <div><b>Robert E. Lucas Jr.</b><span class="en">1937–2023</span>美国经济学家，芝加哥大学教授，1995 年获诺贝尔经济学奖，理由是发展并应用了「理性预期」假说。作者特意写成瑞典央行纪念诺贝尔的经济学奖，这是它的正式名字。</div>
+</div>
+<p>他 1976 年的论文批评当时的大型计量经济模型：用旧数据估出的关系，在政府换了政策以后会失效，因为人们会跟着改变预期和做法。这就是作者说的「卢卡斯批判」。作者在 §9 用「周一效应」打的比方，和卢卡斯原本的意思有点出入，页末再说。</p>
+
+<h2>原文里的词和句</h2>
+<p class="lede">读英文原文时值得停一下的词和句：交易员的行话、作者的反话和双关、熟词生义。灰色斜体是原句里连续的几个词，在英文电子书里搜它就能找到；标「每个字都认识」的，是每个词都眼熟、合起来意思却变了的，最容易读错。点「记下」收进词本。</p>
+<div class="entry trap"><div class="en">the hard way</div><div class="loc" data-p="4">… the hard way the concept of skewness …</div><div class="zh">吃了苦头才（懂得偏态）</div><div class="note">learn something the hard way 是亲身吃了亏才学会。古尔德是拿自己的病懂的。</div></div>
+<div class="entry trap"><div class="en">albeit MBAs</div><div class="loc" data-p="11">… degrees (albeit MBAs) who cannot …</div><div class="zh">高学历的人（好吧，是 MBA）</div><div class="note">albeit 是「虽然只是」。作者先说「高学历」，再补一句「虽说是 MBA」，挖苦 MBA 算不上真正的高学历。要反着读。</div></div>
+<div class="entry trap"><div class="en">not without a modicum of pomp</div><div class="loc" data-p="16">… not without a modicum of pomp …</div><div class="zh">带着几分得意、煞有介事地（说）</div><div class="note">「不是没有一点点排场」，双重否定加往轻里说，意思是颇有点摆谱。作者在自嘲。</div></div>
+<div class="entry trap"><div class="en">be short</div><div class="loc" data-p="16">… being short a very large quantity …</div><div class="zh">（手上）做空着一大笔</div><div class="note">交易员说 I am short X，是「我空着 X」，押它跌；反过来 long 是做多。和「短」无关。</div></div>
+<div class="entry trap"><div class="en">pick someone’s brain</div><div class="loc" data-p="23">… He wanted to pick my brain …</div><div class="zh">想向我讨教、套点看法</div><div class="note">不是「挑我的脑子」。口语里指找懂行的人白问意见。</div></div>
+<div class="entry"><div class="en">pecking order</div><div class="loc" data-p="23">… set the elements of pecking order straight …</div><div class="zh">把谁高谁低先摆清楚</div><div class="note">pecking order 本指鸡群里谁啄谁的次序，泛指等级。作者说那位先生一开口就亮身份。</div></div>
+<div class="entry trap"><div class="en">pull someone’s leg</div><div class="loc" data-p="24">… I was pulling his leg …</div><div class="zh">（以为我在）跟他开玩笑、耍他</div><div class="note">不是「拉腿」。那位先生以为作者故意不正经回答他。</div></div>
+<div class="entry"><div class="en">play prima donna</div><div class="loc" data-p="24">… son is playing prima donna and refuses …</div><div class="zh">耍大牌、摆架子</div><div class="note">prima donna 原指歌剧的女主角，引申为自以为了不起、难伺候的人。</div></div>
+<div class="entry"><div class="en">the palazzo rather than the poorhouse</div><div class="loc" data-p="28">… the palazzo rather than the poorhouse …</div><div class="zh">（通往）豪宅而不是救济院</div><div class="note">接着罗杰斯说的 poorhouse（救济院）往下说，换成意大利文的 palazzo（府邸），两个词都以 p 开头，押头韵。</div></div>
+<div class="entry trap"><div class="en">randomness is charted</div><div class="loc" data-p="36">… a world where randomness is charted …</div><div class="zh">随机性已经被摸清楚（有图可依）的世界</div><div class="note">chart 在这里是「绘成海图」，引申为摸清了它的规律，不是「画出曲线」。§6 分了三种世界：没有随机、随机已摸清、随机没摸清。</div></div>
+<div class="entry"><div class="en">beware of calm waters</div><div class="loc" data-p="41">… beware of calm waters …</div><div class="zh">风平浪静时要当心</div><div class="note">作者拿来给稀有事件下定义的格言。</div></div>
+<div class="entry trap"><div class="en">blow up</div><div class="loc" data-p="45">… He blew up a few months later …</div><div class="zh">（几个月后）他爆仓了</div><div class="note">交易员的行话：一次赔光、被扫地出门，不是「爆炸」也不是「发脾气」。</div></div>
+<div class="entry"><div class="en">yield hogs</div><div class="loc" data-p="45">… which invited yield hogs of all types …</div><div class="zh">哪里利息高就往哪里挤的人</div><div class="note">hog 是猪，带贬义的行话，像猪抢食一样追收益率。</div></div>
+<div class="entry"><div class="en">push something under the rug</div><div class="loc" data-p="46">… pushing randomness under the rug …</div><div class="zh">把随机性藏起来、眼不见为净</div><div class="note">由 sweep something under the rug（扫到地毯下）变来：问题没消失，只是看不见了。</div></div>
+<div class="entry trap"><div class="en">significant other</div><div class="loc" data-p="47">… His significant other might lose patience …</div><div class="zh">他的伴侣</div><div class="note">不是「重要的他人」，是对恋人、配偶的中性说法。</div></div>
+<div class="entry trap"><div class="en">dog</div><div class="loc" data-p="48">… they can publish dog after dog …</div><div class="zh">一本接一本卖不动的书</div><div class="note">dog 在口语里指失败的、卖不出去的东西，电影、书、股票都可以这样说。</div></div>
+
+<h2>译本勘误</h2>
+<p class="lede">对着译本读这一章时，下面这些地方会把人读歪。方框里是译本的原句，在译本电子书里搜它就能找到；灰色斜体是英文原文那一处。只收意思错了、反了、漏了的，措辞上的出入和台湾用语不收。全书的勘误汇总在<a href="../zh.html">译本勘误</a>。</p>
+<div class="zherr" data-p="4"><h4><span class="sec">§1</span>是「光一个中位数说明不了分布」<span class="mark">误译</span></h4>
+<p class="loc">… does not characterize a probability distribution …</p>
+<p class="zhq"><span class="zhv">译本：「缺乏機率分布的特性」</span></p>
+<p>原文的意思是：医学研究只报一个中位数，不足以刻画整个概率分布，看不出尾巴有多长。译本读来像是中位数这个概念本身有什么缺陷。</p></div>
+<div class="zherr" data-p="28"><h4><span class="sec">§4</span>是「这样的人居然混得这么好」<span class="mark">误译</span></h4>
+<p class="loc">… to have gone very far in life …</p>
+<p class="zhq"><span class="zhv">译本：「所以他這輩子似乎賺太多了」</span></p>
+<p>原文是反讽：一个分不清概率和期望的人，在人生里却走得这么远。译本加了「所以」，变成因为不懂才赚得多，因果是译本加的。</p></div>
+<div class="zherr" data-p="29"><h4><span class="sec">§4</span>1987 年是「成就了他」，不是「入行」<span class="mark">误译</span></h4>
+<p class="loc">… which made me as a trader …</p>
+<p class="zhq"><span class="zhv">译本：「我因此成了交易員」</span></p>
+<p>made me 是让他发达、出名。作者那时已经在做期权交易，股灾让他赚到大钱，从此有闲去做学问。译本读来像是 1987 年他才当上交易员。</p></div>
+<div class="zherr" data-p="43"><h4><span class="sec">§7</span>「关系」先是统计上的相关<span class="mark">误译</span></h4>
+<p class="loc">… but somehow the relationship dramatically changed …</p>
+<p class="zhq"><span class="zhv">译本：「可是你們之間的關係還是急遽變化」</span></p>
+<p>基金经理的托词是：证券和用来对冲的工具之间的相关关系突然变了，对冲失效，不怪他。括号里的 literally 是双关，你和他的关系也真变了。译本只留了第二层，读不出经理在推卸什么。</p></div>
+<div class="zherr" data-p="46"><h4><span class="sec">§7</span>agent 是「做决定的人」<span class="mark">术语</span></h4>
+<p class="loc">… The agent would prefer the number …</p>
+<p class="zhq"><span class="zhv">译本：「代理人會喜歡虧損次數低」</span></p>
+<p>经济学里 agent 泛指做决定的人，这里就是前面说的投资人自己。「代理人」容易让人想成替别人管钱的经理，主语就弄错了。</p></div>
+<div class="zherr" data-p="48"><h4><span class="sec">§7</span>出版商的模式「毫无问题」<span class="mark turn">译反</span></h4>
+<p class="loc">… business model being the least questionable …</p>
+<p class="zhq"><span class="zhv">译本：「經營模式引人質疑」</span></p>
+<p>原文：出版商可以一本接一本出卖不动的书，经营模式却一点问题都没有，只要十年碰上一次哈利波特。译本说成「引人质疑」，正好反了，这一段的道理也跟着反了。</p></div>
+<div class="zherr" data-p="53"><h4><span class="sec">§9</span>变的是罐子里红球的比例<span class="mark">误译</span></h4>
+<p class="loc">… the incidence of red balls is itself …</p>
+<p class="zhq"><span class="zhv">译本：「如果找到紅球的次數隨機分布」</span></p>
+<p>原文说的是红球在罐子里的比例本身也在随机变化。抽到红球的次数本来就是随机的，那不成问题；比例在变，才「永远不知道罐子里是什么」。这正是平稳性问题。</p></div>
+<div class="zherr" data-p="57"><h4><span class="sec">§9</span>detractors 是「批评者」<span class="mark">误译</span></h4>
+<p class="loc">… called scientism by its detractors …</p>
+<p class="zhq"><span class="zhv">译本：「被它的背叛者」</span></p>
+<p>detractors 是贬低、批评它的人，作者说自己就是其中之一。「背叛者」读来像他从前信过、后来倒戈，原文没有这层意思。</p></div>
+
+<div class="gate"></div>
+
+<h2>读完：作者到底说了什么</h2>
+<p class="lede">读完这一章再看。下面是作者在这一章里的主张，由本站按主张之间的逻辑重新组织，不按原书的顺序；每条后面是节号，拿不准就回书里那一节再读一遍。</p>
+<div class="claims">
+  <div class="claim"><h4>概率和期望是两回事，要看的是期望</h4><p>一件事多可能发生，本身不说明该不该押它；要把每种结果的概率乘上金额再相加。他用古尔德的生存期引入，用一千局的赌局算给你看。人们弄混，是因为学校里的例子（抛硬币、钟形曲线）都是对称的，在那里两者可以不分。</p><span class="sec" data-p="4 6 12">§1</span></div>
+  <div class="claim"><h4>结果不对称时，「看涨看跌」常常是空话</h4><p>他可以认为下周七成会涨，同时大量做空，因为涨只涨一点，跌会跌很多。他说投资人按美元领钱，不按说对的次数领钱；只有评论员和策略师按说对的次数出名，他们的预测没有经过检验。</p><span class="sec" data-p="16 17 22">§2</span></div>
+  <div class="claim"><h4>他相信稀有事件被低估，生意就押在这上面</h4><p>他说自己做的是「偏态下注」：常常小亏，偶尔靠稀有事件大赚，理由是他相信越稀有的事件价格越被低估。依据是他自己的经验和对心理偏误的判断；1987 年股灾就是这样一次。他说罗杰斯只看「九成期权亏钱」的频率，没看赚的那一成赚多少。</p><span class="sec" data-p="25 28 29 49">§4 §7</span></div>
+  <div class="claim"><h4>稀有事件藏在平静的历史里，人还偏爱它</h4><p>他把稀有事件定义为：凡是把过去的数据读得太窄而看错风险的情形。比索、抵押贷款组合、卢布都是平静很久后突然大跌。投资人怕频繁的小波动（像第 3 章的牙医），所以宁愿选平时稳、偶尔巨亏的策略，他叫这把随机性藏到地毯下。</p><span class="sec" data-p="41 43 45 46">§7</span></div>
+  <div class="claim"><h4>统计证「没有」很难，世界在变时过去可能毫无意义</h4><p>抽到一颗红球就知道有，一直抽不到却很难说没有：这种知识的不对称是他说的全书核心。更糟的是罐子本身可能在变，这时样本再多也推不出未来。他由此说也许（perhaps）大部分计量经济学没用，并引出下一章的归纳问题。</p><span class="sec" data-p="51 53 55 57">§8 §9</span></div>
+</div>
+<p class="sowhat"><b>合起来：</b>别问「会不会发生」，要问「发生了会怎样」；别信一段平静的历史，它最会藏住那次大的。这是作者交给读者看市场、也看一切经验数据的一副眼镜。</p>
+
+<h2>值得停下来的句子</h2>
+<blockquote class="quote">Alas, investors and businesses are not paid in probabilities; they are paid in dollars.<cite>— §2。本站译：可惜，投资人和企业不是按概率领钱，是按美元领钱。</cite></blockquote>
+<p>一句会计式的大白话，全章的道理压在里面。关键是 paid：你最后拿回家的是钱数，不是说对了几次。Alas 是假装惋惜，冲的是那些按「说对次数」出名的评论员。<span class="zhv">译本：「我們不是以機率支付投資人和企業」</span>把主语换成了「我们」，读来像付钱的一方在说话，意思没错，口气淡了。</p>
+<blockquote class="quote">Rare events are always unexpected, otherwise they would not occur.<cite>— §7。本站译：稀有事件总是出乎意料，否则它就不会发生。</cite></blockquote>
+<p>这是一句定义式的话，不是能验证的规律：大家要是料到了，就会提前躲开或者不进场，那件事也就闹不起来。所以作者说「出乎意料」不是借口，而是稀有事件的一部分。<span class="zhv">译本：「稀有事件總是出乎意料地來到，否則就不會發生」</span>意思到了；留意它不是在说「意外总会来」。</p>
+
+<h2>今天怎么看</h2>
+<p class="lede">这本书 2004 年出第二版，书里讲的多是 1980–2003 年的事。下面挑出这一页里能被后来的研究或事情检验的说法，分「书里 / 当时 / 今天」几栏，并给一个结论。结论判的是标题里「书里的说法：」后面那一句。全书的这一节汇总在<a href="../today.html">今天怎么看</a>。</p>
+<ul class="verdicts"><li><span class="v ok">成立</span>后来的研究或事情支持这句话。</li><li><span class="v mid">部分成立</span>大方向对，细节或适用范围要改。</li><li><span class="v bad">被改写</span>后来的研究推翻了它、换了一种说法，或者情况变了。</li><li><span class="v dis">有争议</span>至今没有定论，两边各有代表性的研究或证据。</li></ul>
+<div class="today" data-verdict="成立"><h4>书里的说法：中位数八个月，不等于古尔德只能再活八个月</h4><dl>
+  <dt>书里</dt><dd>作者转述古尔德的发现：活下来的那一半人活得很长，生存期的平均远高于中位数。<span class="at" data-p="2 3 4">§1</span></dd>
+  <dt>当时</dt><dd>古尔德 1982 年确诊，当时的文献说这种病无法治愈，确诊后的中位生存期约八个月。他 1985 年把自己的读法写成文章。</dd>
+  <dt>今天</dt><dd>古尔德在确诊后又活了二十年，2002 年死于另一种癌症，不是当年的间皮瘤。他的文章今天仍常被医学伦理和肿瘤科拿来讲怎样向病人解释生存统计：一个中位数说明不了一个人的前景，要看整条生存曲线和病人自己的情况。<span class="asof">核对于 2026-10。依据：Gould 1985 年 6 月发表在《发现》杂志的原文；美国医学会《伦理学杂志》（AMA Journal of Ethics）2013 年 1 月的重刊和按语。</span></dd>
+</dl></div>
+<div class="today" data-verdict="有争议"><h4>书里的说法：买期权押稀有事件（比如为大跌买保险），长期下来是划算的</h4><dl>
+  <dt>书里</dt><dd>作者说他相信越稀有的事件价格越被低估；如果价内时平均赚 50 倍，买期权就是通往豪宅的路。<span class="at" data-p="25 28">§4</span></dd>
+  <dt>当时</dt><dd>学界研究最多的是美国股指期权。Coval 和 Shumway 2001 年在《金融杂志》发表的研究发现，标普 500 指数的看跌期权平均回报低于无风险利率，也就是说，长期买它们平均是亏的。</dd>
+  <dt>今天</dt><dd>「看跌期权太贵」后来成了一个有名的谜题（Bondarenko 2014 年在《金融季刊》的论文就以它为题），多数研究认为买保护长期要付出代价。另一边，作者担任顾问的 Universa 基金报告 2020 年 3 月尾部对冲获利约 3600%，但这是它自己的口径（相对于买保护投入的那一小笔资金，不是基金全部资产的回报），同行质疑这种算法，平常年份的成本也是争论焦点。<span class="asof">核对于 2026-10。依据：Coval &amp; Shumway, Journal of Finance 2001；Bondarenko, Quarterly Journal of Finance 2014；彭博社 2020 年 4 月关于 Universa 的报道，2023 年 4 月关于同行质疑的报道。</span></dd>
+  <dt>另一边</dt><dd>这些研究多半只看股指期权；作者说的稀有事件还包括货币、债券和单个公司，那里的定价研究少得多。</dd>
+</dl></div>
+<div class="today" data-verdict="部分成立"><h4>书里的说法：拿过去的历史衡量风险的金融工程，可能是代价很高的错误</h4><dl>
+  <dt>书里</dt><dd>作者说金融工程用过去的历史当未来的指标，只要分布可能不平稳，整套做法就像一个代价很高的错误。<span class="at" data-p="43 57">§7 §9</span></dd>
+  <dt>当时</dt><dd>1990 年代起，大银行普遍用「风险价值」（VaR）衡量交易风险：根据过去的波动，估计「在 99% 的日子里最多亏多少」，监管也允许银行用自己的 VaR 模型算资本。</dd>
+  <dt>今天</dt><dd>2008 年金融危机暴露了 VaR 低估极端亏损。巴塞尔委员会 2016 年发布、2019 年修订的交易账户新规（FRTB）改用「预期亏损」，看最坏那 2.5% 的情形平均亏多少，而且要用历史上的压力时期来算；各国也加了压力测试。方向上应和了作者，但仍然离不开历史数据，只是挑了最坏的那段历史。<span class="asof">核对于 2026-10。依据：巴塞尔银行监管委员会《市场风险最低资本要求》（2016 年 1 月，2019 年 1 月修订）。</span></dd>
+</dl></div>
+
+<h2>本站怎么看</h2>
+<p class="lede">读完作者的主张，再看它站不站得住。每一块摆出三样：主流怎么看，作者怎么看，本站的评论。最后一句是本站对这一页的总体判断。</p>
+<div class="views"><h4>赢的次数真的无关紧要吗</h4>
+<p><b>主流看法：</b>决策理论早就用期望值衡量一个赌局，表 6.1 那种算法没有争议。但真实的人还要看能不能活到下一局：凯利（Kelly）1956 年的论文说明，即使期望是正的，每次押得太多也会把本钱输光；Kahneman 和 Tversky 1979 年的前景理论则发现，人对亏损比对同样大的收益敏感得多。</p>
+<p><b>作者的看法：</b>多常赚钱无关紧要，要紧的是赚赔的大小；只有评论员才按说对的次数领钱。<span class="at" data-p="6 22">§1 §2</span></p>
+<p class="ours"><b>本站的评论：</b>对一次性的赌局，作者完全对，而且讲得比教科书好记。「频率无关紧要」却说过头了：一个会被解雇、会被追缴保证金、会心态崩掉的交易员，亏的次数和亏在什么时候都是成本。作者自己在 §7 就承认投资人受不了频繁的小亏；他的打法要常常小亏，能撑下去本身就要本钱和耐心。</p></div>
+<div class="views"><h4>稀有事件真的被市场低估吗</h4>
+<p><b>主流看法：</b>研究最多的美国股指期权，结论大多相反：买深度价外的看跌期权（为大跌买保险）长期平均是亏的，保险偏贵。但这只是一个市场；货币、新兴市场债券、单个公司的极端风险怎样定价，证据零散得多。</p>
+<p><b>作者的看法：</b>他相信越稀有的事件越被低估，理由是人的心理偏误和他自己的经验；罗杰斯只看频率，推理错了。<span class="at" data-p="25 26 28">§4</span></p>
+<p class="ours"><b>本站的评论：</b>要分开两件事。他批评罗杰斯的推理是对的：「九成期权到期亏钱」本身说明不了买期权划不划算。但「所以买期权划算」是另一个需要数据的问题，书里没有给，平均赚 50 倍是他的假设。他的成功说明他会挑，不说明稀有事件普遍被低估。</p></div>
+<div class="views"><h4>计量经济学大多没用吗</h4>
+<p><b>主流看法：</b>经济数据的结构会变，这一点经济学界承认：卢卡斯 1976 年的批判说的就是政策一变，旧模型的参数就靠不住；后来的计量经济学发展了能处理「换了一种状态」的模型（如 Hamilton 1989 年的区制转换模型），也更重视样本外检验。</p>
+<p><b>作者的看法：</b>如果分布不平稳，从过去推断未来可能毫无意义；他说也许（perhaps）大部分计量经济学没用，金融工程带着大量伪科学。<span class="at" data-p="53 55 57">§9</span></p>
+<p class="ours"><b>本站的评论：</b>「罐子会变」是这一章最值得带走的提醒，钉住美元的货币、平静多年的比索都是活例子。但「大部分没用」是一刀切，他自己也加了 perhaps。他对卢卡斯批判的转述也不太准：「周一上涨的规律被周五买入的人抹平」更像有效市场的套利逻辑，卢卡斯讲的是政策改变人们的预期。</p></div>
+<p class="verdict"><b>本站的总体看法：</b>前两节是这一章最硬的部分：概率和期望要分开算，数学没毛病，今天仍然好用。稀有事件被低估、计量经济学大多没用，是作者的立场，证据是他的经验，要打折扣。最后两节的「罐子会变」值得记住，它比任何一个模型都管用。</p>
+
+<h2>检查一下理解</h2>
+<p class="lede">先在心里答，再点开。答错的那题，回书里把对应那一节再读一遍。</p>
+<details class="check"><summary>1.（§1）病人的生存期中位数是八个月，平均数却高得多，这说明了什么样的分布？</summary><p>一半人很早去世，另一半活得很长，尾巴拖在右边，少数长寿的人把平均数往上拉。只知道中位数，看不出一个人落在哪一段、尾巴有多长。</p></details>
+<details class="check"><summary>2.（§1）表 6.1 那个赌局，赢的概率是 99.9%，为什么作者说不该玩？</summary><p>每局平均下来亏 9 美元左右：赢的那 999 次加起来只有 999 美元，输的那一次就亏 1 万。概率站在你这边，期望不站在你这边。</p></details>
+<details class="check"><summary>3.（§2）作者「七成会涨」和「大量做空」为什么不矛盾？</summary><p>涨的时候平均只涨 1%，跌的时候平均跌 10%。按概率乘幅度算，做多平均每周亏 2.3 个百分点，做空平均赚 2.3 个百分点。看法是对频率的判断，下注看的是期望。</p></details>
+<details class="check"><summary>4.（§6）十个人里九个有 3 万美元、一个有 1 千美元。平均数是多少？有几个人高于平均？</summary><p>平均数是 2 万 7100 美元，九个人都高于平均。尾巴拖在穷的一边，平均数被拉到中位数（3 万）下面，所以「高于平均的人不超过一半」并不成立。</p></details>
+<details class="check"><summary>5.（§7）一个对冲基金三年来每月都稳稳赚一点，从没大跌过。按作者的说法，这说明什么、不说明什么？</summary><p>它说明过去三年的波动小，不说明风险小。就像 §7 里冲着高利息去买比索、卢布的人，平静的记录可能只是那次大跌还没来。要问的是它靠什么赚钱、碰到少见的情形会亏多少。</p></details>
+<details class="check"><summary>6.（§8、§9）抽了一千次都是黑球，你对「罐子里没有红球」有多大把握？如果罐子底下有个小孩在换球呢？</summary><p>只能说红球很少，不能说没有：哪怕红球只占万分之一，抽一千次也多半碰不到。如果有人在换球，连「很少」都不一定对，过去的一千次说明的只是过去的罐子。</p></details>
+<p>用一句话说这一页：</p>
+<textarea class="note" data-key="06-oneline" rows="2" placeholder="比如：……"></textarea>
+<div class="ponder"><p>想一想：你的工作或生活里，有没有一件「几乎总是没事」、但一出事就很严重的东西（一个从没出过故障的系统、一笔从没逾期的借款、一条天天走的路）？你是按它「多常出事」还是按「出了事有多严重」来对待它的？</p>
+<textarea class="note" data-key="06-ponder" rows="3"></textarea></div>
+
+<h2>精彩回顾</h2>
+<p class="lede">读过又忘了，从这里想起来。挑的是这一页最值得记住的故事和说法，不按原书顺序；每条后面是节号，想细看就回书里那一节。全书各页的这一节都收在<a href="../recap.html">全书回顾</a>。</p>
+<p class="recall-line"><b>一句话：</b>赢的次数和赚的钱是两回事：一千次赢 999 次的赌局，也可能是个亏钱的赌局。</p>
+<div class="recall">
+  <div class="item"><b>中位数八个月</b><p>古尔德确诊癌症，听说中位生存期八个月。他查了文献，发现活下来的一半人活得很长，自己没必要按八个月安排后事。</p><span class="sec">§1</span></div>
+  <div class="item"><b>七成会涨，但我做空</b><p>投行周会上，作者说下周七成会涨，被人当场指出他手里大量做空。他答：涨只涨一点，跌会跌很多。屋里的几个交易员一下子听懂了。</p><span class="sec">§2</span></div>
+  <div class="item"><b>傲慢的二十九岁儿子</b><p>父亲坐协和来的有钱朋友要他预测欧洲债市，他说自己不做预测。对方向父亲告状：律师、医生都肯回答，你儿子却在耍大牌。</p><span class="sec">§3</span></div>
+  <div class="item"><b>我们不碰比索，只投卢布</b><p>1998 年春，作者花两个小时给一位基金经理讲比索问题。对方说你讲得对，所以我们只投卢布。几个月后他爆仓了。</p><span class="sec">§7</span></div>
+  <div class="item"><b>罐子底下的捣蛋小孩</b><p>你从罐子里抽球估计红球的比例，一个小孩在下面偷偷换球。抽得再多，你算出的也只是过去的罐子。</p><span class="sec">§9</span></div>
+</div>
+
+</main>
+<script>
+(() => {
+  // 赢的次数和赚的钱：每局赢的概率 p，赢一次赚 win，输一次亏 loss，每个人连玩 n 局、各局独立。
+  // 输的局数 K 服从二项分布 B(n, 1−p)，结局 = (n−K)·win − K·loss。还在赚的比例、中位数、均值都按二项分布精确算，一千个方块按这个比例涂色；
+  // 「你」那一条用带种子的伪随机数抽，「重置」回到种子 1。加法累计，不复利（书里两张表都是这样算的）。
+  const root = document.getElementById("sim-06");
+  if (!root) return;
+  const { h } = window.FB;
+  const NS = "http://www.w3.org/2000/svg";
+  const PRESETS = [
+    { k: "t61", name: "表 6.1 的赌局", p: 99.9, win: 1, loss: 10000, unit: "美元", per: "局" },
+    { k: "long", name: "表 6.2：做多", p: 70, win: 1, loss: 10, unit: "个百分点", per: "周" },
+    { k: "short", name: "表 6.2：做空", p: 30, win: 10, loss: 1, unit: "个百分点", per: "周" },
+  ];
+  const PS = [10, 30, 50, 70, 90, 99, 99.9], WINS = [1, 2, 10, 50], LOSSES = [1, 2, 10, 100, 10000], NN = [1, 4, 13, 52, 100, 500, 700, 1000, 2000];
+  const PLAYERS = 1000;
+  const st = { preset: "t61", p: 99.9, win: 1, loss: 10000, n: 1, unit: "美元", per: "局", seed: 1 };
+
+  const MINUS = "−";
+  const num = (x) => { const r = Math.round(x * 1000) / 1000; const s = Math.abs(r).toLocaleString("en-US", { maximumFractionDigits: 3 }); return r > 0 ? "+" + s : r < 0 ? MINUS + s : "0"; };
+  const pct = (x) => (x > 0 && x < 0.0005 ? "不到 0.1%" : x < 1 && x > 0.9995 ? "超过 99.9%" : (Math.round(x * 1000) / 10).toFixed(1) + "%");
+
+  // 输 k 局的概率，k = 0..n（对数里算，n = 2000 也不会下溢）
+  function pmf(n, p) {
+    const q = 1 - p, lp = Math.log(p), lq = Math.log(q), out = new Array(n + 1);
+    let lc = 0;
+    for (let k = 0; k <= n; k++) { if (k > 0) lc += Math.log(n - k + 1) - Math.log(k); out[k] = Math.exp(lc + (n - k) * lp + k * lq); }
+    return out;
+  }
+  function calc() {
+    const p = st.p / 100, n = st.n, pr = pmf(n, p), res = (k) => (n - k) * st.win - k * st.loss;
+    let ahead = 0, even = 0, cdf = 0, med = null;
+    for (let k = 0; k <= n; k++) {
+      const r = res(k);
+      if (r > 0) ahead += pr[k]; else if (r === 0) even += pr[k];
+      cdf += pr[k];
+      if (med === null && cdf >= 0.5) med = r;
+    }
+    const e1 = p * st.win - (1 - p) * st.loss;
+    return { p, e1, ahead, even, med, mean: n * e1 };
+  }
+  function rng(seed) { let a = seed * 2654435761 >>> 0; return () => { a = (a + 0x6D2B79F5) >>> 0; let t = a; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+  function path() {
+    const r = rng(st.seed), p = st.p / 100, pts = [0], losses = [];
+    let w = 0;
+    for (let i = 1; i <= st.n; i++) { if (r() < p) w += st.win; else { w -= st.loss; losses.push(i); } pts.push(w); }
+    return { pts, losses };
+  }
+
+  const el = (tag, attrs, style) => { const e = document.createElementNS(NS, tag); for (const [k, v] of Object.entries(attrs)) e.setAttribute(k, v); if (style) Object.assign(e.style, style); return e; };
+  const txt = (x, y, s, anchor, cls) => { const t = el("text", { x, y, "text-anchor": anchor || "start", "font-size": 13 }, { fill: cls === "m" ? "var(--muted)" : "var(--fg)" }); t.textContent = s; return t; };
+
+  const presets = h("div", { class: "presets" });
+  const sel = (label, list, key, fmt) => {
+    const s = h("select", { "aria-label": label, onchange: () => { st[key] = Number(s.value); if (key !== "n") st.preset = ""; draw(); } }, ...list.map((v) => h("option", { value: String(v) }, fmt(v))));
+    return [h("label", {}, label, s), s];
+  };
+  const [lp, sp] = sel("每局赢的概率", PS, "p", (v) => v + "%");
+  const [lw, sw] = sel("赢一次赚", WINS, "win", (v) => String(v));
+  const [ll, sl] = sel("输一次亏", LOSSES, "loss", (v) => v.toLocaleString("en-US"));
+  const [ln, sn] = sel("玩多少局", NN, "n", (v) => v.toLocaleString("en-US"));
+  const again = h("button", { onclick: () => { st.seed += 1; draw(); } }, "换一个你");
+  const reset = h("button", { onclick: () => { Object.assign(st, { n: 1, seed: 1 }); use("t61"); } }, "重置");
+  const stage = h("div", { class: "stage" });
+  const narrate = h("div", { class: "narrate" });
+  const stats = h("div", { class: "stats" });
+  const body = root.querySelector(".sim-body");
+  body.innerHTML = "";
+  body.append(presets, h("div", { class: "controls" }, lp, lw, ll, ln, again, reset), stage, narrate, stats);
+  for (const pz of PRESETS) presets.append(h("button", { "data-k": pz.k, onclick: () => use(pz.k) }, pz.name));
+
+  function use(k) {
+    const pz = PRESETS.find((x) => x.k === k);
+    Object.assign(st, { preset: k, p: pz.p, win: pz.win, loss: pz.loss, unit: pz.unit, per: pz.per });
+    draw();
+  }
+
+  function grid(c) {
+    const g = el("svg", { viewBox: "0 0 400 250", class: "grid", role: "img", "aria-label": `一千个人里约 ${Math.round(c.ahead * PLAYERS)} 人还在赚` });
+    const nA = Math.round(c.ahead * PLAYERS), nE = Math.round(c.even * PLAYERS);
+    for (let i = 0; i < PLAYERS; i++) {
+      const x = (i % 40) * 10, y = Math.floor(i / 40) * 10;
+      g.append(el("rect", { x: x + 1, y: y + 1, width: 8, height: 8, rx: 1.5 }, { fill: i < nA ? "var(--ok)" : i < nA + nE ? "var(--muted)" : "var(--bad)" }));
+    }
+    return g;
+  }
+  function chart() {
+    const { pts, losses } = path(), W = 360, H = 170, L = 58, R = 10, T = 12, B = 28;
+    const lo = Math.min(0, ...pts), hi = Math.max(0, ...pts), span = hi - lo || 1;
+    const X = (i) => L + ((W - L - R) * i) / Math.max(1, pts.length - 1), Y = (v) => T + ((H - T - B) * (hi - v)) / span;
+    const g = el("svg", { viewBox: `0 0 ${W} ${H}`, class: "path", role: "img", "aria-label": `「你」玩了 ${st.n} ${st.per}，最后 ${num(pts[pts.length - 1])} ${st.unit}` });
+    g.append(el("line", { x1: L, x2: W - R, y1: Y(0), y2: Y(0), "stroke-dasharray": "4 4" }, { stroke: "var(--border)" }));
+    g.append(txt(L - 6, Y(0) + 4, "0", "end", "m"));
+    if (hi > 0) g.append(txt(L - 6, Y(hi) + 4, num(hi), "end", "m"));
+    if (lo < 0) g.append(txt(L - 6, Y(lo) + 4, num(lo), "end", "m"));
+    const step = Math.max(1, Math.floor(pts.length / 600));
+    const d = pts.map((v, i) => (i % step === 0 || i === pts.length - 1 ? `${X(i).toFixed(1)},${Y(v).toFixed(1)}` : null)).filter(Boolean).join(" ");
+    g.append(el("polyline", { points: d, fill: "none", "stroke-width": 2 }, { stroke: "var(--accent)" }));
+    for (const i of losses.slice(0, 200)) g.append(el("circle", { cx: X(i), cy: Y(pts[i]), r: 2.5 }, { fill: "var(--bad)" }));
+    g.append(txt(L, H - 8, "开始", "start", "m"));
+    g.append(txt(W - R, H - 8, `第 ${st.n.toLocaleString("en-US")} ${st.per}`, "end", "m"));
+    return { g, end: pts[pts.length - 1], nl: losses.length };
+  }
+
+  function draw() {
+    for (const b of presets.querySelectorAll("button")) b.setAttribute("aria-pressed", String(b.dataset.k === st.preset));
+    sp.value = String(st.p); sw.value = String(st.win); sl.value = String(st.loss); sn.value = String(st.n);
+    const c = calc(), you = chart();
+    stage.innerHTML = "";
+    const legend = h("p", { class: "legend" });
+    legend.innerHTML = `<i style="background:var(--ok)"></i>还在赚 <i style="background:var(--bad)"></i>亏了` + (c.even > 0.0005 ? ` <i style="background:var(--muted)"></i>不赚不亏` : "");
+    stage.append(grid(c), legend, h("p", { class: "cap" }, `「你」：每一${st.per}之后手上累计的${st.unit === "美元" ? "钱（美元）" : "盈亏（百分点）"}，红点是输的那几${st.per}`), you.g);
+    const u = st.unit, per = st.per;
+    const one = `每${per}赢的概率 ${st.p}%，赢一次赚 ${st.win.toLocaleString("en-US")} ${u}；输的概率 ${Math.round((100 - st.p) * 10) / 10}%，输一次亏 ${st.loss.toLocaleString("en-US")} ${u}。按概率乘金额再相加，平均每${per} ${num(c.e1)} ${u}。`;
+    const many = st.n === 1
+      ? `一千个人各玩一${per}：约 ${Math.round(c.ahead * PLAYERS)} 人赚了。`
+      : `一千个人各玩 ${st.n.toLocaleString("en-US")} ${per}：约 ${Math.round(c.ahead * PLAYERS)} 人还在赚，正中间那个人 ${num(c.med)} ${u}，所有人平均 ${num(c.mean)} ${u}。`;
+    const me = you.nl === 0 ? `「你」这一回一${per}都没输，最后 ${num(you.end)} ${u}。` : `「你」这一回输了 ${you.nl} ${per}，最后 ${num(you.end)} ${u}。`;
+    narrate.textContent = one + many + me;
+    stats.innerHTML = "";
+    const box = (v, l) => h("div", { class: "stat" }, h("div", { class: "v" }, v), h("div", { class: "l" }, l));
+    stats.append(box(st.p + "%", `每${per}赢的概率`), box(num(c.e1), `平均每${per}（${u}）`), box(pct(c.ahead), `玩完还在赚的人`), box(num(c.med), `中间那个人的结局（${u}）`), box(num(c.mean), `所有人的平均（${u}）`));
+  }
+  use("t61");
+})();
+</script>
+</body>
+</html>
