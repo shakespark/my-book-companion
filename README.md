@@ -9,9 +9,12 @@ my_book_companion/
   _tools/                        仓库自己的工具，不部署
     calibre.py                   在 Calibre 书库里查书、挂软链接（只读）
     new-book.sh                  开一本书的目录骨架
+    pack.py                      阅读包：把代理要读的文件切成小份，一轮并行读完
+    templates/                   每本书都一样的说明模板：BRIEF-common.md（作者）、REVIEW.md（审读）
   <目录名>/                      一本书一个目录，网址就是 /<目录名>/
     index.html chapters/ assets/ 部署
     AUTHORING.md tools/          不部署
+    CLAUDE.md NEXT_STEPS.md      这本书的固定信息 / 进度和待办，不部署
     source/calibre -> /mnt/d/calibre/books/<作者>/<书名 (id)>/   不入库、不部署
 ```
 
