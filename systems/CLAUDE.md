@@ -42,4 +42,10 @@
 - 每页三项检查：`python3 -I tools/lint.py`、`python3 -I tools/overlap.py`（引用上限 2）、`node tools/check.mjs`；模拟器页加 `node tools/sim<页>.mjs`。lint 的「？」是嫌疑，作者在报告里逐条答。
 - 阅读包：`sh tools/pack.sh <页>`（作者）、`sh tools/pack.sh --review <页>`（审读员），输出在 `source/pack/`。进度：`sh tools/status.sh`；验收看节：`python3 -I tools/peek.py chapters/<页>.html`。
 
+## 上线（2026-11-15）
+
+- 首页卡片在 `~/tutorials-home/index.html`（`data-progress="ts-done-:15"`，14 页＋00）；`ts-` 在 `sync.js` 的 `PREFIXES`、`sync_server.py` 的 `KEY_RE`；词本 `words.html` 的 `BOOKS.ts`（页名表）和两处前缀正则。
+- 改了页面：三项检查都过再 `git add systems/` 提交推送，`gh run watch` 不接管道，最后 `~/tutorials-deploy/scripts/check-site.sh systems index.html chapters/<页>.html`。
+- 卡片和 00 页里的条数（勘误 321、今天怎么看 29、情境题 48、概念 50、词条 235）是上线时统计的，增删了要跟着改。
+
 进度和待办在 `NEXT_STEPS.md`。

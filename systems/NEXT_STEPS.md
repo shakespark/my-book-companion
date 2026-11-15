@@ -2,12 +2,12 @@
 
 ## 现在
 
-- **G＋H 全部做完（2026-11-15）**：十四页加 00 开读之前都已收稿（TS_READY 15 项），验收记录在 `source/ACCEPTANCE.md`。汇总页 index / recap / terms / drills / today / zh 的 check 都过。
-- **下一个会话：I（上线，用户已授权直接做，做完告诉用户），再做 J。** 第一件事：读本目录 `CLAUDE.md`，`sh tools/status.sh`，然后照仓库 `CLAUDE.md` 的 I 步：
-  首页卡片（`~/tutorials-home/index.html`，`data-progress="ts-done-:14"`，页数按 TS_PAGES 核一遍）、同步白名单（`sync.js` 的 `PREFIXES`、`sync_server.py` 的 `KEY_RE`，`scripts/sync-apply.sh`）、
-  英文词条接词本（`words.html` 的 `BOOKS` 和两处前缀正则）、`git add systems/` 提交推送、`gh run watch`、`check-site.sh systems index.html chapters/01a.html`。
-- 00 页「三十年以后」「你手边这本译本」里的条数（今天怎么看 29 条、勘误 321 处）是 2026-11-15 统计的，以后改了页面要跟着改。
-- J：补全 `CLAUDE.md`，仓库 `README.md` 书单，`~/tutorials-deploy/README.md` 踩坑和 PLAYBOOK 表；模板教训见下面的记录。
+- **全书完成（2026-11-15）**：十四页加 00 开读之前已上线（https://t.miaowuao.cn/systems/），首页卡片、跨设备同步（`ts-`）、跨书词本都接上了，I、J 两步都做完。
+- 以后改页面：
+  - 改哪页跑那页的三项检查（模拟器页加 `node tools/sim<页>.mjs`），汇总页 index / recap / terms / drills / today / zh 的 check 也跑一遍。
+  - 00 页「三十年以后」「你手边这本译本」和首页卡片里的条数要跟着改（见 `CLAUDE.md`「上线」）。
+  - `assets/chapters.js` 的节表是 `gen_chapters.py` 生成的，t、d、`TS_READY` 由 `accept.py` 填，不手改。
+- 没有待办。
 
 ## 记录
 
@@ -76,3 +76,8 @@
 - 08 的 lint 坑：分节地图一节里不能有别的 `<li>`（附加说明用 `<p>`）；勘误 data-p 只能写一个段号；小标题不算段落，loc 要取那一节第一段的词。
 - 00 主编写，照 Fooled 的 00；条数在 in 收稿后统计。
 - 收尾时补：08 的图号改成译本编号（第 2 章原书图号减 14 就是译本的图2—N，和 02a、02b 一致）；§4 标题漏括号回 EPUB 核过；00 地图表 in、08 的标题照收稿的改，00 的《增长的极限》一句照 in 的今天卡对齐；00、08 截图（400 宽）裁原尺寸看过。
+
+### 2026-11-15 I–J
+
+- I：首页卡片（`ts-done-:15`：00 也有读完按钮，所以是 15）、`sync.js` / `sync_server.py` 加 `ts-`（`sync-apply.sh` 推了，健康检查过）、`words.html` 加 `BOOKS.ts` 和两处正则。三项检查和 4 个 sim 都过；提交 fb9cad3，部署成功，`check-site.sh` 全部正常（`source/` 404）；`tutorials-home`、`tutorials-deploy` 各自推送，线上首页、sync.js、words.html 都核过。
+- J：仓库 `README.md` 书单一行；`~/tutorials-deploy/README.md` 踩坑四条（status.sh 的「审完」、代理放错交付物、附录勘误不能省、data-progress 要算 00）；PLAYBOOK 表一行；`_tools/templates/REVIEW.md` 加「## 审读一节最后一次写完」。

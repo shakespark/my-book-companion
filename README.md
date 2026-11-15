@@ -33,6 +33,7 @@ my_book_companion/
 | Impro（Keith Johnstone，1979），对照饶昊鹏中译本 | `impro/` · https://t.miaowuao.cn/impro/ | `im-` | 6413（译本 6846） | 2026-10-22 上线：18 页＋开读之前，每页一位审读员全审；游戏卡 73 张（`games.html`），逐段译本勘误 332 条（`zh.html`），2 个模拟器，节分先读 / 有空 / 可跳过和全书最短读法；页头和分节地图以译本为主 |
 | The Making of a Manager（Julie Zhuo，2019），对照許恬寧繁体译本 | `manager/` · https://t.miaowuao.cn/manager/ | `mm-` | 6847（译本 6848） | 2026-10-27 上线：11 页＋开读之前，英文纸书为主、对着繁体译本逐段读；情境卡 38 张（`cases.html`）、原创判断题 32 道（`drills.html`）、词条 587 条接词本、逐段译本勘误 84 条（`zh.html`）；节分先读 / 有空 / 可跳过和全书最短读法；6 位审读员两页一人审完 |
 | Fooled by Randomness（Nassim Nicholas Taleb，2004 增订第二版），对照羅耀宗繁体译本 | `fooled/` · https://t.miaowuao.cn/fooled/ | `fb-` | 6352（译本 6851） | 2026-10-29 上线：19 页＋开读之前，繁体译本为主、对着英文读；页中间「先停下，去读原书」的分界，线以下默认收起；5 个模拟器（蒙特卡洛、看盘频率、偏态、抛硬币的经理、体检假阳性）；词条 341 条接词本、逐段译本勘误 163 条（`zh.html`，开头有繁简术语对照）；节分先读 / 有空 / 可跳过和全书最短读法；每页一位审读员 |
+| Thinking in Systems（Donella H. Meadows，2008），对照邱昭良《系统之美》译本 | `systems/` · https://t.miaowuao.cn/systems/ | `ts-` | 6852（译本 5631） | 2026-11-15 上线：14 页＋开读之前，简体译本电子书为主、对着英文纸书读，页头和分节地图两边都给；不设分界线；5 个模拟器（浴缸、咖啡和存款、恒温器和库存、油田、渔场）；48 道情境题（`drills.html`）；概念 50 个、术语汇总 `terms.html`；词条 235 条接词本；逐段译本勘误 321 条（`zh.html`）；节分先读 / 有空 / 可跳过和最短读法；每页一位审读员，附录是主编写的轻量页 |
 
 ## 新增一本书
 
@@ -64,3 +65,4 @@ my_book_companion/
 - **从仓库里删掉一本书，服务器上的目录不会跟着删**，要手动清：`ssh root@t.miaowuao.cn rm -r /var/www/tutorials/<目录名>`（先确认）。
 - **几个会话同时写不同的书**：只 `git add <目录名>/`。推送被拒（别的会话先推了）就 `git pull --rebase` 再推。
 - `source/calibre` 是软链接：在 Calibre 里改了书名或作者，书的目录会改名，链接就断了，删掉重新 `calibre.py link`。
+- **卡片里的长网址会撑出卡片**（2026-11-15，systems 样板发现）：`.today dl` 是两列 grid，`1fr` 的最小宽度等于内容，「依据」里一长串不断行的网址会把文字推出卡片右边框，手机上最明显；`check.mjs` 只查整页横向溢出，查不出。systems 的 `style.css` 已改成 `minmax(0, 1fr)`，`.asof` 加 `overflow-wrap: anywhere`。从 Fooled 复制骨架的书照改（Fooled 本身的样式没动）。
