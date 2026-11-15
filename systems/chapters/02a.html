@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 2 章（上）· 系统之美导读</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/chapters.js"></script>
+<script src="../assets/ts.js"></script>
+<style>
+#sim-02a-heat .charts, #sim-02a-cars .charts { display: grid; gap: 6px; }
+#sim-02a-heat .cap, #sim-02a-cars .cap { font-size: 13px; color: var(--muted); margin: 2px 0 8px; }
+</style>
+</head>
+<body data-page="02a">
+<main>
+<h2>这一页在做什么</h2>
+<div class="gist"><p>第 2 章把第 1 章的零件拼成几只「系统动物」，一次看一只，看结构怎样决定行为。这一页是前四节：恒温器、人口和工业资本、汽车经销商的库存。好玩在三个地方。恒温器设在 18℃，模型里的屋子却停在 17.3℃；人口和工厂的机器外表毫不相干，涨落却是一个套路；经销商想把库存管稳，加快了反应，库存反而摆得更凶。两个模拟器让你亲手去拧这些旋钮。</p></div>
+<figure class="fig"><img src="../assets/img/02a-thermostat.jpg" alt="木板墙上一个米色的圆形机械恒温器，透明外圈上印着 50 到 80 的华氏刻度，中间的银色圆盘上写着 Honeywell" loading="lazy">
+<figcaption>Honeywell 的 T87 圆形恒温器，图片说明称它是 20 世纪的标志性型号，转动外圈就是拨设定温度，刻度是华氏度。这种机械恒温器到了设定温度就切断火炉，凉下来再接通；书里模型的火炉是差多少补多少，两样不同。照片与本书无关。<span class="src">midnightcomm（Flickr），CC BY 2.0，维基共享资源</span></figcaption></figure>
+<h2>读之前：这一页在全书的哪里</h2>
+<div class="linehere"></div>
+<p>01b 讲完了两种反馈回路：调节回路朝目标走，增强回路越滚越大。第 2 章开始一次看一只「动物」。这一页是单存量的三只：§2 两个调节回路拉同一个存量；§3 一个增强回路加一个调节回路，中间插进怎样判断一个模型；§4 在调节回路里加进延迟。02b 换成两个存量，看增长撞上资源的限制。</p>
+<div class="heads-up"><p>§4 讲到全国经济时，她说几道有延迟的回路互相带动、再被投机放大，是商业周期的「主要原因」。这是她依据 Forrester 的国家模型下的判断。主流宏观经济学承认库存会放大波动，但一般不把它当成周期的主要来源。</p></div>
+<div class="crux"><p>经销商想让库存稳下来，为什么加快反应，库存反而摆得更凶？</p></div>
+<p class="lede">读的时候带着这几个问题，读完回来对照「检查一下理解」。</p>
+<ol class="qs">
+  <li>恒温器设在 18℃，屋子为什么停在 18℃ 下面一点？怎么补救？<span class="sec">§2</span></li>
+  <li>人口和工厂里的机器，为什么能算同一种「动物」？<span class="sec">§3</span></li>
+  <li>听到一个预测（经济、气候、股价），该先问哪三个问题？<span class="sec">§3</span></li>
+  <li>三个延迟里，经销商自己能改的是哪两个？改哪个、往哪边改才有用？<span class="sec">§4</span></li>
+</ol>
+<h2>分节地图</h2>
+<p class="lede">这一页是原书和译本第 2 章的前四节。粗体是本站给的节名，后面是档和译本字数；下面一行是译本的小标题和这一节在译本电子书里开头的几个字（搜它就能跳过去），再下面是英文原书的小标题和开头几个词，翻纸书用。读完打个勾。</p>
+<ol class="secmap">
+  <li data-sec="1"><span class="what">交代这一章的体例：像逛动物园，一次看一只。她自己承认这个园子太整齐，真实的系统都缠在一起。很短，可以跳过；题词译反了，见译本勘误。</span></li>
+  <li data-sec="2"><span class="what">恒温器：火炉和漏热拉同一个室温。从<span class="zhv">译本：「从这里，我们可以得出一条很重要」</span>起是两条原则，最后看漏风的屋子在半夜怎么失守。</span></li>
+  <li data-sec="3"><span class="what">人口讲主导地位转换，从<span class="zhv">译本：「这里，我选取了一些极端的人口情景」</span>起插进怎样判断一个模型，再讲工业资本和人口是同一种结构。</span></li>
+  <li data-sec="4"><span class="what">经销商的库存加进三个延迟就来回摆。从<span class="zhv">译本：「这些振荡真是令人无法忍受」</span>起是三个改法的试验，留意哪个改了反而更糟。最后放大到全国经济。</span></li>
+</ol>
+<h2>先用中文过一遍：这一页的概念</h2>
+<p class="lede">先把这一页用到的几个概念用书外的例子讲一遍。作者拿它们推出什么，读原书时自己看。存量、流量见<a class="term" href="01a.html#c-stock-flow">存量和流量</a>，两种回路见<a class="term" href="01b.html#c-balancing-loop">调节回路</a>和<a class="term" href="01b.html#c-reinforcing-loop">增强回路</a>。</p>
+<div class="concept" id="c-competing-loops">
+<h3><span class="sec">§2</span>相互制衡的调节回路 <span class="en">competing balancing loops，译本：相互制衡的调节回路</span></h3>
+<p>一个存量同时被两个调节回路拉着，各有各的目标。拿网站的缓存说：预热程序想把热门条目补到 1 万条，缺多少补多少，缺得越少补得越慢；条目又在按比例过期，存得越多，过期得越多。一个往上拉、一个往下拉，存量停在两股流量扯平的地方，比目标低一截。</p>
+<p>办法是把流失算进目标：想要 1 万条，就照「1 万加上预计会过期的」去补。还有一条更一般的：反馈带回来的信息只能改以后的决定，改不了已经发生的事，所以流量只能对存量的变化作反应，中间总隔着一点时间。</p>
+<figure class="fig">
+<svg class="diagram" viewBox="0 0 640 260" role="img" aria-label="存量流量图：中间方框是缓存里的条目。左边从源站云朵流进来的粗箭头带阀门，标着补进、按缺口补；上方一条信息线从方框连到缺口，再连到这个阀门，标 B，补的回路，目标是 1 万条。右边粗箭头带阀门流向淘汰云朵，标着过期、越多过期越多；方框连到这个阀门，标 B，漏的回路。底下一行字：停在补进等于过期的地方，比目标低一截">
+<path d="M30 112 q-10 -22 12 -26 q6 -20 30 -12 q18 -10 28 8 q22 2 14 24 q4 20 -22 18 q-14 12 -34 2 q-30 6 -28 -14 z" class="box" transform="translate(0,50)"/>
+<text x="72" y="156" text-anchor="middle" class="t-m">源站</text>
+<rect x="114" y="144" width="112" height="12" class="box"/><path d="M226 136 L244 150 L226 164 z" class="f-fg"/>
+<path d="M166 134 L186 150 L166 166 z M206 134 L186 150 L206 166 z" class="f-a"/>
+<text x="186" y="190" text-anchor="middle" class="t-b">补进</text>
+<text x="186" y="208" text-anchor="middle" class="t-m">按缺口补</text>
+<rect x="244" y="112" width="152" height="76" rx="4" class="box"/>
+<text x="320" y="146" text-anchor="middle" class="t-b">缓存里的条目</text>
+<text x="320" y="166" text-anchor="middle" class="t-m">存量</text>
+<rect x="396" y="144" width="112" height="12" class="box"/><path d="M508 136 L526 150 L508 164 z" class="f-fg"/>
+<path d="M446 134 L466 150 L446 166 z M486 134 L466 150 L486 166 z" class="f-a"/>
+<text x="466" y="190" text-anchor="middle" class="t-b">过期</text>
+<text x="466" y="208" text-anchor="middle" class="t-m">越多过期越多</text>
+<path d="M528 112 q-10 -22 12 -26 q6 -20 30 -12 q18 -10 28 8 q22 2 14 24 q4 20 -22 18 q-14 12 -34 2 q-30 6 -28 -14 z" class="box" transform="translate(0,50)"/>
+<text x="570" y="156" text-anchor="middle" class="t-m">淘汰</text>
+<text x="186" y="44" text-anchor="middle" class="t-b">缺口</text>
+<text x="60" y="30" class="t-m">目标：1 万条</text>
+<path d="M110 36 L158 40" class="ln"/><path d="M152 35 L162 40 L152 45 z" class="f-fg"/>
+<path d="M292 112 Q292 44 216 42" class="ln"/><path d="M222 37 L212 42 L222 47 z" class="f-fg"/>
+<path d="M186 52 L186 124" class="ln"/><path d="M181 120 L186 130 L191 120 z" class="f-fg"/>
+<text x="238" y="84" class="t-b">B</text><text x="238" y="100" class="t-m">补的回路</text>
+<path d="M350 112 Q350 64 420 64 Q466 64 466 124" class="ln"/><path d="M461 120 L466 130 L471 120 z" class="f-fg"/>
+<text x="392" y="94" class="t-b">B</text><text x="392" y="110" class="t-m">漏的回路</text>
+<text x="320" y="246" text-anchor="middle" class="t-m">存量停在「补进 = 过期」的地方，比目标低一截</text>
+</svg>
+<figcaption>本站示意图，用书里的画法画一个书外的例子。数是编的：每分钟把缺口全部补上，每分钟有 5% 的条目过期，缓存停在约 9524 条，不是 1 万，因为这时补进的约 476 条正好等于过期的约 476 条。把目标定成 10500，就正好停在 1 万。</figcaption></figure>
+<p class="use"><b>在这一页：</b>§2 的恒温器<span class="zhv">译本：「温度调节器」</span>就是这种结构：火炉把室温往设定拉，漏热把室温往室外拉。</p>
+</div>
+<div class="concept" id="c-shifting-dominance">
+<h3><span class="sec">§3</span>主导地位转换 <span class="en">shifting dominance，译本：主导地位转换</span></h3>
+<p>几个回路同时拉一个存量时，谁的劲大，存量就跟谁走，这叫占主导。回路的劲会随时间变，主导就会换手，行为跟着换模式。拿一个开源项目说：贡献者越多，项目越热闹，吸引来的新人越多（增强）；人越多，每个月走掉的也越多（调节）。维护者勤快地审代码时，拉新的回路占上风，人数指数增长；维护者没空了，拉新变弱，和流失扯平时人数持平，再弱下去就开始缩。</p>
+<p>别和振荡混：主导地位转换是换挡，涨着涨着平了、平着平着跌了；振荡是围着一个目标来回摆，<a class="term" href="#c-delay-oscillation">延迟和振荡</a>一块讲。</p>
+<p class="use"><b>在这一页：</b>§3 用出生率慢慢降到等于死亡率讲它；§2 一天一夜的恒温器，半夜漏热回路占了上风，也是一次换手。</p>
+</div>
+<div class="concept" id="c-model-questions">
+<h3><span class="sec">§3</span>测试模型价值的三个问题 <span class="en">questions for testing the value of a model，译本：测试模型价值的问题</span></h3>
+<p>听到一个情景（明年用户翻倍、十年后房价减半），可以问三件事。一，推动它的因素真会这样走吗？这只能猜，未来没法事先证明。二，如果真这样走，系统会这样反应吗？这才是在考模型本身。三，推动因素又被什么推动？这是在问边界画得对不对：用户的增长率，可能本身就受用户数影响。</p>
+<p>她的立场是：这类模型通常不为预测，而是问「如果……会怎样」，好不好看它给出的行为模式像不像真的，数字不准也照样有用。另一面是：反馈结构相似的系统，行为也相似。人口和工厂的机器都是一个存量加「生」的增强回路和「死」的调节回路，涨、跌、持平的套路一样。</p>
+<p class="use"><b>在这一页：</b>§3 的数可以这样算：人口每年净增 1.2%，按<a class="term" href="01b.html#c-doubling-time">翻倍时间</a>约 58 年翻一番；机器寿命 15 年时，投资正好抵掉折旧。</p>
+</div>
+<div class="concept" id="c-delay-oscillation">
+<h3><span class="sec">§4</span>调节回路里的延迟和振荡 <span class="en">delays in a balancing loop, oscillation，译本：时间延迟、振荡</span></h3>
+<p>调节回路在纠偏，可纠偏的信息和动作都要时间，等结果出来，已经纠过了头；往回纠，又过了头，存量就围着目标来回摆。拿线上服务的自动扩缩容说，有三道延迟：感知（看过去 5 分钟的平均负载，不看这一秒）、反应（发现缺机器，每次只补缺口的一部分）、交货（新机器开机要几分钟）。前两道是信息上的，自己能调；第三道是实物上的，多半改不了。</p>
+<p>她说的是「很可能」振荡，不是一定。把延迟改长改短，可能大大改变行为，也可能不，要看是哪种延迟、和别的延迟比有多长。凭直觉去拧的那个旋钮常常确实有力，只是拧反了，她叫它「高杠杆，方向错」。</p>
+<figure class="fig">
+<svg class="diagram" viewBox="0 0 640 260" role="img" aria-label="自动扩缩容的回路图。上排：实际请求量经过感知延迟变成看到的请求量，再算出需要几台机器。中间：需要几台和在线机器数一起得出缺口。缺口经过反应延迟连到新机器上线的阀门。下排：云朵经过带阀门的粗箭头流进在线机器方框，箭头上有交货延迟的标记，开机要几分钟。延迟处画着两道短竖线">
+<text x="70" y="40" text-anchor="middle" class="t-b">实际请求量</text>
+<path d="M118 36 L232 36" class="ln"/><path d="M226 31 L236 36 L226 41 z" class="f-fg"/>
+<path d="M172 26 L172 46 M178 26 L178 46" class="ln-a"/>
+<text x="175" y="62" text-anchor="middle" class="t-m">感知延迟：看 5 分钟平均</text>
+<text x="300" y="40" text-anchor="middle" class="t-b">看到的请求量</text>
+<path d="M360 36 L452 36" class="ln"/><path d="M446 31 L456 36 L446 41 z" class="f-fg"/>
+<text x="510" y="40" text-anchor="middle" class="t-b">需要几台</text>
+<path d="M500 50 Q470 96 360 100" class="ln"/><path d="M366 95 L356 100 L366 105 z" class="f-fg"/>
+<text x="320" y="104" text-anchor="middle" class="t-b">缺口</text>
+<path d="M330 188 Q350 150 328 116" class="ln"/><path d="M324 122 L327 112 L333 120 z" class="f-fg"/>
+<path d="M286 100 Q200 96 188 154" class="ln"/><path d="M183 150 L188 160 L193 150 z" class="f-fg"/>
+<path d="M222 104 L236 116 M218 109 L232 121" class="ln-a"/>
+<text x="120" y="98" text-anchor="middle" class="t-m">反应延迟：</text>
+<text x="120" y="114" text-anchor="middle" class="t-m">每次补一部分</text>
+<text x="300" y="80" class="t-b">B</text>
+<path d="M30 172 q-10 -22 12 -26 q6 -20 30 -12 q18 -10 28 8 q22 2 14 24 q4 20 -22 18 q-14 12 -34 2 q-30 6 -28 -14 z" class="box"/>
+<rect x="114" y="174" width="140" height="12" class="box"/><path d="M254 166 L272 180 L254 194 z" class="f-fg"/>
+<path d="M168 164 L188 180 L168 196 z M208 164 L188 180 L208 196 z" class="f-a"/>
+<path d="M228 166 L228 194 M234 166 L234 194" class="ln-a"/>
+<text x="200" y="222" text-anchor="middle" class="t-m">交货延迟：开机要几分钟</text>
+<text x="200" y="240" text-anchor="middle" class="t-b">新机器上线</text>
+<rect x="272" y="146" width="150" height="70" rx="4" class="box"/>
+<text x="347" y="178" text-anchor="middle" class="t-b">在线机器</text>
+<text x="347" y="198" text-anchor="middle" class="t-m">存量</text>
+<text x="456" y="200" class="t-m">两道竖线 = 延迟</text>
+</svg>
+<figcaption>本站示意图，书外的例子。三道延迟各标两道竖线：感知、反应在信息那条线上，交货在实物那条管子上。为了看清只画了上线，缩容下线没画。只要回路里有这几道延迟，请求量一个台阶上去，机器数就可能先补不够、再补过头。</figcaption></figure>
+<p class="use"><b>在这一页：</b>§4 的经销商有同样三道延迟：感知 5 天、反应 3 天、交货 5 天。第二个模拟器就是她的模型。</p>
+</div>
+<h2>动手：模拟器</h2>
+<p>先猜：恒温器设在 18℃，屋子从 10℃ 开始烧火炉，外面一直是 10℃。几个小时以后，室温会停在多少？正好 18℃，比 18℃ 高一点，还是低一点？</p>
+<div class="sim" id="sim-02a-heat">
+  <div class="sim-head"><span class="tag">模拟器</span><h3>恒温器：火炉和漏热拔河</h3><p class="desc">一个存量（室温），两个调节回路：火炉把室温往设定温度补，墙和窗把热往外漏。上图是温度，下图是两股热流各有多快。打开页面时是书里那一组数。</p></div>
+  <div class="sim-body"><p>需要浏览器打开脚本才能运行。</p></div>
+</div>
+<p>各个控件：「设定温度」是恒温器上拨的那个数。「漏热比例」说房子保温好不好：0.1 是每小时散掉室内外温差的一成，0.3 是书里那座漏风的房子。「火炉功率上限」是火炉一小时最多能把室温抬几度。「室外」选一直 10℃，或者一天一夜（白天 10℃，后半夜降到 -5℃）。屋子都从 10℃ 开始。模型里火炉按「设定减室温」出力，差多少补多少，最多补到上限，没有一开一关，也没有延迟。每一步都是室温加上补进的、减去漏掉的，和附录的模型同一种算法；本站每 15 分钟算一步，附录写的是一小时一步，那样算出的曲线有棱角，和书上的图对不上。</p>
+<ol class="qs">
+  <li>试试看：先看书里那一组。第 8 小时室温停在 17.3℃，不到 18。把设定改成 18.8，室温停在多少？</li>
+  <li>试试看：「室外」选一天一夜。漏热比例 0.1 时，深夜最低是多少、在第几小时？改成 0.3（漏风的房子）呢？看下图，半夜哪一股热流更大？</li>
+  <li>试试看：漏热比例 0.3 时，把火炉功率上限从 5 加到 10，深夜最低升了多少？再把功率改回 5、漏热比例改成 0.15。哪个办法更管用？</li>
+</ol>
+<p>这个模型停在 18℃ 下面，是因为火炉按差距出力：差距越小补得越少，差距为零就不补了，所以只能停在补和漏扯平的地方。书里的解释是漏的同时在补，两种说法相通，「本站怎么看」细说。</p>
+<figure class="fig"><img src="../assets/img/02a-carlot.jpg" alt="阴天里一家汽车经销商门前的大停车场，停着几排 SUV，远处是白色的展厅" loading="lazy">
+<figcaption>英国一家汽车经销商门前的停车场，停满待售的车。§4 的库存就是这样一片车，书里的经销商要让它一直够卖 10 天。照片与本书无关。<span class="src">Philip Jeffrey，CC BY-SA 2.0，维基共享资源（geograph.org.uk）</span></figcaption></figure>
+<p>先猜：一家经销商平时每天卖 20 辆车，停车场上留着够卖 10 天的车，也就是 200 辆。第 26 天起，每天多卖 2 辆，从此不变。她要把库存补到新的「够卖 10 天」，220 辆。库存会怎样走到 220？如果她反应更快一点，会更快、更稳吗？</p>
+<div class="sim" id="sim-02a-cars">
+  <div class="sim-head"><span class="tag">模拟器</span><h3>汽车经销商的库存</h3><p class="desc">一个存量（停车场上的车），流出是卖掉的车，流入是工厂送来的车。经销商按她感知到的销量订车，订单要过几天才变成到货。上图是库存，下图是每天的销量、订单和到货。打开页面时是书里那一组延迟：感知 5 天、反应 3 天、交货 5 天。</p></div>
+  <div class="sim-body"><p>需要浏览器打开脚本才能运行。</p></div>
+</div>
+<p>各个控件：「感知延迟」是经销商看最近几天的平均销量，而不是今天一天的销量；这里的平均是越近的日子算得越重，0 就是只看当天。「反应延迟」是发现库存差了，分几天补齐：3 就是每次订货补上差距的三分之一，1 是一次补齐。「交货延迟」是从下单到车开进停车场要几天，这一个经销商自己改不了。库存从 200 辆开始，目标是 10 天的感知销量，需求在第 26 天从每天 20 辆涨到 22 辆，看 100 天。译本在介绍这三个延迟的地方漏了 5 天、三分之一这几个数，见译本勘误。和附录的方程比，本站照书上的图改了三处：平均销量用越近越重的平滑；到货是 5 天前的订单原样送到；书里这一组的订货量也除以反应延迟（附录这一处漏了除号）。</p>
+<ol class="qs">
+  <li>试试看：先看书里那一组。需求只涨了一次，库存却先跌到 188（第 32 天），再冲到 250（第 44 天），一摆比一摆大，第 96 天跌到 135；下图里订单在第 85–87 天掉到 0。</li>
+  <li>试试看：学经销商「反应快一点」，把反应延迟从 3 改成 2：最高库存变成多少？订单有几天是 0？改回 3，再把感知延迟从 5 改成 2，又怎样？</li>
+  <li>试试看：反过来，把反应延迟从 3 改成 6。库存最低、最高各是多少，第几天以后稳在 220 附近？最后点「去掉三个延迟」，对照没有延迟时的样子。</li>
+</ol>
+<p>交货延迟也可以拧：保持感知 5 天、反应 3 天，把交货改成 3 天或 8 天，看看这个系统里最要紧的延迟是哪一个。模型做不到的：顾客每天随机来买（这里的需求是一个干净的台阶）；缺货时没卖成的车不会留到明天。书里那一组在 100 天里越摆越大，跑得再久，它会停在一个固定幅度上来回摆，因为订单不能是负数。</p>
+<h2>原文里的词和句</h2>
+<p class="lede">读英文原书时值得停一下的词和句：熟词生义、Meadows 的口语和比喻。灰色斜体是原句里连续的几个词，在英文电子书里搜它就能找到；标「每个字都认识」的，是每个词都眼熟、合起来意思却变了的，最容易读错。点「记下」收进词本。</p>
+<div class="entry"><div class="en">too neat</div><div class="loc" data-p="4">… this collection is too neat.</div><div class="zh">太整齐、太规整</div><div class="note">动物园把动物一种种隔开，看得清楚，却不像野外那样混在一起。她借这个词承认这一章的例子太干净。</div></div>
+<div class="entry"><div class="en">properly sized</div><div class="loc" data-p="17">… sufficient insulation and a properly sized furnace …</div><div class="zh">（功率）大小合适的</div><div class="note">sized 指按需要选的规格。设备选型常说 properly sized，买大了叫 oversized。</div></div>
+<div class="entry"><div class="en">keep a bucket full</div><div class="loc" data-p="21">… like trying to keep a bucket full …</div><div class="zh">让桶一直满着</div><div class="note">整句说的是底下有洞的桶，一边加一边漏。这个漏桶是这一节的图像。</div></div>
+<div class="entry trap"><div class="en">muddle one’s way to</div><div class="loc" data-p="22">… You can muddle your way to …</div><div class="zh">摸索着凑合到（一个设定）</div><div class="note">muddle 是糊里糊涂地应付，muddle through 是将就着混过去。意思是不用精确计算，试几次就行。</div></div>
+<div class="entry trap"><div class="en">can live with</div><div class="loc" data-p="22">… a thermostat setting you can live with.</div><div class="zh">（你）能接受的、过得去的</div><div class="note">live with 是忍受、接受，不是「和……住在一起」。</div></div>
+<div class="entry trap"><div class="en">breakdown point</div><div class="loc" data-p="30">… feedback loop has its breakdown point …</div><div class="zh">被压垮的那个点</div><div class="note">breakdown 是垮掉、失灵。过了这一点，回路就拉不回存量了，不是一般说的「转折点」。</div></div>
+<div class="entry"><div class="en">at full tilt</div><div class="loc" data-p="36">… still operating at full tilt …</div><div class="zh">开足马力</div><div class="note">full tilt 是全速。火炉已经开到最大，还是补不上。</div></div>
+<div class="entry trap"><div class="en">pull ahead</div><div class="loc" data-p="36">… finally can pull ahead and start …</div><div class="zh">反超、重新领先</div><div class="note">赛跑用语，从落后变成领先。这里是火炉终于又补得比漏得快了。</div></div>
+<div class="entry trap"><div class="en">provocative</div><div class="loc" data-p="58">… I chose some provocative population scenarios …</div><div class="zh">故意挑得扎眼的、引人深思的</div><div class="note">常见意思是「挑衅的」，这里是故意选得极端，好引出要讲的道理。她承认这些人口情景是挑出来的，不是预测。</div></div>
+<div class="entry trap"><div class="en">the numbers are off</div><div class="loc" data-p="74">… The numbers are off, but the …</div><div class="zh">数字不准</div><div class="note">off 作形容词是「不对、有偏差」，不是「关掉」。</div></div>
+<div class="entry"><div class="en">reproduce themselves out of themselves</div><div class="loc" data-p="104">… can reproduce themselves out of themselves …</div><div class="zh">自己从自己里生出更多</div><div class="note">人生人，资本生资本，增强回路的口语说法。</div></div>
+<div class="entry"><div class="en">blip</div><div class="loc" data-p="112">… react to just any blip in sales.</div><div class="zh">（销量上）一点小抖动</div><div class="note">blip 是数据里一闪而过的小波动。just any 是随便哪个。</div></div>
+<div class="entry"><div class="en">what a difference … make</div><div class="loc" data-p="122">… what a difference a few delays make!</div><div class="zh">几个延迟造成的差别真大</div><div class="note">常用的感叹句式：what a difference X makes，X 带来的差别真大。</div></div>
+<div class="entry trap"><div class="en">the joys of</div><div class="loc" data-p="123">… the joys of hot and cold oscillations …</div><div class="zh">（冷热交替的）乐趣</div><div class="note">反话：水一会儿烫一会儿冰，没人觉得这是乐趣。</div></div>
+<div class="entry"><div class="en">high leverage, wrong direction</div><div class="loc" data-p="132">… High leverage, wrong direction …</div><div class="zh">高杠杆，方向错</div><div class="note">她的口头禅：拉的杠杆确实有力，只是拉反了。leverage 在这里是撬动的力量，不是金融里的「加杠杆」。</div></div>
+<div class="entry trap"><div class="en">given</div><div class="loc" data-p="137">… Given the configuration of this system …</div><div class="zh">在（这个系统的配置）下、考虑到</div><div class="note">given 在句首作介词，意思是「考虑到、在……前提下」。这个限定很要紧：放慢反应更好，只是在这个系统里。</div></div>
+<div class="entry trap"><div class="en">fanatic on</div><div class="loc" data-p="141">… somewhat fanatic on the subject of delays.</div><div class="zh">对……特别较真、有点狂热</div><div class="note">fanatic 是狂热者，这里带点自嘲。这一句的译文正好反了，见译本勘误。</div></div>
+<div class="entry trap"><div class="en">entrain</div><div class="loc" data-p="145">… entraining each other in their oscillations …</div><div class="zh">（在振荡里）互相带动、步调趋同</div><div class="note">在物理和生物里，entrain 指一个振动把另一个带得步调一致。她用来说各个行业的起落互相牵着走。</div></div>
+<div class="entry"><div class="en">come from presidents</div><div class="loc" data-p="145">… Those cycles don’t come from presidents …</div><div class="zh">（经济周期）不是总统造成的</div><div class="note">美国人爱把经济好坏算在总统头上。她说总统能让起落好受些或难受些，但周期不是他们弄出来的。</div></div>
+<h2>译本勘误</h2>
+<p class="lede">对着译本读这四节时，下面这些地方会把人读歪。方框里是译本的原句，在译本电子书里搜它就能找到；灰色斜体是英文原书那一处。只收意思错了、反了、漏了的，措辞上的出入不收。全书的勘误汇总在<a href="../zh.html">译本勘误</a>。</p>
+<div class="zherr" data-p="1"><h4><span class="sec">§1</span>题词说的是「不放弃」恰当的表达<span class="mark turn">译反</span></h4>
+<p class="loc">… without having to surrender the adequate …</p>
+<p class="zhq"><span class="zhv">译本：「而不是考虑完整地呈现真实的体验」</span></p>
+<p>爱因斯坦的原意：理论要把基本要素减到最简最少，但不能因此丢掉对经验的恰当表达。译本成了「不去呈现体验」，像在劝人只管化简。这一章讲模型，题词说的正是模型要简单、又要像真的。</p></div>
+<div class="zherr" data-p="10"><h4><span class="sec">§2</span>是回路在维持存量<span class="mark">误译</span></h4>
+<p class="loc">… This straightforward, stock-maintaining, balancing feedback loop …</p>
+<p class="zhq"><span class="zhv">译本：「这一调节回路由一个存量维持」</span></p>
+<p>原文：这个简单的、维持存量的调节回路。是火炉这个回路在维持室温，不是存量维持回路。主宾一颠倒，谁在调节谁就弄反了。</p></div>
+<div class="zherr" data-p="15"><h4><span class="sec">§2</span>图2—3 左边的刻度标错了<span class="mark">数字</span></h4>
+<p class="loc">… A warm room cools very slowly …</p>
+<p class="zhq"><span class="zhv">译本：「室温慢慢下降接近室外温度」</span></p>
+<p>图上左纵轴从上往下标作 20、10、20、5、0、-5，应为 20、15、10、5、0、-5。室外温度那条线正好落在标错的「20」上，读者会以为室外是 20℃；原图注写明室外是 10℃，室温从 18℃ 慢慢降向它。</p></div>
+<div class="zherr" data-p="20"><h4><span class="sec">§2</span>室温是「接近」设定温度<span class="mark">漏译</span></h4>
+<p class="loc">… so the room warms nearly to …</p>
+<p class="zhq"><span class="zhv">译本：「所以室温会逐渐达到目标温度」</span></p>
+<p>原文有 nearly：屋子暖到接近设定温度，火炉再开开关关地补漏掉的热。译本丢了「接近」，紧接着又说均衡的室温略低于 18℃，前后打架。</p></div>
+<div class="zherr" data-p="21"><h4><span class="sec">§2</span>漏桶的比方没有「徒劳」<span class="mark">误译</span></h4>
+<p class="loc">… like trying to keep a bucket full …</p>
+<p class="zhq"><span class="zhv">译本：「一切尝试都是徒劳的」</span></p>
+<p>原文只是说，像往底下有洞的桶里加水，想让它一直满着。加「一切尝试都是徒劳」就过头了：室温不是暖不起来，只是停在比目标略低的地方，设高一点就能补上。</p></div>
+<div class="zherr" data-p="23"><h4><span class="sec">§2</span>库存差一点，是因为「没算上」等货时卖掉的<span class="mark">误译</span></h4>
+<p class="loc">… If you don’t account for the goods …</p>
+<p class="zhq"><span class="zhv">译本：「也无法准确地预计在你等待订购的货物」</span></p>
+<p>原文是条件句：如果你不把等货期间会卖掉的算进去，库存就总是差一点。译本说成「无法准确预计」，像是没办法的事。她的意思恰恰是算进去就能补救，这正是下面那条具体原则。</p></div>
+<div class="zherr" data-p="26"><h4><span class="sec">§2</span>流量不能「对另一个流量」立刻反应<span class="mark">误译</span></h4>
+<p class="loc">… can’t react instantly to a flow.</p>
+<p class="zhq"><span class="zhv">译本：「一个流量不能立即对其自身做出调整」</span></p>
+<p>原文：一个流量不能对另一个流量立刻作出反应，只能对存量的变化作反应，而且要隔一小会儿。译成「对其自身」，这句就讲不通了，而它是全章讲延迟的根据。</p></div>
+<div class="zherr" data-p="26"><h4><span class="sec">§2</span>真实经济「往往不完全像」那些模型<span class="mark">误译</span></h4>
+<p class="loc">… tend not to behave exactly like …</p>
+<p class="zhq"><span class="zhv">译本：「真实的经济系统肯定不是这样运作的」</span></p>
+<p>原文：这是真实经济往往不完全像很多经济模型的原因之一。译本前面加了「这肯定是错的」，后面又写成「肯定不是这样运作」，把一句有分寸的批评说成了全盘否定。</p></div>
+<div class="zherr" data-p="27"><h4><span class="sec">§2</span>招人要快到「能抵掉」期间的离职<span class="mark">误译</span></h4>
+<p class="loc">… hire fast enough to correct for …</p>
+<p class="zhq"><span class="zhv">译本：「必须尽快地招聘到位」</span></p>
+<p>原文：招人的速度要够快，能抵掉招聘期间离职的人。重点是把流失算进去，不是越快越好。「尽快到位」把这条原则说成了催进度。</p></div>
+<div class="zherr" data-p="30"><h4><span class="sec">§2</span>breakdown point 是「被压垮的点」<span class="mark">误译</span></h4>
+<p class="loc">… feedback loop has its breakdown point …</p>
+<p class="zhq"><span class="zhv">译本：「且无法自动回到动态平衡状态」</span></p>
+<p>原文：每个调节回路都有被压垮的点，过了这一点，别的回路把存量拉离目标的劲比它往回拉的大。「转折点」偏了；「无法自动回到」是加的，漏风的屋子后来是回暖了的。</p></div>
+<div class="zherr" data-p="35"><h4><span class="sec">§2</span>最初一两个小时，外面还算暖和<span class="mark">误译</span></h4>
+<p class="loc">… For an hour or two, the …</p>
+<p class="zhq"><span class="zhv">译本：「由于室外温度逐渐升高」</span></p>
+<p>原文：头一两个小时外面还算暖和，火炉补上了漏掉的大部分热，室温停在接近设定的地方。译本成了「一两个小时之后」「室外温度逐渐升高」「完全弥补」，三处都和图对不上：那时室外温度正在往下走。</p></div>
+<div class="zherr" data-p="50"><h4><span class="sec">§3</span>曲线是「拐弯」，不是「不规则」<span class="mark">误译</span></h4>
+<p class="loc">… of the stock (population)—the line bends.</p>
+<p class="zhq"><span class="zhv">译本：「但变化曲线是不规则的」</span></p>
+<p>原文：流量一变，存量随时间的行为就变了，曲线拐了弯。人口曲线从指数增长拐向持平，正是主导地位转换的样子；「不规则」让人以为是乱的。</p></div>
+<div class="zherr" data-p="56"><h4><span class="sec">§3</span>是「反馈回路」之间换手<span class="mark">术语</span></h4>
+<p class="loc">… relative strengths of feedback loops shift …</p>
+<p class="zhq"><span class="zhv">译本：「当不同调节回路的相对优势发生改变时」</span></p>
+<p>原文是反馈回路。这里的例子正是增强回路（出生）和调节回路（死亡）之间换手，写成「调节回路」就把增强回路排除在外了。</p></div>
+<div class="zherr" data-p="57"><h4><span class="sec">§3</span>是「依次经历」几种行为，不是波动<span class="mark">误译</span></h4>
+<p class="loc">… will do a sequence of these things …</p>
+<p class="zhq"><span class="zhv">译本：「系统就会波动」</span></p>
+<p>原文：两个回路的强弱随时间变，存量就一个接一个地经历增长、衰退、持平。原图是先涨、再平、又涨，没有来回摆。译成「波动」，会把主导地位转换和 §4 的振荡混在一起。前一句的「（趋向于一个目标）」也是加的。</p></div>
+<div class="zherr" data-p="74"><h4><span class="sec">§3</span>模型简单「但」大致对，没有「因为」<span class="mark">误译</span></h4>
+<p class="loc">… The population model I have used …</p>
+<p class="zhq"><span class="zhv">译本：「因为我们这里所使用的人口模型是很简单的」</span></p>
+<p>原文：答案大致是肯定的；我用的模型很简单，更细的会分年龄组，但它的反应和真实人口一样，数字不准，基本行为模式是真实的。译本加了「因为」，读来成了「因为简单所以对」。</p></div>
+<div class="zherr" data-p="88"><h4><span class="sec">§3</span>图2—13：投资来自系统「内部」的产出<span class="mark">误译</span></h4>
+<p class="loc">… reinforcing loop (investment of output) governing …</p>
+<p class="zhq"><span class="zhv">译本：「增强回路（外部投资）」</span></p>
+<p>原图注：增强回路是产出的再投资。机器生产出东西，拿一部分再投进去，自己生自己，这才是增强回路。「外部投资」正好说反，读者会以为钱是从外面来的。</p></div>
+<div class="zherr" data-p="89"><h4><span class="sec">§3</span>是「投资占产出的比例」，不是「投入产出比」<span class="mark">术语</span></h4>
+<p class="loc">… The greater the fraction of its output …</p>
+<p class="zhq"><span class="zhv">译本：「投入产出比越高」</span></p>
+<p>原文：一个社会拿去投资的产出比例越大，资本长得越快，说的是投资系数，紧挨着的那句里已经出现过。「投入产出比」在经济学里是另一个概念，指产出和投入之比，用在这里会读歪。</p></div>
+<div class="zherr" data-p="109"><h4><span class="sec">§4</span>perceived sales 是「感知到的销量」<span class="mark">术语</span></h4>
+<p class="loc">… The dealer monitors sales (perceived sales), …</p>
+<p class="zhq"><span class="zhv">译本：「未来预期的销售量」</span></p>
+<p>原文：经销商盯着销量，也就是她感知到的销量，靠过去几天的平均得来。「未来预期」意思变了：她不预测，只看过去。译本的图也前后不一，先标「预期的销售量」，后面又作「感知的销量」。模拟器按感知销量讲。</p></div>
+<div class="zherr" data-p="112"><h4><span class="sec">§4</span>感知延迟：平均「过去 5 天」，而且是有意的<span class="mark">漏译</span></h4>
+<p class="loc">… averages sales over the past five days …</p>
+<p class="zhq"><span class="zhv">译本：「将过去一段时间内的销售量进行平均」</span></p>
+<p>原文：这个感知延迟是有意的，她拿过去 5 天的平均销量来分清真趋势和一时的起落。译本漏了「5 天」和「有意」，读者要到经销商发牢骚那段才碰到 5 这个数。</p></div>
+<div class="zherr" data-p="113"><h4><span class="sec">§4</span>反应延迟：每次补缺口的「三分之一」<span class="mark">漏译</span></h4>
+<p class="loc">… she makes up one-third of any shortfall …</p>
+<p class="zhq"><span class="zhv">译本：「他会在其后的每笔订单中多增加一部分」</span></p>
+<p>原文：她每次订货只补上缺口的三分之一，换句话说分三天慢慢补，好再确认趋势是真的。译本没有「三分之一」和「三天」，反应延迟就没了长短；模拟器的默认值 3 就是它。</p></div>
+<div class="zherr" data-p="123"><h4><span class="sec">§4</span>是信息「不足」，不是「信息不对称」<span class="mark">术语</span></h4>
+<p class="loc">… information insufficiency and physical delays …</p>
+<p class="zhq"><span class="zhv">译本：「信息不对称以及物理延迟」</span></p>
+<p>原文是信息不足：她拿不到、也不可能拿到及时的信息。「信息不对称」是经济学术语，指交易一方比另一方知道得多，和这里说的不相干。</p></div>
+<div class="zherr" data-p="129"><h4><span class="sec">§4</span>图2—19 的纵轴是「每天几辆」<span class="mark">数字</span></h4>
+<p class="loc">… The response of orders and deliveries …</p>
+<p class="zhq"><span class="zhv">译本：「订单和交付对需求增加的反应」</span></p>
+<p>两个分图画的是每天的销量、感知销量、订单和到货，原图纵轴是每天几辆。译本两个纵轴都标「库存量」，读者会以为库存在 0 到 50 辆之间摆。图注说平均 3 天，原书图注也这么写，正文和附录都是 5 天。</p></div>
+<div class="zherr" data-p="131"><h4><span class="sec">§4</span>缩短感知延迟的是经销商<span class="mark">误译</span></h4>
+<p class="loc">… happens when the car dealer shortens …</p>
+<p class="zhq"><span class="zhv">译本：「虽然供应商缩短了感知延迟时间」</span></p>
+<p>原文：经销商缩短了感知延迟，库存几乎没变。主语换成供应商，读者会以为是工厂那边在改，而交货延迟恰恰是经销商改不了的那一个。</p></div>
+<div class="zherr" data-p="131"><h4><span class="sec">§4</span>缩短的是「补缺口用几天」<span class="mark">误译</span></h4>
+<p class="loc">… making up perceived shortfalls in two days …</p>
+<p class="zhq"><span class="zhv">译本：「将感知到差距的时间从3天缩短到2天」</span></p>
+<p>原文：不缩短感知，改缩短反应，把感知到的缺口从三天补齐改成两天补齐。译本把反应延迟写成「感知差距的时间」，两个旋钮混成了一个，而模拟器要分清的正是它们。</p></div>
+<div class="zherr" data-p="132"><h4><span class="sec">§4</span>高杠杆是「杠杆有力，却拉反了」<span class="mark">误译</span></h4>
+<p class="loc">… pulls the lever in the wrong direction …</p>
+<p class="zhq"><span class="zhv">译本：「你的动作越大，对系统的影响就越强烈」</span></p>
+<p>原文：想修系统的人凭直觉找到一根确实有力的杠杆，然后好心地往反方向拉。译本方框里这句原文没有，意思也偏了：问题在方向，不在力度。</p></div>
+<div class="zherr" data-p="141"><h4><span class="sec">§4</span>系统思考者对延迟「特别较真」<span class="mark turn">译反</span></h4>
+<p class="loc">… are somewhat fanatic on the subject …</p>
+<p class="zhq"><span class="zhv">译本：「对于时间延迟的问题也有些迷惑」</span></p>
+<p>原文：你能看出系统思考者为什么对延迟这个话题有点狂热，总在盯延迟在哪、有多长。译成「有些迷惑」正好反了，和后半句「总是非常警觉」也接不上。</p></div>
+<h2>读完：作者到底说了什么</h2>
+<p class="lede">下面是作者在这四节里的主张，本站按主张之间的逻辑重排，不按原书顺序；每条后面是节号，拿不准就回书里那一节再读一遍。</p>
+<div class="claims">
+  <div class="claim"><h4>反馈只能影响未来，所以总有延迟</h4><p>反馈带回的信息，改不了引出这次反馈的那些行为，只能影响以后；所以一个流量不能对另一个流量立刻作出反应，只能对存量的变化作反应，还要隔一小会儿。她说很多经济模型在这一点上犯了错，假设生产和消费能对价格立刻作出反应，这是真实经济往往不完全像这些模型的原因之一。</p><span class="sec" data-p="24 26">§2</span></div>
+  <div class="claim"><h4>靠调节回路维持的存量，目标要把流失算进去</h4><p>她的模拟里，保温够好、火炉够大时，火炉占上风，屋子暖起来，却停在设定温度下面一点，因为热一直在漏。推而广之：维持存量的调节回路，目标要设得能抵消影响存量的流入流出，否则会达不到或超过。还卡债、补招人都一样。她也说，对恒温器这不算严重，凑合着就能调好。</p><span class="sec" data-p="17 21 22 27 28">§2</span></div>
+  <div class="claim"><h4>谁占主导谁定行为，主导会换手；结构相似，行为也相似</h4><p>系统里常有几个回路同时在拉，占主导的那个决定行为。出生率慢慢降到等于死亡率，指数增长就变成持平；保温差的屋子外面一冷，漏热回路就占上风，室温往下掉。她把「反馈结构相似的系统产生相似的动态行为」看作系统理论的核心见解之一：人口和工业资本外表毫不相干，套路一样。</p><span class="sec" data-p="53 55 56 103 104">§3</span></div>
+  <div class="claim"><h4>模型用来问「如果……会怎样」，看行为模式像不像</h4><p>系统动力学的研究通常不为预测，而是探索驱动因素这样那样走时会发生什么。判断一个情景，要问三个问题：驱动因素会这样走吗，真这样走系统会这样反应吗，驱动因素又被什么推动，最后一问关乎边界。她说自己的人口模型很简单，数字不准，基本行为模式是真实的。</p><span class="sec" data-p="58 62 70 73 74 81 82">§3</span></div>
+<blockquote class="quote">Model utility depends not on whether its driving scenarios are realistic … but on whether it responds with a realistic pattern of behavior.<cite>— §3。本站译：模型有没有用，不看它设的情景是否现实，而看它能不能给出真实的行为模式。</cite></blockquote>
+  <div class="claim"><h4>调节回路里有延迟，系统很可能振荡；凭直觉拉的杠杆常常拉反</h4><p>需求只涨了一次，库存却来回摆，不是经销商笨，而是信息不及时、实物要等。缩短感知延迟几乎没用；缩短反应延迟更糟；在这个系统的配置下，把反应从 3 天放慢到 6 天，振荡大大减弱。改延迟可能大改行为，也可能不，要看延迟的种类和相对长短。</p><span class="sec" data-p="121 123 131 132 137 139">§4</span></div>
+<blockquote class="quote">A delay in a balancing feedback loop makes a system likely to oscillate.<cite>— §4。本站译：调节回路里的延迟，让系统很可能振荡。</cite></blockquote>
+</div>
+<p class="sowhat"><b>合起来：</b>看一个存量，先数清有几个回路在拉它、谁占上风，再找回路里的延迟。补的时候把流失算进去，纠偏之前先看延迟有多长。她还把这套延迟振荡放大到全国经济，说它是商业周期的主要原因，这一句的分量见「本站怎么看」。</p>
+<h2>练一练：情境题</h2>
+<p class="lede">处境是本站编的，放在你可能遇到的地方。先自己想，再点开看分析；有的题不只一个答案。全书的情境题汇总在<a href="../drills.html">情境题</a>。</p>
+<div class="drill" id="d-gpu-budget">
+<h3><span class="sec">§2</span>总差十张的 GPU</h3>
+<div class="scene"><p>一个算法团队想让手上的 GPU 稳在 100 张。每周一，组长数一遍可用的卡，按「100 减现有」向平台申请，平台当天就批。可每周都有大约一成的卡因为过保或故障下线。三个月下来，每周一一数，总是 90 张上下。组长认定平台在暗中克扣，准备去找人吵一架。</p></div>
+<p class="ask">这个存量被哪两股力量拉着？为什么总停在 90？最省事的改法是什么？</p>
+<ol class="opts"><li>平台在克扣，去要回来</li><li>申请到到位之间有延迟，系统在振荡</li><li>补卡的规则没把下线算进去</li></ol>
+<details class="reveal"><summary>想好了再点开</summary><p>存量是可用的卡。补卡是一个调节回路，朝 100 拉，缺多少补多少；下线是另一个调节回路，卡越多下线越多，朝 0 拉。周一补满 100，一周掉一成，下周一又是 90，再补 10，存量就稳稳停在两股流量扯平的位置。选 C。</p><p>这里没有来回摆，所以不是延迟引起的振荡，B 不对。改法是把流失算进目标：按「100 减现有，再加预计下线的 10 张」申请，或者把目标定成约 111 张，周一数的时候正好还剩 100。去吵架改不了结构。</p><p class="where">书里对应：§2 系统1.1：一个存量、两个相互制衡的调节回路的系统</p></details>
+</div>
+<div class="drill" id="d-newsletter-referral">
+<h3><span class="sec">§3</span>周刊的订阅数</h3>
+<div class="scene"><p>一份技术周刊有 1 万个订阅者。每个月，大约 3% 的订阅者把它转给朋友，带来新订阅；大约 2% 退订。作者算了一笔：每月净增 1%，70 个月后到 2 万。半年后作者换了工作，从每周更新变成每月更新，转发带来的新订阅掉到每月 1.5%，退订还是 2%。作者说：模型错了，以后再也不信这些。</p></div>
+<p class="ask">前后两段，各是哪个回路占上风？作者的模型到底错在三个问题里的哪一个？</p>
+<details class="reveal"><summary>想好了再点开</summary><p>订阅数是存量，转发拉新是增强回路，退订是调节回路。一开始增强回路占上风，每月净增 1%；更新变少后调节回路占上风，每月净减 0.5%，人数慢慢往下走。结构没变，回路的劲变了，这是主导地位转换。</p><p>用三个问题看：第二问（真这样走，订阅数会这样变吗）答案是会，结构没毛病；错在第一问，转发率没照假设走，这本来就只能猜。最有用的是第三问：转发率被什么推动？更新频率、内容好坏；而作者愿不愿意多写，可能又受订阅数影响，原来画在边界外的东西就被拉了进来。</p><p class="where">书里对应：§3 系统1.2：一个存量、一个增强回路以及一个调节回路的系统</p></details>
+</div>
+<div class="drill" id="d-pig-cycle">
+<h3><span class="sec">§4</span>猪价的大起大落</h3>
+<div class="scene"><p>某县有几百家养猪户。大家看最近三个月的平均猪价，决定多留还是少留母猪；猪价一涨，很多户一口气把母猪留足。从多留母猪到多出来的猪出栏，要十个月左右。这几年，县里的猪价两三年一个大起大落。一家饲料公司推出一个 App，每天推送当天的猪价，广告说行情一变当天就能补栏，再也不会踩错点。</p></div>
+<p class="ask">这里有哪几道延迟，各属于哪一种，谁能改？这个 App 能让猪价稳下来吗？</p>
+<details class="reveal"><summary>想好了再点开</summary><p>存量是存栏的猪，也就是将来的猪肉供给。看三个月平均价是感知延迟；一口气留足母猪，说明反应延迟很短；十个月的生长是交货延迟，最长，谁也改不了。App 缩短的是感知延迟，书里经销商这么做，库存几乎没变，还略差；要是它让全县在同一天一起补栏，等于把反应变得更急，可能摆得更凶。</p><p>更像样的办法是看得见在路上的猪：全县存栏母猪有多少，补栏前先算进去，再分几次补。现实里还有疫病、饲料价格这些外部冲击，这题只看延迟这一层。</p><p class="where">书里对应：§4 系统1.3：含有时间延迟的系统</p></details>
+</div>
+<h2>今天怎么看</h2>
+<p class="lede">Meadows 1993 年写成初稿，书 2008 年出版。下面挑出这一页里能被后来的研究或事情检验的说法，分「书里 / 当时 / 今天」几栏，并给一个结论。结论判的是标题里「书里的说法：」后面那一句。全书的这一节汇总在<a href="../today.html">今天怎么看</a>。</p>
+<ul class="verdicts"><li><span class="v ok">成立</span>后来的研究或事情支持这句话。</li><li><span class="v mid">部分成立</span>大方向对，细节或适用范围要改。</li><li><span class="v bad">被改写</span>后来的研究推翻了它、换了一种说法，或者情况变了。</li><li><span class="v dis">有争议</span>至今没有定论，两边各有代表性的研究或证据。</li></ul>
+<div class="today" data-verdict="成立"><h4>书里的说法：联合国假设各国生育率会随着发展降下来</h4><dl>
+  <dt>书里</dt><dd>她转述联合国做长期人口预测时的假设：国家越发达，平均生育率越低。她拿出生率慢慢降到等于死亡率、人口停下来的情景，讲主导地位转换。<span class="at" data-p="49 50">§3</span></dd>
+  <dt>当时</dt><dd>联合国 2004 年版《世界人口展望》的中方案：世界平均每位妇女生的孩子，从 2000–2005 年的 2.65 个，降到 2045–2050 年的 2.05 个。</dd>
+  <dt>今天</dt><dd>联合国《世界人口展望 2024》说，全球妇女平均生的孩子比 1990 年前后少了约一个；世界人口从 2024 年的 82 亿，预计在 2080 年代中期到达约 103 亿的峰值，然后略降。对 2100 年的预测比十年前低了约 7 亿，主要因为中国等大国的生育率降得比预想的快。<span class="asof">核对于 2026-11。依据：联合国 2024 年 7 月新闻稿（un.org/sustainabledevelopment/blog/2024/07/press-release-wpp2024）；联合国 2005 年《世界人口展望 2004》新闻稿（press.un.org/en/2005/pop918.doc.htm）。</span></dd>
+  <dt>另一边</dt><dd>「照 2007 年的出生率，60 年后人口翻一番还多」不是她的预测，是她故意挑的情景；她自己说数字不准，只有行为模式是真实的。</dd>
+</dl></div>
+<div class="today" data-verdict="成立"><h4>书里的说法：有延迟的库存系统很可能来回振荡</h4><dl>
+  <dt>书里</dt><dd>经销商的需求只涨了一次 10%，库存却越摆越大。她说调节回路里的延迟让系统很可能振荡，这种振荡在库存和很多别的系统里常见。<span class="at" data-p="121 123 124">§4</span></dd>
+  <dt>当时</dt><dd>Sterman 1989 年用「啤酒游戏」做实验：受试者订货时常常没算上已经订了、还没到的货，订单和库存大起大落，他们事后多半怪外部。Lee 等人 1997 年把供应链里订单波动逐级放大的现象叫「牛鞭效应」。</dd>
+  <dt>今天</dt><dd>Croson、Donohue、Katok 和 Sterman 2014 年的实验把需求的不确定性完全拿掉，订单放大和不稳定照样出现，没算在途货的毛病也照样在。2021–2022 年的芯片短缺，不少分析用牛鞭效应解释；罗兰贝格 2022 年的报告提醒，各家抢着囤的安全库存可能引来一轮反向调整。<span class="asof">核对于 2026-11。依据：Croson et al., Order Stability in Supply Chains, Production and Operations Management (2014)；Quartz 2021 年的报道（qz.com/2004569）；罗兰贝格 2022 年 10 月半导体短缺报告。</span></dd>
+</dl></div>
+<h2>本站怎么看</h2>
+<p class="lede">读完作者的主张，再看它站不站得住。每一块摆出三样：主流怎么看，作者怎么看，本站的评论。最后一句是本站对这一页的总体判断。</p>
+<div class="views"><h4>恒温器为什么停在 18℃ 下面</h4>
+<p><b>主流看法：</b>控制工程里，按误差成比例出力的控制器叫比例控制。它有个公认的毛病：有持续的扰动（这里是漏热）时，会停在目标旁边差一截，叫稳态误差；把增益加大能缩小，消不掉。常见的补法是加积分项：误差一直不为零，积分就一直累积，把出力往上顶，直到误差归零。家里的机械恒温器则多是开关式的，到点就关，凉了再开。</p>
+<p><b>作者的看法：</b>室温停在略低于 18℃，是因为火炉补热的同时热一直在漏；人们学会了把恒温器设高一点，这对恒温器不算严重问题，凑合着就能调到住得惯的温度。<span class="at" data-p="21 22">§2</span></p>
+<p class="ours"><b>本站的评论：</b>书里这个模型的火炉正是比例控制：出力等于设定减室温，差距越小补得越少，所以停在 17.3℃。这和她讲的「漏的同时在补」相通，是同一个结果的两种讲法。她给的原则，把流失算进目标，就是人在手动干积分项的活：还卡债、补招人，没有自动积分器，得自己多补一截。模拟器里的火炉不会一开一关，也没有延迟，别去找。</p></div>
+<div class="views"><h4>经销商笨不笨</h4>
+<p><b>主流看法：</b>Sterman 1989 年的啤酒游戏实验发现，人订货时常常没把已经订了、还没到的货算进去，这是振荡的一大来源，事后又多半怪需求变化。Lee 等人 1997 年总结了供应链订单逐级放大的几个原因：每一级按自己收到的订单去预测、批量订货、缺货时多报、价格促销。</p>
+<p><b>作者的看法：</b>振荡不是因为经销商笨，是因为她拿不到及时的信息，又有实物上的延迟；在这个系统的配置下，她是反应过度了，放慢反而好。<span class="at" data-p="123 137">§4</span></p>
+<p class="ours"><b>本站的评论：</b>两边能对上。模拟器里经销商的订货规则就没算在途的车：缺口只看停车场上有多少，不看路上还有 5 天的订单。这条规则单拿出来很合理，一放进有延迟的回路就摆。她在 §2 提醒过，等货期间会卖掉的要算进去，和「在途的货要算进去」相通。所以别只说「不是她笨」：规则里漏看了什么，常常就是振荡的来处。</p></div>
+<div class="views"><h4>经济周期从哪里来</h4>
+<p><b>主流看法：</b>宏观经济学很早就承认延迟：Friedman 1961 年说货币政策的效果有「长而多变的时滞」。库存在衰退里的分量也确实重：Ramey 和 West 1999 年的综述算出，美国战后历次衰退里，库存投资的减少平均约占 GDP 下降的一半。但主流一般把周期的源头归到各种冲击（货币政策、金融危机、油价等），延迟和库存是传导和放大的环节。</p>
+<p><b>作者的看法：</b>很多经济模型假设生产和消费能立刻反应，这是真实经济往往不像模型的原因之一；全国范围里互相带动的延迟回路，加上就业和股价两个增强回路，是商业周期的主要原因，不是总统造成的。她依据的是 Forrester 1989 年的国家模型。<span class="at" data-p="26 144 145">§2 §4</span></p>
+<p class="ours"><b>本站的评论：</b>她对「瞬时反应」的批评，对教科书里的比较静态分析说得通，对后来带时滞、调整成本和预期的模型就不太公平。「主要原因」是系统动力学一派的看法，算一家之言。可以带走的是做法：看任何周期，先找延迟在哪、有多长，再找有没有回路把它放大。</p></div>
+<p class="verdict"><b>本站的总体看法：</b>这四节的模型和算术都站得住，两个模拟器复现得出书上的图。说得重的有两处：恒温器停在目标下面，是模型的写法带出来的；商业周期的「主要原因」是一家之言。要带走三个习惯：补存量时把流失算进去，看行为先找谁在占上风，看振荡先找延迟。</p>
+<h2>检查一下理解</h2>
+<p class="lede">先在心里答，再点开。答错的那题，回书里把对应那一节再读一遍。</p>
+<details class="check"><summary>1.（§2）恒温器设在 18℃，外面一直 10℃，室温停在多少？为什么不是 18℃？</summary><p>略低于 18℃，模拟器里是 17.3℃。火炉在补，热在漏；火炉补得越接近目标越少，到补进和漏掉一样多时，室温就停住了，比目标低一截。想要 18℃，得设高一点。</p></details>
+<details class="check"><summary>2.（§2）你欠信用卡 3 万元，每月还 1 万，可每月还在新刷 2000 元，利息约 500 元。几个月能还清？</summary><p>四个月。每月实际只减少 7500 元，3 万除以 7500 是 4。不把还款期间新增的算进去，就会以为三个月够了。</p></details>
+<details class="check"><summary>3.（§3）照 2007 年的出生率 21‰、死亡率 9‰ 不变，世界人口大约多少年翻一番？是哪个回路占上风？</summary><p>每年净增 1.2%，70 除以 1.2，约 58 年翻一番。出生的增强回路占上风。这是她故意挑的情景，不是预测。</p></details>
+<details class="check"><summary>4.（§3）测试模型价值的三个问题各问什么？哪一个只能靠猜？</summary><p>驱动因素会这样走吗（只能猜）；真这样走，系统会这样反应吗（考模型本身）；驱动因素又被什么推动（考边界画得对不对）。</p></details>
+<details class="check"><summary>5.（§4）经销商缩短感知延迟、缩短反应延迟、拉长反应延迟，结果各怎样？</summary><p>缩短感知延迟几乎没变，略差；把反应从 3 天缩到 2 天，振荡更厉害；把反应拉到 6 天，振荡大大减弱，很快稳在新的库存上。</p></details>
+<details class="check"><summary>6.（§4）这个库存系统里最要紧的延迟是哪一个？经销商能改吗？</summary><p>工厂的交货延迟，经销商直接改不了。但她不改它，也能学会把库存管好。</p></details>
+<p>用一句话说这一页：</p>
+<textarea class="note" data-key="02a-oneline" rows="2" placeholder="比如：……"></textarea>
+<div class="ponder"><p>想一想：你管着的哪个存量，补的时候一直没算上它在流失（存款、体重、团队人数、待办清单、缓存）？你补的那个「目标」该往上调多少？</p>
+<textarea class="note" data-key="02a-ponder" rows="3"></textarea></div>
+<h2>精彩回顾</h2>
+<p class="lede">读过又忘了，从这里想起来。挑的是这一页最值得记住的例子和说法，不按原书顺序；每条后面是节号，想细看就回书里那一节。全书各页的这一节都收在<a href="../recap.html">全书回顾</a>。</p>
+<p class="recall-line"><b>一句话：</b>两个回路拉一个存量会差一截，回路强弱换手行为就换挡，调节回路里一有延迟就容易来回摆。</p>
+<div class="recall">
+  <div class="item"><b>设 18℃ 停在 17.3℃</b><p>火炉在补，墙在漏，室温停在两边扯平的地方，比设定低一截。想要 18℃ 得设高一点；还卡债、补招人也一样，要把流失算进去。</p><span class="sec">§2</span></div>
+  <div class="item"><b>反馈只能改以后</b><p>信息传回来要时间，据它做的决定只能影响以后，所以流量只能跟着存量的变化走，中间总有延迟。</p><span class="sec">§2</span></div>
+  <div class="item"><b>人口和机器是同一种动物</b><p>一个存量，一个「生」的增强回路，一个「死」的调节回路。外表毫不相干，涨、跌、持平的套路一样。</p><span class="sec">§3</span></div>
+  <div class="item"><b>模型不是算命</b><p>先问驱动因素会不会这样走（只能猜），再问真这样走系统会不会这样反应（考模型），最后问什么在推驱动因素（考边界）。</p><span class="sec">§3</span></div>
+  <div class="item"><b>反应快了反而摆得更凶</b><p>经销商把补缺口从 3 天缩到 2 天，库存振荡更厉害；放慢到 6 天，反而稳了。她叫它高杠杆、方向错。</p><span class="sec">§4</span></div>
+</div>
+</main>
+<script>
+(() => {
+  // 恒温器：照书后附录 Thermostat。每一步 室温 += (火炉加热 − 向外散热) × dt；火炉加热 = min(max(设定 − 室温, 0), 上限)；向外散热 = (室温 − 室外) × 漏热比例。
+  // dt 用 0.25 小时（附录写 1 小时，算出来有棱角，和原书图 16–20 对不上）。室外的昼夜曲线照附录的图逐小时读，小时之间线性插值。屋子从 10℃ 开始。确定性，没有随机数。
+  const root = document.getElementById("sim-02a-heat");
+  if (!root || !window.TS) return;
+  const { h, chart } = window.TS;
+  const OUT = [10, 10, 10, 9.5, 8.8, 7.7, 6.2, 3.8, 1.0, -1.5, -3.2, -4.9, -5, -5, -4, -3.1, -2, -0.3, 1.7, 4.3, 6.4, 7.8, 8.9, 9.5, 10];
+  const DT = 0.25;
+  const BOOK = { setp: 18, leak: 0.1, cap: 5, cyc: 0 };
+  const st = Object.assign({}, BOOK);
+  const OPTS = {
+    setp: { label: "设定温度（°C）", list: [15, 16, 17, 18, 18.8, 19, 20, 20.3, 21, 22, 25] },
+    leak: { label: "漏热比例（每小时）", list: [0.05, 0.1, 0.15, 0.2, 0.3, 0.4] },
+    cap: { label: "火炉功率上限（°C/小时）", list: [2, 3, 5, 8, 10] },
+    cyc: { label: "室外", list: [0, 1], names: ["一直 10°C", "一天一夜"] },
+  };
+  const sels = {};
+  const ctrl = (k) => {
+    const o = OPTS[k];
+    const s = h("select", { "aria-label": o.label, onchange: () => { st[k] = Number(s.value); draw(); } }, ...o.list.map((v, i) => h("option", { value: String(v) }, o.names ? o.names[i] : String(v))));
+    sels[k] = s;
+    return h("label", {}, o.label, s);
+  };
+  const reset = h("button", { onclick: () => { Object.assign(st, BOOK); draw(); } }, "回到书里那一组");
+  const tmp = h("div"), flo = h("div");
+  const stage = h("div", { class: "stage charts" }, h("p", { class: "cap" }, "温度（°C），实线是室温，虚线是室外，横虚线是设定"), tmp, h("p", { class: "cap" }, "两股热流（°C/小时），实线是火炉补进，虚线是向外漏掉"), flo);
+  const narrate = h("div", { class: "narrate" });
+  const stats = h("div", { class: "stats" });
+  const body = root.querySelector(".sim-body");
+  body.innerHTML = "";
+  body.append(h("div", { class: "controls" }, ...Object.keys(OPTS).map(ctrl), reset), stage, narrate, stats);
+
+  const outside = (t) => { if (!st.cyc) return 10; const i = Math.min(Math.floor(t), 23), f = t - i; return OUT[i] + (OUT[i + 1] - OUT[i]) * f; };
+  function run() {
+    const H = st.cyc ? 24 : 8, n = Math.round(H / DT), T = [10], O = [], IN = [], LOSS = [];
+    for (let k = 0; k <= n; k++) {
+      const o = outside(k * DT), x = T[k];
+      const heat = Math.min(Math.max(st.setp - x, 0), st.cap), loss = (x - o) * st.leak;
+      O.push(o); IN.push(heat); LOSS.push(loss);
+      if (k < n) T.push(x + (heat - loss) * DT);
+    }
+    return { H, n, T, O, IN, LOSS };
+  }
+  const n1 = (x) => { const v = Math.round(x * 10) / 10; return (v === 0 ? 0 : v).toFixed(1); };
+  const hr = (k) => Math.round(k * DT);
+  function draw() {
+    for (const k in sels) sels[k].value = String(st[k]);
+    const r = run(), last = r.T[r.n];
+    chart(tmp, { series: [{ name: "室温", data: r.T, c: 1 }, { name: "室外", data: r.O, c: 3, dash: true }], dt: DT, xlabel: "小时", ylabel: "°C", ymin: -6, ymax: 26, hlines: [{ y: st.setp, label: `设定 ${st.setp}°C` }], title: "室温和室外温度随时间变化" });
+    chart(flo, { series: [{ name: "火炉补进", data: r.IN, c: 2 }, { name: "向外漏掉", data: r.LOSS, c: 4, dash: true }], dt: DT, xlabel: "小时", ylabel: "°C/小时", ymin: 0, height: 170, title: "火炉补热和向外漏热随时间变化" });
+    stats.innerHTML = "";
+    const box = (v, l) => h("div", { class: "stat" }, h("div", { class: "v" }, v), h("div", { class: "l" }, l));
+    if (!st.cyc) {
+      let eq = (st.setp + 10 * st.leak) / (1 + st.leak);                  // 补进 = 漏掉：设定 − T = (T − 10) × 漏热比例
+      if (st.setp - eq > st.cap) eq = 10 + st.cap / st.leak;             // 火炉开到上限也补不上时
+      narrate.textContent = `室温从 10°C 往上走，第 ${r.H} 小时是 ${n1(last)}°C，比设定低 ${n1(st.setp - last)}°C。这时火炉每小时补 ${n1(r.IN[r.n])}°C，向外每小时漏 ${n1(r.LOSS[r.n])}°C，两股热流扯平，室温就停在这附近。` + (st.setp - eq > st.cap - 1e-9 ? `火炉已经开到上限 ${st.cap}°C/小时。` : "");
+      stats.append(box(String(st.setp), "设定（°C）"), box(n1(last), `第 ${r.H} 小时室温（°C）`), box(n1(st.setp - last), "比设定低（°C）"), box(n1(eq), "补和漏扯平时的室温（°C）"));
+      return;
+    }
+    let mk = Math.round(3 / DT);
+    for (let k = mk; k <= r.n; k++) if (r.T[k] < r.T[mk]) mk = k;
+    let a = null, b = null;
+    for (let k = 4; k <= r.n; k++) {
+      if (a === null) { if (r.LOSS[k] > r.IN[k] + 1e-9) a = k; }
+      else if (b === null && r.IN[k] > r.LOSS[k] + 1e-9) b = k;
+    }
+    const mn = r.T[mk];
+    let s = a === null ? "火炉一直补得上，夜里室温基本稳住。" : `第 ${hr(a)} 小时前后起，向外漏的热超过了火炉补的，漏热回路占了上风，室温往下走；` + (b !== null ? `第 ${hr(b)} 小时前后室外回暖，火炉重新占上风，室温回升。` : "到第 24 小时火炉也没追上。");
+    s += `深夜最低 ${n1(mn)}°C，在第 ${hr(mk)} 小时左右，比设定低 ${n1(st.setp - mn)}°C。`;
+    s += r.IN[mk] < st.cap - 0.01 ? `那一刻火炉每小时只补 ${n1(r.IN[mk])}°C，没到上限 ${st.cap}：模型里火炉差多少补多少，功率再大也用不上。` : `那一刻火炉已经开到上限 ${st.cap}°C/小时。`;
+    narrate.textContent = s;
+    stats.append(box(String(st.setp), "设定（°C）"), box(n1(last), "第 24 小时室温（°C）"), box(n1(mn), "深夜最低（°C）"), box(String(hr(mk)), "最低在第几小时"));
+  }
+  draw();
+})();
+(() => {
+  // 汽车库存：照书后附录 Business Inventory，dt = 1 天，库存从 200 辆开始，需求第 0–25 天每天 20 辆、第 26 天起 22 辆。每天依次：
+  // 销量 = min(库存, 需求)；感知销量 = 销量的一阶指数平滑（时间常数 = 感知延迟，0 时只看当天）；期望库存 = 感知销量 × 10；
+  // 订单 = max(感知销量 + (期望库存 − 库存) / 反应延迟, 0)；到货 = 第 0–5 天固定 20，之后是交货延迟天之前那天的订单（0 时当天到）；库存 += 到货 − 销量。
+  // 和附录字面不同的三处都照原书图 32–36 对出来：平滑而非滑动平均；交货是固定延迟；图 32 的订单也除以反应延迟（附录漏了除号）。确定性，没有随机数。
+  const root = document.getElementById("sim-02a-cars");
+  if (!root || !window.TS) return;
+  const { h, chart } = window.TS;
+  const T = 100, STEP = 26;
+  const BOOK = { perc: 5, resp: 3, deliv: 5 }, NONE = { perc: 0, resp: 1, deliv: 0 };
+  const st = Object.assign({}, BOOK);
+  const OPTS = {
+    perc: { label: "感知延迟（天）", list: [0, 1, 2, 3, 5, 8, 10], names: ["0（只看当天）", "1", "2", "3", "5", "8", "10"] },
+    resp: { label: "反应延迟（天）", list: [1, 2, 3, 4, 5, 6, 8, 10], names: ["1（一次补齐）", "2", "3", "4", "5", "6", "8", "10"] },
+    deliv: { label: "交货延迟（天）", list: [0, 2, 3, 4, 5, 6, 8, 10] },
+  };
+  const sels = {};
+  const ctrl = (k) => {
+    const o = OPTS[k];
+    const s = h("select", { "aria-label": o.label, onchange: () => { st[k] = Number(s.value); draw(); } }, ...o.list.map((v, i) => h("option", { value: String(v) }, o.names ? o.names[i] : String(v))));
+    sels[k] = s;
+    return h("label", {}, o.label, s);
+  };
+  const reset = h("button", { onclick: () => { Object.assign(st, BOOK); draw(); } }, "回到书里那一组");
+  const none = h("button", { onclick: () => { Object.assign(st, NONE); draw(); } }, "去掉三个延迟");
+  const lev = h("div"), flo = h("div");
+  const stage = h("div", { class: "stage charts" }, h("p", { class: "cap" }, "停车场上的车（辆），横虚线是新的目标 220 辆"), lev, h("p", { class: "cap" }, "每天的车（辆/天）：销量、感知销量（虚线）、订单、到货（虚线）"), flo);
+  const narrate = h("div", { class: "narrate" });
+  const stats = h("div", { class: "stats" });
+  const body = root.querySelector(".sim-body");
+  body.innerHTML = "";
+  body.append(h("div", { class: "controls" }, ...Object.keys(OPTS).map(ctrl), reset, none), stage, narrate, stats);
+
+  function run() {
+    let inv = 200, ps = 20;
+    const R = { inv: [], sales: [], ps: [], orders: [], deliv: [] };
+    for (let t = 0; t <= T; t++) {
+      const demand = t < STEP ? 20 : 22, sales = Math.min(inv, demand), p = st.perc === 0 ? sales : ps;
+      const o = Math.max(p + (p * 10 - inv) / Math.max(st.resp, 1), 0);
+      R.orders.push(o);
+      const d = st.deliv === 0 ? o : (t > 5 && t - st.deliv >= 0 ? R.orders[t - st.deliv] : 20);
+      R.inv.push(inv); R.sales.push(sales); R.ps.push(p); R.deliv.push(d);
+      inv += d - sales;
+      if (st.perc > 0) ps += (sales - ps) / st.perc;
+    }
+    return R;
+  }
+  function draw() {
+    for (const k in sels) sels[k].value = String(st[k]);
+    const R = run(), I = R.inv;
+    chart(lev, { series: [{ name: "库存", data: I, c: 1 }], xlabel: "天", ylabel: "辆", ymin: 0, hlines: [{ y: 220, label: "220" }], marks: [{ x: STEP, label: "需求 +10%" }], title: "停车场上的车随时间变化" });
+    chart(flo, { series: [{ name: "销量", data: R.sales, c: 2 }, { name: "感知销量", data: R.ps, c: 2, dash: true }, { name: "订单", data: R.orders, c: 4 }, { name: "到货", data: R.deliv, c: 5, dash: true }], xlabel: "天", ylabel: "辆/天", ymin: 0, height: 190, title: "每天的销量、订单和到货" });
+    let lo = 0, hi = STEP;
+    for (let t = 0; t <= T; t++) { if (I[t] < I[lo]) lo = t; if (t >= STEP && I[t] > I[hi]) hi = t; }
+    const tail = I.slice(75), amp = Math.max(...tail) - Math.min(...tail);
+    const zero = R.orders.filter((o) => o === 0).length;
+    let lastOff = -1;
+    for (let t = 0; t <= T; t++) if (Math.abs(I[t] - 220) > 3) lastOff = t;
+    const settle = lastOff < 95 ? lastOff + 1 : null;
+    const ex = [];
+    for (let i = STEP; i < T; i++) { const a = I[i - 1], b = I[i], c = I[i + 1]; if ((b < a && b <= c) || (b > a && b >= c)) ex.push([i, Math.round(b)]); }
+    const word = (v) => (v < 220 ? "跌" : "涨");
+    let s = `第 ${STEP} 天起需求从每天 20 辆涨到 22 辆，目标库存跟着变成 220 辆。`;
+    if (ex.length) s += `库存先${word(ex[0][1])}到 ${ex[0][1]}（第 ${ex[0][0]} 天）` + (ex.length > 1 ? `，再${word(ex[1][1])}到 ${ex[1][1]}（第 ${ex[1][0]} 天）` : "") + "。";
+    s += settle !== null ? `第 ${settle} 天以后一直在 217 到 223 辆之间，稳住了。` : `到第 100 天还在摆：第 75–100 天里最高和最低差 ${Math.round(amp)} 辆。`;
+    if (zero > 0) s += `有 ${zero} 天订单是 0：停车场上的车太多，她一辆也不订。`;
+    narrate.textContent = s;
+    stats.innerHTML = "";
+    const box = (v, l) => h("div", { class: "stat" }, h("div", { class: "v" }, v), h("div", { class: "l" }, l));
+    stats.append(box(String(Math.round(I[lo])), `最低库存（第 ${lo} 天）`), box(String(Math.round(I[hi])), `最高库存（第 ${hi} 天）`), box(String(Math.round(amp)), "第 75–100 天的摆幅（辆）"), box(String(zero), "订单为 0 的天数"));
+  }
+  draw();
+})();
+</script>
+</body>
+</html>

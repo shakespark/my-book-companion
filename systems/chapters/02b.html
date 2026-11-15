@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 2 章（下）· 系统之美导读</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/chapters.js"></script>
+<script src="../assets/ts.js"></script>
+<style>
+#sim-02b .charts { display: grid; gap: 6px; }
+#sim-02b .cap { font-size: 13px; color: var(--muted); margin: 2px 0 8px; }
+#sim-02b label[hidden] { display: none; }
+#sim-02b .modes { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+#sim-02b .modes button[aria-pressed="true"] { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+</style>
+</head>
+<body data-page="02b">
+<main>
+<h2>这一页在做什么</h2>
+<div class="gist"><p>第 2 章后半把两只「动物」放进有限的世界：一家靠开采赚钱、拿利润扩张的公司，先去挖一块不会再长的油田，再去捞会自己长的鱼。结论很干脆：任何靠实物增长的系统迟早撞上限制，要问的不是会不会停，而是怎么停。好玩在两处反直觉：油田储量翻一倍，高峰只晚来十几年；渔船的技术变好，反而可能让鱼和渔业一起完蛋。读的时候盯住一件事：资源有没有流入。</p></div>
+<figure class="fig"><img src="../assets/img/02b-pumpjacks.jpg" alt="落日前橙黄色的天空下，一片平地上立着几十台抽油机的黑色剪影，远近排开，中间夹着电线杆" loading="lazy">
+<figcaption>美国加州 Lost Hills 油田的抽油机，2009 年 5 月日落时摄于 46 号公路边。一口井越抽越难抽，书里的油田模型就从这一点出发。照片与本书无关。<span class="src">Arne Hückelheim，CC BY-SA 3.0，维基共享资源</span></figcaption></figure>
+<h2>读之前：这一页在全书的哪里</h2>
+<div class="linehere"></div>
+<p>02a 看了三只单存量的动物：恒温器、人口和工业资本、汽车经销商的库存，它们都活在没有约束的世界里，火炉永远不缺油。§5 开头先补上这一块：真实的东西都要从环境里拿资源、往外排废物，所以增长迟早撞上约束，书里把这种结构叫「成长上限」。接着两个双存量模型共用同一半：资本靠利润再投资长大，按 20 年寿命折旧。另一半是资源，§5 是不会再生的油，§6 是会再生的鱼。</p>
+<div class="heads-up"><p><b>别被带歪：</b>§5「储量翻倍只多 14 年」是指数增长的算术，前提是公司一直想让资本每年净长 5%，价格和运营成本都不变。它戳破「储量大就安全」的直觉，但不是对哪块真实油田的预测。</p></div>
+<div class="crux"><p>一个靠消耗资源扩张的系统，资源多给一倍，能多撑多久？</p></div>
+<p class="lede">读的时候带着这几个问题，读完回来对照「检查一下理解」。</p>
+<ol class="qs">
+  <li>为什么作者说成长的系统里一定有调节回路，哪怕现在还看不出来？<span class="sec">§5</span></li>
+  <li>油田的储量按开头的速度够采 200 年，开采高峰为什么 40 年左右就来了？<span class="sec">§5</span></li>
+  <li>鱼会自己长，油不会。这个差别让增长停下来的方式有什么不同？<span class="sec">§6</span></li>
+  <li>渔船装上更好的声纳，为什么可能是坏事？<span class="sec">§6</span></li>
+</ol>
+<h2>分节地图</h2>
+<p class="lede">这一页是原书和译本第 2 章的最后两节。粗体是本站给的节名，后面是档和译本字数；下面一行是译本的小标题和这一节在译本电子书里开头的几个字，再下面是英文原书的小标题和开头几个词。读完打个勾。</p>
+<ol class="secmap">
+  <li data-sec="5"><span class="what">先讲实物增长迟早撞上约束（成长上限），再搭油田模型做四组试验。重心从<span class="zhv">译本：「如果资源的实际储量被证明」</span>起：储量翻倍只晚十几年。「全球会不会有极限」她故意不答，留给读者。</span></li>
+  <li data-sec="6"><span class="what">同一个资本系统换成会再生的鱼。先讲再生率为什么两头低、中间高，再看三种结局；从<span class="zhv">译本：「不可再生性资源主要受限于存量」</span>那两条起，是这一章对资源问题的总结。</span></li>
+</ol>
+<h2>先用中文过一遍：这一页的概念</h2>
+<p class="lede">先把这一页用到的几个概念用书外的例子讲一遍。作者拿它们推出什么，读原书时自己看。后面各页用到时会链回这里。</p>
+<div class="concept" id="c-limits-to-growth">
+<h3><span class="sec">§5</span>成长上限 <span class="en">limits-to-growth archetype，译本：成长上限</span></h3>
+<p>一个东西靠增强回路越长越快：一门网课，学员越多，口碑越响，来报名的人越多。可它长在一个有限的世界里，总有一样东西越来越紧：想学这门课的人就那么多，被拉完了，新报名自然变少。这个越收越紧的约束是一个调节回路，它或者压低流入、或者加大流出，迟早从增强回路手里接过主导权（<a class="term" href="02a.html#c-shifting-dominance">主导地位转换</a>）。所以要问的不是会不会停，而是停在哪、怎么停。</p>
+<p>它是一种<a class="term" href="05a.html#c-archetype">系统基模</a>：常见的结构，产生眼熟的行为，第 5 章还有一串。别和 1972 年那本书《增长的极限》（The Limits to Growth）混：英文是同一个词，书是这一派最有名的报告，这里说的是一种结构。</p>
+<figure class="fig">
+<svg class="diagram" viewBox="0 0 640 220" role="img" aria-label="回路图：上面是每月新报名，下面是学员总数，新报名流进学员总数。左边一圈是增强回路：学员越多口碑越响，口碑带来更多新报名。右边一圈是调节回路：学员越多，还没报名的潜在学员越少，新报名就越少">
+<text x="320" y="40" text-anchor="middle" class="t-b">每月新报名</text>
+<text x="320" y="196" text-anchor="middle" class="t-b">学员总数</text>
+<text x="120" y="122" text-anchor="middle" class="t-b">口碑</text>
+<text x="548" y="122" text-anchor="middle" class="t-b">还没报名的潜在学员</text>
+<line x1="320" y1="50" x2="320" y2="170" class="ln"/><path d="M314 166 L320 178 L326 166 z" class="f-fg"/>
+<path d="M282 190 Q150 196 124 136" class="s2"/><path d="M117 144 L123 131 L131 142 z" class="f2"/>
+<path d="M124 104 Q146 40 258 36" class="s2"/><path d="M256 30 L268 36 L256 42 z" class="f2"/>
+<text x="205" y="118" text-anchor="middle" class="t-b">R</text>
+<text x="205" y="136" text-anchor="middle" class="t-m">口碑拉新</text>
+<path d="M358 190 Q490 196 516 136" class="s4"/><path d="M509 142 L517 131 L523 144 z" class="f4"/>
+<text x="530" y="176" class="t-m">越来越少</text>
+<path d="M516 104 Q494 40 382 36" class="s4"/><path d="M384 30 L372 36 L384 42 z" class="f4"/>
+<text x="420" y="118" text-anchor="middle" class="t-b">B</text>
+<text x="420" y="136" text-anchor="middle" class="t-m">市场被拉完</text>
+</svg>
+<figcaption>本站示意图，例子是本站编的。两个回路拉着同一个流入：开头潜在学员多，左边那圈占上风，人越来越多；右边那圈越收越紧，增长就慢下来。</figcaption></figure>
+<p class="use"><b>在这一页：</b>§5 开头。<span class="zhv">译本：「基本模型」</span>就是附录术语表的系统基模，记一个名字就够。</p>
+</div>
+<div class="concept" id="c-resource-limit">
+<h3><span class="sec">§5</span><span class="sec">§6</span>存量受限和流量受限 <span class="en">stock-limited, flow-limited，译本：主要受限于存量、主要受限于流量</span></h3>
+<p>不可再生的资源像一笔一次到账的遗产：钱全在那儿，花多快只看你有多大本事花，花得越快，用得越短。可再生的资源像一片果园：每年结的果子可以一直摘下去，但每年最多摘到它结的那么多；想多摘只能砍树，树少了，往后每年结得更少。前者卡在存量有多大，后者卡在流量有多快。还有一种可再生的不靠自己长：河水、风、阳光，不管今年用掉多少，明年照样流进来。</p>
+<figure class="fig">
+<svg class="diagram" viewBox="0 0 640 280" role="img" aria-label="存量流量图，上下两排。上排：左边云朵经阀门再生流入资源方框，标着只有鱼有；资源方框经阀门开采或捕捞流向右边云朵。下排：左边云朵经阀门投资流入资本方框，资本方框经阀门折旧流向右边云朵。细箭头从资本指向开采阀门，从开采阀门指向利润，从利润指向投资阀门">
+<path d="M30 82 q-10 -22 12 -26 q6 -20 30 -12 q18 -10 28 8 q22 2 14 24 q4 20 -22 18 q-14 12 -34 2 q-30 6 -28 -14 z" class="box"/>
+<rect x="114" y="64" width="74" height="12" class="box"/><path d="M188 56 L206 70 L188 84 z" class="f-fg"/>
+<path d="M130 54 L150 70 L130 86 z M170 54 L150 70 L170 86 z" class="f-a"/>
+<text x="150" y="40" text-anchor="middle" class="t-m">再生（只有鱼有）</text>
+<rect x="206" y="36" width="140" height="68" rx="4" class="box"/>
+<text x="276" y="66" text-anchor="middle" class="t-b">资源</text>
+<text x="276" y="88" text-anchor="middle" class="t-m">地下的油 / 海里的鱼</text>
+<rect x="346" y="64" width="96" height="12" class="box"/><path d="M442 56 L460 70 L442 84 z" class="f-fg"/>
+<path d="M374 54 L394 70 L374 86 z M414 54 L394 70 L414 86 z" class="f-a"/>
+<text x="394" y="40" text-anchor="middle" class="t-b">开采 / 捕捞</text>
+<path d="M462 82 q-10 -22 12 -26 q6 -20 30 -12 q18 -10 28 8 q22 2 14 24 q4 20 -22 18 q-14 12 -34 2 q-30 6 -28 -14 z" class="box"/>
+<text x="470" y="116" class="t-m">资源越少，</text>
+<text x="470" y="132" class="t-m">每台设备采得越少</text>
+<path d="M30 222 q-10 -22 12 -26 q6 -20 30 -12 q18 -10 28 8 q22 2 14 24 q4 20 -22 18 q-14 12 -34 2 q-30 6 -28 -14 z" class="box"/>
+<rect x="114" y="204" width="74" height="12" class="box"/><path d="M188 196 L206 210 L188 224 z" class="f-fg"/>
+<path d="M130 194 L150 210 L130 226 z M170 194 L150 210 L170 226 z" class="f-a"/>
+<text x="150" y="250" text-anchor="middle" class="t-b">投资</text>
+<text x="150" y="268" text-anchor="middle" class="t-m">赚的钱拿来添设备</text>
+<rect x="206" y="176" width="140" height="68" rx="4" class="box"/>
+<text x="276" y="206" text-anchor="middle" class="t-b">资本</text>
+<text x="276" y="228" text-anchor="middle" class="t-m">采油设备 / 渔船</text>
+<rect x="346" y="204" width="96" height="12" class="box"/><path d="M442 196 L460 210 L442 224 z" class="f-fg"/>
+<path d="M374 194 L394 210 L374 226 z M414 194 L394 210 L414 226 z" class="f-a"/>
+<text x="394" y="250" text-anchor="middle" class="t-b">折旧</text>
+<text x="394" y="268" text-anchor="middle" class="t-m">每年报废 1/20</text>
+<path d="M462 222 q-10 -22 12 -26 q6 -20 30 -12 q18 -10 28 8 q22 2 14 24 q4 20 -22 18 q-14 12 -34 2 q-30 6 -28 -14 z" class="box"/>
+<path d="M332 176 Q384 146 392 96" class="ln"/><path d="M387 100 L392 88 L397 100 z" class="f-fg"/>
+<path d="M370 90 Q330 116 274 134" class="ln"/><path d="M282 127 L268 136 L284 139 z" class="f-fg"/>
+<text x="232" y="146" text-anchor="middle" class="t-b">利润</text>
+<text x="232" y="164" text-anchor="middle" class="t-m">卖出的钱 − 设备的开销</text>
+<path d="M198 144 Q162 152 154 186" class="ln"/><path d="M148 180 L154 192 L160 180 z" class="f-fg"/>
+<text x="110" y="150" text-anchor="middle" class="t-b f2">R</text>
+<text x="430" y="166" text-anchor="middle" class="t-b f4">B</text>
+</svg>
+<figcaption>本站示意图，画的是下面模拟器的结构。R：资本多，采得多，赚得多，添的设备多。B：采得越多，资源越少，每台设备采得越少，利润越薄，添设备就慢下来。油和鱼只差上排左边那条流入。</figcaption></figure>
+<p class="use"><b>在这一页：</b>§5 的油田、§6 的渔场共用这张结构；§6 那两句页边金句把差别说破。模拟器里切换两种资源看。</p>
+</div>
+<div class="concept" id="c-critical-threshold">
+<h3><span class="sec">§6</span>临界阈值 <span class="en">critical threshold，译本：关键转折点</span></h3>
+<p>很多生物资源的再生是两头低、中间高：鱼太密，吃的和地方不够，几乎不长；稀一点，长得越来越快；再少下去，鱼找不到同伴、地盘被别的物种占了，又越长越慢。少到某个程度，再生的能力本身就坏了，这个点叫临界阈值。掉过它，就算停手，也可能长不回来，可再生资源实际上成了不可再生的。线上社区也有这种事：活跃的人少到一定程度，新人发帖没人回，走得更快。</p>
+<figure class="fig">
+<svg class="diagram" viewBox="0 0 640 260" role="img" aria-label="一条先升后降的驼峰曲线：横轴是海里的鱼，从 0 到 1000；纵轴是每年再生多少，最高约 288。一条横虚线表示每年固定捕 200，和驼峰交于两点，约 406 和 745。左端鱼很少的一段涂了底色，标着几乎不再长，是临界阈值一带">
+<rect x="70" y="30" width="88" height="190" class="f-soft"/>
+<text x="76" y="44" class="t-m">鱼太少，</text>
+<text x="76" y="60" class="t-m">几乎不再长：</text>
+<text x="76" y="76" class="t-m">临界阈值一带</text>
+<line x1="70" y1="30" x2="70" y2="220" class="ln"/><line x1="70" y1="220" x2="610" y2="220" class="ln"/>
+<path d="M70 220 C77 220 99 221 114 219 C129 217 144 217 158 210 C173 203 188 192 203 180 C217 167 232 148 247 134 C261 120 276 106 291 95 C306 84 320 78 335 70 C350 62 364 52 379 49 C394 45 409 39 423 48 C438 57 453 83 468 103 C482 123 497 152 512 170 C526 188 541 201 556 209 C571 217 593 218 600 220" class="s1"/>
+<path d="M70 100 H610" class="ln-d"/>
+<text x="606" y="94" text-anchor="end" class="t-m">每年捕 200</text>
+<circle cx="285" cy="100" r="6" class="f-a"/><circle cx="465" cy="100" r="6" class="f2"/>
+<text x="276" y="92" text-anchor="end" class="t-m">捕 200 不变时的分界</text>
+<text x="490" y="112" class="t-m">稳得住的点</text>
+<text x="400" y="34" text-anchor="middle" class="t-m">最多约 288</text>
+<text x="8" y="20" class="t-m">每年再生多少</text>
+<text x="70" y="238" text-anchor="middle" class="t-m">0</text><text x="335" y="238" text-anchor="middle" class="t-m">500</text><text x="600" y="238" text-anchor="middle" class="t-m">1000</text>
+<text x="606" y="256" text-anchor="end" class="t-m">海里的鱼</text>
+</svg>
+<figcaption>本站示意图：曲线照书后附录渔场模型的再生率算出「每年再生多少」，捕捞量是本站假设的固定 200。鱼在两点之间，再生多于捕捞，鱼会长到右边那点；掉到左边那点以下，再生少于捕捞，越捕越少。左边那点只是「捕捞固定在 200」时的分界；书里的临界阈值在左端涂色那一带，鱼少到那里，停手也长得很慢。书里的捕捞不是固定的，船队会跟着利润变。</figcaption></figure>
+<p class="use"><b>在这一页：</b>§6 讲再生率那段和结尾的总结。02a 恒温器那里的「转折点」说的是调节回路被压垮的点，和这里说的是两件事。</p>
+</div>
+<div class="concept" id="c-overshoot">
+<h3><span class="sec">§6</span>过冲 <span class="en">overshoot，译本：过度开发、过量增长</span></h3>
+<p>过冲是冲过一个能长期维持的水平，然后回来，或者回不来。倒车入库，刹得晚就压过线再往前挪一点；刹得太晚，就撞墙。渔场里的那条线是鱼每年最多能再生多少。船队靠利润扩张，捕捞量会冲过这条线；之后看刹车（鱼少了，利润薄了，少添船）来得快不快：快，回落后稳住；慢，在线附近来回摆；太慢，鱼掉过临界阈值，鱼和渔业一起没了。</p>
+<p>书里的三种结局都是先过冲，差别在后面。<span class="zhv">译本：「过度开发，然后逐渐适应」</span>这类说法把「冲过头」和「捕得太多」混成一件事，读的时候换成过冲。</p>
+<figure class="fig">
+<svg class="diagram" viewBox="0 0 640 200" role="img" aria-label="三张小图并排，横轴是时间，横虚线是每年最多能再生的量。左图：曲线涨过虚线后回落，稳在虚线下面一点。中图：涨过虚线后在虚线附近上下摆。右图：涨过虚线后一路掉到底">
+<text x="110" y="24" text-anchor="middle" class="t-b">稳住</text>
+<text x="325" y="24" text-anchor="middle" class="t-b">来回摆</text>
+<text x="530" y="24" text-anchor="middle" class="t-b">崩溃</text>
+<line x1="20" y1="40" x2="20" y2="160" class="ln"/><line x1="20" y1="160" x2="200" y2="160" class="ln"/>
+<line x1="230" y1="40" x2="230" y2="160" class="ln"/><line x1="230" y1="160" x2="420" y2="160" class="ln"/>
+<line x1="440" y1="40" x2="440" y2="160" class="ln"/><line x1="440" y1="160" x2="620" y2="160" class="ln"/>
+<path d="M20 88 H200 M230 88 H420 M440 88 H620" class="ln-d"/>
+<path d="M20 156 C80 154 110 120 140 74 C150 60 160 100 200 100" class="s1"/>
+<path d="M230 156 C290 154 320 120 350 68 L352 69 L354 73 L355 78 L357 85 L359 92 L361 98 L362 103 L364 106 L366 107 L368 105 L369 101 L371 96 L373 90 L375 84 L376 78 L378 74 L380 71 L382 71 L383 72 L385 76 L387 81 L389 87 L390 92 L392 98 L394 102 L396 104 L397 104 L399 102 L401 99 L403 94 L404 89 L406 83 L408 79 L410 75 L411 73 L413 73 L415 75 L417 79 L418 83 L420 88" class="s1"/>
+<path d="M440 156 C500 154 530 120 560 70 C570 56 580 110 588 150 C592 158 600 158 620 158" class="s1"/>
+<text x="28" y="80" class="t-m">最多能再生的量</text>
+<text x="200" y="180" text-anchor="end" class="t-m">时间 →</text>
+<text x="420" y="180" text-anchor="end" class="t-m">时间 →</text>
+<text x="620" y="180" text-anchor="end" class="t-m">时间 →</text>
+</svg>
+<figcaption>本站示意图，画的是每年的捕捞量，形状是示意，不是哪组数。三张图开头一样：都靠利润扩张，都冲过了那条线。</figcaption></figure>
+<p class="use"><b>在这一页：</b>§6 的三张图和三种结局。模拟器里拉「捕捞技术」，三种都能看到。</p>
+</div>
+<h2>动手：模拟器</h2>
+<p>先猜：一块油田的储量，按刚开始的开采速度够采 200 年。公司每年拿利润添设备，想让设备每年净增 5%。开采高峰大约在第几年？如果地质学家后来发现储量其实是两倍，高峰会晚多少年？</p>
+<div class="sim" id="sim-02b">
+  <div class="sim-head"><span class="tag">模拟器</span><h3>油田和渔场</h3><p class="desc">两个存量：资源（地下的油，或海里的鱼）和资本（采油设备，或渔船）。资本靠利润再投资长大，按寿命折旧。先选一种资源，三张图依次是每年采多少、资本有多少、资源还剩多少。打开页面时是书里那一组数。</p></div>
+  <div class="sim-body"><p>需要浏览器打开脚本才能运行。</p></div>
+</div>
+<p>各个控件。两种资源共用的：资本一开始是 5 个单位；设备或渔船的寿命，油田固定 20 年，渔场可调，每年报废资本的「1 ÷ 寿命」；每年添多少设备，取利润和「增长目标」里小的那个，利润是负的就不添。「每年想净增」是扣掉折旧以后的增长，书里是 5%（添 10%、报废 5%）。</p>
+<p>油田：「油田有多大」是地下一共有多少油，1000 就是按开头每年采 5 的速度够采 200 年；油越少，每台设备一年采到的越少，最后一点几乎采不动。「油价」默认固定 3；选「越稀缺越贵」，每台设备采得越少，油价越高，最高到 10，这时假设涨价也不减需求。「运营成本」是每单位设备每年的开销，技术进步就是把它往下拉。</p>
+<p>渔场：鱼最多 1000，一开始是满的；鱼的再生两头低、中间高，每年最多再生约 288。「捕捞技术」是鱼变少以后一条船还能捞到多少：0 最差，鱼一少就捞不到；2 最好，鱼很少时也照样捞得到。0、1、2 分别是书里三组图的设置。「渔船能用多少年」越长，船队缩得越慢。</p>
+<p>和书后附录的模型方程比，本站改了三处，都是为了和原书的图对上：油田的运营成本默认每单位资本每年 1（附录写 10%，按 10% 算，基本情形的资本要到第 61 年才见顶，图上和正文都是第 50 年左右）；渔场每一步算四分之一年、跑 150 年（附录写一年一步、跑 100 年，图的横轴是 150 年）；价格曲线上两个点微调过。</p>
+<ol class="qs">
+  <li>试试看（油田）：先看书里那一组。资本第 14 年 9.9、第 28 年 19.6，翻了一倍又一倍；开采第 41 年见顶，每年 28.1；资本第 51 年见顶（60.2），之后一路往下。再把「油田有多大」改成 2000、4000：开采高峰挪到第几年？每次多了多少年？峰顶和之后的下坡有什么变化？</li>
+  <li>试试看（油田）：回到书里那一组，把「每年想净增」从 5% 改成 1%，再改成 7%：开采在哪年见顶，第 100 年还剩多少？再回到书里那一组，把油价改成「越稀缺越贵」，运营成本从 1 拉到 0.1：资本最多能堆到多少？开采高峰挪了没有？</li>
+  <li>试试看（渔场）：先看书里第一组（捕捞技术 0），捕捞量冲过每年最多能再生的那条线以后怎样？把技术拉到 1，再拉到 2，结局各是什么？最后技术停在 1，把渔船的寿命从 20 年改成 30 年，看看同一种技术会怎样。</li>
+</ol>
+<p>这个模拟器做不到的：找到新油田、把投资挪到别处、换用别的能源；涨价让人少用油；鱼掉到很低以后，过几十年又长回来再来一轮（模型里鱼少到一定程度就几乎不再长）。临界阈值也不是一个能直接调的旋钮，它藏在再生曲线鱼很少的那一端。</p>
+<h2>原文里的词和句</h2>
+<p class="lede">读英文原书时值得停一下的词和句：熟词生义、Meadows 的口语和比喻。灰色斜体是原句里连续的几个词，在英文电子书里搜它就能找到；标「每个字都认识」的，是每个词都眼熟、合起来意思却变了的，最容易读错。点「记下」收进词本。</p>
+<div class="entry"><div class="en">saturate the market</div><div class="loc" data-p="149">… will saturate the market eventually.</div><div class="zh">（产品）把市场吃满、卖到饱和</div><div class="note">saturate 本义是浸透。想买的人都买过了，再热销也卖不动。</div></div>
+<div class="entry"><div class="en">susceptible</div><div class="loc" data-p="149">… run out of susceptible people to …</div><div class="zh">易感的（人）</div><div class="note">流行病学的说法：还没得过、没有免疫、可能被传染的人。</div></div>
+<div class="entry trap"><div class="en">accommodation</div><div class="loc" data-p="152">… come some kind of accommodation, the …</div><div class="zh">调适、相互迁就</div><div class="note">不是「住宿」。后半句说得清楚：系统迁就约束，约束迁就系统，或者两边各让一步。</div></div>
+<div class="entry trap"><div class="en">no more than</div><div class="loc" data-p="155">… it’s no more than a capital-growth …</div><div class="zh">只不过是</div><div class="note">no more than 是往小里说：图看着复杂，其实就是前面那个资本增长系统。不是「不超过」的数量比较。</div></div>
+<div class="entry trap"><div class="en">out of commission</div><div class="loc" data-p="155">… taken out of commission each year.</div><div class="zh">退役、停止使用</div><div class="note">commission 在这里是「服役、可用状态」，和佣金、委员会无关。船、机器、服务器都可以 out of commission。</div></div>
+<div class="entry trap"><div class="en">it doesn’t pay</div><div class="loc" data-p="161">… it doesn’t pay to get it …</div><div class="zh">不划算</div><div class="note">pay 在这里是「值得、有赚头」，不是付钱。最后最贵的那点油，采出来的钱抵不上成本，就留在地下。</div></div>
+<div class="entry"><div class="en">the farther and faster you fall</div><div class="loc" data-p="171">… the farther and faster you fall, when …</div><div class="zh">摔得越远、越快</div><div class="note">和前半句 The higher and faster you grow 对仗：涨得越高越快，摔得越远越快。本章名句。</div></div>
+<div class="entry trap"><div class="en">stay that way</div><div class="loc" data-p="172">… get less rich but stay that way …</div><div class="zh">（富得少一点，但）一直保持这样</div><div class="note">that way 指上半句的「富」。整句是：要么很快发大财，要么富得少一点、但富得久。</div></div>
+<div class="entry trap"><div class="en">of the opposite persuasion</div><div class="loc" data-p="189">… someone of the opposite persuasion.</div><div class="zh">持相反看法的（人）</div><div class="note">persuasion 在这里是信念、立场，不是「说服」。她把「全球会不会有极限」留给读者和持相反看法的人去争。</div></div>
+<div class="entry"><div class="en">elude</div><div class="loc" data-p="189">… the growth loops elude the control …</div><div class="zh">躲开、甩开</div><div class="note">增长的回路一直跑在约束前面，迟迟不被调节回路抓住。</div></div>
+<div class="entry trap"><div class="en">the back side of the production peak</div><div class="loc" data-p="189">… the back side of the production peak.</div><div class="zh">产量高峰过后的下坡</div><div class="note">把产量曲线看成一座山，back side 是翻过山顶以后往下走的那一面。</div></div>
+<div class="entry trap"><div class="en">schools of fish</div><div class="loc" data-p="192">… find the last schools of fish.</div><div class="zh">（最后几个）鱼群</div><div class="note">school 在这里是一群鱼，和学校无关。</div></div>
+<div class="entry"><div class="en">drift net</div><div class="loc" data-p="192">… Or miles-long drift nets are …</div><div class="zh">流刺网</div><div class="note">垂在海里随海流漂的网，鱼撞上去被网眼卡住；几英里长的大型流刺网后来在公海被禁。不是拖网（trawl）。</div></div>
+<div class="entry trap"><div class="en">niche</div><div class="loc" data-p="193">… has moved into its niche.</div><div class="zh">生态位</div><div class="note">日常英语里多是「小众市场」「壁龛」。生态学里指一个物种在环境里占的位置：吃什么、住哪儿。</div></div>
+<div class="entry trap"><div class="en">for all practical purposes</div><div class="loc" data-p="222">… turned, for all practical purposes, into …</div><div class="zh">实际上等于</div><div class="note">不是「为了所有实际目的」。意思是理论上不算，实际效果一样：鱼在理论上还能再生，实际上已经和不可再生没区别。</div></div>
+<div class="entry"><div class="en">latent</div><div class="loc" data-p="233">… what structures contain which latent behaviors …</div><div class="zh">潜伏着的、还没表现出来的</div><div class="note">结构里藏着几种可能的行为，条件到了才放出来。</div></div>
+<h2>译本勘误</h2>
+<p class="lede">对着译本读这两节时，下面这些地方会把人读歪。方框里是译本的原句，在译本电子书里搜它就能找到；灰色斜体是英文原书那一处。只收意思错了、反了、漏了的，措辞上的出入不收。全书的勘误汇总在<a href="../zh.html">译本勘误</a>。</p>
+<div class="zherr" data-p="147"><h4><span class="sec">§5</span>玉米需要的是「防虫」<span class="mark turn">译反</span></h4>
+<p class="loc">… nutrients and protection from pests.</p>
+<p class="zhq"><span class="zhv">译本：「也少不了昆虫的袭扰」</span></p>
+<p>原文列的是玉米要从环境里拿到的东西：水、养分，还有防虫。译本把需要的保护说成了躲不开的麻烦，方向正好反了。</p></div>
+<div class="zherr" data-p="160"><h4><span class="sec">§5</span>模型只用了一条：每台设备采得越来越少<span class="mark">误译</span></h4>
+<p class="loc">… I could assume that resource depletion …</p>
+<p class="zhq"><span class="zhv">译本：「我们假设资源枯竭可以通过运营成本」</span></p>
+<p>原文：我「也可以」假设资源枯竭同时推高运营成本，现实里两样都有，不管哪种，行为模式都一样。模型实际只用了单位资本产出下降这一条。译本写成「我们假设」，又加了一句原文没有的油田被废弃，读来像模型两样都算了。</p></div>
+<div class="zherr" data-p="161"><h4><span class="sec">§5</span>这一段讲的是图2—24<span class="mark">数字</span></h4>
+<p class="loc">… The last and most expensive of …</p>
+<p class="zhq"><span class="zhv">译本：「（如图2—25所示）」</span></p>
+<p>这一段讲基本情形：第 14 年翻倍、第 40 年左右开采见顶、第 50 年资本开始缩，对应的是图2—24。图2—25 是下一段储量翻倍的图，翻过去对不上。</p></div>
+<div class="zherr" data-p="169"><h4><span class="sec">§5</span>储量翻倍，高峰「只」晚约 14 年<span class="mark">漏译</span></h4>
+<p class="loc">… makes a difference of only about …</p>
+<p class="zhq"><span class="zhv">译本：「都会使开采高峰期延长14年左右」</span></p>
+<p>原文的重点在 only：储量每翻一倍，高峰只晚来约 14 年，靠它吃饭的工作和社区也只多这么久。译本丢了「只」，后面还加了「繁荣期也相应地延长了」，读来像个好消息。图2—25 的图注倒是写对了。</p></div>
+<div class="zherr" data-p="171"><h4><span class="sec">§5</span>多出的是开发「替代品」的时间<span class="mark">漏译</span></h4>
+<p class="loc">… little added time to develop alternatives.</p>
+<p class="zhq"><span class="zhv">译本：「只能稍微延长一些开发的时间而已」</span></p>
+<p>原文：储量翻倍、翻两倍，留给开发替代品的时间也多不了多少。译本丢了「替代品」，成了开发资源本身的时间，这句话的用意没了：找出路要时间，指数增长不给这个时间。</p></div>
+<div class="zherr" data-p="178"><h4><span class="sec">§5</span>前提是涨价「不会」减少需求<span class="mark turn">译反</span></h4>
+<p class="loc">… a higher price won’t decrease demand.</p>
+<p class="zhq"><span class="zhv">译本：「价格过高将减少需求」</span></p>
+<p>原文：假设短期内这种资源对消费者太要紧，涨价也不会让需求减少，所以资源一稀缺，价格就陡升。译本把前提译反了，和后面「价格会快速升高」接不上。模拟器「越稀缺越贵」用的是原文的前提。</p></div>
+<div class="zherr" data-p="180"><h4><span class="sec">§5</span>技术降成本是「真发生过的」<span class="mark">误译</span></h4>
+<p class="loc">… as has actually happened, for example …</p>
+<p class="zhq"><span class="zhv">译本：「就可能出现类似情况」</span></p>
+<p>原文说技术降低运营成本「确实发生过」，举了三个实例：油井的强化采油，从采空的铁矿里选出低品位的铁燧岩，用氰化物从金银矿的尾矿里再提金银。译本说成「可能出现」，实例成了假设。</p></div>
+<div class="zherr" data-p="181"><h4><span class="sec">§5</span>她问的是「全球也会有极限吗」<span class="mark">误译</span></h4>
+<p class="loc">… eventually will there be global ones?</p>
+<p class="zhq"><span class="zhv">译本：「这些公司最终还会展开全球性运作吗」</span></p>
+<p>原文：单个矿、油田、地下含水层会枯竭，公司也早早把投资挪到别处；可局部有极限，最终全球会不会也有？这是她故意留给读者自己争的问题。译本问成公司会不会全球化，问题本身就没了。</p></div>
+<div class="zherr" data-p="188"><h4><span class="sec">§5</span>图2—27 图注：是越稀缺越贵<span class="mark turn">译反</span></h4>
+<p class="loc">… As price goes up with increasing scarcity …</p>
+<p class="zhq"><span class="zhv">译本：「价格上涨加大了资源的稀缺性」</span></p>
+<p>原图注是：随着资源越来越稀缺，价格上涨，利润多了，资本堆得更高。因是稀缺，果是涨价，译本倒过来了。</p></div>
+<div class="zherr" data-p="190"><h4><span class="sec">§5</span>「除非，也许」是存疑的例外，不是建议<span class="mark">误译</span></h4>
+<p class="loc">Unless, perhaps, the economy can learn …</p>
+<p class="zhq"><span class="zhv">译本：「我们应该尝试建立」</span></p>
+<p>原文只有半句：除非，也许，经济能学会完全靠可再生资源运转。这是给上面那段算术留的一个例外，语气是存疑的；§6 接着就去看可再生资源会怎样，答案并不轻松。译本改成了一条号召。</p></div>
+<div class="zherr" data-p="192"><h4><span class="sec">§6</span>鱼越少，捕同样多要花更多「资本」<span class="mark">误译</span></h4>
+<p class="loc">… costs more, in terms of capital, to …</p>
+<p class="zhq"><span class="zhv">译本：「我们假设渔业资源由于日益稀缺而价格上涨」</span></p>
+<p>原文：和油田一样，鱼越少，捕到同样多就要花越多的资本：更大的船、声纳、冷冻设备。讲的是单位资本产量下降。价格随稀缺上涨是模型里另一条关系，不是这一句。</p></div>
+<div class="zherr" data-p="192"><h4><span class="sec">§6</span>drift net 是流刺网，不是拖网<span class="mark">术语</span></h4>
+<p class="loc">… Or miles-long drift nets are …</p>
+<p class="zhq"><span class="zhv">译本：「装备数海里长的拖网」</span></p>
+<p>流刺网垂在海里随海流漂，鱼撞上去被网眼卡住；拖网（trawl）是船拖着走的网，两样渔具。联合国大会 1991 年 12 月通过决议，要求 1992 年底前在公海全面暂停大型流刺网作业。</p></div>
+<div class="zherr" data-p="198"><h4><span class="sec">§6</span>能永远保持的是「捕捞量」<span class="mark">误译</span></h4>
+<p class="loc">… a high and steady harvest rate …</p>
+<p class="zhq"><span class="zhv">译本：「但是可以一直保持较高且稳定的效率」</span></p>
+<p>原文：船队不能永远扩张，但能永远保持又高又稳的捕捞量。这是可再生资源的要点：能一直采，每年有个上限。前一句还丢了「（投资降得）够快」：能稳住，是因为刹车来得及时。</p></div>
+<div class="zherr" data-p="222"><h4><span class="sec">§6</span>是「可能」几乎全军覆没<span class="mark">误译</span></h4>
+<p class="loc">… The result can be a nearly …</p>
+<p class="zhq"><span class="zhv">译本：「但结果只能是鱼和捕鱼业接近彻底消亡」</span></p>
+<p>原文是 can be：技术再好下去，结果「可能」是鱼和渔业几乎都没了。这是模型的一种情形，取决于阈值和刹车，§6 结尾专门讲了三种结局。「只能是」把可能写成了必然。</p></div>
+<div class="zherr" data-p="226"><h4><span class="sec">§6</span>鱼很少时是「特别脆弱」，不是「彻底灭绝」<span class="mark">误译</span></h4>
+<p class="loc">… become especially vulnerable to pollution or storms …</p>
+<p class="zhq"><span class="zhv">译本：「都可能使鱼群彻底灭绝」</span></p>
+<p>原文只说很小的鱼群对污染、风暴、基因不够多样特别脆弱，同一段最后一句还说资源也可能撑下来、再长回来。storms 是风暴，不是龙卷风。</p></div>
+<div class="zherr" data-p="228"><h4><span class="sec">§6</span>overshoot 是「过冲」，冲过头<span class="mark">术语</span></h4>
+<p class="loc">… overshoot and adjustment to a sustainable …</p>
+<p class="zhq"><span class="zhv">译本：「过度开发，然后逐渐适应」</span></p>
+<p>overshoot 是冲过一个能长期维持的水平，再看回不回得来。三种结局都以它开头，第一种冲过头以后稳住了。译成「过度开发」，像是在说捕多了就错，三种结局的区别反而模糊了。图2—29、2—30 图注里的「过量增长」「过度开发」也是它。</p></div>
+<h2>读完：作者到底说了什么</h2>
+<p class="lede">下面是作者在这两节里的主张，本站按主张之间的逻辑重排，不按原书顺序；每条后面是节号，拿不准就回书里那一节再读一遍。</p>
+<div class="claims">
+  <div class="claim"><h4>实物的增长迟早撞上约束，要问的是它怎么停</h4><p>她说任何实物在增长的系统，迟早会碰上某种约束，约束表现为一个调节回路，削弱流入或加大流出，改变增强回路的主导地位。这些回路现在不起主导作用，也一定在那里。资源可不可再生，差别不在能不能一直长，而在增长多半怎样结束。</p><span class="sec" data-p="148 149 150 152 153">§5</span></div>
+  <div class="claim"><h4>靠不可再生资源，指数增长撞上限制快得出人意料</h4><p>够采 200 年的油田，资本每年长 5%，开采 40 年左右就见顶，到第 50 年设备的维护费压过收入，资本开始缩。储量翻一倍、翻两倍，高峰每次只晚约 14 年，涨得越高越快，摔得越远越快，留给开发替代品的时间也多不了多少。</p><span class="sec" data-p="161 169 170 171">§5</span></div>
+<blockquote class="quote">A quantity growing exponentially toward a constraint or limit reaches that limit in a surprisingly short time.<cite>— §5。本站译：一个按指数增长、朝着某个约束或极限去的量，会在短得出人意料的时间里撞上它。</cite></blockquote>
+  <div class="claim"><h4>增长目标决定富得多快、富得多久</h4><p>想尽快赚钱的人，只关心储量多大；靠油田吃饭的工人和社区，还要关心资本想长多快。她说管理不可再生资源真正的选择，是很快发大财，还是富得少一点但富得久。涨价、技术降成本都让资本在塌之前堆得更高；她只指出，按这套动态，储量越大、新发现越多，高峰之后摔得越早越狠。全球会不会有极限，她留给读者去争。</p><span class="sec" data-p="172 173 179 180 181 189">§5</span></div>
+  <div class="claim"><h4>可再生资源卡在流量，采过头可能实际上变成不可再生</h4><p>不可再生资源受限于存量，采得越快用得越短；可再生资源受限于流量，能一直采，但每年最多采到它再生的量。采得比再生快，可能被压到临界阈值以下。真实的资源有的还能长回来，像新英格兰的森林已是第三轮；有的不能，这要看资源被压得很低的那段时间里发生了什么。</p><span class="sec" data-p="223 224 225 226">§6</span></div>
+  <div class="claim"><h4>结局看阈值和刹车，提高效率可能把系统推向崩溃</h4><p>渔场先过冲，然后稳住、振荡还是崩溃，看两样：再生能力受损的临界阈值在哪；资源变少时，压住资本增长的调节回路够不够快、够不够强。更高效的捕鱼技术让这个回路变弱，她称之为又一个「高杠杆，方向错」。</p><span class="sec" data-p="198 199 207 222 231">§6</span></div>
+<blockquote class="quote">The fleet can’t grow forever, but it can maintain a high and steady harvest rate forever.<cite>— §6。本站译：船队不能永远扩张，但它能永远保持又高又稳的捕捞量。</cite></blockquote>
+</div>
+<p class="sowhat"><b>合起来：</b>看一个正在增长的东西，先问它靠的是一次性的存量还是会再生的流量，再问约束收紧时刹车来不来得及。靠存量的，多给一倍最多换来约一个翻倍时间；靠流量的，能一直采，但刹车慢了会采塌。</p>
+<p class="chapsum"><b>这一章合起来：</b>第 2 章用几个小模型演示结构怎样决定行为。单存量的三只：恒温器说明目标要把流失算进去，反馈只能影响以后；人口和资本说明回路的主导地位会转换，外表不相干的系统结构相似，行为就相似；汽车库存说明调节回路里有延迟很可能带来振荡，把反应弄快反而更糟。双存量的两只说明，有限的世界里实物增长迟早撞上约束：靠不可再生资源的，涨得越快塌得越快；靠可再生资源的，结局是稳住、振荡还是崩溃，看刹车来得快不快。</p>
+<h2>练一练：情境题</h2>
+<p class="lede">处境是本站编的，放在你可能遇到的地方。先自己想，再点开看分析；有的题不只一个答案。全书的情境题汇总在<a href="../drills.html">情境题</a>。</p>
+<div class="drill" id="d-runway">
+<h3><span class="sec">§5</span>融资翻倍，跑道翻倍吗</h3>
+<div class="scene"><p>一家创业公司刚拿到一笔融资。按现在的团队规模，每月的开销够撑 40 个月。创始人计划每月把团队扩大 5%，开销跟着涨。投资人安慰说：别担心，下一轮再拿到同样多的钱，跑道就翻倍了。先不算公司的收入。</p></div>
+<p class="ask">照每月扩 5% 的计划，这笔钱大约撑多久？再拿到同样多的钱，能多撑多久？</p>
+<ol class="opts"><li>撑 40 个月；再拿一笔，多撑 40 个月</li><li>撑 22 个月左右；再拿一笔，多撑 10 个月左右</li><li>撑 22 个月左右；再拿一笔，也多撑 22 个月左右</li></ol>
+<details class="reveal"><summary>想好了再点开</summary><p>账上的钱是一个只出不进的存量，每月开销是流出，按每月 5% 长，约 14 个月翻一倍。累计花掉的钱追上 40 个月的量，只要约 22.5 个月；钱多一倍，约 33 个月，只多 10 个月左右；多到四倍，约 45 个月。选 B。</p><p>这和 §5 储量翻倍最多把高峰推迟约一个翻倍时间是同一种算术。容易错选 C：以为钱多一倍，时间也多一倍，可开销在第二笔钱到账时已经比当初大多了。真正能改的数是增长率：团队不扩，40 个月就是 40 个月。现实里还有收入这股流入，收入涨得够快，就不只是在烧存量；这道题只看开销那一半。</p><p class="where">书里对应：§5 系统2.1：一个可再生性存量受到另外一个不可再生性存量约束的系统</p></details>
+</div>
+<div class="drill" id="d-new-tea-shop">
+<h3><span class="sec">§5</span><span class="sec">§6</span>开到第 60 家店</h3>
+<div class="scene"><p>一个新茶饮品牌进入一座城市。门口排队的人多，路过的人就想试试；每家店赚的钱用来开新店，店越开越快。开到第 60 家，老店的单店销量开始往下走，新店离老店越来越近。总部认为是营销不够，打算把门店一口气扩到 120 家抢地盘，钱从新一轮融资里出。</p></div>
+<p class="ask">增强回路和调节回路各在哪？城市里「每周愿意买一杯的人」更像油还是更像鱼？扩到 120 家可能会怎样？</p>
+<details class="reveal"><summary>想好了再点开</summary><p>增强回路：店多，利润多，开新店。调节回路：店越多，每家分到的常客越少，单店利润降，开店该慢下来。这是成长上限，单店销量下滑是约束在收紧，不是营销的问题。常客更像鱼：喝腻的人过一阵会回来，新搬来的人也会补进来，每周能卖的杯数有个上限，属于流量受限。</p><p>用融资扩到 120 家，等于利润在降时照样加资本，相当于把渔场的刹车拆了：单店销量可能压到养不起店，一批店一起关。更稳的做法是看单店利润，让开店速度跟着它走。如果是靠打折拉来、喝腻了就不再回来的人，那一部分更像油，用一次少一次。</p><p class="where">书里对应：§5 成长上限；§6 系统2.2：有两个可再生性存量的系统</p></details>
+</div>
+<div class="drill" id="d-burnout">
+<h3><span class="sec">§6</span>休了两周还缓不过来</h3>
+<div class="scene"><p>一位工程师赶一个大版本，连续三个月每周工作 70 小时。头几周效率反而比平时高；第二个月开始，晚上睡不好，周末补觉也缓不过来。版本上线后休了两周假，回来还是提不起劲，又过了几个月才恢复到原来的状态。</p></div>
+<p class="ask">把精力看成一种资源，它是存量受限还是流量受限？「休两周还缓不过来」说明了什么？</p>
+<details class="reveal"><summary>想好了再点开</summary><p>精力像会再生的资源：睡觉和休息把它补回来（流入），干活消耗它（流出）。长期每天能稳定用掉的，最多就是每天补回来的，所以是流量受限。头几周效率高，是在动用攒下的存量，就像渔场头几十年捕捞量还能一路涨。</p><p>透支久了，补的能力本身受了伤：睡不好、休息不解乏，相当于再生率在存量很低的那一端掉了下去，这就是临界阈值的意思。掉过它，停下来也要很久才长回来。容易误判成「歇几天就好」：以为只是用掉了一笔存量，没想到补的能力也伤了。这是比方，具体到人，恢复要多久因人而异。</p><p class="where">书里对应：§6 系统2.2：有两个可再生性存量的系统</p></details>
+</div>
+<h2>今天怎么看</h2>
+<p class="lede">Meadows 1993 年写成初稿，书 2008 年出版。下面挑出这一页里能被后来的研究或事情检验的说法，分「书里 / 当时 / 今天」几栏，并给一个结论。结论判的是标题里「书里的说法：」后面那一句。全书的这一节汇总在<a href="../today.html">今天怎么看</a>。</p>
+<ul class="verdicts"><li><span class="v ok">成立</span>后来的研究或事情支持这句话。</li><li><span class="v mid">部分成立</span>大方向对，细节或适用范围要改。</li><li><span class="v bad">被改写</span>后来的研究推翻了它、换了一种说法，或者情况变了。</li><li><span class="v dis">有争议</span>至今没有定论，两边各有代表性的研究或证据。</li></ul>
+<div class="today" data-verdict="部分成立"><h4>书里的说法：开采技术变便宜让资本先堆得更高再塌下来</h4><dl>
+  <dt>书里</dt><dd>她说涨价的主要效果，是让资本在塌之前堆得更高；技术降低运营成本，结果一样。技术降成本是真发生过的，她举了强化采油、铁燧岩选矿、氰化物浸出三例。<span class="at" data-p="179 180">§5</span></dd>
+  <dt>当时</dt><dd>地质学家 M. King Hubbert 1956 年预测美国本土 48 州的石油产量会在 1970 年前后见顶，后来产量确实在 1970 年左右见顶，之后几十年往下走。写书的年代，「石油峰值」争得正热。</dd>
+  <dt>今天</dt><dd>水平井加水力压裂让页岩油赚得了钱，美国原油产量 2023 年平均每天 1290 万桶，2024 年 1320 万桶，连创纪录，增长几乎全来自二叠纪盆地。技术确实让资本和产量堆得更高。另一面，页岩井衰减很快，主要产区的新井第一年产量常掉一半以上，要不停打新井才撑得住总产量。整个美国的页岩油会不会塌、什么时候塌，现在还看不出来。<span class="asof">核对于 2026-11。依据：美国能源信息署 Today in Energy（eia.gov/todayinenergy/detail.php?id=65445）；SPE《石油技术杂志》对页岩井衰减的报道（jpt.spe.org）。</span></dd>
+  <dt>另一边</dt><dd>她的模型是一块油田。页岩是成千上万口井、不停换地方打，正是她说的公司早早把投资挪到别处。拿一国的总产量去检验一块油田的模型，哪边都说不死。</dd>
+</dl></div>
+<div class="today" data-verdict="成立"><h4>书里的说法：采得比再生快的鱼可能实际上变成不可再生的资源</h4><dl>
+  <dt>书里</dt><dd>可再生资源采得比再生快，可能被压到临界阈值以下，实际上成了不可再生的；技术越好，越可能把鱼和渔业一起拖垮。<span class="at" data-p="222 224">§6</span></dd>
+  <dt>当时</dt><dd>纽芬兰外海的北方鳕鱼（northern cod）在 1990 年代初崩溃，加拿大 1992 年 7 月下令暂停商业捕捞。写书时禁捕已十几年，鱼群还没有长回来。</dd>
+  <dt>今天</dt><dd>加拿大渔业和海洋部 2024 年的评估说，这个种群约是「极限参考点」的 1.2 倍，处在「谨慎区」；它的主要饵料毛鳞鱼也崩了，拖着它恢复不起来。同年加拿大恢复商业捕捞，配额 1.8 万吨，环保组织批评太早。全球看，联合国粮农组织《2024 年世界渔业和水产养殖状况》说，捕捞过度的种群比例从 1974 年的 10% 升到 2021 年的 37.7%。<span class="asof">核对于 2026-11。依据：加拿大渔业和海洋部科学咨询报告 2024/049（dfo-mpo.gc.ca）；加拿大政府 2024 年 6 月公告（canada.ca）；FAO《2024 年世界渔业和水产养殖状况》海洋渔业一章（openknowledge.fao.org）。</span></dd>
+  <dt>另一边</dt><dd>按产量加权，粮农组织监测的 2021 年渔获里约 77% 来自生物学上可持续的种群，管得好的渔场能稳住。鳕鱼长不回来，原因也不只是数量掉过了线，饵料鱼崩溃、海洋环境变化都在起作用。</dd>
+</dl></div>
+<h2>本站怎么看</h2>
+<p class="lede">读完作者的主张，再看它站不站得住。每一块摆出三样：主流怎么看，作者怎么看，本站的评论。最后一句是本站对这一页的总体判断。</p>
+<div class="views"><h4>储量翻倍只多十几年，是算术还是预言</h4>
+<p><b>主流看法：</b>很多经济学家认为，价格、技术和替代品会不断扩大能用的资源。最有名的是 Julian Simon 和 Paul Ehrlich 的赌约：1980 年赌五种金属十年后的实际价格，1990 年结算，五种全跌，Ehrlich 寄去 576.07 美元认输。后来有人算过，换成别的十年，两人大约各赢一半；拉长到 1980–2011 年，Simon 五种里要输四种。</p>
+<p><b>作者的看法：</b>资本按固定比例增长时，储量翻倍、翻两倍只多出很少时间；涨价和技术进步让资本堆得更高、摔得更狠。全球会不会有极限，她不下结论。<span class="at" data-p="169 171 179 180 181 189">§5</span></p>
+<p class="ours"><b>本站的评论：</b>「多一倍只多 14 年」就是 5% 增长的翻倍时间（70 ÷ 5），是模型假设下的算术，不是对哪块油田的观测，她也写明了这一组的价格和运营成本都假设不变。这条算术很好用：凡是按百分比增长的消耗碰上一个固定的存量，多给一倍最多只换来约一个翻倍时间。Simon 一派说对的地方，是真实世界里「存量」本身会变：新发现、新技术、替代品，这几条回路正是模型里没有的。两边真正的分歧，是这几条回路跑得够不够快。</p></div>
+<div class="views"><h4>渔场的刹车为什么常常不灵</h4>
+<p><b>主流看法：</b>渔业经济学的经典是 H. Scott Gordon 1954 年在《政治经济学杂志》上的文章：鱼没有主人，谁不捕谁吃亏，渔船会一直加到利润被耗光为止，船和捕捞远多于划算的水平。后来的管理办法多从这里出发：总量配额、可交易的个人配额、禁渔期和禁渔区。</p>
+<p><b>作者的看法：</b>结局看刹车：资源变少时，压住资本增长的调节回路够不够快、够不够强；提高效率的技术让刹车变软，是又一个「高杠杆，方向错」。<span class="at" data-p="199 207 231">§6</span></p>
+<p class="ours"><b>本站的评论：</b>她的模型里只有一个「船队」，刹车只靠利润下降。Gordon 补上了刹车为什么不灵：每条船只看自己的账，鱼少了还能赚一点就继续出海，谁也不愿先退。北方鳕鱼最后靠的是政府下令停捕，从模型外面踩了一脚。程序员也见过这种事：没有配额的共享连接池、公共 API，常常被用到刚好撑不住。第 5 章的「公地悲剧」会接着讲这一类。</p></div>
+<p class="verdict"><b>本站的总体看法：</b>这两节把「增长会停」讲成了结构问题：资源有没有流入，刹车快不快。油田模型的数是假设出来的，不能当预测，但「指数增长碰上固定存量」的算术站得住；北方鳕鱼三十年没长回来，也支持「采过头可能回不来」。</p>
+<h2>检查一下理解</h2>
+<p class="lede">先在心里答，再点开。答错的那题，回书里把对应那一节再读一遍。</p>
+<details class="check"><summary>1.（§5）为什么作者说成长的系统里一定有调节回路，哪怕现在看不出来？</summary><p>有限的环境里，没有哪个实物系统能永远长。再热销的产品也会卖满市场，病毒也会找不到可感染的人。约束现在不占主导，不等于不存在。</p></details>
+<details class="check"><summary>2.（§5）油田按开头的速度够采 200 年，开采为什么 40 年左右就见顶？</summary><p>资本每年净长 5%，约 14 年翻一倍，开采跟着翻；同时油越少越难采，每台设备采得越少。到第 50 年左右，维护设备的开销压过收入，资本开始缩。</p></details>
+<details class="check"><summary>3.（§5）储量多一倍，开采高峰晚多少年？为什么这么少？</summary><p>约 14 年。资本按 5% 增长，翻倍时间约 14 年，多一倍的资源最多只够多约一个翻倍时间。</p></details>
+<details class="check"><summary>4.（§5）对一个靠油田吃饭的工人，哪两个数最要紧？</summary><p>储量有多大，和公司想让资本长多快。增长目标低，高峰低、来得晚，工作和社区维持得更久。</p></details>
+<details class="check"><summary>5.（§6）「不可再生资源受限于存量，可再生资源受限于流量」各是什么意思？</summary><p>不可再生的一开始就全在那儿，采多快主要看设备，采得越快用得越短。可再生的能一直采，但每年最多采到它再生的量；采得比再生快，可能掉过临界阈值，实际上变成不可再生。</p></details>
+<details class="check"><summary>6.（§6）渔船装上更好的声纳，为什么可能让渔场变糟？</summary><p>鱼少了，船还能捞到差不多，利润降得晚，资本继续长，刹车变软。系统可能从稳住变成振荡，技术再好下去，鱼和渔业一起崩溃。</p></details>
+<details class="check"><summary>7.（§6）渔场是稳住、振荡还是崩溃，作者说取决于哪两样？</summary><p>资源再生能力受损的临界阈值在哪；资源变少时，压住资本增长的调节回路有多快、多强。</p></details>
+<p>用一句话说这一页：</p>
+<textarea class="note" data-key="02b-oneline" rows="2" placeholder="比如：……"></textarea>
+<div class="ponder"><p>想一想：你工作或生活里，有没有一种资源正被你按百分比扩张地用着（服务器预算、团队的精力、某个渠道的新用户）？它是一次性的存量，还是每年会补回来的流量？如果是后者，每年能补回来多少？</p>
+<textarea class="note" data-key="02b-ponder" rows="3"></textarea></div>
+<h2>精彩回顾</h2>
+<p class="lede">读过又忘了，从这里想起来。挑的是这一页最值得记住的例子和说法，不按原书顺序；每条后面是节号，想细看就回书里那一节。全书各页的这一节都收在<a href="../recap.html">全书回顾</a>。</p>
+<p class="recall-line"><b>一句话：</b>增长迟早撞上约束；靠存量的涨得越快塌得越快，靠流量的能一直采，刹车慢了也会采塌。</p>
+<div class="recall">
+  <div class="item"><b>200 年的油，40 年见顶</b><p>按开头的速度够采 200 年的油田，资本每年净长 5%，开采第 40 年左右就见顶；到第 50 年利润付不起维护，设备一年年报废。</p><span class="sec">§5</span></div>
+  <div class="item"><b>储量翻倍只多 14 年</b><p>地质学家发现储量是两倍、四倍，高峰每次只晚来约 14 年，涨得更高，摔得更狠。</p><span class="sec">§5</span></div>
+  <div class="item"><b>快速致富还是富得久</b><p>对靠油田吃饭的工人，要紧的是储量和公司想长多快。增长目标越低，高峰越低、来得越晚，饭碗端得越久。</p><span class="sec">§5</span></div>
+  <div class="item"><b>船队不能永远长，但能永远捕</b><p>刹车来得及时的渔场，捕捞量冲过头以后稳在一个每年都能再生出来的量上。</p><span class="sec">§6</span></div>
+  <div class="item"><b>更好的声纳是坏消息</b><p>技术让船在鱼少时也有钱赚，刹车变软：渔场从稳住变成来回摆，再进一步，可能鱼和渔业一起没了。</p><span class="sec">§6</span></div>
+</div>
+</main>
+<script>
+(() => {
+  // 油田和渔场：两个存量（资源、资本）。照书后附录 A Renewable Stock Constrained by a Nonrenewable / Renewable Resource 两个模型：
+  //   资本 += (投资 − 资本 / 寿命) × dt；投资 = max(min(利润, 资本 × 增长目标), 0)；增长目标 = 净增 + 5%（扣掉寿命 20 年的折旧）。
+  //   油田（dt 1 年，100 年）：开采 = min(资本 × 单位资本产量(资源), 资源)；利润 = 价格 × 开采 − 资本 × 运营成本。运营成本默认 1（附录写 10%，按 1 才对得上原书图 38–40 和正文「第 50 年」）。
+  //   渔场（dt 0.25 年，150 年；附录写 dt 1、100 年，图是 150 年）：再生 = 鱼 × 再生率(鱼)；捕捞 = min(资本 × 单位资本产量(鱼), 鱼 / dt)；利润 = 价格(单位资本产量) × 捕捞 − 资本。
+  //   曲线是从附录的图上读的点（资源 0–1000 每 1000/12 一个点），点与点之间线性插值，两端外取端点值。价格表 0.583、0.917 两点为复现图 43–45 微调过。确定性，没有随机数。
+  const root = document.getElementById("sim-02b");
+  if (!root || !window.TS) return;
+  const { h, chart } = window.TS;
+  const R13 = Array.from({ length: 13 }, (_, i) => (1000 * i) / 12);
+  const PX = Array.from({ length: 13 }, (_, i) => i / 12);
+  const OIL_Y = [0, 0.22, 0.40, 0.56, 0.67, 0.78, 0.85, 0.92, 0.96, 0.98, 0.99, 1.0, 1.0];
+  const PRICE = [10, 7.7, 6.1, 4.95, 3.8, 3.1, 2.45, 1.95, 1.68, 1.52, 1.35, 1.25, 1.2];
+  const REGEN = [0, 0.02, 0.10, 0.27, 0.43, 0.50, 0.50, 0.49, 0.43, 0.26, 0.10, 0.02, 0];
+  const FY = [[0, 0.005, 0.017, 0.039, 0.073, 0.123, 0.196, 0.31, 0.465, 0.665, 0.818, 0.944, 1.0],
+    [0, 0.014, 0.039, 0.08, 0.145, 0.21, 0.355, 0.54, 0.745, 0.91, 0.978, 1.0, 1.0],
+    [0, 0.04, 0.078, 0.155, 0.25, 0.355, 0.53, 0.71, 0.89, 0.966, 0.994, 1.0, 1.0]];
+  const interp = (xs, ys, x) => { if (x <= xs[0]) return ys[0]; const n = xs.length - 1; if (x >= xs[n]) return ys[n]; let i = 0; while (x > xs[i + 1]) i++; return ys[i] + ((ys[i + 1] - ys[i]) * (x - xs[i])) / (xs[i + 1] - xs[i]); };
+  const BOOK = { oil: { R0: 1000, onet: 5, price: "fixed", cost: 1 }, fish: { tech: 0, life: 20, fnet: 5 } };
+  const st = Object.assign({ mode: "oil" }, BOOK.oil, BOOK.fish);
+  const OPTS = {
+    R0: { mode: "oil", label: "油田有多大", list: [[1000, "1000（书里）"], [2000, "2000"], [4000, "4000"]] },
+    onet: { mode: "oil", label: "资本每年想净增（%）", list: [[1, "1"], [3, "3"], [5, "5（书里）"], [7, "7"]] },
+    price: { mode: "oil", label: "油价", list: [["fixed", "固定 3（书里）"], ["rise", "越稀缺越贵"]] },
+    cost: { mode: "oil", label: "运营成本（每单位设备每年）", list: [[0.1, "0.1"], [0.25, "0.25"], [0.5, "0.5"], [0.75, "0.75"], [1, "1（书里）"]] },
+    tech: { mode: "fish", label: "捕捞技术", list: [[0, "0（书里第一组）"], [0.5, "0.5"], [0.75, "0.75"], [1, "1（书里第二组）"], [1.25, "1.25"], [1.5, "1.5"], [2, "2（书里第三组）"]] },
+    life: { mode: "fish", label: "渔船能用多少年", list: [[20, "20（书里）"], [25, "25"], [30, "30"]] },
+    fnet: { mode: "fish", label: "船队每年想净增（%）", list: [[5, "5（书里）"], [7, "7"], [9, "9"]] },
+  };
+  const sels = {}, wraps = {};
+  const ctrl = (k) => {
+    const s = h("select", { "aria-label": OPTS[k].label, onchange: () => { st[k] = k === "price" ? s.value : Number(s.value); draw(); } }, ...OPTS[k].list.map(([v, t]) => h("option", { value: String(v) }, t)));
+    sels[k] = s;
+    return (wraps[k] = h("label", {}, OPTS[k].label, s));
+  };
+  const modeBtn = (m, t) => h("button", { "data-mode": m, onclick: () => { st.mode = m; draw(); } }, t);
+  const bOil = modeBtn("oil", "石油：不可再生"), bFish = modeBtn("fish", "渔场：可再生");
+  const reset = h("button", { onclick: () => { Object.assign(st, BOOK[st.mode]); draw(); } }, "回到书里那一组");
+  const c1 = h("div"), c2 = h("div"), c3 = h("div"), p1 = h("p", { class: "cap" }), p2 = h("p", { class: "cap" }), p3 = h("p", { class: "cap" });
+  const stage = h("div", { class: "stage charts" }, p1, c1, p2, c2, p3, c3);
+  const narrate = h("div", { class: "narrate" }), stats = h("div", { class: "stats" });
+  const body = root.querySelector(".sim-body");
+  body.innerHTML = "";
+  body.append(h("div", { class: "modes" }, bOil, bFish), h("div", { class: "controls" }, ...Object.keys(OPTS).map(ctrl), reset), stage, narrate, stats);
+
+  function oil() {
+    const goal = (st.onet + 5) / 100, o = { R: [], C: [], E: [], P: [] };
+    let R = st.R0, C = 5;
+    for (let t = 0; t <= 100; t++) {
+      const y = interp(R13, OIL_Y, R), e = Math.min(C * y, R), p = st.price === "rise" ? interp(PX, PRICE, y) : 3;
+      const inv = Math.max(Math.min(p * e - C * st.cost, C * goal), 0);
+      o.R.push(R); o.C.push(C); o.E.push(e); o.P.push(p);
+      R -= e; C += inv - C / 20;
+    }
+    return o;
+  }
+  function fish() {
+    const goal = (st.fnet + 5) / 100, f = st.tech, dt = 0.25, o = { R: [], C: [], H: [], G: [] };
+    const [a, b, w] = f <= 1 ? [FY[0], FY[1], f] : [FY[1], FY[2], f - 1], tab = a.map((x, i) => x + (b[i] - x) * w);
+    let R = 1000, C = 5;
+    for (let k = 0; k <= 150 / dt; k++) {
+      const y = interp(R13, tab, R), hv = Math.min(C * y, R / dt), g = R * interp(R13, REGEN, R), p = interp(PX, PRICE, y);
+      const inv = Math.max(Math.min(p * hv - C, C * goal), 0);
+      if (k % 4 === 0) { o.R.push(R); o.C.push(C); o.H.push(hv); o.G.push(g); }
+      R = Math.max(R + (g - hv) * dt, 0); C += (inv - C / st.life) * dt;
+    }
+    return o;
+  }
+  const n1 = (x) => String(Math.round(x * 10) / 10), n0 = (x) => String(Math.round(x));
+  const peak = (a) => { let m = 0; a.forEach((v, i) => { if (v > a[m]) m = i; }); return m; };
+  const box = (v, l) => h("div", { class: "stat" }, h("div", { class: "v" }, v), h("div", { class: "l" }, l));
+
+  function drawOil() {
+    const o = oil(), tE = peak(o.E), tC = peak(o.C), left = o.R[tE] / st.R0;
+    p1.textContent = "每年开采多少（单位/年）"; p2.textContent = "资本：采油设备有多少"; p3.textContent = "地下还剩多少油";
+    chart(c1, { series: [{ name: "每年开采", data: o.E, c: 1 }], xlabel: "年", ylabel: "单位/年", title: "每年开采量随时间变化" });
+    chart(c2, { series: [{ name: "资本", data: o.C, c: 2 }], xlabel: "年", ylabel: "资本", title: "资本随时间变化" });
+    chart(c3, { series: [{ name: "地下的油", data: o.R, c: 3 }], xlabel: "年", ylabel: "单位", ymax: st.R0, title: "地下的油随时间变化" });
+    let t = `储量按开头每年采 5 的速度够采 ${st.R0 / 5} 年。资本每年想净增 ${st.onet}%，大约 ${Math.round(70 / st.onet)} 年翻一倍。`;
+    if (tE >= 99) t += `到第 100 年开采还在慢慢涨，每年 ${n1(o.E[100])}，地下还有 ${n1(o.R[100])}：长得慢，就采得久。`;
+    else {
+      t += `开采在第 ${tE} 年见顶，每年 ${n1(o.E[tE])}，那时地下还剩 ${Math.round(left * 100)}%。`;
+      t += tC >= 99 ? `之后油越来越难采，开采慢慢回落，资本到第 100 年还在慢慢长，地下还剩 ${n1(o.R[100])}：长得慢，就采得久。`
+        : `资本第 ${tC} 年见顶（${n1(o.C[tC])}），之后利润付不起设备的开销，添的跟不上报废的，设备一年年减少。第 100 年地下还剩 ${n1(o.R[100])}：最后、最难采的那一点不值得采。`;
+    }
+    if (st.price === "rise") t += `油价从 ${n1(o.P[0])} 涨到第 ${tC} 年的 ${n1(o.P[tC])}，涨价让利润多撑了几年，资本堆得更高。`;
+    narrate.textContent = t;
+    stats.replaceChildren(box(n0(tE), "开采见顶（第几年）"), box(n1(o.E[tE]), "见顶时每年开采"), box(n1(o.C[tC]), `资本最多（第 ${tC} 年）`), box(n1(o.R[100]), "第 100 年地下还剩"));
+  }
+  function drawFish() {
+    const o = fish(), tH = peak(o.H), tail = o.H.slice(120), lo = Math.min(...tail), hi = Math.max(...tail);
+    const end = hi < 5 ? "崩溃" : hi - lo <= 10 ? "稳住" : "来回摆";
+    p1.textContent = "每年捕捞多少，虚线是鱼每年再生多少（单位/年）"; p2.textContent = "资本：渔船有多少"; p3.textContent = "海里还有多少鱼";
+    chart(c1, { series: [{ name: "每年捕捞", data: o.H, c: 1 }, { name: "每年再生", data: o.G, c: 4, dash: true }], xlabel: "年", ylabel: "单位/年", ymax: 350, hlines: [{ y: 288, label: "每年最多能再生约 288" }], title: "捕捞量和再生量随时间变化" });
+    chart(c2, { series: [{ name: "渔船", data: o.C, c: 2 }], xlabel: "年", ylabel: "资本", title: "渔船随时间变化" });
+    chart(c3, { series: [{ name: "海里的鱼", data: o.R, c: 3 }], xlabel: "年", ylabel: "单位", ymax: 1000, title: "海里的鱼随时间变化" });
+    let t = `船队靠利润每年净增 ${st.fnet}%，捕捞量跟着涨，第 ${tH} 年冲到 ${n0(o.H[tH])}，超过了鱼每年最多能再生的约 288。`;
+    if (end === "稳住") t += `鱼少了，利润跟着薄，添船慢下来，刹车来得及：最后每年捕 ${n0(o.H[150])}，海里稳在 ${n0(o.R[150])}，渔船稳在 ${n0(o.C[150])}。`;
+    else if (end === "来回摆") t += `刹车来得不够快：最后 30 年，捕捞在每年 ${n0(lo)} 到 ${n0(hi)} 之间来回摆，鱼和渔船跟着一起摆。`;
+    else { const tz = o.H.findIndex((v, i) => i > tH && v < 10); t += `船在鱼很少时还有钱赚，船队继续长，鱼掉进再生几乎停住的那一段：第 ${tz} 年捕捞已不到 10，鱼和渔业一起没了，再也长不回来。`; }
+    narrate.textContent = t;
+    stats.replaceChildren(box(n0(tH), "捕捞见顶（第几年）"), box(n0(o.H[tH]), "见顶时每年捕捞"), box(`${n0(lo)}–${n0(hi)}`, "最后 30 年每年捕捞"), box(end, "结局"), box(n0(o.R[150]), "第 150 年海里的鱼"));
+  }
+  function draw() {
+    for (const k in sels) { sels[k].value = String(st[k]); wraps[k].hidden = OPTS[k].mode !== st.mode; }
+    bOil.setAttribute("aria-pressed", String(st.mode === "oil")); bFish.setAttribute("aria-pressed", String(st.mode === "fish"));
+    if (st.mode === "oil") drawOil(); else drawFish();
+  }
+  draw();
+})();
+</script>
+</body>
+</html>

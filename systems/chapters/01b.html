@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 1 章（下）· 系统之美导读</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/chapters.js"></script>
+<script src="../assets/ts.js"></script>
+<style>
+#sim-01b .cap { font-size: 13px; color: var(--muted); margin: 2px 0 8px; }
+#sim-01b button[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); font-weight: 700; }
+</style>
+</head>
+<body data-page="01b">
+<main>
+<h2>这一页在做什么</h2>
+<div class="gist"><p>第 1 章后半讲反馈：存量的高低反过来决定流进流出它的流量，因果链首尾接上，成了一个回路。书里讲两种回路。调节回路朝一个目标拉，偏高往下拉，偏低往上拉，越近越慢，热咖啡凉到室温就是它。增强回路越多长得越多，越少掉得越快，利滚利、水土流失都是它。好玩的地方在于，一个系统可以自己产生自己的行为，用不着谁在背后推。读的时候盯住一件事：这个流量是不是看了存量才定的。</p></div>
+<figure class="fig">
+<svg class="diagram" viewBox="0 0 640 230" role="img" aria-label="两张并排的示意曲线。左图：一条线从高处、一条线从低处出发，都朝中间一条虚线（目标）走，开头走得快，越靠近越平，贴着目标线。右图：一条实线开头几乎平着，后来越翘越陡；一条虚直线从同一点出发，一直缓缓上升，到右端远低于实线">
+<text x="170" y="18" text-anchor="middle" class="t-b">调节回路：朝目标走，越近越慢</text>
+<line x1="40" y1="30" x2="40" y2="200" class="ln"/><line x1="40" y1="200" x2="300" y2="200" class="ln"/>
+<path d="M40 130 H300" class="ln-d"/>
+<text x="296" y="150" text-anchor="end" class="t-m">目标</text>
+<path d="M40 50 L53 65 L66 78 L79 88 L92 96 L105 102 L118 108 L131 112 L144 115 L157 118 L170 120 L183 122 L196 124 L209 125 L222 126 L235 126 L248 127 L261 127 L274 128 L287 128 L300 128" class="s1"/>
+<path d="M40 192 L53 179 L66 170 L79 162 L92 156 L105 150 L118 146 L131 143 L144 140 L157 138 L170 137 L183 135 L196 134 L209 133 L222 132 L235 132 L248 131 L261 131 L274 131 L287 131 L300 130" class="s2"/>
+<text x="300" y="218" text-anchor="end" class="t-m">时间</text>
+<text x="480" y="18" text-anchor="middle" class="t-b">增强回路：越滚越快</text>
+<line x1="350" y1="30" x2="350" y2="200" class="ln"/><line x1="350" y1="200" x2="610" y2="200" class="ln"/>
+<path d="M350 200 L358 199 L367 198 L376 196 L384 195 L393 194 L402 192 L410 191 L419 189 L428 187 L436 184 L445 182 L454 179 L462 176 L471 173 L480 169 L488 166 L497 161 L506 156 L514 151 L523 145 L532 139 L540 132 L549 124 L558 116 L566 107 L575 96 L584 85 L592 73 L601 59 L610 44" class="s3"/>
+<path d="M350 200 L610 171" class="ln-d"/>
+<text x="560" y="44" text-anchor="end" class="t-m">每期按比例长</text>
+<text x="606" y="162" text-anchor="end" class="t-m">每期加固定的数</text>
+<text x="610" y="218" text-anchor="end" class="t-m">时间</text>
+</svg>
+<figcaption>本站示意图，没有刻度，只画形状。左边是调节回路：从上面或下面出发，都朝目标走，离得越近走得越慢，热咖啡和冰咖啡就是这两条线。右边实线是增强回路，虚线是每期加一个固定数的线性增长：两条线开头贴得很近，后来越拉越开。</figcaption></figure>
+<h2>读之前：这一页在全书的哪里</h2>
+<div class="linehere"></div>
+<p>第 1 章前半（01a）讲完了<a class="term" href="01a.html#c-stock-flow">存量和流量</a>：存量只能靠流量慢慢变，流入流出之差定方向，相等时是<a class="term" href="01a.html#c-equilibrium">动态平衡</a>；最后说人的决策多半是在调存量。这一页从那句话接着走。§4 把「看着存量调流量」定义成反馈回路，§5、§6 各讲一种回路，§6 收尾时预告第 2 章：真实系统里好几个回路同时拉一个存量。01a 的概念这里直接用。</p>
+<div class="crux"><p>热咖啡放凉和存款利滚利，一个越变越慢，一个越变越快，差在哪里？</p></div>
+<p class="lede">读的时候带着这几个问题，读完回来对照「检查一下理解」。</p>
+<ol class="qs">
+  <li>怎么判断一个存量背后有没有反馈回路？它长期很稳，就能断定有吗？<span class="sec">§4</span></li>
+  <li>咖啡变凉这个回路的目标是什么，是谁定的？<span class="sec">§5</span></li>
+  <li>有了调节回路，存量就一定能到目标吗？<span class="sec">§5</span></li>
+  <li>100 美元按年利率 7% 存着，多少年翻一倍？为什么书里说「约」？<span class="sec">§6</span></li>
+</ol>
+<h2>分节地图</h2>
+<p class="lede">这一页是原书和译本第 1 章的后三节。粗体是本站给的节名，后面是档和译本字数；下面一行是译本的小标题和这一节在译本电子书里开头的几个字（搜它就能跳过去），再下面是英文原书的小标题和开头几个词，翻纸书用。读完打个勾。</p>
+<ol class="secmap">
+  <li data-sec="4"><span class="what">定义反馈回路，用活期账户举例：钱少了多干活，钱多了少干点。留意她说长期一致的行为「很可能」有回路，也提醒有的系统只是两头开着的链。</span></li>
+  <li data-sec="5"><span class="what">第一种回路。前半是喝咖啡提神和「标签不带方向」的画法，后半从<span class="zhv">译本：「关于咖啡，我这里还有另外一个」</span>起讲咖啡变凉、变暖，再说回路也会不管用。</span></li>
+  <li data-sec="6"><span class="what">第二种回路：五个小例子、利滚利、资本再投资，方框里的翻倍时间值得记。从<span class="zhv">译本：「我想提醒大家注意的是」</span>起讲 A 导致 B 时也问 B 是否导致 A。两个方框的位置和原书不同。</span></li>
+</ol>
+<figure class="fig"><img src="../assets/img/01b-balzac.jpg" alt="椭圆框里的黑白半身像：一个微胖的男人，头发蓬松，留着小胡子，穿宽松的白衬衫，右手按在胸口" loading="lazy">
+<figcaption>巴尔扎克（Honoré de Balzac），19 世纪法国小说家。§6 开头的题词是他说的恶性循环：要休息就得去旅行，旅行要钱，挣钱就得工作。他早年经营出版和印刷失败，1828 年背了六万多法郎的债，此后一直拼命写作。两句题词（他和 Tinbergen 的）都转引自 George Richardson 1991 年的《Feedback Thought in Social Science and Systems Theory》，见书后注释。这张是 Nadar 据 Bisson 的银版照片修整的版本，约 1890 年。<span class="src">Paul Nadar，公有领域，维基共享资源</span></figcaption></figure>
+<h2>先用中文过一遍：这一页的概念</h2>
+<p class="lede">先把这一页用到的几个概念用书外的例子讲一遍。作者拿它们推出什么，读原书时自己看。后面各页用到时会链回这里。</p>
+<div class="concept" id="c-feedback-loop">
+<h3><span class="sec">§4</span>反馈回路 <span class="en">feedback loop, information link，译本：反馈回路、信息连接</span></h3>
+<p>存量的高低经过一串规则、决定或物理规律，反过来改变流进流出它的流量，因果链首尾接上，就是反馈回路。手机电量是个存量：电量低于 20% 你就去充，充满就拔，充电这个流入是看着电量定的。图里那条细的弯箭头叫信息连接：它不运东西，只把「现在有多少」送到阀门那里。存量自己不会动手，动作总是落在调流量上。</p>
+<p>判断有没有回路，问一句：这个流量的大小，是不是看了存量才定的？每月固定定投 1000 元，不管账户里已经有多少，那就只是一条开放的链。书里给的线索是：存量长期稳在一个范围，或者一路猛涨猛跌，很可能有回路在起作用。只是「很可能」：两股流量碰巧一样大，存量也能稳住。</p>
+<figure class="fig">
+<svg class="diagram" viewBox="0 0 640 250" role="img" aria-label="存量流量图：左边云朵标着电网，粗箭头带阀门标着充电，流进中间方框手机电量；方框右边粗箭头带阀门标着耗电，流向右边云朵。一条细的弯箭头从方框底部绕回充电的阀门，中间标着 B，下面写着电量低于 20% 就去充，充满就拔">
+<path d="M30 112 q-10 -22 12 -26 q6 -20 30 -12 q18 -10 28 8 q22 2 14 24 q4 20 -22 18 q-14 12 -34 2 q-30 6 -28 -14 z" class="box"/>
+<text x="72" y="106" text-anchor="middle" class="t-m">电网</text>
+<rect x="114" y="94" width="112" height="12" class="box"/><path d="M226 86 L244 100 L226 114 z" class="f-fg"/>
+<path d="M166 84 L186 100 L166 116 z M206 84 L186 100 L206 116 z" class="f-a"/>
+<text x="186" y="74" text-anchor="middle" class="t-b">充电</text>
+<rect x="244" y="62" width="152" height="76" rx="4" class="box"/>
+<text x="320" y="96" text-anchor="middle" class="t-b">手机电量</text>
+<text x="320" y="116" text-anchor="middle" class="t-m">存量：还剩百分之几</text>
+<rect x="396" y="94" width="112" height="12" class="box"/><path d="M508 86 L526 100 L508 114 z" class="f-fg"/>
+<path d="M446 84 L466 100 L446 116 z M486 84 L466 100 L486 116 z" class="f-a"/>
+<text x="466" y="74" text-anchor="middle" class="t-b">耗电</text>
+<path d="M528 112 q-10 -22 12 -26 q6 -20 30 -12 q18 -10 28 8 q22 2 14 24 q4 20 -22 18 q-14 12 -34 2 q-30 6 -28 -14 z" class="box"/>
+<text x="570" y="106" text-anchor="middle" class="t-m">用掉了</text>
+<path d="M310 140 C310 200 190 200 186 134" class="ln-a"/>
+<path d="M180 134 L186 120 L192 134 z" class="f-a"/>
+<circle cx="250" cy="168" r="12" class="box"/>
+<text x="250" y="173" text-anchor="middle" class="t-b">B</text>
+<text x="250" y="222" text-anchor="middle" class="t-m">电量低于 20% 就去充，充满就拔</text>
+<text x="250" y="240" text-anchor="middle" class="t-m">细弯箭头：把电量的高低送到阀门</text>
+</svg>
+<figcaption>本站示意图，例子在书外。细弯箭头是信息连接：电量的高低决定你去不去充电。B 表示这是一个调节回路，§5 讲。耗电那一头这里没画回路，其实也可以有一个：电量低了，你会调暗屏幕。</figcaption></figure>
+<p class="use"><b>在这一页：</b>§4 用活期账户讲回路，图 1—8 教怎么读带回路的图：方框、粗箭头、细弯箭头，三样分清。</p>
+</div>
+<div class="concept" id="c-balancing-loop">
+<h3><span class="sec">§5</span>调节回路 <span class="en">balancing feedback loop, goal-seeking，译本：调节回路、寻的</span></h3>
+<p>调节回路有一个目标。它比较「现在有多少」和「想要多少」，由差距驱动行动：偏高往下拉，偏低往上拉。恒温空调、自动扩缩容、看到余额少了就少花点，都是它。目标可以是人定的，也可以是物理规律定的：一杯咖啡的「目标」是室温，没有谁在做决定，只是温差越大，散热越快。</p>
+<p>它的标志是越接近越慢。拿咖啡说，温差每分钟缩小同样的比例：温差大时一分钟走得远，温差小时一分钟只挪一点。往下走的不一定是调节回路，要看变化的快慢跟着差距走，还是跟着存量本身走。<span class="zhv">译本：「寻的」</span>是导弹术语（「的」读 dì），意思就是朝目标走。书后术语表说它又叫「负反馈」：负是和变化的方向相反，不是差评。</p>
+<figure class="fig"><img src="../assets/img/01b-hotcoffee.jpg" alt="黑色背景前，木台上放着一只蓝紫色釉面陶杯，杯口冒出一缕缕盘旋上升的热气" loading="lazy">
+<figcaption>一杯冒着热气的咖啡。§5 的第二个例子：放着不喝，它朝室温凉下去，开头凉得快，后来越来越慢。照片与本书无关。<span class="src">Greenraystudio，CC BY 3.0，维基共享资源</span></figcaption></figure>
+<figure class="fig"><img src="../assets/img/01b-icedcoffee.jpg" alt="木桌上一只高玻璃杯，杯里有冰块，上层是奶色，下层是深色的咖啡" loading="lazy">
+<figcaption>一杯加了奶的冰咖啡，2024 年摄于美国怀俄明州拉勒米的一家咖啡馆。同一个回路反着走：放在屋里，它朝室温暖上去，同样越走越慢。照片与本书无关。<span class="src">Tony Webster，CC BY 2.0，维基共享资源</span></figcaption></figure>
+<p class="use"><b>在这一页：</b>§5 先讲喝咖啡提神（人做决定），再讲咖啡变凉、变暖（物理规律），最后说回路在不等于回路管用。</p>
+</div>
+<div class="concept" id="c-reinforcing-loop">
+<h3><span class="sec">§6</span>增强回路 <span class="en">reinforcing feedback loop，译本：增强回路</span></h3>
+<p>增强回路里，存量越多，流入越多；越少，流入越少。变化朝哪个方向，它就把哪个方向放大。一个开源项目贡献者多了，修 bug 快、名气大，来的人更多；冷清下来，issue 没人回，剩下的人也陆续走了。书里说它可以是良性循环，也可以是恶性循环，看它把变化往哪边放大。</p>
+<p>往下掉的增强回路最容易认错。咖啡变凉是往下、越来越慢、停在室温；水土流失也是往下，却越来越快：土冲走了，植物少了，固土的根少了，土冲得更快。书后术语表说它又叫「正反馈」，「正」只是和变化同向。雪崩也是正反馈，和中文里说的「好评」不相干。</p>
+<figure class="fig">
+<svg class="diagram" viewBox="0 0 640 250" role="img" aria-label="存量流量图：左边云朵标着外面的人，粗箭头带阀门标着新加入，流进中间方框贡献者；方框右边粗箭头带阀门标着离开，流向右边云朵。一条细的弯箭头从方框底部绕回新加入的阀门，中间标着 R，下面写着人多、修得快、名气大，来的人更多">
+<path d="M30 112 q-10 -22 12 -26 q6 -20 30 -12 q18 -10 28 8 q22 2 14 24 q4 20 -22 18 q-14 12 -34 2 q-30 6 -28 -14 z" class="box"/>
+<text x="72" y="106" text-anchor="middle" class="t-m">外面的人</text>
+<rect x="114" y="94" width="112" height="12" class="box"/><path d="M226 86 L244 100 L226 114 z" class="f-fg"/>
+<path d="M166 84 L186 100 L166 116 z M206 84 L186 100 L206 116 z" class="f-a"/>
+<text x="186" y="74" text-anchor="middle" class="t-b">新加入</text>
+<rect x="244" y="62" width="152" height="76" rx="4" class="box"/>
+<text x="320" y="96" text-anchor="middle" class="t-b">贡献者</text>
+<text x="320" y="116" text-anchor="middle" class="t-m">存量：现在有几个人</text>
+<rect x="396" y="94" width="112" height="12" class="box"/><path d="M508 86 L526 100 L508 114 z" class="f-fg"/>
+<path d="M446 84 L466 100 L446 116 z M486 84 L466 100 L486 116 z" class="f-a"/>
+<text x="466" y="74" text-anchor="middle" class="t-b">离开</text>
+<path d="M528 112 q-10 -22 12 -26 q6 -20 30 -12 q18 -10 28 8 q22 2 14 24 q4 20 -22 18 q-14 12 -34 2 q-30 6 -28 -14 z" class="box"/>
+<text x="570" y="106" text-anchor="middle" class="t-m">别处</text>
+<path d="M310 140 C310 200 190 200 186 134" class="ln-a"/>
+<path d="M180 134 L186 120 L192 134 z" class="f-a"/>
+<circle cx="250" cy="168" r="12" class="box"/>
+<text x="250" y="173" text-anchor="middle" class="t-b">R</text>
+<text x="250" y="222" text-anchor="middle" class="t-m">人多 → 修得快、名气大 → 来的人更多</text>
+<text x="250" y="240" text-anchor="middle" class="t-m">倒着转也一样：人少 → 冷清 → 来的人更少</text>
+</svg>
+<figcaption>本站示意图，例子在书外。R 表示增强回路：贡献者的人数经过「项目活跃、名气大」，反过来加大新加入的人数。离开那一头没画回路。和手机电量那张图比，箭头的走法一样，差在信息连接让流量往哪边变。</figcaption></figure>
+<figure class="fig"><img src="../assets/img/01b-gully.jpg" alt="一段柏油路的中间塌出一个大坑，坑壁是黄土，坑底堆着碎石、断裂的路面和一截管涵" loading="lazy">
+<figcaption>尼日利亚卡拉巴尔 Ikot Effangha 一段被水冲垮的路，2017 年摄，路基下的土被冲出一个大坑。§6 说的是田地上的水土流失，这张只是让你看看土被水带走以后的样子。照片与本书无关。<span class="src">Preciousayara，CC BY-SA 4.0，维基共享资源</span></figcaption></figure>
+<p class="use"><b>在这一页：</b>§6 先列五个小例子，再讲存款（图 1—12、1—13）和资本再投资（图 1—14）。</p>
+</div>
+<div class="concept" id="c-doubling-time">
+<h3><span class="sec">§6</span>指数增长和翻倍时间 <span class="en">exponential growth, doubling time，译本：指数级增长、存量翻倍所花费的时间</span></h3>
+<p>每期按自己的固定比例长，叫指数增长。100 块按年利率 7% 存着，第一年多 7 块，第十年那一年多 13 块左右，因为基数大了。和它对照的是线性增长：每期加一个固定的数。每年固定多 7 块，四十年后是 380 块；按 7% 利滚利，四十年后是 1497 块。头几年两条线贴得很近，所以低利率的存款看起来像直线。</p>
+<p>指数增长的存量翻一倍要的时间，约等于 70 除以每期的百分比增长率：7% 约 10 年，5% 约 14 年。拿 70 去除的是 7，不是 0.07。这是个近似：每年结一次息时，7% 第 10 年是 196.72，第 11 年才过 200。本站补一句：调节回路的差距按比例缩小，也有一个「减半时间」，算法相同。</p>
+<p class="use"><b>在这一页：</b>§6 的方框讲 70 法则。模拟器的存款那一半可以亲手对数。</p>
+</div>
+<h2>动手：模拟器</h2>
+<p>先猜：一杯 100°C 的咖啡放在 18°C 的屋里，不喝，8 分钟后大约多少度？一杯从 0°C 开始的冰咖啡，8 分钟后呢？再猜：100 美元按年利率 7% 存着不动，第几年第一次到 200 美元？</p>
+<div class="sim" id="sim-01b">
+  <div class="sim-head"><span class="tag">模拟器</span><h3>两种回路</h3><p class="desc">用最上面两个按钮切换：咖啡是调节回路，存款是增强回路。打开页面时是咖啡，用的是和书上图 1—11 对得上的一组数。</p></div>
+  <div class="sim-body"><p>需要浏览器打开脚本才能运行。</p></div>
+</div>
+<p>咖啡：图上六条线是书里那六杯，起点 100、80、60、10、5、0°C，都不喝。「室温」是这个回路的目标，咖啡最后都往它那里走；「凉得快慢」是每分钟把咖啡和室温的温差缩小百分之几，杯子薄、有风就快，保温杯就慢；「看多久」是横轴有几分钟。每 15 秒算一次：温度加上（室温 − 温度）× 比例 × 0.25 分钟。书后附录写的是每分钟 10%、每分钟算一次，照它算，100°C 的咖啡 8 分钟后还有 53°C，和书上图 1—11 的约 28°C 对不上；每分钟 25%、每 15 秒算一次，画出来和书上的图几乎重合，本站默认用它，10% 留在选项里。附录的变凉、变暖是两组方程，本站合成一条，结果一样。</p>
+<p>存款：前五条线是书上图 1—13 的五种年利率（2%、4%、6%、8%、10%），100 美元存着，不存不取，每年按余额结一次息，和书后附录的模型一样；最后一条虚线是「你的利率」。「看多少年」默认 12 年，和书上的图一样长。横虚线是 200 美元，也就是翻倍。</p>
+<ol class="qs">
+  <li>试试看：先看咖啡的默认数。100°C 那杯 8 分钟后约 28°C；看统计栏，第 1 分钟降了 18.7°C，第 8 分钟那一分钟只降了 3.1°C。0°C 那杯往上走，8 分钟后约 15.7°C，也是越走越慢。再把「室温」改成 25：六条线往哪里去？</li>
+  <li>试试看：点「回到书里那一组」，把「凉得快慢」改成附录写的 10%：100°C 那杯 8 分钟后还有 54.5°C（附录每分钟算一次，是 53.3°C），曲线比书上的图平；再把「看多久」改成 20，第 20 分钟约 28.8°C。曲线的形状变了没有？再看统计栏的「温差减半要多久」：25% 时约 2.7 分钟，10% 时约 6.8 分钟，和 70 除以每分钟的百分比（2.8、7）差不多。</li>
+  <li>试试看：切到存款。「你的利率」默认 7%：统计栏里第一次到 200 美元是第 11 年，第 10 年是 196.72，70 ÷ 7 = 10 是「约」。把「你的利率」依次改成 2、4、6、8、10，看第 12 年的余额，和书上图 1—13 的五个数对一对。最后选 2%，把「看多少年」改成 40：第几年才到 200？</li>
+</ol>
+<p>这个模拟器里每次只有一个回路在起作用。真实的存款还有存取、通胀和税，真实的咖啡还受杯子、蒸发、搅拌影响，模型的数只是示意。几个回路同时拉一个存量，是第 2 章的事。</p>
+<h2>原文里的词和句</h2>
+<p class="lede">读英文原书时值得停一下的词和句：熟词生义、Meadows 的口语和比喻。灰色斜体是原句里连续的几个词，在英文电子书里搜它就能找到；标「每个字都认识」的，是每个词都眼熟、合起来意思却变了的，最容易读错。点「记下」收进词本。</p>
+<div class="entry trap"><div class="en">by leaps and bounds</div><div class="loc" data-p="102">… a stock grows by leaps and bounds …</div><div class="zh">突飞猛进地（增长）</div><div class="note">leap 和 bound 都是跳，叠在一起是蹦着跳着地往上长。这里的 bound 和「界限」无关。</div></div>
+<div class="entry trap"><div class="en">feel free to</div><div class="loc" data-p="104">… you may feel free to work less …</div><div class="zh">觉得可以放心地（少干点）</div><div class="note">平时多是客套话「请随意」。这里是钱够了，心里没负担。</div></div>
+<div class="entry trap"><div class="en">open-ended</div><div class="loc" data-p="108">… relatively simple open-ended chains of stocks …</div><div class="zh">两头开着的（链条）</div><div class="note">字面意思：链条两头不接上，不成回路。不是「开放式问题」那个 open-ended。</div></div>
+<div class="entry trap"><div class="en">hot black stuff</div><div class="loc" data-p="111">… grab a cup of hot black stuff …</div><div class="zh">热乎乎的黑东西，指咖啡</div><div class="note">俏皮说法，不点名，说「那玩意儿」。stuff 在口语里常这样用。</div></div>
+<div class="entry"><div class="en">perk up</div><div class="loc" data-p="111">… to perk you up again.</div><div class="zh">让你重新来精神</div><div class="note">perk up 是振作、提神，说人说植物都行。</div></div>
+<div class="entry trap"><div class="en">bounce around</div><div class="loc" data-p="114">… find yourself bouncing around with extra energy …</div><div class="zh">（精力过剩）上蹿下跳</div><div class="note">bounce 是弹跳。形容咖啡喝多了坐不住。</div></div>
+<div class="entry trap"><div class="en">lay off</div><div class="loc" data-p="114">… lay off the caffeine for a while.</div><div class="zh">停一阵，不碰（咖啡因）</div><div class="note">lay off 最常见的意思是裁员；口语里 lay off something 是暂时戒掉、别碰。</div></div>
+<div class="entry"><div class="en">run your motor faster</div><div class="loc" data-p="115">… It lets you run your motor faster …</div><div class="zh">让你的马达转得快些</div><div class="note">和同一句的 fuel tank（油箱）是一对比喻：咖啡因让你转得快，不给你加油。</div></div>
+<div class="entry trap"><div class="en">wear off</div><div class="loc" data-p="115">… Eventually the caffeine high wears off …</div><div class="zh">（咖啡因的）兴奋劲渐渐退去</div><div class="note">high 在这里是名词，兴奋的劲头。wear off 说药效、新鲜感慢慢消退。</div></div>
+<div class="entry"><div class="en">vicious circle</div><div class="loc" data-p="126">… I am in a vicious circle …</div><div class="zh">恶性循环</div><div class="note">也写 vicious cycle。vicious 平时是凶恶的。</div></div>
+<div class="entry trap"><div class="en">circular reasoning</div><div class="loc" data-p="128">… as if this were circular reasoning …</div><div class="zh">循环论证</div><div class="note">拿结论当理由的论证。Tinbergen 的意思是：听着像循环论证，其实是一个真实的回路。</div></div>
+<div class="entry"><div class="en">virtuous circle</div><div class="loc" data-p="130">… a vicious or virtuous circle that can …</div><div class="zh">良性循环</div><div class="note">virtuous 是有德行的，这里只是「好的那种」。同一句的 snowballing 是滚雪球般变大。</div></div>
+<div class="entry trap"><div class="en">runaway</div><div class="loc" data-p="130">… healthy growth or runaway destruction.</div><div class="zh">失控的（毁坏）</div><div class="note">作形容词是失控的、止不住的，runaway inflation 是失控的通胀。原书 §6 的小标题 Runaway Loops 就是这个词。</div></div>
+<div class="entry"><div class="en">good news or bad news</div><div class="loc" data-p="143">… either good news or bad news …</div><div class="zh">是好消息还是坏消息</div><div class="note">她的意思是指数增长本身不分好坏，看长的是什么。</div></div>
+<div class="entry"><div class="en">without regard to</div><div class="loc" data-p="148">… made without regard to any information …</div><div class="zh">不考虑、不管</div><div class="note">书面说法，意思接近 ignoring。</div></div>
+<div class="entry trap"><div class="en">in danger of</div><div class="loc" data-p="150">… in danger of becoming a systems thinker!</div><div class="zh">眼看就要（成为系统思考者了）</div><div class="note">玩笑话。in danger of 平时说坏事，她拿来说好事，正话反说。</div></div>
+<div class="entry trap"><div class="en">handy</div><div class="loc" data-p="152">… it is handy to know this shortcut …</div><div class="zh">有用、派得上用场</div><div class="note">handy 是好用、顺手，不是「容易」。shortcut 是捷径，这里指速算法。</div></div>
+<div class="entry"><div class="en">tug against</div><div class="loc" data-p="158">… in a system tug against each other …</div><div class="zh">互相拉扯</div><div class="note">tug 是使劲拽，拔河叫 tug-of-war。</div></div>
+<h2>译本勘误</h2>
+<p class="lede">对着译本读这三节时，下面这些地方会把人读歪。方框里是译本的原句，在译本电子书里搜它就能找到；灰色斜体是英文原书那一处。只收意思错了、反了、漏了的，措辞上的出入不收。全书的勘误汇总在<a href="../zh.html">译本勘误</a>。</p>
+<div class="zherr" data-p="102"><h4><span class="sec">§4</span>是「很可能」有回路<span class="mark">误译</span></h4>
+<p class="loc">… it is likely that there is …</p>
+<p class="zhq"><span class="zhv">译本：「我们可以很肯定地说」</span></p>
+<p>原文两处都是 likely：存量长期猛涨、猛跌或稳在一个范围，很可能有控制机制在起作用。译本一处说成「很肯定」，同一段又说「就一定存在」。作者在 §4 还说有的系统根本没有回路，长期稳定只是线索，不是证明。</p></div>
+<div class="zherr" data-p="105"><h4><span class="sec">§4</span>存量「通过一串信号和行动控制自己」<span class="mark">误译</span></h4>
+<p class="loc">… feeds back through a chain of signals …</p>
+<p class="zhq"><span class="zhv">译本：「从而形成一系列连锁反应」</span></p>
+<p>这是反馈的定义：存量的水平经过一串信号和行动，反过来控制它自己，因果链首尾相接。「连锁反应」只说一件接一件地发生，链条不回到起点，回路的意思就丢了。</p></div>
+<div class="zherr" data-p="107"><h4><span class="sec">§4</span>动作「总是」通过调流量<span class="mark">误译</span></h4>
+<p class="loc">… action or change always proceeds through …</p>
+<p class="zhq"><span class="zhv">译本：「行动或改变通常是通过调整流量的方式进行的」</span></p>
+<p>图 1—8 的图注原文是 always。存量只能靠流量改变，这一条没有例外。「通常」留了一个不存在的口子，好像有时可以绕过流量直接改存量。</p></div>
+<div class="zherr" data-p="111"><h4><span class="sec">§5</span>喝咖啡调的是「能量」<span class="mark">误译</span></h4>
+<p class="loc">… a desired stock level (energy for work).</p>
+<p class="zhq"><span class="zhv">译本：「在头脑中有一个期望的精神状态」</span></p>
+<p>原文的存量是干活用的能量，图 1—9 里这个存量标作「可用的能量」（左边另一个存量是「身体内储存的能量」）。译本正文改成精神状态，对着图会找不到这个存量。§5 讲喝多了、能量过剩的那一段，说的也是能量。</p></div>
+<div class="zherr" data-p="114"><h4><span class="sec">§5</span>这个回路也能纠正「过量」<span class="mark turn">译反</span></h4>
+<p class="loc">… can correct an oversupply as well as …</p>
+<p class="zhq"><span class="zhv">译本：「也可能导致能量供应过量」</span></p>
+<p>原文：这个回路既能纠正不足，也能纠正过量，所以图上的标签不带方向。译本说成回路「可能导致过量」，正好反了，也和同一段「喝多了就少喝」的意思对不上。</p></div>
+<div class="zherr" data-p="114"><h4><span class="sec">§5</span>喝多了是「停一阵不喝」<span class="mark">误译</span></h4>
+<p class="loc">… lay off the caffeine for a while.</p>
+<p class="zhq"><span class="zhv">译本：「你不得不活动一会儿」</span></p>
+<p>lay off 是暂时戒掉。原文的意思是回路去调流入：能量多了，你就少喝咖啡。译本改成去活动、把咖啡因代谢掉，调的就不是这个回路里的流量了。</p></div>
+<div class="zherr" data-p="116"><h4><span class="sec">§5</span>「趋向稳定」不是「动态平衡」<span class="mark">术语</span></h4>
+<p class="loc">… stabilizing, goal-seeking, regulating loop is called …</p>
+<p class="zhq"><span class="zhv">译本：「表现出“寻的”或“动态平衡”的特征」</span></p>
+<p>原文说调节回路是 goal-seeking 或 stability-seeking：朝目标走、趋向稳定。「动态平衡」是 01a 的另一个概念，指流入等于流出、存量不动。回路往回拉的时候存量正在变，并不处于动态平衡。「寻的」读 dì，就是朝目标走。</p></div>
+<div class="zherr" data-p="128"><h4><span class="sec">§6</span>Tinbergen 说的是「循环论证」<span class="mark">术语</span></h4>
+<p class="loc">… as if this were circular reasoning …</p>
+<p class="zhq"><span class="zhv">译本：「看起来好像是循环迭代的」</span></p>
+<p>circular reasoning 是循环论证：拿结论当理由。Tinbergen 的意思是：「利润降是因为投资降，投资降是因为利润降」听着像循环论证，其实是一个真实的增强回路。「循环迭代」把这层转折译没了。</p></div>
+<div class="zherr" data-p="137"><h4><span class="sec">§6</span>「按自身的固定比例增长」<span class="mark">漏译</span></h4>
+<p class="loc">… grow as a constant fraction of itself.</p>
+<p class="zhq"><span class="zhv">译本：「或者持续增长时」</span></p>
+<p>原文：凡是能自我复制、或按自身的固定比例增长的要素，就有增强回路。固定比例正是指数增长的定义。「持续增长」把每年加固定数的线性增长也包进去了，而线性增长背后没有增强回路。</p></div>
+<div class="zherr" data-p="143"><h4><span class="sec">§6</span>好坏看「长的是什么」<span class="mark">误译</span></h4>
+<p class="loc">… depending on what is growing …</p>
+<p class="zhq"><span class="zhv">译本：「不同的人对好坏的评判是有差异的」</span></p>
+<p>原文只有一句：指数增长是好是坏，看长的是什么，后面列了存款、HIV/AIDS 感染者、害虫、经济、武器。「高利贷」那句和「不同的人评判不同」都是译本加的，读来像艾滋病蔓延是好是坏也见仁见智。</p></div>
+<div class="zherr" data-p="147"><h4><span class="sec">§6</span>图 1—14 的「投入产出比」<span class="mark">术语</span></h4>
+<p class="loc">Figure 14. Reinvestment in capital.</p>
+<p class="zhq"><span class="zhv">译本：「资本再投资推动成长」</span></p>
+<p>图上左下角那个变量，原图是 fraction of output invested：产出里拿去投资的比例。译本图上写成「投入产出比」，那是经济学里另一个概念。在这张图里，它决定产出有多少回到投资这个流量。</p></div>
+<div class="zherr" data-p="148"><h4><span class="sec">§6</span>要想的是「不看存量就做的决定」<span class="mark">误译</span></h4>
+<p class="loc">… without regard to any information about …</p>
+<p class="zhq"><span class="zhv">译本：「我们人类在制定决策时会怎么样」</span></p>
+<p>原文是她给学生出的题：想一个不考虑存量信息就做出的决定，也就是没有反馈的决定。译本改成「如果没有反馈回路，决策会怎样」，题目变了，学生拿恋爱和自杀作答就接不上了。</p></div>
+<div class="zherr" data-p="149"><h4><span class="sec">§6</span>作者没有表态<span class="mark">误译</span></h4>
+<p class="loc">… decide whether you think these are …</p>
+<p class="zhq"><span class="zhv">译本：「但是，我对此持保留意见。」</span></p>
+<p>原文只说：这两个算不算真的不带反馈的决定，留给你自己判断。「我对此持保留意见」是译本加的，读来像作者不同意学生的答案。</p></div>
+<div class="zherr" data-p="151"><h4><span class="sec">§6</span>方框标题是「翻倍时间」<span class="mark">术语</span></h4>
+<p class="loc">… REINFORCING LOOPS AND DOUBLING TIME</p>
+<p class="zhq"><span class="zhv">译本：「对增强回路和时间翻倍的提示」</span></p>
+<p>doubling time 是翻倍时间：存量翻一倍要多久。「时间翻倍」成了时间本身加倍。同一框里 handy 译成「很容易知道」，原意是这个速算法好用。方框正文作「存量翻倍所花费的时间」，是对的。</p></div>
+<div class="zherr" data-p="154"><h4><span class="sec">§6</span>那句悲观的话是译本加的<span class="mark">误译</span></h4>
+<p class="loc">… how poverty may cause population growth.</p>
+<p class="zhq"><span class="zhv">译本：「可能会使自己深陷其中、痛苦不堪」</span></p>
+<p>原文这一段到「贫困是否也导致人口增长」就停了。「诸如此类……甚至是不可能的」整句是译本加的。作者的语气是兴奋的：你快成系统思考者了，不是劝人知难而退。</p></div>
+<h2>读完：作者到底说了什么</h2>
+<p class="lede">下面是作者在这三节里的主张，本站按主张之间的逻辑重排，不按原书顺序；每条后面是节号，拿不准就回书里那一节再读一遍。</p>
+<div class="claims">
+  <div class="claim"><h4>存量的高低反过来调它自己的流量，这就是反馈回路</h4><p>有人或有规则盯着存量，高了低了就去调流入或流出，存量经过一串信号和行动控制自己，动作总是落在流量上。存量长期猛涨、猛跌或稳在一个范围，她说「很可能」有回路；但不是所有系统都有回路，有的只是两头开着的链。</p><span class="sec" data-p="102 103 105 107 108">§4</span></div>
+<blockquote class="quote">A feedback loop is formed when changes in a stock affect the flows into or out of that same stock.<cite>— §4。本站译：一个存量的变化影响到流进或流出这同一个存量的流量，就形成了反馈回路。</cite></blockquote>
+  <div class="claim"><h4>调节回路追一个目标，既带来稳定，也抗拒改变</h4><p>实际和目标的差距驱动行动，往哪边偏就往哪边拉回来，所以她把图上的标签都写成不带方向的。差距越小变得越慢，咖啡朝室温走就是这个样子。同一个回路让存量稳住，也让想改变它的人遇到阻力。</p><span class="sec" data-p="114 116 117 120 124">§5</span></div>
+  <div class="claim"><h4>有回路不等于回路管用，每张系统图都是简化</h4><p>信息可能来得太晚、送错地方、看不清，触发的行动可能太弱、太慢、缺资源，存量也许永远到不了目标。她也提醒画图是在挑选：咖啡因只让身体转得快，不给身体加油，劲头过了，身体比喝之前更缺能量。</p><span class="sec" data-p="115 125">§5</span></div>
+  <div class="claim"><h4>增强回路把已有的变化放大，带来指数增长或失控的崩溃</h4><p>存量越多流入越多，越少越少。能自我复制、或按自身固定比例增长的东西都有它：人口、经济、存款。指数增长是好是坏，看长的是什么。翻倍时间约等于 70 除以百分比增长率。她把资本再投资叫作经济增长的核心引擎。</p><span class="sec" data-p="130 137 143 145 152">§6</span></div>
+  <div class="claim"><h4>看见 A 导致 B，就问 B 是否也导致 A</h4><p>她让学生想一个不看存量信息的决定，学生常举恋爱和自杀，她把判断留给读者。习惯看回路以后，人会少问该怪谁，多问系统是什么样的。真实系统里回路成群出现、互相拉扯，行为远比单个回路复杂。</p><span class="sec" data-p="148 149 150 154 157 158">§6</span></div>
+<blockquote class="quote">The concept of feedback opens up the idea that a system can cause its own behavior.<cite>— §6。本站译：反馈这个概念让人想到，一个系统可以产生它自己的行为。</cite></blockquote>
+</div>
+<p class="sowhat"><b>合起来：</b>看一个存量，先找有没有人或规则在看着它调流量；有的话，看它是朝目标拉，还是越滚越大。行为不必有外人推，结构自己就能产生它。第 2 章让几个回路同时作用在一个存量上。</p>
+<p class="chapsum"><b>这一章合起来：</b>第 1 章搭好了全书的工具箱。系统是要素、连接、目标三样，最难看见的目标常常最要紧。看一个系统先找存量：存量只能靠流量慢慢变，所以有惯性，也能缓冲。人和规则盯着存量去调流量，就有了反馈回路。书里讲两种：调节回路朝目标拉，越近越慢；增强回路把变化放大，越滚越快。后面各章用来搭模型的，就是存量、流量和这两种回路。</p>
+<h2>练一练：情境题</h2>
+<p class="lede">处境是本站编的，放在你可能遇到的地方。先自己想，再点开看分析；有的题不只一个答案。全书的情境题汇总在<a href="../drills.html">情境题</a>。</p>
+<div class="drill" id="d-log-cron">
+<h3><span class="sec">§4</span>稳了一年的磁盘</h3>
+<div class="scene"><p>运维写了一个定时任务：每天凌晨 3 点删掉 7 天以前的日志，不管磁盘还剩多少。一年里磁盘用量一直稳在 60% 上下，大家都说这套清理机制很稳。这个月接了一个新业务，每天的日志量翻了一倍，不到一周磁盘就写满了，服务跟着挂掉。</p></div>
+<p class="ask">这套清理机制里有反馈回路吗？「稳了一年」说明了什么？要怎么改？</p>
+<details class="reveal"><summary>想好了再点开</summary><p>没有回路。删多少只看日志的日期，不看磁盘用了多少，是一条两头开着的链：流入是每天写进的日志，流出是每天删掉的旧日志。前一年稳，是因为每天写进和删掉的量差不多，像浴缸进出水一样快，并不是谁在看着磁盘调。日志量一翻倍，流入大于流出，磁盘只会一天比一天满。</p><p>书里说长期稳定是有回路的线索，这里正好是线索骗人的情形。改法是让流出看存量：磁盘超过 80% 就多删一些，同时发告警。这才是一个调节回路。</p><p class="where">书里对应：§4 反馈：系统是如何运作的</p></details>
+</div>
+<div class="drill" id="d-autoscale">
+<h3><span class="sec">§5</span>一直在加的机器</h3>
+<div class="scene"><p>一个线上服务设了自动扩缩容：每分钟看一次所有实例的平均 CPU，高于 60% 就按超出的多少加实例，低于 60% 就按比例减。晚高峰流量上来，实例从 10 台一路加到 24 台，曲线一直往上走。新来的同事说：这是增强回路，实例越多加得越多，再不管就要把预算烧光了。</p></div>
+<p class="ask">他说得对吗？这是哪种回路，存量和目标各是什么？</p>
+<ol class="opts"><li>增强回路：实例越多，加得越多</li><li>调节回路：目标是平均 CPU 60%</li><li>没有回路：加多少是外面定的</li></ol>
+<details class="reveal"><summary>想好了再点开</summary><p>选 B。驱动加实例的是「实际 CPU 和 60% 之差」，不是实例数本身：实例加上去，平均 CPU 降下来，差距缩小，加得就慢了，到 60% 附近就停。曲线一路往上，只说明外面的流量在涨，不能拿来判断是增强回路。判断回路的种类不看方向，看驱动变化的是差距还是存量本身。</p><p>存量是实例数，目标是 CPU 60%。预算要担心的是另一件事：流量真在涨，回路会忠实地跟着加。另外，它每分钟看一次，新实例启动也要时间，这种延迟会让它加过头，第 2 章讲。</p><p class="where">书里对应：§5 自动洄游的鱼：调节回路</p></details>
+</div>
+<div class="drill" id="d-retry-storm">
+<h3><span class="sec">§6</span>数据库好了服务还挂着</h3>
+<div class="scene"><p>一个查询服务平时每秒处理 800 个请求，上限约 1000 个。调用方都配了「超时就立刻重试，最多 3 次」。某天数据库抖了 30 秒，查询变慢，一部分请求超时。数据库早就恢复了，服务却越来越慢，超时越来越多，每秒涌进来的请求涨到两三千，最后整个挂掉。值班的人一开始还在查数据库。</p></div>
+<p class="ask">这里在起作用的是哪种回路？从哪个存量画起？怎么改能让它停下来？</p>
+<details class="reveal"><summary>想好了再点开</summary><p>是增强回路，朝坏的方向转。存量可以取「排队等处理的请求」：积压多了，响应变慢，超时变多，重试变多，流入更多，积压更多。数据库那 30 秒只是推了一把，之后回路自己转下去，所以修好数据库也没用。只盯着触发它的那一下，就会一直在查数据库。</p><p>改法是给它配一个往回拉的回路：重试之间等一会儿，等待越来越长并带点随机；限制重试的总量；过载时直接拒绝一部分请求，也就是限流、熔断。这些都是工程师有意装上去的调节回路。</p><p class="where">书里对应：§6 脱缰的野马：增强回路</p></details>
+</div>
+<div class="drill" id="d-user-growth">
+<h3><span class="sec">§6</span>多久到两万用户</h3>
+<div class="scene"><p>一个小程序现在有 1 万个用户。运营统计了半年，每月新增的用户大约是当月用户数的 7%，大多是老用户拉来的，流失很少。老板问：照这个势头，多久到 2 万？市场部的同事算的是：每月多 700 人，大概 14 个月。</p></div>
+<p class="ask">哪种算法更合理？两种算法差在哪里？</p>
+<details class="reveal"><summary>想好了再点开</summary><p>新增按当月用户数的比例算，是增强回路，用翻倍时间：70 ÷ 7 = 10，大约 10 个月。按月一步步算，第 10 个月约 19672 人，第 11 个月约 21049 人。市场部把每月新增固定在 700 人，是线性增长，要到第 15 个月才过 2 万。差在用户多了以后，拉来的新人也跟着多。两种算法头几个月几乎一样，越往后差得越大。</p><p>也别把增强回路当成永远：能拉的人总有限，新增迟早会慢下来，那是第 2 章「增强回路碰上调节回路」的事。</p><p class="where">书里对应：§6 脱缰的野马：增强回路（讲翻倍时间的方框）</p></details>
+</div>
+<h2>今天怎么看</h2>
+<p class="lede">Meadows 1993 年写成初稿，书 2008 年出版。下面挑出这一页里能被后来的研究或事情检验的说法，分「书里 / 当时 / 今天」几栏，并给一个结论。结论判的是标题里「书里的说法：」后面那一句。全书的这一节汇总在<a href="../today.html">今天怎么看</a>。</p>
+<ul class="verdicts"><li><span class="v ok">成立</span>后来的研究或事情支持这句话。</li><li><span class="v mid">部分成立</span>大方向对，细节或适用范围要改。</li><li><span class="v bad">被改写</span>后来的研究推翻了它、换了一种说法，或者情况变了。</li><li><span class="v dis">有争议</span>至今没有定论，两边各有代表性的研究或证据。</li></ul>
+<div class="today" data-verdict="部分成立"><h4>书里的说法：物价和工资会互相推着一轮轮上涨</h4><dl>
+  <dt>书里</dt><dd>作者把它列为增强回路的一个小例子：物价涨了，工资就得涨，人们才能维持生活水平；工资涨了，物价就得涨，企业才能保住利润，如此往复。<span class="at" data-p="133">§6</span></dd>
+  <dt>当时</dt><dd>这个说法常叫「工资—物价螺旋」。1970 年代美国、英国等国通胀到两位数时，它常被拿来解释通胀为什么停不下来。</dd>
+  <dt>今天</dt><dd>国际货币基金组织 2022 年的一篇工作论文（Alvarez 等）把「物价和名义工资在连续四个季度里至少有三个季度一起加速」算作螺旋的苗头，梳理了 1960 年代以来发达经济体的历史：这样的情形之后，持续加速下去的只占少数；和疫情后最像的那批情形里，通胀多半回落，名义工资增速上来，实际工资慢慢追回。<span class="asof">核对于 2026-11。依据：Alvarez et al., Wage-Price Spirals: What is the Historical Evidence? IMF Working Paper WP/22/221（imf.org）；IMF 博客 2023 年 2 月 24 日。</span></dd>
+  <dt>另一边</dt><dd>书里列它只为说明增强回路长什么样，没说它总会失控。回路在，往回拉的力量也在，结果看哪边强：这正是 §6 收尾和第 2 章要讲的事。</dd>
+</dl></div>
+<div class="today" data-verdict="被改写"><h4>书里的说法：感染 HIV/AIDS 的人数是指数增长的一个例子</h4><dl>
+  <dt>书里</dt><dd>作者说指数增长是好消息还是坏消息，看长的是什么，列了存款、HIV/AIDS 感染者、玉米地里的害虫、国民经济、军备竞赛里的武器。<span class="at" data-p="143">§6</span></dd>
+  <dt>当时</dt><dd>作者 1993 年写初稿时，全球每年的新增感染还在上升。联合国艾滋病规划署后来回头估算，新增感染在 1995 年前后到顶，那一年约 350 万人。</dd>
+  <dt>今天</dt><dd>联合国艾滋病规划署 2026 年的资料：2025 年新增感染约 120 万人，比 1995 年的高峰少了 65%。带着病毒生活的人仍在增加，2025 年约 4100 万（2024 年那份资料里，2023 年约 3990 万）。也就是说，每年新增的人数（流入）早已掉头，感染者总数（存量）还在慢慢涨，已经不是越滚越快的样子。<span class="asof">核对于 2026-11。依据：UNAIDS 2026、2024 年的 Global HIV Factsheet（unaids.org）。各年的数是估算，每年的资料会回头修订。</span></dd>
+  <dt>另一边</dt><dd>存量和流量在这里分开走。只看新增的人会说疫情退了，只看总数的人会说还在涨，两个数说的是两件事。</dd>
+</dl></div>
+<h2>本站怎么看</h2>
+<p class="lede">读完作者的主张，再看它站不站得住。每一块摆出三样：主流怎么看，作者怎么看，本站的评论。最后一句是本站对这一页的总体判断。</p>
+<div class="views"><h4>资本是增长的发动机吗</h4>
+<p><b>主流看法：</b>经济学讲增长的标准模型是 Robert Solow 1956 年提出的：资本越积越多，每多一台机器带来的产出越来越少（收益递减），光靠再投资，人均产出最后会停在一个水平上；人均产出要一直涨，得靠技术进步。1980 年代以后的「内生增长」理论接着去解释技术进步本身从哪里来。</p>
+<p><b>作者的看法：</b>资本生产产出，产出的一部分再投资变成资本，这个增强回路是经济增长的核心引擎。<span class="at" data-p="145">§6</span></p>
+<p class="ours"><b>本站的评论：</b>作为一个回路，她画的没有错：工厂多了产出多，能拿去投资的也多。分歧在「核心引擎」四个字。Solow 的模型里，这个回路会自己慢下来，因为折旧和收益递减在往回拉；她在第 2 章也给资本加上了折旧，后面还会讲增长碰到的极限。对经济学不熟的读者，记一句就够：再投资能让经济长大，主流经济学认为让它一直长下去的主要是技术进步。</p></div>
+<div class="views"><h4>处处是回路也可能处处是故事</h4>
+<p><b>主流看法：</b>统计和计量经济学把「B 也影响 A」叫作反向因果或联立性，是因果推断里要专门排除的一类问题。她举的美联储就是一个被量化过的例子：John Taylor 1993 年提出的泰勒规则，用通胀偏离目标多少、产出偏离潜在水平多少，算出联邦基金利率该定多高，相当于把「经济怎样影响美联储」写成了一条公式。</p>
+<p><b>作者的看法：</b>看到 A 导致 B，就问 B 是否也导致 A；你会开始到处看见反馈回路。恋爱和自杀算不算没有反馈的决定，她留给读者判断。<span class="at" data-p="148 149 150 154">§6</span></p>
+<p class="ours"><b>本站的评论：</b>作为发问的习惯，这一条很值钱：看到「用户流失导致收入下降」，再问一句收入下降是不是也让产品投入少了，流失更多。但想得出一个回路，不等于它强到起作用。要说 B 影响 A，得拿数据看方向和大小。01a 的浴缸也提醒过：存量长期不动，可能只是两股流量碰巧相等，背后并没有回路。</p></div>
+<div class="views"><h4>正反馈不是好评</h4>
+<p><b>主流看法：</b>Bronson 等人 2021 年在 HotOS 会议上的论文《分布式系统中的亚稳态故障》（Metastable Failures in Distributed Systems）把一类事故单独拿出来讲：一次触发（流量尖峰、短暂故障）把系统推进坏状态，之后重试之类的机制让它自己维持下去，触发因素没了也恢复不过来。2022 年 OSDI 会议上的后续研究分析了 11 个机构的 22 起这类事故。</p>
+<p><b>作者的看法：</b>增强回路可以带来健康的增长，也可以带来失控的毁坏；往下掉的回路一样是增强回路，水土流失就是。<span class="at" data-p="130 135 144">§6</span></p>
+<p class="ours"><b>本站的评论：</b>程序员最该记住的是这一半。中文里「正反馈」听着像夸奖，系统里它只说和变化同向，雪崩、挤兑、重试风暴都是。对付它的办法也是书里的思路：给它配一个往回拉的回路，比如重试前等一会儿、过载时拒绝一部分请求。§5 讲的调节回路，在机房里多半是工程师有意装上去的。</p></div>
+<p class="verdict"><b>本站的总体看法：</b>这三节是全书的基本概念，定义清楚，两种回路的算术没有争议，咖啡和存款两个模型可以亲手算对。要小心的是两处延伸：把资本再投资叫作经济增长的核心引擎，主流经济学有不同的答案；到处看见回路是好习惯，但回路强不强要拿证据说。</p>
+<h2>检查一下理解</h2>
+<p class="lede">先在心里答，再点开。答错的那题，回书里把对应那一节再读一遍。</p>
+<details class="check"><summary>1.（§4）怎样判断一个流量和存量之间有反馈？</summary><p>看流量的大小是不是看了存量的水平才定的。存量变了，流量跟着调，因果链回到存量本身，才是回路；流量由外面定死，就只是一条开放的链。</p></details>
+<details class="check"><summary>2.（§4）一个存量十年来一直很稳，能不能断定它背后有调节回路？</summary><p>不能。长期稳定只是「很可能」有回路的线索。两股流量恰好一样大也会稳，像进出水一样快的浴缸；外面的条件一变，没有回路的存量不会被拉回来。</p></details>
+<details class="check"><summary>3.（§5）热咖啡为什么开头凉得快、后来凉得慢？</summary><p>凉得快慢取决于咖啡和室温的温差。温差大，每分钟散掉的热多；温差越来越小，每分钟散掉的也越来越少，所以越走越慢，越来越贴近室温。</p></details>
+<details class="check"><summary>4.（§5）为什么说调节回路既是稳定的来源，也是抗拒改变的来源？</summary><p>它把存量往目标拉，偏哪边都拉回来，所以系统稳。可你想把存量推到一个新水平时，它同样往回拉，你会遇到阻力。</p></details>
+<details class="check"><summary>5.（§5）书里说反馈回路会不管用，举两种原因。</summary><p>信息来得太晚、送错地方、不清楚；或者触发的行动太弱、太慢、受资源限制。回路在，存量也可能永远到不了目标。</p></details>
+<details class="check"><summary>6.（§6）水土流失也是往下走的，为什么它是增强回路，咖啡变凉却是调节回路？</summary><p>看变化的快慢跟着什么走。水土流失：土越少，植物越少，固土的根越少，冲得越快，越掉越快。咖啡变凉跟着和室温的差距走，越接近越慢，到室温就停。</p></details>
+<details class="check"><summary>7.（§6）一个存量每年增长 5%，大约多少年翻一倍？如果每年固定加 5 个单位呢？</summary><p>按比例增长用 70 法则：70 ÷ 5 = 14 年。每年加固定的量是线性增长，没有固定的翻倍时间，要看起点：从 100 开始每年加 5，要 20 年才到 200。</p></details>
+<p>用一句话说这一页：</p>
+<textarea class="note" data-key="01b-oneline" rows="2" placeholder="比如：……"></textarea>
+<div class="ponder"><p>想一想：你身边有没有一个往坏处转的增强回路（越忙越没时间理清楚、越理不清越忙；技术债越多改得越慢、改得越慢欠得越多）？如果要给它配一个往回拉的回路，那个回路的目标和信息从哪里来？</p>
+<textarea class="note" data-key="01b-ponder" rows="3"></textarea></div>
+<h2>精彩回顾</h2>
+<p class="lede">读过又忘了，从这里想起来。挑的是这一页最值得记住的例子和说法，不按原书顺序；每条后面是节号，想细看就回书里那一节。全书各页的这一节都收在<a href="../recap.html">全书回顾</a>。</p>
+<p class="recall-line"><b>一句话：</b>存量反过来调自己的流量就是反馈；调节回路朝目标走、越近越慢，增强回路越滚越大，系统可以自己产生自己的行为。</p>
+<div class="recall">
+  <div class="item"><b>存量调自己的流量</b><p>存量的高低经过一串决定、规则或物理规律，反过来调流进流出它的流量，就是反馈回路。动作总是落在流量上。</p><span class="sec">§4</span></div>
+  <div class="item"><b>标签不带方向</b><p>图上写「体内储存的能量」，不写「能量不足」：调节回路两个方向都管。喝多了咖啡，你会停一阵不喝。</p><span class="sec">§5</span></div>
+  <div class="item"><b>热咖啡和冰咖啡走向同一个温度</b><p>一杯往下凉，一杯往上暖，都朝室温走，温差越小走得越慢。没有谁在做决定，靠的是物理规律。</p><span class="sec">§5</span></div>
+  <div class="item"><b>有回路不等于管用</b><p>信息可能来得太晚、送错地方，行动可能太弱太慢，存量也许永远到不了目标。</p><span class="sec">§5</span></div>
+  <div class="item"><b>7% 的利息约 10 年翻倍</b><p>翻倍时间约等于 70 除以百分比增长率。按年结息算，第 10 年是 196.72 美元，第 11 年才过 200。</p><span class="sec">§6</span></div>
+  <div class="item"><b>恋爱算不算没有反馈的决定</b><p>她让学生想一个不看存量信息就做的决定，学生最常举恋爱和自杀。算不算，她留给读者自己判断。</p><span class="sec">§6</span></div>
+</div>
+</main>
+<script>
+(() => {
+  // 两种回路放在一个模拟器里，确定性，没有随机数。
+  // 咖啡（调节回路）：每一步 温度 += (室温 − 温度) × 比例 × dt，dt = 0.25 分钟。附录 Coffee Cup 写每分钟 10%、dt 1 分钟，按字面算 8 分钟后 100°C 那杯还有 53.3°C，原书图 11 约 28°C；
+  //   每分钟 25%、dt 0.25 和图上读出的点差不到 1°C，本站照图。附录里变凉、变暖是两组方程（cooling 是流出、heating 是流入），合成一条，结果一样。
+  // 存款（增强回路）：每年 余额 += 余额 × 年利率，dt 1 年，100 美元，不存不取；和附录 Bank Account、原书图 13 一分不差（12 年后 2% 126.82 … 10% 313.84）。
+  const root = document.getElementById("sim-01b");
+  if (!root || !window.TS) return;
+  const { h, chart } = window.TS;
+  const DT = 0.25, CUPS = [100, 80, 60, 10, 5, 0], RATES = [2, 4, 6, 8, 10];
+  const BOOK = { room: 18, k: 25, T: 8, r: 7, Y: 12 };
+  const st = Object.assign({ mode: "coffee" }, BOOK);
+  const OPTS = {
+    coffee: {
+      room: { label: "室温（°C），也就是目标", list: [0, 10, 18, 25, 35] },
+      k: { label: "凉得快慢（每分钟缩小温差的百分之几）", list: [5, 10, 15, 25, 40, 60] },
+      T: { label: "看多久（分钟）", list: [8, 15, 20, 30] },
+    },
+    bank: {
+      r: { label: "你的利率（每年百分之几）", list: [1, 2, 3, 4, 5, 6, 7, 8, 10, 12, 15] },
+      Y: { label: "看多少年", list: [12, 20, 30, 40] },
+    },
+  };
+  const n1 = (x) => (Math.round(x * 10) / 10).toFixed(1);
+  const n2 = (x) => x.toFixed(2);
+  const g1 = (x) => String(Math.round(x * 10) / 10);
+  const box = (v, l) => h("div", { class: "stat" }, h("div", { class: "v" }, v), h("div", { class: "l" }, l));
+  const modeBtn = (m, text) => h("button", { type: "button", "data-mode": m, onclick: () => { st.mode = m; build(); draw(); } }, text);
+  const modes = h("div", { class: "controls" }, modeBtn("coffee", "咖啡：调节回路"), modeBtn("bank", "存款：增强回路"));
+  const ctrls = h("div", { class: "controls" });
+  const cap = h("p", { class: "cap" }), plot = h("div");
+  const narrate = h("div", { class: "narrate" }), stats = h("div", { class: "stats" });
+  const body = root.querySelector(".sim-body");
+  body.innerHTML = "";
+  body.append(modes, ctrls, h("div", { class: "stage" }, cap, plot), narrate, stats);
+
+  function build() {
+    ctrls.innerHTML = "";
+    const o = OPTS[st.mode];
+    for (const k in o) {
+      const s = h("select", { "aria-label": o[k].label, onchange: () => { st[k] = Number(s.value); draw(); } }, ...o[k].list.map((v) => h("option", { value: String(v) }, String(v))));
+      s.value = String(st[k]);
+      ctrls.append(h("label", {}, o[k].label, s));
+    }
+    ctrls.append(h("button", { type: "button", onclick: () => { Object.assign(st, BOOK); build(); draw(); } }, "回到书里那一组"));
+    for (const b of modes.querySelectorAll("button")) b.setAttribute("aria-pressed", String(b.getAttribute("data-mode") === st.mode));
+  }
+  function cup(T0) {
+    const out = [T0];
+    let T = T0;
+    for (let i = 0; i < Math.round(st.T / DT); i++) { T += (st.room - T) * (st.k / 100) * DT; out.push(T); }
+    return out;
+  }
+  function drawCoffee() {
+    const runs = CUPS.map(cup), hot = runs[0], N = hot.length - 1, per = Math.round(1 / DT);
+    cap.textContent = "六杯咖啡的温度（°C），起点是书上那六杯；横虚线是室温";
+    chart(plot, { series: CUPS.map((c, i) => ({ name: `从 ${c}°C 开始`, data: runs[i], c: i + 1 })), dt: DT, xlabel: "分钟", ylabel: "°C", ymin: 0, ymax: 100, hlines: [{ y: st.room, label: `室温 ${st.room}°C` }], title: "六杯咖啡的温度随时间变化" });
+    const d1 = hot[0] - hot[per], dl = hot[N - per] - hot[N];
+    const half = Math.log(0.5) / (Math.log(1 - (st.k / 100) * DT) / DT);
+    narrate.textContent = `室温 ${st.room}°C 是这个回路的目标：比它热的咖啡往下走，比它凉的往上走。100°C 那杯第 1 分钟降了 ${n1(d1)}°C，第 ${st.T} 分钟那一分钟只降了 ${n1(dl)}°C。温差越小，每分钟缩小的那一份就越小，所以越走越慢；照这个算法，温差每次只缩小一个比例，曲线越来越贴近室温。` + (st.k === 10 ? "书后附录写的就是每分钟 10%，它每分钟算一次，8 分钟后是 53.3°C。" : "");
+    stats.innerHTML = "";
+    stats.append(box(n1(hot[N]), `100°C 那杯，第 ${st.T} 分钟（°C）`), box(n1(d1), "第 1 分钟降了（°C）"), box(n1(dl), `第 ${st.T} 分钟那一分钟降了（°C）`), box(n1(half), "温差减半要多久（分钟）"));
+  }
+  function grow(r) {
+    const out = [100];
+    for (let y = 0; y < st.Y; y++) out.push(out[y] * (1 + r / 100));
+    return out;
+  }
+  function drawBank() {
+    const mine = grow(st.r), Y = st.Y, est = 70 / st.r;
+    cap.textContent = "100 美元存着不动，余额（美元）。前五条是书上图 1—13 的五种年利率，虚线是你选的利率；横虚线是 200 美元";
+    chart(plot, { series: [...RATES.map((r, i) => ({ name: `${r}%`, data: grow(r), c: i + 1 })), { name: `你的 ${st.r}%`, data: mine, c: 6, dash: true }], xlabel: "年", ylabel: "美元", ymin: 0, hlines: [{ y: 200, label: "翻倍：200 美元" }], title: "存款余额随时间变化" });
+    const first = mine.findIndex((v) => v >= 200);
+    const i1 = mine[1] - mine[0], iY = mine[Y] - mine[Y - 1];
+    narrate.textContent = `年利率 ${st.r}%：第 1 年的利息是 ${n2(i1)} 美元，第 ${Y} 年那一年是 ${n2(iY)} 美元。余额越多，利息越多，利息又加进余额，这就是增强回路。` +
+      (first > 0 ? `第 ${first} 年第一次到 200 美元（第 ${first - 1} 年是 ${n2(mine[first - 1])}），70 ÷ ${st.r} ≈ ${g1(est)}，是个近似。`
+        : `${Y} 年内还没到 200 美元；70 ÷ ${st.r} ≈ ${g1(est)} 年，` + (est > 40 ? "比这里最多能看的 40 年还长。" : "把「看多少年」拉长再看。"));
+    stats.innerHTML = "";
+    stats.append(box(n2(mine[Y]), `第 ${Y} 年的余额（${st.r}%，美元）`), box(first > 0 ? `第 ${first} 年` : `${Y} 年内没到`, "第一次到 200 美元"), box(first > 0 ? n2(mine[first - 1]) : "—", "到 200 的前一年（美元）"), box(g1(est), `70 ÷ ${st.r}，估的翻倍年数`));
+  }
+  function draw() { if (st.mode === "coffee") drawCoffee(); else drawBank(); }
+  build();
+  draw();
+})();
+</script>
+</body>
+</html>

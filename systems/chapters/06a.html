@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 6 章（上）· 系统之美导读</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/chapters.js"></script>
+<script src="../assets/ts.js"></script>
+</head>
+<body data-page="06a">
+<main>
+<h2>这一页在做什么</h2>
+<div class="gist"><p>第 6 章是一张清单：想改变一个系统，可以从哪些地方下手，按作者的排序从弱到强排了 12 项，编号越小越有力。这一页是前半，第 12 到第 7 项：参数、缓冲器、存量流量结构、延迟、调节回路、增强回路。好玩在几个反直觉的判断：大家吵得最凶的税率、预算、换领导排在最末；实物的结构很要紧，却多半改不动；车开太快时，先松油门常常比换更灵的刹车有用。</p></div>
+<figure class="fig">
+<svg class="diagram" viewBox="0 0 640 330" role="img" aria-label="一张横条图，从上到下是清单的第 1 项到第 12 项，横条越往上越长，表示按作者的排序越有力。第 12 到第 7 项（数字、缓冲器、存量流量结构、时间延迟、调节回路、增强回路）用深色，是这一页；第 6 到第 1 项（信息流、规则、自组织、目标、范式、超越范式）用浅色。右边两个括号：第 12 到第 9 项是实物部分，第 8 到第 1 项是信息和控制部分">
+<text x="20" y="18" class="t-m">越往上越有力（按她的排序，编号越小越有力）</text>
+<rect x="200" y="28" width="288" height="16" class="f-soft"/><text x="190" y="41" text-anchor="end" class="t-m">1 超越范式</text>
+<rect x="200" y="50" width="264" height="16" class="f-soft"/><text x="190" y="63" text-anchor="end" class="t-m">2 范式</text>
+<rect x="200" y="72" width="240" height="16" class="f-soft"/><text x="190" y="85" text-anchor="end" class="t-m">3 目标</text>
+<rect x="200" y="94" width="216" height="16" class="f-soft"/><text x="190" y="107" text-anchor="end" class="t-m">4 自组织</text>
+<rect x="200" y="116" width="192" height="16" class="f-soft"/><text x="190" y="129" text-anchor="end" class="t-m">5 规则</text>
+<rect x="200" y="138" width="168" height="16" class="f-soft"/><text x="190" y="151" text-anchor="end" class="t-m">6 信息流</text>
+<rect x="200" y="160" width="144" height="16" class="f-a"/><text x="190" y="173" text-anchor="end" class="t-b">7 增强回路</text>
+<rect x="200" y="182" width="120" height="16" class="f-a"/><text x="190" y="195" text-anchor="end" class="t-b">8 调节回路</text>
+<rect x="200" y="204" width="96" height="16" class="f-a"/><text x="190" y="217" text-anchor="end" class="t-b">9 时间延迟</text>
+<rect x="200" y="226" width="72" height="16" class="f-a"/><text x="190" y="239" text-anchor="end" class="t-b">10 存量流量结构</text>
+<rect x="200" y="248" width="48" height="16" class="f-a"/><text x="190" y="261" text-anchor="end" class="t-b">11 缓冲器</text>
+<rect x="200" y="270" width="24" height="16" class="f-a"/><text x="190" y="283" text-anchor="end" class="t-b">12 数字（参数）</text>
+<path d="M506 28 h8 V198 h-8" class="ln"/><text x="522" y="110" class="t-m">信息和</text><text x="522" y="128" class="t-m">控制部分</text>
+<path d="M506 204 h8 V286 h-8" class="ln"/><text x="522" y="250" class="t-m">实物部分</text>
+<rect x="200" y="302" width="16" height="12" class="f-a"/><text x="222" y="313" class="t-m">这一页：第 12—7 项</text>
+<rect x="390" y="302" width="16" height="12" class="f-soft"/><text x="412" y="313" class="t-m">06b：第 6—1 项</text>
+</svg>
+<figcaption>本站示意图。横条的长短只表示她排的先后，不是量出来的力度；她自己说这个顺序「滑溜溜的」，每一项都有例外。项名照译本的小标题，括号的分界照她在 §6 开头那句话：从第 8 项起，进入系统的信息和控制部分。</figcaption></figure>
+<h2>读之前：这一页在全书的哪里</h2>
+<div class="linehere"></div>
+<p>第 4、5 章讲系统为什么总让人意外、哪些结构会把人困住。第 6 章转向怎么改：开头转述 Forrester 的两个判断立论，然后是清单。这一页是 §1 章首和第 12 到第 7 项，第 6 到第 1 项和收尾在 06b。这一页要用到的旧概念：<a class="term" href="01a.html#c-stock-flow">存量和流量</a>、<a class="term" href="01b.html#c-balancing-loop">调节回路</a>和<a class="term" href="01b.html#c-reinforcing-loop">增强回路</a>、<a class="term" href="02a.html#c-delay-oscillation">延迟和振荡</a>。</p>
+<div class="heads-up"><p><b>别被带歪：</b>§1 说 Forrester 的城市模型当年被嘲笑，后来那批低收入住房项目在一个又一个城市被拆掉。拆是事实，但拆除多和维护没钱、空置、城市人口外流有关，算不上证明了「补贴住房越少城市越好」。</p></div>
+<div class="crux"><p>大家吵得最凶的税率、预算、换领导，为什么在她的清单上排在最末？</p></div>
+<p class="lede">读的时候带着这几个问题，读完回来对照「检查一下理解」。</p>
+<ol class="qs">
+  <li>Forrester 说身在系统里的人常能猜到杠杆点在哪。那问题出在哪？<span class="sec">§1</span></li>
+  <li>参数在什么情况下会变成杠杆点？她说这种情形常见吗？<span class="sec">§2</span></li>
+  <li>延迟那么要紧，她为什么没把它排高？她给的替代办法是什么？<span class="sec">§5</span></li>
+  <li>加强刹车和松开油门，她说哪个通常更有力？<span class="sec">§7</span></li>
+</ol>
+<h2>分节地图</h2>
+<p class="lede">这一页是原书和译本第 6 章的前七节，一节就是清单上的一项。粗体是本站给的节名，后面是档和译本字数；下面一行是译本的小标题和这一节在译本电子书里开头的几个字，再下面是英文原书的小标题和开头几个词。读完打个勾。</p>
+<ol class="secmap">
+  <li data-sec="1"><span class="what">立论：杠杆点常被猜对位置、却往反方向推。例子是 Forrester 的世界模型和城市模型。留意哪些话是 Forrester 的，哪些是她的；她说清单是草稿，不是配方。</span></li>
+  <li data-sec="2"><span class="what">第 12 项，数字。前半一串例子（国债、空气标准、换总统），后半一个例外：参数什么时候成杠杆点。这个例外译本译错了，见勘误。结尾的房租故事是朋友来信。</span></li>
+  <li data-sec="3"><span class="what">第 11 项，湖和河。存量相对流量越大越稳，太大又僵又贵，接 01a 的<a class="term" href="01a.html#c-stock-buffer">缓冲</a>。她排得低，是因为缓冲器多是实物，难改。</span></li>
+  <li data-sec="4"><span class="what">第 10 项，布达佩斯的路和婴儿潮。管子怎么连影响巨大，建好以后只能重建；她说杠杆在一开始的设计，建成后在于摸清瓶颈、别超负荷。</span></li>
+  <li data-sec="5"><span class="what">第 9 项，电厂。延迟长短要和存量变化的快慢比，太短太长各出什么毛病，接 02a 的<a class="term" href="02a.html#c-delay-oscillation">延迟</a>。她本想排高，因为难改才排第 9。</span></li>
+  <li data-sec="6"><span class="what">第 8 项，开着窗的恒温器。回路的力度要配得上冲击；平时不用的应急回路别砍。市场和民主两段是她的立场，译本这里有两处译反。</span></li>
+  <li data-sec="7"><span class="what">第 7 项，增强回路。松油门（减小增益）通常比加强刹车更有力。末尾回到第 5 章的「富者愈富」，看她怎么把税收和教育放进这一项。</span></li>
+</ol>
+<figure class="fig"><img src="../assets/img/06a-powerplant.jpg" alt="灰蒙蒙的天，远处两座冷却塔和一根烟囱，近处是一片土路空地和厂区大门，一个人骑着自行车，左边停着一辆卡车" loading="lazy">
+<figcaption>印度北方邦建设中的 Bara 火电厂，2014 年 7 月。§5 的例子：一座电厂要建好几年，一用就是几十年，所以电厂的数量很难跟上用电需求的变化。照片与本书无关。<span class="src">Biswarup Ganguly，CC BY 3.0，维基共享资源</span></figcaption></figure>
+<h2>先用中文过一遍：这一页的概念</h2>
+<p class="lede">先把这一页用到的几个概念用书外的例子讲一遍。缓冲器、存量流量结构、延迟三项沿用前面几页的概念，在分节地图里点过；这里讲清单本身和另外三项。</p>
+<div class="concept" id="c-leverage-point">
+<h3><span class="sec">§1</span>杠杆点 <span class="en">leverage point，译本：杠杆点</span></h3>
+<p>杠杆点是系统里一处小改动就能让行为大转变的地方。程序员见得多：一个服务慢，加机器、调线程数忙了一周，最后发现是一把锁让所有请求排队，改一行就好了。</p>
+<p>她先转述 Forrester：身在系统里的人常能凭直觉猜到杠杆点在哪，可多半（more often than not）往错的方向推；他形容复杂系统的词是「违反直觉」（counterintuitive）。她自己接着解释：简单的存量和流量一层层连起来，就复杂到算不清，所以杠杆点常常不在直觉指的地方，指对了也常被推反。她自己的例子是 Forrester 的世界模型：模型找出的杠杆点是增长，各国领导人盯住增长没盯错，只是拼尽全力往反方向推。</p>
+<p>清单上「高」指编号小：第 1 项最有力，第 12 项最弱。</p>
+<figure class="fig"><img src="../assets/img/06a-pruitt.jpg" alt="黑白照片：一片高层板楼中，一栋楼在爆破中倾斜坍塌，烟尘滚滚铺满楼前的空地，左上远处能看到一座拱门" loading="lazy">
+<figcaption>美国圣路易斯的 Pruitt–Igoe 公共住房被爆破拆除，远处是圣路易斯拱门。§1 说 Forrester 1969 年的城市模型认为低收入住房补贴越少，城市越好；书里没有点名这个项目，它是这类拆除里最出名的一个。拆除的原因见「本站怎么看」。<span class="src">美国住房和城市发展部，公有领域，维基共享资源</span></figcaption></figure>
+<p class="use"><b>在这一页：</b>§1 立论，后面六节各讲一项。每读一项，问两句：这一处改了作用有多大？改起来有多难？</p>
+</div>
+<div class="concept" id="c-parameter">
+<h3><span class="sec">§2</span>数字（参数） <span class="en">numbers, parameters，译本：数字、参数</span></h3>
+<p>参数是流量有多大、阀门开多少：税率、最低工资、预算、限速，到程序里的超时时间、连接池上限。她说换人也算这一档：换一双手去拧同一个龙头，龙头还是那个龙头，管子、信息、目标、规则都没变，系统的行为就变不了多少。</p>
+<p>参数最常被调、被吵，因为它直接落在每个人身上；她说短期里、对正站在流量里的人，它可能很要紧，但它很少（rarely）改变整个国家经济的行为。一个服务老超时，把超时从 3 秒调到 5 秒，报警少了，慢的原因还在。</p>
+<p>例外是关键参数：参数落进会触发清单上更高一项的区间时，才成为杠杆点，比如利率、出生率，管的是增强回路转一圈放大多少。她紧接着说，这种关键数字远不如人们以为的常见。</p>
+<figure class="fig"><img src="../assets/img/06a-smog.jpg" alt="从高处俯拍的城市中心，几栋深色摩天楼立在一片灰黄的雾霾里，远处的楼几乎看不见，下面是街道和停车场" loading="lazy">
+<figcaption>1973 年 9 月，浓烟雾中的洛杉矶。§2 的例子：洛杉矶执行了几十年全世界最严的空气污染标准，空气没那么脏了，但还不干净。后来怎样，见「今天怎么看」。<span class="src">Gene Daniels，公有领域，美国国家档案馆，维基共享资源</span></figcaption></figure>
+<p class="use"><b>在这一页：</b>§2 前半是一串参数的例子，后半是关键参数这个例外，最后用房东定租金的故事说：多数数字不值得那么较真。</p>
+</div>
+<div class="concept" id="c-loop-strength">
+<h3><span class="sec">§6</span>调节回路的力度 <span class="en">strength of balancing feedback loops，译本：调节回路</span></h3>
+<p>一条<a class="term" href="01b.html#c-balancing-loop">调节回路</a>要有三样：目标、发现偏差的监测装置、纠偏的手段。力度看三样合起来：测得准不准、快不快，反应快不快、猛不猛，纠偏的流量够不够大。</p>
+<p>力度是相对的，要拿它和它要纠正的冲击比。冬天关着窗，暖气够用；窗户全打开，同一台暖气就顶不住。线上服务的自动扩容平时够用，一次活动把流量拉高十倍就不够了。冲击变大，回路也得跟着加强。</p>
+<p>还有一类备而不用的回路：平时不动，关键时刻才起作用，像核电站的应急冷却、人的出汗和打寒战。她说常犯的一个大错，是因为它们不常用、看着费钱就砍掉：短期看不出影响，长期让系统活得下去的条件范围大大变窄。</p>
+<p class="use"><b>在这一页：</b>§6 先讲回路的三样和力度，再拿市场和民主当例子，最后列一串加强调节回路的做法。</p>
+</div>
+<div class="concept" id="c-loop-gain">
+<h3><span class="sec">§7</span>增强回路的增益 <span class="en">gain (of a reinforcing loop)，译本：收益、产出成果</span></h3>
+<p>增益是<a class="term" href="01b.html#c-reinforcing-loop">增强回路</a>转一圈放大多少：利率、出生率、一个病人平均传染几个人。这里的 gain 是放大的倍数，和赚钱无关。</p>
+<p>她说减小增强回路的增益，也就是放慢增长，通常（usually）比加强调节回路更有力，也比任由它跑下去好得多。她的比方：车开得太快，先松油门，而不是指望更灵的刹车。理由是那些调节回路（技术、市场、各种适应）都有极限、有延迟，放慢增长给它们留出起作用的时间。这和第 9 项连着：延迟多半改不动，放慢变化常常更容易。</p>
+<figure class="fig">
+<svg class="diagram" viewBox="0 0 640 260" role="img" aria-label="存量流量图：左边云朵标着银行，粗箭头带阀门标着每月利息，流进中间方框信用卡欠款；方框右边粗箭头带阀门标着每月还款，流向右边云朵已还掉。左下一条细的弯箭头从方框绕回利息的阀门，中间标着 R，下面写着欠得越多利息越多，松油门是降利率，第 7 项。右下一条细的弯箭头从方框绕回还款的阀门，中间标着 B，下面写着欠得越多越着急多还，加刹车是多还，第 8 项">
+<path d="M30 112 q-10 -22 12 -26 q6 -20 30 -12 q18 -10 28 8 q22 2 14 24 q4 20 -22 18 q-14 12 -34 2 q-30 6 -28 -14 z" class="box"/>
+<text x="72" y="106" text-anchor="middle" class="t-m">银行</text>
+<rect x="114" y="94" width="112" height="12" class="box"/><path d="M226 86 L244 100 L226 114 z" class="f-fg"/>
+<path d="M166 84 L186 100 L166 116 z M206 84 L186 100 L206 116 z" class="f-a"/>
+<text x="186" y="74" text-anchor="middle" class="t-b">每月利息</text>
+<rect x="244" y="62" width="152" height="76" rx="4" class="box"/>
+<text x="320" y="96" text-anchor="middle" class="t-b">信用卡欠款</text>
+<text x="320" y="116" text-anchor="middle" class="t-m">存量：还欠多少</text>
+<rect x="396" y="94" width="112" height="12" class="box"/><path d="M508 86 L526 100 L508 114 z" class="f-fg"/>
+<path d="M446 84 L466 100 L446 116 z M486 84 L466 100 L486 116 z" class="f-a"/>
+<text x="466" y="74" text-anchor="middle" class="t-b">每月还款</text>
+<path d="M528 112 q-10 -22 12 -26 q6 -20 30 -12 q18 -10 28 8 q22 2 14 24 q4 20 -22 18 q-14 12 -34 2 q-30 6 -28 -14 z" class="box"/>
+<text x="570" y="106" text-anchor="middle" class="t-m">已还掉</text>
+<path d="M290 140 C290 200 190 200 186 134" class="ln-a"/>
+<path d="M180 134 L186 120 L192 134 z" class="f-a"/>
+<circle cx="236" cy="168" r="12" class="box"/>
+<text x="236" y="173" text-anchor="middle" class="t-b">R</text>
+<path d="M350 140 C350 200 462 200 466 134" class="ln-a"/>
+<path d="M460 134 L466 120 L472 134 z" class="f-a"/>
+<circle cx="406" cy="168" r="12" class="box"/>
+<text x="406" y="173" text-anchor="middle" class="t-b">B</text>
+<text x="200" y="222" text-anchor="middle" class="t-m">欠得越多，利息越多</text>
+<text x="200" y="244" text-anchor="middle" class="t-b">松油门：降利率（第 7 项）</text>
+<text x="456" y="222" text-anchor="middle" class="t-m">欠得越多，越着急多还</text>
+<text x="456" y="244" text-anchor="middle" class="t-b">加刹车：多还（第 8 项）</text>
+</svg>
+<figcaption>本站示意图，省掉了每月新刷的消费。左边是增强回路，利率就是它的增益；右边是调节回路。利率本身是一个参数，它管的正是增强回路转一圈放大多少，所以是 §2 说的那种例外。按她的排序，降利率比咬牙多还更有力。</figcaption></figure>
+<p class="use"><b>在这一页：</b>§7 先列一串增强回路（流感、存款、水土流失、核裂变），再讲「富者愈富」：累进税、遗产税是去削弱增强回路。</p>
+</div>
+<h2>原文里的词和句</h2>
+<p class="lede">读英文原书时值得停一下的词和句：熟词生义、Meadows 的口语和比喻。灰色斜体是原句里连续的几个词，在英文电子书里搜它就能找到；标「每个字都认识」的，是每个词都眼熟、合起来意思却变了的，最容易读错。点「记下」收进词本。</p>
+<div class="entry trap"><div class="en">silver bullet</div><div class="loc" data-p="4">… legend: the silver bullet; the trimtab …</div><div class="zh">银弹，一招制胜的灵药</div><div class="note">传说里银子弹能杀狼人。程序员熟悉的那篇《没有银弹》用的就是它。</div></div>
+<div class="entry"><div class="en">trimtab</div><div class="loc" data-p="4">… the trimtab; the miracle cure …</div><div class="zh">配平片</div><div class="note">舵或机翼后缘上的一小块活动片，扳动它就能带动整个大舵。Buckminster Fuller 常拿它比喻一个人也能撬动大系统。</div></div>
+<div class="entry trap"><div class="en">different hands on the faucets</div><div class="loc" data-p="17">… Putting different hands on the faucets …</div><div class="zh">换人来拧龙头，即换人</div><div class="note">hands 指人手，引申为干活的人。她把换官员、换总统都算作调参数。</div></div>
+<div class="entry trap"><div class="en">get ahead of oneself</div><div class="loc" data-p="17">… but I’m getting ahead of myself …</div><div class="zh">（我）说得太超前了</div><div class="note">意思是这事清单后面才讲，先打住。不是「超越自己」。</div></div>
+<div class="entry trap"><div class="en">dead last</div><div class="loc" data-p="18">… are dead last on my list …</div><div class="zh">排在最末、垫底</div><div class="note">dead 在这里是「完全、彻底」，和死无关；dead center、dead right 同理。</div></div>
+<div class="entry trap"><div class="en">arranging the deck chairs on the Titanic</div><div class="loc" data-p="18">… arranging the deck chairs on the Titanic.</div><div class="zh">在泰坦尼克号上挪躺椅</div><div class="note">习语：大难临头还在摆弄无关紧要的小事。</div></div>
+<div class="entry"><div class="en">kick-start</div><div class="loc" data-p="19">… parameter changes rarely kick-start it.</div><div class="zh">一下子发动起来</div><div class="note">本义是踩脚踏启动摩托车，引申为让停滞的东西重新动起来，常说经济。</div></div>
+<div class="entry"><div class="en">shocked, shocked</div><div class="loc" data-p="20">… and are shocked, shocked by the downturns.</div><div class="zh">震惊不已（反讽）</div><div class="note">重复 shocked 是在学电影《卡萨布兰卡》里警长那句假惺惺的台词，带讽刺：她说的是景气时我们忘了周期，衰退一来又大吃一惊，像头一回听说。</div></div>
+<div class="entry"><div class="en">get on with your life</div><div class="loc" data-p="26">… worrying and get on with your life.</div><div class="zh">（别操心了，）过你的日子去</div><div class="note">get on with 是「接着做下去」，不是「上车」。</div></div>
+<div class="entry trap"><div class="en">cast in concrete</div><div class="loc" data-p="30">… is literally cast in concrete.</div><div class="zh">（真的是）浇在混凝土里、定死了</div><div class="note">cast in concrete 平时是比喻「定死了、改不了」；大坝真是混凝土浇的，literally 让它同时取本义，是个双关。</div></div>
+<div class="entry trap"><div class="en">turn over</div><div class="loc" data-p="33">… ten to twenty years to turn over.</div><div class="zh">（车队）全部更新一遍</div><div class="note">turn over 在这里是存量整个换一轮，旧车报废、新车补上，不是「翻过来」。</div></div>
+<div class="entry"><div class="en">things take as long as they take</div><div class="loc" data-p="38">Things take as long as they take.</div><div class="zh">该多久就得多久</div><div class="note">口语，带点无奈：急不来。</div></div>
+<div class="entry trap"><div class="en">be asking for</div><div class="loc" data-p="40">… is just asking for wild gyrations.</div><div class="zh">自找（剧烈震荡）</div><div class="note">be asking for trouble 是「自找麻烦」。gyration 是打转、剧烈摆动。</div></div>
+<div class="entry trap"><div class="en">all but</div><div class="loc" data-p="46">… that are all but worshipped by …</div><div class="zh">几乎（被奉若神明）</div><div class="note">all but 后接形容词、动词时是「几乎」，不是「除了……都」。</div></div>
+<div class="entry trap"><div class="en">level the playing field</div><div class="loc" data-p="47">… other ways of leveling market playing fields.</div><div class="zh">让竞争公平</div><div class="note">把球场弄平，不让一方占坡度的便宜。level 是动词「弄平」。</div></div>
+<div class="entry trap"><div class="en">be no match for</div><div class="loc" data-p="49">… its corrective power is no match for …</div><div class="zh">敌不过</div><div class="note">match 是「对手、匹敌的人」，不是比赛。</div></div>
+<div class="entry trap"><div class="en">kick in</div><div class="loc" data-p="58">… a balancing loop will kick in …</div><div class="zh">开始起作用</div><div class="note">药效、保险、空调都可以 kick in，和踢无关。</div></div>
+<div class="entry trap"><div class="en">lean on</div><div class="loc" data-p="61">… and lean on politicians to reduce …</div><div class="zh">向（政客）施压</div><div class="note">lean on somebody 这里是施压、逼人就范，不是「依靠」。</div></div>
+<h2>译本勘误</h2>
+<p class="lede">对着译本读这七节时，下面这些地方会把人读歪。方框里是译本的原句，在译本电子书里搜它就能找到；灰色斜体是英文原书那一处。只收意思错了、反了、漏了的，措辞上的出入不收。这一章译反的地方特别多，有几处会让人读出和原文相反的主张。全书的勘误汇总在<a href="../zh.html">译本勘误</a>。</p>
+<div class="zherr" data-p="2"><h4><span class="sec">§1</span>报纸是《国际先驱论坛报》<span class="mark">误译</span></h4>
+<p class="loc">… Lawrence Malkin, International Herald Tribune, 1992</p>
+<p class="zhq"><span class="zhv">译本：「《国际先驱导报》，1992」</span></p>
+<p>International Herald Tribune 通译《国际先驱论坛报》，是一份英文报纸，译本的报名对不上。</p></div>
+<div class="zherr" data-p="6"><h4><span class="sec">§1</span>成本是「通常不去算」<span class="mark">误译</span></h4>
+<p class="loc">… we typically don’t count the costs …</p>
+<p class="zhq"><span class="zhv">译本：「特别是一些我们无法计算的成本」</span></p>
+<p>原文：增长有好处也有成本，我们通常不去算成本，而这些成本恰恰是贫穷、饥荒、环境破坏，正是我们想靠增长解决的那串问题。说成「算不出」，就丢了这层讽刺：问题出在不算，不在算不了。</p></div>
+<div class="zherr" data-p="7"><h4><span class="sec">§1</span>领导人盯住增长「没有错」<span class="mark">漏译</span></h4>
+<p class="loc">… are correctly fixated on economic growth …</p>
+<p class="zhq"><span class="zhv">译本：「也都将经济增长作为解决各种问题的答案」</span></p>
+<p>原文有 correctly：领导人盯住增长这个杠杆点，盯对了，只是拼命往反方向推。丢了这个词，就成了单纯批评盯着增长，「找对了杠杆点却推反了」这一章的主旋律没了。</p></div>
+<div class="zherr" data-p="8"><h4><span class="sec">§1</span>被拆掉的是住房项目，不是城市没落<span class="mark">误译</span></h4>
+<p class="loc">… those projects have been torn down …</p>
+<p class="zhq"><span class="zhv">译本：「城市一个接一个地没落了」</span></p>
+<p>原文：此后很多这样的低收入住房项目在一个又一个城市被拆掉了。说的是房子被拆，不是推行补贴的城市衰落。</p></div>
+<div class="zherr" data-p="15"><h4><span class="sec">§2</span>赤字是窟窿加深的速度，是流量<span class="mark">误译</span></h4>
+<p class="loc">… The rate at which the hole deepens …</p>
+<p class="zhq"><span class="zhv">译本：「这个“大窟窿”的深度被称为年度财政赤字」</span></p>
+<p>国债是窟窿本身，是存量；年度赤字是窟窿每年加深多少，是流量。译本把赤字说成「深度」，正好把这本书最基本的存量和流量弄混了。</p></div>
+<div class="zherr" data-p="17"><h4><span class="sec">§2</span>「几乎难以实现」那半句是译本加的<span class="mark">误译</span></h4>
+<p class="loc">… but I’m getting ahead of myself …</p>
+<p class="zhq"><span class="zhv">译本：「但这几乎难以实现」</span></p>
+<p>原文：改变那个政治系统里钱的流法，会带来大得多的不同，不过这是清单后面的事了。「难以实现，因为换成谁都会让自己先获益」原文没有，「国家财政系统」也是译本换的，原文说的是总统所在的政治系统。</p></div>
+<div class="zherr" data-p="18"><h4><span class="sec">§2</span>她越说越多：九成、九成五、九成九<span class="mark">数字</span></h4>
+<p class="loc">… Probably 90—no 95, no 99 percent …</p>
+<p class="zhq"><span class="zhv">译本：「大多数人会把90%的注意力都集中在参数上」</span></p>
+<p>原文是「大概九成，不，九成五，不，九成九」的注意力，说的是「我们」，一句话里自己改口两次，意思是注意力几乎全在参数上。译本只留了 90%。</p></div>
+<div class="zherr" data-p="20"><h4><span class="sec">§2</span>调利率的是美联储<span class="mark">误译</span></h4>
+<p class="loc">… The Fed’s fiddling with the interest rate …</p>
+<p class="zhq"><span class="zhv">译本：「美国联邦政府无论如何调整利率」</span></p>
+<p>the Fed 是美国联邦储备系统，也就是美国的央行，和联邦政府是两回事。同一段的竞选捐款那句，原文是「政治还是干净不了」。</p></div>
+<div class="zherr" data-p="21"><h4><span class="sec">§2</span>参数成为杠杆点的条件，译错了<span class="mark">误译</span></h4>
+<p class="loc">… Parameters become leverage points when they go …</p>
+<p class="zhq"><span class="zhv">译本：「只有当我们实在找不到其他11个因素时」</span></p>
+<p>原文：参数落进会触发清单上更高一项的区间时，才成为杠杆点。例子是利率、出生率，它们管着增强回路的增益；系统的目标也是能造成大不同的参数。这是判断一个数值不值得争的标准，译本换成了「别的都找不到时才用」。</p></div>
+<div class="zherr" data-p="22"><h4><span class="sec">§2</span>关键参数「远不如人们以为的常见」<span class="mark turn">译反</span></h4>
+<p class="loc">… not nearly as common as people …</p>
+<p class="zhq"><span class="zhv">译本：「大多数系统都会受到这些关键参数的影响」</span></p>
+<p>原文：这类关键数字远不如人们以为的常见；大多数系统经过演化或设计，都离关键参数的区间远远的；多数数字不值得为它流那么多汗。译本说成大多数系统都受关键参数影响，正好反了。</p></div>
+<div class="zherr" data-p="31"><h4><span class="sec">§4</span>匈牙利试过很多办法，原文没说<span class="mark">误译</span></h4>
+<p class="loc">… not easily fixed by pollution control devices …</p>
+<p class="zhq"><span class="zhv">译本：「该国曾经采取过多项控制污染」</span></p>
+<p>原文只说：路网让所有车都穿过布达佩斯，由此带来的污染和拥堵，不是装净化装置、红绿灯、限速就容易解决的。译本写成匈牙利试过这些措施、都没效果，多出了一段史实。</p></div>
+<div class="zherr" data-p="33"><h4><span class="sec">§4</span>三件改不动的事被拼成了一句因果<span class="mark">误译</span></h4>
+<p class="loc">… the lifetime of destructive CFC molecules …</p>
+<p class="zhq"><span class="zhv">译本：「远远超出了污染物被清除的速度」</span></p>
+<p>原文并列三件同样改不动的事：氟利昂分子在臭氧层里的寿命，污染物从含水层里被冲掉的速度，低效的车队要十到二十年才换完。译本把它们拼成了一句因果，像是车队换得慢才跟不上清除污染，读不通。</p></div>
+<div class="zherr" data-p="36"><h4><span class="sec">§5</span>是失衡之后价格要多久才调过来<span class="mark turn">译反</span></h4>
+<p class="loc">… the time it takes for a price …</p>
+<p class="zhq"><span class="zhv">译本：「从产品价格调整，到其供需不平衡之间」</span></p>
+<p>原文：价格要花多久，才能根据供需失衡调整过来。先失衡、后调价，延迟在价格这一头。译本的顺序反了，像是价格先动、失衡在后。</p></div>
+<div class="zherr" data-p="37"><h4><span class="sec">§5</span>延迟要不要紧，是「相对」存量变化的速度<span class="mark">误译</span></h4>
+<p class="loc">… in a feedback process is critical …</p>
+<p class="zhq"><span class="zhv">译本：「将对存量变化的速度产生重要影响」</span></p>
+<p>原文：反馈里的延迟是否要紧，要拿它和回路想控制的那个存量变化得多快相比。这一项的要点就是「相对」，本节英文小标题也是这个意思。译本说成延迟影响存量变化的速度，要点丢了。</p></div>
+<div class="zherr" data-p="38"><h4><span class="sec">§5</span>她「本想」把延迟排得高<span class="mark turn">译反</span></h4>
+<p class="loc">… I would list delay length as …</p>
+<p class="zhq"><span class="zhv">译本：「我将时间延迟的长度列为一个高杠杆点」</span></p>
+<p>原文是虚拟语气：要不是延迟通常不好改，我会把它列为高杠杆点。所以它排在第 9。译本说成她把它列为高杠杆点，和清单上的位置对不上。</p></div>
+<div class="zherr" data-p="42"><h4><span class="sec">§6</span>是人类发明调节回路来控制<span class="mark">误译</span></h4>
+<p class="loc">… humans invent them as controls …</p>
+<p class="zhq"><span class="zhv">译本：「人体也能精妙地调控自身」</span></p>
+<p>原文：调节回路有的是自然演化出来的，有的是人发明出来当控制手段的，恒温器就是。译本换成了人体的自我调节，接下来恒温器那个例子就接不上了。</p></div>
+<div class="zherr" data-p="47"><h4><span class="sec">§6</span>真正的杠杆是不让人扭曲价格<span class="mark turn">译反</span></h4>
+<p class="loc">… leverage here is to keep them …</p>
+<p class="zhq"><span class="zhv">译本：「真正的杠杆其实是顺其自然，不要干预」</span></p>
+<p>原文：真正的杠杆是不让公司和政府用补贴、税收扭曲价格信号，所以才需要反垄断法、广告真实法、污染费、取消不当补贴。译本把这些法律说成要避免的干预，她的主张整个反了。</p></div>
+<div class="zherr" data-p="48"><h4><span class="sec">§6</span>几十亿美元是花来扭曲信息的<span class="mark turn">译反</span></h4>
+<p class="loc">… Billions of dollars are spent to limit …</p>
+<p class="zhq"><span class="zhv">译本：「以防止信息的偏差」</span></p>
+<p>原文：有人花几十亿美元去限制、扭曲、垄断选民和领导人之间的信息流。译本说成国家花钱防止偏差，正好反了；同段「信息的传播者成了有私利的一方」也译偏了。</p></div>
+<div class="zherr" data-p="59"><h4><span class="sec">§7</span>gain 是增益，不是收益<span class="mark">术语</span></h4>
+<p class="loc">… Reducing the gain around a reinforcing loop …</p>
+<p class="zhq"><span class="zhv">译本：「减少增强回路的产出成果」</span></p>
+<p>gain 是增强回路转一圈放大多少，像利率、出生率。本节小标题的「收益」、这里的「产出成果」，都会让人以为在讲赚钱。减小增益就是放慢增长。</p></div>
+<div class="zherr" data-p="62"><h4><span class="sec">§7</span>去找「有得越多、越能有更多」的地方<span class="mark">误译</span></h4>
+<p class="loc">… the more you have the possibility …</p>
+<p class="zhq"><span class="zhv">译本：「越深入，通常收获也会越大」</span></p>
+<p>原文这半句是在给增强回路下定义：凡是某样东西有得越多、就越有可能有更多的地方，都去找杠杆点。译本换成了一句「挖得越深收获越大」，找增强回路的线索没了。</p></div>
+<h2>读完：作者到底说了什么</h2>
+<p class="lede">下面是作者在这七节里的主张，本站按主张之间的逻辑重排，不按清单顺序；每条后面是节号，拿不准就回书里那一节再读一遍。</p>
+<div class="claims">
+  <div class="claim"><h4>杠杆点常常猜得到，却常被往反方向推</h4><p>这是她转述的 Forrester：身在系统里的人凭直觉常知道杠杆点在哪，但多半推反了方向。她的例子是 Forrester 的两个模型：世界模型说要放慢增长，领导人却拼命加速；城市模型说低收入住房补贴越少越好，当时被嘲笑。她说自己也没有又快又容易的公式，得花几个月几年去摸；清单只是邀请人想得更宽。</p><span class="sec" data-p="5 6 7 8 9 10 11">§1</span></div>
+  <div class="claim"><h4>最常被争的数字最弱，例外比人们以为的少</h4><p>参数吸走我们大概九成以上的注意力，却很少改变国家经济这类系统的行为：停滞的很少能拉起来，乱跳的一般稳不住，失控的也慢不下来。换人也只是换一双手拧同一个龙头。参数只有落进触发更高一项的区间才成杠杆点，她说这种关键数字远不如人们以为的常见。</p><span class="sec" data-p="17 18 19 21 22">§2</span></div>
+<blockquote class="quote">Numbers, the sizes of flows, are dead last on my list of powerful interventions.<cite>— §2。本站译：数字，也就是流量的大小，在我列的有力干预里排在最末。</cite></blockquote>
+  <div class="claim"><h4>实物部分很要紧，但多半改不动，所以排得低</h4><p>缓冲器大了稳，太大就僵、就贵，改它有时有奇效，可它多是实物；结构建好以后只能重建，所以杠杆在一开始的设计；延迟她本想排高，只因为通常不好改才排第 9。三项排得低，理由都是难改，不是不重要。</p><span class="sec" data-p="29 30 34 38">§3 §4 §5</span></div>
+  <div class="claim"><h4>调节回路的力度要配得上冲击，平时不用的回路别砍</h4><p>力度看监测、反应、纠偏流量合起来，而且要和它要纠正的冲击比：冲击变大，回路也得加强。应急的回路平时不动，砍掉它们短期看不出来，长期让系统能活的条件变窄。市场是她举的例子：价格越清晰真实越好，所以要防止有人扭曲它。</p><span class="sec" data-p="43 44 46 47 49">§6</span></div>
+  <div class="claim"><h4>改不动延迟就放慢变化，松油门通常胜过加刹车</h4><p>延迟改不动时，通常更容易的是放慢变化的速度，让难免的延迟少惹麻烦；所以在 Forrester 的世界模型里，放慢经济增长比加快技术进步、放开价格更有杠杆。减小增强回路的增益，通常比加强调节回路更有力。</p><span class="sec" data-p="38 39 59 60">§5 §7</span></div>
+<blockquote class="quote">Reducing the gain around a reinforcing loop—slowing the growth—is usually a more powerful leverage point in systems than strengthening balancing loops<cite>— §7。本站译：减小增强回路的增益，也就是放慢增长，在系统里通常是比加强调节回路更有力的杠杆点。</cite></blockquote>
+</div>
+<p class="sowhat"><b>合起来：</b>清单的低端有个共同点：要么改了不太管用（参数），要么管用却改不动（缓冲器、结构、延迟）。她给的出路是在改不动的东西旁边下手：放慢变化，留住备用的刹车。从第 8 项起转向信息和控制，杠杆更大，06b 接着讲。</p>
+<h2>练一练：情境题</h2>
+<p class="lede">处境是本站编的，放在你可能遇到的地方。先自己想，再点开看分析；有的题不只一个答案。「第几项」照她的清单，编号越小越有力。全书的情境题汇总在<a href="../drills.html">情境题</a>。</p>
+<div class="drill" id="d-server-procure">
+<h3><span class="sec">§5</span>三个月才到的服务器</h3>
+<div class="scene"><p>一家公司自建机房，服务器从下单到上架要三个月。用户量涨得快，大多是老用户拉来的新用户，于是机器一会儿不够、服务卡顿，一会儿又囤了一堆闲着。会上有三个提议：甲，换供应商，把交货期缩到一个月；乙，每次少买一点、多买几次；丙，先放慢拉新，按机器到货的节奏放量。</p></div>
+<p class="ask">三个提议各在清单的第几项？按她的说法，哪个最现实？</p>
+<details class="reveal"><summary>想好了再点开</summary><p>甲缩短的是反馈里的延迟，第 9 项。真能缩到一个月当然有用，但她说延迟通常不好改，供应链往往不由你定。乙只改了每次采购的量，是参数，第 12 项，延迟还在，不够和过剩照样来回摆。丙放慢的是「老用户拉新用户」那条增强回路，第 7 项，正是她说的：延迟改不动时，放慢变化更容易。</p><p>容易错的是把乙当成解法：批量小了，订单更勤，但每一单还是三个月后才到。丙的代价是少长一些用户，要和卡顿的代价比。实际常是丙先顶着，同时去谈甲。</p><p class="where">书里对应：§5 时间延迟、§7 增强回路</p></details>
+</div>
+<div class="drill" id="d-invite-bonus">
+<h3><span class="sec">§2</span>邀请奖励从 5 元到 50 元</h3>
+<div class="scene"><p>一个记账 App 做了一次投放，带来 1000 个新用户。每个新用户邀请朋友注册，双方各得 5 元；统计下来，平均每个新用户带来 0.6 个新用户，被带来的人也照样邀请。运营想把奖励提到 50 元，估计每人能带来 1.1 个。</p></div>
+<p class="ask">奖励金额是第几项？算一下两种情况下这 1000 人最后能滚出多少用户。这个数为什么值得争？</p>
+<details class="reveal"><summary>想好了再点开</summary><p>奖励金额是参数，第 12 项。5 元时，第二轮 600 人，第三轮 360 人，越来越少，加起来最多再多 1500 人，总共约 2500 人就停了。50 元时每人带来 1.1 个，每一轮比上一轮多，会一直涨，直到身边能拉的人拉得差不多，或者预算撑不住。</p><p>这就是 §2 的例外：这个参数管的正是增强回路的增益，1 左右是分界，从 0.6 推到 1.1，回路从慢慢熄灭变成越滚越大。所以它值得争。如果奖励再高也只能把 0.6 推到 0.7，那它就只是一个普通参数。</p><p class="where">书里对应：§2 数字：包括各种常数和参数</p></details>
+</div>
+<div class="drill" id="d-db-buffer">
+<h3><span class="sec">§4</span>大促那天的数据库</h3>
+<div class="scene"><p>一家电商每年大促，零点那几分钟下单量是平时的二十倍，所有地区的订单都写进同一个中心数据库，年年被打爆。三个提议：甲，把数据库连接池的上限从 500 调到 2000；乙，在下单和写库之间加一个消息队列，先收下订单再慢慢写；丙，把架构改成按地区分库，订单不再都挤进一个库。</p></div>
+<p class="ask">三个提议各在第几项？哪个见效最快，哪个最根本？</p>
+<details class="reveal"><summary>想好了再点开</summary><p>甲是参数，第 12 项，连接池只是阀门开多大；数据库本身扛不住时，开大阀门可能让它倒得更快。乙加的是一个起稳定作用的存量，第 11 项缓冲器，让进和出暂时脱钩，见效快，代价是用户要等订单确认。丙改的是管子怎么连，第 10 项存量流量结构，最根本，也最慢最贵，正如她说的，结构建好以后只能重建。</p><p>按她的排序丙更高，但这一档她说杠杆在一开始的设计：如果系统还小，早拆早省事。已经大了，常见的做法是今年先上乙，同时排期做丙。</p><p class="where">书里对应：§3 缓冲器、§4 存量—流量结构</p></details>
+</div>
+<div class="drill" id="d-rollback-drill">
+<h3><span class="sec">§6</span>砍掉的演练</h3>
+<div class="scene"><p>一个团队嫌回滚演练、灰度发布太费时间，备用机房一年到头用不上还要付钱，季度预算一紧，三样都砍了。头三个月相安无事，发布还快了。第四个月一次有问题的发布直接推到全量，回滚脚本半年没跑过、跑不通，全站挂了两个小时。</p></div>
+<p class="ask">砍掉的这三样，在清单上属于哪一项？为什么头三个月看不出问题？</p>
+<details class="reveal"><summary>想好了再点开</summary><p>主要是第 8 项里那类平时不用的应急回路：灰度发布是发现偏差的监测装置，回滚是纠偏的手段，平时都不怎么动，出事时才起作用。她说的大错就是这样：因为不常用、看着费钱就砍掉，短期看不出影响，系统能扛住的情形却少了一大块。</p><p>备用机房也可以看成第 11 项的缓冲器，一块冗余的容量。分法是看它起什么作用：多蓄着的容量是缓冲器；一旦出事就自动接手、把系统拉回正常，那就是一条应急的调节回路。这里三样合起来，丢掉的是系统自我纠正的能力。</p><p class="where">书里对应：§6 调节回路：试图修正外界影响的反馈力量</p></details>
+</div>
+<h2>今天怎么看</h2>
+<p class="lede">Meadows 1993 年写成初稿，书 2008 年出版。下面挑出这一页里能被后来的事情检验的说法，分「书里 / 当时 / 今天」几栏，并给一个结论。结论判的是标题里「书里的说法：」后面那一句。全书的这一节汇总在<a href="../today.html">今天怎么看</a>。</p>
+<ul class="verdicts"><li><span class="v ok">成立</span>后来的研究或事情支持这句话。</li><li><span class="v mid">部分成立</span>大方向对，细节或适用范围要改。</li><li><span class="v bad">被改写</span>后来的研究推翻了它、换了一种说法，或者情况变了。</li><li><span class="v dis">有争议</span>至今没有定论，两边各有代表性的研究或证据。</li></ul>
+<div class="today" data-verdict="成立"><h4>书里的说法：严了几十年的空气标准没让洛杉矶的空气变干净</h4><dl>
+  <dt>书里</dt><dd>作者拿它当参数改不了系统行为的例子：洛杉矶执行了几十年全世界最严的空气标准，空气没那么脏了，但不干净。<span class="at" data-p="20">§2</span></dd>
+  <dt>当时</dt><dd>南海岸空气质量管理局 1996 年的报告说，超过联邦臭氧标准的天数从 1976 年的 194 天降到 1996 年的 90 天。</dd>
+  <dt>今天</dt><dd>美国肺脏协会《空气状况 2025》（用 2021—2023 年的数据）里，洛杉矶仍是全美臭氧污染最重的都市区，在这份报告的 26 年里有 25 年排第一。<span class="asof">核对于 2026-11。依据：South Coast AQMD 1996 年空气质量报告（经 webarchive.library.unt.edu 存档）；American Lung Association, State of the Air 2025（lung.org/sota）及当时的报道。</span></dd>
+  <dt>另一边</dt><dd>标准并非没用：臭氧比峰值年代降了一大截。还不干净也和人口、车辆增长、盆地地形、高温和山火有关，不全怪标准。</dd>
+</dl></div>
+<div class="today" data-verdict="成立"><h4>书里的说法：美联储调利率没能让经济周期消失</h4><dl>
+  <dt>书里</dt><dd>同一串参数的例子：美联储摆弄利率，经济周期并没有消失；她还挖苦说，景气时我们总忘了这一点，衰退来了又「震惊不已」。<span class="at" data-p="20">§2</span></dd>
+  <dt>当时</dt><dd>1980 年代中期以后，美国产出和通胀的波动明显变小，被称为「大缓和」。Bernanke 2004 年的演讲认为货币政策改进可能是重要原因之一，也有经济学家认为主要是运气好。</dd>
+  <dt>今天</dt><dd>按美国国家经济研究局的划分，2007 年 12 月到 2009 年 6 月是一次衰退，2020 年 2 月到 4 月又是一次。周期没有消失。<span class="asof">核对于 2026-11。依据：Bernanke, “The Great Moderation”，2004 年 2 月 20 日演讲（federalreserve.gov）；NBER 经济周期划分（nber.org/research/business-cycle-dating）。</span></dd>
+  <dt>另一边</dt><dd>「没消失」不等于「没用」：很多经济学家认为利率政策让衰退变浅、变短。她判的是行为有没有根本改变。</dd>
+</dl></div>
+<div class="today" data-verdict="有争议"><h4>书里的说法：拼命缩短金融市场的信息和资金延迟是在自找剧烈震荡</h4><dl>
+  <dt>书里</dt><dd>她提醒：能改的延迟改了会有大效果，但要改对方向；金融市场拼命缩短信息和资金转移的延迟，就是在自找剧烈震荡。<span class="at" data-p="40">§5</span></dd>
+  <dt>当时</dt><dd>电子交易和程序化交易在 1990—2000 年代迅速扩张，交易越来越快。</dd>
+  <dt>今天</dt><dd>2010 年 5 月 6 日「闪电崩盘」：美国证交会和商品期货交易委员会的联合报告说，一笔约 41 亿美元的自动卖单触发连锁反应，道琼斯指数不到半小时跌了近 1000 点。商品期货交易委员会经济学家后来的研究说，高频交易者没有引发崩盘，但加剧了它。综述的结论是：高频交易平时让市场流动性更好，剧烈波动时起什么作用还没有定论。<span class="asof">核对于 2026-11。依据：SEC/CFTC, Findings Regarding the Market Events of May 6, 2010（sec.gov）；Chung &amp; Lee 2016 年的文献综述。</span></dd>
+</dl></div>
+<h2>本站怎么看</h2>
+<p class="lede">读完作者的主张，再看它站不站得住。每一块摆出三样：主流怎么看，作者怎么看，本站的评论。最后一句是本站对这一页的总体判断。</p>
+<div class="views"><h4>清单的排序靠什么排出来的</h4>
+<p><b>主流看法：</b>这张清单 1997 年先以九项的短文登在 Whole Earth 杂志上，1999 年扩成 12 项。它在可持续发展研究里被大量引用；Abson 等人 2017 年在 Ambio 上撰文说，可持续方面的努力多半落在「摸得着但弱」的杠杆点上，并把清单归成几大类。</p>
+<p><b>作者的看法：</b>清单是在制品，不是配方；缓冲器、结构、延迟排得低，主要因为难改。<span class="at" data-p="11 30 34 38">§1 §3 §4 §5</span></p>
+<p class="ours"><b>本站的评论：</b>排序里混着两件事：改了以后作用多大，改起来有多难。延迟「本想排高」、因为难改才排第 9，就是证据。用的时候把两句分开问：这一处改了会不会改变系统的行为？我改得动吗？「第几项」是她几十年的经验判断，拿来启发很好，别当成定律去套。</p></div>
+<div class="views"><h4>价格信号：她和经济学家站得有多远</h4>
+<p><b>主流看法：</b>经济学教科书讲外部性：污染这类成本没进价格，就用税或收费把它算进去（庇古税）；反垄断、取消扭曲性补贴也是主流主张。国际货币基金组织估算，2022 年全球化石燃料补贴约 7 万亿美元，八成多是没把环境成本算进价格的「隐性补贴」。</p>
+<p><b>作者的看法：</b>市场是被许多经济学家「几乎奉若神明」的调节回路，价格越清晰、及时、真实越好；真正的杠杆是不让公司和政府扭曲它，所以要反垄断法、广告真实法、污染费。<span class="at" data-p="46 47">§6</span></p>
+<p class="ours"><b>本站的评论：</b>这几条和主流经济学几乎一致，「奉若神明」的口气把分歧说大了。读译本的人要留神：这一段译反了，照译本读会以为她反对这些法律。她接着把民主也说成一条正在变弱的调节回路，那是 1990 年代的立场，不是这一项的论证。</p></div>
+<div class="views"><h4>Forrester 的城市模型，被拆楼证明了吗</h4>
+<p><b>主流看法：</b>圣路易斯的 Pruitt–Igoe 1972 年起分批爆破；美国住房和城市发展部的汇总说，1993—2010 年 HOPE VI 计划又拆了约 9.9 万套公共住房。常被提到的原因有几样：联邦出钱盖楼，维护却靠租金，空置越多钱越少；城市人口外流；种族隔离。《城市动力学》当年就被批评结论靠模型的设定，很少拿实际数据检验。</p>
+<p><b>作者的看法：</b>Forrester 的模型说低收入住房补贴越少，城市越好，连城里的低收入者也是；当年被嘲笑，后来这类项目一个城市接一个城市被拆掉。<span class="at" data-p="8">§1</span></p>
+<p class="ours"><b>本站的评论：</b>拆楼是事实，但证明不了模型：楼可以因为维护的钱断了而被拆，不必是因为城里低收入住房太多。这正好也是这一章的提醒：一个反直觉的结论碰上一件看上去对得上的事，更要问还有什么别的解释。</p></div>
+<p class="verdict"><b>本站的总体看法：</b>这一页的道理大体站得住：参数常被高估，实物结构难改，延迟改不动时放慢变化更现实，工程和政策里都看得到。要打折扣的是两处：排序是经验判断，混着「多有用」和「多好改」；城市模型和几处政治判断是那个年代、那一派的立场，书里的证据撑不到那么远。</p>
+<h2>检查一下理解</h2>
+<p class="lede">先在心里答，再点开。答错的那题，回书里把对应那一节再读一遍。</p>
+<details class="check"><summary>1.（§1）Forrester 说一般的管理者很会猜杠杆点在哪。那问题出在哪？举书里一个例子。</summary><p>猜到了位置，却多半往反方向推。世界模型找出的杠杆点是增长，要的是放慢，各国领导人却拼命加速增长。</p></details>
+<details class="check"><summary>2.（§2）她为什么把参数排在最末？参数什么时候会成为杠杆点？</summary><p>参数吸走了大部分注意力，却很少改变系统的行为。只有当它落进会触发清单上更高一项的区间时才成为杠杆点，比如利率、出生率管着增强回路的增益；她说这种情形远不如人们以为的常见。</p></details>
+<details class="check"><summary>3.（§2）一个部门换了负责人，按她的清单算第几项？什么时候不止于此？</summary><p>换人算参数，第 12 项：换一双手拧同一个龙头。如果新人改了谁看得到什么信息、改了规则或目标，那改的就是清单上更高的项了。</p></details>
+<details class="check"><summary>4.（§3 §4）缓冲器和存量流量结构都很要紧，她为什么排得不高？</summary><p>因为难改。缓冲器多是实物，比如土壤里中和酸的钙、大坝的库容；结构建好以后只能重建。她说结构的杠杆在一开始的设计，建成以后在于摸清瓶颈、别让它超负荷。</p></details>
+<details class="check"><summary>5.（§5）延迟太短、太长分别会怎样？延迟改不动时她建议做什么？</summary><p>太短会反应过度，振荡被放大；太长会有衰减、持续或越来越大的振荡，系统有临界点时还会过冲和崩溃。改不动延迟，就放慢变化的速度，让延迟少惹麻烦。</p></details>
+<details class="check"><summary>6.（§6）窗户全打开时，恒温器为什么不管用了？这说明什么？</summary><p>暖气纠偏的力量敌不过开窗带来的降温。调节回路的力度是相对的，要和它要纠正的冲击比；冲击变大，回路也得加强。</p></details>
+<details class="check"><summary>7.（§7）车开太快时，她为什么说先松油门，而不是换更灵的刹车？</summary><p>减小增强回路的增益（放慢增长），通常比加强调节回路更有力：调节回路都有极限和延迟，放慢增长给它们留出起作用的时间。</p></details>
+<p>用一句话说这一页：</p>
+<textarea class="note" data-key="06a-oneline" rows="2" placeholder="比如：……"></textarea>
+<div class="ponder"><p>想一想：你最近争过的一个数（预算、截止日期、KPI 的阈值、房租、孩子的补习时长），它会把系统推进一个不同的状态吗？还是在泰坦尼克号上挪躺椅？如果是后者，它背后哪一项更值得动？</p>
+<textarea class="note" data-key="06a-ponder" rows="3"></textarea></div>
+<h2>精彩回顾</h2>
+<p class="lede">读过又忘了，从这里想起来。挑的是这一页最值得记住的例子和说法，不按原书顺序；每条后面是节号，想细看就回书里那一节。全书各页的这一节都收在<a href="../recap.html">全书回顾</a>。</p>
+<p class="recall-line"><b>一句话：</b>最常被争的数字最弱，实物结构要紧却难改；改不动延迟就放慢变化，松油门通常胜过加刹车。</p>
+<div class="recall">
+  <div class="item"><b>拼尽全力往反方向推</b><p>Forrester 的世界模型找出的杠杆点是增长。她说各国领导人盯住增长没盯错，只是拼命往反方向推：该放慢，却在加速。</p><span class="sec">§1</span></div>
+  <div class="item"><b>泰坦尼克号上挪躺椅</b><p>数字排在清单最末。她估计九成，不，九成九的注意力都在参数上；参数只有落进触发更高一项的区间才是杠杆点，这种时候不多。</p><span class="sec">§2</span></div>
+  <div class="item"><b>洛杉矶的空气</b><p>几十年最严的空气标准，空气没那么脏了，但不干净。到 2025 年，洛杉矶仍是全美臭氧污染最重的都市区。</p><span class="sec">§2</span></div>
+  <div class="item"><b>湖很少泛滥成灾，河常常会</b><p>存量相对流量越大越稳；缓冲器太大又僵又贵，而且多是实物，难改，所以排第 11。</p><span class="sec">§3</span></div>
+  <div class="item"><b>开着窗的恒温器</b><p>调节回路的力度要和冲击比。平时用不上的应急回路，砍了短期看不出，长期让系统能活的范围变窄。</p><span class="sec">§6</span></div>
+  <div class="item"><b>先松油门</b><p>延迟改不动，就放慢变化。减小增强回路的增益，通常比造更灵的刹车更有力。</p><span class="sec">§5 §7</span></div>
+</div>
+</main>
+</body>
+</html>

@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 1 章（上）· 系统之美导读</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/chapters.js"></script>
+<script src="../assets/ts.js"></script>
+<style>
+#sim-01a .charts { display: grid; gap: 6px; }
+#sim-01a .cap { font-size: 13px; color: var(--muted); margin: 2px 0 8px; }
+</style>
+</head>
+<body data-page="01a">
+<main>
+<h2>这一页在做什么</h2>
+<div class="gist"><p>第 1 章是全书的地基，这一页是它的前半：先说清什么算一个系统，再教一样基本功，看存量和流量。好玩在两个反直觉的地方。一支球队把球员全换掉，还是原来那支球队；把规则换成篮球的，同一批人就成了另一个系统。浴缸的水龙头可以一下子拧到底，水位却只能一点点变，系统的惯性和缓冲都从这里来。读的时候盯住一个问题：哪个是能数出来的量，哪个是让它变的速度。</p></div>
+<figure class="fig"><img src="../assets/img/01a-lake-mead.jpg" alt="峡谷里一片深蓝色的湖水，两岸红褐色的山崖下部有一圈齐平的灰白色岩壁，像浴缸内壁上的水渍" loading="lazy">
+<figcaption>美国胡佛水坝上游的米德湖（Lake Mead），科罗拉多河上的大水库。岸边那圈灰白色叫「浴缸圈」：水位高的时候，这些岩石泡在水里。水库里的水是一个存量，那道白边记下了它从前的高度，也就是多年来流入少于流出的结果。照片与本书无关。<span class="src">Christian David，CC BY-SA 4.0，维基共享资源</span></figcaption></figure>
+<h2>读之前：这一页在全书的哪里</h2>
+<div class="linehere"></div>
+<p>引言里 Meadows 拿一只弹簧玩具演示：弹簧上下跳，是弹簧自己的构造决定的，手只是把它放开。第 1 章开始把「构造」拆开看。这一页的 §1、§2 讲系统由哪三样东西组成、哪一样最要紧；§3 讲最基本的构件，存量和流量，并用一只浴缸把规律讲完。§3 最后一句引出反馈，第 1 章后半（01b）接着讲两种反馈回路。</p>
+<div class="crux"><p>一个团队的人全换了一遍，为什么常常还是老样子？</p></div>
+<p class="lede">读的时候带着这几个问题，读完回来对照「检查一下理解」。</p>
+<ol class="qs">
+  <li>一堆沙子和一支足球队，差在哪里？<span class="sec">§1</span></li>
+  <li>要素、连接、目标，换掉哪一样对系统影响最小？哪一样最难看出来？<span class="sec">§2</span></li>
+  <li>浴缸放水放到一半时打开龙头，让进水和出水一样快，水位会怎样？<span class="sec">§3</span></li>
+  <li>要让存量变多，除了开大流入，还有什么办法？<span class="sec">§3</span></li>
+</ol>
+<h2>分节地图</h2>
+<p class="lede">这一页是原书和译本第 1 章的前三节。粗体是本站给的节名，后面是档和译本字数；下面一行是译本的小标题和这一节在译本电子书里开头的几个字（搜它就能跳过去），再下面是英文原书的小标题和开头几个词，翻纸书用。读完打个勾。</p>
+<ol class="secmap">
+  <li data-sec="1"><span class="what">给系统下定义，举了消化系统、球队、一堆沙子。很短，记住三样东西和「部分之间要互相影响」这个判断标准。</span></li>
+  <li data-sec="2"><span class="what">三样里哪样最要紧。前半讲连接和目标为什么难看见，从<span class="zhv">译本：「这个问题本身就是个伪命题」</span>起回答哪样最要紧。毒品那串清单值得慢读。</span></li>
+  <li data-sec="3"><span class="what">全书的基本功：存量、流量、浴缸。前半是几张存量流量图和浴缸的三条规律，后半从<span class="zhv">译本：「还有一个更为重要的原则」</span>起讲存量怎样让进和出脱钩。</span></li>
+</ol>
+<h2>先用中文过一遍：这一页的概念</h2>
+<p class="lede">先把这一页用到的几个概念用书外的例子讲一遍。作者拿它们推出什么，读原书时自己看。后面各页用到时会链回这里。</p>
+<div class="concept" id="c-system">
+<h3><span class="sec">§1</span>系统：要素、连接、目标 <span class="en">system: elements, interconnections, function / purpose，译本：要素、连接、功能或目标</span></h3>
+<p>系统有三样东西：一些要素，把要素连起来的关系，整体在做的那件事。拿一个开发团队说：要素是人、代码库、工单；连接是代码评审的规矩、站会上交换的消息、谁有权合并代码；目标是按时交出能用的功能，至少嘴上这么说。</p>
+<p>判断是不是系统，看部分之间会不会互相影响、合起来是不是有了单独一个部分没有的效果。地铁车厢里各刷各手机的人不算；同一群人建了一个群、开始约饭，就有了连接。连接很多是信息（谁知道了什么），比实物难看见；目标更难，书里的办法是看系统长期实际怎么做。功能（function）多用于非人的系统，目标（purpose）多用于人的系统，两个词本书经常并用。</p>
+<p class="use"><b>在这一页：</b>§1 下定义，§2 比较三样哪样要紧。<span class="zhv">译本：「内在连接」</span>说的也是 interconnections，和「连接」不用分开记。</p>
+</div>
+<div class="concept" id="c-stock-flow">
+<h3><span class="sec">§3</span>存量和流量 <span class="en">stock, flow (inflow / outflow)，译本：存量、流量（流入量、流出量）</span></h3>
+<p>存量是某一刻能数出来的量：账户余额、待修的 bug、仓库里的货、你的体重。流量是一段时间里让它变的速度：每月的工资和开销，每天新报的 bug 和修掉的 bug。分辨的办法是想象拍一张快照：快照里看得见的是存量；非得说「每天」「每月」才说得清的是流量。</p>
+<p>存量只能靠流量改变：你没法把余额直接改成一个数，只能等钱流进流出。存量也不一定是实物，信心、名声、团队里的默契都可以积累和消耗。书里的画法是：方框是存量，粗箭头是流量，箭头上的阀门表示能开大关小，云朵表示「从哪来、到哪去，这次不管」。</p>
+<figure class="fig">
+<svg class="diagram" viewBox="0 0 640 200" role="img" aria-label="存量流量图：左边云朵是用户那边，粗箭头带阀门标着每天新报的 bug，流进中间方框待修的 bug；方框右边粗箭头带阀门标着每天修掉的 bug，流向右边云朵已关闭">
+<path d="M30 112 q-10 -22 12 -26 q6 -20 30 -12 q18 -10 28 8 q22 2 14 24 q4 20 -22 18 q-14 12 -34 2 q-30 6 -28 -14 z" class="box"/>
+<text x="72" y="106" text-anchor="middle" class="t-m">用户那边</text>
+<rect x="114" y="94" width="112" height="12" class="box"/><path d="M226 86 L244 100 L226 114 z" class="f-fg"/>
+<path d="M166 84 L186 100 L166 116 z M206 84 L186 100 L206 116 z" class="f-a"/>
+<text x="186" y="140" text-anchor="middle" class="t-b">新报的 bug</text>
+<text x="186" y="158" text-anchor="middle" class="t-m">流入：每天几个</text>
+<rect x="244" y="62" width="152" height="76" rx="4" class="box"/>
+<text x="320" y="96" text-anchor="middle" class="t-b">待修的 bug</text>
+<text x="320" y="116" text-anchor="middle" class="t-m">存量：现在有几个</text>
+<rect x="396" y="94" width="112" height="12" class="box"/><path d="M508 86 L526 100 L508 114 z" class="f-fg"/>
+<path d="M446 84 L466 100 L446 116 z M486 84 L466 100 L486 116 z" class="f-a"/>
+<text x="466" y="140" text-anchor="middle" class="t-b">修掉的 bug</text>
+<text x="466" y="158" text-anchor="middle" class="t-m">流出：每天几个</text>
+<path d="M528 112 q-10 -22 12 -26 q6 -20 30 -12 q18 -10 28 8 q22 2 14 24 q4 20 -22 18 q-14 12 -34 2 q-30 6 -28 -14 z" class="box"/>
+<text x="570" y="106" text-anchor="middle" class="t-m">已关闭</text>
+<text x="186" y="74" text-anchor="middle" class="t-m">阀门：可开大关小</text>
+</svg>
+<figcaption>本站示意图，用书里的画法画一个书外的例子。左右两朵云是这张图不管的地方：bug 在用户那边怎么产生、关掉以后去了哪里。</figcaption></figure>
+<p class="use"><b>在这一页：</b>§3 开头连画了矿藏、水库、森林几张图，读的时候先找方框，再找流进流出的箭头。</p>
+</div>
+<div class="concept" id="c-equilibrium">
+<h3><span class="sec">§3</span>动态平衡 <span class="en">dynamic equilibrium，译本：动态平衡</span></h3>
+<p>所有流入加起来等于所有流出加起来时，存量不变，但东西一直在流。一家奶茶店，每分钟来 3 位客人，店员每分钟做完 3 杯，门口的队伍一直是 8 个人，可每分钟都换了人。这和静止不同：静止是根本没有流动，像塞着塞子、关着龙头的浴缸。</p>
+<p>动态平衡停在哪个水平，看流入和流出扯平那一刻存量是多少。同样是来 3 走 3，开门时队伍要是只有 2 个人，就一直是 2 个人。想换一个水平，就得让流入和流出暂时不相等，等存量走到新位置再扯平。</p>
+<p class="use"><b>在这一页：</b>§3 浴缸放水到一半时打开龙头，就是这个状态。模拟器里改「第几分钟打开流入」，看水位停在哪儿。</p>
+</div>
+<div class="concept" id="c-stock-buffer">
+<h3><span class="sec">§3</span>存量的惯性和缓冲 <span class="en">stocks as delays, buffers; decoupling inflows and outflows，译本：延迟、缓存</span></h3>
+<p>流量可以一下子变，存量只能一点点变：龙头一下拧到底，浴缸也要几分钟才满。这带来两件事。一是惯性：体重、团队的技术水平、城市的人口，掉头都要时间，指望立竿见影会失望，也容易放弃得太早。二是缓冲：有了存量，进和出不必时时相等。钱包让你不必赚一块花一块；消息队列让高峰期的请求先排着，服务器按自己的速度处理。</p>
+<p>缓冲只管暂时的不平衡。平均下来流入一直大于流出，队列迟早会撑满。</p>
+<figure class="fig">
+<svg class="diagram" viewBox="0 0 640 300" role="img" aria-label="两张上下对齐的随时间变化图。上图：每天修掉的 bug 一直是 15 个，每天新报的 bug 前 10 天是 10 个，第 10 天一下跳到 20 个。下图：待修的 bug 从 100 个斜着降到第 10 天的 50 个，然后斜着回升，第 20 天回到 100 个，转折处是一个尖角，没有跳变">
+<text x="8" y="20" class="t-m">每天几个</text>
+<line x1="70" y1="30" x2="70" y2="110" class="ln"/><line x1="70" y1="110" x2="610" y2="110" class="ln"/>
+<path d="M70 62 H610" class="ln-d"/>
+<path d="M70 78 H340 V46 H610" class="s1"/>
+<text x="76" y="94" class="t-m">新报：每天 10 个</text>
+<text x="604" y="40" text-anchor="end" class="t-m">新报：每天 20 个</text>
+<text x="604" y="76" text-anchor="end" class="t-m">修掉：每天 15 个</text>
+<text x="8" y="152" class="t-m">待修的 bug（个）</text>
+<line x1="70" y1="160" x2="70" y2="270" class="ln"/><line x1="70" y1="270" x2="610" y2="270" class="ln"/>
+<path d="M70 178 L340 224 L610 178" class="s2"/>
+<text x="64" y="182" text-anchor="end" class="t-m">100</text>
+<text x="64" y="228" text-anchor="end" class="t-m">50</text>
+<line x1="340" y1="30" x2="340" y2="270" class="ln-d"/>
+<text x="346" y="252" class="t-m">第 10 天：新功能上线</text>
+<text x="70" y="290" text-anchor="middle" class="t-m">0</text><text x="340" y="290" text-anchor="middle" class="t-m">10</text><text x="610" y="290" text-anchor="middle" class="t-m">20 天</text>
+</svg>
+<figcaption>本站示意图，数是编的。流入在第 10 天一下翻倍，上图是一个台阶；下图的存量只是从「每天少 5 个」变成「每天多 5 个」，折了个角，没有跳。第 20 天才回到 100 个：只看积压多少的人，到这时才觉得出了麻烦，其实第 10 天起它就在涨。</figcaption></figure>
+<p class="use"><b>在这一页：</b>§3 后半先讲惯性（人们常低估存量的动量），再讲缓冲（流入流出脱钩），最后说人的决策多半是在调节存量，由此引出反馈。</p>
+</div>
+<h2>动手：模拟器</h2>
+<p>先猜：一只浴缸里有 50 加仑水，拔掉塞子，每分钟流出 5 加仑；到第 5 分钟打开龙头，每分钟流进 5 加仑。第 10 分钟时缸里有多少水？如果第 2 分钟就打开龙头呢？</p>
+<div class="sim" id="sim-01a">
+  <div class="sim-head"><span class="tag">模拟器</span><h3>浴缸</h3><p class="desc">一个存量（缸里的水），一个流入（龙头），一个流出（排水口）。调下面五个数，上图是缸里的水随时间怎么变，下图是两股水流各有多快。打开页面时是书里那一组数。</p></div>
+  <div class="sim-body"><p>需要浏览器打开脚本才能运行。</p></div>
+</div>
+<p>各个控件：「开始时有多少水」是第 0 分钟缸里的水，单位加仑（1 加仑约 3.8 升），浴缸最多装 100 加仑，满了多出来的从溢水口流走；「流出」是排水口每分钟放走多少；「流入」是龙头打开以后每分钟进多少；「第几分钟打开流入」之前龙头关着；「看多少分钟」是横轴有多长。每过一分钟，缸里的水加上这一分钟的流入、减去流出，和书后附录的模型是同一种算法。缸里没水时，排水口也就没水可放，下图的流出会跟着掉下来。</p>
+<ol class="qs">
+  <li>试试看：先看书里那一组数。前 5 分钟水位每分钟降 5 加仑，到 25；之后流入和流出一样快，水位就停在 25。再把「第几分钟打开流入」改成 2，然后改成 8：水位分别停在多少？停在哪里，取决于什么？</li>
+  <li>试试看：把「第几分钟打开流入」改成 0，流入改成 7、流出保持 5，看第 10 分钟的水位；再把流入改回 5、流出改成 3。两种改法，水位涨得一样快吗？</li>
+  <li>试试看：回到书里那一组，把流入改成 10。下图里流入在第 5 分钟一下跳上去；上图的水位在那一刻有没有跳？它变的是什么？</li>
+</ol>
+<p>这个模拟器只演最简单的情形：流量由你定，不受水位影响。现实里水位常常会反过来影响流量（水快满了你会去关龙头），那就是反馈，第 1 章后半（01b）的模拟器演它。</p>
+<h2>原文里的词和句</h2>
+<p class="lede">读英文原书时值得停一下的词和句：熟词生义、Meadows 的口语和比喻。灰色斜体是原句里连续的几个词，在英文电子书里搜它就能找到；标「每个字都认识」的，是每个词都眼熟、合起来意思却变了的，最容易读错。点「记下」收进词本。</p>
+<div class="entry trap"><div class="en">any old</div><div class="loc" data-p="3">… just any old collection of things …</div><div class="zh">随便什么（东西凑在一起）</div><div class="note">any old 是口语「随便哪个、无论什么样的」，和「老」无关。</div></div>
+<div class="entry"><div class="en">all of the above</div><div class="loc" data-p="5">… dollars, or all of the above.</div><div class="zh">以上皆是</div><div class="note">选择题里的选项。作者列完球队的几个目标，用考卷的口气收尾，带点玩笑。</div></div>
+<div class="entry"><div class="en">by happenstance</div><div class="loc" data-p="7">… scattered on a road by happenstance …</div><div class="zh">碰巧（撒在路上）</div><div class="note">happenstance 是 happen 和 circumstance 合成的词，偶然的事。</div></div>
+<div class="entry trap"><div class="en">range of disruptions</div><div class="loc" data-p="10">… over at least some range of disruptions.</div><div class="zh">（在）一定范围的扰动之内</div><div class="note">disruption 是打乱、干扰。意思是扰动不太大时，系统常能自己复原；超出这个范围就难说。</div></div>
+<div class="entry trap"><div class="en">can’t see the forest for the trees</div><div class="loc" data-p="13">… see the forest for the trees.</div><div class="zh">只见树木，不见森林</div><div class="note">for 在这里是「因为」：因为眼前全是树，反而看不见林子。</div></div>
+<div class="entry trap"><div class="en">presumably</div><div class="loc" data-p="23">… knowledge that is, presumably, the purpose …</div><div class="zh">照理说（是整个系统的目标）</div><div class="note">插在句中的 presumably 带一点保留：按说如此，实际未必。作者在 §2 说目标要看行为，这里先埋了个疑问。</div></div>
+<div class="entry"><div class="en">necessary but not sufficient</div><div class="loc" data-p="25">… necessary but not sufficient to trigger …</div><div class="zh">必要，但不够</div><div class="note">逻辑里的「必要不充分」：知道有问题才可能行动，但光知道还不会行动。</div></div>
+<div class="entry trap"><div class="en">rhetoric</div><div class="loc" data-p="27">… not from rhetoric or stated goals.</div><div class="zh">嘴上的说法、漂亮话</div><div class="note">日常英语里 rhetoric 多指空洞的言辞，带贬义，不是「修辞学」。</div></div>
+<div class="entry"><div class="en">tenure</div><div class="loc" data-p="39">… a professor may be to get tenure …</div><div class="zh">（大学的）终身教职</div><div class="note">美国大学教授拿到 tenure 后不能被随意解聘。拿到之前要拼论文，所以有「忽视学生」那句。</div></div>
+<div class="entry trap"><div class="en">a whole new ball game</div><div class="loc" data-p="42">… a whole new ball game.</div><div class="zh">完全变了局面</div><div class="note">口语，意思是情况全变了。作者刚说把足球规则换成篮球规则，这句俗话在这里也是字面意思：真成了另一种球赛。</div></div>
+<div class="entry trap"><div class="en">just what it sounds like</div><div class="loc" data-p="49">… stock is just what it sounds like …</div><div class="zh">顾名思义</div><div class="note">「就是听上去的那个意思」。stock 的日常意思是库存、储备，术语沿用了它。</div></div>
+<div class="entry trap"><div class="en">good will</div><div class="loc" data-p="49">… Your reserve of good will toward others …</div><div class="zh">（你对别人的）善意、好感</div><div class="note">分开写的 good will 是善意。连写的 goodwill 在会计里是「商誉」，这里不是那个意思。</div></div>
+<div class="entry trap"><div class="en">minute</div><div class="loc" data-p="54">… into a mineral deposit is minute …</div><div class="zh">极小的、微乎其微</div><div class="note">形容词，读 my-NOOT，不是「分钟」。矿藏的流入在短于亿万年的时间里小到可以不计。</div></div>
+<div class="entry trap"><div class="en">on full blast</div><div class="loc" data-p="86">… the inflow faucet on full blast.</div><div class="zh">（龙头）开到最大</div><div class="note">full blast 是全速、开足马力，说音响、空调、水龙头都行。</div></div>
+<div class="entry"><div class="en">ballast</div><div class="loc" data-p="86">… delays, lags, buffers, ballast, and …</div><div class="zh">压舱物、压舱石</div><div class="note">船底放的重物，让船不容易晃。比喻存量让系统稳。</div></div>
+<div class="entry"><div class="en">room to maneuver</div><div class="loc" data-p="90">… stocks allow room to maneuver …</div><div class="zh">回旋的余地</div><div class="note">maneuver 是调动、周旋，美式拼法；英式写 manoeuvre。</div></div>
+<div class="entry trap"><div class="en">ebbs and flows</div><div class="loc" data-p="98">… add up to the ebbs and flows …</div><div class="zh">起起落落</div><div class="note">本义是潮落潮涨。这里的 flows 是日常用法，不是术语「流量」，别读成「存量和流量」。</div></div>
+<h2>译本勘误</h2>
+<p class="lede">对着译本读这三节时，下面这些地方会把人读歪。方框里是译本的原句，在译本电子书里搜它就能找到；灰色斜体是英文原书那一处。只收意思错了、反了、漏了的，措辞上的出入不收。全书的勘误汇总在<a href="../zh.html">译本勘误</a>。</p>
+<div class="zherr" data-p="1"><h4><span class="sec">§1</span>题词说的是「变得更复杂」<span class="mark turn">译反</span></h4>
+<p class="loc">… did not become still more complicated.</p>
+<p class="zhq"><span class="zhv">译本：「它都会变得简单起来」</span></p>
+<p>科幻作家 Poul Anderson 的原话是：再复杂的问题，用对的眼光一看，没有一个不变得更复杂。这是句俏皮话，也是在提醒读者，系统思考不是化繁为简的窍门。译本正好译反了。</p></div>
+<div class="zherr" data-p="4"><h4><span class="sec">§1</span>连起消化系统的是食物<span class="mark">误译</span></h4>
+<p class="loc">… through the physical flow of food …</p>
+<p class="zhq"><span class="zhv">译本：「通过身体血液的流动」</span></p>
+<p>原文：牙齿、胃、肠这些要素，靠食物本身的流动和一套化学信号连在一起。食物从嘴流到肠，正是 §2 说的「实物流」那种连接。译成血液，连接就换了一样东西。</p></div>
+<div class="zherr" data-p="7"><h4><span class="sec">§1</span>是「随意加减球员」，不是「换掉要素」<span class="mark">误译</span></h4>
+<p class="loc">… Arbitrarily add or take away football …</p>
+<p class="zhq"><span class="zhv">译本：「如果你更换了其中的要素，系统就被改变了」</span></p>
+<p>原文拿沙堆和球队对比：沙子随便加减还是沙子，球员随便加减（比如场上只剩三个人），球队很快就不成其为那个系统。译本说成「更换要素系统就变了」，和 §2 的主张正面冲突：作者在 §2 说换掉全部球员，球队还是球队。</p></div>
+<div class="zherr" data-p="10"><h4><span class="sec">§1</span>是「在一定扰动范围内能自我修复」<span class="mark">误译</span></h4>
+<p class="loc">… self-repairing over at least some range …</p>
+<p class="zhq"><span class="zhv">译本：「常能通过局部的瓦解来进行自我修复」</span></p>
+<p>原文：系统常常能自我修复，至少在一定范围的扰动之内。译本把「扰动」变成了修复的手段，也丢了「有个范围」这层限定：扰动超出范围，系统就未必修得回来。</p></div>
+<div class="zherr" data-p="22"><h4><span class="sec">§2</span>没人弄懂的是「全部」关系<span class="mark">漏译</span></h4>
+<p class="loc">… No one understands all the relationships …</p>
+<p class="zhq"><span class="zhv">译本：「没有人了解是什么让树木做出这样的反应」</span></p>
+<p>原文是没有人懂得让一棵树运转的全部关系。前面讲的叶片失水、根部吸水、秋天落叶的信号，都是已经知道的部分。译本丢了「全部」，读来像这些反应完全是个谜。</p></div>
+<div class="zherr" data-p="25"><h4><span class="sec">§2</span>学生「流过」大学，是一种实物流<span class="mark">误译</span></h4>
+<p class="loc">… the students progressing through a university.</p>
+<p class="zhq"><span class="zhv">译本：「学生在大学中的改变」</span></p>
+<p>原文举实物流的例子：树干里的水，和一届届入学、毕业、从大学里流过的学生。译成「改变」就不再是流，和同一句的「树干中的水分」对不上，读者也少了一个现成的存量流量例子。</p></div>
+<div class="zherr" data-p="30"><h4><span class="sec">§2</span>经济要增长，是「从行为看出来的」<span class="mark">漏译</span></h4>
+<p class="loc">… judging from its behavior, to keep …</p>
+<p class="zhq"><span class="zhv">译本：「国家经济的目标是保持增长」</span></p>
+<p>原文：从它的行为来看，国家经济的「一个」目标是不断变大。作者在套用刚说过的办法，看行为定目标，不是替经济定目标。译本丢了这两个限定，读来像作者在下断言。同一段植物「结种子」也只是功能之一。</p></div>
+<div class="zherr" data-p="34"><h4><span class="sec">§2</span>毒贩受法律的约束比警察少<span class="mark">误译</span></h4>
+<p class="loc">… who are less bound by civil …</p>
+<p class="zhq"><span class="zhv">译本：「但是又害怕警察的打击」</span></p>
+<p>原文：毒贩受法律约束的程度，比追捕他们的警察要少。意思是一方可以不择手段，另一方得守规矩，所以难禁。译本说成毒贩「害怕警察」，这一条的道理就没了。</p></div>
+<div class="zherr" data-p="37"><h4><span class="sec">§2</span>只顾自保的是「不吸毒的人」<span class="mark">误译</span></h4>
+<p class="loc">… nonaddicts who are more interested in …</p>
+<p class="zhq"><span class="zhv">译本：「吸毒者更关心如何保护自己」</span></p>
+<p>原文这一条是：不吸毒的人更关心保护自己，而不是帮吸毒的人戒掉。作者想说旁观者的目标也是这个系统的一部分。译本把主语换成了吸毒者，这层意思就没了。</p></div>
+<div class="zherr" data-p="40"><h4><span class="sec">§2</span>是「挨个设想换掉它们」，一个思想实验<span class="mark">误译</span></h4>
+<p class="loc">… imagining them changed one by one.</p>
+<p class="zhq"><span class="zhv">译本：「但事实并非如此」</span></p>
+<p>原文：想知道要素、连接、目标哪个更要紧，就设想把它们挨个换掉看看。紧接着三段就在做这个实验。译本把它译成「如果一个接一个变化，就能识别……但事实并非如此」，读来像作者否定了这个办法。</p></div>
+<div class="zherr" data-p="42"><h4><span class="sec">§2</span>「关系更亲密、配合更好」是译本加的<span class="mark">误译</span></h4>
+<p class="loc">… even though the same players are …</p>
+<p class="zhq"><span class="zhv">译本：「如果球员之间的关系更亲密了」</span></p>
+<p>原文只说连接一变，同一批球员组成的球队也可能让人认不出来，例子是把规则从足球换成篮球。「关系更亲密、配合程度提高、耳目一新」这一句原文没有，还把「认不出来」说成了变好。</p></div>
+<div class="zherr" data-p="46"><h4><span class="sec">§2</span>领导人受限的是「多快」<span class="mark">误译</span></h4>
+<p class="loc">… limit to the rate at which …</p>
+<p class="zhq"><span class="zhv">译本：「改造程度都是有限的」</span></p>
+<p>原文限的是速度：土地、工厂、人口变得慢，任何领导人扭转国家方向的快慢都有上限。说成「程度有限」，就丢了「存量变得慢」这层意思，而 §3 正要讲它。</p></div>
+<div class="zherr" data-p="53"><h4><span class="sec">§3</span>云朵是「源」和「汇」<span class="mark">术语</span></h4>
+<p class="loc">… the sources and sinks that are …</p>
+<p class="zhq"><span class="zhv">译本：「表示该流量的资源和消耗」</span></p>
+<p>sources and sinks 指流量从哪里来、流到哪里去，云朵表示这两头这次不管。「资源和消耗」听着像两样具体的东西，容易让人以为云朵也是一个存量。</p></div>
+<div class="zherr" data-p="54"><h4><span class="sec">§3</span>不画流入，是因为它小到可以不计<span class="mark">误译</span></h4>
+<p class="loc">… is minute in any time period …</p>
+<p class="zhq"><span class="zhv">译本：「很难全面表述」</span></p>
+<p>原文省掉矿藏流入的理由是：在短于亿万年的任何时段里，矿藏的增加都微乎其微。译本说成形成过程复杂、难以描述。这是书里第一次示范「什么时候可以略掉一个流量」，理由不能换。</p></div>
+<div class="zherr" data-p="77"><h4><span class="sec">§3</span>图 1—7：流入是第 5 分钟才打开<span class="mark">数字</span></h4>
+<p class="loc">… inflow turned on after 5 minutes …</p>
+<p class="zhq"><span class="zhv">译本：「水持续流入、流出5分钟的情况」</span></p>
+<p>原图说的是流出一直不变，流入在第 5 分钟打开。图本身也有错：下面那张水量图的纵轴写成「加仑/分钟」，从 10 降到 5；原图是水量，单位加仑，从 50 降到 25。本页的模拟器照原书的数。</p></div>
+<div class="zherr" data-p="82"><h4><span class="sec">§3</span>水位停在扯平那一刻的高度<span class="mark">漏译</span></h4>
+<p class="loc">… at whatever level it happened to …</p>
+<p class="zhq"><span class="zhv">译本：「无论在任何情况下」</span></p>
+<p>原文第三条规律的后半句是：存量会停在两股流量相等那一刻碰巧所在的水平上。译本只说系统处于动态平衡，丢了停在哪里这一半。模拟器里改「第几分钟打开流入」就能看到它。</p></div>
+<div class="zherr" data-p="83"><h4><span class="sec">§3</span>灌满浴缸，「也可以」关小排水口<span class="mark">误译</span></h4>
+<p class="loc">… not only by increasing the inflow …</p>
+<p class="zhq"><span class="zhv">译本：「还需要降低流出速率」</span></p>
+<p>原文：要灌满浴缸，不只可以开大流入，也可以关小流出，两条路任选。译本写成「不能只是……还需要……」，变成非得两样都做。同一节的页边金句意思是对的，以金句为准。</p></div>
+<div class="zherr" data-p="86"><h4><span class="sec">§3</span>lags 是「滞后」<span class="mark">术语</span></h4>
+<p class="loc">… delays, lags, buffers, ballast, and …</p>
+<p class="zhq"><span class="zhv">译本：「延迟、欠货、缓存、压舱物」</span></p>
+<p>lag 是时间上的滞后，和前面的延迟同类。「欠货」是供应链里应发未发的订单，和这里说的存量变得慢不相干。</p></div>
+<div class="zherr" data-p="96"><h4><span class="sec">§3</span>决策是「为了调节」存量<span class="mark">误译</span></h4>
+<p class="loc">… are designed to regulate the levels …</p>
+<p class="zhq"><span class="zhv">译本：「也会受到存量水平的影响」</span></p>
+<p>原文：大多数个人和机构的决策，本来就是为了调节存量的高低，库存高了就降价，冰箱空了就去买菜。说的是决策拿存量当目标去调，正好引出反馈。译本说成决策「受存量影响」，前面还加了一个原文没有的原因。</p></div>
+<h2>读完：作者到底说了什么</h2>
+<p class="lede">下面是作者在这三节里的主张，本站按主张之间的逻辑重排，不按原书顺序；每条后面是节号，拿不准就回书里那一节再读一遍。</p>
+<div class="claims">
+  <div class="claim"><h4>系统是要素、连接、目标三样合起来，缺了连接就只是一堆东西</h4><p>她的判断标准是部分之间会不会互相影响，合起来是不是有了单独一部分没有的效果。沙堆随便加减还是沙堆，球队、消化系统不行。系统可以套着系统，目标里也套着目标。</p><span class="sec" data-p="3 7 17 18 39">§1 §2</span></div>
+  <div class="claim"><h4>最不显眼的那样常常最要紧</h4><p>她设想把三样挨个换掉：换要素，影响通常最小，球员全换了，球队还是那支球队；换连接，系统可能认不出来；换目标，变化也会极大。她说三样都必不可少，但目标「常常」是行为最关键的决定因素，要素「常常（不总是）」最不要紧，除非换要素连带改了连接或目标。</p><span class="sec" data-p="40 42 43 44">§2</span></div>
+  <div class="claim"><h4>目标要看行为，各方的小目标可能加出没人想要的结果</h4><p>青蛙往哪转都在捉苍蝇；政府说保护环境却不给钱，那就不是它的目标。她用毒品问题举例：各方各有各的目标，合起来是一个很难根除毒品和犯罪的系统。</p><span class="sec" data-p="27 31 38">§2</span></div>
+<blockquote class="quote">Purposes are deduced from behavior, not from rhetoric or stated goals.<cite>— §2。本站译：目标要从行为推断，不能看说辞和宣称的目标。</cite></blockquote>
+  <div class="claim"><h4>存量只能靠流量改变，流入流出之差定方向</h4><p>浴缸给出三条：流入总和大于流出总和就涨，小于就落，相等就停在当时的水位，处于动态平衡。人更容易盯着存量，看流量时又更容易盯着流入，忘了关小流出也能让存量变多。</p><span class="sec" data-p="51 80 81 82 83">§3</span></div>
+  <div class="claim"><h4>存量变得慢，既是包袱也是缓冲，人们的决策多是在调它</h4><p>流量能突然变，存量只能慢慢积累或流失，所以系统有惯性，存量起延迟、缓冲的作用。也正因为有存量，流入和流出可以暂时不相等，日子才能平稳。人不断监测存量、调流量，所以系统思考者把世界看成一堆反馈过程。</p><span class="sec" data-p="86 88 90 92 96 99">§3</span></div>
+<blockquote class="quote">A stock takes time to change, because flows take time to flow.<cite>— §3。本站译：存量的变化要花时间，因为流量流动要花时间。</cite></blockquote>
+</div>
+<p class="sowhat"><b>合起来：</b>看一个系统，先别盯着里面的人和东西，去找连接和它实际在追的目标；再把它拆成能数的存量和让存量变的流量，记住存量只能慢慢变。第 1 章后半就从「人在调存量」走到反馈回路。</p>
+<h2>练一练：情境题</h2>
+<p class="lede">处境是本站编的，放在你可能遇到的地方。先自己想，再点开看分析；有的题不只一个答案。全书的情境题汇总在<a href="../drills.html">情境题</a>。</p>
+<div class="drill" id="d-hiring-churn">
+<h3><span class="sec">§3</span>扩招还是留人</h3>
+<div class="scene"><p>一家公司的研发部现在 40 人，老板要求一年后到 60 人。HR 每月能招进 4 个人，可每月也有 3 个人离职。HR 说要加预算，把每月招聘提到 6 人；技术总监说该先查查人为什么走，把每月离职压到 1 人。</p></div>
+<p class="ask">这里的存量、流入、流出各是什么？两个方案对人数的作用有什么不同？</p>
+<ol class="opts"><li>多招人更有效，因为流入是主动可控的</li><li>留人更有效，因为流出更重要</li><li>对人数的作用一样大，差别在别处</li></ol>
+<details class="reveal"><summary>想好了再点开</summary><p>存量是在职人数，流入是入职，流出是离职。现在每月净增 1 人，一年只到 52 人。两个方案都把净增变成每月 3 人（6−3 或 4−1），一年后都是 76 人，对人数的作用一样，选 C。</p><p>差别在成本和副作用：多招要花招聘费和培训时间，新人一多，老人带不过来，离职可能还会升；留人要先弄清原因，可能涨薪、可能换管理方式，但留下的是熟手。人们常先想到开大流入，这正是作者说的偏向。实际上多半两样都做，先算清每样每月能挪动几个人。</p><p class="where">书里对应：§3 理解系统行为的动态性</p></details>
+</div>
+<div class="drill" id="d-queue-peak">
+<h3><span class="sec">§3</span>消息队列的晚高峰</h3>
+<div class="scene"><p>一个外卖平台的订单服务前面挂着一个消息队列。晚上 6 点到 10 点，每秒进来 1200 条消息，后台每秒最多处理 1000 条；10 点以后每秒只进来 200 条。运维发现每天晚高峰队列都积压很多，但第二天早上总是空的。有人提议把处理能力加到每秒 1200 条。</p></div>
+<p class="ask">队列在这里起了什么作用？积压一晚上最多有多少，要多久清空？什么情况下必须扩容？</p>
+<details class="reveal"><summary>想好了再点开</summary><p>队列是一个存量，作用是让流入和流出脱钩：高峰时多出来的先排着，后台照自己的速度处理。四个小时每秒多 200 条，积压到 288 万条；10 点以后每秒净减 800 条，3600 秒，一个小时清空。只要用户能接受这点延迟，不扩容也行。</p><p>必须扩容的情形是平均流入长期大于处理能力，或者积压的等待时间用户受不了。缓冲只能吸收暂时的不平衡，不能吸收一直存在的不平衡；前一种情形下队列每天都比前一天更长，迟早撑满。</p><p class="where">书里对应：§3 理解系统行为的动态性</p></details>
+</div>
+<div class="drill" id="d-ticket-time">
+<h3><span class="sec">§2</span>客服的「满意第一」</h3>
+<div class="scene"><p>一家公司的客服部门墙上写着「客户满意第一」。考核只看一个数：每张工单从打开到关闭的平均时长。半年后，平均时长降了一半，投诉却多了：不少客服先把工单关掉，让客户有问题再提一张新的。经理想了三个办法：换掉一批「不认真」的客服；改考核，加上「同一问题七天内重复提单的比例」；在墙上再加一条「真诚服务」。</p></div>
+<p class="ask">这个系统实际的目标是什么？三个办法分别动的是要素、连接还是目标，哪个最可能改变行为？</p>
+<details class="reveal"><summary>想好了再点开</summary><p>照作者看行为定目标的办法，这个部门实际追的是「工单关得快」，墙上的口号不算。换人动的是要素，新人进来面对同一套考核，多半学会同样的做法。改考核动的是连接里的信息流：决定每个人怎么做的那个数变了，最可能改变行为。再贴一条标语只是又一句说辞。</p><p>要留意的是，新指标也会被人琢磨着去对付，所以考核要看几样互相牵制的数。如果换人能连带改掉部门里的风气，那它也就不只是换要素了，作者在 §2 留的正是这个口子。</p><p class="where">书里对应：§2 从关注要素到透视游戏规则</p></details>
+</div>
+<h2>今天怎么看</h2>
+<p class="lede">Meadows 1993 年写成初稿，书 2008 年出版。下面挑出这一页里能被后来的研究或事情检验的说法，分「书里 / 当时 / 今天」几栏，并给一个结论。结论判的是标题里「书里的说法：」后面那一句。全书的这一节汇总在<a href="../today.html">今天怎么看</a>。</p>
+<ul class="verdicts"><li><span class="v ok">成立</span>后来的研究或事情支持这句话。</li><li><span class="v mid">部分成立</span>大方向对，细节或适用范围要改。</li><li><span class="v bad">被改写</span>后来的研究推翻了它、换了一种说法，或者情况变了。</li><li><span class="v dis">有争议</span>至今没有定论，两边各有代表性的研究或证据。</li></ul>
+<div class="today" data-verdict="成立"><h4>书里的说法：破坏臭氧层的污染物要几十年才能清除</h4><dl>
+  <dt>书里</dt><dd>作者拿它当「人们低估存量的惯性」的例子：平流层里的污染物是个存量，停止排放以后，它也只能按自己的速度慢慢降。<span class="at" data-p="88">§3</span></dd>
+  <dt>当时</dt><dd>1987 年的《蒙特利尔议定书》开始限制氟氯烃（CFC）等物质，发达国家 1996 年起停产氟氯烃。作者写这段时，南极上空的臭氧洞每年还在出现。</dd>
+  <dt>今天</dt><dd>世界气象组织和联合国环境署 2023 年 1 月发布的评估说：照现行政策，南北纬 60 度之间的臭氧层大约 2040 年恢复到臭氧洞出现之前的水平，北极大约 2045 年，南极大约 2066 年；南极臭氧洞的面积和深度已经在慢慢好转。从停产到恢复，要半个多世纪。<span class="asof">核对于 2026-11。依据：WMO/UNEP《臭氧层损耗科学评估 2022》执行摘要（csl.noaa.gov/assessments/ozone/2022/executivesummary）；世界气象组织 2023 年 1 月 9 日新闻稿。</span></dd>
+</dl></div>
+<div class="today" data-verdict="部分成立"><h4>书里的说法：你的身体每隔几周就换掉大部分细胞</h4><dl>
+  <dt>书里</dt><dd>作者拿它说明换掉要素、系统照旧：细胞换了，身体还是你的身体。<span class="at" data-p="40">§2</span></dd>
+  <dt>当时</dt><dd>细胞生物学已经知道，不同细胞的寿命差得很远：肠道内壁几天一换，红细胞活四个月左右，大脑的神经元多数一辈子不换。</dd>
+  <dt>今天</dt><dd>Sender 和 Milo 2021 年在《自然·医学》上算了一笔总账：人体每天约换掉 3300 亿个细胞，约占全身细胞（约 30 万亿个）的百分之一，其中大约九成是血细胞；按重量每天约 80 克，占体重大头的脂肪和肌肉细胞寿命很长，在更新量里只占一小部分。换掉的个数凑够全身细胞总数，要三个月左右，而且不是每种细胞都换。作者的道理不受影响，「几周」「大部分」说快了、说多了。<span class="asof">核对于 2026-11。依据：Sender R, Milo R. The distribution of cellular turnover in the human body. Nature Medicine 27, 45–48 (2021)；魏茨曼科学研究所的介绍（wis-wander.weizmann.ac.il）。</span></dd>
+</dl></div>
+<div class="today" data-verdict="部分成立"><h4>书里的说法：能源效率的突破对石油存量的作用相当于发现一个新油田</h4><dl>
+  <dt>书里</dt><dd>作者用浴缸讲：关小流出和开大流入一样能让存量多起来，省油和找到新油田效果相当，只是获利的人不同。<span class="at" data-p="83">§3</span></dd>
+  <dt>当时</dt><dd>经济学早有一个反面的提醒：Jevons 1865 年指出，蒸汽机越来越省煤，英国烧的煤反而越来越多。后来这类现象叫反弹效应（rebound effect）：东西用起来便宜了，人就用得更多，省下的一部分又被用掉。</dd>
+  <dt>今天</dt><dd>Brockway、Sorrell 等 2021 年在《可再生与可持续能源评论》发表综述，认为把整个经济算进去，反弹可能吃掉效率提高本该省下的能源的一半以上，而很多能源模型低估了它。国际能源署回应说它的分析已经计入反弹；也有学者认为反弹通常不大。<span class="asof">核对于 2026-11。依据：Brockway et al., Renewable and Sustainable Energy Reviews 141 (2021) 110781；Utility Dive 2021 年对国际能源署回应的报道。</span></dd>
+  <dt>另一边</dt><dd>浴缸的算术没有错：流出真的少了，存量就省下来了。争的是提高效率以后，流出到底少了多少。</dd>
+</dl></div>
+<h2>本站怎么看</h2>
+<p class="lede">读完作者的主张，再看它站不站得住。每一块摆出三样：主流怎么看，作者怎么看，本站的评论。最后一句是本站对这一页的总体判断。</p>
+<div class="views"><h4>目标看行为，不看口号</h4>
+<p><b>主流看法：</b>控制论学者 Stafford Beer 晚年有句常被引用的话：「一个系统的目的，就是它实际在做的事」（2001 年在西班牙巴利亚多利德大学的演讲）。经济学的「显示性偏好」是相近的思路：看人怎么选，不看人怎么说。也有人提醒，这句话常被拿来给人扣「其实就是故意的」帽子。</p>
+<p><b>作者的看法：</b>目标要从系统的行为推断，不看说辞；系统的目标不一定是任何一个人想要的。<span class="at" data-p="27 31">§2</span></p>
+<p class="ours"><b>本站的评论：</b>拿它做诊断很好用：一个机构真正在追什么，看它的钱、考核和时间花在哪里。但要分清「系统表现出来的目标」和「某个人的意图」。作者自己举的毒品例子里，没有一个人想要那个结果。说「这个系统的目标是 X」，不等于有人在密谋 X；要改它，也得去改结构，骂人没用。</p></div>
+<div class="views"><h4>换一个领导人，能改变一个国家吗</h4>
+<p><b>主流看法：</b>Jones 和 Olken 2005 年在《经济学季刊》上用了一个巧办法：看 1945–2000 年间 57 位在任上病逝或死于意外的国家领导人。死亡来得突然，和经济好坏无关。他们发现，这类换人之后国家的增长率会持续改变，但效果集中在专制国家，民主国家几乎看不出来。</p>
+<p><b>作者的看法：</b>要素通常最不要紧，除非换要素连带改了连接或目标；换一个最高领导人可能、也可能不会让国家转向，而且转向的速度有上限。<span class="at" data-p="44 45 46">§2</span></p>
+<p class="ours"><b>本站的评论：</b>这项研究给了她那个「除非」一个具体的样子：领导人的权力不受约束时，换人就是换规则；有制度约束时，换人多半只是换要素。公司里也一样：新来的技术总监不动流程和考核，团队多半照旧；一上任就改了评审规矩，改的其实是连接。</p></div>
+<div class="views"><h4>人真的看不懂浴缸吗</h4>
+<p><b>主流看法：</b>Booth Sweeney 和 Sterman 2000 年在《系统动力学评论》上报告了一组测验：给 MIT 斯隆管理学院的学生（多数没学过系统动力学）看流入、流出随时间变化的曲线，让他们画出存量怎么变，很多人答错，成绩和学历、年龄、国籍的关系都不大。这类「浴缸题」后来成了这个领域常用的测验。</p>
+<p><b>作者的看法：</b>人的心思更容易落在存量上，看流量时又更容易看流入；人们常常低估存量的惯性。<span class="at" data-p="83 88">§3</span></p>
+<p class="ours"><b>本站的评论：</b>研究站在她这边，受过很好训练的人也会错。对程序员有个现成的提醒：监控面板上的错误率、每秒请求数是流量，队列长度、待办数、技术债是存量。看见流量回落就以为问题解决了，存量可能还高高堆着。</p></div>
+<p class="verdict"><b>本站的总体看法：</b>这三节是全书最稳的部分：定义清楚，浴缸的算术没有争议，后来的研究也支持「人看不懂存量」。说得快的地方在例子上（细胞几周一换、省油等于新油田），道理本身站得住。要带走的是两个习惯：看系统先找连接和实际的目标，看变化先分清存量和流量。</p>
+<h2>检查一下理解</h2>
+<p class="lede">先在心里答，再点开。答错的那题，回书里把对应那一节再读一遍。</p>
+<details class="check"><summary>1.（§1）路上的一堆沙子和一支足球队，为什么一个是系统、一个不是？</summary><p>沙子之间没有起作用的连接，也不一起做什么事，随便加减还是一堆沙子。球队的人靠规则、战术、交流连在一起，合起来在赢球；随便加减几个人，它就踢不成了。</p></details>
+<details class="check"><summary>2.（§2）把球队的球员全换掉，和把规则从足球换成篮球，哪个对这个系统的改变大？</summary><p>换规则大。换球员只换了要素，连接和目标不变，它还是那支球队，只是可能踢得好很多或差很多。换规则改的是连接，同一批人也成了另一种系统。</p></details>
+<details class="check"><summary>3.（§2）作者说怎样才能知道一个系统的目标？</summary><p>观察它一段时间实际怎么做，钱和力气往哪里花；它宣称的目标不算数。</p></details>
+<details class="check"><summary>4.（§3）浴缸里有 50 加仑水，排水每分钟 5 加仑，第 5 分钟打开龙头，每分钟进 5 加仑。第 10 分钟缸里有多少水？</summary><p>25 加仑。前 5 分钟流出 25 加仑；之后进出一样快，水位停在打开龙头时的 25，水还在流，这是动态平衡。</p></details>
+<details class="check"><summary>5.（§3）要让一个存量变多，除了开大流入还有什么办法？举一个书外的例子。</summary><p>关小流出。比如想让团队人数变多，可以减少离职；想让存款变多，可以少花钱。两种办法对存量的作用可以一样，成本常常差很多。</p></details>
+<details class="check"><summary>6.（§3）存量变得慢，有什么坏处，又有什么好处？</summary><p>坏处是改不快：污染要几十年才能清掉，一个经济没法很快换一种能源。好处是缓冲：进和出可以暂时不相等，日子平稳，也让人有时间试、有时间改掉不管用的做法。</p></details>
+<p>用一句话说这一页：</p>
+<textarea class="note" data-key="01a-oneline" rows="2" placeholder="比如：……"></textarea>
+<div class="ponder"><p>想一想：你生活或工作里有没有一个存量，你一直在想办法加大它的流入，却很少想过它的流出（存款、体重、待读的书、团队人数、线上服务的积压请求）？如果从流出下手，第一步会做什么？</p>
+<textarea class="note" data-key="01a-ponder" rows="3"></textarea></div>
+<h2>精彩回顾</h2>
+<p class="lede">读过又忘了，从这里想起来。挑的是这一页最值得记住的例子和说法，不按原书顺序；每条后面是节号，想细看就回书里那一节。全书各页的这一节都收在<a href="../recap.html">全书回顾</a>。</p>
+<p class="recall-line"><b>一句话：</b>系统是要素、连接和目标；看它先找连接和实际的目标，再分清存量和流量，存量只能慢慢变。</p>
+<div class="recall">
+  <div class="item"><b>一堆沙子不是系统</b><p>路上的沙子随便加减还是沙子；球队随便少几个人就踢不成了。部分之间互相影响、合起来在做一件事，才是系统。</p><span class="sec">§1</span></div>
+  <div class="item"><b>换掉全部球员，还是那支球队</b><p>换要素通常影响最小；把足球规则换成篮球规则，同一批人就成了另一个系统。最难看见的目标，常常最要紧。</p><span class="sec">§2</span></div>
+  <div class="item"><b>青蛙的目标是捉苍蝇</b><p>青蛙左转右转、往后转，每次都捉到一只苍蝇。目标看行为，不看说辞：政府说要保护环境却不给钱，那就不是它的目标。</p><span class="sec">§2</span></div>
+  <div class="item"><b>放水放到一半打开龙头</b><p>进水和出水一样快时，水一直在流，水位却停在那一刻的高度不动，这叫动态平衡。</p><span class="sec">§3</span></div>
+  <div class="item"><b>灌满浴缸不止一种办法</b><p>关小排水口和开大龙头一样能让水变多。书里的例子：省油和找到新油田，对石油存量的作用相当。</p><span class="sec">§3</span></div>
+</div>
+</main>
+<script>
+(() => {
+  // 浴缸：一个存量（缸里的水）、一个流入、一个流出。照书后附录 Bathtub 那组：每一步 水(t+1) = 水(t) + (流入(t) − 流出(t)) × dt，dt = 1 分钟。
+  // 流入在第 on 分钟（含）起为 inflow，之前为 0；这样默认数下第 5 分钟水量 25，之后不动，和原书图 7 一致（附录写的「0 for time 0 to 5」按字面算会停在 20）。
+  // 缸里没水时，流出只能等于流入（没水可放）；满了（100 加仑）多出来的从溢水口走。确定性，没有随机数。
+  const root = document.getElementById("sim-01a");
+  if (!root || !window.TS) return;
+  const { h, chart } = window.TS;
+  const CAP = 100;
+  const BOOK = { init: 50, out: 5, inflow: 5, on: 5, T: 10 };
+  const st = Object.assign({}, BOOK);
+  const OPTS = {
+    init: { label: "开始时有多少水（加仑）", list: [0, 25, 50, 75, 100] },
+    out: { label: "流出（加仑/分钟）", list: [0, 2, 3, 5, 8] },
+    inflow: { label: "流入（加仑/分钟）", list: [0, 3, 5, 7, 10] },
+    on: { label: "第几分钟打开流入", list: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] },
+    T: { label: "看多少分钟", list: [10, 20, 30] },
+  };
+  const sels = {};
+  const ctrl = (k) => {
+    const s = h("select", { "aria-label": OPTS[k].label, onchange: () => { st[k] = Number(s.value); draw(); } }, ...OPTS[k].list.map((v) => h("option", { value: String(v) }, String(v))));
+    sels[k] = s;
+    return h("label", {}, OPTS[k].label, s);
+  };
+  const reset = h("button", { onclick: () => { Object.assign(st, BOOK); draw(); } }, "回到书里那一组");
+  const lev = h("div"), flo = h("div");
+  const stage = h("div", { class: "stage charts" }, h("p", { class: "cap" }, "缸里的水（加仑）"), lev, h("p", { class: "cap" }, "两股水流（加仑/分钟），实线是流入，虚线是流出"), flo);
+  const narrate = h("div", { class: "narrate" });
+  const stats = h("div", { class: "stats" });
+  const body = root.querySelector(".sim-body");
+  body.innerHTML = "";
+  body.append(h("div", { class: "controls" }, ...Object.keys(OPTS).map(ctrl), reset), stage, narrate, stats);
+
+  function run() {
+    const L = [st.init], IN = [], OUT = [];
+    let empty = null, full = null;
+    for (let t = 0; t < st.T; t++) {
+      const i = t >= st.on ? st.inflow : 0;
+      const o = Math.min(st.out, L[t] + i);                // 没水时放不出去
+      let next = L[t] + i - o;
+      if (next > CAP) { next = CAP; if (full === null) full = t + 1; }
+      if (next <= 0 && empty === null && o > 0 && i < st.out) empty = t + 1;
+      IN.push(i); OUT.push(o); L.push(next);
+    }
+    const i = st.T >= st.on ? st.inflow : 0;
+    IN.push(i); OUT.push(Math.min(st.out, L[st.T] + i));
+    return { L, IN, OUT, empty, full };
+  }
+  const n = (x) => String(Math.round(x * 10) / 10);
+  function tell(r) {
+    const { L } = r, on = Math.min(st.on, st.T), parts = [];
+    if (st.inflow === 0) {                                  // 龙头一直关着：只有一段
+      if (st.out === 0) return `龙头和排水口都关着，水位不动，停在 ${n(L[0])} 加仑。`;
+      return `龙头一直关着，只出不进，水位每分钟降 ${st.out} 加仑，` + (r.empty !== null ? `第 ${r.empty} 分钟放干了，之后排水口没水可放。` : `到第 ${st.T} 分钟是 ${n(L[st.T])} 加仑。`);
+    }
+    if (on > 0) {
+      if (st.out === 0) parts.push(`前 ${on} 分钟龙头关着、排水口也关着，水位不动，停在 ${n(L[on])} 加仑。`);
+      else if (r.empty !== null && r.empty <= on) parts.push(`前 ${on} 分钟只出不进，水位每分钟降 ${st.out} 加仑，第 ${r.empty} 分钟放干了。`);
+      else parts.push(`前 ${on} 分钟只出不进，水位每分钟降 ${st.out} 加仑，从 ${n(L[0])} 降到 ${n(L[on])}。`);
+    }
+    if (st.on > st.T) return parts.join("");
+    const net = st.inflow - st.out, at = on > 0 ? `第 ${on} 分钟起` : "一开始";
+    if (net === 0) parts.push(st.inflow === 0 ? `${at}流入和流出都是 0，水位不动，停在 ${n(L[on])} 加仑。` : `${at}流入 ${st.inflow} 等于流出 ${st.out}：水一直在进进出出，水位却停在 ${n(L[on])} 加仑不动。这就是动态平衡，停在哪里取决于两股水扯平那一刻缸里有多少。`);
+    else if (net > 0) parts.push(`${at}流入比流出每分钟多 ${net} 加仑，` + (L[on] >= CAP ? `可缸已经满了，多出来的从溢水口流走，水位停在 ${CAP}。` : `水位每分钟涨 ${net}，` + (r.full !== null ? `第 ${r.full} 分钟满了，多出来的从溢水口流走。` : `到第 ${st.T} 分钟是 ${n(L[st.T])} 加仑。`)));
+    else parts.push(`${at}流出比流入每分钟多 ${-net} 加仑，水位每分钟降 ${-net}，` + (r.empty !== null && r.empty > on ? `第 ${r.empty} 分钟放干了，之后流出只能和流入一样多。` : r.empty !== null ? `缸已经空了，流出只能和流入一样多。` : `到第 ${st.T} 分钟是 ${n(L[st.T])} 加仑。`));
+    return parts.join("");
+  }
+  function draw() {
+    for (const k in sels) sels[k].value = String(st[k]);
+    const r = run(), on = st.on <= st.T && st.inflow > 0 ? st.on : null;   // 流入是 0 就等于没打开
+    const marks = on !== null ? [{ x: on, label: "流入打开" }] : [];
+    chart(lev, { series: [{ name: "缸里的水", data: r.L, c: 1 }], xlabel: "分钟", ylabel: "加仑", ymin: 0, ymax: CAP, marks, title: "缸里的水随时间变化" });
+    chart(flo, { series: [{ name: "流入", data: r.IN, c: 2 }, { name: "流出", data: r.OUT, c: 3, dash: true }], xlabel: "分钟", ylabel: "加仑/分钟", ymin: 0, ymax: 10, marks, height: 170, title: "流入和流出随时间变化" });
+    narrate.textContent = tell(r);
+    stats.innerHTML = "";
+    const box = (v, l) => h("div", { class: "stat" }, h("div", { class: "v" }, v), h("div", { class: "l" }, l));
+    stats.append(box(n(r.L[0]), "开始时（加仑）"), box(on !== null ? n(r.L[on]) : "没打开", "流入打开那一刻（加仑）"), box(n(r.L[st.T]), `第 ${st.T} 分钟（加仑）`), box(on === null ? "—" : (st.inflow > st.out ? "+" : st.inflow < st.out ? "−" : "") + Math.abs(st.inflow - st.out), "打开后每分钟净变化（加仑）"));
+  }
+  draw();
+})();
+</script>
+</body>
+</html>
