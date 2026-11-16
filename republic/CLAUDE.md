@@ -22,7 +22,7 @@
 - 英文词条：**不要**，不接词本。
 - 部署：**第一卷做完直接上线**，做完告诉用户（首页卡片、同步白名单、推送；这个授权只管这本书）。
 - 范围：**先只做第一卷**（327a–354c：全文对照＋导读 2–3 页）。上线后用户看成品、看用量，再定后九卷是全做还是只做导读加名段。
-  2026-11-16 用户定：**后九卷全做**（全文对照＋导读，和第一卷一样），**一个会话做一卷**，做完上线、停，开新会话做下一卷。每卷上线的授权同上。
+  2026-11-16 用户定：**后九卷全做**（全文对照＋导读，和第一卷一样）；那个会话只做卷二。卷三起每个会话做几卷、做完能不能直接上线，用户还没说，主编的默认是一会话一卷、照卷二的做法上线（已在卷二收尾时告诉用户）。
 - 谁来做：**活都派 Opus 子代理**（用户说主会话太贵）。样板页也派 Opus 写，主编只定方案、跑检查、验收。Agent 调用要写 `model: "opus"`。
 
 ## 原书材料
@@ -45,11 +45,11 @@
 - 每页三项检查：`python3 -I tools/lint.py chapters/<页>.html`、`python3 -I tools/overlap.py chapters/<页>.html`（小壳：跳过全文块，不限引用处数）、`node tools/check.mjs chapters/<页>.html`。
 - 进度 `sh tools/status.sh`；验收看节 `python3 -I tools/peek.py chapters/<页>.html`、`tools/accept.py`。
 
-## 上线（2026-11-16，第一卷）
+## 上线（2026-11-16 第一卷，同日第二卷）
 
-- 首页卡片在 `~/tutorials-home/index.html`（`data-progress="rp-done-:5"`，四页＋00）；`rp-` 在 `sync.js` 的 `PREFIXES`、`sync_server.py` 的 `KEY_RE`。不接词本。
+- 首页卡片在 `~/tutorials-home/index.html`（`data-progress="rp-done-:9"`，八页＋00；标签里的注、论证路线步数、今天怎么看张数是全站合计，`python3 -I tools/lint.py` 的输出相加）；`rp-` 在 `sync.js` 的 `PREFIXES`、`sync_server.py` 的 `KEY_RE`。不接词本。
 - 改了页面：三项检查都过再 `git add republic/` 提交推送，`gh run watch` 不接管道，最后 `~/tutorials-deploy/scripts/check-site.sh republic index.html chapters/<页>.html`。
-- 加页以后：首页卡片的页数和条数（注、论证路线步数、今天怎么看张数）、00 页「现在做到哪」要跟着改。
+- 加页以后：首页卡片的页数和条数、`00` 页「现在做到哪」的说明和目录（手写）、站首页 `index.html`「现在做好的是……」一句要跟着改。
 - `GLOSSARY.md` 和 `text/` 会部署出去（本站自己的译文，CC BY-SA，无妨）。
 
 进度和待办在 `NEXT_STEPS.md`。
