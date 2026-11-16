@@ -37,7 +37,7 @@
 ## 页表、怎么改、怎么验
 
 - 页与页交界的句子归后一页（`tools/TRANSLATE.md`），派译者时写明这一页头尾各是哪一句。
-- 页表在 `assets/chapters.js` 的 `RP_PAGES`：`01a` 327a–331d 克法洛斯、`01b` 331e–336a 玻勒马霍斯、`01c` 336b–347e 色拉叙马霍斯上、`01d` 348a–354c 色拉叙马霍斯下；`02a` 357a–362c 格劳孔、`02b` 362d–368c 阿德曼托斯、`02c` 368d–376c 建城、`02d` 376d–383c 讲神的故事；`03a` 386a–392c 讲英雄、`03b` 392d–398b 叙述和模仿、`03c` 398c–403c 乐调、`03d` 403d–412b 体育医术、`03e` 412c–417b 高贵的谎言；`00` 开读之前是主编页。往后加卷就加行。没有模拟器、没有揭晓页。
+- 页表在 `assets/chapters.js` 的 `RP_PAGES`：`01a` 327a–331d 克法洛斯、`01b` 331e–336a 玻勒马霍斯、`01c` 336b–347e 色拉叙马霍斯上、`01d` 348a–354c 色拉叙马霍斯下；`02a` 357a–362c 格劳孔、`02b` 362d–368c 阿德曼托斯、`02c` 368d–376c 建城、`02d` 376d–383c 讲神的故事；`03a` 386a–392c 讲英雄、`03b` 392d–398b 叙述和模仿、`03c` 398c–403c 乐调、`03d` 403d–412b 体育医术、`03e` 412c–417b 高贵的谎言；`04a` 419a–427c 护卫者幸福吗、`04b` 427d–434c 城邦的四种德性、`04c` 434d–441b 灵魂分三部分、`04d` 441c–445e 灵魂里的正义；`00` 开读之前是主编页。往后加卷就加行。没有模拟器、没有揭晓页。
 - 一页九节：读之前三节（这一段在争什么、出场的人、需要的背景）→ 全文 → 论证路线、概念 → 今天怎么看 → 本站怎么看 → 精彩回顾。样板页 `chapters/01a.html`。
 - **翻译流程**：译者照 `tools/TRANSLATE.md` 写 `text/zh/<页>.txt`（按斯特方节，末尾 `## 注`）→ 译文审读员照 `tools/TR-REVIEW.md` 直接改 → 新译名并进 `GLOSSARY.md`。一页一位译者、一位审读，都是 Opus。
 - **全文块**由 `python3 -I tools/gen_text.py <页>` 生成进章节页的 `TEXT:BEGIN/END` 之间，不手改；译文或路标（`text/marks/<页>.txt`）改了就重跑，否则 lint 报过期。它会改 `assets/chapters.js`，**只由主编跑**。
@@ -45,9 +45,9 @@
 - 每页三项检查：`python3 -I tools/lint.py chapters/<页>.html`、`python3 -I tools/overlap.py chapters/<页>.html`（小壳：跳过全文块，不限引用处数）、`node tools/check.mjs chapters/<页>.html`。
 - 进度 `sh tools/status.sh`；验收看节 `python3 -I tools/peek.py chapters/<页>.html`、`tools/accept.py`。
 
-## 上线（2026-11-16 第一到三卷）
+## 上线（2026-11-16 第一到四卷）
 
-- 首页卡片在 `~/tutorials-home/index.html`（`data-progress="rp-done-:14"`，十三页＋00；标签里的注、论证路线步数、今天怎么看张数是全站合计，`python3 -I tools/lint.py` 的输出相加）；`rp-` 在 `sync.js` 的 `PREFIXES`、`sync_server.py` 的 `KEY_RE`。不接词本。
+- 首页卡片在 `~/tutorials-home/index.html`（`data-progress="rp-done-:18"`，十七页＋00；标签里的注、论证路线步数、今天怎么看张数是全站合计，`python3 -I tools/lint.py` 的输出相加）；`rp-` 在 `sync.js` 的 `PREFIXES`、`sync_server.py` 的 `KEY_RE`。不接词本。
 - 改了页面：三项检查都过再 `git add republic/` 提交推送，`gh run watch` 不接管道，最后 `~/tutorials-deploy/scripts/check-site.sh republic index.html chapters/<页>.html`。
 - 加页以后：首页卡片的页数和条数、`00` 页「现在做到哪」的说明和目录（手写）、站首页 `index.html`「现在做好的是……」一句要跟着改。
 - `GLOSSARY.md` 和 `text/` 会部署出去（本站自己的译文，CC BY-SA，无妨）。
