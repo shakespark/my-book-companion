@@ -8,7 +8,7 @@
 
 - `tools/TRANSLATE.md`（译者照它译的）、`GLOSSARY.md`（译名表）。
 - 译文 `text/zh/<页>.txt`、译者报告 `source/reports/tr-<页>.md`。
-- 底本 `source/text/01.txt` 里这一页的节（按 `[327a]` 标记切，节范围见译者报告或派给你的消息）、`source/text/notes/01.txt` 相应的注、`source/text/grc/01.txt` 相应的节；Jowett（`source/text/jowett/01.txt`，没有节号）只在 Shorey 费解时查。
+- 底本 `source/text/NN.txt`（NN 是卷号） 里这一页的节（按 `[327a]` 标记切，节范围见译者报告或派给你的消息）、`source/text/notes/NN.txt` 相应的注、`source/text/grc/NN.txt` 相应的节；Jowett（`source/text/jowett/NN.txt`，没有节号）只在 Shorey 费解时查。
 - 不读、不找、不凭记忆照搬任何现成中译本和有版权的现代英译本。不上网搜。
 
 ## 抓什么
@@ -23,7 +23,7 @@
 6. **注**：事实错的、和正文对不上的；注号和条目不对应的。
 7. **读不下去的句子**：不看英文读一遍，卡住、要回读的句子改顺。只改卡住的，不为文风重写——语气差一档、可改可不改的不动。
 
-节标记不能动（一个不多一个不少，各占一行）；节内按说话轮次分行的规矩保持。
+节标记不能动（一个不多一个不少，各占一行）；跨页的句子归后一页（`TRANSLATE.md`「交什么」），这一页头尾不多译也不漏译；节内按说话轮次分行的规矩保持。
 
 ## 报告
 
