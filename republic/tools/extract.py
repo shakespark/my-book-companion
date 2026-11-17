@@ -322,6 +322,8 @@ FIXES = {7: [
     ('the question,[^315] “What is the honorable?” and', 'the question,[^315] ‘What is the honorable?’ and'),
     ('“It is so” “Well,', '“It is so.” “Well,'),
     ('They delight like spies in', 'They delight like puppies in'),  # 539b σκυλάκια; Perseus typo
+], 8: [
+    ('of how democracy passes over into this', 'of how timocracy passes over into this'),  # 550d ἐκ τῆς τιμαρχίας; Perseus typo
 ]}
 
 
