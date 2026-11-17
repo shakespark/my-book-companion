@@ -297,6 +297,42 @@ def write(rel, s):
     with open(p, 'w', encoding='utf-8') as f:
         f.write(s)
 
+# Hand fixes to the Shorey text where Perseus's <q> markup is off (book 7: inner quotes came out
+# as double quotes, a few speeches lack an opening or closing mark). Each old string must occur once.
+FIXES = {7: [
+    ('Homer[^19] and “greatly prefer while living on earth to be serf of another, a landless man,”',
+     'Homer[^19] and ‘greatly prefer while living on earth to be serf of another, a landless man,’'),
+    ('in “evaluating” these', 'in ‘evaluating’ these'),
+    ('the “idols”[^64]', 'the ‘idols’[^64]'),
+    ('“They were, he said.', '“They were,” he said.'),
+    ('of “two” is', 'of ‘two’ is'),
+    ('confounded.[^117] “Is not that so?”', 'confounded.[^117] Is not that so?”'),
+    ('designation “intelligible” for the one, and “visible” for',
+     'designation ‘intelligible’ for the one, and ‘visible’ for'),
+    ('cut up the “one” in', 'cut up the ‘one’ in'),
+    ('ask them, “My good friends,', 'ask them, ‘My good friends,'),
+    ('division into parts?” What do you think', 'division into parts?’ What do you think'),
+    ('the “study of higher things,””', 'the ‘study of higher things,’”'),
+    ('“Then,” said I, since the task is, so great,', '“Then,” said I, “since the task is so great,'),
+    ('useful,[^219] said I, for the investigation', 'useful,[^219]” said I, “for the investigation'),
+    ('“And what is more,” I said, I take it', '“And what is more,” I said, “I take it'),
+    ('dialecticians[^224]? ““No, by Zeus,”', 'dialecticians[^224]?” “No, by Zeus,”'),
+    ('““No” is surely the answer to that too.”', '“‘No’ is surely the answer to that too.”'),
+    ('“Understanding,”[^253] I believe', '‘Understanding,’[^253] I believe'),
+    ('the question,[^315] “What is the honorable?” and', 'the question,[^315] ‘What is the honorable?’ and'),
+    ('“It is so” “Well,', '“It is so.” “Well,'),
+    ('They delight like spies in', 'They delight like puppies in'),  # 539b σκυλάκια; Perseus typo
+]}
+
+
+def apply_fixes(n, te):
+    for old, new in FIXES.get(n, []):
+        if te.count(old) != 1:
+            problems.append(f'book {n:02d}: fix target found {te.count(old)} times: {old[:40]}')
+        else:
+            te = te.replace(old, new)
+    return te
+
 
 def main():
     eng, _ = parse_tei('tlg0059.tlg030.perseus-eng2.xml', 'eng')
@@ -308,7 +344,7 @@ def main():
     tot = {'sec': 0, 'ew': 0, 'gw': 0, 'notes': 0, 'jw': 0}
     for be, bg in zip(eng, grc):
         nn = f'{be.n:02d}'
-        te, tg = finish(be), finish(bg)
+        te, tg = apply_fixes(be.n, finish(be)), finish(bg)
         if be.sections != bg.sections:
             se, sg = set(be.sections), set(bg.sections)
             problems.append(f'book {nn}: section mismatch, only eng {sorted(se - sg)}, only grc {sorted(sg - se)}')
