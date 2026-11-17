@@ -4,7 +4,7 @@
 import re,sys
 src=open('chapters/01b.html').read()
 for k,pid in enumerate(sys.argv[1:],1):
-    s=src.replace('第一卷（2/4）',f'第九卷（{k}/{len(sys.argv)-1}）').replace('data-page="01b"',f'data-page="{pid}"')
+    s=src.replace('第一卷（2/4）',f'第十卷（{k}/{len(sys.argv)-1}）').replace('data-page="01b"',f'data-page="{pid}"')
     head,rest=s.split('<main>\n',1); body,tail=rest.split('</main>',1)
     parts=re.split(r'(?=<h2 id=")',body)
     out=[parts[0]]

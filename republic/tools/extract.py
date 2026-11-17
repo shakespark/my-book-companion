@@ -324,6 +324,8 @@ FIXES = {7: [
     ('They delight like spies in', 'They delight like puppies in'),  # 539b σκυλάκια; Perseus typo
 ], 8: [
     ('of how democracy passes over into this', 'of how timocracy passes over into this'),  # 550d ἐκ τῆς τιμαρχίας; Perseus typo
+], 10: [
+    ('when I said that poetry, and in general the mimetic art', 'when I said that painting, and in general the mimetic art'),  # 603a ἡ γραφική; Perseus typo
 ]}
 
 
