@@ -26,7 +26,7 @@ BANNED = {r"非正义": "不正义", r"(?<!正)不义": "不正义", r"暴君": 
 han = lambda s: len(re.findall(r"[一-鿿]", re.sub(r"<[^>]+>", "", s)))
 plain = lambda s: html.unescape(re.sub(r"<[^>]+>", "", s)).strip()
 GLOSS = open(os.path.join(ROOT, "GLOSSARY.md"), encoding="utf-8").read()
-NAMES = set(re.findall(r"([一-鿿·]+) [A-Z][a-z]+", GLOSS.split("## 人名")[-1]))
+NAMES = set(re.findall(r"[一-鿿]+(?:·[一-鿿]+)*", GLOSS))  # 整份译名表里的中文词，各卷后补的人名都算
 PAGES = G.pages()
 SECLIST = {}
 
@@ -101,7 +101,8 @@ for path in paths:
             name = plain(re.sub(r'<span class="en">.*?</span>', "", h3))
             if not re.fullmatch(r"p-[a-z0-9-]+", cid): errs.append(f"人物卡 id 写成 p- 加小写英文：{cid}")
             if '<span class="en">' not in h3: errs.append(f"人物卡「{name}」：h3 里要有 <span class=\"en\">英文名</span>")
-            if name not in NAMES: sus.append(f"人物卡「{name}」：不在 GLOSSARY.md 的人名里；新译名写进报告的「新译名」，主编并进去")
+            en = re.search(r'<span class="en">\s*(.)', h3)
+            if en and en.group(1).isupper() and not all(n.strip() in NAMES for n in name.split("、")): sus.append(f"人物卡「{name}」：不在 GLOSSARY.md 的人名里；新译名写进报告的「新译名」，主编并进去")
             role = re.findall(r'<p class="role">(.*?)</p>', body, flags=re.S)
             if len(role) != 1: errs.append(f"人物卡「{name}」：要有一句 <p class=\"role\">身份</p>")
             elif han(role[0]) > 30: errs.append(f"人物卡「{name}」：身份 {han(role[0])} 个汉字，超过 30")
@@ -147,7 +148,7 @@ for path in paths:
             if v not in VERDICTS: errs.append(f"今天怎么看「{name}」：结论四选一：{' / '.join(VERDICTS)}")
             src = re.findall(r'<p class="src">(.*?)</p>', body, flags=re.S)
             if len(src) != 1: errs.append(f"今天怎么看「{name}」：最后要有一句 <p class=\"src\">谁说的：人名、著作、年份</p>")
-            elif not re.search(r"(?<!\d)(1[89]\d\d|20[0-2]\d)(?!\d)", src[0]): sus.append(f"今天怎么看「{name}」：出处没写年份，学界的看法要能找到是谁、哪一年说的")
+            elif not re.search(r"(?<!\d)(1\d\d\d|20[0-2]\d)(?!\d)|前\s*\d+\s*年|\d+\s*(年|世纪)", src[0]): sus.append(f"今天怎么看「{name}」：出处没写年份，学界的看法要能找到是谁、哪一年说的")
             if han(body) > 300: errs.append(f"今天怎么看「{name}」：{han(body)} 个汉字，超过 300")
             if two_clauses(plain(h4).split("：", 1)[-1]): sus.append(f"今天怎么看「{name}」：标题像两句并列，结论只能判一句；收窄成一句")
     if bare.count('class="today"') != td.count('class="today"'): errs.append("今天怎么看的卡片只放在「今天怎么看」里")

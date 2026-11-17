@@ -321,6 +321,7 @@ FIXES = {7: [
     ('“Understanding,”[^253] I believe', '‘Understanding,’[^253] I believe'),
     ('the question,[^315] “What is the honorable?” and', 'the question,[^315] ‘What is the honorable?’ and'),
     ('“It is so” “Well,', '“It is so.” “Well,'),
+    ('his unremitting quest[^194] the realities', 'his unremitting quest[^194] is the realities'),  # 530b; Perseus drops "is" (Loeb vol. II, archive.org republicshorey02platuoft)
     ('They delight like spies in', 'They delight like puppies in'),  # 539b σκυλάκια; Perseus typo
 ], 8: [
     ('of how democracy passes over into this', 'of how timocracy passes over into this'),  # 550d ἐκ τῆς τιμαρχίας; Perseus typo

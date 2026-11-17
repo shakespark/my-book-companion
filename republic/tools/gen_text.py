@@ -180,6 +180,15 @@ def parse_zh(text, secs, en_text, en_notes):
             if '"' in l:
                 errs.append(f"[{s}] 里有英文直引号 \"，引号用 “ ” 和 ‘ ’：{l[:30]}")
                 break
+    # 一个人的话被节标记截开：前一节末行 “ 比 ” 多，后一节第一行（不是诗行）要以 “ 开头（TRANSLATE.md）
+    for a, b in zip(got, got[1:]):
+        la = [re.sub(r"\[\^[^\]]*\]", "", x).strip() for x in lines.get(a, []) if x.strip()]
+        lb = [re.sub(r"\[\^[^\]]*\]", "", x).strip() for x in lines.get(b, []) if x.strip()]
+        if not la or not lb or lb[0].startswith(">") or lb[0].startswith("“"): continue
+        if la[-1].count("“") > la[-1].count("”"):
+            errs.append(f"[{a}] 末行的话没收引号，[{b}] 开头要补前引号 “：{lb[0][:20]}")
+        elif "”" in lb[0] and ("“" not in lb[0] or lb[0].find("”") < lb[0].find("“")):
+            errs.append(f"[{b}] 开头没有 “，先出现了 ”，像是漏了前引号：{lb[0][:20]}")
     return lines, notes, refs, errs
 
 
