@@ -7,7 +7,7 @@
 
 ## 版权
 
-- 能整本放：希腊文原文；Shorey 英译（Loeb 1930/1935，译者 1934 年去世）；Jowett 英译（1892 第三版）。各来源的许可原话见 `source/reports/extract.md`。
+- 能整本放：希腊文原文；Shorey 英译（Loeb 1930/1935，译者 1934 年去世；1935 那册美国续展查过 1962–63 年续展目录，没有）；Jowett 英译（1892 第三版）。各来源的许可原话见 `source/reports/extract.md`。
 - 中文全文是本站新译：以 Shorey 为底本，对 Jowett，关键词和有疑问处对希腊文。站上写明「从英译转译、对过希腊文，不是学术译本」。
 - **译者、作者、审读员都不看有版权的译本**（中文：郭斌和 / 张竹明、王太庆、顾寿观等；英文：Bloom、Grube / Reeve、Griffith 等），译文只从上面三份公版文本来。
 - `overlap.py` 和 lint 的引用上限是为有版权的书设的：全文页要豁免（E 步定参数），导读页引的是公版文本，也不设上限。
@@ -37,7 +37,7 @@
 ## 页表、怎么改、怎么验
 
 - 页与页交界的句子归后一页（`tools/TRANSLATE.md`），派译者时写明这一页头尾各是哪一句。
-- 页表在 `assets/chapters.js` 的 `RP_PAGES`：`01a` 327a–331d 克法洛斯、`01b` 331e–336a 玻勒马霍斯、`01c` 336b–347e 色拉叙马霍斯上、`01d` 348a–354c 色拉叙马霍斯下；`02a` 357a–362c 格劳孔、`02b` 362d–368c 阿德曼托斯、`02c` 368d–376c 建城、`02d` 376d–383c 讲神的故事；`03a` 386a–392c 讲英雄、`03b` 392d–398b 叙述和模仿、`03c` 398c–403c 乐调、`03d` 403d–412b 体育医术、`03e` 412c–417b 高贵的谎言；`04a` 419a–427c 护卫者幸福吗、`04b` 427d–434c 城邦的四种德性、`04c` 434d–441b 灵魂分三部分、`04d` 441c–445e 灵魂里的正义；`05a` 449a–457b 女人也当护卫者、`05b` 457c–466d 妻儿共有、`05c` 466e–471e 打仗的规矩、`05d` 472a–476d 哲学家当王、`05e` 476e–480a 知识和意见；`00` 开读之前是主编页。往后加卷就加行。没有模拟器、没有揭晓页。
+- 页表在 `assets/chapters.js` 的 `RP_PAGES`：`01a` 327a–331d 克法洛斯、`01b` 331e–336a 玻勒马霍斯、`01c` 336b–347e 色拉叙马霍斯上、`01d` 348a–354c 色拉叙马霍斯下；`02a` 357a–362c 格劳孔、`02b` 362d–368c 阿德曼托斯、`02c` 368d–376c 建城、`02d` 376d–383c 讲神的故事；`03a` 386a–392c 讲英雄、`03b` 392d–398b 叙述和模仿、`03c` 398c–403c 乐调、`03d` 403d–412b 体育医术、`03e` 412c–417b 高贵的谎言；`04a` 419a–427c 护卫者幸福吗、`04b` 427d–434c 城邦的四种德性、`04c` 434d–441b 灵魂分三部分、`04d` 441c–445e 灵魂里的正义；`05a` 449a–457b 女人也当护卫者、`05b` 457c–466d 妻儿共有、`05c` 466e–471e 打仗的规矩、`05d` 472a–476d 哲学家当王、`05e` 476e–480a 知识和意见；`06a` 484a–489c 哲学家和船长、`06b` 489d–497a 好天性怎么变坏、`06c` 497b–502c 城邦怎样待哲学、`06d` 502d–506d 最大的学问、`06e` 506e–511e 太阳和线；`00` 开读之前是主编页。往后加卷就加行。没有模拟器、没有揭晓页。
 - 一页九节：读之前三节（这一段在争什么、出场的人、需要的背景）→ 全文 → 论证路线、概念 → 今天怎么看 → 本站怎么看 → 精彩回顾。样板页 `chapters/01a.html`。
 - **翻译流程**：译者照 `tools/TRANSLATE.md` 写 `text/zh/<页>.txt`（按斯特方节，末尾 `## 注`）→ 译文审读员照 `tools/TR-REVIEW.md` 直接改 → 新译名并进 `GLOSSARY.md`。一页一位译者、一位审读，都是 Opus。
 - **全文块**由 `python3 -I tools/gen_text.py <页>` 生成进章节页的 `TEXT:BEGIN/END` 之间，不手改；译文或路标（`text/marks/<页>.txt`）改了就重跑，否则 lint 报过期。它会改 `assets/chapters.js`，**只由主编跑**。
@@ -45,9 +45,9 @@
 - 每页三项检查：`python3 -I tools/lint.py chapters/<页>.html`、`python3 -I tools/overlap.py chapters/<页>.html`（小壳：跳过全文块，不限引用处数）、`node tools/check.mjs chapters/<页>.html`。
 - 进度 `sh tools/status.sh`；验收看节 `python3 -I tools/peek.py chapters/<页>.html`、`tools/accept.py`。
 
-## 上线（2026-11-16 第一到四卷，2026-11-17 第五卷）
+## 上线（2026-11-16 第一到四卷，2026-11-17 第五、六卷）
 
-- 首页卡片在 `~/tutorials-home/index.html`（`data-progress="rp-done-:23"`，二十二页＋00；标签里的注、论证路线步数、今天怎么看张数是全站合计，`python3 -I tools/lint.py` 的输出相加）；`rp-` 在 `sync.js` 的 `PREFIXES`、`sync_server.py` 的 `KEY_RE`。不接词本。
+- 首页卡片在 `~/tutorials-home/index.html`（`data-progress="rp-done-:28"`，二十七页＋00；标签里的注、论证路线步数、今天怎么看张数是全站合计，`python3 -I tools/lint.py` 的输出相加）；`rp-` 在 `sync.js` 的 `PREFIXES`、`sync_server.py` 的 `KEY_RE`。不接词本。
 - 改了页面：三项检查都过再 `git add republic/` 提交推送，`gh run watch` 不接管道，最后 `~/tutorials-deploy/scripts/check-site.sh republic index.html chapters/<页>.html`。
 - 加页以后：首页卡片的页数和条数、`00` 页「现在做到哪」的说明和目录（手写）、站首页 `index.html`「现在做好的是……」一句要跟着改。
 - `GLOSSARY.md` 和 `text/` 会部署出去（本站自己的译文，CC BY-SA，无妨）。
