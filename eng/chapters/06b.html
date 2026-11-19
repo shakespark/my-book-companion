@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 6 章（下） · 工程导读</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/chapters.js"></script>
+<script src="../assets/eg.js"></script>
+<style>
+#sim-06b .cap { font-size: 13px; color: var(--muted); margin: 2px 0 8px; }
+</style>
+</head>
+<body data-page="06b">
+<main>
+<h2>这一页在做什么</h2>
+<div class="gist"><p>第 6 章的后半，也是全书的收尾。06a 收在「每个硬系统都嵌在软系统里」，这一页走进人的系统。工程师要的不是真理，是靠得住的信息；Koestler 的「整子」说明一层层的本事怎样往上涌现。最好读的是 §8：事故为什么常常不是最后动手那个人的错，Reason 的瑞士奶酪和 Turner 的「孵化」各给了一个画面。§9 回答本章开头的问题：多安全才算够安全。最后拿气候和㶲收全书。</p></div>
+<figure class="fig">
+<svg class="diagram" viewBox="0 0 640 260" role="img" aria-label="瑞士奶酪示意图：四片带孔的奶酪竖着排开，分别标着设计、报警、自动停机、人的检查。每片上有几个孔，位置各不相同，只有中间一排孔正好对成一线，一支箭从左边的危险源穿过这排孔，到右边成了事故">
+<text x="60" y="22" class="t-m">每片是一道防线，孔是它的漏洞；孔会移动、开合，对成一线时危险就穿过去</text>
+<rect x="150" y="40" width="60" height="160" rx="8" class="f-soft"/>
+<rect x="260" y="40" width="60" height="160" rx="8" class="f-soft"/>
+<rect x="370" y="40" width="60" height="160" rx="8" class="f-soft"/>
+<rect x="480" y="40" width="60" height="160" rx="8" class="f-soft"/>
+<ellipse cx="172" cy="70" rx="9" ry="11" class="box"/><ellipse cx="188" cy="176" rx="9" ry="11" class="box"/>
+<ellipse cx="282" cy="166" rx="10" ry="12" class="box"/><ellipse cx="300" cy="62" rx="7" ry="9" class="box"/>
+<ellipse cx="395" cy="68" rx="10" ry="12" class="box"/><ellipse cx="410" cy="172" rx="8" ry="10" class="box"/>
+<ellipse cx="505" cy="172" rx="9" ry="11" class="box"/><ellipse cx="520" cy="66" rx="8" ry="10" class="box"/>
+<ellipse cx="180" cy="120" rx="14" ry="17" class="box"/><ellipse cx="290" cy="120" rx="14" ry="17" class="box"/>
+<ellipse cx="400" cy="120" rx="14" ry="17" class="box"/><ellipse cx="510" cy="120" rx="14" ry="17" class="box"/>
+<line x1="40" y1="120" x2="588" y2="120" class="ln-a"/>
+<path d="M600 120 L586 113 L586 127 z" class="f-a"/>
+<text x="30" y="104" class="t-b">危险源</text>
+<text x="630" y="104" text-anchor="end" class="t-b">事故</text>
+<text x="180" y="220" text-anchor="middle" class="t-m">设计</text>
+<text x="290" y="220" text-anchor="middle" class="t-m">报警</text>
+<text x="400" y="220" text-anchor="middle" class="t-m">自动停机</text>
+<text x="510" y="220" text-anchor="middle" class="t-m">人的检查</text>
+<text x="60" y="250" class="t-m">孔从两处来：当场的失误（主动失效），早先埋下、多年不显的隐患（潜伏条件）</text>
+</svg>
+<figcaption>本站示意图，照 Reason 的瑞士奶酪模型画，原书没有这张图。四片防线的名字取自书里列的几种：安全的技术设计、报警、自动停机、检查和监测。</figcaption></figure>
+<h2>读之前：这一页在全书的哪里</h2>
+<div class="linehere"></div>
+<p>第 6 章拆成两页。<a href="06a.html">06a</a> 讲风险从哪来、工程师用安全系数和故障树怎样挡，收在把系统分成硬的（机器、桥）和软的（人和组织），说每个硬系统都嵌在软系统里。这一页走进软系统：信息凭什么算靠得住，层和层怎样接，组织里的隐患怎样攒成事故，然后回答 06a 开头那串问题。全书在这里收尾。</p>
+<div class="heads-up"><p>别被带歪：§7 把电阻、电容、电感搬到软系统，说电阻是歧义和冲突、电容是做事本事的积累、电感是适应和创新的能力。作者自己写的是 We can speculate，也承认这套说法很多工程师还没接受。当成启发思考的比方，别当成理论。</p></div>
+<div class="crux"><p>飞机失事、高楼起火，人们常把账算在最后动手的那个人头上。作者为什么说那一下往往不是原因？</p></div>
+<p class="lede">读的时候带着这几个问题，读完回来对照「检查一下理解」。</p>
+<ol class="qs">
+  <li>作者说工程师不找真理。那他们找什么？最后由谁来检验？<span class="sec">§6</span></li>
+  <li>一个逻辑门，为什么既是整体又是部分？换成一个家庭呢？<span class="sec">§7</span></li>
+  <li>瑞士奶酪上的孔从哪两处来？哪一种会让几道防线一起变差？<span class="sec">§8</span></li>
+  <li>「多安全才算够安全」，作者的回答是什么？<span class="sec">§9</span></li>
+</ol>
+<h2>分节地图</h2>
+<p class="lede">原书这一章没有小标题，一口气写下来。下面的节是本站按段落分的：粗体是本站起的节名，后面是档和英文词数；再下面是这一节开头的几个英文词，在 Kindle 里搜它就能跳过去。读完打个勾。</p>
+<ol class="secmap">
+  <li data-sec="6"><span class="what">这一页最哲学的一节。从「真就是符合事实」绕一圈，落到工程要的是靠得住的信息，由注意义务兜底。mythos 和 logos 第 2 章见过；faith 读作「信任」。</span></li>
+  <li data-sec="7"><span class="what">Koestler 的整子：逻辑门既是整体又是部分，每层的性质从下一层涌现，再推到人和家庭。从 <span class="at" data-p="25">One way of envisaging the relationship</span> 起是作者自己的推想。</span></li>
+  <li data-sec="8"><span class="what">全章最好读，先读。先讲硬系统怎样找隐患（健康监测、敲车轮、反馈控制）；从 <span class="at" data-p="28">For example, Jim Reason proposed</span> 起是瑞士奶酪，接着是作者给 Turner 打的气球比方。</span></li>
+  <li data-sec="9"><span class="what">回答 06a 开头的问题。先立「系统思维」这套新哲学（他说叫哲学可能有点自命不凡），再给答案：风险消除不了，够安全就是我们容忍的。</span></li>
+  <li data-sec="10"><span class="what">全书收尾。气候变化是大考；工程师各守筒仓不行；最后拿建筑能耗、隐含能和㶲说明能量也分品质。</span></li>
+</ol>
+<h2>先用中文过一遍：这一页的概念</h2>
+<p class="lede">先把这一页用到的几个概念用书外的例子讲一遍。作者拿它们推出什么，读原书时自己看。后面各页用到时会链回这里。</p>
+<div class="concept" id="c-dependability">
+<h3><span class="sec">§6</span>靠得住，而不是真 <span class="en">truth vs dependable information</span></h3>
+<p>常识里，一句话是真的，就是它和事实对得上，哲学上叫真理的符合论（correspondence theory of truth）。作者接着问：事实又是什么？是显然为真的陈述。拿「真」定义「事实」，又拿「事实」定义「真」，绕回了原点，这是循环定义；书里叫它 infinite regress（无穷倒退），严格说词用得不准。</p>
+<p>工程师绕开这道题：不问一条知识是不是终极地真，只问在眼下的范围里靠不靠得住。牛顿定律严格说不真，造桥、造飞机却放心用它，因为东西跑得离光速远着。靠不靠得住，最后由注意义务（duty of care）检验：出了事，法庭看工程师有没有尽到合理的谨慎。</p>
+<p class="use"><b>在这一页：</b>§6 从「什么是真」讲到「什么靠得住」，中间借了 <a class="term" href="02.html#c-mythos-logos">mythos 和 logos</a>。那里的 faith 说的是信任，不是宗教。</p>
+</div>
+<div class="concept" id="c-holon">
+<h3><span class="sec">§7</span>整子 <span class="en">holon</span></h3>
+<p>Arthur Koestler 造的词：一样东西，往下看是整体，往上看是部分，就叫整子。逻辑门是例子：几只晶体管接在一起，才有「与」「或」这样的功能，这是它作为整体的一面；几个门再接成触发器，它又成了零件。作者由此得出：每一层的性质，从下一层部件的相互作用里<a class="term" href="05.html#c-emergence">涌现</a>。</p>
+<p>他把这一层层推到人身上：骨骼肌肉、一个人、一个家庭，各有自己的涌现性质。人的系统难，是因为每一层都有意向性（intentionality），也就是目的和打算，层层叠在一起，没法建模。</p>
+<figure class="fig">
+<svg class="diagram" viewBox="0 0 640 230" role="img" aria-label="整子的层级图：上一行从左到右是晶体管、逻辑门、触发器、计数器四个框，箭头表示一层组成下一层；逻辑门下面注明对晶体管它是整体，对触发器它是部分。下一行是骨骼和肌肉、人、家庭三个框，旁边注明软系统多了一层层人的意图">
+<rect x="20" y="40" width="120" height="60" rx="6" class="box"/><text x="80" y="76" text-anchor="middle" class="t-b">晶体管</text>
+<rect x="180" y="40" width="120" height="60" rx="6" class="f-soft"/><text x="240" y="76" text-anchor="middle" class="t-b">逻辑门（与、或）</text>
+<rect x="340" y="40" width="120" height="60" rx="6" class="box"/><text x="400" y="76" text-anchor="middle" class="t-b">触发器</text>
+<rect x="500" y="40" width="120" height="60" rx="6" class="box"/><text x="560" y="76" text-anchor="middle" class="t-b">计数器</text>
+<line x1="142" y1="70" x2="170" y2="70" class="ln-a"/><path d="M178 70 L169 65 L169 75 z" class="f-a"/>
+<line x1="302" y1="70" x2="330" y2="70" class="ln-a"/><path d="M338 70 L329 65 L329 75 z" class="f-a"/>
+<line x1="462" y1="70" x2="490" y2="70" class="ln-a"/><path d="M498 70 L489 65 L489 75 z" class="f-a"/>
+<text x="20" y="26" class="t-m">箭头：几个下一层的东西，接成上一层的一个</text>
+<text x="180" y="122" class="t-m">对晶体管：它是整体，与、或从接法里涌现</text>
+<text x="180" y="140" class="t-m">对触发器：它是零件，几个门接成一个触发器</text>
+<rect x="20" y="160" width="120" height="50" rx="6" class="box"/><text x="80" y="191" text-anchor="middle" class="t-b">骨骼和肌肉</text>
+<rect x="180" y="160" width="120" height="50" rx="6" class="box"/><text x="240" y="191" text-anchor="middle" class="t-b">人（会走会说）</text>
+<rect x="340" y="160" width="120" height="50" rx="6" class="box"/><text x="400" y="191" text-anchor="middle" class="t-b">家庭（亲密）</text>
+<line x1="142" y1="185" x2="170" y2="185" class="ln-a"/><path d="M178 185 L169 180 L169 190 z" class="f-a"/>
+<line x1="302" y1="185" x2="330" y2="185" class="ln-a"/><path d="M338 185 L329 180 L329 190 z" class="f-a"/>
+<text x="480" y="182" class="t-m">软系统：每一层</text>
+<text x="480" y="200" class="t-m">都多了人的意图</text>
+</svg>
+<figcaption>本站示意图，例子取自书里：逻辑门和触发器（第 5 章讲过），人和家庭。括号里是这一层涌现出的本事。</figcaption></figure>
+<p class="use"><b>在这一页：</b>§7 先用逻辑门讲整子，再推到人和家庭；接着把 <a class="term" href="06a.html#c-effort-flow">势差—流</a>的类比搬到软系统。</p>
+</div>
+<div class="concept" id="c-swiss-cheese">
+<h3><span class="sec">§8</span>瑞士奶酪和事故孵化 <span class="en">Swiss cheese model, incubation</span></h3>
+<p>James Reason 的模型：防线像一片片奶酪，技术设计、报警、自动停机、检查各是一片，每片都有孔。孔会移动、开合，只有碰巧对成一线，危险才一路穿过去成了事故。孔有两种来源：当场的不安全操作，叫主动失效（active failures）；早先的决定埋下、可能多年不显的，叫潜伏的「病原体」（latent pathogens），比如为赶工期偷了工。本站的理解：后一种常常让好几片一起多出孔，模拟器就按这个算。</p>
+<p>Barry Turner 说事故会孵化：前提条件一点点攒起来，最后一个小小的触发事件才引爆。气球这个比方是作者打的，不是 Turner 的原话。</p>
+<figure class="fig">
+<svg class="diagram" viewBox="0 0 640 240" role="img" aria-label="气球时间线：横轴是时间，气球从小到大一个个排开，中间有一个气球变小，表示有人发现隐患、放掉了一些气；最后一个气球最大，一根针正扎向它，旁边写着触发事件不是原因">
+<text x="40" y="24" class="t-m">气球里的气压＝出事的倾向</text>
+<text x="630" y="24" text-anchor="end" class="t-b">那根针不是原因</text>
+<line x1="40" y1="200" x2="620" y2="200" class="ln"/>
+<circle cx="80" cy="180" r="10" class="f-soft"/><circle cx="80" cy="180" r="10" class="ln"/>
+<circle cx="180" cy="168" r="22" class="f-soft"/><circle cx="180" cy="168" r="22" class="ln"/>
+<circle cx="280" cy="156" r="34" class="f-soft"/><circle cx="280" cy="156" r="34" class="ln"/>
+<circle cx="370" cy="172" r="18" class="f-soft"/><circle cx="370" cy="172" r="18" class="ln"/>
+<circle cx="460" cy="150" r="40" class="f-soft"/><circle cx="460" cy="150" r="40" class="ln"/>
+<circle cx="560" cy="138" r="52" class="f-soft"/><circle cx="560" cy="138" r="52" class="ln-a"/>
+<line x1="626" y1="48" x2="602" y2="90" class="ln-a"/><circle cx="626" cy="48" r="5" class="f-a"/>
+<text x="80" y="222" text-anchor="middle" class="t-m">第一个前提条件</text>
+<text x="325" y="222" text-anchor="middle" class="t-m">有人发现，放掉一些气</text>
+<text x="630" y="222" text-anchor="end" class="t-m">一根针：触发事件</text>
+</svg>
+<figcaption>本站示意图，照作者的气球比方画。隐患越攒越多，气球越胀越大；发现了就能放气。胀满的气球一扎就炸，扎它的那根针常被当成原因。</figcaption></figure>
+<p class="use"><b>在这一页：</b>§8 先讲硬系统怎样找隐患（监测症状、<a class="term" href="03a.html#c-governor">反馈控制</a>），再讲这两个模型。「动手：模拟器」就是这块奶酪。</p>
+</div>
+<div class="concept" id="c-systems-thinking">
+<h3><span class="sec">§9</span>系统思维 <span class="en">systems thinking</span></h3>
+<p>还原论（reductionism）把东西拆到最小的零件去弄懂，现代科学靠它起家（见 <a class="term" href="06a.html#c-layers">分层</a>）。整体论（holism）看零件怎样合起来，整体有零件没有的性质。作者说的系统思维是两样都要：专业的细节照做，同时有一套能看全局的想法；知和行也同等看重，两边你追我赶，谁也不比谁更根本。合起来求的是协同（synergy）：合在一起的效果大于各干各的之和。</p>
+<p>这是 Blockley 的主张，不是学界公认的定义。管理学里 Peter Senge 那一路通常译作「系统思考」，本站统一写系统思维。</p>
+<p class="use"><b>在这一页：</b>§9 立论，§10 批专业割裂、拿能量收尾。书末 Glossary 有 systems thinking 一条。</p>
+</div>
+<div class="concept" id="c-exergy">
+<h3><span class="sec">§10</span>㶲（可用能） <span class="en">exergy</span></h3>
+<p>第一定律说能量不灭；第二定律说每倒腾一次，总有一部分再也拿不来做功（<a class="term" href="03a.html#c-entropy">熵</a>增）。所以只数能量有几度不够，还要看品质。㶲（读 yòng）就是一份能量在当下的环境里最多能做多少功：电几乎全是㶲；20 ℃ 的热，室外 0 ℃ 时只有约 7% 是㶲。</p>
+<p>拿电阻丝把屋子从室外的温度烧到 20 ℃，等于用最高级的能量干最低级的活。热泵用电去「搬」室外的热，在这个温差下，理论上 1 度电最多搬来约 15 度热，实际的到不了，也能换来好几度。隐含能（embodied energy）是另一笔账：楼里的材料和构件运到工地之前，造它们已经花掉的能量。</p>
+<figure class="fig">
+<svg class="diagram" viewBox="0 0 640 210" role="img" aria-label="条形图：用 1 度电给 20 度的屋子供暖，室外 0 度。电阻丝电暖器出 1 度热；实际的热泵出几度热，图上按 3 度示意；理想热泵的上限约 15 度。底下注明 20 度的热里只有约 7% 是㶲">
+<text x="20" y="28" class="t-b">电阻丝电暖器：1 度电 → 1 度热</text>
+<rect x="20" y="36" width="28" height="18" class="f2"/><text x="56" y="50" class="t-m">1</text>
+<text x="20" y="84" class="t-b">实际的热泵：1 度电 → 几度热（按 3 度示意）</text>
+<rect x="20" y="92" width="84" height="18" class="f3"/><text x="112" y="106" class="t-m">约 3</text>
+<text x="20" y="140" class="t-b">理想热泵的上限：293 ÷ 20 ≈ 15 度</text>
+<rect x="20" y="148" width="410" height="18" class="f1"/><text x="438" y="162" class="t-m">约 15</text>
+<text x="20" y="196" class="t-m">室外 0 ℃、室内 20 ℃（按开尔文算）。20 ℃ 的热里，能拿来做功的只有约 7%</text>
+</svg>
+<figcaption>本站示意图，数是本站按卡诺的式子算的（见 <a href="03a.html#c-carnot">第 3 章的卡诺上限</a>），实际热泵那一条只是示意，书里没有这些数。</figcaption></figure>
+<p class="use"><b>在这一页：</b>§10 拿建筑能耗收全书：隐含能很少有人算，㶲分析几乎不用。热泵后来怎样，见「今天怎么看」。</p>
+</div>
+<h2>动手：模拟器</h2>
+<p>先猜：三道防线，每道平时漏 10%。再加第四道，事故概率降为原来的几分之一？如果十天里有一天组织在赶工期，那天每道防线都漏一半，再加第四道又能降多少？</p>
+<div class="sim" id="sim-06b">
+  <div class="sim-head"><span class="tag">模拟器</span><h3>瑞士奶酪：多加一道防线，风险降多少</h3><p class="desc">每次有危险冒头，要穿过所有防线才会变成事故。平常的日子里，每道防线漏不漏互不相干；「坏日子」里（比如在赶工期），每一道都一起变差。图上是两种算法下，事故概率随防线道数怎样变。打开页面时是三道防线。</p></div>
+  <div class="sim-body"><p>需要浏览器打开脚本才能运行。</p></div>
+</div>
+<p>各个控件：「防线有几道」是奶酪有几片；「每道平时漏多少」是平常日子里，一次危险穿过这一道的概率；「坏日子占比」是组织带着潜伏问题运转的时间占多少；「坏日子里每道漏多少」是那些日子里每道防线漏的概率。统计栏第一格把防线当成互不相干，只按平常日子的漏法算；第二格把坏日子也算进去；第三格是第二格的事故里有多少出在坏日子；后两格是再加一道防线时，前两格各降为原来的几分之一。图的纵轴是对数刻度：每往下一格，概率小很多倍。</p>
+<ol class="qs">
+  <li>试试看：先看打开时的设置，三道防线各漏 10%，十天里一天是坏日子（每道漏一半）。互不相干时事故概率是 0.1%，算上坏日子是多少？事故里有多少出在坏日子？</li>
+  <li>试试看：把「防线有几道」改成 4，再改成 5。互不相干时每加一道降为十分之一，算上坏日子呢？5 道时两种算法差了多少倍？</li>
+  <li>试试看：点「回到打开时的设置」，试两种改法。一种是把「每道平时漏多少」改成 5%，每道防线都做好一倍；另一种是改回 10%，再把「坏日子占比」改成 5%。哪一种让第二格降得多？</li>
+</ol>
+<p>这里的数都是本站定的演示值，书里没有数。模型也是本站的简化：平常日子里各道防线各漏各的，坏日子里每道一起变差，事故概率＝平常日子的占比 × 平时漏的概率连乘 ＋ 坏日子的占比 × 坏日子漏的概率连乘。这不是 Reason 给的公式，他的模型是一个画面，没有给数。</p>
+<h2>书里的人和项目</h2>
+<p class="lede">书里点名的人、发明和工程，挑读懂这一页用得上的讲。按在书里出现的顺序排，节号是你在书里哪一节遇到它。</p>
+<h3><span class="sec">§6</span>教堂：用 logos 的手艺表达 mythos</h3>
+<p>作者讲前现代社会得到真理的两条路：mythos 来自讲故事，要靠信，没法证明到人人都服；logos 讲理、务实，管把事办成。他举的例子是教堂：盖教堂、做教堂里的艺术，是拿 logos 的工具，表达 mythos 里那份情感上的真。这对词参考文献里指向宗教史作家 Karen Armstrong 的一篇文章，第 2 章已用过。他接着说 STEM 的知识有两个麻烦：越分越细，最新的细节只有少数专家懂；而且永远不完整，06a 借 Rumsfeld 讲过这一点。</p>
+<figure class="fig"><img src="../assets/img/06b-cathedral.jpg" alt="竖幅对称构图：哥特式大教堂的中殿，两排深色束柱撑着尖拱，头顶是一格格交叉的肋拱顶，远处是彩色玻璃窗；中殿里摆着两大片橙色椅子，最前面一个黑色水面的方形洗礼池倒映着拱顶" loading="lazy">
+<figcaption>英格兰威尔特郡索尔兹伯里大教堂的中殿，从洗礼池往东看。书里泛指教堂，这张只是一个例子。<span class="src">Diliff，CC BY-SA 3.0，维基共享资源</span></figcaption></figure>
+<h3><span class="sec">§7</span>Arthur Koestler 和「整子」</h3>
+<div class="who"><div><b>Arthur Koestler</b><span class="en">1905–1983</span>匈牙利出生的英国作家，最出名的是小说《中午的黑暗》。在这一页里，他造了 holon（整子）这个词。</div></div>
+<p>holon 出自他 1967 年的《机器中的幽灵》（The Ghost in the Machine），书后参考文献列了。Koestler 说这个词是希腊文 holos（整体）加上 -on，后缀取 proton、neutron 那样的「粒子、单元」之意。作者借这个词来想「层」；「每一层的性质从下一层涌现」是作者由此得出的结论，不是 Koestler 的原话。</p>
+<figure class="fig"><img src="../assets/img/06b-koestler.jpg" alt="黑白近景半身像：一位灰白头发往后梳、浓眉的老年男子，穿深色西装、细条纹衬衫和领带，脸偏向右侧看着画外，背景是虚化的人群" loading="lazy">
+<figcaption>Arthur Koestler，1969 年，在一个画展开幕式上。<span class="src">Eric Koch / Anefo，CC BY-SA 3.0，荷兰国家档案馆，维基共享资源</span></figcaption></figure>
+<h3><span class="sec">§7</span>Peter Senge 和「创造性张力」</h3>
+<div class="who"><div><b>Peter Senge</b><span class="en">1947–</span>美国管理学者，在麻省理工学院斯隆管理学院任教。在这一页里，作者借他的 creative tension 当软系统的「势差」。</div></div>
+<p>Senge 1990 年的《第五项修炼》（The Fifth Discipline）把系统思考带进了企业管理，作者在延伸阅读里推荐它。creative tension 是 Senge 的说法：现在在哪，和想去哪，中间的落差推着人和组织往前走。作者把它接到自己的 why = how(who, what, where, when) 上：why（需要、想要）是推动变化的势差，how 是把人、事、地、时的变化串起来的办法。他明说这不是数学公式。</p>
+<h3><span class="sec">§8</span>敲车轮的人、健康监测和 Hazop</h3>
+<p>作者说要跟医生学一招：医生看人的症状，工程师看系统的症状。他给的定义其实是病理学的（研究疾病的起因、性质和进程），书里写成了法医病理学，比方不受影响。结构健康监测就是这么做的：在桥和设备上持续测量，赶在损伤变危险之前发现变化，它的公理之一是「所有材料都有内在缺陷」（参考文献列了 Worden 等人 2007 年的论文）。蒸汽铁路时代的敲车轮工拿锤子敲钢轮，声音变了说明有裂纹。Hazop（危险与可操作性分析）是化工设计里广泛使用的、找出和管住隐患的方法。</p>
+<figure class="fig"><img src="../assets/img/06b-wheeltapper.jpg" alt="从停着的列车车窗往后拍：左边是一列暗红色客车，车厢和路基之间的碎石小道上，一个穿蓝色背带工装裤的工人背对镜头往前走，右手垂着一把长柄小锤" loading="lazy">
+<figcaption>保加利亚铁路上的敲车轮工，2009 年拍的，不是蒸汽时代的照片；画面里他拿着长柄小锤沿着车走。<span class="src">Monkeypuzzle，CC BY-SA 3.0，维基共享资源</span></figcaption></figure>
+<h3><span class="sec">§8</span>研究失败的人：Reason、Turner 和另外两位</h3>
+<div class="who"><div><b>James Reason</b><span class="en">1938–2025</span>英国心理学家，曼彻斯特大学教授，研究人为差错。书里叫他 Jim Reason，瑞士奶酪模型是他的。</div></div>
+<p>书里点了四位研究失败的社会科学家：Barry Turner、Nick Pidgeon、Charles Perrow 和 Reason，说他们发现人因失败不只是个人的疏忽和错误，也出自组织和文化，事先、当时都不容易看出来，可能要到事后才明白。Turner 1978 年的《人为灾难》（Man-made Disasters）提出事故有一段「孵化期」，第二版和 Pidgeon 合写，作者在延伸阅读里推荐。参考文献给 Reason 列的是他 1990 年的《人为差错》（Human Error）。Perrow 书里只点了名，他的看法见「本站怎么看」。</p>
+<h3><span class="sec">§10</span>皇家工程院的报告和建筑能耗</h3>
+<p>作者拿建筑能耗当「需要做得更好」的例子。他引英国皇家工程院（Royal Academy of Engineering，英国工程界的国家级学术机构）2010 年的报告（参考文献列了）：这件事常常没人管全局，工程方案有时拼不到一起。他接着说，隐含能很少有人算，㶲分析几乎没人用。下面这张热泵是今天的东西，书里没讲到它。</p>
+<figure class="fig"><img src="../assets/img/06b-heat-pump.jpg" alt="一台白色带深灰色面板的室外机，正面一个大圆形风扇格栅，侧面贴着空气源热泵的标签，架在水泥台的黑色减震脚上，紧挨着一户人家的白墙和后门" loading="lazy">
+<figcaption>英国绍森德一栋联排住宅改装加装的空气源热泵室外机，2024 年。<span class="src">绍森德市议会，CC0，维基共享资源</span></figcaption></figure>
+<h2>原文里的词和句</h2>
+<p class="lede">读英文原书时值得停一下的词和句：工程里的熟词生义、英式说法、作者的比喻。灰色斜体是原句里连续的几个词，在 Kindle 里搜它就能找到；标「每个字都认识」的，是每个词都眼熟、合起来意思却变了的，最容易读错。点「记下」收进词本。</p>
+<div class="entry"><div class="en">infinite regress</div><div class="loc" data-p="19">… We have an infinite regress since …</div><div class="zh">无穷倒退（哲学术语）</div><div class="note">本义是解释要无穷地往回追。作者这里描述的其实是绕回原点的循环定义（circular definition）。</div></div>
+<div class="entry trap"><div class="en">to the satisfaction of</div><div class="loc" data-p="20">… cannot be proved to the satisfaction of …</div><div class="zh">让……信服、满意</div><div class="note">不是「为了……的满足」。prove something to the satisfaction of the court 是「证明到法庭认可」。</div></div>
+<div class="entry trap"><div class="en">spring from</div><div class="loc" data-p="20">… seem to spring only from practice …</div><div class="zh">出自，源于</div><div class="note">spring 在这里不是「春天」或「弹簧」，是「冒出来」。同段 springing from mythos 也是这个意思。</div></div>
+<div class="entry trap"><div class="en">where does this leave us</div><div class="loc" data-p="21">… So where does this leave us?</div><div class="zh">那我们现在落在哪儿？这意味着什么？</div><div class="note">讲完一段道理后转入结论的口头禅，不是问地点。</div></div>
+<div class="entry"><div class="en">self-controlled vehicle</div><div class="loc" data-p="21">… ranging from self-controlled vehicles to body …</div><div class="zh">自动驾驶的车</div><div class="note">今天通行的说法是 self-driving 或 autonomous vehicle，self-controlled 很少这么用。</div></div>
+<div class="entry trap"><div class="en">coin</div><div class="loc" data-p="23">… Arthur Koestler coined a very useful word …</div><div class="zh">（动词）造（一个新词）</div><div class="note">本义是铸硬币。coin a phrase、coin a term 都是首创一个说法。</div></div>
+<div class="entry"><div class="en">more than the sum of its parts</div><div class="loc" data-p="24">… you are more than the sum …</div><div class="zh">整体大于部分之和</div><div class="note">常用说法。这里换成了 your parts，说的是你这个人。</div></div>
+<div class="entry trap"><div class="en">creative tension</div><div class="loc" data-p="25">… Peter Senge called it a creative tension …</div><div class="zh">创造性张力</div><div class="note">Senge 的术语：现状和愿景之间的落差，推着人往前走。不是「有创意的紧张气氛」。</div></div>
+<div class="entry trap"><div class="en">take a tip from</div><div class="loc" data-p="26">… We take a tip from the medics.</div><div class="zh">学……的一招，借鉴</div><div class="note">tip 是窍门、建议，不是小费。medics 是口语的「医生、医务人员」。</div></div>
+<div class="entry trap"><div class="en">integrity</div><div class="loc" data-p="26">… check the integrity of steel wheels …</div><div class="zh">完好，结构完整</div><div class="note">工程里 structural integrity 是结构完好、没裂没坏，不是「正直、诚信」。</div></div>
+<div class="entry trap"><div class="en">slips, lapses, or mistakes</div><div class="loc" data-p="27">… individuals making slips, lapses, or mistakes …</div><div class="zh">动作失误、遗忘疏漏、判断错误</div><div class="note">Reason 分人为差错的三类：slip 是想对了做错了（按错键），lapse 是忘了做，mistake 是打算本身就错了。</div></div>
+<div class="entry trap"><div class="en">lie dormant</div><div class="loc" data-p="28">… The pathogens may lie dormant and unrecognized …</div><div class="zh">潜伏着，不发作</div><div class="note">lie 是「处于某种状态」，不是说谎。dormant 本义是休眠，dormant volcano 是休眠火山。</div></div>
+<div class="entry trap"><div class="en">incubate</div><div class="loc" data-p="29">… Barry Turner argued that failures incubate.</div><div class="zh">（事故）在暗中酝酿、潜伏</div><div class="note">本义是孵蛋，医学里 incubation period 是潜伏期。Turner 说事故有一段孵化期。</div></div>
+<div class="entry"><div class="en">an accident waiting to happen</div><div class="loc" data-p="29">… represents an accident waiting to happen.</div><div class="zh">迟早要出的事</div><div class="note">常用习语，指隐患已经摆在那儿，只差一个由头。</div></div>
+<div class="entry trap"><div class="en">manage something away</div><div class="loc" data-p="29">… to manage the problems away.</div><div class="zh">把（问题）处理掉、管没了</div><div class="note">away 表示「使消失」，像 explain away（把……解释过去）、wash away。</div></div>
+<div class="entry"><div class="en">hunker down in one’s silo</div><div class="loc" data-p="33">… Engineers who hunker down in their silos …</div><div class="zh">各守自己的一亩三分地</div><div class="note">hunker down 是蹲下来不动、闭门死守；silo 是筒仓，在管理学里比喻各自为政、互不通气的部门。</div></div>
+<div class="entry trap"><div class="en">creak under the strain</div><div class="loc" data-p="33">… they are creaking under the strain.</div><div class="zh">不堪重负，嘎吱作响</div><div class="note">日常义是快撑不住了。strain 在工程里又是「应变」，用在讲工程分科的句子里，读起来像个双关。</div></div>
+<div class="entry"><div class="en">get something for nothing</div><div class="loc" data-p="34">… we cannot get something for nothing,</div><div class="zh">不劳而获，白得好处</div><div class="note">这里拿来说热力学第二定律：倒腾能量总要付代价。</div></div>
+<div class="entry trap"><div class="en">presently</div><div class="loc" data-p="34">… is presently rarely considered …</div><div class="zh">目前，现在</div><div class="note">这里是「目前」。英式用法里它传统上多指「不久、待会儿」，「目前」是美式常见的意思，读到时看前后句子。</div></div>
+<div class="entry"><div class="en">high-grade</div><div class="loc" data-p="34">… use high-grade electricity from the national …</div><div class="zh">高品位的（能量）</div><div class="note">能量的品位：能做多少功。电是高品位，二十来度的热是低品位（low-grade）。national grid 是英国的全国电网。</div></div>
+<h2>读完：作者到底说了什么</h2>
+<p class="lede">下面是作者在这一页里的主张，本站按主张之间的逻辑重排，不按原书顺序；每条后面是节号，拿不准就回书里那一节再读一遍。</p>
+<div class="claims">
+  <div class="claim"><h4>工程师不找真理，找在眼下范围里靠得住的信息</h4><p>什么是真，哲学家从柏拉图争到现在，作者不打算解。牛顿定律严格说不真，可只要东西离光速远，造桥造飞机照样靠得住。科学求真，工程求可靠；最后检验工程师的，是他有没有尽到注意义务，出了事由法庭来判。</p><span class="sec" data-p="19 22">§6</span></div>
+<blockquote class="quote">engineers do not look for truth – that is the purpose of science – rather, they look for reliable, dependable information<cite>— §6。本站译：工程师不找真理（那是科学的目的），他们找的是可靠、靠得住的信息。</cite></blockquote>
+  <div class="claim"><h4>每一层的性质，从下一层部件的相互作用里涌现</h4><p>他从 Koestler 的整子推出这一条：门的功能来自晶体管的接法，计数来自门的接法。人、家庭、组织也一层层是整子；软系统难，是因为每层都有人的意图，叠在一起没法建模。他还推想软系统也有势差、流和阻抗，自己标明是推想。</p><span class="sec" data-p="23 24 25">§7</span></div>
+  <div class="claim"><h4>事故常在组织里孵化，最后那根针不是原因</h4><p>硬系统靠监测症状和反馈控制来找隐患；软系统也有隐患，出在组织和文化里，事先不容易看出。Reason 说防线上的孔对成一线才出事，Turner 说前提条件会慢慢攒。作者要每个相关的人都去找那只越胀越大的气球。</p><span class="sec" data-p="26 27 28 29">§8</span></div>
+  <div class="claim"><h4>风险消除不了，「够安全」就是我们容忍的</h4><p>这是他对本章开头那串问题的回答：能做的是吸取教训、惩罚疏忽、让负责的人合格且真懂，伦敦眼倒下的概率仍不是零。人对风险的感知不简单，容忍的尺度会前后不一致，所以要靠民主社会里知情的讨论。光有科学的真理，保证不了工程安全。</p><span class="sec" data-p="31">§9</span></div>
+<blockquote class="quote">But ultimately, ‘safe enough’ is what we tolerate – and what we tolerate may be inconsistent because our perception of risk is not straightforward.<cite>— §9。本站译：说到底，「够安全」就是我们容忍的；而我们容忍什么可能前后不一，因为人对风险的感知并不简单。</cite></blockquote>
+  <div class="claim"><h4>21 世纪的工程要系统思维：专业照深，全局也要看</h4><p>他主张知与行、还原论与整体论同等看重，求协同，并说这是工程的一种新哲学。气候变化是大考，躲在筒仓里的工程师应付不了跨界的问题。建筑能耗是例子：隐含能少有人算，㶲分析几乎不用。</p><span class="sec" data-p="30 32 33 34 35">§9 §10</span></div>
+</div>
+<p class="sowhat"><b>合起来：</b>硬系统讲到最后，难处在人。作者给的不是保证，是一种态度：信息只求在范围内靠得住，隐患要在气球还没胀满时找出来，「够安全」要大家知情地商量。</p>
+<p class="chapsum"><b>这一章合起来：</b>开头那句「保证再也不发生」做不到。我们知道的永远不全，知和行之间的缺口就是风险，只能压到可接受。硬办法是安全系数、纵深防御、故障树，太复杂了就分层管；可每个硬系统都嵌在人的系统里，隐患常在组织里孵化。作者的答案是系统思维：专业照深，全局也看，知与行并重。「够安全」最终是社会愿意容忍的尺度。</p>
+<h2>今天怎么看</h2>
+<p class="lede">书 2012 年出版。下面挑出这一页里能被后来的研究或事情检验的说法，分「书里 / 当时 / 今天」几栏，并给一个结论。结论判的是标题里「书里的说法：」后面那一句。全书的这一节汇总在<a href="../today.html">今天怎么看</a>。</p>
+<ul class="verdicts"><li><span class="v ok">成立</span>后来的研究或事情支持这句话。</li><li><span class="v mid">部分成立</span>大方向对，细节或适用范围要改。</li><li><span class="v bad">被改写</span>后来的研究推翻了它、换了一种说法，或者情况变了。</li><li><span class="v dis">有争议</span>至今没有定论，两边各有代表性的研究或证据。</li></ul>
+<div class="today" data-verdict="成立"><h4>书里的说法：人因失败也出自组织和文化</h4><dl>
+  <dt>书里</dt><dd>Turner、Pidgeon、Perrow、Reason 研究过许多事故，发现人因失败不只是个人的疏忽和错误，也是组织和文化的产物，事先、当时都不容易看出，可能要到事后才看得出来。<span class="at" data-p="27">§8</span></dd>
+  <dt>当时</dt><dd>2003 年哥伦比亚号航天飞机失事，调查委员会的报告说 NASA 的组织文化和那块脱落的泡沫一样是事故的原因。到 2012 年，这在安全研究里已是主流看法。</dd>
+  <dt>今天</dt><dd>2018、2019 年两架波音 737 MAX 坠毁，346 人遇难。2020 年美国众议院交通委员会（多数党）的报告把原因归到赶工期压成本、对飞行员反应的错误假设、隐瞒 MCAS 系统的文化和监管上的利益冲突。2017 年伦敦格伦费尔公寓楼大火，72 人遇难；2024 年 9 月的调查报告说，这是政府和行业几十年失职的结果，72 人的死都本可避免。两份报告都把主因落在组织、监管和行业文化上，不是哪一个人的一时失误。<span class="asof">核对于 2026-11。依据：House Committee on Transportation and Infrastructure, Final Committee Report on the Boeing 737 MAX (2020)；Grenfell Tower Inquiry, Phase 2 Report (2024)。</span></dd>
+</dl></div>
+<div class="today" data-verdict="成立"><h4>书里的说法：人造成气候变化的证据压倒性地强</h4><dl>
+  <dt>书里</dt><dd>作者说辩论该往前走了：我们不能确知变化是人造成的，但证据压倒性地强；风险太大，要为极端天气早做准备。<span class="at" data-p="32">§10</span></dd>
+  <dt>当时</dt><dd>IPCC 2007 年的第四次评估报告说，20 世纪中叶以来的大部分升温「很可能」（九成以上的把握）来自人类排放的温室气体。</dd>
+  <dt>今天</dt><dd>2021 年第六次评估报告第一工作组的措辞升到「毫无疑问」：人类影响已经使大气、海洋和陆地变暖。世界气象组织说，2024 年很可能是第一个全年平均气温比工业化前高出 1.5 ℃ 以上的年份（约 1.55 ℃）；单独一年超过，还不等于《巴黎协定》的长期目标已经失守。作者留的「不能确知」，主流评估今天已经不留了；「证据压倒性地强」这一句成立。<span class="asof">核对于 2026-11。依据：IPCC AR6 WGI Summary for Policymakers, A.1 (2021)；WMO, State of the Global Climate 2024 (2025)。</span></dd>
+</dl></div>
+<div class="today" data-verdict="部分成立"><h4>书里的说法：用电网的高品位电给家里供暖是低效的</h4><dl>
+  <dt>书里</dt><dd>作者拿㶲举例：把屋子从环境温度烧到 20 ℃ 左右只要低品位的热，拿电网的高品位电来干这件事是低效的。<span class="at" data-p="34">§10</span></dd>
+  <dt>当时</dt><dd>英国家庭供暖以烧天然气的锅炉为主，热泵装得很少。</dd>
+  <dt>今天</dt><dd>道理没变：用电阻丝直接烧，1 度电只出 1 度热，确实浪费了电的品位。但用电来暖屋子成了主路：热泵用电去搬室外的热，1 度电能换来好几度热。英国 2022 年起用「锅炉升级计划」补贴换装热泵，现在每户最多补 7,500 英镑；2024 年经认证安装的热泵近 6 万台，创了纪录。低效的是电阻丝那种烧法，不是用电供暖本身。<span class="asof">核对于 2026-11。依据：MCS（英国小型可再生能源认证机构）2024 年安装数据；英国政府 Boiler Upgrade Scheme 说明。</span></dd>
+</dl></div>
+<h2>本站怎么看</h2>
+<p class="lede">读完作者的主张，再看它站不站得住。每一块摆出三样：主流怎么看，作者怎么看，本站的评论。最后一句是本站对这一页的总体判断。</p>
+<div class="views"><h4>「真」这道题绕不绕得开</h4>
+<p><b>主流看法：</b>哲学里的符合论并不把「事实」定义成「真的陈述」：Russell 和早期的 Wittgenstein 把事实当成世界上的状况，句子对得上它才真，所以不绕圈（斯坦福哲学百科「真理符合论」一条有综述）。科学哲学也通常把牛顿力学看成低速、弱引力范围里极准的近似。统计学家 George Box 那句常被引的话说得更直白：所有模型都是错的，但有些有用。</p>
+<p><b>作者的看法：</b>工程师不找真理，那是科学的事；他们找可靠、靠得住的信息，最终由注意义务、由法庭检验。<span class="at" data-p="22">§6</span></p>
+<p class="ours"><b>本站的评论：</b>作者绕的那个圈是他自己画的，「无穷倒退」也是用错了词。但他要落的那一点很站得住，也合程序员的经验：没人证明过一个库「真的」没有 bug，我们看的是它在哪些条件下用过、测过，出了事谁负责。把「真」换成「在给定范围里靠得住」，是这一页最有用的一招。</p></div>
+<div class="views"><h4>胀起来的气球，真看得出来吗</h4>
+<p><b>主流看法：</b>Charles Perrow 在《正常事故》（1984）里说，交互复杂、耦合紧密的系统里，几个小故障会以没人料到的方式搅在一起，事故是这种系统的「正常」产物，再警觉也防不完。后来还有一路，如 Erik Hollnagel 的「安全-II」，主张少盯着出错，多研究平常为什么做对了。Reason 的奶酪也被批评太线性、像漫画；Larouzée 和 Le Coze 2020 年的综述认为它仍站得住，高风险行业还在广泛使用。</p>
+<p><b>作者的看法：</b>每个相关的人都有责任去找越来越胀的气球，认出那件迟早要出的事，把问题管掉。<span class="at" data-p="29">§8</span></p>
+<p class="ours"><b>本站的评论：</b>书里自己就有这层张力：§8 先说组织里的隐患事先、当时都不容易看出，可能要到事后才明白，接着又要每个人都去发现它。两句都对，前一句是难处，后一句是该做的事。作者点了 Perrow 的名，没讲他比作者悲观得多的结论。读这一节时可以把两人放在一起想：有些气球能早看见，有些系统本身就在不停地吹气。</p></div>
+<div class="views"><h4>软系统里的「电阻、电容、电感」</h4>
+<p><b>主流看法：</b>把社会系统当成存量和流来建模，早有一门成熟的学问：MIT 的 Jay Forrester 创立的系统动力学，Senge 的《第五项修炼》就建在它上面，模型要写成方程、拿数据校准。另一路是 Peter Checkland 的软系统方法论：人的问题里，各方对「问题是什么」看法都不同，模型只是帮大家讨论的工具，不去测量什么流。</p>
+<p><b>作者的看法：</b>软系统里 why 是推动变化的势差；可以推想阻抗也和硬系统相似：电阻是歧义和冲突造成的损耗，电容是做事本事的积累，电感是适应和创新的能力。<span class="at" data-p="25">§7</span></p>
+<p class="ours"><b>本站的评论：</b>这一段是推想，作者自己也这么标。电阻对歧义和冲突还说得通；电感的本义是抗拒电流的变化，拿来比「适应和创新」，方向反倒拧了。它既不像系统动力学那样能算，也不像 Checkland 那样讲清了怎么用。当作提醒自己看全局的口诀可以，别当成理论。</p></div>
+<p class="verdict"><b>本站的总体看法：</b>这一页最值得带走的是 §8 和 §9：事故在组织里孵化、触发事件不是原因、「够安全」是社会容忍的尺度，到今天都站得住，737 MAX 和格伦费尔就是例子。§6 的论证绕了点路，结论好用；§7 软系统的阻抗只是比方。</p>
+<h2>检查一下理解</h2>
+<p class="lede">先在心里答，再点开。答错的那题，回书里把对应那一节再读一遍。</p>
+<details class="check"><summary>1.（§6）牛顿定律严格说不真，工程师为什么还放心用？</summary><p>工程师问的是在用的范围里靠不靠得住。东西跑得离光速远，牛顿定律足够准。最后检验的是工程师有没有尽到注意义务。</p></details>
+<details class="check"><summary>2.（§6）「真的陈述就是符合事实的陈述，事实就是真的陈述」，毛病出在哪？</summary><p>拿「事实」定义「真」，又拿「真」定义「事实」，绕回原点，是循环定义；书里叫它 infinite regress。作者说日常里这不要紧，工程要对人命负责，才得多想一步。</p></details>
+<details class="check"><summary>3.（§7）为什么说逻辑门是整子？</summary><p>对下，它的与、或功能从几只晶体管的接法里涌现，它是整体；对上，几个门接成触发器，它又是部分。</p></details>
+<details class="check"><summary>4.（§8）瑞士奶酪上的孔从哪两处来？</summary><p>一是主动失效，个人当场的不安全操作；二是潜伏的「病原体」，早先的决定埋下的，比如赶工期偷了工，可能多年不显，孔对上时才被发现。</p></details>
+<details class="check"><summary>5.（§8）作者的气球比方里，那根针是什么？为什么说它不是原因？</summary><p>针是触发事件。真正的问题是一步步攒起来的前提条件，也就是气球里的气压；气球没吹起来时扎一下，只会漏气，不会炸。</p></details>
+<details class="check"><summary>6.（§9）「多安全才算够安全」，作者怎么答？</summary><p>风险消除不了；能做的是吸取教训、惩罚疏忽、让负责的人合格且真懂。「够安全」就是我们容忍的，而容忍的尺度可能前后不一致。</p></details>
+<details class="check"><summary>7.（§10）按㶲的看法，用电网的电直接给屋子取暖，为什么不划算？</summary><p>电几乎全是能做功的高品位能量，把屋子烧到 20 ℃ 只要低品位的热，直接烧等于把电降格用掉。概念块补的一句：热泵是拿电去搬热，不在此列。</p></details>
+<p>用一句话说这一页：</p>
+<textarea class="note" data-key="06b-oneline" rows="2" placeholder="比如：……"></textarea>
+<div class="ponder"><p>想一想：你经历过或听说过的一次线上事故，最后被当成原因的是哪一下操作？往前倒，那只气球是从什么时候开始吹的？</p>
+<textarea class="note" data-key="06b-ponder" rows="3"></textarea></div>
+<h2>精彩回顾</h2>
+<p class="lede">读过又忘了，从这里想起来。挑的是这一页最值得记住的例子和说法，不按原书顺序；每条后面是节号，想细看就回书里那一节。全书各页的这一节都收在<a href="../recap.html">全书回顾</a>。</p>
+<p class="recall-line"><b>一句话：</b>工程要的是靠得住的信息；层层性质往上涌现；事故在组织里孵化，针不是原因；「够安全」是我们容忍的尺度。</p>
+<div class="recall">
+  <div class="item"><b>要靠得住，不要真理</b><p>牛顿定律严格说不真，造桥照样用：工程师问的是在这个范围里靠不靠得住。最后检验的是注意义务，出了事由法庭判。</p><span class="sec">§6</span></div>
+  <div class="item"><b>整子：往下是整体，往上是部分</b><p>Koestler 的词。逻辑门由晶体管组成，又组成触发器；每一层的本事，从下一层的接法里涌现。</p><span class="sec">§7</span></div>
+  <div class="item"><b>瑞士奶酪</b><p>防线像带孔的奶酪片，孔会移动、开合，对成一线才出事。孔来自当场的失误，也来自赶工期这类早先埋下的隐患。</p><span class="sec">§8</span></div>
+  <div class="item"><b>针不是原因</b><p>作者给 Turner 打的比方：隐患像往气球里吹气，胀满了，一根针一扎就炸。被当成原因的那根针，其实不是原因。</p><span class="sec">§8</span></div>
+  <div class="item"><b>够安全就是我们容忍的</b><p>风险消除不了，伦敦眼倒下的概率也不是零。能做的是吸取教训、让负责的人真懂，再让社会知情地商量尺度。</p><span class="sec">§9</span></div>
+  <div class="item"><b>能量也分品质</b><p>能量不灭，但每倒腾一次，都有一部分再也做不了功。拿高品位的电直接烧暖屋子，是降格使用。</p><span class="sec">§10</span></div>
+</div>
+</main>
+<script>
+(() => {
+  // 瑞士奶酪：n 道防线，平常日子每道各漏 p（互不相干）；占比 b 的「坏日子」里每道一起漏 q。
+  // 一次险情酿成事故的概率：互不相干时 p^n；算上坏日子 (1−b)·p^n + b·q^n。确定性，没有随机数。
+  // 默认（3 道、p 10%、b 10%、q 50%）复现底稿 e-sims.py：0.1% 和 1.34%；4 道 0.01% 和 0.63%；5 道 0.001% 和 0.31%。
+  const root = document.getElementById("sim-06b");
+  if (!root || !window.EG) return;
+  const { h, chart } = window.EG;
+  const BASE = { n: "3", p: "0.1", b: "0.1", q: "0.5" };
+  const st = Object.assign({}, BASE);
+  const OPTS = {
+    n: { label: "防线有几道", list: [["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"]] },
+    p: { label: "每道平时漏多少", list: [["0.01", "1%"], ["0.05", "5%"], ["0.1", "10%"], ["0.2", "20%"], ["0.5", "50%"]] },
+    b: { label: "坏日子占比", list: [["0", "没有"], ["0.01", "1%（百天一天）"], ["0.05", "5%"], ["0.1", "10%（十天一天）"], ["0.2", "20%"], ["0.3", "30%"]] },
+    q: { label: "坏日子里每道漏多少", list: [["0.2", "20%"], ["0.3", "30%"], ["0.5", "50%"], ["0.8", "80%"]] },
+  };
+  const sels = {};
+  const ctrl = (k) => {
+    const s = h("select", { "aria-label": OPTS[k].label, onchange: () => { st[k] = s.value; draw(); } }, ...OPTS[k].list.map(([v, t]) => h("option", { value: v }, t)));
+    sels[k] = s;
+    return h("label", {}, OPTS[k].label, s);
+  };
+  const reset = h("button", { onclick: () => { Object.assign(st, BASE); draw(); } }, "回到打开时的设置");
+  const plot = h("div");
+  const stage = h("div", { class: "stage" }, h("p", { class: "cap" }, "一次险情酿成事故的概率（对数刻度，10⁻⁶ 是百万分之一），横轴是防线道数"), plot);
+  const narrate = h("div", { class: "narrate" });
+  const stats = h("div", { class: "stats" });
+  const body = root.querySelector(".sim-body");
+  body.innerHTML = "";
+  body.append(h("div", { class: "controls" }, ...Object.keys(OPTS).map(ctrl), reset), stage, narrate, stats);
+
+  const sig = (v, k) => Number(v.toPrecision(k));
+  const big = (v0) => { const v = sig(v0, 2); return v >= 1e12 ? `${sig(v / 1e12, 2)} 万亿` : v >= 1e8 ? `${sig(v / 1e8, 2)} 亿` : v >= 1e4 ? `${sig(v / 1e4, 2)} 万` : String(Math.round(v)); };
+  const fmtP = (x) => (x >= 1e-5 ? `${sig(x * 100, 3)}%` : `${big(1 / x)}分之一`);
+  const fmtR = (r) => (r >= 1e4 ? big(r) : r >= 9.95 ? String(Math.round(r)) : r.toFixed(1));
+  const fmtS = (s) => (s * 100 >= 99.95 && s < 1 ? "超过 99.9%" : s * 100 >= 99.5 && s < 1 ? `${(s * 100).toFixed(1)}%` : `${Math.round(s * 100)}%`);
+  const SUP = { "-": "⁻", 0: "⁰", 1: "¹", 2: "²", 3: "³", 4: "⁴", 5: "⁵", 6: "⁶", 7: "⁷", 8: "⁸", 9: "⁹" };
+  const tick = (v) => (v >= -4 ? `${sig(Math.pow(10, v) * 100, 3)}%` : "10" + String(v).split("").map((ch) => SUP[ch]).join(""));   // 刻度要窄：小于万分之一写成 10 的负几次方
+  function run() {
+    const n = Number(st.n), p = Number(st.p), b = Number(st.b), q = Number(st.q);
+    const ind = (k) => Math.pow(p, k), all = (k) => (1 - b) * Math.pow(p, k) + b * Math.pow(q, k);
+    const A = [], B = [];
+    for (let k = 0; k <= 6; k++) { A.push(Math.log10(ind(k))); B.push(Math.log10(all(k))); }
+    return { n, p, b, q, Pi: ind(n), Pa: all(n), share: b * Math.pow(q, n) / all(n), ri: ind(n) / ind(n + 1), ra: all(n) / all(n + 1), A, B };
+  }
+  function tell(r) {
+    const parts = [];
+    if (r.b === 0) parts.push(`没有坏日子，几道防线各漏各的。事故要每一道同时漏，概率是各道漏的概率连乘：${r.n} 道各漏 ${sig(r.p * 100, 3)}%，就是 ${fmtP(r.Pi)}。多加一道，就再乘一次。`);
+    else if (r.q <= r.p) parts.push("你设的坏日子里，每道防线漏得不比平常多，坏日子算不上坏，两条线几乎贴在一起。");
+    else {
+      parts.push(`坏日子里每道防线一起变差，几道防线就不再各漏各的。算上坏日子，事故概率是互不相干时的 ${fmtR(r.Pa / r.Pi)} 倍，事故里有 ${fmtS(r.share)} 出在坏日子。`);
+      if (r.share >= 0.5) parts.push(`这时再加一道防线，互不相干时降为 1/${fmtR(r.ri)}，算上坏日子只降为 1/${fmtR(r.ra)}：多出的那一道，在坏日子里也跟着一起漏。`);
+      else parts.push("坏日子占的分量还不大，多加一道防线仍然管用。");
+    }
+    return parts.join("").replace("有 超过", "有超过").replace(/ (万亿|亿|万) 倍/, " $1倍");
+  }
+  function draw() {
+    for (const k in sels) sels[k].value = st[k];
+    const r = run();
+    const lo = Math.max(-12, Math.floor(Math.min(...r.A, ...r.B)));
+    const c = chart(plot, { series: [{ name: "防线互不相干", data: r.A, c: 1 }, { name: "算上坏日子", data: r.B, c: 2 }], xlabel: "防线道数", ylabel: "事故概率", ymin: lo, ymax: 0, marks: [{ x: r.n, label: `${r.n} 道` }], title: "事故概率随防线道数变化" });
+    for (const t of c.svg.querySelectorAll("text")) {   // 纵轴刻度原是 log10 的值，换成读得懂的概率
+      if (t.getAttribute("text-anchor") === "end" && Number(t.getAttribute("x")) < 60 && /^-?\d+(\.\d+)?$/.test(t.textContent)) t.textContent = tick(Number(t.textContent));
+    }
+    narrate.textContent = tell(r);
+    stats.innerHTML = "";
+    const box = (v, l) => h("div", { class: "stat" }, h("div", { class: "v" }, v), h("div", { class: "l" }, l));
+    stats.append(box(fmtP(r.Pi), "防线互不相干：事故概率"), box(fmtP(r.Pa), "算上坏日子：事故概率"), box(fmtS(r.share), "事故里出在坏日子的"), box(`1/${fmtR(r.ri)}`, "再加一道，第一格降为"), box(`1/${fmtR(r.ra)}`, "再加一道，第二格降为"));
+  }
+  draw();
+})();
+</script>
+</body>
+</html>

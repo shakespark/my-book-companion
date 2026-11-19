@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 4 章（上） · 工程导读</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/chapters.js"></script>
+<script src="../assets/eg.js"></script>
+<style>
+#sim-04a .cap { font-size: 13px; color: var(--muted); margin: 2px 0 8px; }
+#sim-04a .levels { margin-top: 12px; font-size: 13.5px; }
+#sim-04a .row { display: flex; align-items: center; gap: 8px; margin: 5px 0; color: var(--muted); }
+#sim-04a .row.on { color: var(--fg); font-weight: 700; }
+#sim-04a .row .l { flex: none; width: 5.5em; }
+#sim-04a .row .track { flex: 1; min-width: 0; background: var(--surface-2); border-radius: 3px; height: 14px; }
+#sim-04a .row .bar { display: block; height: 14px; border-radius: 3px; background: var(--c2); }
+#sim-04a .row .n { flex: none; width: 5em; text-align: right; font-variant-numeric: tabular-nums; }
+</style>
+</head>
+<body data-page="04a">
+<main>
+<h2>这一页在做什么</h2>
+<div class="gist"><p>第 4 章是作者五个「时代」里的第三个：电磁。这一页是前半章，讲电怎样造出来、送出去。骨架只有两步：法拉第发现变化的磁场能生出电流，机械功从此能变成电，电也能变回转动；半个多世纪后，交流靠变压器赢了直流，因为同样的功率用高电压送，电流小，线上烧掉的就少。其余是一长串人名和「第一」，可以挑着读。§2 和 §4 先读，§4 配模拟器。</p></div>
+<figure class="fig">
+<svg class="diagram" viewBox="0 0 640 250" role="img" aria-label="从电站到插座的一条链：发电机 11 千伏，升压变压器升到 132 千伏，高压线上电流 76 安，降压变压器分几级降下来，家里 230 伏。下面对比同一条 5 欧的线送 10 兆瓦：直接用 11 千伏送，电流 909 安，烧掉约 4130 千瓦；升到 132 千伏送，电流 76 安，只烧约 28.7 千瓦">
+<text x="320" y="22" text-anchor="middle" class="t-b">送 10 兆瓦：从电站到插座</text>
+<rect x="8" y="44" width="104" height="60" rx="6" class="box"/>
+<text x="60" y="70" text-anchor="middle" class="t-b">发电机</text>
+<text x="60" y="92" text-anchor="middle" class="t-m">11 千伏</text>
+<line x1="112" y1="74" x2="130" y2="74" class="ln"/><polygon points="130,68 139,74 130,80" class="f-a"/>
+<rect x="140" y="44" width="104" height="60" rx="6" class="box"/>
+<text x="192" y="70" text-anchor="middle" class="t-b">升压变压器</text>
+<text x="192" y="92" text-anchor="middle" class="t-m">升到 132 千伏</text>
+<line x1="244" y1="74" x2="262" y2="74" class="ln"/><polygon points="262,68 271,74 262,80" class="f-a"/>
+<rect x="272" y="44" width="150" height="60" rx="6" class="f-soft"/>
+<text x="347" y="70" text-anchor="middle" class="t-b">高压线</text>
+<text x="347" y="92" text-anchor="middle">132 千伏 · 76 安</text>
+<line x1="422" y1="74" x2="440" y2="74" class="ln"/><polygon points="440,68 449,74 440,80" class="f-a"/>
+<rect x="450" y="44" width="104" height="60" rx="6" class="box"/>
+<text x="502" y="70" text-anchor="middle" class="t-b">降压变压器</text>
+<text x="502" y="92" text-anchor="middle" class="t-m">分几级降下来</text>
+<line x1="554" y1="74" x2="566" y2="74" class="ln"/><polygon points="566,68 575,74 566,80" class="f-a"/>
+<rect x="576" y="44" width="58" height="60" rx="6" class="box"/>
+<text x="605" y="70" text-anchor="middle" class="t-b">家里</text>
+<text x="605" y="92" text-anchor="middle" class="t-m">230 伏</text>
+<text x="60" y="126" text-anchor="middle" class="t-m">电流 909 安</text>
+<text x="347" y="126" text-anchor="middle" class="t-m">电流只有 76 安</text>
+<line x1="16" y1="146" x2="624" y2="146" class="ln-d"/>
+<text x="16" y="172" class="t-b">同一条 5 欧的线，送 10 兆瓦：</text>
+<text x="16" y="196">直接用 11 千伏送：909 安，线上烧掉约 4130 千瓦（41%）</text>
+<text x="16" y="218">升到 132 千伏送：76 安，线上只烧约 28.7 千瓦（0.29%）</text>
+<text x="16" y="240" class="t-m">电流变成十二分之一，发热变成 144 分之一：线上发热跟着电流的平方走</text>
+</svg>
+<figcaption>本站示意图。功率、电阻、发电机电压都是本站定的演示值，书里没有算例；「动手：模拟器」里可以自己调。真实电网里，变压器、线路的损耗和电压等级比这复杂。</figcaption></figure>
+<h2>读之前：这一页在全书的哪里</h2>
+<div class="linehere"></div>
+<p>第 3 章讲热怎样做功：从蒸汽机到汽轮机、喷气发动机和核电。第 4 章是作者自己划的第三个「时代」，电磁。这一页从电荷讲到电网：先是一串发现，再是发电机、交流和变压器，最后落到电站靠什么转，又回到第 3 章的汽轮机。04b 接着讲法拉第的「场」、电磁波和通信。</p>
+<div class="heads-up"><p>别被带歪：书在 §4 讲完交流胜出，§5 才讲爱迪生 1882 年的珍珠街电站，又没说它是直流站。珍珠街送的是直流，比特斯拉的旋转磁场（1888）、德特福德（1891）都早。§5 说爱迪生灯泡的灯丝是铜的，其实是碳丝。</p></div>
+<div class="crux"><p>同样送 10 兆瓦，为什么要先升到十几万伏再送，到了家门口又降下来？</p></div>
+<p class="lede">读的时候带着这几个问题，读完回来对照「检查一下理解」。</p>
+<ol class="qs">
+  <li>两个线圈挨着放，一个通电，另一个什么时候才有电流？<span class="sec">§2</span></li>
+  <li>线圈在磁铁旁边转，发出来的天然是交流还是直流？要另一种怎么办？<span class="sec">§2</span></li>
+  <li>直流时代给 120 伏的灯接 240 伏的电源，要怎么接？为什么作者说浪费？<span class="sec">§4</span></li>
+  <li>珍珠街电站送的是交流还是直流？德特福德凭什么被叫作第一座现代电站？<span class="sec">§5</span></li>
+</ol>
+<h2>分节地图</h2>
+<p class="lede">原书这一章没有小标题，一口气写下来。下面的节是本站按段落分的：粗体是本站起的节名，后面是档和英文词数；再下面是这一节开头的几个英文词，在 Kindle 里搜它就能跳过去。读完打个勾。</p>
+<ol class="secmap">
+  <li data-sec="1"><span class="what">开头拿择偶的「异性相吸」打趣。讲电荷是什么的那一段值得读，其余是古人到伏打的发现清单。地下室那台大电池的「3 kW」是功率，不是存了多少电。</span></li>
+  <li data-sec="2"><span class="what">全页的根，先读。法拉第两步：电让导线转起来，转动又发出电。留意只有「变化的电流」才感应；皮克西转出交流，又费劲翻成直流。</span></li>
+  <li data-sec="3"><span class="what">可跳过。发电机改进的接力名单，只挑从 <span class="at" data-p="13">The clever part was that</span> 起的自励读：发电机分一点自己发的电去喂电磁铁。</span></li>
+  <li data-sec="4"><span class="what">先读。特斯拉的旋转磁场和感应电动机，然后是全章唯一讲透的工程取舍：线损跟着电流的平方走，变压器让交流能升压送远。配模拟器读。</span></li>
+  <li data-sec="5"><span class="what">「电流之战」的另一面：爱迪生的宣传战、英斯尔的大电站、费兰蒂的德特福德、斯旺和爱迪生的灯泡。珍珠街在 <span class="at" data-p="21">By 1882, Edison had installed</span>，是直流站。</span></li>
+  <li data-sec="6"><span class="what">英国从伦敦一地几十家各自为政，到 1926 年立法建全国电网。后半讲发电机靠什么转、热电联产；光伏那段是 2012 年的眼光，见「今天怎么看」。</span></li>
+</ol>
+<h2>先用中文过一遍：这一页的概念</h2>
+<p class="lede">先把这一页用到的几个概念用书外的例子讲一遍。作者拿它们推出什么，读原书时自己看。后面各页用到时会链回这里。</p>
+<div class="concept" id="c-charge">
+<h3><span class="sec">§1</span>电荷 <span class="en">electric charge</span></h3>
+<p>原子核里的质子带正电，外面的电子带负电，平常两样一样多，整个原子不带电。拿气球蹭毛衣，电子从一边跑到另一边，两边带上异号的电荷，就互相吸；梳头时头发带上同号的电荷，就互相推开、竖起来。电荷待着不动是静电，流动起来就是电流。习惯上说电流从正极流向负极，电子其实是反着跑的。</p>
+<p>两个电荷之间的力和距离的平方成反比（库仑定律）：距离加倍，力变成四分之一。最早存电荷的东西是莱顿瓶，今天叫电容器，04b 的振荡电路还要用它。</p>
+<p class="use"><b>在这一页：</b>§1 用一段话讲电荷，书后注给了库仑定律的公式。第 5 章讲晶体管也从这里起步。</p>
+</div>
+<div class="concept" id="c-ohm">
+<h3><span class="sec">§2</span>电压、电流、电阻和电功率 <span class="en">potential difference, current, resistance, power</span></h3>
+<p>拿水管打比方：电压是两头的水压差，电流是每秒流过多少水，电阻是管子又细又长挡着水。欧姆定律说三者的关系：电压 = 电流 × 电阻。</p>
+<p>书里没写、可 §4 整段全靠它的一条：电的<a class="term" href="02.html#c-work">功率</a> = 电压 × 电流。同样 2400 瓦的电热水壶，接 240 伏要 10 安，接 120 伏要 20 安。导线本身也有电阻，电流流过就发热，烧掉的功率 = 电流² × 电阻。电流加倍，线上的发热变成四倍。所以送同样多的电，电压越高，电流越小，路上烧掉的越少。</p>
+<p class="use"><b>在这一页：</b>§2 欧姆定律一句带过；§4 交流为什么赢、「动手：模拟器」都靠这两条式子。</p>
+</div>
+<div class="concept" id="c-induction">
+<h3><span class="sec">§2</span>电磁感应、发电机和电动机 <span class="en">electromagnetic induction, generator, motor</span></h3>
+<p>导线里的电流会在周围造出磁场，指南针靠近会偏。反过来，穿过一圈导线的磁场在变，导线里就生出电流；磁场不变，就没有。这叫电磁感应。让磁场变的办法：开关、增减电流，或者让线圈在磁铁旁边转。</p>
+<p>发电机就是让线圈在磁场里转。线圈的两条边每转半圈，切磁场的方向就翻一次，转出来天然是一正一负来回变的交流。要直流，就在轴上装换向器，每转半圈把两根引线对调一次，输出成了同一方向的一串「驼峰」。电动机是同一种机器倒过来用：通上电，它就转。电磁炉、手机无线充电也靠感应。</p>
+<figure class="fig">
+<svg class="diagram" viewBox="0 0 640 230" role="img" aria-label="发电机原理示意图。左边：两块磁铁，左边是 N 极，右边是 S 极，中间一个虚线圆表示线圈两条边绕轴转的路径，圆上上下各一个黑点是线圈的两条边，箭头表示转动方向。右上：线圈接滑环，输出是一正一负来回变的波，叫交流。右下：线圈接换向器，输出是同一方向的一串驼峰，叫脉动直流">
+<rect x="20" y="60" width="46" height="110" rx="4" class="f2"/>
+<text x="43" y="121" text-anchor="middle" class="t-on">N</text>
+<rect x="194" y="60" width="46" height="110" rx="4" class="f1"/>
+<text x="217" y="121" text-anchor="middle" class="t-on">S</text>
+<line x1="70" y1="88" x2="184" y2="88" class="ln-d"/><line x1="70" y1="142" x2="184" y2="142" class="ln-d"/>
+<polygon points="182,83 190,88 182,93" class="f-fg"/><polygon points="182,137 190,142 182,147" class="f-fg"/>
+<circle cx="130" cy="115" r="44" class="ln"/>
+<circle cx="130" cy="71" r="7" class="f-fg"/><circle cx="130" cy="159" r="7" class="f-fg"/>
+<line x1="130" y1="78" x2="130" y2="152" class="ln-a"/>
+<path d="M168 92 A44 44 0 0 1 172 128" class="ln-a"/><polygon points="166,126 172,138 178,126" class="f-a"/>
+<text x="130" y="30" text-anchor="middle" class="t-b">线圈在两极之间转</text>
+<text x="130" y="48" text-anchor="middle" class="t-m">（顺着转轴看过去）</text>
+<text x="130" y="196" text-anchor="middle" class="t-m">黑点是线圈的两条边</text>
+<text x="130" y="214" text-anchor="middle" class="t-m">每转半圈，切磁场的方向翻一次</text>
+<text x="300" y="24" class="t-b">接滑环：交流</text>
+<line x1="310" y1="72" x2="620" y2="72" class="ln-d"/>
+<path d="M310 72L318 63L325 56L332 49L340 45L348 44L355 45L362 49L370 56L378 63L385 72L392 81L400 88L408 95L415 99L422 100L430 99L438 95L445 88L452 81L460 72L468 63L475 56L482 49L490 45L498 44L505 45L512 49L520 56L528 63L535 72L542 81L550 88L558 95L565 99L572 100L580 99L588 95L595 88L602 81L610 72" class="s1"/>
+<text x="300" y="134" class="t-b">接换向器：同一方向的「驼峰」</text>
+<line x1="310" y1="192" x2="620" y2="192" class="ln-d"/>
+<path d="M310 192L318 178L325 165L332 155L340 148L348 146L355 148L362 155L370 165L378 178L385 192L392 178L400 165L408 155L415 148L422 146L430 148L438 155L445 165L452 178L460 192L468 178L475 165L482 155L490 148L498 146L505 148L512 155L520 165L528 178L535 192L542 178L550 165L558 155L565 148L572 146L580 148L588 155L595 165L602 178L610 192" class="s3"/>
+<text x="620" y="214" text-anchor="end" class="t-m">横轴是时间，每个驼峰是半圈</text>
+</svg>
+<figcaption>本站示意图，只画一个线圈。换向器的分段越多，驼峰叠得越密，输出越平。</figcaption></figure>
+<p class="use"><b>在这一页：</b>§2 法拉第的圆盘；§3 发电机一代代改进；§4 那句 <span class="at" data-p="16">A motor is a generator in</span> reverse。</p>
+</div>
+<div class="concept" id="c-ac-dc">
+<h3><span class="sec">§4</span>交流和直流、三相和旋转磁场 <span class="en">AC / DC, three-phase, rotating magnetic field</span></h3>
+<p>直流的方向不变，电池、手机充电器输出的都是。交流的方向一秒钟来回几十次，每秒几个来回叫频率，单位赫兹：中国和英国 50 赫，美国 60 赫。家里插座的电压，中国 220 伏，英国今天标称 230 伏（书里的 240 伏是 1995 年以前的标称），美国标称 120 伏（书里写 110）。</p>
+<p>三相是三路交流，峰谷依次错开三分之一个来回（120 度）。把它们通进围成一圈的三组线圈，合起来的磁场就在圈里转，这是旋转磁场。放一个转子进去，它被感应出电流，跟着磁场转，这就是感应电动机，数不清的水泵、风机、压缩机靠它转。</p>
+<figure class="fig">
+<svg class="diagram" viewBox="0 0 640 210" role="img" aria-label="两种办法给 120 伏的灯供电的对比。左边直流：240 伏直流电源，串一个电阻再接灯，电阻上 120 伏、灯上 120 伏，同一股电流流过两者，一半的电在电阻上变成热。右边交流：240 伏交流电源接一台 2 比 1 的变压器，降成 120 伏给灯，电压降一半、电流加倍，功率基本不丢">
+<text x="160" y="22" text-anchor="middle" class="t-b">直流：只能串个电阻</text>
+<rect x="16" y="56" width="80" height="50" rx="6" class="box"/>
+<text x="56" y="78" text-anchor="middle" class="t-b">240 伏</text>
+<text x="56" y="97" text-anchor="middle" class="t-m">直流</text>
+<path d="M96 70 L140 70" class="ln"/><rect x="140" y="58" width="64" height="24" rx="3" class="f2"/>
+<text x="172" y="75" text-anchor="middle" class="t-on">电阻</text>
+<path d="M204 70 L246 70" class="ln"/><circle cx="262" cy="70" r="16" class="f3"/>
+<text x="262" y="75" text-anchor="middle" class="t-on">灯</text>
+<path d="M278 70 L298 70 L298 130 L56 130 L56 106" class="ln"/>
+<text x="172" y="48" text-anchor="middle" class="t-m">吃掉 120 伏</text>
+<text x="262" y="48" text-anchor="middle" class="t-m">120 伏</text>
+<text x="160" y="160" text-anchor="middle">同一股电流流过电阻和灯</text>
+<text x="160" y="182" text-anchor="middle" class="t-b">一半的电在电阻上变成热</text>
+<line x1="320" y1="14" x2="320" y2="196" class="ln-d"/>
+<text x="480" y="22" text-anchor="middle" class="t-b">交流：变压器降一半</text>
+<rect x="340" y="56" width="80" height="50" rx="6" class="box"/>
+<text x="380" y="78" text-anchor="middle" class="t-b">240 伏</text>
+<text x="380" y="97" text-anchor="middle" class="t-m">交流</text>
+<path d="M420 70 L452 70" class="ln"/><rect x="452" y="50" width="62" height="60" rx="4" class="f-soft"/>
+<text x="483" y="76" text-anchor="middle" class="t-b">变压器</text>
+<text x="483" y="96" text-anchor="middle" class="t-m">2 比 1</text>
+<path d="M514 70 L560 70" class="ln"/><circle cx="576" cy="70" r="16" class="f3"/>
+<text x="576" y="75" text-anchor="middle" class="t-on">灯</text>
+<text x="576" y="48" text-anchor="middle" class="t-m">120 伏</text>
+<path d="M592 70 L612 70 L612 130 L483 130 L483 110" class="ln"/><path d="M452 96 L380 96 L380 106" class="ln-d"/>
+<text x="480" y="160" text-anchor="middle">灯那边电压一半、电流加倍</text>
+<text x="480" y="182" text-anchor="middle" class="t-b">功率基本不丢</text>
+</svg>
+<figcaption>本站示意图，照书里那个 240 伏配 120 伏灯的例子画。直流没有变压器可用，多出来的电压只能找个电阻吃掉。</figcaption></figure>
+<p class="use"><b>在这一页：</b>§4 特斯拉的旋转磁场、感应电动机和那个串电阻的例子；§6 英国电网定在 50 赫。</p>
+</div>
+<div class="concept" id="c-transformer">
+<h3><span class="sec">§4</span>变压器和线损 <span class="en">transformer, power losses</span></h3>
+<p>变压器是一个铁芯上绕两组线圈。一组通交流，铁芯里的磁场跟着来回变，另一组就感应出电压；两组的匝数比是几，电压就变几倍。匝数比 1 比 10，230 伏升成 2300 伏，电流变成十分之一，功率基本不变。它只认变化的磁场，直流通进去，另一组什么也没有：这是交流当年赢的关键。</p>
+<p>为什么要升压送：线上的发热 = 电流² × 电阻。送 10 兆瓦，11 千伏要 909 安，132 千伏只要 76 安，电流成了十二分之一，发热成了 144 分之一。代价是绝缘：电压越高，绝缘子串越长，铁塔越高，越难安全操作。</p>
+<p class="use"><b>在这一页：</b>§4 交流胜出的理由；§6 英国电网的 132、275、400 千伏；「动手：模拟器」。</p>
+</div>
+<h2>动手：模拟器</h2>
+<p>先猜：同一条线送同样多的电，把输电电压从 132 千伏提到 400 千伏（约 3 倍），线上烧掉的电变成原来的多少？三分之一，还是更少？</p>
+<div class="sim" id="sim-04a">
+  <div class="sim-head"><span class="tag">模拟器</span><h3>高压送电</h3><p class="desc">一座电站沿一条线往城里送电。调要送多少电、线有多少电阻、用多高的电压送，看线上的电流、路上烧掉多少、到用户手里还剩多少。打开页面时是 132 千伏送 10 兆瓦。</p></div>
+  <div class="sim-body"><p>需要浏览器打开脚本才能运行。</p></div>
+</div>
+<p>各个控件：「要送多少电」是电站往这条线上送的功率，1 兆瓦是一千千瓦；「线路电阻」是整条线的电阻，线越长、越细，电阻越大，5 欧大致是几十公里的架空线；「输电电压」的六档都是书里出现过的数：240 伏是英国家用，132、275、400 千伏是英国电网 1926、1949、1965 年用上的电压。图上是在这个功率和电阻下，电压从 0 到 400 千伏，线上烧掉的电占送出的百分之几，竖线是你选的电压。图下一排是六档电压各烧掉多少。</p>
+<ol class="qs">
+  <li>试试看：先看打开时的设置，132 千伏送 10 兆瓦，线上电流约 76 安，烧掉约 28.7 千瓦，占 0.29%。把电压改成 400 千伏，电流和烧掉的各是多少？烧掉的是原来的几分之一？</li>
+  <li>试试看：接着把电压改成 11 千伏，再改成 240 伏。11 千伏时有多少电烧在路上？240 伏时说明里怎么说？</li>
+  <li>试试看：点「回到 132 千伏」，把电压改成 33 千伏，再把线路电阻从 5 欧改成 10 欧（线长了一倍），烧掉的比例变成多少？再把要送的电从 10 兆瓦改成 50 兆瓦呢？想想英国电网为什么后来一次次加更高电压的线。</li>
+</ol>
+<p>这里的功率、电阻都是本站定的演示值，书里只给了道理，没有算例。模型只算一件事：电流 = 功率 ÷ 电压，线损 = 电流² × 电阻；不算线上的电压降、三相、功率因数和变压器自己的损耗，真实电网的线损比这复杂，但「电压升 3 倍，线损约变成九分之一」这一条不变。</p>
+<h2>书里的人和项目</h2>
+<p class="lede">书里点名的人、发明和工程，挑读懂这一页用得上的讲。按在书里出现的顺序排，节号是你在书里哪一节遇到它。</p>
+<h3><span class="sec">§1</span>伏打和他的电堆</h3>
+<div class="who"><div><b>Alessandro Volta</b><span class="en">1745–1827</span>意大利物理学家，电压的单位伏特用他的名字。在这一页里，他做出了第一个能连续供电的电池。</div></div>
+<p>伽伐尼解剖青蛙时看到蛙腿抽动。伏打看出这其实是电池的原理：两种金属中间夹着湿的东西，只不过夹的是生物组织。他改用银片和锌片，中间垫浸了水或盐水的纸板，一层层摞起来，1800 年公布。英文管它叫 pile，就是「一摞」。在这以前，存电只能靠莱顿瓶，一放就完；电堆能源源不断地供电，后面的法拉第才有电流可用。</p>
+<figure class="fig"><img src="../assets/img/04a-volta-pile.jpg" alt="玻璃展柜里一根竖着的圆柱：几十片灰色圆片一片叠一片，外面四根木棍围着，立在木座上，一侧垂着一条发绿的金属片" loading="lazy">
+<figcaption>一座伏打电堆，藏于意大利科莫的伏打神殿（Tempio Voltiano）。中间那一摞金属圆片就是 pile。<span class="src">Dario Crespi，CC BY-SA 4.0，维基共享资源</span></figcaption></figure>
+<h3><span class="sec">§2</span>法拉第和他的圆盘</h3>
+<div class="who"><div><b>Michael Faraday</b><span class="en">1791–1867</span>英国化学家、实验物理学家，戴维的学生，后来接替他主持英国皇家研究院。书里说许多人称他「电气工程之父」。</div></div>
+<p>他出身贫寒，做过装订学徒，听了戴维的讲座后去给他当助手，几乎不用数学，全凭实验和画图想问题。皇家研究院是伦敦的科研和科普机构。1821 年他让通电的导线绕着磁铁转，也让磁铁绕着导线转：电能做功。1831 年他发现电磁感应，美国的约瑟夫·亨利差不多同时也独立发现了；一个月内他造出法拉第圆盘，铜盘在强磁铁两极之间一转，就有电流：功能变成电。</p>
+<figure class="fig"><img src="../assets/img/04a-faraday-disk.jpg" alt="木底座上一个漆成红色的马蹄形大磁铁横架着，一个大铜圆盘竖着立在磁铁开口处，圆盘中心连着带木把手的曲柄" loading="lazy">
+<figcaption>法拉第圆盘的模型，东京国立科学博物馆。是后来做的展示模型，不是法拉第的原物。摇曲柄，铜盘在磁铁两极之间转，就能发电。<span class="src">Daderot，CC0，维基共享资源</span></figcaption></figure>
+<h3><span class="sec">§4</span>特斯拉、西屋和旋转磁场</h3>
+<div class="who"><div><b>Nikola Tesla</b><span class="en">1856–1943</span>塞尔维亚族发明家，生在当时的奥地利帝国，1884 年到美国，给爱迪生干过很短一段。书里说他 1888 年的旋转磁场是交流的真正突破。</div></div>
+<div class="who"><div><b>George Westinghouse</b><span class="en">1846–1914</span>美国发明家、企业家，靠铁路的空气制动起家，办了西屋电气，买下特斯拉的交流专利。书里只一句：他在美国推三相 60 赫的交流配电。</div></div>
+<p>在特斯拉以前，交流发电机已经有人造，可几台的波形对不齐，只能各自单独运转。特斯拉宣布：几路错开相位的交流通进几组线圈，能造出一个转动的磁场。书里把他的装置叫 induction alternator（感应交流发电机），讲的是它怎样发出两路、三路交流；他那几年最出名的其实是靠旋转磁场转起来的感应电动机，书里紧接着讲的就是它。有了能直接用交流的电动机，交流才不只能点灯。</p>
+<figure class="fig"><img src="../assets/img/04a-tesla-motor.jpg" alt="一台小机器：粗大的黑色圆环立在木座上，环里一圈圈绕着线圈，正中一个银色的转子筒，旁边一个透明盒子罩着几个接线柱" loading="lazy">
+<figcaption>特斯拉的感应电动机模型，为他 1887–88 年的专利做的，伦敦帝国理工学院藏。这是两相电机：两路交流在外面那圈线圈里造出旋转磁场，拖着中间的转子转，用不着会打火花的电刷。<span class="src">Romain Ramier，CC BY-SA 3.0，维基共享资源</span></figcaption></figure>
+<h3><span class="sec">§4</span>爱迪生和「电流之战」</h3>
+<div class="who"><div><b>Thomas Edison</b><span class="en">1847–1931</span>美国发明家、企业家。在这一页里，他是死守直流的一方，也是第一整套电灯照明系统的设计者。</div></div>
+<p>1880 年代末到 1890 年代初，爱迪生的直流和西屋、特斯拉的交流争市场，后人叫它「电流之战」（War of the Currents），书里没用这个名字。书里说，爱迪生以为工厂会买他的零件自己发电，没看到大电站和全国电网这一步，最后「不得不」改用交流；他还借公开用交流电处死动物，放大人们对交流的恐惧。史实另说一句：改用交流的是他的公司。1892 年，爱迪生通用电气和手握交流专利的汤姆孙–休斯顿公司合并成通用电气，由对方的 Charles Coffin 当总裁，爱迪生从此不再掌舵。</p>
+<h3><span class="sec">§5</span>大电站：英斯尔和费兰蒂</h3>
+<div class="who"><div><b>Samuel Insull</b><span class="en">1859–1938</span>生在伦敦，年轻时到美国给爱迪生当秘书，后来经营芝加哥爱迪生公司。</div></div>
+<div class="who"><div><b>Sebastian Ziani de Ferranti</b><span class="en">1864–1930</span>英国电气工程师，接下德特福德电站的设计时才二十出头。</div></div>
+<p>两人押的是同一个方向：电要集中在大电站里发。英斯尔看出大型中心电站发的电，比各家工厂自己发便宜；书里说他把公司从 1892 年芝加哥 12 家里最小的一家，做到 1920 年的 50 万户。费兰蒂早早押宝交流。书里说德特福德 1891 年成了第一座现代电站：高压交流送出，到用户那头降压，这套格局全世界至今在用。它的发电机出 2500 伏，升到 1 万伏送进伦敦城里，是高压交流的先驱。</p>
+<figure class="fig"><img src="../assets/img/04a-deptford.jpg" alt="黑白版画：泰晤士河边一座高大的砖砌厂房，两座方形大烟囱冒着黑烟，前景是泥滩、破船和几个干活的工人" loading="lazy">
+<figcaption>伦敦德特福德中心电站的东楼，1889 年 10 月《伦敦新闻画报》上的版画，不是照片。<span class="src">作者不详，公有领域，维基共享资源</span></figcaption></figure>
+<h3><span class="sec">§5</span>斯旺和爱迪生的灯泡</h3>
+<div class="who"><div><b>Joseph Wilson Swan</b><span class="en">1828–1914</span>英格兰东北纽卡斯尔一带的化学家、发明家，白炽灯的先驱之一。</div></div>
+<p>白炽灯是让电流把一根细丝烧到发白发光。书里说斯旺 1860 年就在用碳化的纸做灯丝，可真空抽不好、电也供不上，灯泡很快烧坏；到 1881 年他已拿到英国专利，给自家装上电灯，开了公司。1879 年初他在纽卡斯尔当众演示过白炽灯。爱迪生同一时期在美国做灯泡，书里说他的灯丝是铜的，其实是碳丝。两人后来在英国打专利官司，1883 年合组一家公司，通称 Ediswan。</p>
+<figure class="fig"><img src="../assets/img/04a-edison-lamp.jpg" alt="黑白老照片：一只梨形玻璃泡立在木座上，泡顶有尖尖的封口，泡里一根细丝弯成拱形" loading="lazy">
+<figcaption>爱迪生约 1880 年造的碳丝白炽灯，照片刊于 1910 年的《Popular Electricity》杂志。泡里那根拱形的是碳丝（这一只已经烧断），不是铜丝。<span class="src">Joseph E. Hinds，公有领域，维基共享资源</span></figcaption></figure>
+<h3><span class="sec">§5</span>珍珠街电站</h3>
+<p>爱迪生要拿电灯取代煤气灯：煤气耗氧、有毒、熏黑墙壁，有时还会爆炸。他卖的是一整套：新的发电机、并联电路（每盏灯各开各关）、地下电缆、电表、保险丝、开关、插座。纽约珍珠街电站 1882 年 9 月 4 日开始供电，送的是 110 伏<b>直流</b>，书里放在交流胜出之后讲，没说这一点。书里给的台数、灯数、户数没说是哪个时点；常见记载是开张时八十来户、约 400 盏灯，到 1884 年五百多户、一万多盏灯，书里的数落在两者之间。</p>
+<figure class="fig"><img src="../assets/img/04a-jumbo.jpg" alt="旧书里的版画：一台又长又矮的大机器，左边是带飞轮的蒸汽机，右边是一个方方正正的大发电机，上面横卧着几根圆筒" loading="lazy">
+<figcaption>旧书插图里的 Jumbo：爱迪生能点 1500 盏灯的 110 伏蒸汽发电机，左边的蒸汽机直接带着右边的发电机转。图下原有的说明说，1882 年这种机组装在伦敦霍尔本高架桥、米兰和纽约珍珠街的电站。这些电站送的都是直流。<span class="src">Wellcome Collection，CC BY 4.0，维基共享资源</span></figcaption></figure>
+<h3><span class="sec">§6</span>英国的国家电网</h3>
+<p>书里说 1918 年光伦敦一地就有 70 家供电机构、50 种系统、10 种频率、24 种电压。1926 年英国议会立法成立中央电力局（Central Electricity Board），建起 132 千伏、50 赫的全国交流电网：1933 年各地区电网连起来，1938 年作为一个全国系统运行。后来又加了 275 千伏、400 千伏的线路。书里的 denationalized 是英式说法，就是私有化。美国的大陆电网约 30 万公里线路，由约 500 家公司经营。</p>
+<figure class="fig"><img src="../assets/img/04a-pylon.jpg" alt="傍晚紫蓝色的天空下仰拍一座钢格子输电铁塔，塔身越往上越窄，三层横担两端各挂一串长长的绝缘子，几组导线斜穿画面" loading="lazy">
+<figcaption>英格兰格洛斯特郡奥斯特（Aust）附近的一座输电铁塔，2006 年摄。是今天的铁塔，不是 1930 年代英国电网最早那批。横担下垂着的长串是绝缘子，电压越高，串越长。<span class="src">Yummifruitbat，CC BY-SA 2.5，维基共享资源</span></figcaption></figure>
+<h2>原文里的词和句</h2>
+<p class="lede">读英文原书时值得停一下的词和句：工程里的熟词生义、英式说法、作者的比喻。灰色斜体是原句里连续的几个词，在 Kindle 里搜它就能找到；标「每个字都认识」的，是每个词都眼熟、合起来意思却变了的，最容易读错。点「记下」收进词本。</p>
+<div class="entry"><div class="en">opposites attract</div><div class="loc" data-p="1">… Do opposites attract? There is some …</div><div class="zh">异性相吸；性格相反的人互相吸引</div><div class="note">英语谚语，多说人。作者拿它开头，一语双关：先说择偶，再说磁铁的南北极。</div></div>
+<div class="entry trap"><div class="en">charge</div><div class="loc" data-p="3">… electric charge is a property of …</div><div class="zh">电荷</div><div class="note">日常是收费、冲锋、充电。be charged 是带电，negatively charged 带负电。</div></div>
+<div class="entry trap"><div class="en">effectively</div><div class="loc" data-p="6">… were effectively the first batteries or …</div><div class="zh">实际上，等于是</div><div class="note">不是「有效地」。这里说莱顿瓶虽然不叫电池，干的却是电池、电容器的活。</div></div>
+<div class="entry trap"><div class="en">be dubbed</div><div class="loc" data-p="9">… physicist who is dubbed by many …</div><div class="zh">被（人们）称为</div><div class="note">dub 常见义是配音。dubbed by many 说明是别人给的称号，不是作者自己的评价。</div></div>
+<div class="entry trap"><div class="en">no sooner … than</div><div class="loc" data-p="11">… No sooner had he done this, …</div><div class="zh">刚……就……</div><div class="note">句首 No sooner 要倒装（had he done）。意思是法拉第刚做出来，皮克西马上就跟上了。</div></div>
+<div class="entry trap"><div class="en">self-excited</div><div class="loc" data-p="13">… was self-excited, i.e. some of …</div><div class="zh">自励的</div><div class="note">excite 在电机里是「励磁」：给电磁铁通电让它有磁性，不是「使兴奋」。</div></div>
+<div class="entry"><div class="en">usher in</div><div class="loc" data-p="14">… use of electricity was ushered in …</div><div class="zh">开启，迎来（新时代）</div><div class="note">usher 是剧院的引座员，引申为把新东西「领进门」。</div></div>
+<div class="entry"><div class="en">from infancy to adolescence</div><div class="loc" data-p="14">… engineering moved from infancy to adolescence.</div><div class="zh">从婴儿期长到了青春期</div><div class="note">作者的比喻：电气工程刚起步，进入了长得飞快、还没成熟的阶段。</div></div>
+<div class="entry trap"><div class="en">out of step</div><div class="loc" data-p="15">… currents which are out of step.</div><div class="zh">（几路交流）相位错开</div><div class="note">本义是步子不齐，第 2 章有 in step。这里指几路交流峰谷不同时到，物理里更常说 out of phase。</div></div>
+<div class="entry"><div class="en">workhorse</div><div class="loc" data-p="16">… unglamorous workhorses driving untold numbers of …</div><div class="zh">不起眼却干活最多的主力</div><div class="note">本义是役马。unglamorous 不光鲜，untold numbers 多得数不清。</div></div>
+<div class="entry trap"><div class="en">in series</div><div class="loc" data-p="17">… has to be in series with …</div><div class="zh">串联</div><div class="note">series 日常是系列、连续剧。串联的东西流过同一股电流，电压分着用。并联是 in parallel。</div></div>
+<div class="entry trap"><div class="en">step up</div><div class="loc" data-p="17">… then stepped up to a high …</div><div class="zh">（用变压器）升压</div><div class="note">反义 step down 降压。变压器英文里也分 step-up transformer 和 step-down transformer。</div></div>
+<div class="entry trap"><div class="en">load</div><div class="loc" data-p="17">… near the electrical demands or loads, …</div><div class="zh">负载，用电的那一头</div><div class="note">不是「装载、货物」。电路里的 load 是灯、电机这些吃电的东西；结构里的 load 是荷载。</div></div>
+<div class="entry trap"><div class="en">move on</div><div class="loc" data-p="18">… But Edison moved on, and the …</div><div class="zh">（不再纠缠）转去做别的</div><div class="note">不是「往前走」。这里说爱迪生放下了交直流之争，后面交流的事由英斯尔接着办。</div></div>
+<div class="entry trap"><div class="en">parallel circuit</div><div class="loc" data-p="21">… a parallel circuit to allow many …</div><div class="zh">并联电路</div><div class="note">parallel 日常是平行。并联时每盏灯各接一路，关掉一盏，别的照亮；家里的电线都是并联的。</div></div>
+<div class="entry"><div class="en">bits and pieces</div><div class="loc" data-p="21">… all the bits and pieces for …</div><div class="zh">零零碎碎的各样东西</div><div class="note">口语。这里指一套供电系统要用到的全部零部件：电缆、电表、保险丝、开关、插座。</div></div>
+<div class="entry"><div class="en">denationalize</div><div class="loc" data-p="23">… nationalized in 1947 and denationalized in 1989 …</div><div class="zh">（把国有企业）私有化</div><div class="note">英式说法，今天更常说 privatize。</div></div>
+<div class="entry trap"><div class="en">head</div><div class="loc" data-p="24">… to turn low-pressure head turbines.</div><div class="zh">水头（上下游水位的落差）</div><div class="note">水力发电的术语，落差越大，水头越高。潮汐电站落差小，用的是低水头水轮机。</div></div>
+<h2>读完：作者到底说了什么</h2>
+<p class="lede">下面是作者在这一页里的主张，本站按主张之间的逻辑重排，不按原书顺序；每条后面是节号，拿不准就回书里那一节再读一遍。</p>
+<div class="claims">
+  <div class="claim"><h4>法拉第把电和功接上了：电能做功，功也能变成电</h4><p>他先让通电的导线绕着磁铁转，再发现变化的电流能在另一个线圈里感应出电流，接着造出发电机。「电气工程之父」这个称呼，作者说是许多人给的。</p><span class="sec" data-p="9 10">§2</span></div>
+<blockquote class="quote">He had demonstrated that mechanical work could be converted into electricity.<cite>— §2。本站译：他证明了机械功可以变成电。</cite></blockquote>
+  <div class="claim"><h4>发电机和电动机是同一种机器，交流是转出来的天然产物</h4><p>线圈对着磁铁转，电流方向每半圈翻一次，天然是交流；那时人们偏爱直流，只好加换向器翻过来。帕奇诺蒂的机器既能发电又能当电动机；作者说电动机就是倒过来的发电机。</p><span class="sec" data-p="11 14 16">§2 §3 §4</span></div>
+  <div class="claim"><h4>交流赢在变压器</h4><p>直流只能按负载要的电压发，送不远；给低压的灯配高压电源，只能串电阻白烧。线损是电流的平方乘电阻，同样的功率用高电压、小电流送，损耗就小，变压器让交流能升压送出、到用户那头再降下来。高压的代价是绝缘和安全。</p><span class="sec" data-p="15 17">§4</span></div>
+<blockquote class="quote">But the development of the transformer was pivotal for AC.<cite>— §4。本站译：而变压器的发展对交流是决定性的。</cite></blockquote>
+  <div class="claim"><h4>交流让电站变大、连成网，也造出了电气工程师这一行</h4><p>大型中心电站比各家自己发电便宜；1890 年代起，交流能把电送到很大一片地方，发电机不必挨着用电的地方，一种新的工程师出现了。英国 1926 年起建 132 千伏、50 赫的全国交流电网，收拾一地几十家各自为政的局面。</p><span class="sec" data-p="18 19 22 23">§5 §6</span></div>
+  <div class="claim"><h4>发电机靠什么转都行，电网的电主要来自热机</h4><p>各国电网的电主要来自热机带动的发电机，多是蒸汽推汽轮机；不过只要能转动电枢，风车、水轮也行。热电联产把废热也用上，总效率超过七成。</p><span class="sec" data-p="24">§6</span></div>
+</div>
+<p class="sowhat"><b>合起来：</b>这一页讲电怎样成了一种能大规模生产、远距离送的「功」。法拉第打通了功和电，交流和变压器解决了「送」，大电站和电网解决了「便宜」。作者讲成一条进步的路，转折点是变压器。</p>
+<h2>今天怎么看</h2>
+<p class="lede">书 2012 年出版。下面挑出这一页里能被后来的研究或事情检验的说法，分「书里 / 当时 / 今天」几栏，并给一个结论。结论判的是标题里「书里的说法：」后面那一句。全书的这一节汇总在<a href="../today.html">今天怎么看</a>。</p>
+<ul class="verdicts"><li><span class="v ok">成立</span>后来的研究或事情支持这句话。</li><li><span class="v mid">部分成立</span>大方向对，细节或适用范围要改。</li><li><span class="v bad">被改写</span>后来的研究推翻了它、换了一种说法，或者情况变了。</li><li><span class="v dis">有争议</span>至今没有定论，两边各有代表性的研究或证据。</li></ul>
+<div class="today" data-verdict="被改写"><h4>书里的说法：直流只能送比较短的距离</h4><dl>
+  <dt>书里</dt><dd>交流胜出以前人们更喜欢直流，可直流只能送比较短的距离；交流靠变压器能升压送远，所以赢了。<span class="at" data-p="15 17">§4</span></dd>
+  <dt>当时</dt><dd>直流送不远，是因为 19 世纪没有办法给直流升压。20 世纪中叶起，大功率的换流设备能把交流整成直流、到另一头再变回交流，高压直流（HVDC）用在了海底电缆和超远距离输电上。</dd>
+  <dt>今天</dt><dd>2019 年初，中国的昌吉—古泉 ±1100 千伏特高压直流线路投运，从新疆送到安徽，约 3300 公里，输送能力 1200 万千瓦，项目方称电压、容量、距离都是世界之最。限制直流的从来不是直流本身，是当年没有升压的办法；今天送得最远的线恰恰是直流。<span class="asof">核对于 2026-11。依据：Enerdata、Power Line 2019 年 1 月关于国家电网投运昌吉—古泉工程的报道；eeNews Europe 关于 ABB 换流变压器的报道。</span></dd>
+</dl></div>
+<div class="today" data-verdict="部分成立"><h4>书里的说法：各国电网的电主要来自热机带动的发电机</h4><dl>
+  <dt>书里</dt><dd>多是蒸汽推汽轮机，蒸汽靠烧煤、油、气、生物质或核裂变；风、水、潮汐也能转发电机。光伏这类 3–10 千瓦的小发电是有用的补充。<span class="at" data-p="24 25">§6</span></dd>
+  <dt>当时</dt><dd>从 19 世纪 80 年代起，电站的发电机一直主要靠蒸汽机、后来靠汽轮机转。英国第一座烧煤的公用电站是 1882 年爱迪生在伦敦开的霍尔本高架桥电站。</dd>
+  <dt>今天</dt><dd>2024 年 9 月 30 日，英国关掉最后一座燃煤电站拉特克利夫（Ratcliffe-on-Soar），结束了 142 年的煤电，是七国集团里第一个不再烧煤发电的国家。光伏的变化更大：2024 年底全球光伏装机超过 2.2 太瓦，一年新装六百吉瓦上下；IRENA 统计，十几年里光伏电站的单位造价降了近九成。全球算总账，2024 年化石燃料发电约占 59%、核电约 9%，热机带动的发电机仍供着约七成的电：「主要」二字还站得住，只是在松动，一年新装几百吉瓦的光伏根本不用转动的发电机。<span class="asof">核对于 2026-11。依据：CBS News、ITV 2024 年 9–10 月关于拉特克利夫关停的报道；IEA PVPS, Snapshot of Global PV Markets 2025；IRENA, Renewable Power Generation Costs in 2024；Ember, Global Electricity Review 2025。</span></dd>
+</dl></div>
+<h2>本站怎么看</h2>
+<p class="lede">读完作者的主张，再看它站不站得住。每一块摆出三样：主流怎么看，作者怎么看，本站的评论。最后一句是本站对这一页的总体判断。</p>
+<div class="views"><h4>交流打败直流，不是一个人看错了</h4>
+<p><b>主流看法：</b>技术史一般把交流胜出讲成几样东西一起到位：能升降压的变压器，能直接用交流的电动机，能把许多用户连起来的大电站。1880 年代的直流也有它的道理：电压低、较安全，电表、电动机现成。商业上的结局是 1892 年的合并：爱迪生通用电气和握有交流专利的汤姆孙–休斯顿合成通用电气，总裁是汤姆孙–休斯顿的 Charles Coffin，爱迪生失去了对公司的控制。</p>
+<p><b>作者的看法：</b>爱迪生死守小规模直流，看不到大电站和全国电网这一步，最后不得不改用交流。<span class="at" data-p="17">§4</span></p>
+<p class="ours"><b>本站的评论：</b>书把输赢讲成一个人的眼光，读起来痛快，但容易让人记成「直流是错的」。直流的毛病是那时没法升压；一旦电力电子能给直流升降压，最长的输电线反而用直流。你手里的手机、电脑、LED 灯，屋顶的光伏板和电池，内部都是直流。交流赢下的是 20 世纪的电网，赢在当时的配套条件。</p></div>
+<div class="views"><h4>「第一」是挑出来的</h4>
+<p><b>主流看法：</b>斯旺 1879 年初就在纽卡斯尔演示白炽灯；斯旺和爱迪生在英国为专利起了纠纷，两家 1883 年合组 Ediswan。爱迪生的霍尔本高架桥电站和珍珠街电站 1882 年就开始对外供电，是最早的一批公用电站，送的是低压直流；德特福德 2500 伏发电、升到 1 万伏送，是高压交流电站的先驱。</p>
+<p><b>作者的看法：</b>德特福德 1891 年是第一座现代电站，高压交流送出、到用户那头降压，这套格局沿用至今。<span class="at" data-p="19">§5</span></p>
+<p class="ours"><b>本站的评论：</b>第一座公用电站、第一座高压交流电站、第一只白炽灯、第一只能卖的白炽灯，答案各不相同。作者给德特福德的限定词是「现代」，理由是它的格局今天还在用，这个理由站得住。读这一页的一长串「第一」，看它后面跟的是哪个限定词。</p></div>
+<p class="verdict"><b>本站的总体看法：</b>§2 和 §4 最值得读：感应把功和电接上，变压器和线损的账说明了电网为什么长成今天这样。其余是发现史清单，几处年份和细节不准（如铜丝）。交流胜出别读成爱迪生个人的失败，今天的直流输电正好是反例。</p>
+<h2>检查一下理解</h2>
+<p class="lede">先在心里答，再点开。答错的那题，回书里把对应那一节再读一遍。</p>
+<details class="check"><summary>1.（§2）两个线圈挨着放，一个通上稳定的直流，另一个里面有电流吗？什么时候才有？</summary><p>没有。只有第一个线圈的电流在变（接通、断开、变大变小）时，它的磁场在变，第二个线圈里才感应出电流。</p></details>
+<details class="check"><summary>2.（§2）线圈在磁铁旁边转，为什么发出来的天然是交流？</summary><p>线圈每转半圈，它的两条边切磁场的方向就翻一次，电流的方向也跟着翻。要直流，得加换向器每半圈把引线对调。</p></details>
+<details class="check"><summary>3.（§4）送 10 兆瓦，电压从 11 千伏升到 33 千伏，线上的发热变成原来的多少？</summary><p>电流变成三分之一，发热跟着电流的平方走，变成九分之一。5 欧的线上，从约 4130 千瓦降到约 459 千瓦。</p></details>
+<details class="check"><summary>4.（§4）直流时代，一台 240 伏的发电机要给 120 伏的灯供电，怎么办？浪费多少？</summary><p>串一个电阻（或再串一盏 120 伏的灯）把多出的 120 伏吃掉。电阻和灯流过同一股电流、各分 120 伏，一半的电在电阻上变成热。</p></details>
+<details class="check"><summary>5.（§4）为什么变压器只对交流管用？</summary><p>变压器靠一组线圈里变化的磁场在另一组里感应出电压。直流的磁场不变，另一组感应不出东西。</p></details>
+<details class="check"><summary>6.（§5）珍珠街电站送的是交流还是直流？德特福德凭什么叫「第一座现代电站」？</summary><p>珍珠街（1882）是 110 伏直流。德特福德（1891）用高压交流送出、到用户那头降压，这套格局今天还在用。</p></details>
+<details class="check"><summary>7.（§6）热电联产为什么总效率能超过七成，普通火电站只有四成上下？</summary><p>普通电站把发电剩下的热直接排掉；热电联产把这些热拿去产蒸汽、供热水，同一份燃料用了两回。</p></details>
+<p>用一句话说这一页：</p>
+<textarea class="note" data-key="04a-oneline" rows="2" placeholder="比如：……"></textarea>
+<div class="ponder"><p>想一想：家里插座给的是交流，可手机、电脑、LED 灯里面用的都是直流。你身边哪些东西带着一个把交流变成直流的「小方块」？如果当年赢的是直流，今天的电网会是什么样？</p>
+<textarea class="note" data-key="04a-ponder" rows="3"></textarea></div>
+<h2>精彩回顾</h2>
+<p class="lede">读过又忘了，从这里想起来。挑的是这一页最值得记住的例子和说法，不按原书顺序；每条后面是节号，想细看就回书里那一节。全书各页的这一节都收在<a href="../recap.html">全书回顾</a>。</p>
+<p class="recall-line"><b>一句话：</b>变化的磁场生出电流，功和电从此能互换；交流靠变压器升压送远，因为线上的发热跟着电流的平方走。</p>
+<div class="recall">
+  <div class="item"><b>只有变化才感应</b><p>法拉第发现，稳定的电流在旁边的线圈里什么也感应不出，电流一变才有。一个月后他造出铜盘发电机。</p><span class="sec">§2</span></div>
+  <div class="item"><b>电动机是倒过来的发电机</b><p>线圈在磁场里转就发电，给线圈通电它就转。转出来的天然是交流，直流要靠换向器翻。</p><span class="sec">§2</span></div>
+  <div class="item"><b>电压升 3 倍，线损剩九分之一</b><p>送同样多的电，电压越高电流越小，线上发热跟着电流的平方降。132 千伏升到 400 千伏，烧掉的约剩九分之一。</p><span class="sec">§4</span></div>
+  <div class="item"><b>串个电阻，白烧一半</b><p>直流时代给 120 伏的灯接 240 伏电源，只能串电阻吃掉多的电压。变压器让交流不必这么浪费。</p><span class="sec">§4</span></div>
+  <div class="item"><b>珍珠街是直流站</b><p>爱迪生 1882 年的珍珠街电站送 110 伏直流，比特斯拉、德特福德都早；他的灯丝是碳丝，不是书里写的铜丝。</p><span class="sec">§5</span></div>
+  <div class="item"><b>英国关掉了最后一座煤电站</b><p>2024 年拉特克利夫关停，英国 142 年的煤电到此为止。书里「电网主要靠热机」的格局正在松动。</p><span class="sec">§6</span></div>
+</div>
+</main>
+<script>
+(() => {
+  // 高压送电：送功率 P、线路电阻 R、输电电压 V。线上电流 I = P / V，线损 = I² × R，占比 = P·R / V²。简化模型：不算线上的电压降、三相、功率因数和变压器损耗。
+  // 默认 10 MW、5 Ω、132 kV 复现底稿 d-sim.py：76 A、28.7 kW、0.29%；400 kV：25 A、3.1 kW、0.031%（约九分之一）；11 kV：909 A、4.13 MW、41%；240 V：41,667 A，线损 8,681 MW，送不过去。确定性，没有随机数。
+  const root = document.getElementById("sim-04a");
+  if (!root || !window.EG) return;
+  const { h, chart } = window.EG;
+  const BOOK = { P: "10", R: "5", V: "132000" };
+  const st = Object.assign({}, BOOK);
+  const LV = [["240", "240 伏（英国家用）"], ["11000", "11 千伏"], ["33000", "33 千伏"], ["132000", "132 千伏（1926 年电网）"], ["275000", "275 千伏（1949 年）"], ["400000", "400 千伏（1965 年）"]];
+  const OPTS = {
+    P: { label: "要送多少电", list: [["1", "1 兆瓦"], ["5", "5 兆瓦"], ["10", "10 兆瓦"], ["50", "50 兆瓦"], ["100", "100 兆瓦"]] },
+    R: { label: "线路电阻", list: [["1", "1 欧"], ["2", "2 欧"], ["5", "5 欧"], ["10", "10 欧"], ["20", "20 欧"]] },
+    V: { label: "输电电压", list: LV },
+  };
+  const sels = {};
+  const ctrl = (k) => {
+    const s = h("select", { "aria-label": OPTS[k].label, onchange: () => { st[k] = s.value; draw(); } }, ...OPTS[k].list.map(([v, t]) => h("option", { value: v }, t)));
+    sels[k] = s;
+    return h("label", {}, OPTS[k].label, s);
+  };
+  const reset = h("button", { onclick: () => { Object.assign(st, BOOK); draw(); } }, "回到 132 千伏");
+  const plot = h("div");
+  const levels = h("div", { class: "levels" });
+  const stage = h("div", { class: "stage" }, h("p", { class: "cap" }, "线上烧掉的电占送出的百分之几，横轴是输电电压（千伏）"), plot, h("p", { class: "cap" }, "六档电压各烧掉多少（功率、电阻同上）"), levels);
+  const narrate = h("div", { class: "narrate" });
+  const stats = h("div", { class: "stats" });
+  const body = root.querySelector(".sim-body");
+  body.innerHTML = "";
+  body.append(h("div", { class: "controls" }, ctrl("P"), ctrl("R"), ctrl("V"), reset), stage, narrate, stats);
+
+  const vname = (v) => (v < 1000 ? `${v} 伏` : `${v / 1000} 千伏`);
+  const grp = (n) => String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  const fW = (w) => (w < 1e3 ? `${w < 10 ? w.toFixed(1) : Math.round(w)} 瓦` : w < 1e6 ? (w < 1e5 ? `${(w / 1e3).toFixed(1)} 千瓦` : `${Math.round(w / 1e3)} 千瓦`) : (w < 1e7 ? `${(w / 1e6).toFixed(2)} 兆瓦` : `${grp(w / 1e6)} 兆瓦`));
+  const fPct = (p) => (p >= 100 ? "送不过去" : p >= 10 ? String(Math.round(p)) : p >= 1 ? p.toFixed(1) : p >= 0.1 ? p.toFixed(2) : p.toFixed(3));
+  const fGot = (p) => (p >= 100 ? "0" : p < 1 ? (100 - p).toFixed(2) : (100 - p).toFixed(1));
+  const f2 = (x) => (Math.round(x * 100) / 100).toString();
+  function calc(P, R, V) { const I = P / V, loss = I * I * R; return { I, loss, pct: (loss / P) * 100 }; }
+  function draw() {
+    for (const k in sels) sels[k].value = st[k];
+    const P = Number(st.P) * 1e6, R = Number(st.R), V = Number(st.V), r = calc(P, R, V);
+    const data = [];
+    for (let kv = 0; kv <= 400; kv += 2) data.push(kv === 0 ? 100 : Math.min(100, calc(P, R, kv * 1000).pct));
+    const g = chart(plot, { series: [{ name: "线上烧掉的比例", data, c: 2 }], xlabel: "输电电压（千伏）", ylabel: "%", dt: 2, ymin: 0, ymax: 100, marks: [{ x: V / 1000 }], title: "线上烧掉的比例随输电电压变化" });
+    const NS = "http://www.w3.org/2000/svg", px = g.x(V / 1000 / 2), py = g.y(Math.min(100, r.pct));
+    const dot = document.createElementNS(NS, "circle");
+    dot.setAttribute("cx", px); dot.setAttribute("cy", py); dot.setAttribute("r", 5); dot.setAttribute("class", "f2");
+    const lab = document.createElementNS(NS, "text");
+    const right = V > 250000;
+    lab.setAttribute("x", right ? px - 8 : px + 8); lab.setAttribute("y", r.pct >= 100 ? py + 18 : py - 10); lab.setAttribute("text-anchor", right ? "end" : "start"); lab.setAttribute("class", "t-b");
+    lab.textContent = `${vname(V)}：${r.pct >= 100 ? "送不过去" : fPct(r.pct) + "%"}`;
+    g.svg.append(dot, lab);
+    levels.replaceChildren(...LV.map(([v]) => {
+      const q = calc(P, R, Number(v));
+      return h("div", { class: `row${Number(v) === V ? " on" : ""}` }, h("span", { class: "l" }, vname(Number(v))), h("span", { class: "track" }, h("span", { class: "bar", style: `width: ${Math.max(0.5, Math.min(100, q.pct)).toFixed(1)}%` })), h("span", { class: "n" }, q.pct >= 100 ? "送不过去" : `${fPct(q.pct)}%`));
+    }));
+    const parts = [];
+    if (r.pct >= 100) {
+      parts.push(`用 ${vname(V)} 送 ${st.P} 兆瓦，电流要 ${grp(r.I)} 安。照「线损 = 电流² × 电阻」算，线上该烧掉 ${fW(r.loss)}，是要送的 ${grp(r.loss / P)} 倍：意思是这么低的电压，这条线根本送不过去。真接上去，电压几乎全掉在线上，那头什么也点不亮。`);
+    } else {
+      parts.push(`用 ${vname(V)} 送 ${st.P} 兆瓦，线上电流 ${grp(r.I)} 安，路上烧掉 ${fW(r.loss)}，占 ${fPct(r.pct)}%，到用户手里的是 ${fGot(r.pct)}%。`);
+      if (r.pct >= 10) parts.push(`${fPct(r.pct)}% 的电烧在路上，没人这样送电：要么升电压，要么少送一点、送近一点。`);
+    }
+    if (V !== 132000) {
+      const k = V / 132000, back = 1 / (k * k);
+      if (k > 1) parts.push(`和同样功率、电阻下用 132 千伏送比：电压是它的 ${f2(k)} 倍，电流只有它的 ${f2(1 / k)}，线损只剩它的 ${back.toFixed(3)}${Math.abs(back - 1 / 9) < 0.01 ? "，约九分之一" : ""}。线损跟着电流的平方走。`);
+      else parts.push(`和同样功率、电阻下用 132 千伏送比：电压只有它的 ${k < 0.01 ? k.toFixed(4) : f2(k)}，电流是它的 ${grp(1 / k)} 倍，线损是它的 ${grp(back)} 倍。线损跟着电流的平方走。`);
+    } else parts.push("电压是英国 1926 年建全国电网时用的 132 千伏。");
+    if (st.P !== BOOK.P || st.R !== BOOK.R) parts.push("烧掉的比例 = 功率 × 电阻 ÷ 电压²：送得越多、线越长，就越需要更高的电压。");
+    narrate.textContent = parts.join("");
+    stats.innerHTML = "";
+    const box = (v, l) => h("div", { class: "stat" }, h("div", { class: "v" }, v), h("div", { class: "l" }, l));
+    stats.append(box(grp(r.I), "线上电流（安）"), box(fW(r.loss), "路上烧掉"), box(fPct(r.pct), "烧掉的比例（%）"), box(fGot(r.pct), "到用户手里（%）"));
+  }
+  draw();
+})();
+</script>
+</body>
+</html>

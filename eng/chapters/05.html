@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 5 章 · 工程导读</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/chapters.js"></script>
+<script src="../assets/eg.js"></script>
+<style>
+#sim-05 .cap { font-size: 13px; color: var(--muted); margin: 2px 0 8px; }
+#sim-05 svg polygon { stroke: var(--surface); stroke-width: 1.5; fill-opacity: 0.28; }
+#sim-05 svg polygon.one { fill-opacity: 0.8; }
+#sim-05 svg text { font-size: 12px; }
+#sim-05 .g1 { fill: var(--c1); } #sim-05 .g2 { fill: var(--c2); } #sim-05 .g3 { fill: var(--c3); } #sim-05 .g4 { fill: var(--c4); }
+#sim-05 .g5 { fill: var(--c5); } #sim-05 .g6 { fill: var(--c6); } #sim-05 .g7 { fill: var(--c7); } #sim-05 .g8 { fill: var(--c8); }
+#sim-05 .g9 { fill: var(--c2); } #sim-05 .g10 { fill: var(--c3); } #sim-05 .g11 { fill: var(--c4); } #sim-05 .g12 { fill: var(--c6); }
+</style>
+</head>
+<body data-page="05">
+<main>
+<h2>这一页在做什么</h2>
+<div class="gist"><p>第 5 章是作者五个「时代」里的第四个：信息的时代，副标题是「变小」。他念大学时一屋子电子管的计算机，算力还不如今天外衣口袋里的手机。他先讲手机怎样接通：城市切成小区，同一批频率反复用。再讲晶体管怎样用小电压管住大电流，花三段拆开一只双极管。后半章从「只认两种状态」讲到逻辑门和触发器计数，两次说功能是从连接方式里「涌现」的，给第 6 章埋伏笔。最后望向云计算、量子计算和纳米医学。</p></div>
+<figure class="fig"><img src="../assets/img/05-pegasus.jpg" alt="博物馆展厅里一排粉褐色漆面的大柜子，像几个并排的大衣柜，柜门上有门把手，正面挂一只圆钟，下面一块带两个圆表和一排开关的控制面板；前面一张长桌，桌上几台读纸带和打纸带的机器" loading="lazy">
+<figcaption>费兰蒂（Ferranti）公司同一时代的另一型电子管计算机 Pegasus，伦敦科学博物馆。作者念书时用的是同一家公司的 Mercury，维基共享资源上没有能用的照片，这台是它的同门。几个并排的大柜子，正好是作者说的「衣柜」。<span class="src">LeoNerd，公有领域，维基共享资源</span></figcaption></figure>
+<h2>读之前：这一页在全书的哪里</h2>
+<div class="linehere"></div>
+<p>第 4 章讲电磁的时代：发电、送电，再到无线电，最后讲到电子管能放大信号、载波能驮着声音走。这一章接着往下：作者把信息革命的种子放在 20 世纪初用电磁学的新发现传信息，把真正的起点放在晶体管。读法和前几章不同，这一章的东西程序员天天在用，难的是硬件那一面。下一章是最后一个时代，系统；这一章两次出现的「涌现」，到那里才展开。</p>
+<div class="heads-up"><p>别被带歪：§1 讲手机怎么接通，用的是第一代模拟手机的做法，一个电话占一对频率；今天的 4G、5G 不这样分频率。§3 细讲的双极晶体管，也不是今天 CPU 里成亿个的那种（场效应管）。小区、复用、「小电压管大电流」这些道理没变。</p></div>
+<div class="crux"><p>一座城市只分到几百对频率，几百万部手机怎么同时打电话？</p></div>
+<p class="lede">读的时候带着这几个问题，读完回来对照「检查一下理解」。</p>
+<ol class="qs">
+  <li>手机的发射功率很小，为什么作者说这反倒是好处？<span class="sec">§1</span></li>
+  <li>晶体管拿什么管住一股大电流？它和水管上的阀门像在哪里？<span class="sec">§2</span></li>
+  <li>数字电路为什么只用两种状态？<span class="sec">§5</span></li>
+  <li>作者说逻辑门的行为是从晶体管的接法里「涌现」出来的，他指的是什么？<span class="sec">§5</span></li>
+</ol>
+<h2>分节地图</h2>
+<p class="lede">原书这一章没有小标题，一口气写下来。下面的节是本站按段落分的：粗体是本站起的节名，后面是档和英文词数；再下面是这一节开头的几个英文词，在 Kindle 里搜它就能跳过去。读完打个勾。</p>
+<ol class="secmap">
+  <li data-sec="1"><span class="what">引子：一屋子的计算机和口袋里的手机。后半讲手机怎样接通：小区、频率复用、切换。这是第一代模拟手机的讲法，配模拟器读。</span></li>
+  <li data-sec="2"><span class="what">晶体管登场：小电压管大电流，像阀门管水。留意 valve 在 §1 是电子管，到这里成了阀门。掺杂和空穴配概念块读。</span></li>
+  <li data-sec="3"><span class="what">作者自己说要细讲的一节：一只 npn 双极管里，耗尽层怎样随基极电压变薄。读不下去可以跳，记住「基极电压管住集电极电流」就够了。</span></li>
+  <li data-sec="4"><span class="what">集成电路和摩尔定律，然后一转：信息是一种图样，从 Hollerith 的穿孔卡讲到大型机。书里说 UNIVAC 在 1940 年代，它交付在 1951 年。</span></li>
+  <li data-sec="5"><span class="what">全章最要紧的两段：数字为什么只认两种状态；逻辑门和真值表。加了引号的 emerges 第一次出场，第 6 章会接着讲。</span></li>
+  <li data-sec="6"><span class="what">四个翻转触发器串起来数到十五。程序员读来是老朋友，配概念块里的时序图读，留意第二次 emerges。</span></li>
+  <li data-sec="7"><span class="what">浮点数、字节、ASCII，再列一长串数字化的应用。程序员可以跳。正文拿十进制讲指数，原书图 19 的位串里存的是 2 的幂；二进制怎么编，书后这一章的注释有个小例子。</span></li>
+  <li data-sec="8"><span class="what">IT 投入、光纤和云计算（转述 Nicholas Carr），再望向量子计算和纳米医学。书里说细胞 10 到 100 纳米，其实细胞是微米级，那是病毒的尺度。</span></li>
+</ol>
+<h2>先用中文过一遍：这一页的概念</h2>
+<p class="lede">先把这一页用到的几个概念用书外的例子讲一遍。作者拿它们推出什么，读原书时自己看。后面各页用到时会链回这里。</p>
+<div class="concept" id="c-cellular">
+<h3><span class="sec">§1</span>蜂窝网络和频率复用 <span class="en">cell, frequency reuse</span></h3>
+<p>一家运营商能用的无线电频率是管理部门分给它的，数量有限。第一代手机里一个电话要占一对频率，一个发、一个收，几百对频率只够几百个人同时打。办法是复用：手机发射功率小，信号出不了一个小区，隔开一段的小区就能用同一批频率。相邻小区不能同频，常见的做法是七个小区一组，一组把全部频率分完。小区切得越小，同一批频率在城里用的遍数越多。</p>
+<p>边打电话边走进隔壁小区，网络让手机换用那里的频率，这叫切换（handoff）。今天的 4G、5G 不再一个电话占一对频率：一段宽频带切成许多窄的小块，按需分给各个用户，相邻小区也常用同一段频带。</p>
+<figure class="fig">
+<svg class="diagram" viewBox="0 0 640 248" role="img" aria-label="蜂窝复用示意图：一片六边形小区，按七个一组编号 1 到 7，相邻小区编号不同；编号 1 的小区颜色深，分散在各处，隔得很远，用同一份频率。一个蓝色箭头从中间的 1 号小区走进隔壁的 2 号小区，表示切换"><defs><marker id="m05-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="f-a"/></marker></defs><polygon points="49.7,17.5 49.7,42.5 28.0,55.0 6.3,42.5 6.3,17.5 28.0,5.0" class="f2" fill-opacity="0.22"/><polygon points="93.0,17.5 93.0,42.5 71.3,55.0 49.7,42.5 49.7,17.5 71.3,5.0" class="f4" fill-opacity="0.22"/><polygon points="136.3,17.5 136.3,42.5 114.6,55.0 93.0,42.5 93.0,17.5 114.6,5.0" class="f3" fill-opacity="0.22"/><polygon points="179.6,17.5 179.6,42.5 157.9,55.0 136.3,42.5 136.3,17.5 157.9,5.0" class="f6" fill-opacity="0.22"/><polygon points="222.9,17.5 222.9,42.5 201.2,55.0 179.6,42.5 179.6,17.5 201.2,5.0" class="f-a" fill-opacity="0.22"/><polygon points="266.2,17.5 266.2,42.5 244.5,55.0 222.9,42.5 222.9,17.5 244.5,5.0" class="f5" fill-opacity="0.22"/><polygon points="309.5,17.5 309.5,42.5 287.8,55.0 266.2,42.5 266.2,17.5 287.8,5.0" class="f1" fill-opacity="0.55"/><polygon points="352.8,17.5 352.8,42.5 331.1,55.0 309.5,42.5 309.5,17.5 331.1,5.0" class="f2" fill-opacity="0.22"/><polygon points="396.1,17.5 396.1,42.5 374.4,55.0 352.8,42.5 352.8,17.5 374.4,5.0" class="f4" fill-opacity="0.22"/><polygon points="71.3,55.0 71.3,80.0 49.7,92.5 28.0,80.0 28.0,55.0 49.7,42.5" class="f5" fill-opacity="0.22"/><polygon points="114.6,55.0 114.6,80.0 93.0,92.5 71.3,80.0 71.3,55.0 93.0,42.5" class="f1" fill-opacity="0.55"/><polygon points="157.9,55.0 157.9,80.0 136.3,92.5 114.6,80.0 114.6,55.0 136.3,42.5" class="f2" fill-opacity="0.22"/><polygon points="201.2,55.0 201.2,80.0 179.6,92.5 157.9,80.0 157.9,55.0 179.6,42.5" class="f4" fill-opacity="0.22"/><polygon points="244.5,55.0 244.5,80.0 222.9,92.5 201.2,80.0 201.2,55.0 222.9,42.5" class="f3" fill-opacity="0.22"/><polygon points="287.8,55.0 287.8,80.0 266.2,92.5 244.5,80.0 244.5,55.0 266.2,42.5" class="f6" fill-opacity="0.22"/><polygon points="331.1,55.0 331.1,80.0 309.5,92.5 287.8,80.0 287.8,55.0 309.5,42.5" class="f-a" fill-opacity="0.22"/><polygon points="374.4,55.0 374.4,80.0 352.8,92.5 331.1,80.0 331.1,55.0 352.8,42.5" class="f5" fill-opacity="0.22"/><polygon points="417.7,55.0 417.7,80.0 396.1,92.5 374.4,80.0 374.4,55.0 396.1,42.5" class="f1" fill-opacity="0.55"/><polygon points="49.7,92.5 49.7,117.5 28.0,130.0 6.3,117.5 6.3,92.5 28.0,80.0" class="f3" fill-opacity="0.22"/><polygon points="93.0,92.5 93.0,117.5 71.3,130.0 49.7,117.5 49.7,92.5 71.3,80.0" class="f6" fill-opacity="0.22"/><polygon points="136.3,92.5 136.3,117.5 114.6,130.0 93.0,117.5 93.0,92.5 114.6,80.0" class="f-a" fill-opacity="0.22"/><polygon points="179.6,92.5 179.6,117.5 157.9,130.0 136.3,117.5 136.3,92.5 157.9,80.0" class="f5" fill-opacity="0.22"/><polygon points="222.9,92.5 222.9,117.5 201.2,130.0 179.6,117.5 179.6,92.5 201.2,80.0" class="f1" fill-opacity="0.55"/><polygon points="266.2,92.5 266.2,117.5 244.5,130.0 222.9,117.5 222.9,92.5 244.5,80.0" class="f2" fill-opacity="0.22"/><polygon points="309.5,92.5 309.5,117.5 287.8,130.0 266.2,117.5 266.2,92.5 287.8,80.0" class="f4" fill-opacity="0.22"/><polygon points="352.8,92.5 352.8,117.5 331.1,130.0 309.5,117.5 309.5,92.5 331.1,80.0" class="f3" fill-opacity="0.22"/><polygon points="396.1,92.5 396.1,117.5 374.4,130.0 352.8,117.5 352.8,92.5 374.4,80.0" class="f6" fill-opacity="0.22"/><polygon points="71.3,130.0 71.3,155.0 49.7,167.5 28.0,155.0 28.0,130.0 49.7,117.5" class="f2" fill-opacity="0.22"/><polygon points="114.6,130.0 114.6,155.0 93.0,167.5 71.3,155.0 71.3,130.0 93.0,117.5" class="f4" fill-opacity="0.22"/><polygon points="157.9,130.0 157.9,155.0 136.3,167.5 114.6,155.0 114.6,130.0 136.3,117.5" class="f3" fill-opacity="0.22"/><polygon points="201.2,130.0 201.2,155.0 179.6,167.5 157.9,155.0 157.9,130.0 179.6,117.5" class="f6" fill-opacity="0.22"/><polygon points="244.5,130.0 244.5,155.0 222.9,167.5 201.2,155.0 201.2,130.0 222.9,117.5" class="f-a" fill-opacity="0.22"/><polygon points="287.8,130.0 287.8,155.0 266.2,167.5 244.5,155.0 244.5,130.0 266.2,117.5" class="f5" fill-opacity="0.22"/><polygon points="331.1,130.0 331.1,155.0 309.5,167.5 287.8,155.0 287.8,130.0 309.5,117.5" class="f1" fill-opacity="0.55"/><polygon points="374.4,130.0 374.4,155.0 352.8,167.5 331.1,155.0 331.1,130.0 352.8,117.5" class="f2" fill-opacity="0.22"/><polygon points="417.7,130.0 417.7,155.0 396.1,167.5 374.4,155.0 374.4,130.0 396.1,117.5" class="f4" fill-opacity="0.22"/><polygon points="49.7,167.5 49.7,192.5 28.0,205.0 6.3,192.5 6.3,167.5 28.0,155.0" class="f-a" fill-opacity="0.22"/><polygon points="93.0,167.5 93.0,192.5 71.3,205.0 49.7,192.5 49.7,167.5 71.3,155.0" class="f5" fill-opacity="0.22"/><polygon points="136.3,167.5 136.3,192.5 114.6,205.0 93.0,192.5 93.0,167.5 114.6,155.0" class="f1" fill-opacity="0.55"/><polygon points="179.6,167.5 179.6,192.5 157.9,205.0 136.3,192.5 136.3,167.5 157.9,155.0" class="f2" fill-opacity="0.22"/><polygon points="222.9,167.5 222.9,192.5 201.2,205.0 179.6,192.5 179.6,167.5 201.2,155.0" class="f4" fill-opacity="0.22"/><polygon points="266.2,167.5 266.2,192.5 244.5,205.0 222.9,192.5 222.9,167.5 244.5,155.0" class="f3" fill-opacity="0.22"/><polygon points="309.5,167.5 309.5,192.5 287.8,205.0 266.2,192.5 266.2,167.5 287.8,155.0" class="f6" fill-opacity="0.22"/><polygon points="352.8,167.5 352.8,192.5 331.1,205.0 309.5,192.5 309.5,167.5 331.1,155.0" class="f-a" fill-opacity="0.22"/><polygon points="396.1,167.5 396.1,192.5 374.4,205.0 352.8,192.5 352.8,167.5 374.4,155.0" class="f5" fill-opacity="0.22"/><polygon points="71.3,205.0 71.3,230.0 49.7,242.5 28.0,230.0 28.0,205.0 49.7,192.5" class="f3" fill-opacity="0.22"/><polygon points="114.6,205.0 114.6,230.0 93.0,242.5 71.3,230.0 71.3,205.0 93.0,192.5" class="f6" fill-opacity="0.22"/><polygon points="157.9,205.0 157.9,230.0 136.3,242.5 114.6,230.0 114.6,205.0 136.3,192.5" class="f-a" fill-opacity="0.22"/><polygon points="201.2,205.0 201.2,230.0 179.6,242.5 157.9,230.0 157.9,205.0 179.6,192.5" class="f5" fill-opacity="0.22"/><polygon points="244.5,205.0 244.5,230.0 222.9,242.5 201.2,230.0 201.2,205.0 222.9,192.5" class="f1" fill-opacity="0.55"/><polygon points="287.8,205.0 287.8,230.0 266.2,242.5 244.5,230.0 244.5,205.0 266.2,192.5" class="f2" fill-opacity="0.22"/><polygon points="331.1,205.0 331.1,230.0 309.5,242.5 287.8,230.0 287.8,205.0 309.5,192.5" class="f4" fill-opacity="0.22"/><polygon points="374.4,205.0 374.4,230.0 352.8,242.5 331.1,230.0 331.1,205.0 352.8,192.5" class="f3" fill-opacity="0.22"/><polygon points="417.7,205.0 417.7,230.0 396.1,242.5 374.4,230.0 374.4,205.0 396.1,192.5" class="f6" fill-opacity="0.22"/><polygon points="222.9,92.5 222.9,117.5 201.2,130.0 179.6,117.5 179.6,92.5 201.2,80.0" class="ln"/><polygon points="266.2,92.5 266.2,117.5 244.5,130.0 222.9,117.5 222.9,92.5 244.5,80.0" class="ln"/><polygon points="244.5,55.0 244.5,80.0 222.9,92.5 201.2,80.0 201.2,55.0 222.9,42.5" class="ln"/><polygon points="201.2,55.0 201.2,80.0 179.6,92.5 157.9,80.0 157.9,55.0 179.6,42.5" class="ln"/><polygon points="179.6,92.5 179.6,117.5 157.9,130.0 136.3,117.5 136.3,92.5 157.9,80.0" class="ln"/><polygon points="201.2,130.0 201.2,155.0 179.6,167.5 157.9,155.0 157.9,130.0 179.6,117.5" class="ln"/><polygon points="244.5,130.0 244.5,155.0 222.9,167.5 201.2,155.0 201.2,130.0 222.9,117.5" class="ln"/><text x="287.8" y="35.0" text-anchor="middle" class="t-b">1</text><text x="93.0" y="72.5" text-anchor="middle" class="t-b">1</text><text x="179.6" y="72.5" text-anchor="middle" class="t-b">4</text><text x="222.9" y="72.5" text-anchor="middle" class="t-b">3</text><text x="396.1" y="72.5" text-anchor="middle" class="t-b">1</text><text x="157.9" y="110.0" text-anchor="middle" class="t-b">5</text><text x="201.2" y="110.0" text-anchor="middle" class="t-b">1</text><text x="244.5" y="110.0" text-anchor="middle" class="t-b">2</text><text x="179.6" y="147.5" text-anchor="middle" class="t-b">6</text><text x="222.9" y="147.5" text-anchor="middle" class="t-b">7</text><text x="309.5" y="147.5" text-anchor="middle" class="t-b">1</text><text x="114.6" y="185.0" text-anchor="middle" class="t-b">1</text><text x="222.9" y="222.5" text-anchor="middle" class="t-b">1</text><line x1="207.2" y1="117.0" x2="240.5" y2="117.0" class="ln-a" marker-end="url(#m05-a)"/><circle cx="207.2" cy="117.0" r="4" class="f-a"/><text x="436.0607966083864" y="44" class="t-b">七个小区一组</text><text x="436.0607966083864" y="64">每组把全部频率分成七份，</text><text x="436.0607966083864" y="82">相邻的小区用不同的份。</text><text x="436.0607966083864" y="116" class="t-b">深色的「1」</text><text x="436.0607966083864" y="136">用的是同一份频率，</text><text x="436.0607966083864" y="154">隔得够远，不会串音。</text><text x="436.0607966083864" y="188" class="t-b">蓝箭头：切换</text><text x="436.0607966083864" y="208">边打电话边走进隔壁，</text><text x="436.0607966083864" y="226">手机换用那里的频率。</text></svg>
+<figcaption>本站示意图。七个一组是第一代蜂窝系统的经典分法，书里没讲分组。频率、载波是什么，见第 4 章的<a class="term" href="04b.html#c-carrier-mod">载波和调制</a>。</figcaption></figure>
+<p class="use"><b>在这一页：</b>§1 用两段讲手机怎样接通。「动手：模拟器」里可以调小区大小和分组。</p>
+</div>
+<div class="concept" id="c-transistor">
+<h3><span class="sec">§2</span>晶体管 <span class="en">transistor</span></h3>
+<p>纯硅导电很差。掺进一点磷，多出能自由跑的电子，叫 n 型；掺进一点硼，留下一个个缺电子的位置，叫空穴，它像正电荷一样会挪动，叫 p 型。这叫掺杂（doping）。双极晶体管是 n、p、n 三层夹心：电子从发射极出发，穿过极薄的 p 型基区，大部分被集电极那边的电压扫过去。基极和发射极之间零点几伏的电压决定能过去多少，就像<a class="term" href="04b.html#c-vacuum-tube">电子管</a>里栅极上的小电压管住大电流。</p>
+<p>集电极电流和基极电流之比叫放大倍数，书里说从 10 到 1,000。书里为了好懂说电流随电压「成比例」变，严格说是指数关系：电压每多约 0.06 伏，电流涨十倍。所以它特别适合当开关。</p>
+<figure class="fig">
+<svg class="diagram" viewBox="0 0 640 250" role="img" aria-label="晶体管示意图。左边是竖着叠的三层：上面 n 型集电极，中间很薄的 p 型基极，下面 n 型发射极；一个小箭头从侧面流进基极，标着小电流；旁边一根粗箭头从集电极指向发射极，标着大电流。右边是四根柱子：基极电压 0.55、0.60、0.65、0.70 伏时，集电极电流分别约是 0.6 伏时的 0.15、1、7、47 倍"><defs><marker id="m05-b" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="f-a"/></marker><marker id="m05-c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="f-fg"/></marker></defs><rect x="60" y="40" width="120" height="70" rx="6" class="box"/><text x="120" y="70" text-anchor="middle" class="t-b">n</text><text x="120" y="92" text-anchor="middle" class="t-m">集电极</text><rect x="60" y="112" width="120" height="22" rx="3" class="f4" fill-opacity="0.45"/><text x="120" y="128" text-anchor="middle" class="t-b">p 基极（很薄）</text><rect x="60" y="136" width="120" height="70" rx="6" class="box"/><text x="120" y="166" text-anchor="middle" class="t-b">n</text><text x="120" y="188" text-anchor="middle" class="t-m">发射极</text><line x1="200" y1="44" x2="200" y2="200" class="ln-a" stroke-width="6" marker-end="url(#m05-b)"/><text x="212" y="96" class="t-b">大电流</text><text x="212" y="114" class="t-m">集电极→发射极</text><line x1="10" y1="123" x2="56" y2="123" class="ln" stroke-width="1.5" marker-end="url(#m05-c)"/><text x="8" y="112" class="t-m">小电流</text><text x="40" y="232" class="t-m">基极上零点几伏的电压，管住上下这股大电流</text><line x1="370" y1="200" x2="628" y2="200" class="ln"/><rect x="380" y="198.5" width="46" height="1.5" class="f1" fill-opacity="0.75"/><text x="403.0" y="218" text-anchor="middle" class="t-m">0.55 伏</text><text x="403.0" y="192.5" text-anchor="middle" class="t-b">×0.15</text><rect x="442" y="196.8" width="46" height="3.2" class="f1" fill-opacity="0.75"/><text x="465.0" y="218" text-anchor="middle" class="t-m">0.60 伏</text><text x="465.0" y="190.8" text-anchor="middle" class="t-b">×1</text><rect x="504" y="178.1" width="46" height="21.9" class="f1" fill-opacity="0.75"/><text x="527.0" y="218" text-anchor="middle" class="t-m">0.65 伏</text><text x="527.0" y="172.1" text-anchor="middle" class="t-b">×7</text><rect x="566" y="50.0" width="46" height="150.0" class="f1" fill-opacity="0.75"/><text x="589.0" y="218" text-anchor="middle" class="t-m">0.70 伏</text><text x="589.0" y="44.0" text-anchor="middle" class="t-b">×47</text><text x="370" y="28" class="t-b">集电极电流（以 0.6 伏时为 1）</text><text x="370" y="240" class="t-m">基极电压　每多约 0.06 伏，电流涨十倍</text></svg>
+<figcaption>本站示意图。右边的数按室温下理想的硅管算，倍数是本站算的，书里没有。原书图 18 把它画成横放的三段加两个回路，这里换了画法。</figcaption></figure>
+<p class="use"><b>在这一页：</b>§2 讲它能做什么，§3 拆开讲里面；§5 说单个晶体管就能做成非门。</p>
+</div>
+<div class="concept" id="c-moores-law">
+<h3><span class="sec">§4</span>集成电路和摩尔定律 <span class="en">integrated circuit, Moore’s Law</span></h3>
+<p>集成电路是在一片硅晶圆上，用照相和化学的办法同时做出成千上万个晶体管和它们之间的连线，再切成一块块芯片。不用一个个焊，便宜，也比焊点多的电路可靠。</p>
+<p>摩尔定律不是物理定律，是 Gordon Moore 对这一行的观察：芯片上的晶体管数每两年左右翻一番。1971 年 Intel 的第一块微处理器 4004 约有 2,300 个晶体管；书里说 2009 年 Intel 的研究芯片有 13 亿个。38 年翻了约 19 番，差不多正好两年一番。后来它成了全行业的路线图，各家照着这个节奏投钱，一半是预言，一半是目标。</p>
+<p class="use"><b>在这一页：</b>§4 用一段讲它。作者说的「变小」，落到数上就是这条线；今天它走到哪了，见「今天怎么看」。</p>
+</div>
+<div class="concept" id="c-digital">
+<h3><span class="sec">§5</span>数字电路和逻辑门 <span class="en">digital, bit, logic gate</span></h3>
+<p>数字电路里，一根线在任一时刻只算两种状态：低（接近 0 伏）或高，记作 0 和 1，一个这样的值叫一比特，8 比特是一个字节。好处在容错：老式 5 伏逻辑里，输入 0.8 伏以下都算 0、2 伏以上都算 1，混进一点杂波读数不变，每过一个门，信号又被拉回干净的高低。模拟信号每复制、放大一次，杂波就叠上一层，再也分不出来。</p>
+<p>逻辑门是两个输入、一个输出的小电路，输入输出的关系列成真值表：与门两个都是 1 才出 1，或门有一个是 1 就出 1，非门把输入反过来。一个晶体管加一个电阻就是非门：输入高，晶体管导通，把输出拉低。</p>
+<p class="use"><b>在这一页：</b>§5 讲两态和门，§7 讲比特怎样表示数和字母。程序员熟的部分，书里讲到硬件为止。</p>
+</div>
+<div class="concept" id="c-emergence">
+<h3><span class="sec">§6</span>涌现 <span class="en">emergence</span></h3>
+<p>整体能做的事，单看哪个部件都没有，要看部件怎样连起来。单个触发器只会每来一个脉冲翻一次。四个串起来，前一个从 1 落到 0 时推后一个翻一次，A 每个脉冲翻一次，B 每两个，C 每四个，D 每八个。从 D 读到 A，正好是数过的脉冲数的二进制写法：会「数数」的不是哪一个触发器，是这种接法。</p>
+<figure class="fig">
+<svg class="diagram" viewBox="0 0 640 266" role="img" aria-label="四个翻转触发器计数的时序图：最上面一行是 11 个时钟脉冲，下面 A、B、C、D 四条波形，A 每个脉冲落下时翻一次，B 每两个脉冲翻一次，C 每四个，D 每八个。第 11 个脉冲落下之后画一条竖线，D、C、B、A 依次是 1、0、1、1，合起来是十进制的 11"><path d="M92.0,40.0 L102.5,40.0 L102.5,14.0 L123.5,14.0 L123.5,40.0 L144.5,40.0 L144.5,14.0 L165.5,14.0 L165.5,40.0 L186.5,40.0 L186.5,14.0 L207.5,14.0 L207.5,40.0 L228.5,40.0 L228.5,14.0 L249.5,14.0 L249.5,40.0 L270.5,40.0 L270.5,14.0 L291.5,14.0 L291.5,40.0 L312.5,40.0 L312.5,14.0 L333.5,14.0 L333.5,40.0 L354.5,40.0 L354.5,14.0 L375.5,14.0 L375.5,40.0 L396.5,40.0 L396.5,14.0 L417.5,14.0 L417.5,40.0 L438.5,40.0 L438.5,14.0 L459.5,14.0 L459.5,40.0 L480.5,40.0 L480.5,14.0 L501.5,14.0 L501.5,40.0 L522.5,40.0 L522.5,14.0 L543.5,14.0 L543.5,40.0 L596.0,40.0" class="ln" /><path d="M92.0,90.0 L123.5,90.0 L123.5,64.0 L165.5,64.0 L165.5,90.0 L207.5,90.0 L207.5,64.0 L249.5,64.0 L249.5,90.0 L291.5,90.0 L291.5,64.0 L333.5,64.0 L333.5,90.0 L375.5,90.0 L375.5,64.0 L417.5,64.0 L417.5,90.0 L459.5,90.0 L459.5,64.0 L501.5,64.0 L501.5,90.0 L543.5,90.0 L543.5,64.0 L596.0,64.0" class="ln s1" stroke-width="2.5"/><path d="M92.0,135.0 L165.5,135.0 L165.5,109.0 L249.5,109.0 L249.5,135.0 L333.5,135.0 L333.5,109.0 L417.5,109.0 L417.5,135.0 L501.5,135.0 L501.5,109.0 L596.0,109.0" class="ln s2" stroke-width="2.5"/><path d="M92.0,180.0 L249.5,180.0 L249.5,154.0 L417.5,154.0 L417.5,180.0 L596.0,180.0" class="ln s3" stroke-width="2.5"/><path d="M92.0,225.0 L417.5,225.0 L417.5,199.0 L596.0,199.0" class="ln s4" stroke-width="2.5"/><text x="6" y="34" class="t-b">时钟</text><text x="6" y="84" class="t-b">A（1）</text><text x="6" y="129" class="t-b">B（2）</text><text x="6" y="174" class="t-b">C（4）</text><text x="6" y="219" class="t-b">D（8）</text><line x1="554.0" y1="18" x2="554.0" y2="236" class="ln-d"/><text x="546.0" y="14" text-anchor="end" class="t-m">第 11 个脉冲落下之后</text><text x="562.0" y="84" class="t-b">1</text><text x="562.0" y="129" class="t-b">1</text><text x="562.0" y="174" class="t-b">0</text><text x="562.0" y="219" class="t-b">1</text><text x="123.5" y="56" text-anchor="middle" class="t-m">1</text><text x="165.5" y="56" text-anchor="middle" class="t-m">2</text><text x="249.5" y="56" text-anchor="middle" class="t-m">4</text><text x="417.5" y="56" text-anchor="middle" class="t-m">8</text><text x="92" y="258" class="t-m">从下往上读 D C B A：1 0 1 1，就是 8 + 0 + 2 + 1 = 11</text></svg>
+<figcaption>本站示意图，原书没有这张图。§6 的三段话讲的就是这张图。4 位最多数到 15，第 16 个脉冲回到 0000。</figcaption></figure>
+<p class="use"><b>在这一页：</b>§5 说门的行为从晶体管的接法里涌现，§6 说计数从触发器里涌现，§8 用 The IT revolution is changing 那句交给系统时代。第 6 章接着讲。</p>
+</div>
+<h2>动手：模拟器</h2>
+<p>先猜：一座 1,000 平方公里的城市，运营商有 800 个频率（两个一对，400 对），小区每个 25 平方公里，七个一组。把小区缩到每个 1 平方公里，频率一个不加，全城同时能打的电话多几倍？</p>
+<div class="sim" id="sim-05">
+  <div class="sim-head"><span class="tag">模拟器</span><h3>蜂窝复用</h3><p class="desc">一座城市切成一格格小区，每格一座基站。调下面三样，图是一小片小区，数字是它属于哪一组，深色的是和中间那格用同一份频率的小区；统计栏算的是全城。打开页面时是书里的数。</p></div>
+  <div class="sim-body"><p>需要浏览器打开脚本才能运行。</p></div>
+</div>
+<p>各个控件：「每个小区多大」是一格小区的面积，城市一共 1,000 平方公里，所以小区越小格数越多，每格要一座基站；「能用几个频率」是运营商分到的频率，两个凑一对给一个电话；「几个小区一组」是一组多少个小区把全部频率对分完，同组的小区用不同的频率，不同组里编号相同的小区用同一份。统计栏里「是不复用时的几倍」拿全城只当一个大小区（几对频率就只能打几个电话）来比；最后一格是用同一份频率的两个小区中心相距多远，越远互相干扰越小。</p>
+<ol class="qs">
+  <li>试试看：先看打开时的设置，全城 40 个小区，每个分到 57 对，同时能打 2,280 个电话。把小区改成每个 1 平方公里，统计栏变成多少？基站要多少座？</li>
+  <li>试试看：点「回到书里的数」，把「几个小区一组」改成 4，再改成 3。每个小区分到的多了，最后一格怎么变？为什么不干脆一组一个？</li>
+  <li>试试看：回到书里的数，把频率加倍到 1,600 个。全城多了几倍？和缩小区比，哪个办法多得多，各自要花什么代价？</li>
+</ol>
+<p>城市面积 1,000 平方公里、800 个频率按 400 对算、七个一组，都是本站定的演示值；书里的数只有「约 800 个频率」和「每个小区约 25 平方公里」。模型只算频率够分给几个电话，不管控制信道、信号强弱和真实的干扰，六边形也只是教科书的理想画法。</p>
+<h2>书里的人和项目</h2>
+<p class="lede">书里点名的人、发明和工程，挑读懂这一页用得上的讲。按在书里出现的顺序排，节号是你在书里哪一节遇到它。</p>
+<h3><span class="sec">§1</span>Ferranti Mercury</h3>
+<p>作者 1960 年代念大学时，学校最得意的是一台 Ferranti Mercury：十几个衣柜大的机柜占满一间大屋，里面是电子管、电容、电阻、几英里长的导线和成千上万个焊点。他没说是哪所大学。Mercury 是英国费兰蒂公司造的电子管计算机，1957 年 8 月交付第一台，一共造了 19 台，用户有欧洲核子研究中心（CERN）、英国原子能研究机构和英国气象局。照片见「这一页在做什么」，那是它的同门 Pegasus。</p>
+<h3><span class="sec">§1</span>第一代蜂窝手机</h3>
+<p>作者说手机是这个时代的标志，讲了它怎样接通：开机后用一个专门的控制信道向本小区的基站报到，交换中心（MTSO）在数据库里记着你在哪个小区；来电时给你挑一对频率；你走到小区边上，两边基站比信号强弱，交换中心让手机换到新小区的频率。MTSO 是美国第一代模拟手机系统的叫法，800 个频率、25 平方公里一格，也是那一代科普里的典型数字。他最后一句说家用微型基站（femtocell）很快会带来更好的覆盖，后来怎样见「今天怎么看」。</p>
+<figure class="fig"><img src="../assets/img/05-cell-tower.jpg" alt="蓝天下一座钢格子铁塔从树冠后面伸出来，塔上分几层挂着一圈圈白色的竖长条天线板，顶上几根细长的天线" loading="lazy">
+<figcaption>挂着多组天线的手机基站铁塔，美国田纳西州诺克斯维尔，2014 年。<span class="src">David Ratledge，CC BY 4.0，维基共享资源</span></figcaption></figure>
+<h3><span class="sec">§2</span>第一只晶体管和它的三位发明人</h3>
+<p>1947 年 12 月，贝尔实验室的 John Bardeen 和 Walter Brattain 把两个金属触点压在一块锗片上，做出第一只晶体管，叫点接触晶体管。他们的组长 William Shockley 没参与这一只，随后想出了更好造的结型晶体管，§3 细讲的 npn 双极管就是这一种。三人 1956 年同获诺贝尔物理学奖，Bardeen 1972 年又因超导理论再得一次。Shockley 后来去加州办公司，手下八个人出走创办了仙童半导体，其中的 Gordon Moore 和 Robert Noyce 后来又创办了 Intel。</p>
+<div class="pair">
+<figure class="fig"><img src="../assets/img/05-inventors.jpg" alt="黑白照片，实验室里三个穿衬衫打领带的男人：中间一人坐着，双手放在桌上一个小装置上，面前立着一支显微镜筒，另两人站在他身后看；左边一台带圆形示波屏和许多旋钮的仪器" loading="lazy">
+<figcaption>左起 Bardeen、Shockley、Brattain，1948 年贝尔实验室的宣传照。图片说明写，专利上没有 Shockley 的名字，可贝尔实验室要求宣传照里都得有他，所以坐在中间、手放在仪器上的是他。<span class="src">AT&amp;T，公有领域，维基共享资源</span></figcaption></figure>
+<figure class="fig"><img src="../assets/img/05-transistor-replica.jpg" alt="玻璃钟罩罩在黑色底座上，罩里一个透明塑料的倒 L 形支架，吊着一个小三角楔子，楔尖压在下面一块金属座上；底座前面一块银色铭牌" loading="lazy">
+<figcaption>第一只点接触晶体管的复制品，朗讯科技 1997 年为五十周年做的。三角楔子压下去的那一点就是「点接触」。<span class="src">Revol Web，CC BY-SA 2.0，维基共享资源</span></figcaption></figure>
+</div>
+<h3><span class="sec">§4</span>摩尔定律和 Intel 的研究芯片</h3>
+<div class="who"><div><b>Gordon Moore</b><span class="en">1929–2023</span>Intel 的联合创始人。摩尔定律以他命名，作者用它讲集成电路越做越密。</div></div>
+<p>1965 年 Moore 在一篇文章里说，芯片上的元件数每年翻一番；1975 年他改成大约每两年。书里写 1970 年代「每两年左右」，用的是改过的说法。作者给的最后一个数是 2009 年 Intel 发布的单芯片云计算机（SCC）：邮票大小的一块硅上 13 亿个晶体管。它是做研究用的多核原型，没有当成商品卖。</p>
+<h3><span class="sec">§4</span>Hollerith 和穿孔卡</h3>
+<div class="who"><div><b>Herman Hollerith</b><span class="en">1860–1929</span>美国发明家。作者拿他的穿孔卡说明：信息是一种图样，图样可以交给机器去处理。</div></div>
+<p>1880 年代，Hollerith 想出用卡片上打孔的位置记数据，让机器来读：卡放在读卡器的压板下一压，针穿过孔，落进下面的水银杯里接通电路，对应的表盘走一格。书里说，据报道这套机器给 1890 年美国人口普查省了 500 万美元。他的公司后来和另外三家合并，1924 年改名 IBM。</p>
+<div class="pair">
+<figure class="fig"><img src="../assets/img/05-hollerith.jpg" alt="一台橡木大柜子：上半部是玻璃框里四排圆表盘，像钟面，各有指针；下半部是木桌面，右边装着一个带木把手的压板，压板下是一块排满小孔的板" loading="lazy">
+<figcaption>Hollerith 人口普查制表机的复制品，加州山景城计算机历史博物馆。右边带把手的压板就是读卡器。<span class="src">Tomwsulcer，CC0，维基共享资源</span></figcaption></figure>
+<figure class="fig"><img src="../assets/img/05-punched-card.jpg" alt="一张长方形灰色卡片，印满一格一格的数字和字母，十几个位置被打成白色圆孔，右上角切掉一个斜角" loading="lazy">
+<figcaption>Hollerith 的穿孔卡，美国国会图书馆藏。每个孔的位置代表一项信息。<span class="src">作者不详，公有领域，维基共享资源</span></figcaption></figure>
+</div>
+<h3><span class="sec">§4</span>UNIVAC</h3>
+<p>书里说第一台商用计算机是 UNIVAC，在 1940 年代。UNIVAC I 由造过 ENIAC 的 J. Presper Eckert 和 John Mauchly 主持设计，设计在 1940 年代末，第一台 1951 年 3 月交给美国人口普查局。「第一台」也有争议：英国的 Ferranti Mark 1 在 1951 年 2 月交到曼彻斯特大学，同年秋天，英国 J. Lyons 公司自己造的 LEO I 跑起了第一个商业作业。</p>
+<h3><span class="sec">§8</span>Nicholas Carr 和《大转换》</h3>
+<p>美国作家，2008 年出了 The Big Switch，作者在书后的延伸阅读里列了它。Carr 在那本书里打的比方是：一百年前工厂拆掉自家的发电机，改从电网买电；今天的公司也会关掉自家的机房，从网上买计算。作者转述的就是这一层：用户不在乎机器放在哪里，计算像电一样成了公用事业。</p>
+<h2>原文里的词和句</h2>
+<p class="lede">读英文原书时值得停一下的词和句：工程里的熟词生义、英式说法、作者的比喻。灰色斜体是原句里连续的几个词，在 Kindle 里搜它就能找到；标「每个字都认识」的，是每个词都眼熟、合起来意思却变了的，最容易读错。点「记下」收进词本。</p>
+<div class="entry trap"><div class="en">valve</div><div class="loc" data-p="1">… wardrobe-sized cabinets full of valves, …</div><div class="zh">电子管（英式说法）</div><div class="note">美式叫 vacuum tube。§2 里 just as a valve controls the flow 的 valve 又是水管上的阀门，一章里两个意思。</div></div>
+<div class="entry trap"><div class="en">orders of magnitude</div><div class="loc" data-p="1">… Now I have orders of magnitude more …</div><div class="zh">好几个数量级（每级十倍）</div><div class="note">不是「好几倍」。two orders of magnitude 是一百倍上下。</div></div>
+<div class="entry"><div class="en">show no sign of abating</div><div class="loc" data-p="1">… and shows no sign of abating …</div><div class="zh">没有减弱的迹象</div><div class="note">abate 是减弱、平息，新闻里常说风暴、疫情 abate。</div></div>
+<div class="entry"><div class="en">personal digital assistant</div><div class="loc" data-p="3">… also a personal digital assistant …</div><div class="zh">个人数字助理（PDA）</div><div class="note">2000 年代前后对掌上电脑的叫法，现在不这么说了。</div></div>
+<div class="entry trap"><div class="en">something like</div><div class="loc" data-p="3">… to use something like 800 radio frequencies …</div><div class="zh">大约</div><div class="note">放在数字前是「大概、左右」，不是「像某种东西」。</div></div>
+<div class="entry"><div class="en">pass from cell to cell</div><div class="loc" data-p="4">… signal is passed from cell to cell, …</div><div class="zh">从一个小区交给下一个小区</div><div class="note">行话叫 handoff（美式）或 handover（英式），书里没用这个词。</div></div>
+<div class="entry trap"><div class="en">power rating</div><div class="loc" data-p="6">… its structure, power rating, operating frequency, …</div><div class="zh">额定功率</div><div class="note">rating 在工程里是额定值，标在铭牌上的上限，不是「评分」。</div></div>
+<div class="entry trap"><div class="en">donate</div><div class="loc" data-p="6">… It therefore effectively donates free electrons …</div><div class="zh">（向半导体）给出（电子）</div><div class="note">半导体行话：磷这类杂质叫施主（donor），硼这类叫受主（acceptor）。</div></div>
+<div class="entry trap"><div class="en">wafer-thin</div><div class="loc" data-p="7">… used in wafer-thin layers, rather like sandwiches, …</div><div class="zh">极薄的</div><div class="note">wafer 日常是威化饼干，wafer-thin 是「薄如威化」的习语；芯片行业里 wafer 又是晶圆，§4 就用了这个意思。</div></div>
+<div class="entry"><div class="en">the size of a postage stamp</div><div class="loc" data-p="10">… silicon the size of a postage stamp.</div><div class="zh">邮票那么大</div><div class="note">the size of 加名词是英文常见的比大小说法，the size of a football pitch 是一个足球场那么大。</div></div>
+<div class="entry"><div class="en">daub</div><div class="loc" data-p="11">… daubs of paint in a picture, …</div><div class="zh">（随手抹上的）一笔颜料</div><div class="note">带一点「涂抹、不讲究」的意思，作者拿画上的笔触当图样的例子。</div></div>
+<div class="entry trap"><div class="en">at root</div><div class="loc" data-p="13">… At root, digital systems are based …</div><div class="zh">从根本上说</div><div class="note">不是「在根部」。和 basically 意思相近，偏书面。</div></div>
+<div class="entry trap"><div class="en">set out</div><div class="loc" data-p="14">… is set out in a truth table.</div><div class="zh">列出，摆出来</div><div class="note">不是「出发」。set out the rules 是把规则一条条写清楚。</div></div>
+<div class="entry trap"><div class="en">flip-flop</div><div class="loc" data-p="15">… A flip-flop retains a bit until …</div><div class="zh">触发器</div><div class="note">日常是人字拖，也指出尔反尔、来回变卦。电子里是能记住一个比特的电路，两种状态来回翻。</div></div>
+<div class="entry"><div class="en">mantissa</div><div class="loc" data-p="19">… called the significand or mantissa …</div><div class="zh">尾数</div><div class="note">significand 是今天标准里的叫法，mantissa 是旧称，程序文档里两个都会见到。</div></div>
+<div class="entry trap"><div class="en">capital equipment</div><div class="loc" data-p="22">… its capital equipment budget to information …</div><div class="zh">资本设备（买来长期用的机器设备）</div><div class="note">capital 在这里是资本，不是「首都」或「大写」。</div></div>
+<div class="entry trap"><div class="en">engine room</div><div class="loc" data-p="22">… the engine rooms of modern businesses.</div><div class="zh">（比喻）动力中枢</div><div class="note">本义是船的轮机舱。作者说数据中心是现代企业的发动机房。</div></div>
+<div class="entry trap"><div class="en">utility</div><div class="loc" data-p="23">… computing is a utility just as …</div><div class="zh">公用事业（水、电、气这类）</div><div class="note">不是「效用」，也不是「实用工具」。utility bill 是水电煤账单。</div></div>
+<h2>读完：作者到底说了什么</h2>
+<p class="lede">下面是作者在这一章里的主张，本站按主张之间的逻辑重排，不按原书顺序；每条后面是节号，拿不准就回书里那一节再读一遍。</p>
+<div class="claims">
+  <div class="claim"><h4>信息时代靠的是电子元件越做越小</h4><p>种子是 20 世纪初用电磁学的新发现传信息，让它成形的是晶体管：它替下了电子管，又小又结实；集成电路再把晶体管成批做在一片硅上，1970 年代起每两年左右翻一番。他从一屋子的 Mercury 讲到口袋里的手机，又把下一步放在纳米技术和量子计算上。</p><span class="sec" data-p="1 2 5 10 24">§1 §2 §4 §8</span></div>
+  <div class="claim"><h4>晶体管的本事是用小电压管住大电流</h4><p>像阀门管水。基极电压决定耗尽层多厚，从而决定有多少电子从发射极穿过基区进到集电极，所以集电极电流是基极电流放大后的样子。它是固态的，没有活动部件，比电子管结实；能放大，也能当开关。</p><span class="sec" data-p="5 9 14">§2 §3 §5</span></div>
+  <div class="claim"><h4>数字的好处在于只认两种状态</h4><p>任一时刻一根线不是低就是高。他给的理由是：把器件推到两个已知状态之一，比复现一段连续的值容易。字母、数字、声音、图像，最后都成了一串比特。</p><span class="sec" data-p="13 20 21">§5 §7</span></div>
+<blockquote class="quote">it is easier to switch a device into one of two known states than to try to reproduce a continuous range of values<cite>— §5。本站译：把一个器件切到两个已知状态之一，比设法复现一段连续的值要容易。</cite></blockquote>
+  <div class="claim"><h4>功能是从部件的连接方式里「涌现」出来的</h4><p>晶体管换一种接法就是另一种逻辑门，四个触发器串起来就会数数。两处他都给 emerges 打了引号，意思是整体做到了部件单独做不到的事。这个词留给第 6 章。</p><span class="sec" data-p="14 18">§5 §6</span></div>
+  <div class="claim"><h4>信息技术正在变成系统的时代</h4><p>计算机变小、变便宜、连成网，旧大型机成了数据中心；他借 Carr 说计算像电一样成了公用事业，又说这些技术的社会影响很快会像蒸汽铁路、汽车一样大。§8 收尾，他说 IT 革命正在变成系统的时代。</p><span class="sec" data-p="22 23 26">§8</span></div>
+<blockquote class="quote">The IT revolution is changing into an age of systems as we begin to understand how complexity can emerge from simplicity.<cite>— §8。本站译：随着我们开始明白复杂怎样从简单中涌现，IT 革命正在变成一个系统的时代。</cite></blockquote>
+</div>
+<p class="sowhat"><b>合起来：</b>这一章的主线是「变小」：晶体管让小电压管住大电流，集成电路把它们成亿地放进一片硅；只认两种状态的数字电路，再一层层搭出门、计数器和计算机。作者要你带走的是「涌现」：功能来自连接方式。</p>
+<h2>今天怎么看</h2>
+<p class="lede">书 2012 年出版。下面挑出这一页里能被后来的研究或事情检验的说法，分「书里 / 当时 / 今天」几栏，并给一个结论。结论判的是标题里「书里的说法：」后面那一句。全书的这一节汇总在<a href="../today.html">今天怎么看</a>。</p>
+<ul class="verdicts"><li><span class="v ok">成立</span>后来的研究或事情支持这句话。</li><li><span class="v mid">部分成立</span>大方向对，细节或适用范围要改。</li><li><span class="v bad">被改写</span>后来的研究推翻了它、换了一种说法，或者情况变了。</li><li><span class="v dis">有争议</span>至今没有定论，两边各有代表性的研究或证据。</li></ul>
+<div class="today" data-verdict="部分成立"><h4>书里的说法：电子元件的小型化到 21 世纪也没有放缓的迹象</h4><dl>
+  <dt>书里</dt><dd>半个世纪里电子处理能力的小型化很惊人，到 21 世纪也没有放缓的迹象；他举的最新的数是 2009 年 Intel 一块邮票大小的研究芯片上有 13 亿个晶体管。<span class="at" data-p="1 10">§1 §4</span></dd>
+  <dt>当时</dt><dd>晶体管数一直照两年左右翻一番在涨。2000 年代中期起，芯片的主频不再往上走，多出来的晶体管改做成多个核。</dd>
+  <dt>今天</dt><dd>2025 年 Apple 的 M3 Ultra 有 1,840 亿个晶体管，NVIDIA Blackwell 一代的数据中心 GPU 约 2,080 亿个，比书里那块研究芯片多了一百多倍，大致还是两年翻一番的速度。可这两块都是两片裸片拼成的；业界说再往上涨要靠把好几片芯片封装在一起，Intel、TSMC 都把 2030 年前后一个封装里一万亿个晶体管当目标。晶体管数确实没停，「在一片硅上越做越小」这条路已经要靠拼片来补，「没有放缓」说得太满。<span class="asof">核对于 2026-11。依据：Wikipedia「Transistor count」词条；PC Gamer 2023 年对 Intel 一万亿晶体管目标的报道。</span></dd>
+</dl></div>
+<div class="today" data-verdict="被改写"><h4>书里的说法：家用微型基站很快会带来更快、更好的覆盖</h4><dl>
+  <dt>书里</dt><dd>讲完手机怎样接通，末句说 femtocell 很快会带来更快的覆盖和更好的服务。书后的参考文献指向 2010 年一篇介绍它的文章。<span class="at" data-p="4">§1</span></dd>
+  <dt>当时</dt><dd>femtocell 是接在家里宽带上的小盒子，相当于自家屋里的一个小区，英美运营商当时已经卖给信号差的家庭用户。</dd>
+  <dt>今天</dt><dd>2015 年 ABI Research 说，手机普遍支持 Wi-Fi 通话以后，家用 femtocell 的市场被冲垮，只有企业用的还在长。英国几家运营商随后陆续停掉家用的信号增强盒，BT 用的那款思科设备 2017 年停产。小基站的思路活在运营商自己铺的 4G、5G 小基站里，可美国户外小基站的数量 2024 年还略有减少。家里的覆盖后来靠的是 Wi-Fi 通话，家用 femtocell 没成气候。<span class="asof">核对于 2026-11。依据：ABI Research 2015 年新闻稿；ISPreview 2021；The Mobile Network 2022；PhoneArena 对美国小基站数的报道。</span></dd>
+</dl></div>
+<div class="today" data-verdict="成立"><h4>书里的说法：计算会像电一样成为按需购买的公用事业</h4><dl>
+  <dt>书里</dt><dd>作者转述 Nicholas Carr：光纤互联网对计算做的事，就像交流电网对配电做的事，机器放在哪里用户不在乎；单机正让位给云计算，要多少买多少。<span class="at" data-p="23">§8</span></dd>
+  <dt>当时</dt><dd>亚马逊 2006 年起把存储和计算按用量出租，云服务刚成规模，许多公司还在自建机房。</dd>
+  <dt>今天</dt><dd>按 Synergy Research 的统计，2025 年第三季度全球企业在云基础设施服务上花了约 1070 亿美元，前 12 个月约 3900 亿；亚马逊占 29%，微软 20%，谷歌 13%，三家合起来 63%。计算确实成了按用量计费、从网上买的公用事业；和电网一样，它也集中在少数几家手里。<span class="asof">核对于 2026-11。依据：The Register 2025-11-20 和 heise 对 Synergy Research 数据的报道。</span></dd>
+</dl></div>
+<h2>本站怎么看</h2>
+<p class="lede">读完作者的主张，再看它站不站得住。每一块摆出三样：主流怎么看，作者怎么看，本站的评论。最后一句是本站对这一页的总体判断。</p>
+<div class="views"><h4>「涌现」在这一章用得很宽</h4>
+<p><b>主流看法：</b>哲学和复杂系统研究里，涌现常分两种。一种是整体有部件没有的性质，可只要知道部件和连法，原则上能一步步推出来，常叫「弱涌现」；另一种是原则上推不出来的「强涌现」，争议很大。物理学家 Philip Anderson 1972 年的《多者异也》（More Is Different）是常被引的起点：懂了基本定律，不等于能从它重建出整体。</p>
+<p><b>作者的看法：</b>逻辑门的行为从晶体管的接法里涌现，计数从触发器的连接里涌现；§8 又说我们开始懂得复杂怎样从简单里涌现。<span class="at" data-p="14 18 26">§5 §6 §8</span></p>
+<p class="ours"><b>本站的评论：</b>门和计数器是工程师照着真值表设计出来的，每一步都能推回去，属于弱的那一种，一点也不意外。作者用的是最宽的意思：整体做到了部件单独做不到的事。这个意思不错，程序员天天在用的分层就是它；第 6 章他会用同一个词讲更难预料的东西，读的时候分清说的是哪一种。</p></div>
+<div class="views"><h4>书里细讲的晶体管不是今天芯片里的那种</h4>
+<p><b>主流看法：</b>今天的处理器和存储芯片几乎全是 CMOS 电路，用的是金属氧化物半导体场效应管（MOSFET）：栅极隔着一层极薄的绝缘层，靠电压在下面开出一条导电的沟道，栅极几乎不取电流，电路不翻转时也几乎不耗电。双极管还用在功率、射频和一些模拟电路里。</p>
+<p><b>作者的看法：</b>晶体管重要到值得细讲一种，他挑了双极管，因为它最早量产。<span class="at" data-p="7">§3</span></p>
+<p class="ours"><b>本站的评论：</b>挑双极管讲历史说得通，讲原理也直观：电子穿过薄薄的基区，被扫进集电极。想知道手机芯片里发生什么的读者，要记的是另一种：栅极上的电压开关一条沟道。§5 那句「一个晶体管就是一个非门」两种管子都对，§3 的细节读不下去可以放心跳过。</p></div>
+<div class="views"><h4>信息时代只讲了「变小」这一条线</h4>
+<p><b>主流看法：</b>讲信息时代，通常绕不开 Claude Shannon 1948 年的《通信的数学理论》：它把信息定义成能计量的比特，算出一条信道最多能可靠地传多少，手机和光纤一代代挤带宽，都在往这个上限逼近。量子计算这边，2024 年 Google 的 Willow 芯片第一次做到纠错的规模越大、错得越少，被看成一道坎，可离有用的计算还远。</p>
+<p><b>作者的看法：</b>信息时代由小型化推动，下一步是纳米技术和量子计算。<span class="at" data-p="1 24">§1 §8</span></p>
+<p class="ours"><b>本站的评论：</b>「变小」是硬件这条主线，讲得清楚。可这一章几乎没提软件、算法和信息论，§4 那句「信息是一种图样」开了头，没往下走。这是一位结构工程师看信息时代的角度，程序员读者可以拿自己熟的那一面补上。</p></div>
+<p class="verdict"><b>本站的总体看法：</b>§2、§5 最值得读：晶体管小电压管大电流，数字只认两种状态，功能从连接里来。§1 的手机讲法是第一代的，§3 的双极管有几处简化，当原理读，别当今天的样子。几句展望（femtocell、量子计算）要对照今天看。</p>
+<h2>检查一下理解</h2>
+<p class="lede">先在心里答，再点开。答错的那题，回书里把对应那一节再读一遍。</p>
+<details class="check"><summary>1.（§1）手机发射功率小，为什么作者说这是好处？</summary><p>一是省电池。二是信号出不了一个小区，不相邻的小区就能重复用同一批频率，有限的频率才够很多人同时打。</p></details>
+<details class="check"><summary>2.（§1）城市 1,000 平方公里，400 对频率，七个小区一组。小区每个 25 平方公里时全城能同时打多少个电话？缩到每个 1 平方公里呢？</summary><p>每个小区分到 400 ÷ 7，取整 57 对。25 平方公里时 40 个小区，共 2,280 个；1 平方公里时 1,000 个小区，共 57,000 个，多 25 倍，代价是基站从 40 座变成 1,000 座。</p></details>
+<details class="check"><summary>3.（§2）n 型和 p 型半导体各是怎么做出来的？</summary><p>往硅里掺磷这类多一个电子的杂质，多出自由电子，是 n 型；掺硼这类少一个电子的杂质，留下空穴，是 p 型。</p></details>
+<details class="check"><summary>4.（§3）一只晶体管的放大倍数是 100，基极电流 0.02 毫安，集电极电流约多少？</summary><p>约 2 毫安。放大倍数是输出（集电极）电流比输入（基极）电流。</p></details>
+<details class="check"><summary>5.（§5）作者说数字电路只用两种状态，好处在哪？</summary><p>作者的理由是：把器件切到两个已知状态之一，比复现一段连续的值容易。概念块补了一层：混进一点杂波，读出来的 0 和 1 不变。</p></details>
+<details class="check"><summary>6.（§6）四个翻转触发器从 D 到 A 读作 1011，数过几个脉冲？再来 5 个脉冲是多少？</summary><p>8 + 0 + 2 + 1 = 11 个。再来 5 个是 16，4 位装不下，回到 0000。</p></details>
+<details class="check"><summary>7.（§7）原书图 19 的 32 位里，指数那 8 位是 2 的几次幂还是 10 的几次幂？</summary><p>2 的幂。那 8 位是 11000000，等于 192，减去 127 得 65；尾数约 1.455，1.455 × 2 的 65 次方约等于 5.37 × 10 的 19 次方，正好是正文的数。</p></details>
+<p>用一句话说这一页：</p>
+<textarea class="note" data-key="05-oneline" rows="2" placeholder="比如：……"></textarea>
+<div class="ponder"><p>想一想：你写过或用过的系统里，哪一层的行为是靠下一层「怎么连」得来的，单看下一层的哪个零件都看不出来？</p>
+<textarea class="note" data-key="05-ponder" rows="3"></textarea></div>
+<h2>精彩回顾</h2>
+<p class="lede">读过又忘了，从这里想起来。挑的是这一页最值得记住的例子和说法，不按原书顺序；每条后面是节号，想细看就回书里那一节。全书各页的这一节都收在<a href="../recap.html">全书回顾</a>。</p>
+<p class="recall-line"><b>一句话：</b>信息时代靠「变小」：晶体管用小电压管住大电流，数字电路只认两种状态，门和计数器的本事来自连接方式。</p>
+<div class="recall">
+  <div class="item"><b>一屋子和一口袋</b><p>作者念大学时，学校的 Ferranti Mercury 占满一间大屋；今天他口袋里的手机，算力高出好几个数量级。</p><span class="sec">§1</span></div>
+  <div class="item"><b>小区越小，电话越多</b><p>频率有限，手机功率小，不相邻的小区就能重复用同一批频率。小区从 25 平方公里缩到 1 平方公里，频率不加，同时通话多 25 倍。</p><span class="sec">§1</span></div>
+  <div class="item"><b>小电压管大电流</b><p>晶体管像水管上的阀门：基极上零点几伏的电压，决定集电极那股大电流有多大。固态、没有活动部件，所以结实。</p><span class="sec">§2</span></div>
+  <div class="item"><b>两年翻一番</b><p>从 1971 年的 4004 约 2,300 个晶体管，到 2009 年 Intel 研究芯片的 13 亿个，差不多正好每两年翻一番。</p><span class="sec">§4</span></div>
+  <div class="item"><b>只认 0 和 1</b><p>作者说，把器件推到两个已知状态之一，比复现连续的值容易。字母、声音、图像，最后都成了一串比特。</p><span class="sec">§5</span></div>
+  <div class="item"><b>会数数的是接法</b><p>单个触发器只会翻转，四个串起来就能数到 15。作者说这种行为是从连接里「涌现」的，第 6 章接着讲。</p><span class="sec">§6</span></div>
+</div>
+</main>
+<script>
+(() => {
+  // 蜂窝复用：城市 1,000 平方公里（本站定）；频率两个一对（一发一收），N 个小区一组把频率对分完，每个小区分到 floor(对数 / N) 对；每个小区一座基站。
+  // 全城同时能打的电话 = 小区数 × 每个小区的对数；不复用时（全城当一个小区）只有「对数」个。同频小区中心距 D = R·√(3N)，R 是正六边形的外接圆半径。
+  // 默认（25 平方公里、800 个、7 个一组）复现底稿 e-sims.py：40 个小区、每个 57 对、全城 2,280 个；1 平方公里 57,000 个；4 个一组 4,000 个。确定性，没有随机数。
+  const root = document.getElementById("sim-05");
+  if (!root || !window.EG) return;
+  const { h } = window.EG;
+  const CITY = 1000;
+  const BOOK = { A: "25", F: "800", N: "7" };
+  const st = Object.assign({}, BOOK);
+  const OPTS = {
+    A: { label: "每个小区多大（平方公里）", list: [["50", "50"], ["25", "25（书里的数）"], ["10", "10"], ["5", "5"], ["1", "1"], ["0.25", "0.25"]] },
+    F: { label: "能用几个频率", list: [["400", "400 个（200 对）"], ["800", "800 个（400 对，书里的数）"], ["1200", "1,200 个（600 对）"], ["1600", "1,600 个（800 对）"]] },
+    N: { label: "几个小区一组", list: [["1", "1（每个小区都用全部频率）"], ["3", "3"], ["4", "4"], ["7", "7（经典分法）"], ["12", "12"]] },
+  };
+  const IJ = { 1: [1, 0], 3: [1, 1], 4: [2, 0], 7: [2, 1], 12: [2, 2] };   // 复用分组 N = i² + ij + j²：从一格走 i 格、转 60 度再走 j 格，就到下一个同组的格
+  const sels = {};
+  const ctrl = (k) => {
+    const s = h("select", { "aria-label": OPTS[k].label, onchange: () => { st[k] = s.value; draw(); } }, ...OPTS[k].list.map(([v, t]) => h("option", { value: v }, t)));
+    sels[k] = s;
+    return h("label", {}, OPTS[k].label, s);
+  };
+  const reset = h("button", { onclick: () => { Object.assign(st, BOOK); draw(); } }, "回到书里的数");
+  const plot = h("div");
+  const stage = h("div", { class: "stage" }, h("p", { class: "cap" }, "一小片小区：数字是组号，深色的和中间那格用同一份频率"), plot);
+  const narrate = h("div", { class: "narrate" });
+  const stats = h("div", { class: "stats" });
+  const body = root.querySelector(".sim-body");
+  body.innerHTML = "";
+  body.append(h("div", { class: "controls" }, ...Object.keys(OPTS).map(ctrl), reset), stage, narrate, stats);
+
+  const fmt = (x) => Math.round(x).toLocaleString("en-US"), f1 = (x) => (Math.round(x * 10) / 10).toFixed(1);
+  function run() {
+    const A = Number(st.A), F = Number(st.F), N = Number(st.N);
+    const cells = Math.round(CITY / A), pairs = F / 2, per = Math.floor(pairs / N), total = cells * per;
+    const R = Math.sqrt((2 * A) / (3 * Math.sqrt(3))), D = R * Math.sqrt(3 * N);
+    return { A, F, N, cells, pairs, per, total, ratio: total / pairs, D };
+  }
+  function map(N) {
+    const [i, j] = IJ[N];
+    const NS = "http://www.w3.org/2000/svg";
+    const S = (tag, a = {}, txt) => { const e = document.createElementNS(NS, tag); for (const k in a) e.setAttribute(k, a[k]); if (txt != null) e.textContent = txt; return e; };
+    const W = Math.round(Math.max(320, Math.min(640, plot.clientWidth || 640)));
+    const s = 19, dx = s * Math.sqrt(3), rows = 7, cols = Math.max(6, Math.floor((W - 10) / dx - 0.5));
+    const H = Math.round(s * 1.5 * (rows - 1) + 2 * s + 6);
+    const svg = S("svg", { class: "diagram", viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": `${N} 个小区一组的复用图：每格标着组号，编号 1 的格子颜色深，它们用同一份频率` });
+    const key = (q, r) => { const m0 = Math.floor(((i + j) * q + j * r) / N), n0 = Math.floor((-j * q + i * r) / N); return `${q - m0 * i + n0 * j},${r - m0 * j - n0 * (i + j)}`; };
+    const list = [];
+    for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) {
+      const q = c - Math.floor(r / 2);
+      list.push({ q, r, x: 5 + dx / 2 + dx * (q + r / 2), y: s + 3 + 1.5 * s * r });
+    }
+    const cx = W / 2, cy = s + 3 + 1.5 * s * Math.floor(rows / 2);
+    const byDist = list.slice().sort((a, b) => Math.hypot(a.x - cx, a.y - cy) - Math.hypot(b.x - cx, b.y - cy));
+    const grp = new Map();
+    for (const c of byDist) { const k = key(c.q, c.r); if (!grp.has(k)) grp.set(k, grp.size + 1); }
+    for (const c of list) {
+      const g = grp.get(key(c.q, c.r));
+      const pts = [0, 1, 2, 3, 4, 5].map((k) => { const a = (Math.PI / 180) * (60 * k - 30); return `${(c.x + s * Math.cos(a)).toFixed(1)},${(c.y + s * Math.sin(a)).toFixed(1)}`; }).join(" ");
+      svg.append(S("polygon", { points: pts, class: `g${g}${g === 1 ? " one" : ""}` }), S("text", { x: c.x.toFixed(1), y: (c.y + 4).toFixed(1), "text-anchor": "middle" }, String(g)));
+    }
+    plot.replaceChildren(svg);
+  }
+  function tell(r) {
+    const p = [];
+    p.push(`全城切成 ${fmt(r.cells)} 个小区，${r.N} 个一组，一组把 ${fmt(r.pairs)} 对频率分完，每个小区分到 ${fmt(r.per)} 对。所以全城能同时打 ${fmt(r.total)} 个电话；不复用的话只有 ${fmt(r.pairs)} 个，是它的 ${f1(r.ratio)} 倍。`);
+    if (r.A < 25) p.push(`小区缩到 ${r.A} 平方公里，基站要从书里的 40 座加到 ${fmt(r.cells)} 座：多出来的通话是拿基站换的，频率一个没加。`);
+    else if (r.A > 25) p.push(`小区放大到 ${r.A} 平方公里，基站只要 ${fmt(r.cells)} 座；同样的频率和分组下，能同时打的电话只有 25 平方公里时的一半。`);
+    if (r.F > 800) p.push("频率多了，每个小区分到的跟着多；可频率是管理部门分配的，运营商不能想加就加。");
+    else if (r.F < 800) p.push("频率少了，每个小区分到的跟着少。");
+    if (r.N === 1) p.push("一组一个，就是每个小区都用全部频率，紧挨着的小区同频。第一代模拟手机这样会互相串音，所以不这么分；今天的 4G、5G 常让相邻小区用同一段频带，靠编码和调度对付干扰，这个模拟器不算干扰。");
+    else if (r.N < 7) p.push(`分组少了，每个小区分到的多了，可用同一份频率的小区离得更近，中心只隔约 ${f1(r.D)} 公里，互相干扰更大。`);
+    else if (r.N > 7) p.push(`分组多了，用同一份频率的小区隔得更远（约 ${f1(r.D)} 公里），干扰小，可每个小区分到的少了。`);
+    return p.join("");
+  }
+  let lastN = null;
+  function draw() {
+    for (const k in sels) sels[k].value = st[k];
+    const r = run();
+    if (r.N !== lastN) { map(r.N); lastN = r.N; }
+    narrate.textContent = tell(r);
+    stats.innerHTML = "";
+    const box = (v, l) => h("div", { class: "stat" }, h("div", { class: "v" }, v), h("div", { class: "l" }, l));
+    stats.append(box(fmt(r.cells), "全城几个小区（每个一座基站）"), box(fmt(r.per), "每个小区分到几对频率"), box(fmt(r.total), "全城同时能打几个电话"), box(f1(r.ratio), "是不复用时的几倍"), box(f1(r.D), "同一份频率的两个小区相距（公里）"));
+  }
+  draw();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 3 章（下） · 工程导读</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/chapters.js"></script>
+<script src="../assets/eg.js"></script>
+</head>
+<body data-page="03b">
+<main>
+<h2>这一页在做什么</h2>
+<div class="gist"><p>第 3 章的后半。卡诺和克劳修斯给热机定下上限之后，作者看热机在今天的几条路上怎样长大：铁路上的机车、电厂里的汽轮机、飞机上的喷气发动机，再到核电。最好读的是 §8：喷气发动机和汽车发动机做的是同样四步，一个按时间轮流，一个按位置排开同时做；涡扇靠大风扇把更多空气慢慢推出去，省油又安静。§9 从切尔诺贝利和福岛引出全书后面的大题目：风险。§10 是作者对全章的结论：工程是为一个目的去做成一件事。</p></div>
+<figure class="fig">
+<svg class="diagram" viewBox="0 0 640 300" role="img" aria-label="对照图：上半是活塞发动机，四个格子沿时间排开，吸进油气、压缩、点火做功、排气，在同一个气缸里轮流做；下半是燃气轮机，一根管子从前到后分成进气、压气机、燃烧室、涡轮和喷口四段，四段同时在做，下面一根轴把涡轮和压气机连在一起">
+<text x="20" y="26" class="t-b">活塞发动机：四步在同一个气缸里轮流做</text>
+<rect x="20" y="40" width="130" height="50" rx="4" class="box"/>
+<rect x="170" y="40" width="130" height="50" rx="4" class="box"/>
+<rect x="320" y="40" width="130" height="50" rx="4" class="box"/>
+<rect x="470" y="40" width="130" height="50" rx="4" class="box"/>
+<text x="85" y="70" text-anchor="middle">1 吸进油气</text>
+<text x="235" y="70" text-anchor="middle">2 压缩</text>
+<text x="385" y="70" text-anchor="middle">3 点火做功</text>
+<text x="535" y="70" text-anchor="middle">4 排气</text>
+<line x1="20" y1="108" x2="606" y2="108" class="ln"/>
+<polygon points="618,108 604,102 604,114" class="f-fg"/>
+<text x="20" y="128" class="t-m">时间 → 一步做完才轮到下一步，气缸里的压力、温度一会儿高一会儿低</text>
+<text x="20" y="166" class="t-b">燃气轮机：四段从前到后排开，同时在做</text>
+<rect x="20" y="180" width="600" height="56" rx="6" class="f-soft"/>
+<line x1="170" y1="180" x2="170" y2="236" class="ln"/>
+<line x1="320" y1="180" x2="320" y2="236" class="ln"/>
+<line x1="470" y1="180" x2="470" y2="236" class="ln"/>
+<text x="95" y="213" text-anchor="middle">进气（吸）</text>
+<text x="245" y="213" text-anchor="middle">压气机（压）</text>
+<text x="395" y="213" text-anchor="middle">燃烧室（烧）</text>
+<text x="545" y="213" text-anchor="middle">涡轮、喷口（排）</text>
+<line x1="60" y1="252" x2="560" y2="252" class="ln-a"/>
+<text x="20" y="274" class="t-m">一根轴：后面的涡轮被燃气冲着转，带着前面的压气机一起转</text>
+<text x="20" y="294" class="t-m">位置 → 气流一直从前往后流，每个位置的压力、温度基本不变</text>
+</svg>
+<figcaption>本站示意图。两种发动机都是吸、压、烧、排四步，差在怎么排：活塞机按时间轮流，燃气轮机按位置排开。原书图 11 讲的也是这个对比，这里换了画法。</figcaption></figure>
+<h2>读之前：这一页在全书的哪里</h2>
+<div class="linehere"></div>
+<p>第 3 章的前半讲到：矿井排水的需要逼出了蒸汽机，卡诺说热机效率有上限、取决于冷热两端的温差，克劳修斯说能量守恒、可用的那部分却只会变少。这一页没有新的物理定律，讲热机怎样从矿井走进火车、电厂和飞机，又怎样带出核电的风险。§10 是全章的结论，作者回到第 1 章那套斜体词：will、activity、knowledge、objects。</p>
+<div class="heads-up"><p>别被带歪：§9 聚变那段把几件事搅在一起。说产物没有放射性，可燃料氚有放射性，中子还会让反应堆的结构材料带上放射性；粒子加速器打靶和「一亿度」说的也是两件事。罗西的能量催化器至今没有通过独立检验，别当成和聚变并列的前沿。</p></div>
+<div class="crux"><p>要同样大的推力，是把少量空气喷得飞快省油，还是把一大团空气慢慢推出去省油？</p></div>
+<p class="lede">读的时候带着这几个问题，读完回来对照「检查一下理解」。</p>
+<ol class="qs">
+  <li>发电厂为什么不再用活塞蒸汽机，改用汽轮机？<span class="sec">§7</span></li>
+  <li>喷气发动机和汽车发动机都是四步，差在哪里？推力的大小由什么决定？<span class="sec">§8</span></li>
+  <li>核电站哪一部分和烧煤的电厂一样？作者为什么说核电把「风险」推到了台前？<span class="sec">§9</span></li>
+  <li>作者说热机这段历史里，是谁带着谁往前走？<span class="sec">§10</span></li>
+</ol>
+<h2>分节地图</h2>
+<p class="lede">原书这一章没有小标题，一口气写下来。下面的节是本站按段落分的：粗体是本站起的节名，后面是档和英文词数；再下面是这一节开头的几个英文词，在 Kindle 里搜它就能跳过去。读完打个勾。</p>
+<ol class="secmap">
+  <li data-sec="7"><span class="what">从第 1 章的铁路接上，然后罗列外燃、内燃、四冲程、汽轮机、朗肯循环，概念块讲过的可以快读。斯旺西那一句的年份和地点对不上，见「书里的人和项目」。</span></li>
+  <li data-sec="8"><span class="what">这一页最好读的一节。惠特尔的故事之后，作者拿气球和牛顿定律讲推力；压气机那段的数字都带 perhaps，是量级。从 <span class="at" data-p="29">Modern jet engines in commercial passenger</span> 起讲涡扇。</span></li>
+  <li data-sec="9"><span class="what">核电站的后半截和火电厂一样。读切尔诺贝利之后的两种反应时，留意 can be made safe 那句算谁的话。风险在这里点题，留到第 6 章。<span class="at" data-p="34">Another potentially revolutionary development is</span> 那句要打折扣。</span></li>
+  <li data-sec="10"><span class="what">全章的结论，先读。作者用第 1 章那套斜体词收尾，说工程的本质是为目的去做成事；讲细节和大局的那段借了 Schön 的「反思性实践」。</span></li>
+</ol>
+<h2>先用中文过一遍：这一页的概念</h2>
+<p class="lede">先把这一页用到的几个概念用书外的例子讲一遍。作者拿它们推出什么，读原书时自己看。后面各页用到时会链回这里。</p>
+<div class="concept" id="c-turbine">
+<h3><span class="sec">§7</span>涡轮机、内燃机和朗肯循环 <span class="en">turbine, internal combustion, Rankine cycle</span></h3>
+<p>活塞机是一来一回：气体推着活塞走一段，再退回来，靠曲轴把往复变成转动。涡轮机是让水、蒸汽或空气一直冲过一圈斜装的叶片，直接带着轴转，水车、风车、汽轮机都是。没有来回换向，同样重的机器能出大得多的<a class="term" href="02.html#c-work">功率</a>，所以电厂里转发电机的都是它。</p>
+<p>火在气缸外头烧锅炉的是外燃机，比如蒸汽机；油和空气直接在气缸里烧的是内燃机，比如汽车发动机。四冲程是内燃机一个循环的四步：吸进油气、压缩、点火做功、排气，曲轴转两圈。今天的火电厂、核电厂多用朗肯循环：水泵把水压进锅炉，烧成蒸汽冲过汽轮机，再在冷凝器里凝回水，一圈圈循环。冷凝器就是<a class="term" href="03a.html#c-carnot">卡诺</a>说的冷的一端。</p>
+<figure class="fig">
+<svg class="diagram" viewBox="0 0 640 270" role="img" aria-label="朗肯循环示意图：热源把高压水烧成蒸汽，蒸汽冲过汽轮机，汽轮机带着发电机转；出来的乏汽进冷凝器凝成水，水泵把水加压送回热源。热源可以是烧煤、烧气，也可以是核反应堆">
+<rect x="30" y="40" width="190" height="64" rx="4" class="box"/>
+<text x="125" y="66" text-anchor="middle" class="t-b">热源：锅炉</text>
+<text x="125" y="88" text-anchor="middle" class="t-m">烧煤、烧气，或核反应堆</text>
+<rect x="340" y="40" width="140" height="64" rx="4" class="box"/>
+<text x="410" y="78" text-anchor="middle" class="t-b">汽轮机</text>
+<rect x="530" y="48" width="90" height="48" rx="4" class="f-soft"/>
+<text x="575" y="77" text-anchor="middle">发电机</text>
+<line x1="480" y1="72" x2="530" y2="72" class="ln-a"/>
+<rect x="340" y="176" width="140" height="64" rx="4" class="box"/>
+<text x="410" y="204" text-anchor="middle" class="t-b">冷凝器</text>
+<text x="410" y="226" text-anchor="middle" class="t-m">冷的一端，排掉热</text>
+<rect x="30" y="176" width="190" height="64" rx="4" class="box"/>
+<text x="125" y="214" text-anchor="middle" class="t-b">水泵加压</text>
+<line x1="220" y1="72" x2="330" y2="72" class="ln"/>
+<polygon points="340,72 328,66 328,78" class="f-fg"/>
+<text x="280" y="62" text-anchor="middle" class="t-m">高压蒸汽</text>
+<line x1="410" y1="104" x2="410" y2="166" class="ln"/>
+<polygon points="410,176 404,164 416,164" class="f-fg"/>
+<text x="420" y="144" class="t-m">做完功的蒸汽</text>
+<line x1="340" y1="208" x2="230" y2="208" class="ln"/>
+<polygon points="220,208 232,202 232,214" class="f-fg"/>
+<text x="280" y="198" text-anchor="middle" class="t-m">凝成的水</text>
+<line x1="125" y1="176" x2="125" y2="114" class="ln"/>
+<polygon points="125,104 119,116 131,116" class="f-fg"/>
+<text x="135" y="146" class="t-m">高压水</text>
+<text x="30" y="264" class="t-m">核电站只换掉了热源那一格，其余和火电厂一样</text>
+</svg>
+<figcaption>本站示意图。书里朗肯循环只有文字，没有图。</figcaption></figure>
+<p class="use"><b>在这一页：</b>§7 一口气给出这几样；§8 的燃气轮机、§9 的核电站都接在这张图上。</p>
+</div>
+<div class="concept" id="c-gas-turbine-thrust">
+<h3><span class="sec">§8</span>燃气轮机和推力 <span class="en">gas turbine, thrust, bypass air</span></h3>
+<p>燃气轮机做的还是吸、压、烧、排四步，只是四步在发动机里从前到后排开，同时进行：压气机一直在压，燃烧室一直在烧，涡轮一直被燃气冲着转，再通过同一根轴带动前面的压气机。</p>
+<p>推力 = 每秒穿过发动机的空气质量 ×（喷出的速度 − 飞机的速度）。书里说成「动量的变化率或质量乘速度」，有点含混，按这个式子记。同样的推力，可以把少量空气喷得飞快，也可以把大量空气推得慢一些。后一种省油：推力一定时，喷出的速度比飞机快得越多，留在身后那股风里白白扔掉的能量越多。喷流越快，噪声也越大。涡扇前面那把大风扇，就是让一大股外涵道空气不进燃烧室，绕过核心，慢一些往后推。</p>
+<figure class="fig">
+<svg class="diagram" viewBox="0 0 640 290" role="img" aria-label="涡喷和涡扇的对比图：推力都是 5 万牛，飞机每秒飞 250 米。涡喷式每秒推 125 千克空气，喷出 650 米每秒，发动机要给气流 22.5 兆瓦，其中 10 兆瓦白扔在喷流里；涡扇式每秒推 625 千克空气，喷出 330 米每秒，要 14.5 兆瓦，白扔 2 兆瓦">
+<text x="20" y="24" class="t-b">推力都是 5 万牛，飞机每秒飞 250 米</text>
+<rect x="30" y="64" width="110" height="30" rx="6" class="box"/>
+<polygon points="140,70 330,74 344,79 330,84 140,88" class="f-a"/>
+<text x="360" y="62" class="t-b">涡喷式：每秒推 125 千克空气</text>
+<text x="360" y="82" class="t-m">喷出 650 米/秒，比飞机快 400</text>
+<text x="360" y="102" class="t-m">要给气流 22.5 兆瓦，白扔 10 兆瓦</text>
+<rect x="30" y="136" width="14" height="96" rx="4" class="f-fg"/>
+<rect x="44" y="154" width="106" height="60" rx="6" class="box"/>
+<rect x="60" y="172" width="80" height="24" rx="4" class="f-soft"/>
+<text x="100" y="189" text-anchor="middle" class="t-m">核心</text>
+<rect x="150" y="146" width="110" height="80" rx="6" class="f-soft"/>
+<polygon points="260,146 280,186 260,226" class="f-soft"/>
+<text x="30" y="250" class="t-m">大风扇</text>
+<text x="360" y="162" class="t-b">涡扇式：每秒推 625 千克空气</text>
+<text x="360" y="182" class="t-m">喷出 330 米/秒，比飞机快 80</text>
+<text x="360" y="202" class="t-m">要给气流 14.5 兆瓦，白扔 2 兆瓦</text>
+<text x="20" y="270" class="t-m">两种都只有 12.5 兆瓦变成推飞机往前的功：推进效率约 56% 对 86%</text>
+</svg>
+<figcaption>本站示意图，数是本站定的演示值，书里没有算例。真的涡扇里，外涵道和核心喷出的速度不一样，这里当成一股平均速度来算。</figcaption></figure>
+<p class="use"><b>在这一页：</b>§8 用牛顿第二、第三定律讲推力，讲涡扇时说大风扇更省、更安静，靠的都是这笔账。</p>
+</div>
+<div class="concept" id="c-fission-fusion">
+<h3><span class="sec">§9</span>核裂变和核聚变 <span class="en">fission, fusion</span></h3>
+<p>裂变：铀-235 的原子核吃进一个中子，裂成两块较轻的核，放出热和两三个新中子，新中子再去撞别的铀核，这叫链式反应。控制棒能吸中子，插深一点，反应就慢下来。核电站只是拿这堆热换掉了锅炉底下的火，后面的蒸汽、汽轮机、发电机和火电厂一样，所以作者说它也是热机。</p>
+<p>聚变反过来：两个很轻的核挤到一起合成一个，太阳就靠氢聚变发光。地上最容易做的是氢的两种同位素氘和氚，合成氦，放出一个中子和大量能量。难在要把燃料加热到上亿度，还要把它约束得够久、够密：托卡马克用强磁场把它悬在环形真空室中间，激光装置靠一瞬间的压缩。书里说产物没有放射性，氦确实没有，可燃料氚有放射性，高能中子也会让反应堆的结构材料带上放射性。</p>
+<p class="use"><b>在这一页：</b>§9 先讲裂变的核电站，再讲聚变。风险在这里只是点题，概念留到<a class="term" href="06a.html#c-risk">第 6 章</a>。</p>
+</div>
+<div class="concept" id="c-reflective-practice">
+<h3><span class="sec">§10</span>反思性实践 <span class="en">reflective practice</span></h3>
+<p>Donald Schön 是美国的哲学家和城市规划学者，1983 年写了《反思的实践者》（The Reflective Practitioner）。他看建筑师、心理治疗师、规划师怎么干活，发现高手不是先把理论想全再照着做，而是边做边看情况给的反馈，随时调整，事后再回头想一遍。和它对着的，是把专业工作看成「把科学理论套到问题上」的想法。</p>
+<p>程序员对这个不陌生：写一点，跑一下，看报错，改；上线以后复盘。作者借这个词说工程师两头都要顾：往里抠细节，瓦特改阀门和控制机构就是例子；往外看大局，钱、社会、环境、用户、维护、监管都在里面。</p>
+<p class="use"><b>在这一页：</b>§10 收尾时用它。同一节开头的 will、activity、knowledge、objects 是<a class="term" href="01.html#c-mitcham-four">第 1 章那套标签</a>。</p>
+</div>
+<h2>书里的人和项目</h2>
+<p class="lede">书里点名的人、发明和工程，挑读懂这一页用得上的讲。按在书里出现的顺序排，节号是你在书里哪一节遇到它。</p>
+<h3><span class="sec">§7</span>特里维西克的高压蒸汽机车</h3>
+<div class="who"><div><b>Richard Trevithick</b><span class="en">1771–1833</span>英国康沃尔的矿山工程师。他用高压蒸汽直接推活塞，机器变小了，才装得上车。</div></div>
+<p>瓦特的蒸汽机用的是低压蒸汽，又大又重。特里维西克把蒸汽压到几个大气压，同样的力用小得多的气缸就够。1804 年 2 月，他的机车在南威尔士梅瑟蒂德菲尔的 Penydarren 铁厂拉着约 10 吨铁和 70 个人走了近 10 英里，常被算作第一台在铁轨上跑起来的蒸汽机车。书里说他的第一列火车 1807 年从斯旺西开到曼布尔斯，这和史实对不上：斯旺西—曼布尔斯铁路 1807 年开始收票载客，是最早的客运铁路之一，但车是马拉的。</p>
+<figure class="fig"><img src="../assets/img/03b-penydarren.jpg" alt="博物馆里一段铁轨上的黑色老机车：卧式圆筒锅炉，一根高烟囱，一侧有很大的飞轮和一根长长的横杆，四个辐条轮，后面是红墙和楼梯" loading="lazy">
+<figcaption>特里维西克 1804 年 Penydarren 机车的复制品，摆在斯旺西的国家海滨博物馆。原物没有留下来。复制品放在斯旺西只因为博物馆在那里，不能拿来佐证书里那句。<span class="src">The wub，CC BY-SA 4.0，维基共享资源</span></figcaption></figure>
+<h3><span class="sec">§7</span>斯蒂芬森的「火箭号」</h3>
+<p>1829 年，利物浦—曼彻斯特铁路（书里写成 Manchester and Liverpool）要挑选机车，办了一场比赛，史称雨山试车（Rainhill Trials）。斯蒂芬森的「火箭号」（Rocket）胜出。书里说那时的机车能拉 30 名乘客跑到每小时 30 英里，约 48 公里。书后参考文献点了 George Stephenson 和儿子 Robert，说父子俩发展了铁路。作者拿它说明，特里维西克之后二十多年，机车已经能载客跑起来了。原书图 9 是 2010 年造的全尺寸复制品。</p>
+<figure class="fig"><img src="../assets/img/03b-rocket.jpg" alt="博物馆大厅里一台黑色老机车的侧面：前面一对很大的辐条主动轮，后面一对小轮，卧式锅炉，前端一根高烟囱，锈迹明显，右边站着一位参观者" loading="lazy">
+<figcaption>「火箭号」原物，2017 年摄于伦敦科学博物馆。它后来改装过，加了烟箱、汽缸挪了位置，和 1829 年比赛时的样子不同。<span class="src">Les Chatfield，CC BY 2.0，维基共享资源</span></figcaption></figure>
+<h3><span class="sec">§7</span>帕森斯的汽轮机</h3>
+<div class="who"><div><b>Charles Parsons</b><span class="en">1854–1931</span>英国工程师。书里说现代汽轮机是他 1884 年发明的。</div></div>
+<p>帕森斯让蒸汽一级一级地穿过很多排叶片，每一级只降一点压力，叶轮转得飞快又不会被冲坏。为了让海军看到它，他造了一艘装汽轮机的快艇「透平尼亚号」（Turbinia），1897 年在英国海军的阅舰式上不请自来，从军舰的队列之间高速穿过，没有船追得上。此后英国海军的新军舰陆续改用汽轮机。今天火电厂、核电厂里带着发电机转的，还是这种多级汽轮机。</p>
+<figure class="fig"><img src="../assets/img/03b-turbinia.jpg" alt="黑白照片：一艘细长低矮的快艇在海上高速前进，船身写着 TURBINIA，船尾翻起长长的白浪，烟囱冒出一大团黑烟" loading="lazy">
+<figcaption>「透平尼亚号」全速航行，1897–98 年间摄。<span class="src">Alfred John West，公有领域，维基共享资源</span></figcaption></figure>
+<h3><span class="sec">§8</span>惠特尔和冯·奥海因</h3>
+<div class="who"><div><b>Frank Whittle</b><span class="en">1907–1996</span>英国皇家空军军官，1930 年申请了喷气发动机的专利（1932 年批下），常被叫作「喷气发动机之父」。</div></div>
+<div class="who"><div><b>Hans von Ohain</b><span class="en">1911–1998</span>德国物理学家，在亨克尔公司独立造出了喷气发动机。</div></div>
+<p>书里说德国的冯·奥海因也在做同样的事，「尽管如此」，英国政府战时的心思在别处，惠特尔很难说服政府投钱，进展很慢，到 1941 年才飞起来。这句衔接很别扭，容易读不出要紧的一点：德国先飞了。1939 年 8 月 27 日，装冯·奥海因发动机的亨克尔 He 178 首飞，比二战爆发早几天。英国第一架喷气式飞机格洛斯特 E.28/39 装的是惠特尔的发动机，1941 年 5 月 15 日才首飞。两边是各自独立做出来的。</p>
+<figure class="fig"><img src="../assets/img/03b-gloster.jpg" alt="黑白照片：一架机身短粗的单座小飞机贴着地面，机头是一个圆形进气口，没有螺旋桨，迷彩涂装，机尾编号 W4041" loading="lazy">
+<figcaption>格洛斯特 E.28/39（编号 W4041），约 1941 年摄于法恩伯勒，装惠特尔发动机的英国第一架喷气式飞机。拍的不是首飞那一次。<span class="src">英国皇家空军官方摄影师，公有领域（帝国战争博物馆藏），维基共享资源</span></figcaption></figure>
+<h3><span class="sec">§8</span>大风扇的涡扇</h3>
+<p>书里说今天的民航客机多用涡扇发动机，前面的风扇直径可达 3 米上下。看这台剖开的模型：风扇吸进来的空气大部分不进核心，从核心外面那一圈通道直接往后吹，这就是外涵道空气；只有一小部分钻进核心，经过压气机、燃烧室、涡轮。推力两股相加。为什么这样更省油、更安静，见概念块「燃气轮机和推力」。</p>
+<figure class="fig"><img src="../assets/img/03b-turbofan.jpg" alt="一台银色大发动机的剖开模型悬在展厅里：前方一圈风扇叶片和外壳，中间剖开处露出一层层压气机叶片和金黄色的燃烧室，后方是黑色锥形尾喷口，内核外面有一圈空的通道" loading="lazy">
+<figcaption>普惠 JT9D 涡扇发动机的剖开模型。这款发动机 1966 年首次运转，1969 年取证，给宽体客机用。前面那圈大风扇和核心外面的空通道就是外涵道。<span class="src">Cliff，CC BY 2.0，维基共享资源</span></figcaption></figure>
+<h3><span class="sec">§9</span>切尔诺贝利和福岛</h3>
+<p>1986 年 4 月，乌克兰（当时属苏联）切尔诺贝利核电站的 4 号机组在停堆检修前做一项安全试验，反应失控，反应堆爆炸起火，放射性物质随风飘过大半个欧洲。书里说超过 33.6 万人撤离。福岛第一核电站是 2011 年 3 月的大地震引来海啸，淹掉了备用电源，冷却停了，几个机组的堆芯熔毁。两次事故在国际核事件分级（INES）上都是最高的 7 级。书里引的国际原子能机构（IAEA）结论，见「本站怎么看」。</p>
+<figure class="fig"><img src="../assets/img/03b-chernobyl.jpg" alt="晴天，一座银灰色的巨大拱形建筑罩在厂房上，拱顶旁立着一座高高的格子塔，右前方是一座灰色纪念碑" loading="lazy">
+<figcaption>切尔诺贝利 4 号机组，外面罩着新安全罩，就是那座银灰色的大拱，2019 年摄。<span class="src">Mattias Hill，CC BY-SA 4.0，维基共享资源</span></figcaption></figure>
+<h3><span class="sec">§9</span>聚变和罗西的「能量催化器」</h3>
+<p>聚变的燃料要加热到上亿度，又不能碰到容器壁。托卡马克是一种环形真空室，用强磁场把高温等离子体约束在中间，英国卡勒姆的欧洲联合环（JET）就是一台。书里那句「用小型粒子加速器把氘离子打到氚靶上，在一亿摄氏度下做到过聚变」把两件事并在了一起：加速器打靶确实能产生聚变，实验室拿它当中子源，一亿度说的却是托卡马克里等离子体的温度。核弹里放出的聚变能是一次爆炸，不是可控的。书里接着提到意大利人 Andrea Rossi 的「能量催化器」（E-Cat），说它靠「低能核反应」、有专利、还没充分检验。后来的事见「今天怎么看」。</p>
+<figure class="fig"><img src="../assets/img/03b-jet.jpg" alt="鱼眼镜头拍的环形真空室内部：中间一根粗大的立柱贴满灰色方砖，四周一圈圈弧形的银色结构向两边弯过去" loading="lazy">
+<figcaption>欧洲联合环（JET）托卡马克的真空室内部，2011 年，内壁换成了铍和钨的金属壁。鱼眼镜头，弧度是夸张的。<span class="src">EUROfusion，CC BY 4.0，维基共享资源</span></figcaption></figure>
+<h2>原文里的词和句</h2>
+<p class="lede">读英文原书时值得停一下的词和句：工程里的熟词生义、英式说法、作者的比喻。灰色斜体是原句里连续的几个词，在 Kindle 里搜它就能找到；标「每个字都认识」的，是每个词都眼熟、合起来意思却变了的，最容易读错。点「记下」收进词本。</p>
+<div class="entry trap"><div class="en">atmosphere</div><div class="loc" data-p="23">… a few atmospheres, or 30–50 psi …</div><div class="zh">大气压（压强单位）</div><div class="note">1 个大气压约 101 千帕，约 14.7 psi。psi 是磅每平方英寸，英美常用。30–50 psi 就是两三个大气压。</div></div>
+<div class="entry trap"><div class="en">run on</div><div class="loc" data-p="24">… cars run on hydrocarbons such as petrol …</div><div class="zh">以……为燃料，靠……开动</div><div class="note">不是「在……上跑」。petrol 是英式说法，美式叫 gasoline 或 gas。</div></div>
+<div class="entry trap"><div class="en">stroke</div><div class="loc" data-p="24">… in the four-stroke (i.e. stage) internal …</div><div class="zh">冲程（活塞走一趟）</div><div class="note">日常的 stroke 是笔画、一击、中风。作者自己括号解释成 stage（阶段）。</div></div>
+<div class="entry trap"><div class="en">well into</div><div class="loc" data-p="25">… power well into the 20th century …</div><div class="zh">一直到……过了好一段</div><div class="note">well 在这里加强程度：well into the night 是一直到深夜。不是「很好地进入」。</div></div>
+<div class="entry"><div class="en">ratio of power to weight</div><div class="loc" data-p="25">… a higher ratio of power to weight …</div><div class="zh">功重比，每千克机器出多少功率</div><div class="note">power 是功率，weight 是机器自重。常写成 power-to-weight ratio，发动机、电池、电机都拿它比。</div></div>
+<div class="entry trap"><div class="en">scheme</div><div class="loc" data-p="25">… used in hydroelectric schemes to generate …</div><div class="zh">（英式）工程、项目</div><div class="note">英式里 scheme 是中性的「计划、工程」，比如 pension scheme。美式常带贬义，像「阴谋、诡计」。</div></div>
+<div class="entry trap"><div class="en">suck, squeeze, bang, blow</div><div class="loc" data-p="27">… compressed (squeezed), the fuel burned (bang), …</div><div class="zh">吸、压、爆、吹（发动机四步的顺口溜）</div><div class="note">英语里讲发动机四步的口诀，作者拆开放在括号里。bang 在这里是点火燃烧，不是「砰」的噪声。</div></div>
+<div class="entry trap"><div class="en">ratchet up</div><div class="loc" data-p="28">… the pressure ratchets up by a factor …</div><div class="zh">一级一级往上升</div><div class="note">ratchet 是棘轮，只能朝一个方向一格格转。这里说压力过一级压气机升一点。新闻里常说紧张局势 ratchet up。</div></div>
+<div class="entry trap"><div class="en">of the order of</div><div class="loc" data-p="28">… perhaps of the order of 20 …</div><div class="zh">大约，在……这个量级</div><div class="note">不是「按照……的命令」。工程和科学里常说 of the order of 10 是「十左右、同一个数量级」。</div></div>
+<div class="entry"><div class="en">nacelle</div><div class="loc" data-p="29">… of the nacelle (the engine housing) …</div><div class="zh">发动机短舱</div><div class="note">吊在机翼下、包着发动机的那个外壳。作者在括号里自己解释了。</div></div>
+<div class="entry"><div class="en">plume</div><div class="loc" data-p="31">… sent a plume of highly radioactive gas …</div><div class="zh">一股往上飘散的烟流，烟羽</div><div class="note">本义是羽毛。事故、环境报道里常见 a plume of smoke。</div></div>
+<div class="entry"><div class="en">slackness</div><div class="loc" data-p="32">… such slackness in design and operation …</div><div class="zh">松懈，马虎</div><div class="note">slack 是绳子松垮。拿来说人或组织做事不严，是比较克制的批评。</div></div>
+<div class="entry"><div class="en">necessary evil</div><div class="loc" data-p="33">… nuclear power is a necessary evil …</div><div class="zh">不喜欢也不得不接受的东西，必要之恶</div><div class="note">常用习语。这一句前面还有 perhaps reluctantly（或许不情愿地），语气更弱。</div></div>
+<div class="entry trap"><div class="en">bring to a head</div><div class="loc" data-p="33">… Nuclear safety brings to a head …</div><div class="zh">使（问题）凸显到非解决不可</div><div class="note">head 指疖子化脓到顶、要破的时候。不是「带到头上」。</div></div>
+<div class="entry trap"><div class="en">passively safe</div><div class="loc" data-p="34">… power plant would be passively safe …</div><div class="zh">被动安全：出了事不靠人和外部电源，自己就停下来</div><div class="note">核工程术语。passive 在这里是「不用主动干预」，不是「消极」。</div></div>
+<div class="entry trap"><div class="en">leapfrog</div><div class="loc" data-p="35">… The leapfrogging of practical experimentation, production …</div><div class="zh">交替领先，你追我赶</div><div class="note">本义是跳山羊游戏，后面的人撑着前面的人跳过去。这里说实践和科学轮流跑在前面。</div></div>
+<div class="entry trap"><div class="en">stuttering</div><div class="loc" data-p="35">… been uniform but stuttering and irregular …</div><div class="zh">走走停停，磕磕绊绊</div><div class="note">本义是口吃。拿来说进展、经济复苏时，是时断时续的意思。</div></div>
+<div class="entry"><div class="en">the devil is in the detail</div><div class="loc" data-p="37">… the devil is in the detail …</div><div class="zh">魔鬼藏在细节里：细节最容易出问题</div><div class="note">英式多说 detail，美式多说 details。</div></div>
+<h2>读完：作者到底说了什么</h2>
+<p class="lede">下面是作者在这一章里的主张，本站按主张之间的逻辑重排，不按原书顺序；每条后面是节号，拿不准就回书里那一节再读一遍。</p>
+<div class="claims">
+  <div class="claim"><h4>热机的主角从活塞换成了涡轮</h4><p>活塞蒸汽机一直用到 20 世纪，后来发电让给了汽轮机：效率更高，功重比更高。喷气发动机做的还是汽车发动机那四步，他说它更「优雅」，因为四步连续地在一根轴上进行。涡扇用大风扇推更多的空气，推力来得更高效，也更安静。</p><span class="sec" data-p="25 27 29">§7 §8</span></div>
+  <div class="claim"><h4>核电让风险成了绕不开的问题</h4><p>核电站也是热机，只是热来自链式反应。切尔诺贝利之后，有人说核电风险太大，有人说那种松懈不会出在自己的电站。许多政府「或许不情愿地」把它当成应对气候变化的必要之恶，福岛后又有不少在重新考虑。他说这些事故说明安全是系统行为的复杂问题；风险是 STEM 各领域都有的核心问题，只是程度不同，第 6 章细讲。</p><span class="sec" data-p="30 32 33">§9</span></div>
+  <div class="claim"><h4>造出来的东西是有生命周期的系统，工程师要往里看，也要往外看</h4><p>产品会变、要维护，所以也是一串过程。人改变地球的本事大了，风险成了核心问题。安全要靠抠细节，瓦特改阀门和控制机构效果就很大；也要看大局：钱、社会、环境、用户、维护、监管。他借 Schön 的说法：边做边反思。</p><span class="sec" data-p="37">§10</span></div>
+  <div class="claim"><h4>热机史是实际需要带着求知往前走，几种人接力做成</h4><p>他用第 1 章那套斜体词收全章：人的意志被实际需要推着去做新事，做的过程中生出求知，最后落成新的动力和材料。萨弗里、纽科门偏手艺；瓦特、帕森斯、惠特尔更像敢冒险的先驱和企业家；卡诺、克劳修斯、朗肯偏理论和实验。各人一点点往前推。</p><span class="sec" data-p="35">§10</span></div>
+<blockquote class="quote">Progress has not been uniform but stuttering and irregular – but it has been relentless.<cite>— §10。本站译：进步并不均匀，而是磕磕绊绊、时断时续，可它从没停下。</cite></blockquote>
+  <div class="claim"><h4>工程的本质是为一个目的去做成一件事</h4><p>他说热机的整部历史不只是找出新想法，而是把事做成；解题的严谨来自要实用的需要。这需要「明智的预见」，它包含逻辑严密，但不止于此。做的东西要创造价值，价值又会从几个相互冲突的角度去看，社会剧变时尤其如此。</p><span class="sec" data-p="36">§10</span></div>
+<blockquote class="quote">The essence of all engineering activity is doing something to fulfill a purpose – a process.<cite>— §10。本站译：一切工程活动的本质，是为实现一个目的去做成一件事，这是一个过程。</cite></blockquote>
+</div>
+<p class="sowhat"><b>合起来：</b>这一页从机车讲到核电：热机越做越大、越做越精，风险也跟着变大。作者的结论落在「做」上：工程是为了目的把事做成，靠的是预见，也靠在做的过程中不断反思。</p>
+<p class="chapsum"><b>这一章合起来：</b>先从橡皮筋和桥讲应变能：结构站得住，靠的是内部做功的能力跟得上外部加来的需求。然后讲热：矿井排水逼出了蒸汽机，卡诺和克劳修斯又说明热变成功有上限、能量会变得不可用，章名「不能白得」说的就是这个。热机后来进了火车、电厂和飞机，也带来了核电的风险。作者从这段历史得出：实践带着求知往前走，工程的本质是为目的去做成事。</p>
+<h2>今天怎么看</h2>
+<p class="lede">书 2012 年出版。下面挑出这一页里能被后来的研究或事情检验的说法，分「书里 / 当时 / 今天」几栏，并给一个结论。结论判的是标题里「书里的说法：」后面那一句。全书的这一节汇总在<a href="../today.html">今天怎么看</a>。</p>
+<ul class="verdicts"><li><span class="v ok">成立</span>后来的研究或事情支持这句话。</li><li><span class="v mid">部分成立</span>大方向对，细节或适用范围要改。</li><li><span class="v bad">被改写</span>后来的研究推翻了它、换了一种说法，或者情况变了。</li><li><span class="v dis">有争议</span>至今没有定论，两边各有代表性的研究或证据。</li></ul>
+<div class="today" data-verdict="成立"><h4>书里的说法：许多政府不情愿地把核电看成应对气候变化的必要之恶</h4><dl>
+  <dt>书里</dt><dd>许多政府「或许不情愿地」认定，要应对气候变化，核电是必要之恶；福岛之后，不少政府又在重新考虑。<span class="at" data-p="33">§9</span></dd>
+  <dt>当时</dt><dd>福岛事故后，德国 2011 年决定逐步退出核电，日本的核电机组陆续全部停下接受检查。</dd>
+  <dt>今天</dt><dd>德国 2023 年 4 月关掉了最后三座核电站。日本按新标准审查后陆续重启，到 2024 年底重启了 14 台，2026 年初世界最大的柏崎刈羽核电站 6 号机也重启了。2023 年底的联合国气候大会（COP28）上，美、法、英、日、韩等 22 国签署宣言，提出到 2050 年把全球核电装机提高到 2020 年的三倍，理由正是减排。各国走向两头，但把核电当成应对气候变化的手段之一，今天已经写进了多国政府的正式宣言，书里这句成立。<span class="asof">核对于 2026-11。依据：World Nuclear News 关于 COP28 三倍核电宣言的报道（2023-12）；美国能源信息署关于日本重启的简报；NEI Magazine 关于柏崎刈羽 6 号机的报道。</span></dd>
+</dl></div>
+<div class="today" data-verdict="成立"><h4>书里的说法：至今还做不出能拿来发电的持续、可控聚变</h4><dl>
+  <dt>书里</dt><dd>原理我们懂，也做到过；难的是工程，至今做不出适合发电的持续、可控的聚变。<span class="at" data-p="34">§9</span></dd>
+  <dt>当时</dt><dd>美国国家点火装置（NIF）2009 年建成，到 2012 年没能按计划实现点火；国际热核聚变实验堆（ITER）在法国南部建设中。</dd>
+  <dt>今天</dt><dd>2022 年 12 月，NIF 用 2.05 兆焦的激光打靶，得到 3.15 兆焦聚变能，第一次「点火」：靶丸放出的能量多于打进去的激光。2025 年 4 月纪录升到 8.6 兆焦，约是激光的 4 倍。可激光器从电网取的电比这多得多，而且一次只打一发。ITER 2024 年公布新计划：2034 年开始科研运行，氘氚聚变推到 2039 年，多花约 50 亿欧元。到今天还没有哪台聚变装置向电网送过电，书里这句仍然成立。<span class="asof">核对于 2026-11。依据：劳伦斯利弗莫尔国家实验室 2025 年年报的 NIF 部分；Physics World 2024 年关于 ITER 新基线的报道。</span></dd>
+</dl></div>
+<div class="today" data-verdict="被改写"><h4>书里的说法：罗西的能量催化器是一项可能带来革命的发展</h4><dl>
+  <dt>书里</dt><dd>和聚变并列，称为「另一项可能带来革命的发展」：靠低能核反应，罗西申请了专利，还没有充分检验。<span class="at" data-p="34">§9</span></dd>
+  <dt>当时</dt><dd>「低能核反应」接的是 1989 年「冷聚变」的线：那次宣布的结果，别的实验室重复不出来，主流物理学界一直不认。</dd>
+  <dt>今天</dt><dd>2016 年，罗西起诉买下他授权的美国公司 Industrial Heat，说一台 1 兆瓦的装置测了近一年、结果很好，对方该付约 8900 万美元；对方说这些说法没有根据，反指他违约，替对方盯测试的人也被指和罗西关系密切。2017 年 7 月案子审到一半双方和解，这笔钱对方没有付。独立实验室重复他的结果都没有成功。它没有成为和聚变并列的前沿，「可能带来革命」今天站不住。<span class="asof">核对于 2026-11。依据：PR Newswire 上双方 2016 年 4 月的声明；New Energy Times 的罗西事件时间线；英文维基 Andrea Rossi (entrepreneur) 条；Jones Day 2017 年 7 月关于此案和解的说明。</span></dd>
+</dl></div>
+<h2>本站怎么看</h2>
+<p class="lede">读完作者的主张，再看它站不站得住。每一块摆出三样：主流怎么看，作者怎么看，本站的评论。最后一句是本站对这一页的总体判断。</p>
+<div class="views"><h4>「实践带着科学走」：蒸汽机是这样，核电反过来</h4>
+<p><b>主流看法：</b>蒸汽机是公认的「技术在前、科学在后」：纽科门的机器 1712 年就在矿井里抽水，卡诺 1824 年才问效率有没有上限，热力学的两条定律要到 19 世纪中叶。核能正好倒过来：1938 年底化学家在实验室里发现了铀核裂变，四年后芝加哥就建成了第一座反应堆，没有这项物理发现就没有这门工程。</p>
+<p><b>作者的看法：</b>热机史是人的意志被实际需要推着，带出求知；实践、生产和科学交替领先，几百年里一直没停。<span class="at" data-p="35">§10</span></p>
+<p class="ours"><b>本站的评论：</b>放在蒸汽机上，这个说法很有力，第 3 章前半的故事就是证据。可同一章后半的例子不全是这样：核电、聚变，都是先有物理，再有工程。他用 leapfrog（交替领先）这个词，其实已经承认两头都会跑在前面。「意志、活动、知识、物件」是好记的描述框架，不是能检验的论断，当作一种看历史的角度就好。</p></div>
+<div class="views"><h4>切尔诺贝利：怪操作的人，还是怪设计</h4>
+<p><b>主流看法：</b>国际原子能机构的国际核安全咨询组（INSAG）1986 年的第一份报告，把主因放在操作人员违反规程上，也提出了「安全文化」这个词。1992 年的修订报告 INSAG-7 改了重心：反应堆设计有大缺陷，控制棒末端是石墨，刚往下插时反而让反应先加快；苏联核工业对安全的管理和监管也有问题；安全文化不足仍是深层原因。</p>
+<p><b>作者的看法：</b>IAEA 把主因归到运行文化差和反应堆设计差。各方反应不一：有人说核电太危险；有人说那种设计和运行上的松懈不会出在自己的电站。紧接着是一句很短的「核电可以做到安全」，读成那些人的主张、读成作者自己的立场都说得通。<span class="at" data-p="32">§9</span></p>
+<p class="ours"><b>本站的评论：</b>作者把「人」和「设计」两样并列，正是第 6 章要讲的系统观：事故很少只怪一个按错按钮的人。「我们的电站不会这样」这种想法，25 年后在福岛又被检验了一次：另一种堆型，另一种起因，是海啸淹了备用电源。只排除别人犯过的错，不等于安全。</p></div>
+<p class="verdict"><b>本站的总体看法：</b>这一页多是热机应用的清单，§8 的燃气轮机和涡扇讲得最好，值得配图细读。核电一段两边都摆了，但聚变那几句和罗西的能量催化器要打折扣。§10 是全章的结论，先读；把它当作作者对工程的一种看法，不是定论。</p>
+<h2>检查一下理解</h2>
+<p class="lede">先在心里答，再点开。答错的那题，回书里把对应那一节再读一遍。</p>
+<details class="check"><summary>1.（§7）外燃机和内燃机怎么分？蒸汽机、汽车发动机、喷气发动机各算哪种？</summary><p>看燃料在不在气缸或发动机里面烧。蒸汽机的火在锅炉里，是外燃机；汽车发动机和喷气发动机让燃料直接在里面烧，是内燃机，书里把燃气轮机和喷气发动机也列进了内燃机的品种。</p></details>
+<details class="check"><summary>2.（§7）发电厂为什么不用活塞蒸汽机，改用汽轮机？</summary><p>书里给的理由是汽轮机效率高得多，功重比也更高。它让蒸汽一直冲着叶片转，没有活塞那种来回换向。</p></details>
+<details class="check"><summary>3.（§8）汽车发动机和燃气轮机都是四步，差在哪里？</summary><p>汽车发动机的四步在同一个气缸里按时间轮流做，压力、温度忽高忽低；燃气轮机把四步按位置从前到后排开，同时连续地做，装在一根轴上，每个位置的压力、温度基本稳定。</p></details>
+<details class="check"><summary>4.（§8）飞机每秒飞 250 米，要 5 万牛推力。每秒推 125 千克空气，要喷多快？推 625 千克呢？哪种省油？</summary><p>5 万 ÷ 125 = 400，喷出速度要比飞机快 400，即 650 米/秒；5 万 ÷ 625 = 80，即 330 米/秒。后一种省油：喷流比飞机快得少，白扔在身后的能量少。这就是涡扇大风扇的道理。</p></details>
+<details class="check"><summary>5.（§9）核电站哪里和烧煤的电厂一样，哪里不一样？</summary><p>热的来源不一样：核电站靠铀核裂变的链式反应放热，用控制棒调快慢。后面一样：拿热把水变成蒸汽，推汽轮机，带发电机。</p></details>
+<details class="check"><summary>6.（§9）书里说 IAEA 把切尔诺贝利的主因归到哪两样？作者由此引出了什么？</summary><p>运行文化差和反应堆设计差。他由此说安全是系统行为的复杂问题，风险是工程和 STEM 各领域的一个核心问题，留到第 6 章细讲。</p></details>
+<details class="check"><summary>7.（§10）作者说工程和单纯找出新想法差在哪里？</summary><p>工程是为一个目的去做成一件事，是一个过程；它需要明智的预见，不只是逻辑严密，做出的价值还要从几个可能冲突的角度去看。</p></details>
+<p>用一句话说这一页：</p>
+<textarea class="note" data-key="03b-oneline" rows="2" placeholder="比如：……"></textarea>
+<div class="ponder"><p>想一想：你今天用到的东西里，哪些背后转着一台热机（手机充电的电从哪来、坐的车、头顶飞过的飞机）？哪些已经完全不靠热机了？</p>
+<textarea class="note" data-key="03b-ponder" rows="3"></textarea></div>
+<h2>精彩回顾</h2>
+<p class="lede">读过又忘了，从这里想起来。挑的是这一页最值得记住的例子和说法，不按原书顺序；每条后面是节号，想细看就回书里那一节。全书各页的这一节都收在<a href="../recap.html">全书回顾</a>。</p>
+<p class="recall-line"><b>一句话：</b>热机从矿井走进火车、电厂和飞机，主角从活塞换成涡轮；核电让风险登场；作者说工程是为目的去做成事。</p>
+<div class="recall">
+  <div class="item"><b>涡轮把活塞挤出了电厂</b><p>汽轮机让蒸汽一直冲着叶片转，效率和功重比都比活塞机高。帕森斯 1884 年发明现代汽轮机，今天的火电厂、核电厂还在用。</p><span class="sec">§7</span></div>
+  <div class="item"><b>同样四步，一个轮流，一个排开</b><p>汽车发动机在一个气缸里按时间轮流吸、压、烧、排；燃气轮机把四步从前到后排开，同时连续地做，作者说这更优雅。</p><span class="sec">§8</span></div>
+  <div class="item"><b>慢慢推一大团空气更省油</b><p>推力是每秒推多少空气乘速度差。同样推力，大风扇把更多空气推得慢一些，白扔的能量少，噪声也小，这就是涡扇。</p><span class="sec">§8</span></div>
+  <div class="item"><b>德国的喷气机先飞</b><p>惠特尔 1930 年申请专利，英国的喷气机 1941 年才飞；德国冯·奥海因的发动机装在 He 178 上，1939 年 8 月就先飞了。</p><span class="sec">§8</span></div>
+  <div class="item"><b>核电站也是热机</b><p>反应堆只换掉了锅炉底下的火，后面的蒸汽、汽轮机、发电机和火电厂一样。切尔诺贝利和福岛让作者把风险推到了台前。</p><span class="sec">§9</span></div>
+  <div class="item"><b>工程是去做成一件事</b><p>作者的结论：热机史是实际需要带着求知走，进步断断续续但不停；工程要明智的预见，要抠细节也要看大局，边做边反思。</p><span class="sec">§10</span></div>
+</div>
+</main>
+</body>
+</html>

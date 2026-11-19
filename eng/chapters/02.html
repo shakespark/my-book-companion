@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 2 章 · 工程导读</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/chapters.js"></script>
+<script src="../assets/eg.js"></script>
+<style>
+#sim-02 .cap { font-size: 13px; color: var(--muted); margin: 2px 0 8px; }
+</style>
+</head>
+<body data-page="02">
+<main>
+<h2>这一页在做什么</h2>
+<div class="gist"><p>第 2 章是作者五个「时代」里的第一个：重力的时代。开头一小段是物理，后面大半是一条从史前到牛顿的时间线。开头最好读：推秋千要掐准时机，顺着秋千自己的节奏推，一点力气就能越荡越高，这是共振；同样的事落到桥上就成了祸害。接着他把日常的「干活」换成物理的「功」。中间的历史可以挑着读，要紧的在 §9：希腊人只许长度比长度，「速度」连一个量都算不上，直到 14 世纪有人拿距离去比时间，伽利略和牛顿才接得上。§10 是作者自己对科学和工程关系的三点判断。</p></div>
+<figure class="fig">
+<svg class="diagram" viewBox="0 0 640 300" role="img" aria-label="推秋千示意图：上半是秋千摆到你这边的最高点，箭头表示这时顺着它往前推；另一头标着它迎面回来时推等于踩刹车。下半是三行时间刻度：秋千每 2.8 秒回到你这边一次；每 2.8 秒推一次，次次赶上；每 2 秒推一次，时早时晚">
+<line x1="250" y1="16" x2="390" y2="16" class="ln"/>
+<line x1="320" y1="16" x2="320" y2="156" class="ln-d"/>
+<path d="M250 137 A140 140 0 0 0 390 137" class="ln-d"/>
+<line x1="320" y1="16" x2="250" y2="137" class="ln"/>
+<rect x="234" y="135" width="32" height="8" rx="2" class="f-fg"/>
+<line x1="186" y1="152" x2="226" y2="142" class="ln-a"/>
+<path d="M234 140 L222 137 L225 148 z" class="f-a"/>
+<text x="40" y="100" class="t-b">在这儿推</text>
+<text x="40" y="120" class="t-m">秋千到了你这边，</text>
+<text x="40" y="138" class="t-m">刚要往前走</text>
+<text x="420" y="100" class="t-b">别在这儿推</text>
+<text x="420" y="120" class="t-m">它正迎面回来，</text>
+<text x="420" y="138" class="t-m">这时推等于踩刹车</text>
+<text x="10" y="219" class="t-m">秋千回到你这边</text>
+<text x="10" y="249" class="t-m">每 2.8 秒推：次次赶上</text>
+<text x="10" y="279" class="t-m">每 2 秒推：时早时晚</text>
+<line x1="170" y1="215" x2="620" y2="215" class="ln-d"/><line x1="170" y1="245" x2="620" y2="245" class="ln-d"/><line x1="170" y1="275" x2="620" y2="275" class="ln-d"/>
+<circle cx="180" cy="215" r="5" class="f2"/><circle cx="288" cy="215" r="5" class="f2"/><circle cx="397" cy="215" r="5" class="f2"/><circle cx="505" cy="215" r="5" class="f2"/><circle cx="614" cy="215" r="5" class="f2"/>
+<circle cx="180" cy="245" r="5" class="f-a"/><circle cx="288" cy="245" r="5" class="f-a"/><circle cx="397" cy="245" r="5" class="f-a"/><circle cx="505" cy="245" r="5" class="f-a"/><circle cx="614" cy="245" r="5" class="f-a"/>
+<circle cx="180" cy="275" r="5" class="f3"/><circle cx="256" cy="275" r="5" class="f3"/><circle cx="333" cy="275" r="5" class="f3"/><circle cx="409" cy="275" r="5" class="f3"/><circle cx="486" cy="275" r="5" class="f3"/><circle cx="562" cy="275" r="5" class="f3"/>
+<text x="620" y="198" text-anchor="end" class="t-m">时间 →（约 12 秒）</text>
+</svg>
+<figcaption>本站示意图。链长 2 米的秋千，一个来回约 2.8 秒（按单摆算的数，书里没有）。跟着这个节奏推，每一下都落在同一个时机；推得更勤，有几下就推在了它迎面回来的时候，把前面攒的抵掉。「动手：模拟器」里可以自己调。</figcaption></figure>
+<h2>读之前：这一页在全书的哪里</h2>
+<div class="linehere"></div>
+<p>第 1 章讲工程是什么：把想法变成现实，靠的不只是科学。那里作者借哲学家 Carl Mitcham 的说法，把技术看成物件、知识、活动和人的意志四样；这一章里斜体的 need、activity、objects、knowledge 就是这套标签，他拿来讲每一步是什么需要推着走的。从这一章起，后五章各讲一个「时代」，按人怎样借重力、热、电磁、信息、系统来做功排下去，这一章讲最老的一种。</p>
+<div class="heads-up"><p>别被带歪：§1 把秋千、球杆、球棒的甜区、歌剧演员、长笛、收音机都归到「时机」和共振。秋千、长笛、调收音机是正宗的共振；球棒的甜区今天的解释是打在那里手上震得最轻，歌唱的「头腔、胸腔共鸣」多半是唱的人的感觉。当成好读的引子，别当成同一种机制。</p></div>
+<div class="crux"><p>希腊人会量金字塔有多高，为什么说不出一样东西「每秒走几米」？</p></div>
+<p class="lede">读的时候带着这几个问题，读完回来对照「检查一下理解」。</p>
+<ol class="qs">
+  <li>推秋千推得更勤快，为什么反而荡不高？<span class="sec">§1</span></li>
+  <li>把购物袋从地上提到桌上，和提着它在原地站十分钟，哪个算物理上的做功？<span class="sec">§2</span></li>
+  <li>说阿基米德瞧不起「工程这一行」的是谁？作者信不信？<span class="sec">§6</span></li>
+  <li>只许长度比长度，为什么就说不出速度？这道坎是怎么跨过去的？<span class="sec">§9</span></li>
+</ol>
+<h2>分节地图</h2>
+<p class="lede">原书这一章没有小标题，一口气写下来。下面的节是本站按段落分的：粗体是本站起的节名，后面是档和英文词数；再下面是这一节开头的几个英文词，在 Kindle 里搜它就能跳过去。读完打个勾。</p>
+<ol class="secmap">
+  <li data-sec="1"><span class="what">全章的引子，最好读。留意他把一串例子都归到「时机」；到了桥，共振从帮手变成祸害。塔科马大桥他特意说不算简单的共振。</span></li>
+  <li data-sec="2"><span class="what">把日常的「干活」换成物理的功，顺带给出能量和功率。概念块讲过就可以快读；1 千克「重约 10 牛」是取整。</span></li>
+  <li data-sec="3"><span class="what">史前到苏美尔的年表。斜体的 need、activity 是第 1 章那套标签。原书图 3 的时间线已经概括了，可以跳。</span></li>
+  <li data-sec="4"><span class="what">五种古代机械，第一次讲机械效益；最后一句的安提基特拉机械是全章最惊人的文物。螺旋泵归谁，他用了三层「可能」。</span></li>
+  <li data-sec="5"><span class="what">轴心时代到欧几里得，多是转述 Karen Armstrong 等人。柏拉图的「理念」§10 还要用；从 <span class="at" data-p="22">In 300 BC, Euclid produced his</span> 起，几何成了唯一的理论语言。</span></li>
+  <li data-sec="6"><span class="what">阿基米德和维特鲁威。读普鲁塔克那段长引文时记住：瞧不起工程的是普鲁塔克，不是阿基米德。维特鲁威那条柱子的规矩很好玩。</span></li>
+  <li data-sec="7"><span class="what">中世纪和伊斯兰世界的发明清单：重犁、挽具、马镫、三圃制、水磨。马镫造就封建制是 Lynn White 的说法，争议很大。</span></li>
+  <li data-sec="8"><span class="what">「工程师」这个称呼怎么来的：大教堂的工匠、ingeniator、达·芬奇的头衔。看他怎么讲工匠从无名到有名。</span></li>
+  <li data-sec="9"><span class="what">全章的推理链，先读。希腊人只许同类量相比，速度算不上一个量；牛津、巴黎的学者跨过这一步，伽利略、牛顿接上。配概念块里的速度—时间图读。</span></li>
+  <li data-sec="10"><span class="what">作者自己的三点判断：科学怎样从神话里慢慢分出来，工程和科学其实没分干净，只许同类量相比的数学（复述 §9）。最后一段讲普鲁塔克的鄙夷从哪来。</span></li>
+</ol>
+<h2>先用中文过一遍：这一页的概念</h2>
+<p class="lede">先把这一页用到的几个概念用书外的例子讲一遍。作者拿它们推出什么，读原书时自己看。后面各页用到时会链回这里。</p>
+<div class="concept" id="c-resonance">
+<h3><span class="sec">§1</span>固有频率和共振 <span class="en">natural frequency, resonance</span></h3>
+<p>把秋千拉开一点再放手，它会按自己的节奏来回摆，不用人管：链长 2 米的秋千，一个来回约 2.8 秒。每秒来回几次叫固有频率，来回一次要几秒叫固有周期。它只看秋千自己：链子越长摆得越慢，和座位上坐的是谁关系不大。</p>
+<p>外力按这个节奏一下下地推，每一下都赶在秋千往前走的时候，能量一次次叠上去，摆幅越来越大，这叫共振。推得勤了或慢了，总有几下推在它迎面回来的时候，等于踩刹车。吉他的弦、长笛管里的空气、收音机里的调谐电路都是这个道理。反过来，楼和桥也有固有频率，人群的步子或风的节奏贴上去就危险，得靠阻尼（把振动的能量消耗掉的东西）压住。</p>
+<p class="use"><b>在这一页：</b>§1 的一串例子都靠它。第 4 章调收音机、电路里的振荡还会回到这里。</p>
+</div>
+<div class="concept" id="c-work">
+<h3><span class="sec">§2</span>功、能量、功率 <span class="en">work, energy, power</span></h3>
+<p>物理里的功只认一件事：力推着东西，沿力的方向走了多远。功 = 力 × 距离，单位焦耳。把 1 千克的东西提高 2 米，要用约 10 牛的力（1 千克在地面上重约 9.8 牛，书里取整成 10），走 2 米，做功 20 焦。提着购物袋在原地站十分钟，胳膊再酸，物理上的功也是零：袋子没动。</p>
+<p>能量是做功的本事，单位也是焦耳：一块手机电池充满，存着约 5 万焦（15 瓦时上下）。功率是做功的快慢，焦耳每秒就是瓦：同样 20 焦，1 秒做完是 20 瓦，10 秒做完是 2 瓦。电费单上的「度」是千瓦时，说的是能量，不是功率。英语日常把 weight（重量）当质量用，物理里它是力，单位是牛。</p>
+<p class="use"><b>在这一页：</b>§2 一段话里连着给出这三样。第 3 章讲热机、第 4 章讲电网都用这三个词。</p>
+</div>
+<div class="concept" id="c-mythos-logos">
+<h3><span class="sec">§3</span>秘索思和逻各斯 <span class="en">mythos, logos</span></h3>
+<p>这是作者从宗教史作家 Karen Armstrong 那里借来的一对词。mythos 是讲故事：用神话说明世界为什么是这样、人该怎么活，给的是意义，不求能检验。logos 是讲理：一步步推理、拿事实来对，求的是能拿来办事的答案。作者说两样从希腊人起慢慢分开，到牛顿也没分干净。</p>
+<p>读的时候记住，这是他给历史搭的框架，不是史学界通行的分法。两个词在古希腊语里本来都可以指「说的话」，把它们对立起来是后来的读法。</p>
+<p class="use"><b>在这一页：</b>§3 把最早的神话叫 mythos，§5 把亚里士多德的理性叫 logos，§10 第一点收尾。书末 Glossary 有这两条。</p>
+</div>
+<div class="concept" id="c-mechanical-advantage">
+<h3><span class="sec">§4</span>机械效益 <span class="en">mechanical advantage</span></h3>
+<p>绞盘是一根能转的鼓轮，绳子缠在上面拴着重物，鼓轮上伸出手柄。手推手柄转一圈，手走的圈比鼓轮收进的绳子长得多。手柄半径 0.5 米、鼓轮半径 0.1 米，手走 5 米，重物才上去 1 米；反过来，手只要出重物五分之一的力。输出的力和输入的力之比叫机械效益，这里是 5。</p>
+<p>代价是距离：省了几倍力，就得多走几倍路。力乘距离两边一样，功一点没省，算上摩擦还要多做一点。杠杆、滑轮组、螺旋、楔子算的都是这笔账，扳手、千斤顶、自行车的低速挡也是。</p>
+<figure class="fig">
+<svg class="diagram" viewBox="0 0 640 230" role="img" aria-label="绞盘示意图：小圆是鼓轮，半径 0.1 米，绳子从鼓轮垂下拴着重物；大虚线圆是手柄走的圈，半径 0.5 米。右边写着机械效益等于 0.5 除以 0.1 等于 5，省 5 倍力，多走 5 倍路，功两边一样">
+<circle cx="170" cy="100" r="80" class="ln-d"/>
+<circle cx="170" cy="100" r="18" class="box"/>
+<line x1="170" y1="100" x2="240" y2="61" class="ln"/>
+<circle cx="240" cy="61" r="6" class="f-a"/>
+<line x1="188" y1="100" x2="188" y2="186" class="ln"/>
+<rect x="166" y="186" width="44" height="28" rx="3" class="f-fg"/>
+<text x="188" y="205" text-anchor="middle" class="t-on">重物</text>
+<text x="250" y="52" class="t-m">手推这里</text>
+<text x="40" y="200" class="t-m">鼓轮半径 0.1 米</text>
+<text x="40" y="34" class="t-m">手柄的圈：半径 0.5 米</text>
+<text x="330" y="70" class="t-b">机械效益 = 0.5 ÷ 0.1 = 5</text>
+<text x="330" y="100" class="t-m">手转一圈走约 3.1 米，绳子只收进约 0.63 米</text>
+<text x="330" y="125" class="t-m">手出 1 份力，重物那边得到 5 份</text>
+<text x="330" y="150" class="t-m">省 5 倍力，多走 5 倍路</text>
+<text x="330" y="180" class="t-b">功（力 × 距离）两边一样</text>
+</svg>
+<figcaption>本站示意图，数是本站定的。书里用绞盘下定义，没给数。</figcaption></figure>
+<p class="use"><b>在这一页：</b>§4 用绞盘下定义；§6 阿基米德拉动国王的船，作者说他懂的就是这个。</p>
+</div>
+<div class="concept" id="c-like-ratio">
+<h3><span class="sec">§9</span>同类量之比和异类量之比 <span class="en">ratio of like / unlike quantities</span></h3>
+<p>希腊数学里，一个「量」只能来自两个同类的东西相比：这条线是那条线的 3 倍，这块地是那块的一半。距离和时间不是一类，拿米去比秒，在他们看来没有意义，所以速度连一个量都算不上，更别提速度的变化，也就是加速度。</p>
+<p>14 世纪牛津的一批学者跨出了这一步，把距离比时间当成一个量来算。他们证明：从静止起匀加速的东西，一段时间里走的路，等于用它末速度的一半匀速走同样长的时间。巴黎的 Nicole Oresme 把它画成一张图：横轴时间，纵轴速度，走过的路就是图形的面积。三角形和半高的矩形面积相等，定理一眼可见。</p>
+<figure class="fig">
+<svg class="diagram" viewBox="0 0 640 250" role="img" aria-label="速度和时间的图：横轴时间，纵轴速度。从原点斜向上到末速度的三角形表示从静止匀加速；高度为末速度一半的矩形表示匀速。两块面积相等，面积就是走过的路">
+<line x1="70" y1="220" x2="360" y2="220" class="ln"/>
+<line x1="70" y1="220" x2="70" y2="30" class="ln"/>
+<path d="M70 220 L330 220 L330 60 z" class="f-soft"/>
+<path d="M70 220 L330 60" class="ln-a"/>
+<rect x="70" y="140" width="260" height="80" class="ln-d"/>
+<text x="350" y="238" text-anchor="end" class="t-m">时间</text>
+<text x="78" y="40" class="t-m">速度</text>
+<text x="336" y="64" class="t-m">末速度</text>
+<text x="336" y="144" class="t-m">末速度的一半</text>
+<text x="420" y="80" class="t-b">斜线下的三角形</text>
+<text x="420" y="100" class="t-m">从静止匀加速</text>
+<text x="420" y="135" class="t-b">虚线矩形</text>
+<text x="420" y="155" class="t-m">以末速度的一半匀速</text>
+<text x="420" y="190" class="t-b">两块面积相等</text>
+<text x="420" y="210" class="t-m">面积 = 走过的路</text>
+</svg>
+<figcaption>本站示意图，照 Oresme 的思路画。三角形多出矩形的那个小角，正好补上矩形左上角三角形没盖住的那块。原书没有这张图。</figcaption></figure>
+<p class="use"><b>在这一页：</b>§9 的推理链从这里起步，§10 第三点再说一遍。原文没写「从静止开始」，这里补上。</p>
+</div>
+<h2>动手：模拟器</h2>
+<p>先猜：链长 2 米的秋千自己摆一个来回约 2.8 秒。你每 2 秒推一次（更勤快），和跟着它每 2.8 秒推一次，每下一样用力，各推半分钟，哪个荡得高？高几倍？</p>
+<div class="sim" id="sim-02">
+  <div class="sim-head"><span class="tag">模拟器</span><h3>推秋千</h3><p class="desc">一架秋千，一个只看表、不看秋千的推的人。调下面四样，图上是秋千半分钟里的摆角，往前为正、往后为负。打开页面时是「跟着秋千的节奏推」。</p></div>
+  <div class="sim-body"><p>需要浏览器打开脚本才能运行。</p></div>
+</div>
+<p>各个控件：「多久推一下」是推的间隔，前两项会跟着链长自动换算成秋千自己的节奏，其余是固定的秒数；「每下推多猛」是每推一下给座位添多少速度，轻、中、重分别是每秒 0.15、0.3、0.5 米；「阻力」是空气和链子把振动慢慢耗掉的快慢，「装了阻尼器」是桥上那种专门吃掉振动的装置；「链长」决定秋千自己的节奏，统计栏第一格就是它。「最大摆角」看的是最后 10 秒，那时摆幅基本稳住了；「座位最高升起」是摆到最高时座位比最低点高多少。</p>
+<ol class="qs">
+  <li>试试看：先看打开时的设置，半分钟后摆角约 24 度，座位最高升起约 17 厘米。把「多久推一下」改成每 2 秒、每 3.5 秒，各是多少？推的次数多了，为什么反而荡不高？</li>
+  <li>试试看：改成「每两个来回推一下」。只推了一半的次数，荡得起来吗？和每 2 秒推一次比呢？</li>
+  <li>试试看：回到跟着秋千推，把阻力改成「装了阻尼器」，摆角压到多少？再把链长改成 3 米：秋千自己的节奏变成多少秒？这时改成每 2.5 秒推，会怎样？</li>
+</ol>
+<p>这里的数都是本站定的演示值，书里没有算例。模型是一架单摆加上阻力，每推一下是一记瞬间的推，方向总是往前。真推秋千的人会看着秋千推，节奏自然跟得上；这里推的人只认表，好让你看清节奏差一点会怎样。塔科马大桥是颤振，不是这种共振，这个模拟器演示不了它，见「书里的人和项目」。</p>
+<h2>书里的人和项目</h2>
+<p class="lede">书里点名的人、发明和工程，挑读懂这一页用得上的讲。按在书里出现的顺序排，节号是你在书里哪一节遇到它。</p>
+<h3><span class="sec">§1</span>昂热吊桥和塔科马海峡大桥</h3>
+<p>作者举了两座桥。法国昂热的 Basse-Chaîne 吊桥 1850 年 4 月在一营士兵过桥时垮塌，书里写死了 220 人，常见的数字是 226 人。那天风雨很大，事后的调查还归咎于锚固处的钢索锈蚀，士兵的步子只是原因之一。</p>
+<p>美国华盛顿州的塔科马海峡大桥 1940 年 7 月通车，桥面又窄又薄，风一吹就上下起伏，得了个外号 Galloping Gertie。同年 11 月 7 日，桥面在每小时六十多公里的风里大幅扭转，断了；没有人死，过程被拍成了影片。作者特意说，现在的风工程师不把它算成简单的共振，算成另一种相关的现象（见「今天怎么看」）。</p>
+<figure class="fig"><img src="../assets/img/02-tacoma.jpg" alt="黑白影片截图：吊桥的桥面断开，一大段桥面正往下翻落，下面水花和水雾腾起，后面是一座桥塔和长着树的山坡" loading="lazy">
+<figcaption>1940 年 11 月 7 日，塔科马海峡大桥垮塌，取自 Barney Elliot 拍的影片。这是断桥那一刻。<span class="src">Barney Elliot，公有领域，维基共享资源</span></figcaption></figure>
+<h3><span class="sec">§4</span>安提基特拉机械</h3>
+<p>1900 年，采海绵的潜水员在希腊安提基特拉岛附近发现了一艘古代沉船，捞上来的一团锈住的青铜块，后来才认出里面有三十多个精细的齿轮。转动手柄，表盘上能读出日月的位置和月相，还能预报日食月食，常被叫作最早的「模拟计算机」。残片今天藏在雅典国家考古博物馆。书里只用一句话带过，放在齿轮和螺旋这些机械的清单末尾，说它造于约公元前 100 年、可能在罗得岛；这两样后来都有新说法，见「今天怎么看」。</p>
+<figure class="fig"><img src="../assets/img/02-antikythera.jpg" alt="一块锈成青绿色的青铜残片装在透明支架上，中间是一个有四根辐条的大齿轮，周围嵌着几小块别的零件" loading="lazy">
+<figcaption>安提基特拉机械最大的一块残片（残片 A）的正面，中间的大齿轮看得很清楚。<span class="src">Logg Tandy，CC BY 4.0，维基共享资源</span></figcaption></figure>
+<h3><span class="sec">§6</span>阿基米德</h3>
+<div class="who"><div><b>Archimedes</b><span class="en">约前 287–前 212</span>西西里岛叙拉古的数学家、发明家，罗马军队攻破叙拉古时被杀。作者说他是最早的工程师之一。</div></div>
+<p>作者想替他翻一个案。人们记住的是科学家阿基米德：洗澡时喊「尤里卡」，浮力原理。书里引了普鲁塔克（1 世纪的希腊传记作家）的一大段话，说阿基米德瞧不起「工程这一行」，只爱纯粹的思辨。作者说这是普鲁塔克的看法，他是乡绅，不是工程师；还引古希腊科学史家 Geoffrey Lloyd 的话：可能是普鲁塔克编的。反例是复合滑轮：普鲁塔克自己记着，阿基米德一个人把坐满人的国王的船拉动了。作者说，不管他用的什么办法，他显然懂机械效益。</p>
+<h3><span class="sec">§6</span>维特鲁威和他的《建筑十书》</h3>
+<p>Vitruvius 是罗马的建筑师和工程师，《建筑十书》（De architectura）是古代留下来的唯一一部完整的建筑专著。作者把它比作早期的「工程师手册」：分建造、计时器、机械三部分，有滑轮、起重机、拖大石块的办法。书里引了一条柱子的规矩：上层的柱子比下层小四分之一，因为下层要多扛些，也像树一样下粗上细。这就是凭几何和经验定下来的经验法则。书里说它大概写于公元 1 世纪，通行的说法是公元前 1 世纪后期，献给奥古斯都。</p>
+<h3><span class="sec">§7</span>重犁和马镫</h3>
+<p>作者列了一串中世纪的发明，分量最重的两样是重犁和马镫。北欧的土又湿又黏，南欧那种轻犁划不动；带轮子的重犁前面一把刀切开草皮，犁铧从底下削，犁壁把土翻过来，要八头牛拉。马镫让骑手在马背上坐得稳，能在马上作战。美国史学家 Lynn White 1962 年的书说，马镫推动了封建制的形成，书里引了他的话。这个说法从 1960 年代起就不断有史学家反驳，今天很少有人照原样接受。</p>
+<figure class="fig"><img src="../assets/img/02-berry-march.jpg" alt="一页彩绘手抄本：上面是蓝底的半圆星座历，中间是一座白色城堡，前景一个农夫扶着带轮子的犁，两头牛在前面拉，旁边有人在修葡萄藤" loading="lazy">
+<figcaption>《贝里公爵的豪华时祷书》三月那一页，约 1412–1416 年间画于法国，比书里讲的那几百年晚。看最下面：两头牛拉着一架带轮的犁。<span class="src">林堡兄弟等，公有领域，维基共享资源</span></figcaption></figure>
+<h3><span class="sec">§8</span>ingeniator 和达·芬奇</h3>
+<div class="who"><div><b>Leonardo da Vinci</b><span class="en">1452–1519</span>意大利画家、工程师。作者说他是最早被正式任命为工程师的人之一。</div></div>
+<p>英文的「工程师」来自拉丁文 ingenium（才智，也指巧妙的器械），中世纪拉丁文里造攻城器械（engine）的人叫 ingeniator。书里说 12 世纪英格兰的 Ailnoth（书里拼作 Ailnolth）是最早被这样称呼的人之一。到文艺复兴，达·芬奇给米兰公爵当「公爵的器械大师」，又给切萨雷·波吉亚当工程师兼建筑师。作者借佛罗伦萨科学史博物馆馆长 Paolo Galluzzi 的话说：在这以前，干技术活的人通常不留名，漂亮的房子造出来了，没人记下造它的人。</p>
+<h3><span class="sec">§9</span>伽利略</h3>
+<div class="who"><div><b>Galileo Galilei</b><span class="en">1564–1642</span>意大利物理学家、天文学家。在这一页里，他把牛津、巴黎的数学用到了实验上。</div></div>
+<p>作者从他身上取两件事。一是斜面：让球从斜面滚下，用水钟计时，得出从静止起匀加速时，走过的路和时间的平方成正比。二是《两门新科学》（1638）：因为支持日心说受审之后，他转去研究杆和梁能扛多重。作者说他的答案重要但不对：他还没有弹性的概念，以为梁根部截面上处处受力一样，一直到断。不过截面的宽和高哪个更要紧，他的结论是对的：同一根木料，立着放比平着放结实。</p>
+<figure class="fig"><img src="../assets/img/02-inclined-plane.jpg" alt="博物馆展厅里一架约 5 米长的木斜面，侧板上开着一排圆孔，背景墙上印着伽利略的头像和一段话" loading="lazy">
+<figcaption>佛罗伦萨伽利略博物馆的斜面。博物馆的说明是 19 世纪初做的演示器材，作者不详，不是伽利略本人用过的那一架。<span class="src">Zde，CC BY-SA 4.0，维基共享资源</span></figcaption></figure>
+<h3><span class="sec">§9</span>牛顿</h3>
+<div class="who"><div><b>Isaac Newton</b><span class="en">1643–1727</span>英国物理学家、数学家。作者说是他「真正把时间和功连了起来」。</div></div>
+<p>三条运动定律加上万有引力，作者说从桥、楼到飞机、火箭，地球上的工程至今都建在这上面，除非哪天要造接近光速的东西（这个「除非」见「本站怎么看」）。书里还顺带列了他别的成就：反射望远镜，用棱镜把白光分成七彩，冷却定律，和莱布尼茨同时发明的微积分。</p>
+<figure class="fig"><img src="../assets/img/02-newton.jpg" alt="油画头像：灰白长卷发的中年男子，白色领口，脸朝向画面左前方" loading="lazy">
+<figcaption>Godfrey Kneller 1689 年画的牛顿，那年他 46 岁，《自然哲学的数学原理》出版后两年。<span class="src">Godfrey Kneller，公有领域，维基共享资源</span></figcaption></figure>
+<h2>原文里的词和句</h2>
+<p class="lede">读英文原书时值得停一下的词和句：工程里的熟词生义、英式说法、作者的比喻。灰色斜体是原句里连续的几个词，在 Kindle 里搜它就能找到；标「每个字都认识」的，是每个词都眼熟、合起来意思却变了的，最容易读错。点「记下」收进词本。</p>
+<div class="entry trap"><div class="en">get the best out of</div><div class="loc" data-p="1">… getting the best out of something …</div><div class="zh">把……的本事发挥到最好</div><div class="note">不是「从里面拿出最好的」。get the best out of a team 是让团队发挥出最好的水平。</div></div>
+<div class="entry"><div class="en">sweet spot</div><div class="loc" data-p="2">… finds the sweet spot on the bat.</div><div class="zh">（球棒上的）甜区，打在那里最舒服</div><div class="note">今天常引申为「最佳点、恰到好处的区间」，比如 the sweet spot between price and quality。</div></div>
+<div class="entry trap"><div class="en">in step</div><div class="loc" data-p="3">… when soldiers walk in step …</div><div class="zh">步子一致，齐步</div><div class="note">反义 out of step，也比喻「跟别人不合拍、跟不上潮流」。</div></div>
+<div class="entry trap"><div class="en">do work</div><div class="loc" data-p="4">… in the way most tools do work.</div><div class="zh">做功</div><div class="note">物理意义上的做功（力乘距离），不是「干活」或「起作用」。这一章 work 两种意思都有，要分开读。</div></div>
+<div class="entry trap"><div class="en">product</div><div class="loc" data-p="5">… Work is the product of force …</div><div class="zh">乘积</div><div class="note">数学里 product 是乘积，sum 是和，quotient 是商，ratio 是比。</div></div>
+<div class="entry trap"><div class="en">weight</div><div class="loc" data-p="5">… which has a weight of approximately …</div><div class="zh">重力（以牛为单位）</div><div class="note">日常英语 weight 指质量（千克），物理里是地球吸它的力（牛）。这一句正是在分这两样。</div></div>
+<div class="entry trap"><div class="en">rate</div><div class="loc" data-p="5">… Power is the rate of expending …</div><div class="zh">（单位时间里的）快慢，速率</div><div class="note">不是「比率」或「价格」。rate of 加名词，说的是这件事每秒、每天做多少。</div></div>
+<div class="entry"><div class="en">analogue</div><div class="loc" data-p="13">… a complex analogue device of …</div><div class="zh">模拟式的（和数字式相对）</div><div class="note">英式拼法，美式写 analog。靠齿轮转角连续地表示数，不是一格一格地数。</div></div>
+<div class="entry trap"><div class="en">the potential and the actual</div><div class="loc" data-p="20">… a bridge between the potential and …</div><div class="zh">潜能和现实</div><div class="note">亚里士多德的一对哲学术语：种子是潜能上的树，长成了才是现实的树。不是「潜力和实际情况」。</div></div>
+<div class="entry"><div class="en">grope towards</div><div class="loc" data-p="21">… It gropes towards an explanation …</div><div class="zh">摸索着接近（还没想清楚）</div><div class="note">grope 是在黑暗里摸。towards 是英式写法，美式多写 toward。</div></div>
+<div class="entry trap"><div class="en">virtual</div><div class="loc" data-p="21">… a primitive form of virtual velocities …</div><div class="zh">（力学里）虚的，假想的</div><div class="note">想象机构动一小下，比较各处的力和位移。书后注说这是今天结构工程常用的虚功法的源头。和「虚拟现实」里的 virtual 意思不同。</div></div>
+<div class="entry trap"><div class="en">vulgar</div><div class="loc" data-p="24">… the vulgar needs of life …</div><div class="zh">日常的，世俗的</div><div class="note">古义，来自拉丁文 vulgus（老百姓）。这段是普鲁塔克的老译文，今天的 vulgar 多指「粗俗」。</div></div>
+<div class="entry trap"><div class="en">bear stress</div><div class="loc" data-p="28">… when it comes to bearing stress, …</div><div class="zh">承受应力（扛住荷载）</div><div class="note">bear 是承受，stress 在工程里是应力，不是「压力、紧张」。load-bearing wall 就是承重墙。</div></div>
+<div class="entry"><div class="en">brains and brawn</div><div class="loc" data-p="34">… use their brains and their brawn.</div><div class="zh">脑力和体力</div><div class="note">头韵的固定搭配，brawn 是肌肉、力气。</div></div>
+<div class="entry"><div class="en">reset from</div><div class="loc" data-p="37">… often had to be reset from …</div><div class="zh">（钟）照着……重新对准</div><div class="note">早期的摆钟走得不够准，隔一阵要照日晷把指针拨回来。</div></div>
+<div class="entry trap"><div class="en">root</div><div class="loc" data-p="38">… across the root of the cantilever …</div><div class="zh">（悬臂梁的）根部，固定端</div><div class="note">cantilever 是一头固定、一头悬空的梁，比如阳台。root 是固定在墙里那头，受力最大。</div></div>
+<div class="entry"><div class="en">technics</div><div class="loc" data-p="42">… the separation of technics and science …</div><div class="zh">技艺，工艺</div><div class="note">比 technology 少见、偏书面，指做东西的手艺和方法本身。</div></div>
+<h2>读完：作者到底说了什么</h2>
+<p class="lede">下面是作者在这一章里的主张，本站按主张之间的逻辑重排，不按原书顺序；每条后面是节号，拿不准就回书里那一节再读一遍。</p>
+<div class="claims">
+  <div class="claim"><h4>顺着东西自己的节奏用力，小力气能办大事；对桥来说，这正是要躲开的</h4><p>推秋千、挥球杆、吹长笛、调收音机，他都说是在固有频率附近用力，用最少的功换最大的效果。到了桥就反过来：士兵齐步、风都可能让桥共振，设计师要的是不同步。塔科马大桥他特意归到另一种相关的现象。</p><span class="sec" data-p="1 3">§1</span></div>
+  <div class="claim"><h4>STEM 里的功有精确的定义：力乘距离</h4><p>日常的「干活」什么都算，连想问题也算。STEM 里功只认力和走过的距离，单位焦耳；能量是做功的本事，功率是做功的快慢。后面几章讲热、讲电磁、讲信息，他都放在「做功」这条线上。</p><span class="sec" data-p="4 5 6">§2</span></div>
+  <div class="claim"><h4>几千年的技术进步靠观察和经验，不只是猜和运气</h4><p>他用第 1 章那套标签讲历史：需要推动活动，活动造出物件和知识。简单机械、日晷水钟、重犁马镫，都是有了需要、在用的过程里一点点改出来的。他借 Armstrong 说轴心时代的人已经很会观察、从经验里学。</p><span class="sec" data-p="8 11 14 30">§3 §4 §5 §7</span></div>
+  <div class="claim"><h4>卡住力学两千年的是数学语言：只许同类量相比</h4><p>到 14 世纪，理论语言只有算术和欧氏几何，速度是距离比时间，算不上一个量，亚里士多德的物理处理不了加速度。牛津、巴黎的学者开始用异类量之比，关于变化和运动的新数学才起步，伽利略的惯性、牛顿的引力接着出来。他说牛顿真正把时间和功连了起来。</p><span class="sec" data-p="35 39 43">§9 §10</span></div>
+<blockquote class="quote">From bridges and buildings to aeroplanes and space rockets, Newton’s laws are the basis of everything that we have done<cite>— §9。本站译：从桥梁、楼房到飞机、火箭，我们做过的一切都以牛顿定律为基础。</cite></blockquote>
+  <div class="claim"><h4>到牛顿时工程正在成为一门独立的学科，可它和科学从没分干净</h4><p>从泰勒斯到伽利略、达·芬奇，这些人既想弄懂世界，也要解决打仗、种地的实际问题。中世纪的钟和透镜是为了需要做的，望远镜、温度计后来又成了检验科学新想法的工具。普鲁塔克对匠艺的鄙夷，他归到柏拉图追求完美的传统。</p><span class="sec" data-p="42 44">§10</span></div>
+<blockquote class="quote">But the separation of technics and science was never as complete as sometimes is supposed.<cite>— §10。本站译：可是技艺和科学的分离，从来没有人们有时以为的那么彻底。</cite></blockquote>
+</div>
+<p class="sowhat"><b>合起来：</b>这一章讲「做功」怎样从手上的力气变成能算的量。工具先走，几何跟着；等数学学会描述变化，牛顿才把力、时间和功连成工程至今在用的一套。作者也提醒，工匠的手艺从没等科学先到。</p>
+<h2>今天怎么看</h2>
+<p class="lede">书 2012 年出版。下面挑出这一页里能被后来的研究或事情检验的说法，分「书里 / 当时 / 今天」几栏，并给一个结论。结论判的是标题里「书里的说法：」后面那一句。全书的这一节汇总在<a href="../today.html">今天怎么看</a>。</p>
+<ul class="verdicts"><li><span class="v ok">成立</span>后来的研究或事情支持这句话。</li><li><span class="v mid">部分成立</span>大方向对，细节或适用范围要改。</li><li><span class="v bad">被改写</span>后来的研究推翻了它、换了一种说法，或者情况变了。</li><li><span class="v dis">有争议</span>至今没有定论，两边各有代表性的研究或证据。</li></ul>
+<div class="today" data-verdict="成立"><h4>书里的说法：塔科马海峡大桥垮塌不能简单算成共振</h4><dl>
+  <dt>书里</dt><dd>它是最常被引的共振毁桥例子，但现代风工程师把它归为另一种相关的现象：涡旋脱落引起的自激颤振。<span class="at" data-p="3">§1</span></dd>
+  <dt>当时</dt><dd>1991 年 Billah 和 Scanlan 撰文批评物理教科书拿塔科马当共振的例子：最后那场扭转是颤振，桥的运动反过来改变风给它的力，能量越喂越多，用不着风有固定的节奏。</dd>
+  <dt>今天</dt><dd>2020 年 5 月，广东虎门大桥在不大的风里明显上下起伏，随后封闭检查。2022 年的现场研究说，直接原因是养护时沿桥面两边摆的一排注水隔离墩，破坏了桥面的流线外形，引出周期性的涡旋；撤掉后还有小幅振动，加装导流板才压住。这是涡振，桥没有受损。风工程界今天仍把塔科马的最后一场归为扭转颤振，和虎门这种涡振分开讲。<span class="asof">核对于 2026-11。依据：Billah &amp; Scanlan, American Journal of Physics 59, 118 (1991)；Zhao et al., Structures 35 (2022) 192–201。</span></dd>
+</dl></div>
+<div class="today" data-verdict="有争议"><h4>书里的说法：安提基特拉机械可能造于罗得岛</h4><dl>
+  <dt>书里</dt><dd>一句话带过：约公元前 100 年造，产地前面加了 probably，说可能在罗得岛。<span class="at" data-p="13">§4</span></dd>
+  <dt>当时</dt><dd>2006 年起的 X 光断层扫描读出了残片里大量刻字，Freeth 等人 2006、2008 年在《自然》上发表了表盘和齿轮的复原，年代多说公元前 2 世纪末到前 1 世纪初。2008 年那篇读出的月份名属科林斯一系，他们猜产地是科林斯的殖民地，西西里的叙拉古或希腊西北部，和罗得岛说相左。</dd>
+  <dt>今天</dt><dd>2014 年 Carman 和 Evans 从日食表倒推，说表盘的起算点在公元前 205 年；也有人算出公元前 178 年。起算点不一定是造好的年份。产地上，Iversen 2017 年说它的历法不是叙拉古的，像希腊西北部伊庇鲁斯用的，赛会表盘上却有罗得岛的赛会，他猜是罗得岛为伊庇鲁斯的客人造的。2021 年 Freeth 等人又给出了天象部分的完整复原。产地两说都是从历法和赛会名推出来的，至今没有定论。<span class="asof">核对于 2026-11。依据：Freeth et al., Nature 454, 614 (2008)；Carman &amp; Evans, Archive for History of Exact Sciences 68 (2014)；Iversen, Hesperia 86 (2017) 129–203；Freeth et al., Scientific Reports 11, 5821 (2021)。</span></dd>
+</dl></div>
+<h2>本站怎么看</h2>
+<p class="lede">读完作者的主张，再看它站不站得住。每一块摆出三样：主流怎么看，作者怎么看，本站的评论。最后一句是本站对这一页的总体判断。</p>
+<div class="views"><h4>「时机」那串例子不是同一种机制</h4>
+<p><b>主流看法：</b>物理学家 Rod Cross 1998 年实测过棒球棒：甜区是一小段，落在球棒基本振动的节点和撞击中心之间，打在那里传到手上的震动最小，和挥棒合不合球棒的节奏无关。声乐研究里，Johan Sundberg 指出，歌剧演员的声音能盖过乐队，靠的是声音在 3 千赫上下有一个能量峰，叫「歌手共振峰」；他把它归到喉头上方那一小段声道收窄、咽腔放宽。共鸣发生在声道里，「头腔、胸腔共鸣」多是唱的人的感觉。</p>
+<p><b>作者的看法：</b>秋千、球杆、歌剧、长笛、收音机都是「时机」：在固有频率附近用力，用最少的功换最大的效果。<span class="at" data-p="1">§1</span></p>
+<p class="ours"><b>本站的评论：</b>秋千、长笛、调收音机是正宗的共振，拿来理解第 4 章的调谐正合适。球棒和歌唱借的是「时机」这个词：甜区说的是打在哪里，不是什么时候打；歌剧演员确实用了共鸣，地方不在胸腔。当成好读的引子就好，记共振时记秋千。</p></div>
+<div class="views"><h4>牛顿力学真的要到接近光速才不够用吗</h4>
+<p><b>主流看法：</b>速度远小于光速、引力不太强时，牛顿力学的误差小到可以忽略，桥、楼、飞机、火箭都照它算。卫星导航是有名的例外：GPS 卫星上的原子钟，因为跑得快，每天慢约 7 微秒；因为离地球远、引力弱，每天快约 45 微秒，合起来每天快约 38 微秒。不修正的话，定位误差一天能攒到约 11 公里。卫星的速度只有光速的十万分之一多一点。</p>
+<p><b>作者的看法：</b>牛顿以来时间和功的关系一直撑着地球上的工程，除非哪天要造接近光速的东西。<span class="at" data-p="40">§9</span></p>
+<p class="ours"><b>本站的评论：</b>大方向没错：盖楼、造车、发火箭，牛顿力学照样够用。但「除非」不只看速度，还看要多准：GPS 要把时间准到几十纳秒，相对论那一点差就成了大头。今天手机里的导航每天都在用这个修正。</p></div>
+<div class="views"><h4>工程先走，科学后到</h4>
+<p><b>主流看法：</b>技术史学界从 1970 年代起就反对「技术只是应用科学」的看法。Edwin Layton 1974 年提出技术本身是一种知识；航空工程师出身的 Walter Vincenti 在《工程师知道什么，又是怎么知道的》（1990）里拿早期飞机设计说明，工程师有自己的一套知识，不全从科学来。蒸汽机比热力学早了一百多年，是常举的例子，第 3 章会讲到。</p>
+<p><b>作者的看法：</b>技艺和科学从来没有分得像有时以为的那么开；中世纪的技术进步都在回应清楚的人类需要。<span class="at" data-p="42">§10</span></p>
+<p class="ours"><b>本站的评论：</b>这是这一章最站得住、也最有用的一句。可这一章自己的写法反了过来：讲工程的章，主线却是泰勒斯、柏拉图、伽利略、牛顿的思想史，工匠只占几笔，中国的技术只出现在「火药和纸」半句里。同一时期的都江堰（公元前 3 世纪）、赵州桥（7 世纪初）、苏颂的水运仪象台（11 世纪）也都是「需要推动活动」的好例子，也都不是从理论推出来的。</p></div>
+<p class="verdict"><b>本站的总体看法：</b>开头两节和最后两节最值得读：共振、功的定义、从几何到牛顿的数学之路、工程和科学没分干净。中间的历史是一份密集的清单，几处转述的论断（马镫、挽具的年代、维特鲁威的年代）要打折扣。开场靠比喻撑着，好读，别把甜区和歌唱当成共振。</p>
+<h2>检查一下理解</h2>
+<p class="lede">先在心里答，再点开。答错的那题，回书里把对应那一节再读一遍。</p>
+<details class="check"><summary>1.（§1）推秋千为什么要掐准时机？推得更勤快为什么不管用？</summary><p>秋千有自己的节奏（固有频率）。跟着这个节奏推，每一下都赶在它往前走时，能量一次次叠上去。推得勤了，有几下会推在它迎面回来时，把前面攒的抵掉。</p></details>
+<details class="check"><summary>2.（§1）作者说桥的设计师想要什么样的「时机」？</summary><p>不同步：桥的固有频率要避开士兵的步子、风的节奏，否则大振动会把桥晃坏。</p></details>
+<details class="check"><summary>3.（§2）提着 5 千克的袋子从一楼走到三楼（升高 6 米），对袋子大约做了多少功？在楼梯口站着等十分钟呢？</summary><p>约 50 牛 × 6 米 = 300 焦（照书里取 1 千克重约 10 牛）。站着等，袋子没移动，功是零，虽然胳膊会累。</p></details>
+<details class="check"><summary>4.（§4）绞盘手柄半径 0.6 米、鼓轮半径 0.2 米，机械效益是多少？省了什么，付出了什么？</summary><p>3。手只要出重物三分之一的力，但要多走三倍的路，功一点没省，算上摩擦还多一点。</p></details>
+<details class="check"><summary>5.（§6）普鲁塔克说阿基米德瞧不起工程，作者怎么回应？</summary><p>那是普鲁塔克自己的看法，他不是工程师；作者还引 Lloyd 说这话可能是编的，并拿复合滑轮拉船说明阿基米德懂机械效益。</p></details>
+<details class="check"><summary>6.（§9）为什么希腊人说不出「速度」？这道坎是怎么跨过去的？</summary><p>他们只承认同类量之比，距离比时间不算一个量。14 世纪牛津的学者开始用异类量之比，Oresme 画出速度—时间图，伽利略、牛顿再接着往下走。</p></details>
+<details class="check"><summary>7.（§10）作者的第二点观察是什么？</summary><p>到牛顿时工程正在成为独立的学科，但它和科学从没完全分开：很多技术进步是为了实际需要做出来的，后来望远镜、温度计这些又成了检验科学的工具。</p></details>
+<p>用一句话说这一页：</p>
+<textarea class="note" data-key="02-oneline" rows="2" placeholder="比如：……"></textarea>
+<div class="ponder"><p>想一想：你用过的工具里，哪样是「省力不省功」的（变速自行车、千斤顶、开瓶器、螺丝刀）？它拿什么换来了省力？</p>
+<textarea class="note" data-key="02-ponder" rows="3"></textarea></div>
+<h2>精彩回顾</h2>
+<p class="lede">读过又忘了，从这里想起来。挑的是这一页最值得记住的例子和说法，不按原书顺序；每条后面是节号，想细看就回书里那一节。全书各页的这一节都收在<a href="../recap.html">全书回顾</a>。</p>
+<p class="recall-line"><b>一句话：</b>功是力乘距离；共振是顺着东西自己的节奏用力；卡住力学两千年的是只许同类量相比的数学，牛顿把时间和功接上了。</p>
+<div class="recall">
+  <div class="item"><b>推秋千要跟着它的节奏</b><p>链长 2 米的秋千一个来回约 2.8 秒。跟着这个节奏推，半分钟能荡到二十多度；每 2 秒推一次，只有三度左右。这就是共振。</p><span class="sec">§1</span></div>
+  <div class="item"><b>桥最怕合拍</b><p>士兵齐步、风的节奏贴上桥的固有频率，振动会把桥晃坏。1850 年法国昂热的吊桥在过兵时垮塌；塔科马大桥是颤振，作者特意分开。</p><span class="sec">§1</span></div>
+  <div class="item"><b>提着袋子站着不算做功</b><p>物理的功只认力和沿力的方向走过的距离：把 1 千克提高 2 米是 20 焦；提着不动，胳膊再酸，功也是零。</p><span class="sec">§2</span></div>
+  <div class="item"><b>省力不省功</b><p>绞盘、滑轮、杠杆都拿距离换力：省几倍力，就多走几倍路。阿基米德一个人拉动坐满人的国王的船，靠的就是这笔账。</p><span class="sec">§6</span></div>
+  <div class="item"><b>速度曾经不是一个量</b><p>希腊数学只许长度比长度，距离比时间说不出口。14 世纪牛津、巴黎的学者跨过这一步，伽利略、牛顿才有了加速度和力。</p><span class="sec">§9</span></div>
+  <div class="item"><b>工匠从没等科学</b><p>作者的判断：技艺和科学从来没分干净。中世纪的钟和透镜是为需要做的，后来望远镜、温度计又成了检验科学的工具。</p><span class="sec">§10</span></div>
+</div>
+</main>
+<script>
+(() => {
+  // 推秋千：单摆加阻力，θ'' = −(g/L)·sinθ − 2ζω·θ'，ω = √(g/L)；每推一下是一记瞬间的推，给座位添 dv 的速度（角速度加 dv/L），方向总是往前。
+  // 推的人只看表、不看秋千：第 0 秒推第一下，之后每隔「推的间隔」推一下，看 30 秒。步长 1 毫秒，确定性，没有随机数。
+  // 默认（链长 2 米、中 0.3 米/秒、阻力 0.02、跟着秋千推）复现底稿 b-swing.py：最后 10 秒最大摆角约 24 度（弧长约 0.83 米）；每 2 秒推约 3 度（0.11 米）；每两个来回约 13 度（0.46 米）。
+  const root = document.getElementById("sim-02");
+  if (!root || !window.EG) return;
+  const { h, chart } = window.EG;
+  const g = 9.81, TEND = 30, DT = 0.001, EVERY = 100;      // 每 100 步（0.1 秒）记一个点
+  const BOOK = { iv: "1T", dv: "0.3", z: "0.02", L: "2" };
+  const st = Object.assign({}, BOOK);
+  const OPTS = {
+    iv: { label: "多久推一下", list: [["1T", "跟着秋千：每个来回一下"], ["2T", "每两个来回一下"], ["1", "每 1 秒"], ["1.5", "每 1.5 秒"], ["2", "每 2 秒"], ["2.5", "每 2.5 秒"], ["3", "每 3 秒"], ["3.5", "每 3.5 秒"], ["4", "每 4 秒"], ["5", "每 5 秒"]] },
+    dv: { label: "每下推多猛", list: [["0.15", "轻"], ["0.3", "中"], ["0.5", "重"]] },
+    z: { label: "阻力", list: [["0.005", "很小"], ["0.02", "平常"], ["0.05", "较大"], ["0.2", "装了阻尼器"]] },
+    L: { label: "链长（米）", list: [["1", "1"], ["1.5", "1.5"], ["2", "2"], ["2.5", "2.5"], ["3", "3"]] },
+  };
+  const sels = {};
+  const ctrl = (k) => {
+    const s = h("select", { "aria-label": OPTS[k].label, onchange: () => { st[k] = s.value; draw(); } }, ...OPTS[k].list.map(([v, t]) => h("option", { value: v }, t)));
+    sels[k] = s;
+    return h("label", {}, OPTS[k].label, s);
+  };
+  const reset = h("button", { onclick: () => { Object.assign(st, BOOK); draw(); } }, "回到跟着秋千推");
+  const plot = h("div");
+  const stage = h("div", { class: "stage" }, h("p", { class: "cap" }, "摆角（度），往前为正、往后为负"), plot);
+  const narrate = h("div", { class: "narrate" });
+  const stats = h("div", { class: "stats" });
+  const body = root.querySelector(".sim-body");
+  body.innerHTML = "";
+  body.append(h("div", { class: "controls" }, ...Object.keys(OPTS).map(ctrl), reset), stage, narrate, stats);
+
+  const period = (L) => 2 * Math.PI * Math.sqrt(L / g);
+  function run() {
+    const L = Number(st.L), dv = Number(st.dv), z = Number(st.z), P = period(L);
+    const iv = st.iv.endsWith("T") ? Number(st.iv.slice(0, -1)) * P : Number(st.iv);
+    const w = Math.sqrt(g / L);
+    let th = 0, om = 0, next = 0, n = 0, maxLast = 0, maxAll = 0;
+    const deg = [0];
+    const steps = Math.round(TEND / DT);
+    for (let i = 0; i < steps; i++) {
+      const t = i * DT;
+      if (t >= next - 1e-9) { om += dv / L; next += iv; n++; }
+      om += (-Math.sin(th) * w * w - 2 * z * w * om) * DT;
+      th += om * DT;
+      if (t + DT > TEND - 10) maxLast = Math.max(maxLast, Math.abs(th));
+      maxAll = Math.max(maxAll, Math.abs(th));
+      if ((i + 1) % EVERY === 0) deg.push(th * 180 / Math.PI);
+    }
+    return { L, P, iv, n, deg, maxLast, maxAll };
+  }
+  const f1 = (x) => (Math.round(x * 10) / 10).toFixed(1), f2 = (x) => x.toFixed(2);
+  function tell(r) {
+    // 说明跟着算出来的结果走：最后 10 秒的摆角比单推一下的摆角大 2.5 倍以上，才算「攒起来了」
+    const parts = [], k = r.iv / r.P, m = Math.round(k), one = Number(st.dv) / (r.L * Math.sqrt(g / r.L)), big = r.maxLast > 2.5 * one;
+    if (st.iv === "1T") parts.push(`推的间隔正好是秋千自己一个来回的时间（${f2(r.P)} 秒），每一下都赶在它刚要往前走的时候，能量一下下叠上去，这就是共振。摆幅涨到后来，每一下推进去的和阻力耗掉的扯平了，就不再涨。`);
+    else if (st.iv === "2T") parts.push("每两个来回推一下，每一下仍落在同一个时机，只是隔得远、攒得慢，中间那个来回全靠阻力在耗。");
+    else if (big && m === 1 && Math.abs(k - 1) < 0.06) parts.push(`推的间隔 ${f2(r.iv)} 秒，和秋千自己一个来回的 ${f2(r.P)} 秒差不多，几乎每一下都赶在同一个时机，所以也荡得起来。差的那一点会让时机慢慢错开，摆幅比正好合拍时小一些。`);
+    else if (big && m >= 2 && Math.abs(k - m) < 0.06) parts.push(`推的间隔 ${f2(r.iv)} 秒，差不多是秋千 ${m} 个来回的时间，每一下大致落在同一个时机，只是隔得远、攒得慢。`);
+    else if (big) parts.push(`推的间隔 ${f2(r.iv)} 秒，秋千一个来回 ${f2(r.P)} 秒，节奏离得不算远，推进去的比抵掉的多，摆幅攒起来了一些。`);
+    else parts.push(`推的间隔 ${f2(r.iv)} 秒，秋千一个来回 ${f2(r.P)} 秒，两个节奏对不上。每推一下，时机就错开一点：有几下推在它往前走时，有几下推在它迎面回来时，前面攒的又被抵掉，摆幅上不去。`);
+    if (st.z === "0.2") parts.push("阻尼器每一摆都吃掉一大块能量，推得再准也荡不高。桥上装阻尼器，要的就是这个。");
+    if (r.maxAll * 180 / Math.PI > 45) parts.push("摆角过了 45 度，真秋千上已经荡得很高了；这个模型不管链子会不会松，再往上就不准了。");
+    return parts.join("");
+  }
+  function draw() {
+    for (const k in sels) sels[k].value = st[k];
+    const r = run();
+    chart(plot, { series: [{ name: "摆角", data: r.deg, c: 1 }], xlabel: "秒", ylabel: "度", dt: 0.1, ymin: -70, ymax: 70, title: "秋千摆角随时间变化" });
+    narrate.textContent = tell(r);
+    stats.innerHTML = "";
+    const box = (v, l) => h("div", { class: "stat" }, h("div", { class: "v" }, v), h("div", { class: "l" }, l));
+    const A = r.maxLast;
+    stats.append(box(f2(r.P), "秋千自己一个来回（秒）"), box(f2(r.iv), "推的间隔（秒）"), box(String(r.n), "半分钟推了几下"), box(String(Math.round(A * 180 / Math.PI)), "最后 10 秒最大摆角（度）"), box(f1(r.L * (1 - Math.cos(A)) * 100), "座位最高升起（厘米）"));
+  }
+  draw();
+})();
+</script>
+</body>
+</html>

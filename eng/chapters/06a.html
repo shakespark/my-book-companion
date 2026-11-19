@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 6 章（上） · 工程导读</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/chapters.js"></script>
+<script src="../assets/eg.js"></script>
+<style>
+#sim-06a .cap { font-size: 13px; color: var(--muted); margin: 2px 0 8px; }
+#sim-06a svg .ovl { fill: var(--accent-soft); stroke: none; }
+</style>
+</head>
+<body data-page="06a">
+<main>
+<h2>这一页在做什么</h2>
+<div class="gist"><p>第 6 章是作者的第五个「时代」：系统。这一页是前半章，主题是风险。出了大事故，总有人说「绝不能再发生」，作者的回答是做不到：我们知道的永远有缺口，工程能给的是可接受的风险。接着讲工程师怎么挡：安全系数、纵深防御、故障树；系统复杂到画不出整棵树，就分层交给不同的专家，层与层之间又生出新的风险。最后是他自己的系统框架，落在一句话上：每个硬系统都嵌在有人的软系统里。</p></div>
+<figure class="fig"><img src="../assets/img/06a-london-eye.jpg" alt="晴天从泰晤士河上望过去，左边一座白色大摩天轮，一圈挂着蛋形的封闭轿厢，轮子靠一侧斜撑的白色支架撑着；右边河岸是一长排米白色红顶的大楼" loading="lazy">
+<figcaption>从威斯敏斯特桥看伦敦眼，2024 年摄。作者在 §1 的问题清单里拿它举例：怎样保证它不会倒？他的回答在 <a href="06b.html">06b</a>。<span class="src">Hotolmo22，CC0，维基共享资源</span></figcaption></figure>
+<h2>读之前：这一页在全书的哪里</h2>
+<div class="linehere"></div>
+<p>作者在 §1 开头说，前五章除了切尔诺贝利和福岛（03b），讲的都是工程的成就。第 5 章讲晶体管一层层搭成电脑，这一页接着拿这个分层讲风险；第 1 章说现代工程像一团让人不安的云，§2 回到这团云。第 6 章前半讲风险从哪来、工程师用什么硬办法挡；<a href="06b.html">06b</a> 讲人和组织：信息靠不靠得住，失败怎样在组织里慢慢酝酿，再回答 §1 那串问题。</p>
+<div class="heads-up"><p>别被带歪：§1 说弯曲金字塔是看到美杜姆金字塔垮了才改缓坡度，这是 Mendelssohn 1974 年的假说，书里写了 according to。埃及学界多不接受：弯曲金字塔上看不出变形，改坡另有几种解释。</p></div>
+<div class="crux"><p>工程师怎样给自己不知道的事留余地？</p></div>
+<p class="lede">读的时候带着这几个问题，读完回来对照「检查一下理解」。</p>
+<ol class="qs">
+  <li>作者为什么说「再也不会发生」是兑现不了的话？他换成了什么说法？<span class="sec">§2</span></li>
+  <li>迪伊桥为什么算「谁都不知道」的那一类？<span class="sec">§2</span></li>
+  <li>安全系数是 2，是不是荷载翻倍才会坏？<span class="sec">§3</span></li>
+  <li>系统分了层，风险是少了还是多了？<span class="sec">§4</span></li>
+</ol>
+<h2>分节地图</h2>
+<p class="lede">原书这一章没有小标题，一口气写下来。下面的节是本站按段落分的：粗体是本站起的节名，后面是档和英文词数；再下面是这一节开头的几个英文词，在 Kindle 里搜它就能跳过去。读完打个勾。</p>
+<ol class="secmap">
+  <li data-sec="1"><span class="what">全章的问题清单在这里，记下来，答案多在 06b。后面说失败是常态：金字塔改坡是 Mendelssohn 的说法，再列几场灾难。</span></li>
+  <li data-sec="2"><span class="what">这一章的底，先读。先看「可接受的风险」怎么定，再看 Rumsfeld 的三分法和作者拿学物理打的比方，迪伊桥是「谁都不知道」的例子。</span></li>
+  <li data-sec="3"><span class="what">工程师的硬办法：安全系数、可靠性工程、纵深防御、事件树和故障树。留意算概率的只是「有些」工程师。原书图 20 是车打不着火的故障树。</span></li>
+  <li data-sec="4"><span class="what">电脑的分层接着第 5 章讲，软件那几层是作者那一代的分法。后半转到混沌和连锁失效，留意括号里的 some (but not all)。</span></li>
+  <li data-sec="5"><span class="what">作者自己的系统框架：硬系统、软系统，势差—流—阻抗。机械那一行配概念块读。落点是 <span class="at" data-p="18">Every hard system is embedded in</span> 那一句。</span></li>
+</ol>
+<h2>先用中文过一遍：这一页的概念</h2>
+<p class="lede">先把这一页用到的几个概念用书外的例子讲一遍。作者拿它们推出什么，读原书时自己看。后面各页用到时会链回这里。</p>
+<div class="concept" id="c-risk">
+<h3><span class="sec">§2</span>风险和认知缺口 <span class="en">risk, incompleteness</span></h3>
+<p>日常说「有风险」是可能出事。工程里看风险要看两样：出事的机会多大，出了事后果多重。很少发生、一发生就死很多人的事，风险照样大。</p>
+<p>作者先说风险从哪来：我们以为知道的和真正知道的之间有缺口，做的和会发生的之间又有缺口，缺口里装的就是风险。所以「保证不再出事」做不到，能做的是把风险压到可接受。什么算可接受不只看数字：熟悉的、觉得自己能掌控的风险，人更愿意接受。作者借 Rumsfeld 的「未知的未知」说，缺口里最值得留意的是这样一种：不只是你一个人不知道，而是谁都不知道。</p>
+<figure class="fig">
+<svg class="diagram" viewBox="0 0 640 190" role="img" aria-label="缺口示意图：一排四个方框，依次是以为知道的、真正知道的、做的、会发生的。前两个上面标着知，第三个标着行，第四个标着结果。第一和第二个之间、第三和第四个之间各有一道浅色的缝，标着缺口；第二和第三个之间是一个箭头，标着去做。下面一行写着两道缺口里装的就是风险">
+<defs><marker id="m06a-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="f-a"/></marker></defs>
+<text x="152" y="34" text-anchor="middle" class="t-b">知</text>
+<text x="392" y="34" text-anchor="middle" class="t-b">行</text>
+<text x="552" y="34" text-anchor="middle" class="t-b">结果</text>
+<rect x="15" y="52" width="115" height="46" rx="4" class="box"/>
+<text x="72" y="80" text-anchor="middle">以为知道的</text>
+<rect x="130" y="52" width="45" height="46" class="f-soft"/>
+<text x="152" y="80" text-anchor="middle" class="t-m">缺口</text>
+<rect x="175" y="52" width="115" height="46" rx="4" class="box"/>
+<text x="232" y="80" text-anchor="middle">真正知道的</text>
+<line x1="292" y1="75" x2="333" y2="75" class="ln-a" marker-end="url(#m06a-a)"/>
+<text x="312" y="118" text-anchor="middle" class="t-m">去做</text>
+<rect x="335" y="52" width="115" height="46" rx="4" class="box"/>
+<text x="392" y="80" text-anchor="middle">做的</text>
+<rect x="450" y="52" width="45" height="46" class="f-soft"/>
+<text x="472" y="80" text-anchor="middle" class="t-m">缺口</text>
+<rect x="495" y="52" width="115" height="46" rx="4" class="box"/>
+<text x="552" y="80" text-anchor="middle">会发生的</text>
+<text x="320" y="152" text-anchor="middle" class="t-b">两道缺口里装的就是风险</text>
+<text x="320" y="176" text-anchor="middle" class="t-m">知道得不全，做了就难免出乎意料</text>
+</svg>
+<figcaption>本站示意图，照作者 §2 的说法画。书里在 §1 先说「缺口由风险填满」，§2 讲缺口为什么永远在。</figcaption></figure>
+<p class="use"><b>在这一页：</b>§1 提出缺口，§2 讲可接受和未知的未知。06b 收尾时再回答「多安全才算够」。</p>
+</div>
+<div class="concept" id="c-safety-factor">
+<h3><span class="sec">§3</span>安全系数和可靠性工程 <span class="en">safety factor, reliability engineering</span></h3>
+<p>安全系数是能力除以需求：一根梁估计能扛 30 吨，预计最重压上 20 吨，系数是 1.5。书里说建筑结构的系数在 1.1 到 2 之间。能力和需求这对词，<a class="term" href="03a.html#c-demand-capacity">第 3 章</a>讲过。</p>
+<p>系数大不等于一定不坏。梁的强度一根和一根不一样，压上来的东西也时轻时重，两样都在一个范围里晃。偏弱的一根碰上偏重的一次，就坏了。可靠性工程算的就是撞上的机会有多大。同样的系数，荷载晃得越厉害，撞上的机会越大，所以系数和失效概率是两样东西。真实的设计规范也不拿平均值直接相除，见模拟器下面的说明。</p>
+<p class="use"><b>在这一页：</b>§3 先讲系数，再说有些工程师算概率，书里说这困难重重。「动手：模拟器」演示两者的差别。</p>
+</div>
+<div class="concept" id="c-event-fault-tree">
+<h3><span class="sec">§3</span>事件树、故障树和纵深防御 <span class="en">event tree, fault tree, defence-in-depth</span></h3>
+<p>事件树从一件起头的事往后推：核电站一台冷却水泵停了，备用泵启动了没有？没启动又会怎样？一路分叉，看最后会落到哪些后果。故障树反过来，从顶上一个故障往下追：它可能由哪几样更小的故障引起，一直追到不再细分的基本事件。树上的「或门」是下面任一样发生就够，「与门」要几样同时发生。</p>
+<p>给每个基本事件估个概率，就能算出顶上的故障有多大机会，也知道该先查哪一样。纵深防御是层层设防：先靠安全系数让事故别发生，万一发生了还有后手，限制它扩大。备用设备在故障树上就是把「或」换成了「与」。</p>
+<figure class="fig">
+<svg class="diagram" viewBox="0 0 640 290" role="img" aria-label="故障树示意图：顶上是家里上不了网，下面一个或门分出三支：路由器出问题、外网断了、电脑没连 Wi-Fi。路由器出问题下面是或门，分出断电和死机。外网断了下面是与门，分出宽带断了和手机热点也不行，要两样同时发生。右下角注明或门是任一样发生就够，与门是几样要同时发生">
+<rect x="220" y="10" width="200" height="36" rx="4" class="f-a"/>
+<text x="320" y="33" text-anchor="middle" class="t-on">家里上不了网</text>
+<line x1="320" y1="46" x2="320" y2="60" class="ln"/>
+<rect x="300" y="60" width="40" height="24" rx="10" class="box"/>
+<text x="320" y="77" text-anchor="middle" class="t-b">或</text>
+<path d="M320,84 V98 M110,98 H530 M110,98 V112 M320,98 V112 M530,98 V112" class="ln"/>
+<rect x="30" y="112" width="160" height="34" rx="4" class="box"/>
+<text x="110" y="134" text-anchor="middle">路由器出问题</text>
+<rect x="240" y="112" width="160" height="34" rx="4" class="box"/>
+<text x="320" y="134" text-anchor="middle">外网断了</text>
+<ellipse cx="530" cy="129" rx="92" ry="18" class="box"/>
+<text x="530" y="134" text-anchor="middle">电脑没连 Wi-Fi</text>
+<line x1="110" y1="146" x2="110" y2="160" class="ln"/>
+<rect x="90" y="160" width="40" height="24" rx="10" class="box"/>
+<text x="110" y="177" text-anchor="middle" class="t-b">或</text>
+<path d="M110,184 V198 M50,198 H170 M50,198 V212 M170,198 V212" class="ln"/>
+<ellipse cx="50" cy="230" rx="44" ry="18" class="box"/>
+<text x="50" y="235" text-anchor="middle">断电</text>
+<ellipse cx="170" cy="230" rx="44" ry="18" class="box"/>
+<text x="170" y="235" text-anchor="middle">死机</text>
+<line x1="320" y1="146" x2="320" y2="160" class="ln"/>
+<rect x="300" y="160" width="40" height="24" rx="10" class="f-soft"/>
+<text x="320" y="177" text-anchor="middle" class="t-b">与</text>
+<path d="M320,184 V198 M258,198 H400 M258,198 V212 M400,198 V212" class="ln"/>
+<ellipse cx="258" cy="230" rx="58" ry="18" class="box"/>
+<text x="258" y="235" text-anchor="middle">宽带断了</text>
+<ellipse cx="400" cy="230" rx="74" ry="18" class="box"/>
+<text x="400" y="235" text-anchor="middle">手机热点也不行</text>
+<text x="490" y="210" class="t-m">或：任一样发生就够</text>
+<text x="490" y="232" class="t-m">与：几样要同时发生</text>
+<text x="320" y="278" text-anchor="middle" class="t-m">方框还要往下分，椭圆是不再细分的基本事件</text>
+</svg>
+<figcaption>本站示意图，换了原书图 20 的例子（原书是车打不着火）。假定宽带一个月里断一次的机会是 5%，那时手机热点也用不了的机会是 10%，两样互不相干的话，外网全断的机会只有 5% × 10% = 0.5%：备用线路把「或」换成了「与」。现实里两样常常一起坏，<a href="06b.html">06b</a> 讲。</figcaption></figure>
+<p class="use"><b>在这一页：</b>§3 讲纵深防御时引出两种树；原书图 20 那棵是车打不着火，最常见的原因是电瓶没电。</p>
+</div>
+<div class="concept" id="c-layers">
+<h3><span class="sec">§4</span>分层、还原论和混沌 <span class="en">layers, reductionism, chaos</span></h3>
+<p>一台电脑一层叠一层：晶体管搭成逻辑门，门搭成触发器，再到寄存器、处理器、整机，上面是软件的几层。每层只用下一层提供的功能，不必管它怎么实现，所以一个人可以只懂一层。下面几层<a class="term" href="05.html#c-emergence">第 5 章</a>讲过。</p>
+<p>还原论相信弄懂了零件就弄懂了整体，作者说 IT 和 DNA 化学也许是它成功的顶点。可有两种情况零件说明不了整体。一是混沌：双摆这样简单的东西，起点差一丝，过一会儿就走得完全不同。二是连锁：电网、互联网这类处处相连的系统，一处小损伤能一路传开。工程文献里常把经得起扰动叫稳健，受损后能恢复叫韧性；作者把两个词并列着用，说这类系统缺的就是它们。</p>
+<figure class="fig">
+<svg class="diagram" viewBox="0 0 640 372" role="img" aria-label="电脑的层级塔，从下往上九层：晶体管等元件、逻辑门、触发器、寄存器和运算单元组成的处理器、整机、机器语言、编程语言、操作系统、应用。右边一个括号把下面五层括为硬件，一个括号把上面四层括为软件，各有各的专家；中间标着层与层之间没人全懂">
+<rect x="30" y="20" width="360" height="34" rx="3" class="f-soft"/><text x="210" y="42" text-anchor="middle">应用：文字处理、电子表格、有限元</text>
+<rect x="30" y="58" width="360" height="34" rx="3" class="f-soft"/><text x="210" y="80" text-anchor="middle">操作系统：Windows</text>
+<rect x="30" y="96" width="360" height="34" rx="3" class="f-soft"/><text x="210" y="118" text-anchor="middle">编程语言：Fortran、Algol、C</text>
+<rect x="30" y="134" width="360" height="34" rx="3" class="f-soft"/><text x="210" y="156" text-anchor="middle">机器语言</text>
+<rect x="30" y="172" width="360" height="34" rx="3" class="box"/><text x="210" y="194" text-anchor="middle">整机：内存、硬盘、显示器、键盘</text>
+<rect x="30" y="210" width="360" height="34" rx="3" class="box"/><text x="210" y="232" text-anchor="middle">寄存器、运算单元 → 处理器</text>
+<rect x="30" y="248" width="360" height="34" rx="3" class="box"/><text x="210" y="270" text-anchor="middle">触发器：存一个比特</text>
+<rect x="30" y="286" width="360" height="34" rx="3" class="box"/><text x="210" y="308" text-anchor="middle">逻辑门</text>
+<rect x="30" y="324" width="360" height="34" rx="3" class="box"/><text x="210" y="346" text-anchor="middle">晶体管等元件</text>
+<path d="M400,20 H410 V168 H400" class="ln"/>
+<text x="420" y="88" class="t-b">软件</text>
+<text x="420" y="110" class="t-m">机器语言、编程、系统、</text>
+<text x="420" y="128" class="t-m">应用，各有专家</text>
+<path d="M400,172 H410 V358 H400" class="ln"/>
+<text x="420" y="252" class="t-b">硬件</text>
+<text x="420" y="274" class="t-m">晶体管专家、数字电路</text>
+<text x="420" y="292" class="t-m">专家，又各是一批人</text>
+<line x1="395" y1="170" x2="630" y2="170" class="ln-d"/>
+<text x="420" y="164" class="t-m">层与层之间：没人全懂</text>
+</svg>
+<figcaption>本站示意图，按作者 §4 列的层画。软件那几层是作者那一代的分法：今天编程语言不算操作系统下面的一层，中间还多了虚拟机、容器、云服务和成堆的开源依赖。</figcaption></figure>
+<p class="use"><b>在这一页：</b>§4 前半讲分层，后半讲混沌和连锁失效。06b 讲整子时还会回到层。</p>
+</div>
+<div class="concept" id="c-effort-flow">
+<h3><span class="sec">§5</span>硬系统、软系统和势差—流 <span class="en">hard / soft system, effort and flow</span></h3>
+<p>作者把系统分两种。硬系统是物件：一座桥、一台电脑。软系统里有人：一个工程团队、一群用户。说的不是硬件和软件。</p>
+<p>他说各种硬系统能用同一套话讲（这套对照是工程和物理里现成的类比，不是他发明的）：势差推动一种流，阻抗挡着它。水位差推水流，温差推热流，电压推电流。势差乘流是功率，伏乘安得瓦（<a class="term" href="04a.html#c-ohm">第 4 章</a>）。阻抗分三样：耗掉能量的（电阻），存着势的（电容），存着流的（电感）。</p>
+<p>机械那一行容易绕晕。作者把速度当势差、力当流，于是电容对上飞轮的动能，电感对上桥身弹性里的应变能。<a class="term" href="04b.html#c-lc">04b</a> 拿秋千讲 LC 振荡用的是另一种对法（电压对力），电容存满时对上秋千停在最高处。两种对法都成立，别混着用。</p>
+<p class="use"><b>在这一页：</b>§5 的框架，概念块下面的表里「—」是书里没讲的格。06b 把它推到软系统上。</p>
+</div>
+<div class="table-wrap"><table class="terms">
+<tr><th></th><th>势差</th><th>流</th><th>耗散</th><th>存势</th><th>存流</th></tr>
+<tr><td>电</td><td>电压</td><td>电流</td><td>电阻</td><td>电容</td><td>电感</td></tr>
+<tr><td>机械</td><td>速度差</td><td>力</td><td>阻尼</td><td>飞轮的质量</td><td>桥的弹性</td></tr>
+<tr><td>水</td><td>水位差</td><td>水流</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>热</td><td>温差</td><td>热流</td><td>—</td><td>—</td><td>—</td></tr>
+</table></div>
+<h2>动手：模拟器</h2>
+<p>先猜：安全系数 2，是不是荷载翻倍才会坏？一根梁系数 2、荷载很飘（时轻时重，分散 40%），另一根系数 1.5、荷载很稳（分散 10%），哪根更容易坏？</p>
+<div class="sim" id="sim-06a">
+  <div class="sim-head"><span class="tag">模拟器</span><h3>安全系数和失效概率</h3><p class="desc">一根梁，强度一根和一根不一样，压上来的荷载也时轻时重。图上两条钟形曲线是它们各自多常见，横轴以平均荷载为 1。偏弱的一根碰上偏重的一次，梁就坏了。</p></div>
+  <div class="sim-body"><p>需要浏览器打开脚本才能运行。</p></div>
+</div>
+<p>各个控件：「安全系数」是平均强度除以平均荷载，强度曲线的峰就落在横轴的这个数上；「强度的分散」是同一批梁的强度上下晃多少，10% 是说多数梁落在平均值上下一成之内（严格说是一个标准差）；「荷载的分散」是压上来的东西晃多少，人群、雪、风越难说，分散越大。统计栏的「可靠指标 β」是两条曲线的峰相距多远，用两样合起来的晃动幅度去量，越大越安全；「失效概率」是一根梁碰上一次荷载时坏掉的机会。浅色阴影是两条曲线重叠的地方，坏就坏在这一带，但失效概率是按公式算的，不等于阴影的面积。</p>
+<ol class="qs">
+  <li>试试看：打开时是系数 1.5、强度分散 10%、荷载分散 20%，失效概率约 2.3%，大约 44 根里坏一根。系数不动，把荷载的分散改成 10%，变成多少？</li>
+  <li>试试看：把荷载的分散改回 20%，系数改成 2，失效概率是多少？再把荷载的分散改成 40%，和第 1 题里系数 1.5、荷载分散 10% 的那根比，哪根更容易坏？</li>
+  <li>试试看：点「回到默认」，把系数改成 1.1，失效概率是多少？再把强度的分散改成 5%（材料做得更均匀），能降多少？为什么降得这么少？</li>
+</ol>
+<p>这里的数都是本站定的演示值：书里只给了「1.1 到 2」，强度和荷载的分散、两样都按正态分布，是本站的假定。真实的设计规范不拿平均值相除：欧洲规范（EN 1990）把荷载取一个偏大的「特征值」再乘分项系数（恒载常用 1.35，活载 1.5），材料强度取偏小的特征值再打折扣；这些系数是用可靠度方法校准出来的，一般建筑在 50 年里的目标可靠指标约 3.8，失效概率约十万分之七。</p>
+<h2>书里的人和项目</h2>
+<p class="lede">书里点名的人、发明和工程，挑读懂这一页用得上的讲。按在书里出现的顺序排，节号是你在书里哪一节遇到它。</p>
+<h3><span class="sec">§1</span>弯曲金字塔</h3>
+<p>弯曲金字塔在开罗以南的代赫舒尔（Dahshur，书里拼作 Dashur），是古埃及第四王朝法老斯尼夫鲁（Sneferu）时造的，约 4,600 年前，书里写约 5,000 年。它下半截陡、上半截缓，棱线半路折了一下。书里转述 Kurt Mendelssohn（书里称他埃及学家兼物理学家）的说法：附近的美杜姆金字塔在施工中垮了，工匠们意识到坡太陡，就把正在造的这一座改缓。作者拿它当最早「从失败里改进」的工程。Mendelssohn 1974 年提出这个说法以后，埃及学界多不接受：弯曲金字塔上看不出变形，美杜姆什么时候塌的也有争议，改坡另有几种解释。</p>
+<figure class="fig"><img src="../assets/img/06a-bent-pyramid.jpg" alt="沙漠平地上一座正面看的大金字塔，表面大片残存平整的外壳石，底部一圈剥落露出粗石块；两条斜棱在大约三分之二高处往里一折，上段比下段平缓；塔前一排游客显得很小" loading="lazy">
+<figcaption>代赫舒尔的弯曲金字塔，2023 年 3 月摄。正面看，两条斜棱在大约三分之二高处往里一折，上段比下段平缓。<span class="src">Darer101，CC BY-SA 4.0，维基共享资源</span></figcaption></figure>
+<h3><span class="sec">§1</span>几场人为灾难和「深水地平线」</h3>
+<p>作者列了几场「活着的人还记得」的人为灾难：英国 Flixborough 化工厂爆炸（1974）、印度博帕尔农药厂毒气泄漏（1984）、北海 Piper Alpha 钻井平台大火（1988），最后是 2010 年墨西哥湾的大漏油。那一次是「深水地平线」钻井平台爆炸起火，11 人死亡。书里说是「a BP oil rig」：平台属于钻井承包商 Transocean，BP 是租用它作业的一方。同一节还提到 2010 年海地地震，作者说大量死亡本可以用合适的技术避免，没做到是政治问题。</p>
+<figure class="fig"><img src="../assets/img/06a-deepwater.jpg" alt="海面上一团巨大的黑烟往左上翻滚，烟根部是橙黄色的大火，火里隐约是钻井平台的上层甲板和吊臂；四五条补给船围着火喷水，水柱成弧形" loading="lazy">
+<figcaption>2010 年 4 月，补给船朝起火的「深水地平线」钻井平台喷水，海岸警卫队的直升机在拍摄火场、搜寻幸存者。<span class="src">美国海岸警卫队，公有领域，维基共享资源</span></figcaption></figure>
+<h3><span class="sec">§2</span>Rumsfeld 的三分法</h3>
+<div class="who"><div><b>Donald Rumsfeld</b><span class="en">1932–2021</span>美国政治人物，两度任国防部长（1975–1977、2001–2006）。书里把头衔写成 Secretary of State for Defense，那是英国式的叫法，美国叫 Secretary of Defense。</div></div>
+<p>2002 年 2 月 12 日美国国防部的记者会上，有记者问伊拉克政府向恐怖组织提供武器有什么证据，Rumsfeld 答以「已知的已知、已知的未知、未知的未知」，媒体当成绕口令嘲笑了一阵。作者引了这段话，紧接着说 But Rumsfeld was right。他只取这套分类，拿学物理来讲：小时候不知道世上有牛顿定律，对你是未知的未知；学了物理、知道有相对论却没学，是已知的未知。</p>
+<h3><span class="sec">§2</span>迪伊桥</h3>
+<p>迪伊桥是英格兰切斯特附近跨迪河（Dee）的铁路桥，Robert Stephenson 设计，铸铁梁上加了熟铁拉杆。1847 年 5 月 24 日，一列火车过桥时一跨断了，5 人死亡。当地的死因调查指责 Stephenson 疏忽，后来的调查没有怪他，却让人开始担心铸铁用在铁路桥上。作者拿它当「谁都不知道」的例子：破坏机理叫侧向扭转屈曲（梁受弯时，受压的那一边像一根细长的柱子，往侧面一歪，带着整根梁扭过去），他说事后约 50 年才弄明白，这一句正文和书后注释都没给出处。Stephenson 当年另有一说：火车先出了轨，撞断了梁。</p>
+<figure class="fig"><img src="../assets/img/06a-dee-bridge.jpg" alt="线刻版画：左边一段路堤和两座石砌桥墩，路堤上停着一节车厢；两墩之间的一跨塌了，河里横七竖八泡着几节车厢，一个车轮朝天；远处对岸是树和城镇" loading="lazy">
+<figcaption>《伦敦新闻画报》1847 年 6 月 12 日的版画：切斯特迪伊桥塌桥现场，塌掉的一跨泡在河里。<span class="src">Hare 刻版，《伦敦新闻画报》，公有领域，维基共享资源</span></figcaption></figure>
+<h3><span class="sec">§4</span>双摆</h3>
+<p>双摆是一根摆的下端再挂一根摆。只有两节，运动方程也写得出来，可放手的位置差一丝，过一会儿两次摆的路线就完全不同。作者拿它和天气预报并列，说明看着简单的东西也可能很难预测。这种对初值敏感的行为，一般追到 1960 年代气象学家 Edward Lorenz 的简化天气模型，更早庞加莱就碰到过；作者说 we now know，新的是它进了工程风险的讨论。他特意写了 some (but not all)：不是所有物理过程都混沌，别读成「什么都算不准」。</p>
+<figure class="fig"><img src="../assets/img/06a-double-pendulum.jpg" alt="纯黑底上一团白中带淡蓝的光线轨迹：上半部是几圈大小不一的圆弧，下半部是密密麻麻交错打结的曲线，整体大致圈成一个球形" loading="lazy">
+<figcaption>在双摆末端装一盏灯、长时间曝光拍下的轨迹。说明页写，同样的摆每放一次，轨迹都不一样。<span class="src">Cristian V.，CC BY-SA 4.0，维基共享资源</span></figcaption></figure>
+<h2>原文里的词和句</h2>
+<p class="lede">读英文原书时值得停一下的词和句：工程里的熟词生义、英式说法、作者的比喻。灰色斜体是原句里连续的几个词，在 Kindle 里搜它就能找到；标「每个字都认识」的，是每个词都眼熟、合起来意思却变了的，最容易读错。点「记下」收进词本。</p>
+<div class="entry trap"><div class="en">hit the headlines</div><div class="loc" data-p="1">… they hit the headlines because of …</div><div class="zh">上了新闻头条</div><div class="note">不是「打标题」。英式多说 hit the headlines，美式也说 make (the) headlines。</div></div>
+<div class="entry trap"><div class="en">duty of care</div><div class="loc" data-p="3">… law as a duty of care.</div><div class="zh">注意义务</div><div class="note">侵权法的术语：做事要尽合理的注意，避免可以预见的伤害。不是「照顾的责任」。书后注释给了这个定义。</div></div>
+<div class="entry"><div class="en">fit for purpose</div><div class="loc" data-p="4">… they are fit for their intended purpose.</div><div class="zh">合乎（预期）用途</div><div class="note">英国合同和工程里的固定说法。书后注释说，律师可能把它读成不问过错的严格责任，作者认为这对专业服务不合适。</div></div>
+<div class="entry trap"><div class="en">a very human condition</div><div class="loc" data-p="5">… Failure is a very human condition …</div><div class="zh">人之常情，人人都会碰上的事</div><div class="note">the human condition 是「人生在世的处境」。这里说失败是人都免不了的，不是「很人性化的状态」。</div></div>
+<div class="entry trap"><div class="en">within living memory</div><div class="loc" data-p="5">… Man-made disasters within living memory vary …</div><div class="zh">活着的人还记得的（近几十年里的）</div><div class="note">不是「在活的记忆里」。常见于 the coldest winter in living memory（几十年来最冷的冬天）。</div></div>
+<div class="entry"><div class="en">boiler</div><div class="loc" data-p="6">… or central heating gas boilers break down …</div><div class="zh">（家里的）燃气锅炉，供暖和热水用</div><div class="note">英国家庭的壁挂炉，冬天坏了就没暖气没热水。不是工厂里的大锅炉。</div></div>
+<div class="entry trap"><div class="en">cold snap</div><div class="loc" data-p="6">… need them during a cold snap.</div><div class="zh">一阵突来的寒潮</div><div class="note">snap 在这里是「突然的一小段」，不是「折断、快照」。</div></div>
+<div class="entry trap"><div class="en">one-time</div><div class="loc" data-p="8">… Donald Rumsfeld, the one-time US Secretary …</div><div class="zh">曾任的，前任的</div><div class="note">不是「一次性的」。one-time champion 是前冠军。</div></div>
+<div class="entry"><div class="en">an historical</div><div class="loc" data-p="10">… is an historical example where the …</div><div class="zh">一个历史上的（例子）</div><div class="note">英式老派写法，h 当成不发音，前面用 an。今天多写 a historical。</div></div>
+<div class="entry trap"><div class="en">buckling</div><div class="loc" data-p="10">… mechanism of failure, called lateral torsional buckling …</div><div class="zh">屈曲，失稳</div><div class="note">受压的构件突然往侧面弯出去。日常 buckle 是扣扣子、腿发软；lateral torsional buckling 是侧向扭转屈曲。</div></div>
+<div class="entry trap"><div class="en">demand</div><div class="loc" data-p="12">… the maximum demand imposed on it …</div><div class="zh">（结构上的）需求，荷载效应</div><div class="note">和 capacity（能力）成对，指压在结构上的力，不是市场需求。</div></div>
+<div class="entry trap"><div class="en">up to twice</div><div class="loc" data-p="12">… may be up to twice that of …</div><div class="zh">最多到两倍</div><div class="note">up to 是上限，不是「达到、至少」。这句说强度可以到荷载的两倍，配前一句的「1.1 到 2」。</div></div>
+<div class="entry"><div class="en">contingency</div><div class="loc" data-p="13">… have back-up, or contingency, plans …</div><div class="zh">应急的，以防万一的</div><div class="note">contingency plan 是应急预案，contingency fund 是预算里的不可预见费。</div></div>
+<div class="entry trap"><div class="en">credible</div><div class="loc" data-p="13">… caused by other credible faults …</div><div class="zh">（合理设想下）可能发生的</div><div class="note">不是「可信的、靠得住的」。安全分析里 credible fault 是值得考虑、不能排除的故障。</div></div>
+<div class="entry trap"><div class="en">flat battery</div><div class="loc" data-p="13">… a flat battery – so that …</div><div class="zh">没电的电池（电瓶）</div><div class="note">英式说法，美式多说 dead battery。flat 不是「扁平」。</div></div>
+<div class="entry"><div class="en">cascade</div><div class="loc" data-p="15">… small damage cascading to disproportionately large …</div><div class="zh">一级级连锁传开</div><div class="note">本义是一级级的小瀑布。cascading failure 是连锁失效，程序员在微服务雪崩里也常见这个词。</div></div>
+<div class="entry"><div class="en">expect the unexpected</div><div class="loc" data-p="15">… we have to expect the unexpected unintended …</div><div class="zh">要预料到意料之外的事</div><div class="note">习语。作者顺手又接了 unintended consequences（意外后果），两个说法拼在一起。</div></div>
+<div class="entry trap"><div class="en">difference of potential</div><div class="loc" data-p="16">… driven by a difference of potential …</div><div class="zh">势差</div><div class="note">电里就是电压，作者推广到水位差、温差。不是「潜力的差别」。</div></div>
+<div class="entry trap"><div class="en">embedded in</div><div class="loc" data-p="18">… hard system is embedded in a soft …</div><div class="zh">嵌在……里面</div><div class="note">程序员看到 embedded 会想到嵌入式系统，这里不是：说的是物件总落在有人的系统里。</div></div>
+<h2>读完：作者到底说了什么</h2>
+<p class="lede">下面是作者在这一页里的主张，本站按主张之间的逻辑重排，不按原书顺序；每条后面是节号，拿不准就回书里那一节再读一遍。</p>
+<div class="claims">
+  <div class="claim"><h4>工程保证不了不再出事，能给的是可接受的风险</h4><p>每次事故调查后都有人说「绝不能再发生」。作者说科学、技术、工程、数学给不了确定性，能给的是和自然事件相当的风险水平。什么算可接受并不简单：人照样开车，却有人怕坐飞机；熟悉的、觉得能掌控的风险更容易接受。一次失败也不必然说明那种风险不可接受。</p><span class="sec" data-p="1 7">§1 §2</span></div>
+<blockquote class="quote">We have to accept that science, technology, engineering, and mathematics cannot deliver certainty nor guarantee a future with no failures.<cite>— §2。本站译：我们得承认，科学、技术、工程和数学给不了确定性，也保证不了一个没有失败的未来。</cite></blockquote>
+  <div class="claim"><h4>风险填在知与行的缺口里，最值得留意的是谁都不知道的事</h4><p>以为知道的和真正知道的之间、做的和会发生的之间，总有缺口，所以要带着谦卑管风险。他借 Rumsfeld 的三分法说，最有意思的是未知的未知：不只是你不知道，而是谁都不知道，迪伊桥的破坏机理就是。</p><span class="sec" data-p="2 8 10">§1 §2</span></div>
+<blockquote class="quote">The simple reality is that what we think we know is always incomplete<cite>— §2。本站译：简单的事实是，我们以为知道的，永远是不完整的。</cite></blockquote>
+  <div class="claim"><h4>工程师两路挡风险：把东西做牢，把人管好</h4><p>硬的一路是安全系数，有些工程师还算需求超过能力的概率，他说这困难重重；系数之外再加纵深防御，画事件树和故障树，把总的失效机会压到可接受。软的一路是管好人和组织，传统上被看成主观的一面。</p><span class="sec" data-p="11 12 13">§3</span></div>
+  <div class="claim"><h4>复杂到画不完整棵树，就分层管，可分层本身带来新风险</h4><p>电脑从晶体管到应用一层叠一层，很少有人懂全部，专家各管一层；层与层之间、各层专家的理解之间，关系并不简单。再加上有些过程对初值敏感，互联的系统会让小损伤连锁放大，从零件推不出整体，只能预料到会有意料之外的后果。</p><span class="sec" data-p="14 15">§4</span></div>
+  <div class="claim"><h4>每个硬系统都嵌在有人的软系统里</h4><p>他把物件叫硬系统，有人在里面的叫软系统。硬系统能统一看成势差推动、阻抗阻碍的流，电、水、热、机械用一套话讲。可硬系统要由工程团队去理解和控制，由用户去用，团队和用户都是软系统。</p><span class="sec" data-p="16 17 18">§5</span></div>
+</div>
+<p class="sowhat"><b>合起来：</b>这一页把「安全」从一句承诺变成一笔账：知道得永远不全，风险就去不掉；工程师用系数、备份和故障树把它压小，用分层对付复杂，可每一样办法都留下新的缝。缝里的人和组织，留给 06b。</p>
+<h2>今天怎么看</h2>
+<p class="lede">书 2012 年出版。下面挑出这一页里能被后来的研究或事情检验的说法，分「书里 / 当时 / 今天」几栏，并给一个结论。结论判的是标题里「书里的说法：」后面那一句。全书的这一节汇总在<a href="../today.html">今天怎么看</a>。</p>
+<ul class="verdicts"><li><span class="v ok">成立</span>后来的研究或事情支持这句话。</li><li><span class="v mid">部分成立</span>大方向对，细节或适用范围要改。</li><li><span class="v bad">被改写</span>后来的研究推翻了它、换了一种说法，或者情况变了。</li><li><span class="v dis">有争议</span>至今没有定论，两边各有代表性的研究或证据。</li></ul>
+<div class="today" data-verdict="成立"><h4>书里的说法：高度互联的系统可能被一点小损伤连锁放大出不成比例的后果</h4><dl>
+  <dt>书里</dt><dd>举了电网、互联网、公路，连建筑结构也算上；说起头的损伤机会再小，后果也可能很重，这类系统缺韧性。<span class="at" data-p="15">§4</span></dd>
+  <dt>当时</dt><dd>2003 年 8 月美加东北部大停电，从俄亥俄几条输电线碰树跳闸、控制室报警软件又失灵开始，一路传到约 5,000 万人断电。</dd>
+  <dt>今天</dt><dd>2021 年 2 月得州寒潮，发电设备冻坏，供给电厂的天然气也跟着断了。2024 年 7 月 CrowdStrike 给安全软件推了一份有缺陷的配置更新，约 850 万台 Windows 电脑蓝屏，航空、医院、银行跟着停摆。2025 年 4 月伊比利亚半岛大停电，欧洲输电运营商联盟的最终报告说是电压失控、发电机一台接一台跳开，没有哪个因素单独能造成崩溃。小起因放大成大后果，这句话成立。<span class="asof">核对于 2026-11。依据：FERC / NERC 2021 年 11 月报告；Microsoft 2024 年 7 月的估计；ENTSO-E 专家组 2026 年 3 月最终报告。</span></dd>
+</dl></div>
+<div class="today" data-verdict="成立"><h4>书里的说法：统计上，坐飞机比开车安全得多</h4><dl>
+  <dt>书里</dt><dd>拿它说明人对风险的感觉和统计对不上：有人怕坐飞机，却照样开车；熟悉的、自己能掌控的风险更容易被接受。<span class="at" data-p="7">§2</span></dd>
+  <dt>当时</dt><dd>风险感知研究从 1970 年代末起就发现，人对「控制不了、一出就是大灾」的风险格外害怕，和实际死多少人不成比例，Paul Slovic 1987 年在《科学》上的综述最常被引。</dd>
+  <dt>今天</dt><dd>美国非营利数据机构 USAFacts 按政府的乘客里程数据算，2023 年每 1 亿乘客英里，飞机乘客死亡约 0.003 人，小汽车和轻型卡车的乘客约 0.53 人，差一百多倍。按里程算，坐飞机仍然比开车安全得多。<span class="asof">核对于 2026-11。依据：USAFacts, Is flying safer than driving?</span></dd>
+</dl></div>
+<h2>本站怎么看</h2>
+<p class="lede">读完作者的主张，再看它站不站得住。每一块摆出三样：主流怎么看，作者怎么看，本站的评论。最后一句是本站对这一页的总体判断。</p>
+<div class="views"><h4>「Rumsfeld was right」：对在哪，少了哪一类</h4>
+<p><b>主流看法：</b>Rumsfeld 那段话是 2002 年回答伊拉克问题时说的，当时被当成绕口令，后来在项目管理和风险管理里被大量引用。哲学家 Slavoj Žižek 2004 年给它补上第四类：「未知的已知」，也就是其实知道、却不愿承认的事。</p>
+<p><b>作者的看法：</b>三分法本身是对的，最有意思的是谁都不知道的那一类，迪伊桥就是。<span class="at" data-p="10">§2</span></p>
+<p class="ours"><b>本站的评论：</b>作者只取认识论，不谈政治，本站也不谈。分类没毛病；可是事故调查里常见的，往往是 Žižek 说的第四类：隐患有人早就知道，消息没传上去，或者被压下了。这正是 06b 讲 Turner、Reason 时要说的组织失败。真正「谁都不知道」的迪伊桥式例子，反倒少见。</p></div>
+<div class="views"><h4>分层：没人懂所有层</h4>
+<p><b>主流看法：</b>程序员 Joel Spolsky 2002 年写过一条「抽象泄漏定律」：凡是不平凡的抽象，多少都会漏，底层的细节迟早漏到上层来，上层的人还是得懂一点底层。今天的软件栈比作者列的更深：一个应用底下有运行时、容器、云服务，还有几百个开源依赖。</p>
+<p><b>作者的看法：</b>很少有人懂所有层，专家各管一层；层与层之间、专家的理解之间关系不简单，这是新风险。<span class="at" data-p="14">§4</span></p>
+<p class="ours"><b>本站的评论：</b>这是这一页对程序员最有用的一句。作者那一代的层序（语言在操作系统下面）今天看不太对，要点却没过时：CrowdStrike 那次，出事的是安全软件里的一份配置文件，跑在系统内核这一层，大多数写应用的人从没想过它（见「今天怎么看」）。分层让一个人只懂一层也能干活，代价是出事时也只有一层的人看得懂。</p></div>
+<div class="views"><h4>安全系数和概率，规范里怎么合在一起</h4>
+<p><b>主流看法：</b>今天的结构设计规范用「极限状态加分项系数」。欧洲规范 EN 1990 里，荷载取偏大的特征值再乘系数（恒载常用 1.35，活载 1.5），材料强度取偏小的特征值再打折扣；这些系数是用可靠度方法校准出来的，一般建筑 50 年的目标可靠指标约 3.8。</p>
+<p><b>作者的看法：</b>建筑结构的安全系数在 1.1 到 2 之间；有些工程师算需求超过能力的概率，叫可靠性工程，但困难重重。<span class="at" data-p="12">§3</span></p>
+<p class="ours"><b>本站的评论：</b>两句都对，也不打架：设计时用系数，系数背后是概率在校准。作者说的困难是真的：极端荷载、人为差错、没人想到的破坏方式，概率都很难估，迪伊桥那种「谁都不知道」的机理根本进不了计算。这也是他接着要讲软系统的原因。</p></div>
+<p class="verdict"><b>本站的总体看法：</b>§2 和 §3 最值得读：风险去不掉、只能压到可接受，安全系数和概率是两样东西，这两点今天的工程照样这样讲。分层和连锁失效这几年被一次次印证。§5 的势差—流类比是工程里现成的好工具；把它推到人身上是作者自己的一步，下一页要打折扣。</p>
+<h2>检查一下理解</h2>
+<p class="lede">先在心里答，再点开。答错的那题，回书里把对应那一节再读一遍。</p>
+<details class="check"><summary>1.（§2）「绝不能再发生」，作者说能不能做到？他换成了什么说法？</summary><p>做不到：科学和工程给不了确定性。能给的是可接受的风险，和自然事件带来的风险相当；可不可接受又跟人怎么感知风险有关。</p></details>
+<details class="check"><summary>2.（§2）小时候不知道牛顿定律、学过物理但没学相对论、迪伊桥的破坏机理，在 Rumsfeld 的分类里各算哪一类？</summary><p>第一个对你是未知的未知；第二个是已知的未知；第三个是谁都不知道的未知的未知，作者说最有意思的就是这一类。</p></details>
+<details class="check"><summary>3.（§3）一根梁平均能扛 30 吨，预计最重压上 20 吨，安全系数是多少？这说明它绝不会坏吗？</summary><p>1.5。不说明：强度和荷载都会晃，偏弱的一根碰上偏重的一次就会坏，坏的机会要看两样晃得多厉害。</p></details>
+<details class="check"><summary>4.（§3）事件树和故障树有什么不同？</summary><p>事件树从一件起头的事往后推，看会牵连出哪些后果；故障树从顶上的故障往下追，看可能由哪些更小的故障引起。</p></details>
+<details class="check"><summary>5.（§4）作者说分层管理带来了什么新风险？</summary><p>很少有人懂所有层，专家各管一层；层与层之间、各层专家的理解方式之间关系不简单，这就是新风险。</p></details>
+<details class="check"><summary>6.（§4）混沌系统难预测，是因为它很复杂吗？</summary><p>不一定。双摆这样简单的东西也会：起点差一丝，过一会儿就差很远。作者也只说有些物理过程是混沌的，不是全部。</p></details>
+<details class="check"><summary>7.（§5）硬系统、软系统是硬件、软件的意思吗？</summary><p>不是。硬系统是物件组成的系统，比如桥、电脑；软系统里有人，比如工程团队和用户。作者说每个硬系统都嵌在软系统里。</p></details>
+<p>用一句话说这一页：</p>
+<textarea class="note" data-key="06a-oneline" rows="2" placeholder="比如：……"></textarea>
+<div class="ponder"><p>想一想：你维护过的系统（代码、服务、家里的网络）里，有哪件事是「谁都不知道」，又有哪件其实是「有人知道却没说」？</p>
+<textarea class="note" data-key="06a-ponder" rows="3"></textarea></div>
+<h2>精彩回顾</h2>
+<p class="lede">读过又忘了，从这里想起来。挑的是这一页最值得记住的例子和说法，不按原书顺序；每条后面是节号，想细看就回书里那一节。全书各页的这一节都收在<a href="../recap.html">全书回顾</a>。</p>
+<p class="recall-line"><b>一句话：</b>知道的永远有缺口，风险去不掉只能压到可接受；安全系数、故障树、分层是工程师的硬办法，可每个硬系统都嵌在有人的软系统里。</p>
+<div class="recall">
+  <div class="item"><b>「绝不能再发生」做不到</b><p>工程给不了确定性，能给的是可接受的风险。可不可接受很看熟不熟悉、能不能自己掌控：怕坐飞机的人照样天天开车。</p><span class="sec">§2</span></div>
+  <div class="item"><b>谁都不知道的那一类</b><p>作者借 Rumsfeld 的三分法讲知识的缺口。1847 年迪伊桥垮了，作者说它的破坏机理约 50 年后才有人弄明白。</p><span class="sec">§2</span></div>
+  <div class="item"><b>系数不等于概率</b><p>安全系数 2、荷载很飘，可能比系数 1.5、荷载很稳的还危险。本站模拟器的演示值：约 1.3% 对约 0.28%。</p><span class="sec">§3</span></div>
+  <div class="item"><b>故障树往下追原因</b><p>事件树往后推后果，故障树往下追原因。车打不着火，最常见的是电瓶没电，先查它。</p><span class="sec">§3</span></div>
+  <div class="item"><b>没人懂所有层</b><p>电脑从晶体管到应用一层叠一层，专家各管一层，接缝处的误解就是新风险。</p><span class="sec">§4</span></div>
+  <div class="item"><b>硬系统嵌在软系统里</b><p>桥和电脑是硬系统，造它、管它、用它的人是软系统。下一半章从这里讲人和组织。</p><span class="sec">§5</span></div>
+</div>
+</main>
+<script>
+(() => {
+  // 安全系数和失效概率：以平均荷载为 1。荷载 S ~ 正态(1, VS)，强度 R ~ 正态(FS, FS·VR)，两者独立。失效 = R < S，Pf = Φ(−β)，β = (FS − 1) / √((FS·VR)² + VS²)。
+  // 默认（系数 1.5、强度分散 10%、荷载分散 20%）复现底稿 e-sims.py：约 2.3%；荷载分散 10% 约 0.28%；系数 2 约 0.020%；系数 2、荷载 40% 约 1.3%；系数 1.1 约 33%。确定性，没有随机数。
+  const root = document.getElementById("sim-06a");
+  if (!root || !window.EG) return;
+  const { h, chart } = window.EG;
+  const DEF = { fs: "1.5", vr: "0.1", vs: "0.2" };
+  const st = Object.assign({}, DEF);
+  const OPTS = {
+    fs: { label: "安全系数", list: [["1.1", "1.1"], ["1.25", "1.25"], ["1.5", "1.5"], ["1.75", "1.75"], ["2", "2"], ["2.5", "2.5"], ["3", "3"]] },
+    vr: { label: "强度的分散", list: [["0.05", "5%（很均匀）"], ["0.1", "10%"], ["0.15", "15%"], ["0.2", "20%（很不均匀）"]] },
+    vs: { label: "荷载的分散", list: [["0.05", "5%（很稳）"], ["0.1", "10%"], ["0.2", "20%"], ["0.3", "30%"], ["0.4", "40%（很飘）"]] },
+  };
+  const sels = {};
+  const ctrl = (k) => {
+    const s = h("select", { "aria-label": OPTS[k].label, onchange: () => { st[k] = s.value; draw(); } }, ...OPTS[k].list.map(([v, t]) => h("option", { value: v }, t)));
+    sels[k] = s;
+    return h("label", {}, OPTS[k].label, s);
+  };
+  const reset = h("button", { onclick: () => { Object.assign(st, DEF); draw(); } }, "回到默认");
+  const plot = h("div");
+  const stage = h("div", { class: "stage" }, h("p", { class: "cap" }, "两条曲线：荷载和强度各自多常见；横轴是平均荷载的几倍"), plot);
+  const narrate = h("div", { class: "narrate" });
+  const stats = h("div", { class: "stats" });
+  const body = root.querySelector(".sim-body");
+  body.innerHTML = "";
+  body.append(h("div", { class: "controls" }, ...Object.keys(OPTS).map(ctrl), reset), stage, narrate, stats);
+
+  // 余误差函数，Numerical Recipes 的 erfcc，相对误差小于 1.2e-7，尾巴上的小概率也算得准
+  function erfc(x) {
+    const z = Math.abs(x), t = 1 / (1 + 0.5 * z);
+    const r = t * Math.exp(-z * z - 1.26551223 + t * (1.00002368 + t * (0.37409196 + t * (0.09678418 + t * (-0.18628806 + t * (0.27886807 + t * (-1.13520398 + t * (1.48851587 + t * (-0.82215223 + t * 0.17087277)))))))));
+    return x >= 0 ? r : 2 - r;
+  }
+  const tail = (b) => 0.5 * erfc(b / Math.SQRT2);
+  const pdf = (x, m, s) => Math.exp(-0.5 * ((x - m) / s) ** 2) / (s * Math.sqrt(2 * Math.PI));
+  const DX = 0.02, XMAX = 4;
+  function run() {
+    const fs = Number(st.fs), vr = Number(st.vr), vs = Number(st.vs);
+    const sr = fs * vr, sig = Math.sqrt(sr * sr + vs * vs), beta = (fs - 1) / sig, p = tail(beta);
+    const S = [], R = [];
+    for (let i = 0; i * DX <= XMAX + 1e-9; i++) { S.push(pdf(i * DX, 1, vs)); R.push(pdf(i * DX, fs, sr)); }
+    return { fs, vr, vs, sr, sig, beta, p, S, R };
+  }
+  const fmtP = (p) => (p < 1e-6 ? "小于百万分之一" : (p * 100).toPrecision(2) + "%");
+  function fmtN(p) {
+    if (p < 1e-6) return "百万以上";
+    const v = Number((1 / p).toPrecision(2));
+    return v >= 1e4 ? `${+(v / 1e4).toPrecision(2)} 万` : String(v);
+  }
+  function tell(r) {
+    const parts = [`平均强度是平均荷载的 ${r.fs} 倍。两样合起来晃的幅度约是平均荷载的 ${r.sig.toFixed(2)} 倍，两个峰相距 ${(r.fs - 1).toFixed(2)}，是这个幅度的 ${r.beta.toFixed(2)} 倍，这就是 β。`];
+    if (r.p >= 0.1) parts.push("两条曲线大片重叠，偏弱的一根碰上偏重的一次很常见，这样的余量在真实结构里不够用。");
+    else if (r.fs >= 2 && r.p >= 0.005) parts.push("系数看着宽裕，可荷载晃得太厉害，重的那一头一直伸进强度曲线里，照样会坏。系数大不等于安全。");
+    else if (r.p < 1e-4) parts.push("两条曲线几乎分开，只有两边最极端的尾巴才碰得上。");
+    else parts.push("两条曲线只在尾巴上碰到一点，偏弱的一根碰上偏重的一次才会坏。");
+    if (r.vs >= 2 * r.sr) parts.push("荷载比强度晃得厉害得多，把材料做得再均匀也帮不了多少：分散大的那一边说了算。");
+    return parts.join("");
+  }
+  function draw() {
+    for (const k in sels) sels[k].value = st[k];
+    const r = run();
+    const c = chart(plot, { series: [{ name: "荷载（需求）", data: r.S, c: 1 }, { name: "强度（能力）", data: r.R, c: 2 }], xlabel: "平均荷载的几倍", ylabel: "多常见", dt: DX, ymin: 0, title: "荷载和强度的分布曲线" });
+    let d = "";
+    r.S.forEach((v, i) => { d += `${i ? "L" : "M"}${c.x(i).toFixed(1)},${c.y(Math.min(v, r.R[i])).toFixed(1)}`; });
+    d += `L${c.x(r.S.length - 1).toFixed(1)},${c.y(0).toFixed(1)}L${c.x(0).toFixed(1)},${c.y(0).toFixed(1)}Z`;
+    const ov = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    ov.setAttribute("d", d); ov.setAttribute("class", "ovl");
+    c.svg.insertBefore(ov, c.svg.querySelector("path"));
+    narrate.textContent = tell(r);
+    stats.innerHTML = "";
+    const box = (v, l) => h("div", { class: "stat" }, h("div", { class: "v" }, v), h("div", { class: "l" }, l));
+    stats.append(box(String(r.fs), "安全系数（平均强度 ÷ 平均荷载）"), box(r.beta.toFixed(2), "可靠指标 β"), box(fmtP(r.p), "失效概率"), box(fmtN(r.p), "约几根里坏一根"));
+  }
+  draw();
+})();
+</script>
+</body>
+</html>

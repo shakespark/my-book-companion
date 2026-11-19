@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 1 章 · 工程导读</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/chapters.js"></script>
+<script src="../assets/eg.js"></script>
+</head>
+<body data-page="01">
+<main>
+<h2>这一页在做什么</h2>
+<div class="gist"><p>第 1 章不讲物理，先给工程定调。Blockley 的定义很宽：把想法变成现实，造工具、用工具办成一件事。他最用力的一句是工程带着价值：工具和人的生活方式一起演化，谈不上中性。接着他想把科学、技术、工程、数学（STEM）理清楚，试了词典、日常用法、工程界的职称和门类，都不成，最后借哲学家 Carl Mitcham 找到一把尺：目的。科学为了知，工程为了做。§10 的第二段是全书路线图：五个「时代」。</p></div>
+<figure class="fig">
+<svg class="diagram" viewBox="0 0 640 260" role="img" aria-label="知与行示意图：三个框并排。科学，为了知，产出理论和知识；数学，为了清楚精确地推理，是两边共用的语言和工具；工程和技术，为了做，产出有用、安全、负担得起、可持续的东西。下面一条横带写着方法很像，不知道动机常常分不清他在当哪一种。最下面写着三样都出自人的意志，也就是目的">
+<rect x="20" y="20" width="190" height="122" rx="6" class="box"/>
+<rect x="225" y="20" width="190" height="122" rx="6" class="box"/>
+<rect x="430" y="20" width="190" height="122" rx="6" class="box"/>
+<text x="115" y="48" text-anchor="middle" class="t-b">科学</text>
+<text x="320" y="48" text-anchor="middle" class="t-b">数学</text>
+<text x="525" y="48" text-anchor="middle" class="t-b">工程和技术</text>
+<text x="115" y="80" text-anchor="middle" class="t-m">为了「知」</text>
+<text x="320" y="80" text-anchor="middle" class="t-m">为了清楚精确地推理</text>
+<text x="525" y="80" text-anchor="middle" class="t-m">为了「做」</text>
+<text x="115" y="108" text-anchor="middle" class="t-m">产出理论和知识</text>
+<text x="320" y="108" text-anchor="middle" class="t-m">两边共用的语言和工具</text>
+<text x="525" y="108" text-anchor="middle" class="t-m">产出有用、安全、</text>
+<text x="525" y="128" text-anchor="middle" class="t-m">负担得起、可持续的东西</text>
+<rect x="20" y="160" width="600" height="40" rx="6" class="f-soft"/>
+<text x="320" y="185" text-anchor="middle" class="t-b">方法很像：不知道动机，常常分不清他在当哪一种</text>
+<text x="320" y="234" text-anchor="middle" class="t-m">三样都出自人的意志，也就是目的</text>
+</svg>
+<figcaption>本站示意图，照 §10 里 Blockley 自己的划分画。这是他在这本书里的约定，不是通行的定义：他把工程和技术当同义词，词典里「技术是应用科学」的说法他不认。</figcaption></figure>
+<h2>读之前：这一页在全书的哪里</h2>
+<div class="linehere"></div>
+<p>这是正文第一章，只有序言在它之前。这一章没有原理，是全书的地基：「工程是做」「工具带着价值」「按目的分开科学和工程」这三个说法，第 2–6 章都会用到。第 2 章起作者给每段历史贴的斜体标签 need、activity、objects、knowledge，来自 §9 的米切姆四视角；§10 的五个时代就是第 2–6 章的章名。中间几节可以读快些，§9、§10 值得慢读。</p>
+<div class="heads-up"><p>别被带歪：§3 讲气候时，绕开了「人类是不是在推高全球气温」这场争论，那是写书时的措辞。2021 年 IPCC 第六次评估报告写的是：人类影响使大气、海洋和陆地变暖，这一点毋庸置疑。他那段要说的是基础设施得扛住更多极端天气，这一点不受影响。</p></div>
+<div class="crux"><p>一个人在跑实验、写代码、搭原型，他这会儿是科学家还是工程师？作者说要看什么？</p></div>
+<p class="lede">读的时候带着这几个问题，读完回来对照「检查一下理解」。</p>
+<ol class="qs">
+  <li>作者说工程最一般的意思是什么？冰箱、椅子、电脑凭什么都算工具？<span class="sec">§4</span></li>
+  <li>「工具本身无所谓好坏，看人怎么用」，作者为什么不同意？他举了什么例子？<span class="sec">§3</span></li>
+  <li>词典定义、日常用法、职称和门类，为什么都理不清 STEM？<span class="sec">§9</span></li>
+  <li>科学、数学、工程各为了什么？方法很像的时候，靠什么分？<span class="sec">§10</span></li>
+</ol>
+<h2>分节地图</h2>
+<p class="lede">原书这一章没有小标题，一口气写下来。下面的节是本站按段落分的：粗体是本站起的节名，后面是档和英文词数；再下面是这一节开头的几个英文词，在 Kindle 里搜它就能跳过去。读完打个勾。</p>
+<ol class="secmap">
+  <li data-sec="1"><span class="what">开场。engineer 的词根是「巧思」，不是「管发动机的」。丘吉尔那句作者自己写了 paraphrase，原话说的是建筑。留意 <span class="at" data-p="2">This is urgent because engineering</span> 那句：为什么理清 STEM「很急」。</span></li>
+  <li data-sec="2"><span class="what">从石碑到液晶屏的一串对比，再请你想象一个没有工程的早晨。Crawford 那段说的是思考和动手被分开了，读时想想你对手机内部懂多少。</span></li>
+  <li data-sec="3"><span class="what">全章最强的判断：工程带着价值。运河、铁路怎样改了人住在哪、吃什么。书里把工业革命写成 17 世纪末到 18 世纪初，通常说约 1760–1840 年。</span></li>
+  <li data-sec="4"><span class="what">工具的定义：凡是用来做事（work）的都算。这里的 work 是宽义的出力办事，不是第 2 章力乘距离的功。椅子怎么做功，第 2 章才讲。</span></li>
+  <li data-sec="5"><span class="what">先抄好词典的定义，那是词典的话，不是作者的立场。再说科学不是万能的。斯特拉迪瓦里算工匠还是艺术家；Ruskin、Morris 和工艺美术运动。</span></li>
+  <li data-sec="6"><span class="what">「工程」在日常英语里的六种用法，一条条列，可以快读。英国叫上门修锅炉的也是 engineer。Box 1 的职称表扫一眼，留意斜体和门类。</span></li>
+  <li data-sec="7"><span class="what">两个维度给工程分类：纵向四级职称，横向六大门类。一杯自来水要几类工程师接力，「书里的人和项目」有网格图。</span></li>
+  <li data-sec="8"><span class="what">医学工程的两个例子：人工髋关节、心脏起搏器，细节不回到主线，可以跳。1958 年的第一台植入式起搏器在瑞典，不是英国。</span></li>
+  <li data-sec="9"><span class="what">转折：工程界内部的分法理不清 STEM，转向哲学家。四个视角是 Mitcham 的，「目的是关键」是作者借第四个往下推的。最后一段「先行后知」是作者自己的看法。</span></li>
+  <li data-sec="10"><span class="what">全章最要紧：本书的定义。科学求知，工程和技术求做，数学是两边的语言；他还宣布本书把工程和技术当同义词。第二段是全书路线图。</span></li>
+</ol>
+<h2>先用中文过一遍：这一页的概念</h2>
+<p class="lede">先把这一页用到的几个概念用书外的例子讲一遍。作者拿它们推出什么，读原书时自己看。后面各页用到时会链回这里。</p>
+<div class="concept" id="c-engineering">
+<h3><span class="sec">§1</span>工程 <span class="en">engineering</span></h3>
+<p>本书用的是最宽的定义：把一个想法变成现实，造工具、用工具办成一件事。词根不是 engine（发动机），书里追到拉丁文 ingeniarius：engineer 本来指解决实际问题很有巧思的人，和 ingenious（巧妙的）同根。</p>
+<p>工具也定得很宽：凡是拿来出力办事、实现人的目的的都算。锤子、电钻是，靠加热制冷办事的水壶、冰箱是，椅子、楼房、电脑和互联网也是，武器也是：好用的、好玩的、害人的都在内。这里的「办事」是日常的宽义，第 2 章才把它收窄成物理的<a class="term" href="02.html#c-work">功</a>。换成程序员的话：你写的库、脚本、服务，都是工具。</p>
+<p class="use"><b>在这一页：</b>§1 给定义和词源，§4 给工具的定义，§10 再收窄成「工程为了做」。</p>
+</div>
+<div class="concept" id="c-value-laden">
+<h3><span class="sec">§3</span>价值负载 <span class="en">value-laden</span></h3>
+<p>有一种常见的看法：工具本身无所谓好坏，全看人怎么用，菜刀能切菜也能伤人。这叫技术中立论。</p>
+<p>价值负载说的是反过来：工具一造出来，就带着造它的人替你做的取舍；用着用着又改了人的生活方式，再决定下一样工具长不长得起来。高铁让人敢在两座城市之间通勤；一个 App 默认打开推送，多数人就一直开着。</p>
+<p>读的时候分清两层：工具的后果很大，这一点持中立论的人也同意；工具在设计里就带着取舍，这才是价值负载真正要说的。留意作者的例子落在哪一层。</p>
+<p class="use"><b>在这一页：</b>§3 的核心判断，§2、§3 讲宗教、艺术、唱歌方式被工具改变，也是这个意思。</p>
+</div>
+<div class="concept" id="c-mitcham-four">
+<h3><span class="sec">§9</span>技术的四个视角 <span class="en">technology as objects, knowledge, activity, volition</span></h3>
+<p>美国技术哲学家 Carl Mitcham 说，「技术」可以从四个角度看。拿一部手机试试：</p>
+<p>物件：手里这台机器。知识：怎么设计芯片、怎么让电池不鼓包。活动：设计、制造、运营、维修，最后报废拆解。意志：为什么要有它，是谁的需要、谁的愿望。</p>
+<p>前三个一看就懂，第四个最容易漏。作者抓住它往下推：方法上科学家和工程师可能分不出，目的却可以很不一样。四个视角是 Mitcham 的，「目的是 STEM 的关键区别」是作者自己推出来的，别算到 Mitcham 头上。</p>
+<p class="use"><b>在这一页：</b>§9。第 2 章起作者给每段历史贴的斜体 need、activity、objects、knowledge 就是这套标签；第 3 章讲工程师怎样边做边想时还会用上。</p>
+</div>
+<div class="concept" id="c-science-vs-engineering">
+<h3><span class="sec">§10</span>科学和工程：知与行 <span class="en">knowing / doing</span></h3>
+<p>日常说法里，科学、技术、工程、数学（STEM）常常混着用。§5 抄的是好词典的定义，其中「技术是科学的实际应用」只是词典义；作者在 §9 批评的正是学者们默认「技术就是应用科学」。</p>
+<p>他自己的约定在 §10：工程和技术当同义词，按目的和科学分开。科学为了知，产出理论；工程为了做，产出有用、安全、负担得起、可持续的东西；数学为了清楚精确地推理，是两边共用的语言和工具。方法很像，不知道动机，常常分不清一个人这会儿在当哪一种。</p>
+<p>拿你自己试：跑实验比较两个模型、写成论文，是知；把更好的那个部署上线，是做。同一个人一天里能换好几回。</p>
+<p class="use"><b>在这一页：</b>§5 是词典义，§10 是作者的定义，§9 最后一段「先做后知、知再改进做」是他的另一半看法。</p>
+</div>
+<div class="concept" id="c-five-ages">
+<h3><span class="sec">§10</span>五个「时代」 <span class="en">five ages: gravity, heat, electromagnetism, information, systems</span></h3>
+<p>这是 Blockley 自己给工程史搭的框架，不是史学界通行的分期：重力、热、电磁、信息、系统，正好是第 2–6 章。</p>
+<p>前三个是自然现象：科学家研究它，工程师拿它造工具。从金字塔到摩天楼靠对重力的理解，从生火到蒸汽机、喷气发动机靠热，电、电机、电信靠电磁。后两个不是自然现象：信息时代从电磁里长出来，又变成了复杂系统的时代。几个「时代」在时间上大段重叠，今天盖楼照样是重力的事。书后注释里他自己补了一句：核能、聚变、纳米、量子计算也该算进来。</p>
+<figure class="fig">
+<svg class="diagram" viewBox="0 0 640 230" role="img" aria-label="五个时代路线图：五个框从左到右是重力、第 2 章，热、第 3 章，电磁、第 4 章，信息、第 5 章，系统、第 6 章。前三个上面用括线标着自然现象，科学家研究它，工程师拿它造工具；后两个标着不是自然现象。框下各写例子：金字塔和摩天楼，蒸汽机和喷气机，电网和电信，晶体管和计算机，风险和系统思维">
+<path d="M16 66 V56 H368 V66" class="ln"/>
+<path d="M388 66 V56 H616 V66" class="ln"/>
+<text x="192" y="44" text-anchor="middle" class="t-m">自然现象：科学家研究它，工程师拿它造工具</text>
+<text x="502" y="44" text-anchor="middle" class="t-m">不是自然现象</text>
+<rect x="16" y="78" width="104" height="58" rx="6" class="box"/>
+<rect x="140" y="78" width="104" height="58" rx="6" class="box"/>
+<rect x="264" y="78" width="104" height="58" rx="6" class="box"/>
+<rect x="388" y="78" width="104" height="58" rx="6" class="f-soft"/>
+<rect x="512" y="78" width="104" height="58" rx="6" class="f-soft"/>
+<line x1="120" y1="107" x2="140" y2="107" class="ln"/>
+<line x1="244" y1="107" x2="264" y2="107" class="ln"/>
+<line x1="368" y1="107" x2="388" y2="107" class="ln"/>
+<line x1="492" y1="107" x2="512" y2="107" class="ln"/>
+<text x="68" y="104" text-anchor="middle" class="t-b">重力</text>
+<text x="192" y="104" text-anchor="middle" class="t-b">热</text>
+<text x="316" y="104" text-anchor="middle" class="t-b">电磁</text>
+<text x="440" y="104" text-anchor="middle" class="t-b">信息</text>
+<text x="564" y="104" text-anchor="middle" class="t-b">系统</text>
+<text x="68" y="125" text-anchor="middle" class="t-m">第 2 章</text>
+<text x="192" y="125" text-anchor="middle" class="t-m">第 3 章</text>
+<text x="316" y="125" text-anchor="middle" class="t-m">第 4 章</text>
+<text x="440" y="125" text-anchor="middle" class="t-m">第 5 章</text>
+<text x="564" y="125" text-anchor="middle" class="t-m">第 6 章</text>
+<text x="68" y="162" text-anchor="middle" class="t-m">金字塔、摩天楼</text>
+<text x="192" y="162" text-anchor="middle" class="t-m">蒸汽机、喷气机</text>
+<text x="316" y="162" text-anchor="middle" class="t-m">电网、电信</text>
+<text x="440" y="162" text-anchor="middle" class="t-m">晶体管、计算机</text>
+<text x="564" y="162" text-anchor="middle" class="t-m">风险、系统思维</text>
+<text x="320" y="208" text-anchor="middle" class="t-m">Blockley 自己的框架；几个时代在时间上大段重叠</text>
+</svg>
+<figcaption>本站示意图。框下的例子是本站挑的，大多出自各章正文。原书没有这张图。</figcaption></figure>
+<p class="use"><b>在这一页：</b>§10 第二段。全书照它排章，开读之前那一页也链到这里。</p>
+</div>
+<h2>书里的人和项目</h2>
+<p class="lede">书里点名的人、发明和工程，挑读懂这一页用得上的讲。按在书里出现的顺序排，节号是你在书里哪一节遇到它。</p>
+<h3><span class="sec">§1</span>开场的两句话和 Henry Petroski</h3>
+<div class="who"><div><b>Henry Petroski</b><span class="en">1942–2023</span>美国土木工程师，杜克大学教授，写过很多讲工程的通俗书。作者借他的书名说造工具是人的本性。</div></div>
+<p>作者开场引了两句话。一句他标明是「转述丘吉尔」：我们塑造工具，此后工具塑造我们。书后注释说，丘吉尔 1943 年的原话讲的是建筑：议会讨论重建被炸毁的下议院会场时，他说我们塑造建筑，此后建筑塑造我们。换成「工具」的版本，今天找得到的最早出处是 John Culkin 1967 年一篇介绍麦克卢汉的文章。另一句是 Petroski 1985 年的书名 To Engineer is Human，套的是谚语 to err is human（人孰无过）；那本书讲的正是工程怎样从失败里学。</p>
+<h3><span class="sec">§1</span>Matthew Crawford 和 Brian Arthur</h3>
+<p>两个人在书里一前一后，从两头说工具为什么越来越难懂。Crawford 是美国的哲学博士，开过摩托车修理铺，这本书在美国叫 Shop Class as Soulcraft（2009），英国版就是书里的 The Case for Working with Your Hands。他指责工程师把机器的内部藏起来，让人没法直接看懂。书后推荐书目里作者说，他和 Crawford 都认为「思考和动手」的分法是假的。Arthur 是经济学家，作者特意说他有工程学位；他的 The Nature of Technology（2009）说工程师为了提高性能，免不了往里加复杂度。一个说藏，一个说不得不加。</p>
+<h3><span class="sec">§3</span>伦敦千禧桥</h3>
+<p>作者只拿它当例子：纪念重大周年的建筑，不只是为了过河。这是泰晤士河上的一座步行桥，北头正对圣保罗大教堂。2000 年 6 月 10 日开通，人一多桥面就左右晃，两天后关闭。桥一晃，行人不自觉地跟着桥的节奏迈步，脚下的横向力又跟桥同步，越晃越厉害。加装了几十个阻尼器后，2002 年 2 月重新开放。这正是第 2 章<a class="term" href="02.html#c-resonance">共振</a>的活例子，书里没提。</p>
+<figure class="fig"><img src="../assets/img/01-millennium-bridge.jpg" alt="站在桥面上往北岸看：浅灰金属桥面，两侧是低矮的银色栏杆和贴着桥面走的钢索，一群行人走在中间，尽头正对一座大教堂的穹顶，蓝天，右边有塔吊" loading="lazy">
+<figcaption>伦敦千禧桥，桥那头是圣保罗大教堂，2009 年摄。钢索压得很低，几乎贴着桥面走。这张照片拍的不是晃动。<span class="src">Telemaque MySon，CC BY-SA 3.0，维基共享资源</span></figcaption></figure>
+<h3><span class="sec">§5</span>斯特拉迪瓦里</h3>
+<div class="who"><div><b>Antonio Stradivari</b><span class="en">约 1644–1737</span>意大利克雷莫纳的提琴制作师。作者拿他问：做琴的人算工匠还是艺术家？</div></div>
+<p>作者从词典定义讲到艺术和手艺：艺术是造出意义不寻常的东西，手艺要的是专门的、尤其是手上的技能，两者的边界不清楚。斯特拉迪瓦里正好卡在中间。作者顺口加了一句：他的琴的出色品质，现代工艺至今没能超过。这句后来被几次盲测挑战了，见「今天怎么看」。</p>
+<figure class="fig"><img src="../assets/img/01-stradivari.jpg" alt="玻璃展柜里竖放的一把小提琴，红褐色漆，琴头卷涡，背景是暗色挂毯" loading="lazy">
+<figcaption>斯特拉迪瓦里做的「弥赛亚」小提琴，摆在牛津阿什莫林博物馆的展柜里。<span class="src">Geni，CC BY-SA 4.0，维基共享资源</span></figcaption></figure>
+<h3><span class="sec">§5</span>Ruskin、Morris 和工艺美术运动</h3>
+<div class="who"><div><b>John Ruskin</b><span class="en">1819–1900</span>英国维多利亚时代的艺术评论家。作者借他说：健康的社会靠有技能、有创造力的工人。</div><div><b>William Morris</b><span class="en">1834–1896</span>英国设计师、诗人、社会主义者，自己设计、出售彩色玻璃窗、墙纸和瓷砖。</div></div>
+<p>两人是工艺美术运动（Arts and Crafts movement）的源头。这场运动在 19 世纪后半到 20 世纪初，反对机器批量生产的粗劣货，推崇手工。书里写的 at the turn of the 19th century 指 19、20 世纪之交，不是 19 世纪初。Ruskin 的标准很特别：作品好不好，看它给做活的工人留了多少表达的自由；太完美、太精确反而可疑，说明有人在发号施令。作者说这是个社会主义的想法，Morris 推得最力。书里引了 Morris 两段讲演，大意是没用的东西算不上艺术，瓦匠、石匠本来都可以是快乐的艺术家。</p>
+<figure class="fig"><img src="../assets/img/01-morris.jpg" alt="黑白人像照：头发蓬乱、大胡子的中年男子，一只手托着脸颊，直视镜头" loading="lazy">
+<figcaption>William Morris，53 岁，Frederick Hollyer 摄，约 1887 年。原书图 1 是他 1861–1862 年为塞尔斯利教堂做的南窗。<span class="src">Frederick Hollyer，公有领域，维基共享资源</span></figcaption></figure>
+<h3><span class="sec">§7</span>四级职称、六大门类和一杯自来水</h3>
+<p>作者给工程分类用了两个维度。书后注释里他解释了英国的四级：工程技工（engineering worker）是瓦工、木工、装配工这类有专门手艺的人；技术员工程师用成熟的办法解决范围明确的问题；IEng（incorporated engineer）大体在现有技术里干，责任更宽；特许工程师（chartered engineer）领头，范围最宽，最要独立判断。美国不用 chartered，大致对应 professional / registered engineer。civil 在 18 世纪指一切非军事的工程，今天专指土木和基础设施。</p>
+<figure class="fig">
+<svg class="diagram" viewBox="0 0 640 320" role="img" aria-label="工程分类网格：横向六大门类，土木、机械、电气、化工、计算机、医学；纵向英国四级职称，从上到下是特许工程师、IEng、技术员工程师、工程技工。网格下面一行是一杯自来水的分工：土木管水库和管道，机械管水泵和阀门，电气管供电，化工管净水，计算机管控制系统，医学这一栏在第 8 节">
+<text x="10" y="36" class="t-m">↓ 职责由宽到窄</text>
+<text x="199" y="36" text-anchor="middle" class="t-b">土木</text>
+<text x="277" y="36" text-anchor="middle" class="t-b">机械</text>
+<text x="355" y="36" text-anchor="middle" class="t-b">电气</text>
+<text x="433" y="36" text-anchor="middle" class="t-b">化工</text>
+<text x="511" y="36" text-anchor="middle" class="t-b">计算机</text>
+<text x="589" y="36" text-anchor="middle" class="t-b">医学</text>
+<rect x="160" y="50" width="468" height="160" class="box"/>
+<line x1="238" y1="50" x2="238" y2="210" class="ln"/>
+<line x1="316" y1="50" x2="316" y2="210" class="ln"/>
+<line x1="394" y1="50" x2="394" y2="210" class="ln"/>
+<line x1="472" y1="50" x2="472" y2="210" class="ln"/>
+<line x1="550" y1="50" x2="550" y2="210" class="ln"/>
+<line x1="160" y1="90" x2="628" y2="90" class="ln"/>
+<line x1="160" y1="130" x2="628" y2="130" class="ln"/>
+<line x1="160" y1="170" x2="628" y2="170" class="ln"/>
+<text x="150" y="75" text-anchor="end" class="t-m">特许工程师</text>
+<text x="150" y="115" text-anchor="end" class="t-m">IEng</text>
+<text x="150" y="155" text-anchor="end" class="t-m">技术员工程师</text>
+<text x="150" y="195" text-anchor="end" class="t-m">工程技工</text>
+<rect x="160" y="232" width="468" height="36" rx="6" class="f-soft"/>
+<text x="10" y="255" class="t-b">一杯自来水</text>
+<text x="199" y="255" text-anchor="middle" class="t-m">水库管道</text>
+<text x="277" y="255" text-anchor="middle" class="t-m">水泵阀门</text>
+<text x="355" y="255" text-anchor="middle" class="t-m">供电</text>
+<text x="433" y="255" text-anchor="middle" class="t-m">净水</text>
+<text x="511" y="255" text-anchor="middle" class="t-m">控制系统</text>
+<text x="589" y="255" text-anchor="middle" class="t-m">见 §8</text>
+<text x="320" y="302" text-anchor="middle" class="t-m">四级是英国的叫法；美国大致对应 professional engineer</text>
+</svg>
+<figcaption>本站示意图。横着是六大门类，竖着是四级职称，每一格都有人。最下面一行是 §7 的自来水例子：书里还提到电子工程师做监测流量的仪表，算在电气那一栏附近。原书没有这张图，Box 1 只是一长串职称。</figcaption></figure>
+<h3><span class="sec">§8</span>心脏起搏器</h3>
+<p>§8 的医学工程例子。起搏器是一个电池供电的小发生器，埋在锁骨下方的皮下，导线顺着静脉接到心脏；书里说最常装的是按需起搏，心跳低于设定值（通常每分钟 60 次）才接手。书里说英国自 1958 年第一台以来装了约 50 万台。世界上第一台植入式起搏器是 1958 年 10 月在瑞典斯德哥尔摩的卡罗林斯卡医院装上的，Rune Elmqvist 和 Åke Senning 做成，病人 Arne Larsson 一生换了二十多台，活到 86 岁。所以 1958 年的第一台在瑞典，不在英国。</p>
+<figure class="fig"><img src="../assets/img/01-pacemaker.jpg" alt="一个透明树脂封装的圆饼，里面看得见电子元件和线圈，一根导线伸出来，下方印着 SIEMENS-ELEMA 1958" loading="lazy">
+<figcaption>印着 SIEMENS-ELEMA 1958 的起搏器，树脂封装，看得见里面的元件和线圈。维基的说明写它是第一台植入人体的起搏器，没说是植入过的原物还是同型展品。<span class="src">Marko Turina 教授（苏黎世大学医院），CC BY 3.0，维基共享资源</span></figcaption></figure>
+<h3><span class="sec">§9</span>Carl Mitcham</h3>
+<div class="who"><div><b>Carl Mitcham</b><span class="en">1941–</span>美国技术哲学家，科罗拉多矿业学院荣休教授。作者说他是「哲学家很少谈工程」的一个大例外。</div></div>
+<p>作者说科学哲学是一门成熟的学问，可除了少数例外，学者们很少谈工程；谈的人，多数默认工程就是技术、技术就是应用科学。Mitcham 是例外里最重要的一位，做过技术哲学学会（Society for Philosophy and Technology）的第一任会长。他的 Thinking through Technology（1994）被作者列进推荐书目，说是少见的工程哲学专著。他的四个视角见「先用中文过一遍」。</p>
+<h2>原文里的词和句</h2>
+<p class="lede">读英文原书时值得停一下的词和句：工程里的熟词生义、英式说法、作者的比喻。灰色斜体是原句里连续的几个词，在 Kindle 里搜它就能找到；标「每个字都认识」的，是每个词都眼熟、合起来意思却变了的，最容易读错。点「记下」收进词本。</p>
+<div class="entry"><div class="en">to paraphrase</div><div class="loc" data-p="1">… To paraphrase Winston Churchill, …</div><div class="zh">换个说法转述</div><div class="note">先打招呼：下面不是原话。这里正好如此，丘吉尔原话说的是建筑。</div></div>
+<div class="entry trap"><div class="en">a disturbing cloud</div><div class="loc" data-p="2">… there is a disturbing cloud.</div><div class="zh">一片让人不安的阴影</div><div class="note">cloud 比喻笼罩着的疑虑、看不清的东西。§5 的 the cloud around these terms 又用一次，指概念上的一团迷雾。</div></div>
+<div class="entry trap"><div class="en">the works</div><div class="loc" data-p="2">… accused engineers of hiding the works, …</div><div class="zh">（机器的）内部机件</div><div class="note">不是「作品」。the works 指一台机器里头的机构，钟表的 works 就是机芯。</div></div>
+<div class="entry"><div class="en">under the bonnet</div><div class="loc" data-p="6">… happening under the bonnet of a car.</div><div class="zh">引擎盖底下</div><div class="note">英式说法，美式是 under the hood。bonnet 本义是系带的软帽。也比喻「内部原理」：look under the bonnet。</div></div>
+<div class="entry trap"><div class="en">agency</div><div class="loc" data-p="6">… self-reliance or individual agency in a …</div><div class="zh">能动性，自己做主的能力</div><div class="note">不是「代理机构」。社会科学里常见，指人能凭自己的意志采取行动。</div></div>
+<div class="entry trap"><div class="en">the rights and wrongs of</div><div class="loc" data-p="8">Regardless of the rights and wrongs of …</div><div class="zh">（一件争议的）是非曲直，谁对谁错</div><div class="note">固定说法，不是「权利和错误」。作者用它把这场争论放到一边。</div></div>
+<div class="entry trap"><div class="en">naked power</div><div class="loc" data-p="9">… we want to express naked power, …</div><div class="zh">赤裸裸的权力</div><div class="note">naked 在这里是不加掩饰的，naked ambition 是毫不掩饰的野心。power 这里是权势，不是功率。</div></div>
+<div class="entry"><div class="en">twiddle a knob</div><div class="loc" data-p="9">… achieved by twiddling a knob.</div><div class="zh">随手拧一下旋钮</div><div class="note">twiddle 是漫不经心地拧、捻、摆弄，twiddle one's thumbs 是闲得转大拇指。</div></div>
+<div class="entry trap"><div class="en">do work</div><div class="loc" data-p="10">… anything used to do work, and work …</div><div class="zh">（宽义的）出力办事</div><div class="note">紧跟着他自己定义：work 是为了一个目的的出力。第 2 章的 do work 是物理的做功（力乘距离），两处要分开读。</div></div>
+<div class="entry trap"><div class="en">have yet to</div><div class="loc" data-p="12">… have yet to be surpassed by modern …</div><div class="zh">至今还没有</div><div class="note">have yet to be surpassed 是「至今还没被超过」，不是「还要被超过」。</div></div>
+<div class="entry trap"><div class="en">engineer</div><div class="loc" data-p="19">We engineer an agreement, a deal, …</div><div class="zh">（动词）设法促成，一手策划</div><div class="note">常带「精心安排、暗中操纵」的味道：engineer a takeover 是一手策划收购。</div></div>
+<div class="entry trap"><div class="en">send for the engineer</div><div class="loc" data-p="21">… we send for the engineer to come …</div><div class="zh">叫维修师傅上门</div><div class="note">英国口语里上门修锅炉、洗衣机的维修工也叫 engineer。send for 是派人去叫、请来。</div></div>
+<div class="entry trap"><div class="en">industrial action</div><div class="loc" data-p="22">… deteriorates into industrial action, the banner …</div><div class="zh">罢工、怠工等劳资对抗</div><div class="note">英式委婉说法，不是「工业行动」。新闻里很常见。</div></div>
+<div class="entry trap"><div class="en">reasonably</div><div class="loc" data-p="30">The names are reasonably self-explanatory …</div><div class="zh">还算，相当</div><div class="note">修饰形容词时是「程度上过得去」，不是「合理地」。reasonably priced 是价钱还算公道。</div></div>
+<div class="entry trap"><div class="en">civil engineering</div><div class="loc" data-p="30">… non-military engineering was called civil engineering.</div><div class="zh">土木工程（原义：非军事的工程）</div><div class="note">civil 的本义是民间的、非军事的，今天 civil engineering 专指土木和基础设施，不译「民用工程」。</div></div>
+<div class="entry"><div class="en">leapfrog</div><div class="loc" data-p="37">… evolve in leapfrog fashion.</div><div class="zh">跳背式地，你追我赶、交替领先</div><div class="note">leapfrog 是跳背游戏，后面的人撑着前面的人的背跳过去。动词 leapfrog 也指跨过中间阶段，比如直接跳到移动支付。</div></div>
+<div class="entry"><div class="en">human flourishing</div><div class="loc" data-p="37">… end product of human flourishing within an …</div><div class="zh">人过得好、活得充分</div><div class="note">伦理学常用词，多用来译亚里士多德的 eudaimonia。不是「人口兴旺」。</div></div>
+<h2>读完：作者到底说了什么</h2>
+<p class="lede">下面是作者在这一章里的主张，本站按主张之间的逻辑重排，不按原书顺序；每条后面是节号，拿不准就回书里那一节再读一遍。</p>
+<div class="claims">
+  <div class="claim"><h4>工程最宽的意思是把想法变成现实，造工具是人之为人的一部分</h4><p>工具定得同样宽：凡是拿来出力办事、实现人的目的的都算，锤子、冰箱、椅子、桥、互联网，好用的和害人的都在内。他说人会造工具已经了不起，更了不起的是用工具弄懂世界，再造出更巧的工具。</p><span class="sec" data-p="1 10 11">§1 §4</span></div>
+  <div class="claim"><h4>工程带着价值，不是中性的工具</h4><p>很多人以为工程的产物本身无所谓好坏，全看人怎么用。他说工具和人一起演化，嵌在历史和文化里：运河开了贸易，铁路让人能去海边度假，新鲜食物、报纸、信件跑得更快，这又养出了让汽车长起来的环境。唱歌的方法、宗教和艺术的表达也被工具改过。</p><span class="sec" data-p="7 9">§3</span></div>
+<blockquote class="quote">But engineering is value-laden social activity – our tools have evolved with us and are totally embedded in their historical, social, and cultural context.<cite>— §3。本站译：可是工程是带着价值的社会活动，我们的工具和我们一起演化，完全嵌在它们的历史、社会和文化背景里。</cite></blockquote>
+  <div class="claim"><h4>正因为离不开又看不透，民主社会得懂一点工程</h4><p>工业革命以来，许多工具的内部只有专家看得透。他说这让理清 STEM 变得急迫：民主社会要管好工程，就得懂一点它能给什么、将来可能给什么，尤其是永远给不了什么。气候和越来越多的极端天气是他举的例子。</p><span class="sec" data-p="2 8">§1 §3</span></div>
+  <div class="claim"><h4>词典和工程界自己的分法，都理不清 STEM</h4><p>好词典的定义各自清楚，他却说混乱来自这些词的发展史。日常的六种用法、四级职称和六大门类有用，可都出自工程内部。转向学界，除了少数例外，学者很少谈工程，多数默认工程就是技术、技术就是应用科学。</p><span class="sec" data-p="12 28 35">§5 §7 §9</span></div>
+  <div class="claim"><h4>分界在目的：科学为了知，工程为了做</h4><p>他借 Mitcham 的第四个视角「意志」：方法可能分不出，目的可以很不一样。本书把工程和技术当同义词，目的是造出有用、安全、负担得起、可持续的东西。他还认为做先于知，知再改进做，两样交替领先、一起往前走。</p><span class="sec" data-p="36 37 38">§9 §10</span></div>
+<blockquote class="quote">Science is an activity of ‘knowing’, whereas engineering and technology are activities of ‘doing’<cite>— §10。本站译：科学是「知」的活动，而工程和技术是「做」的活动。</cite></blockquote>
+</div>
+<p class="sowhat"><b>合起来：</b>这一章不讲原理，给全书定了三个约定：工程是做，工具带着价值，科学和工程按目的分。五个时代是他接下来讲故事的顺序，每一章讲人借一样东西来做事。</p>
+<h2>今天怎么看</h2>
+<p class="lede">书 2012 年出版。下面挑出这一页里能被后来的研究或事情检验的说法，分「书里 / 当时 / 今天」几栏，并给一个结论。结论判的是标题里「书里的说法：」后面那一句。全书的这一节汇总在<a href="../today.html">今天怎么看</a>。</p>
+<ul class="verdicts"><li><span class="v ok">成立</span>后来的研究或事情支持这句话。</li><li><span class="v mid">部分成立</span>大方向对，细节或适用范围要改。</li><li><span class="v bad">被改写</span>后来的研究推翻了它、换了一种说法，或者情况变了。</li><li><span class="v dis">有争议</span>至今没有定论，两边各有代表性的研究或证据。</li></ul>
+<div class="today" data-verdict="被改写"><h4>书里的说法：斯特拉迪瓦里的琴至今没被现代工艺超过</h4><dl>
+  <dt>书里</dt><dd>一句话带过，跟在「他是工匠还是艺术家」的问题后面，没给证据。<span class="at" data-p="12">§5</span></dd>
+  <dt>当时</dt><dd>2012 年 1 月，Claudia Fritz、Joseph Curtin 等人在 PNAS 发表了一次双盲试奏：2010 年印第安纳波利斯小提琴比赛期间，21 位小提琴手戴着护目镜在新老琴之间挑，只有 8 人挑了老琴，多数人分不出哪把是老琴。</dd>
+  <dt>今天</dt><dd>2014 年同一组人请 10 位独奏家在巴黎的排练室和音乐厅里试 6 把意大利老琴、6 把新琴：10 人里 6 人挑了新琴，猜新老的准确率和瞎猜差不多，新琴在好拉、清晰度、估计的传声上还得分更高。2017 年他们又在音乐厅里让听众盲听，新琴被认为声音传得更远。在盲测里，最好的新琴并不输斯特拉迪瓦里，「至今没被超过」站不住。<span class="asof">核对于 2026-11。依据：Fritz et al., PNAS 2014（The Strad 2014 年的报道）；Fritz et al., PNAS 114 (2017)，doi:10.1073/pnas.1619443114。</span></dd>
+  <dt>另一边</dt><dd>有人指出合著者 Curtin 本人就是做新琴的提琴师，试琴时间短、戴护目镜也会影响判断。盲测比的是演奏者和听众的偏好，不是一把琴的全部价值，老琴的历史和收藏价值另算。</dd>
+</dl></div>
+<div class="today" data-verdict="成立"><h4>书里的说法：工业革命以来许多工具的内部变得只有专家看得透</h4><dl>
+  <dt>书里</dt><dd>工具曾经是常识，聪明的外行几乎都看得懂；工业革命以来，许多工具的内部变得神秘、复杂，只有专家看得透。他引 Crawford 指责工程师把机件藏起来，引 Arthur 说复杂度是为了性能不得不加的。<span class="at" data-p="2">§1</span></dd>
+  <dt>当时</dt><dd>智能手机的电池封在机身里，外壳用胶粘、用特制螺丝；汽车的毛病越来越要靠厂家的诊断软件才读得出。</dd>
+  <dt>今天</dt><dd>两件事说明这个趋势没停，还逼出了对策。一是维修权立法：欧盟 2024 年 6 月通过维修权指令（2024/1799），要求厂家对几类常用产品在保修期外也负责修，各成员国须在 2026 年 7 月 31 日前把它转成本国法。二是 AI：大语言模型为什么这样回答，连做它的工程师也说不全，「可解释性」成了专门的研究方向。看不透的工具更多了，作者这句话成立。<span class="asof">核对于 2026-11。依据：Directive (EU) 2024/1799 on common rules promoting the repair of goods（欧盟委员会循环城市与地区门户的条目）。</span></dd>
+</dl></div>
+<h2>本站怎么看</h2>
+<p class="lede">读完作者的主张，再看它站不站得住。每一块摆出三样：主流怎么看，作者怎么看，本站的评论。最后一句是本站对这一页的总体判断。</p>
+<div class="views"><h4>用「目的」分科学和工程，好用，但不是一刀切</h4>
+<p><b>主流看法：</b>Herbert Simon 在《人工科学》（The Sciences of the Artificial，1969）里也按目的分：自然科学问事物是怎样的，设计问事物应当怎样，他把工程归到设计这边。技术史家 Walter Vincenti 则强调工程有自己的一套知识，不全从科学来（见第 2 章的「本站怎么看」）。两边都不接受「工程就是应用科学」。</p>
+<p><b>作者的看法：</b>本书把工程和技术当同义词，和科学、数学按核心目的分开：科学为了知，工程为了做；方法很像，不知道动机常常分不清。<span class="at" data-p="38">§10</span></p>
+<p class="ours"><b>本站的评论：</b>这把尺比「工程就是应用科学」好用：它不论先后，也不分高低，第 3 章蒸汽机比热力学早一百多年也放得进去。弱点是目的属于人，也属于那一刻：同一个人上午做实验、下午上线，换了两次身份。作者自己写的也是「常常分不清」。还要记住，工程和技术当同义词是他的约定，§5 抄的词典义正相反。</p></div>
+<div class="views"><h4>工具不中性：结论站得住，证据差一步</h4>
+<p><b>主流看法：</b>科技与社会研究（STS）大体站在「工具不中性」这边。最常被引的是政治学家 Langdon Winner 1980 年的文章《人造物有政治吗？》：他说纽约的规划者 Robert Moses 把长岛公园大道上的立交桥修得很低，公交车过不去，靠公交出行的穷人和黑人就难去海滩。这个例子后来也被质疑：社会学家 Bernward Joerges 1999 年撰文说，公园大道不让公交上去有好几层原因，不是只靠桥修得低。</p>
+<p><b>作者的看法：</b>很多人把工程的产物看成道德中立，好坏全看人怎么用；他说工程是带着价值的社会活动，工具和人一起演化。<span class="at" data-p="7">§3</span></p>
+<p class="ours"><b>本站的评论：</b>结论站得住，论证差一步。运河、铁路改了人住哪、吃什么，说明的是后果大，持中立论的人也会同意。要说工具本身带着价值，得像 Winner 那样指出设计里就写进了取舍，哪怕他的例子本身也有争议。程序员最熟的是默认值：推送默认打开、自动续费默认勾上，多数人不会去改。</p></div>
+<div class="views"><h4>五个时代是讲故事的骨架，不是历史分期</h4>
+<p><b>主流看法：</b>经济学家给技术史分段，常按「通用目的技术」（general purpose technology）：蒸汽机、电力、信息技术这类渗进几乎所有行业、带出一连串后续发明的技术。作者在 §3 点名的经济学家 Richard Lipsey，和合作者 2005 年写的就是一部按这个思路梳理技术史的书。</p>
+<p><b>作者的看法：</b>工程的故事自然分成五个时代：重力、热、电磁、信息、系统；前三个是科学家研究、工程师拿来造工具的自然现象。<span class="at" data-p="39">§10</span></p>
+<p class="ours"><b>本站的评论：</b>当成全书的目录很好用，当成历史分期要打折扣。前三个按自然现象分，后两个按用途和规模分，标准换了；时间上也大段重叠，今天的摩天楼还在重力的「时代」里。书后注释里他自己补了核能、纳米、量子计算，说明五格装不下。</p></div>
+<p class="verdict"><b>本站的总体看法：</b>这一章是全书的说明书，没有原理，定了三个约定：工程是做，工具带着价值，按目的分科学和工程。§3、§9、§10 最值得读，§6、§8 可以跳。几处要打折扣：丘吉尔那句是转述，工业革命的年代写早了，斯特拉迪瓦里那句今天站不住。</p>
+<h2>检查一下理解</h2>
+<p class="lede">先在心里答，再点开。答错的那题，回书里把对应那一节再读一遍。</p>
+<details class="check"><summary>1.（§1）engineer 这个词从哪来？和 engine 是什么关系？</summary><p>书里追到拉丁文 ingeniarius 一系，意思是解决实际问题很有巧思的人。作者特意说，它不是从「管发动机的人」来的。</p></details>
+<details class="check"><summary>2.（§3）作者为什么说工程不是中性的？</summary><p>工具和人一起演化，嵌在历史和文化里，不是造好了摆在那儿等人决定好坏。运河、铁路改了贸易、住处、度假和吃的东西，又养出了下一代交通工具。</p></details>
+<details class="check"><summary>3.（§4）冰箱和椅子为什么算工具？这里的 work 和第 2 章的功一样吗？</summary><p>它们都被用来出力办事、实现人的目的。这里的 work 是宽义的「为目的出力」，第 2 章的功是物理定义，力乘沿力方向走过的距离，不一样。</p></details>
+<details class="check"><summary>4.（§7）一杯自来水要哪几类工程师接力？</summary><p>土木修水库、大坝和大管道；化工在水厂净水、监测水质；机械装水泵、阀门、水表；电气供电；计算机管控制系统。书里还提到电子工程师做监测流量的仪表。</p></details>
+<details class="check"><summary>5.（§9）四个视角是谁提的？「目的是 STEM 的关键区别」又是谁的说法？</summary><p>四个视角（物件、知识、活动、意志）是 Mitcham 的。作者抓住第四个，推出 STEM 的分界在目的，这一步是作者自己的。</p></details>
+<details class="check"><summary>6.（§10）科学和工程方法那么像，作者靠什么分？他说一定分得清吗？</summary><p>靠目的：科学为了知，工程为了做。他说方法像到不知道动机就常常分不清，并没有说分得清。</p></details>
+<details class="check"><summary>7.（§9）「先做后知」是什么意思？是谁的看法？</summary><p>人先会做，后会知，知又反过来改进做，两样交替前进；作者拿婴儿先会动、后有自我意识打比方。这是作者自己的看法，不是 Mitcham 的。</p></details>
+<p>用一句话说这一页：</p>
+<textarea class="note" data-key="01-oneline" rows="2" placeholder="比如：……"></textarea>
+<div class="ponder"><p>想一想：拿你这周做的三件事试试作者的尺子：哪件是「知」，哪件是「做」？有没有哪件两样都是，分不开？</p>
+<textarea class="note" data-key="01-ponder" rows="3"></textarea></div>
+<h2>精彩回顾</h2>
+<p class="lede">读过又忘了，从这里想起来。挑的是这一页最值得记住的例子和说法，不按原书顺序；每条后面是节号，想细看就回书里那一节。全书各页的这一节都收在<a href="../recap.html">全书回顾</a>。</p>
+<p class="recall-line"><b>一句话：</b>工程是把想法变成现实；工具带着价值；科学求知、工程求做，方法很像，靠目的分。</p>
+<div class="recall">
+  <div class="item"><b>工程师不是管发动机的</b><p>engineer 的词根是巧思，指解决实际问题很有巧思的人。开场「我们塑造工具，工具再塑造我们」那句，丘吉尔原话说的是建筑。</p><span class="sec">§1</span></div>
+  <div class="item"><b>工具不中性</b><p>作者最用力的判断：工程带着价值，工具和生活方式一起演化。运河、铁路改了人住哪、吃什么、去哪度假。</p><span class="sec">§3</span></div>
+  <div class="item"><b>斯特拉迪瓦里没被超过吗</b><p>作者说他的琴至今没被现代工艺超过。2014 年的盲测里，10 位独奏家分不出新老，6 位挑了新琴。</p><span class="sec">§5</span></div>
+  <div class="item"><b>一杯水要五类工程师</b><p>土木修水库管道，化工净水，机械装泵和阀门，电气供电，计算机管控制系统。纵向还有英国的四级职称。</p><span class="sec">§7</span></div>
+  <div class="item"><b>目的才是分界</b><p>借 Mitcham 的第四个视角「意志」，作者说科学为了知，工程为了做，方法像到常常分不清。</p><span class="sec">§10</span></div>
+  <div class="item"><b>五个时代</b><p>重力、热、电磁、信息、系统，就是第 2–6 章。这是 Blockley 自己的框架：前三个是自然现象，后两个不是。</p><span class="sec">§10</span></div>
+</div>
+</main>
+</body>
+</html>

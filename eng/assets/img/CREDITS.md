@@ -1,0 +1,52 @@
+- `02-tacoma.jpg` — File:Tacoma Narrows still.png — Barney Elliot — Public Domain — https://commons.wikimedia.org/wiki/File%3ATacoma_Narrows_still.png
+- `02-antikythera.jpg` — File:Antikythera Fragment A (Front).webp — Logg Tandy — CC BY 4.0 — https://commons.wikimedia.org/wiki/File%3AAntikythera_Fragment_A_%28Front%29.webp
+- `02-berry-march.jpg` — File:Les Très Riches Heures du duc de Berry mars.jpg — Limbourg brothers / Barthélemy d'Eyck — Public domain — https://commons.wikimedia.org/wiki/File%3ALes_Tr%C3%A8s_Riches_Heures_du_duc_de_Berry_mars.jpg
+- `02-inclined-plane.jpg` — File:Piano inclinato, Museo Galileo, Florence, Inv. 104, 224108.jpg — Zde — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File%3APiano_inclinato%2C_Museo_Galileo%2C_Florence%2C_Inv._104%2C_224108.jpg
+- `02-newton.jpg` — File:Portrait of Sir Isaac Newton, 1689 (brightened) (cropped).jpg — Godfrey Kneller — Public domain — https://commons.wikimedia.org/wiki/File%3APortrait_of_Sir_Isaac_Newton%2C_1689_%28brightened%29_%28cropped%29.jpg
+- `01-millennium-bridge.jpg` — File:Millennium Bridge London.jpg — Telemaque MySon — CC BY-SA 3.0 — https://commons.wikimedia.org/wiki/File%3AMillennium_Bridge_London.jpg
+- `01-stradivari.jpg` — File:Messiah Stradivarius ashmolean.JPG — Geni — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File%3AMessiah_Stradivarius_ashmolean.JPG
+- `01-morris.jpg` — File:William Morris age 53.jpg — Frederick Hollyer — Public domain — https://commons.wikimedia.org/wiki/File%3AWilliam_Morris_age_53.jpg
+- `01-pacemaker.jpg` — File:First pacemaker (Siemens-Elema 1958).jpg — Professor Marko Turina, University Hospital, Zurich — CC BY 3.0 — https://commons.wikimedia.org/wiki/File%3AFirst_pacemaker_%28Siemens-Elema_1958%29.jpg
+- `03a-angel.jpg` — File:Angel of the North 2016 006.jpg — Photograph by Mike Peel ( www.mikepeel.net ). — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File%3AAngel_of_the_North_2016_006.jpg
+- `03a-st-peters-dome.jpg` — File:Dome of Saint Peter's Basilica (exterior).jpg — Staselnik — CC BY-SA 3.0 — https://commons.wikimedia.org/wiki/File%3ADome_of_Saint_Peter%27s_Basilica_%28exterior%29.jpg
+- `03a-aeolipile.jpg` — File:Hero's Aeolipile, 1st century AD, Alexandria (reconstruction).jpg — Gts-tg — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File%3AHero%27s_Aeolipile%2C_1st_century_AD%2C_Alexandria_%28reconstruction%29.jpg
+- `03a-old-bess.jpg` — File:Old bess beam engine may 2015.JPG — Geni — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File%3AOld_bess_beam_engine_may_2015.JPG
+- `03a-governor.jpg` — File:Boulton and Watt centrifugal governor-MJ.jpg — Dr. Mirko Junge — CC BY 3.0 — https://commons.wikimedia.org/wiki/File%3ABoulton_and_Watt_centrifugal_governor-MJ.jpg
+- `03a-carnot.jpg` — File:Sadi Carnot (cropped).jpeg — Louis-Léopold Boilly — Public domain — https://commons.wikimedia.org/wiki/File%3ASadi_Carnot_%28cropped%29.jpeg
+- `03a-joule-engraving.jpg` — File:Joule's Apparatus (Harper's Scan).png — Jacob Abbott — Public domain — https://commons.wikimedia.org/wiki/File%3AJoule%27s_Apparatus_%28Harper%27s_Scan%29.png
+- `03b-penydarren.jpg` — File:Replica of Trevithick's Penydarren locomotive - 2022-08-22.jpg — The wub — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File%3AReplica_of_Trevithick%27s_Penydarren_locomotive_-_2022-08-22.jpg
+- `03b-rocket.jpg` — File:Stephenson's Rocket Science Museum 2017-02-27.jpg — Les Chatfield — CC BY 2.0 — https://commons.wikimedia.org/wiki/File%3AStephenson%27s_Rocket_Science_Museum_2017-02-27.jpg
+- `03b-turbinia.jpg` — File:Turbinia At Speed.jpg — Alfred John West — Public domain — https://commons.wikimedia.org/wiki/File%3ATurbinia_At_Speed.jpg
+- `03b-gloster.jpg` — File:IWM-CH14832A Gloster E28-39 205210674.jpg — Devon SA, Royal Air Force official photographer — Public domain — https://commons.wikimedia.org/wiki/File%3AIWM-CH14832A_Gloster_E28-39_205210674.jpg
+- `03b-turbofan.jpg` — File:P&W JT9D cutaway.jpg — Cliff from I now live in Arlington, VA (Outside Washington DC), USA — CC BY 2.0 — https://commons.wikimedia.org/wiki/File%3AP%26W_JT9D_cutaway.jpg
+- `03b-chernobyl.jpg` — File:Chernobyl reactor 4.jpg — Mattias Hill — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File%3AChernobyl_reactor_4.jpg
+- `03b-jet.jpg` — File:JET vessel internal view.jpg — EUROfusion — CC BY 4.0 — https://commons.wikimedia.org/wiki/File%3AJET_vessel_internal_view.jpg
+- `04a-volta-pile.jpg` — File:Pila di Volta presso il Tempio Voltiano a Como.jpg — Dario Crespi — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File%3APila_di_Volta_presso_il_Tempio_Voltiano_a_Como.jpg
+- `04a-faraday-disk.jpg` — File:Faraday disk - National Museum of Nature and Science, Tokyo - DSC07366.JPG — Daderot — CC0 — https://commons.wikimedia.org/wiki/File%3AFaraday_disk_-_National_Museum_of_Nature_and_Science%2C_Tokyo_-_DSC07366.JPG
+- `04a-tesla-motor.jpg` — File:Moteur à induction.jpg — Romain Ramier — CC BY-SA 3.0 — https://commons.wikimedia.org/wiki/File%3AMoteur_%C3%A0_induction.jpg
+- `04a-jumbo.jpg` — File:The Edison 1,500 light 110 volt steam dynamo Wellcome M0015307.jpg — 作者不详 — CC BY 4.0 — https://commons.wikimedia.org/wiki/File%3AThe_Edison_1%2C500_light_110_volt_steam_dynamo_Wellcome_M0015307.jpg
+- `04a-edison-lamp.jpg` — File:Edison carbon filament light bulb.jpg — Joseph E. Hinds — Public domain — https://commons.wikimedia.org/wiki/File%3AEdison_carbon_filament_light_bulb.jpg
+- `04a-deptford.jpg` — File:Powerstation deptford 1889.jpg — 作者不详 — Public domain — https://commons.wikimedia.org/wiki/File%3APowerstation_deptford_1889.jpg
+- `04a-pylon.jpg` — File:Pylon ds.jpg — Yummifruitbat — CC BY-SA 2.5 — https://commons.wikimedia.org/wiki/File%3APylon_ds.jpg
+- `04b-maxwell.jpg` — File:Portrait of James Clerk Maxwell (1831-1879), Physicist (2551826378).jpg — Smithsonian Institution from United States — No restrictions — https://commons.wikimedia.org/wiki/File%3APortrait_of_James_Clerk_Maxwell_%281831-1879%29%2C_Physicist_%282551826378%29.jpg
+- `04b-great-eastern.jpg` — File:Great Eastern 1866.jpg — most likely Robert Edward Holloway (d. 1904) according to source — Public domain — https://commons.wikimedia.org/wiki/File%3AGreat_Eastern_1866.jpg
+- `04b-marconi.jpg` — File:Guglielmo Marconi 1901 wireless signal.jpg — Published on LIFE — Public domain — https://commons.wikimedia.org/wiki/File%3AGuglielmo_Marconi_1901_wireless_signal.jpg
+- `04b-phonograph-1878.jpg` — File:Tinfoil phonograph, 1878, invented by Thomas Alva Edison - National Museum of American History - DSC06217.JPG — Daderot — CC0 — https://commons.wikimedia.org/wiki/File%3ATinfoil_phonograph%2C_1878%2C_invented_by_Thomas_Alva_Edison_-_National_Museum_of_American_History_-_DSC06217.JPG
+- `04b-fleming-valves.jpg` — File:Fleming valves.jpg — John Ambrose Fleming — Public domain — https://commons.wikimedia.org/wiki/File%3AFleming_valves.jpg
+- `04b-audion.jpg` — File:Audion tube.jpg — The photo is credited "Copyright Paul Thompson" — Public domain — https://commons.wikimedia.org/wiki/File%3AAudion_tube.jpg
+- `05-pegasus.jpg` — File:Pegasus computer.jpg — LeoNerd at English Wikipedia — Public domain — https://commons.wikimedia.org/wiki/File%3APegasus_computer.jpg
+- `05-cell-tower.jpg` — File:Cellular Telephone Tower - Knoxville, Tennessee - May 26, 2014.jpg — David Ratledge — CC BY 4.0 — https://commons.wikimedia.org/wiki/File%3ACellular_Telephone_Tower_-_Knoxville%2C_Tennessee_-_May_26%2C_2014.jpg
+- `05-transistor-replica.jpg` — File:Replica of first transistor.jpg — Revol Web — CC BY-SA 2.0 — https://commons.wikimedia.org/wiki/File%3AReplica_of_first_transistor.jpg
+- `05-inventors.jpg` — File:Bardeen Shockley Brattain 1948.JPG — AT&T; photographer: Jack St. (last part of name not stamped well enough to read) — Public domain — https://commons.wikimedia.org/wiki/File%3ABardeen_Shockley_Brattain_1948.JPG
+- `05-hollerith.jpg` — File:Hollerith census machine at CHM by Tomwsulcer.jpg — Tomwsulcer — CC0 — https://commons.wikimedia.org/wiki/File%3AHollerith_census_machine_at_CHM_by_Tomwsulcer.jpg
+- `05-punched-card.jpg` — File:Hollerith Punched Card.jpg — 作者不详 — Public domain — https://commons.wikimedia.org/wiki/File%3AHollerith_Punched_Card.jpg
+- `06a-bent-pyramid.jpg` — File:Bent Pyramid of Snofru.jpg — Darer101 — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File%3ABent_Pyramid_of_Snofru.jpg
+- `06a-deepwater.jpg` — File:Deepwater Horizon offshore drilling unit on fire 2010.jpg — 作者不详 — Public domain — https://commons.wikimedia.org/wiki/File%3ADeepwater_Horizon_offshore_drilling_unit_on_fire_2010.jpg
+- `06a-dee-bridge.jpg` — File:Dee bridge disaster.jpg — Hare（刻版署名），The Illustrated London News 1847-06-12 — Public domain — https://commons.wikimedia.org/wiki/File%3ADee_bridge_disaster.jpg
+- `06a-double-pendulum.jpg` — File:Chaos Theory & Double Pendulum - 1.jpg — Cristian V. — CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File%3AChaos_Theory_%26_Double_Pendulum_-_1.jpg
+- `06a-london-eye.jpg` — File:The London Eye seen from Westminster Bridge, 2024.jpg — Hotolmo22 — CC0 — https://commons.wikimedia.org/wiki/File%3AThe_London_Eye_seen_from_Westminster_Bridge%2C_2024.jpg
+- `06b-koestler.jpg` — File:Arthur Koestler (1969) (cropped).jpg — Eric Koch for Anefo — CC BY-SA 3.0 — https://commons.wikimedia.org/wiki/File%3AArthur_Koestler_%281969%29_%28cropped%29.jpg
+- `06b-wheeltapper.jpg` — File:Wheel tapper.jpg — Monkeypuzzle — CC BY-SA 3.0 — https://commons.wikimedia.org/wiki/File%3AWheel_tapper.jpg
+- `06b-heat-pump.jpg` — File:Air Source Heat Pump - Vailliant aroTherm Plus on a terraced house.jpg — Southend-on-Sea Borough Council, UK — CC0 — https://commons.wikimedia.org/wiki/File%3AAir_Source_Heat_Pump_-_Vailliant_aroTherm_Plus_on_a_terraced_house.jpg
+- `06b-cathedral.jpg` — File:Salisbury Cathedral Nave, Wiltshire, UK - Diliff.jpg — Diliff — CC BY-SA 3.0 — https://commons.wikimedia.org/wiki/File%3ASalisbury_Cathedral_Nave%2C_Wiltshire%2C_UK_-_Diliff.jpg
+- `00-eyjafjallajokull.jpg` — File:Eyjafjallajokull volcano plume 2010 04 17.jpg — Boaworm — CC BY 3.0 — https://commons.wikimedia.org/wiki/File%3AEyjafjallajokull_volcano_plume_2010_04_17.jpg
