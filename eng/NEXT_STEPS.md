@@ -3,7 +3,7 @@
 ## 现在
 
 - **全书完成**，2026-11-19 上线 https://t.miaowuao.cn/eng/ （I、J 步做完）。
-- 待办：服务器白名单 `eg-` 要用户跑 `! sh ~/tutorials-deploy/scripts/sync-apply.sh`（自动模式拦了）；跑完再重跑 `tutorials-home` 的部署（第一次撞了 rrsync 锁），`/_home/` 上线后首页卡片、`eg-` 同步、词本才生效。顺序不能反：服务器不认 `eg-` 时新版 `sync.js` 会让所有书的同步被拒收。
+- 上线全部生效：服务器白名单认 `eg-`（用户跑的 `sync-apply.sh`），首页卡片、`eg-` 同步、词本都在线上核对过。没有待办。
 - 以后改页面：改完跑三项检查（模拟器页加 `node tools/sim<页>.mjs`），`git add eng/` 提交推送；增删卡片、词条、概念要跟着改 00 页的条数和首页卡片标签（`CLAUDE.md`「上线」一节）。
 - 改节（`source/SECS.tsv`）后跑 `python3 -I tools/gen_chapters.py`，`assets/chapters.js` 不手改。
 
@@ -66,5 +66,6 @@
 
 - I：首页卡片（`eg-done-:10`）、`sync.js` 和 `sync_server.py` 加 `eg-`、`words.html` 的 `BOOKS.eg` 和两处前缀正则；`eng/` 提交推送，部署成功，`check-site.sh eng index.html chapters/02.html` 全部正常。
   `sync-apply.sh` 被自动模式拦，留给用户；`tutorials-home` 部署撞 rrsync 锁失败（和总仓库同时 rsync），等服务器更新后重跑。
-- J：本仓库 `README.md` 书单、`~/tutorials-deploy/README.md` 踩坑四条（无小标题的书怎么分节、00 页概括要回原文核、新前缀先上服务器、两仓库别同时推）和同步前缀列表、PLAYBOOK 表一行；仓库 `CLAUDE.md` 的 I 步补了推送顺序。
+  用户跑了 `sync-apply.sh`，服务器上的 `KEY_RE` 有 `eg`；重跑首页部署成功，线上 `sync.js` 有 `"eg-"`、首页有 eng 卡片和 `eg-done-:10`、`words.html` 有 `BOOKS.eg`。
+- J：本仓库 `README.md` 书单、`~/tutorials-deploy/README.md` 踩坑三条（无小标题的书怎么分节、00 页概括要回原文核、新前缀先上服务器；rrsync 撞车已有旧条目，没重记）和同步前缀列表、PLAYBOOK 表一行；仓库 `CLAUDE.md` 的 I 步补了推送顺序。
   模板 `_tools/templates/` 没改：这本书的新教训是主编自己的（00 页、推送顺序），不是作者和审读员的。
