@@ -2,14 +2,10 @@
 
 ## 现在
 
-- G＋H 全部做完（2026-11-19）：00、01–05、06a、06b 十页都收了（`source/ACCEPTANCE.md`），`EG_READY` 十页齐。
-- 下一个会话做 **I 步上线**（B 里已授权，直接做，做完告诉用户）：读 `CLAUDE.md`，跑 `sh tools/status.sh`；然后照仓库 `CLAUDE.md` 的 I 步和 `~/tutorials-deploy/README.md`「新增一个教程」、同步、词本几节：
-  1. 首页卡片：`~/tutorials-home/index.html` 复制一个 `.tut` 块，`data-progress="eg-done-:10"`（9 页＋00；照 systems 的算法核一下）。
-  2. 同步白名单：`eg-` 加进 `~/tutorials-home/sync.js` 的 `PREFIXES`、`~/tutorials-deploy/sync/sync_server.py` 的 `KEY_RE`，`scripts/sync-apply.sh` 推服务器。
-  3. 词本：`~/tutorials-home/words.html` 的 `BOOKS`（页名表）和 `words.html`、`index.html` 里两处前缀正则。
-  4. `git add eng/ && git commit && git push`（**只加 eng/**），`gh run watch`，`~/tutorials-deploy/scripts/check-site.sh eng index.html chapters/02.html`；`tutorials-home`、`tutorials-deploy` 各自提交推送。
-- 然后 J 步收尾：`CLAUDE.md` 补全（上线信息、条数），本仓库 `README.md` 书单一行，`~/tutorials-deploy/README.md` 踩坑和 PLAYBOOK 表各一行；模板 `_tools/templates/` 看要不要补（见下面第三批的记录）。
-- 00 页里的条数（今天怎么看 21 条：成立 11、部分成立 5、被改写 4、有争议 1）是 2026-11-19 统计的，增删卡片要跟着改。
+- **全书完成**，2026-11-19 上线 https://t.miaowuao.cn/eng/ （I、J 步做完）。
+- 待办：服务器白名单 `eg-` 要用户跑 `! sh ~/tutorials-deploy/scripts/sync-apply.sh`（自动模式拦了）；跑完再重跑 `tutorials-home` 的部署（第一次撞了 rrsync 锁），`/_home/` 上线后首页卡片、`eg-` 同步、词本才生效。顺序不能反：服务器不认 `eg-` 时新版 `sync.js` 会让所有书的同步被拒收。
+- 以后改页面：改完跑三项检查（模拟器页加 `node tools/sim<页>.mjs`），`git add eng/` 提交推送；增删卡片、词条、概念要跟着改 00 页的条数和首页卡片标签（`CLAUDE.md`「上线」一节）。
+- 改节（`source/SECS.tsv`）后跑 `python3 -I tools/gen_chapters.py`，`assets/chapters.js` 不手改。
 
 ## 记录
 
@@ -65,3 +61,10 @@
 - 验收补做（advisor 提醒）：06b 模拟器纵轴刻度原来只换整数，漏的概率 50% 时出 0.5 一格，「-1.5」「-0.5」原样显示成负数；正则放宽到小数，三档极端设置截图看过（1% / 3.16% / 10%…，10⁻¹⁰ / 10⁻⁵）。
   00「每一页怎么用」去掉照抄 Systems 的「带着哪几个问题读」（eng 没这节）、补「精彩回顾」，作者卡去掉「布洛克利」；06a 交代势差—流是工程里现成的类比、推到人身上才是作者自己的一步。
   两页审读后重跑三项检查和 sim 都过；两份报告的「拿不准」逐条看过（06a 的 ENTSO-E、USAFacts 有网址，是搜到的）。
+
+### 2026-11-19 I＋J
+
+- I：首页卡片（`eg-done-:10`）、`sync.js` 和 `sync_server.py` 加 `eg-`、`words.html` 的 `BOOKS.eg` 和两处前缀正则；`eng/` 提交推送，部署成功，`check-site.sh eng index.html chapters/02.html` 全部正常。
+  `sync-apply.sh` 被自动模式拦，留给用户；`tutorials-home` 部署撞 rrsync 锁失败（和总仓库同时 rsync），等服务器更新后重跑。
+- J：本仓库 `README.md` 书单、`~/tutorials-deploy/README.md` 踩坑四条（无小标题的书怎么分节、00 页概括要回原文核、新前缀先上服务器、两仓库别同时推）和同步前缀列表、PLAYBOOK 表一行；仓库 `CLAUDE.md` 的 I 步补了推送顺序。
+  模板 `_tools/templates/` 没改：这本书的新教训是主编自己的（00 页、推送顺序），不是作者和审读员的。

@@ -128,6 +128,7 @@
 
 - 首页卡片：在 `~/tutorials-home/index.html` 复制一个 `.tut` 块，`data-progress="<前缀>-done-:<页数>"`。
 - 同步白名单：把前缀加进 `~/tutorials-home/sync.js` 的 `PREFIXES` 和 `~/tutorials-deploy/sync/sync_server.py` 的 `KEY_RE`，后者用 `scripts/sync-apply.sh` 推到服务器。
+  **服务器先推**（一个不认识的键整次拒收），再推 `tutorials-home`；`sync-apply.sh` 被自动模式拦就请用户 `! sh ~/tutorials-deploy/scripts/sync-apply.sh`。两个仓库别同时推（rrsync 撞锁），等前一个部署跑完。
 - 英文伴读还要接词本：改 `~/tutorials-home/words.html` 的 `BOOKS`，以及 `words.html`、`index.html` 里匹配前缀的两个正则。
 - 提交上线：`git add <目录名>/ && git commit && git push`，再 `gh run watch` 看部署，最后 `~/tutorials-deploy/scripts/check-site.sh <目录名> index.html <一个章节页>`。
 - `tutorials-home` 和 `tutorials-deploy` 各自提交、推送。

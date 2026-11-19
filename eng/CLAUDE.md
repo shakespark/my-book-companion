@@ -32,4 +32,8 @@
 - `tools/extract.py` → `source/text/00–06.txt`（`[k]` 每章段号；`{Q}` 引文、`{B}` 方框、`{F}` 图注带 `[img N]`；上标 `^`、下标 `_`）、
   `glossary.txt`、`refs.txt`、`index.tsv`。Box 1 里原书的粗体标成 `{b:…}`。`source/epub/` 是解开的 epub（`images/00003–00022.jpg` 是图 1–20），图的描述在 `source/FIGS.md`。
 - 底稿 `source/line/01–06.md`（`source/LINE-TASK.md` 派的，不上页面；拆页的章按 `# 03a` 一级标题分页，`pack.sh` 只给作者自己那页）。
+## 上线（2026-11-19）
+
+- 首页卡片 `data-progress="eg-done-:10"`（9 页＋00），卡片标签里的条数：概念 43、人和工程 41、词条 163、今天 21、看法 25、理解题 63，增删要跟着改首页和 00 页的「今天怎么看」条数。
+- 同步白名单 `eg-`（`sync.js`、`sync_server.py`），词本 `words.html` 的 `BOOKS.eg`。
 - 进度和待办在 `NEXT_STEPS.md`。
